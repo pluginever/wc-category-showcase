@@ -1,0 +1,117 @@
+//@import "../../../../assets/css/sass/grid/gridlex";
+@import "form";
+.wccs-admin-builder{
+    margin: 0 auto;
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    img{
+        max-width: 100%;
+        height: auto !important;
+        max-height: 100% !important;
+    }
+
+
+    .featured-categories{
+        display: block;
+        overflow: hidden;
+        &-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                display: inline-block;
+                float: left;
+                width: 220px;
+                height: 275px;
+                position: relative;
+                border: 1px solid #ddd;
+                padding: 5px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+
+
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+                .category-details{
+                    position: absolute;
+                    width: 80%;
+                    text-align: center;
+                    top:50%;
+                    left: 50%;
+                    transform: translate( -50%, -50%);
+                    background-color: rgba(00,00,00,0.2);
+                    color: #fff;
+                    padding: 10px;
+
+                    .category-name{
+                        display: block;
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .tool-link {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    text-decoration: none;
+                    color: red;
+
+                    &-settings{
+                        left: 10px;
+                    }
+
+                    &-edit{
+                        right: 10px;
+                        left: auto;
+                    }
+                }
+
+
+                &.add-new-slide{
+                    text-align: center;
+                    .tools {
+                        position: absolute;
+                        width: 94%;
+                        top: 50%;
+                        left: 3%;
+                        right: 0;
+                        text-align: center;
+                        transform: translate(0,-50%);
+                    }
+                }
+
+            }
+        }
+    }
+
+    .additional-categories{
+        display: block;
+        overflow: hidden;
+        ul{
+            li{
+                width: 150px;
+                height: 150px;
+
+                &.add-new-slide{
+                    text-align: center;
+                    .tools {
+                        position: absolute;
+                        width: 94%;
+                        top: 50%;
+                        left: 3%;
+                        right: 0;
+                        text-align: center;
+                        transform: translate(0,-50%);
+                    }
+                }
+            }
+        }
+    }
+}
