@@ -15,7 +15,11 @@ window.WC_Category_Showcase = (function(window, document, $, undefined){
 	var app = {};
 
 	app.init = function() {
-
+        $('.woo-cs-slider').slick({
+            autoplay: true,
+            dots: true,
+            speed: 500
+        });
 	};
 
 	$(document).ready( app.init );
@@ -23,3 +27,4 @@ window.WC_Category_Showcase = (function(window, document, $, undefined){
 	return app;
 
 })(window, document, jQuery);
+

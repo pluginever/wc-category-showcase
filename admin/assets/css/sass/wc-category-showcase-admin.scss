@@ -1,5 +1,6 @@
 //@import "../../../../assets/css/sass/grid/gridlex";
 @import "form";
+@import "alpha-color-picker";
 .wccs-admin-builder{
     margin: 0 auto;
 
@@ -85,6 +86,27 @@
                         text-align: center;
                         transform: translate(0,-50%);
                     }
+
+                    .ajax-loading-icon {
+                        display: none;
+                    }
+
+                    &.adding-item{
+                        .tools{
+                            display: none;
+                        }
+
+                        .ajax-loading-icon {
+                            width: 25px !important;
+                            height: 25px !important;
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                    }
                 }
 
             }
@@ -96,8 +118,8 @@
         overflow: hidden;
         ul{
             li{
-                width: 150px;
-                height: 150px;
+                width: 200px;
+                height: 200px;
 
                 &.add-new-slide{
                     text-align: center;
@@ -110,8 +132,48 @@
                         text-align: center;
                         transform: translate(0,-50%);
                     }
+
+                    &.adding-item{
+                        .tools{
+                            display: none;
+                        }
+
+                    }
+
                 }
             }
         }
+    }
+
+
+    //utility
+    .pl-10{
+        padding-left: 10px;
+    }
+    .m-0{
+        margin: 0;
+    }
+    .mb-0{
+        margin-bottom: 0;
+    }
+    .maxw-200{
+        max-width: 200px;
+    }
+}
+
+.wccs-modal-window{
+    .category-image-wrp{
+        height: 150px;
+        .category-image{
+            max-height: 100%;
+            width: auto;
+        }
+    }
+    label{
+        display: block;
+        clear: both;
+    }
+    .wp-picker-container{
+        //display: block;
     }
 }

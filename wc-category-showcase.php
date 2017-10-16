@@ -168,6 +168,7 @@ class WC_Category_Showcase {
 	private function includes( ) {
 		require PLVR_WCCS_INCLUDES .'/functions.php';
 		require PLVR_WCCS_INCLUDES .'/custom-cp.php';
+		require PLVR_WCCS_INCLUDES .'/class-shortcode.php';
 
 		if( is_admin() ){
 		    require  PLVR_WCCS_ADMIN_PATH . '/class-admin.php';
@@ -193,7 +194,7 @@ class WC_Category_Showcase {
 	 * @return void
 	 */
 	private function instantiate() {
-
+        new \Pluginever\WCCS\Shortcode();
 	}
 
 	/**
