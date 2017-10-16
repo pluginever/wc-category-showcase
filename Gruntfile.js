@@ -211,7 +211,7 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: 'build/',
                 src: ['**/*'],
-                dest: 'woocommerce-category-showcase'
+                dest: 'wc-category-showcase'
             }
         },
         server: {

@@ -34,8 +34,9 @@ class Shortcode {
 
                             <?php
                             foreach ( $featured_categories as $featured_category ){
+                                $category_link = get_term_link($featured_category['term_id'], 'product_cat');
                                 $html = '<div>';
-                                $html .= '<a class="woo-cs-slide woo-cs-box-link" href="#">';
+                                $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$category_link.'">';
                                 $html .= '<span class="woo-cs-slide-img-container">';
                                 $html .= '<img src="'.$featured_category['image'].'" alt="">';
                                 $html .= '</span>';
@@ -62,12 +63,12 @@ class Shortcode {
 
                         <?php
                         foreach ( $additional_categories as $additional_category ){
-
                             $image = $additional_category['image'];
+                            $category_link = get_term_link($additional_category['term_id'], 'product_cat');
 
                             $html = '<div class="plvr-column-4-middle">';
                             $html .= '<div class="woo-cs-box">';
-                            $html .= '<a class="woo-cs-slide woo-cs-box-link" href="#">';
+                            $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$category_link.'">';
 
                             $html .= '<span class="woo-cs-thumb-container img-middle">';
                             $html .= '<img src="'.$image.'" alt="" class="woo-cs-image woo-cs-image-thumb">';

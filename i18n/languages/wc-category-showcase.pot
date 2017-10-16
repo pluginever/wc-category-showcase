@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Category Showcase 1.0.0\n"
 "Report-Msgid-Bugs-To: http://pluginever.com/support/\n"
-"POT-Creation-Date: 2017-10-16 14:51:56+00:00\n"
+"POT-Creation-Date: 2017-10-16 15:12:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -122,8 +122,8 @@ msgstr ""
 msgid "WooCommerce Category Showcase"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://pluginever.com"
+#. Plugin URI of the plugin/theme
+msgid "https://pluginever.com/wc-category-showcase"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -132,6 +132,10 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "PluginEver"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://pluginever.com"
 msgstr ""
 
 #: includes/custom-cp.php:6
