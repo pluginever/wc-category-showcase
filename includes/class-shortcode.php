@@ -5,7 +5,7 @@ namespace Pluginever\WCCS;
 class Shortcode {
 
     public function __construct() {
-        add_shortcode( 'wc_category_showcase', array( $this, 'shortcode_render_callback' ) );
+        add_shortcode( 'wccs_showcase', array( $this, 'shortcode_render_callback' ) );
     }
 
     public function shortcode_render_callback( $attr ) {
@@ -19,10 +19,13 @@ class Shortcode {
         }
         $featured_categories = get_post_meta( $attr['id'], '_wccs_featured_categories', true );
         $additional_categories = get_post_meta( $attr['id'], '_wccs_additional_categories', true );
+        $title_enabled = get_post_meta( $attr['id'], 'wcss_show_title', true);
         ob_start();
         ?>
         <div class="woo-cs has-border">
+            <?php if ('yes' === $title_enabled ): ?>
             <h2 class="woo-cs-heading"><?php echo get_the_title($attr['id']); ?></h2>
+            <?php endif; ?>
             <div class="plvr-grid-noGutter-equalHeight woo-cs-inner">
 
                 <div class="plvr-column-5  woo-cs-left-block">
@@ -77,7 +80,6 @@ class Shortcode {
                             echo $html;
                         }
                         ?>
-
 
                     </div>       <!--.plvr-grid-noGutter-equalHeight-->
                 </div>

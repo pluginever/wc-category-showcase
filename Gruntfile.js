@@ -137,6 +137,7 @@ module.exports = function (grunt) {
             application: {
                 dir: [
                     '**/*.php',
+                    '!*.scss',
                     '!**/node_modules/**'
                 ]
             },
@@ -169,9 +170,15 @@ module.exports = function (grunt) {
                 src: [
                     '**',
                     '!node_modules/**',
-                    '!.codekit-cache/**',
-                    '!.idea/**',
+                    '!**/js/src/**',
+                    '!**/css/src/**',
+                    '!**/js/vendor/**',
+                    '!**/css/vendor/**',
+                    '!**/images/src/**',
+                    '!**/sass/**',
                     '!build/**',
+                    '!**/*.md',
+                    '!.idea/**',
                     '!bin/**',
                     '!.git/**',
                     '!Gruntfile.js',
@@ -179,7 +186,6 @@ module.exports = function (grunt) {
                     '!composer.json',
                     '!composer.lock',
                     '!debug.log',
-                    '!phpunit.xml',
                     '!.gitignore',
                     '!.gitmodules',
                     '!npm-debug.log',
@@ -188,14 +194,10 @@ module.exports = function (grunt) {
                     '!config.codekit',
                     '!nbproject/*',
                     '!tests/**',
-                    '!README.md',
-                    '!CONTRIBUTING.md',
-                    '!**/*~',
                     '!.csscomb.json',
                     '!.editorconfig',
                     '!.jshintrc',
-                    '!.tmp',
-                    '!assets/src/**',
+                    '!.tmp'
                 ],
                 dest: 'build/'
             }

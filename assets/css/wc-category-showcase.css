@@ -1666,16 +1666,16 @@
     list-style: none; }
   .woo-cs .slick-dots {
     bottom: 10px; }
-  .woo-cs.has-border {
-    border-top: 3px solid red; }
-    .woo-cs.has-border .woo-cs-slider-block {
-      border-left: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-      border-right: 1px solid #eee; }
-    .woo-cs.has-border .woo-cs-box {
-      border: 1px solid #eee;
-      border-top: 1px solid transparent;
-      border-left: 1px solid transparent; }
+  .woo-cs.has-border .woo-cs-heading {
+    border-top: 3px solid #b769a9; }
+  .woo-cs.has-border .woo-cs-slider-block {
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee; }
+  .woo-cs.has-border .woo-cs-box {
+    border: 1px solid #eee;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent; }
   .woo-cs .woo-cs-heading {
     font-size: 20px;
     color: inherit;

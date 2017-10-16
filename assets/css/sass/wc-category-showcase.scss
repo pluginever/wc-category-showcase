@@ -157,7 +157,9 @@
     }
 
     &.has-border{
-        border-top: 3px solid red;
+        .woo-cs-heading{
+            border-top: 3px solid #b769a9;
+        }
         .woo-cs-slider-block{
             border-left: 1px solid #eee;
             border-bottom: 1px solid #eee;

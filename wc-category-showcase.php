@@ -2,8 +2,8 @@
 /**
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  http://pluginever.com
- * Description: The best WordPress plugin ever made!
- * Version:     0.1.0
+ * Description: WooCommerce extension to showcase categories in a nice slider block
+ * Version:     1.0.0
  * Author:      PluginEver
  * Author URI:  http://pluginever.com
  * Donate link: http://pluginever.com
