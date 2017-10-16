@@ -145,40 +145,6 @@ class Admin {
         </div>
 
 
-        <div id="wccs-modal-window" style="display:none;">
-            <div class="plvr wccs-modal-window">
-                <form>
-                    <div class="form-group">
-                        <label for="category-name"><?php _e('Category Image', '');?>:</label>
-                        <div class="category-image-wrp">
-                            <img class="category-image" src="http://plugineverdemo.dev/wp-content/uploads/2017/02/full-sleeve.jpg" alt="">
-                            <input id="wccs-category-imageid" type="hidden" value="http://plugineverdemo.dev/wp-content/uploads/2017/02/full-sleeve.jpg">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category-color"><?php _e('Color', '');?>:</label>
-                        <input type="text" class="color-picker" data-alpha="false" data-default-color="rgba(0,0,0,0.85)"  id="category-color" value="#fff"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category-bgcolor"><?php _e('Background Color', '');?>:</label>
-                        <input type="text" class="color-picker" data-alpha="true" data-default-color="rgba(0,0,0,0.85)" id="category-bgcolor" value="rgba(209,0,55,0.7)"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category-name"><?php _e('Category Name', '');?>:</label>
-                        <input type="text" class="form-control" id="category-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="category-desc"><?php _e('Category Description', '');?>:</label>
-                        <textarea class="form-control" name="category-desc" id="category-desc" cols="30" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
-        </div>
-        <a href="#TB_inline?width=400&height=500&inlineId=wccs-modal-window" class="thickbox">View the WordPress Codex!</a>
         <?php
     }
 
@@ -206,13 +172,13 @@ class Admin {
         }
 
         if( $_POST['scope'] == 'additional' && count($saved_categories) >= 6 ){
-            wp_send_json_error(array('msg' => __('Reached Maximum limit', '')));
+            wp_send_json_error(array('msg' => __('Reached Maximum limit', 'wc-category-showcase')));
         }
 
         $term_ids = wp_list_pluck( $saved_categories, 'term_id' );
 
         if ( in_array( $_POST['term_id'], $term_ids ) ) {
-            wp_send_json_error( array( 'msg' => __( 'Category already added', '' ) ) );
+            wp_send_json_error( array( 'msg' => __( 'Category already added', 'wc-category-showcase' ) ) );
         }
 
         $saved_categories [] = $term;
@@ -246,7 +212,7 @@ class Admin {
         $term_ids            = wp_list_pluck( $saved_categories, 'term_id' );
 
         if ( ! in_array( $_POST['term_id'], $term_ids ) ) {
-            wp_send_json_error( array( 'msg' => __( 'Category not in selection', '' ) ) );
+            wp_send_json_error( array( 'msg' => __( 'Category not in selection', 'wc-category-showcase' ) ) );
         }
 
         foreach ( $saved_categories as $key => $category ) {

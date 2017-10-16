@@ -214,27 +214,6 @@ class WC_Category_Showcase {
 	}
 
 
-	/**
-	 * Logger for the plugin
-	 *
-	 * @since	1.0.0
-	 *
-	 * @param  $message
-	 *
-	 * @return  string
-	 */
-	public static function log($message){
-		if( WP_DEBUG !== true ) return;
-		if (is_array($message) || is_object($message)) {
-			$message = print_r($message, true);
-		}
-		$debug_file = WP_CONTENT_DIR . '/custom-debug.log';
-		if (!file_exists($debug_file)) {
-			@touch($debug_file);
-		}
-		return error_log(date("Y-m-d\tH:i:s") . "\t\t" . strip_tags($message) . "\n", 3, $debug_file);
-	}
-
 }
 
 // init our class
