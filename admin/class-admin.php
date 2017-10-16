@@ -150,8 +150,6 @@ class Admin {
 
 
     public function wccs_add_term() {
-        error_log( print_r( $_POST, true ) );
-
         if ( ! wp_verify_nonce( $_POST['nonce'], "wccs_admin_action" ) ) {
             exit( "No naughty business please" );
         }

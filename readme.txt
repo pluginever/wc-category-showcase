@@ -8,11 +8,11 @@ Stable tag:        1.0.0
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-WooCommerce extension to showcase categories in a nice slider block
+WooCommerce extension to showcase categories in a nice slider blocks
 
 == Description ==
 WooCommerce Category Showcase is designed for WooCommerce powered e-commerce store.
-WooCommerce Category Showcase shows the categories/subcategories of an e-commerce store in a nice slider and block, from there a visitor can easily navigate to their
+WooCommerce Category Showcase shows the categories/subcategories of an e-commerce store in a nice slider and blocks, from there a visitor can easily navigate to their
 preferred product’s section without struggling to find those and increase the converting percentage of the visitors to customers.
 
 >[DEMO](http://www.demo.pluginever.com/woocommerce-category-showcase-demo/)
