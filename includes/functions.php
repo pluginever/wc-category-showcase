@@ -4,6 +4,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/**
+ * Get a specific term details
+ * @param null $id
+ *
+ * @return array|bool
+ */
 function wccs_get_term_details( $id = null ) {
     if ( null == $id ) {
         global $post;
@@ -34,7 +40,10 @@ function wccs_get_term_details( $id = null ) {
     return $response;
 }
 
-
+/**
+ * Get all WooCommerce category
+ * @return array
+ */
 function wccs_get_wc_categories() {
     global $wp_version;
     if ( version_compare( $wp_version, '4.5.0', '=<' ) ) {
