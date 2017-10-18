@@ -72,7 +72,7 @@ class Admin {
                         $html .= '<span class="category-name">' . $featured_cat['name'] . '</span>';
                         $html .= '<span class="category-description">' . wpautop( $description ) . '</span>';
                         $html .= '</span>';
-                        $html .= '<a href="#" class="tool-link tool-link-settings wccs-edit-item" data-scope="featured" data-post-id="' . $post->ID . '" data-term-id="' . $featured_cat['term_id'] . '"><i class="dashicons dashicons-admin-generic"></i></a>';
+                        //$html .= '<a href="#" class="tool-link tool-link-settings wccs-edit-item" data-scope="featured" data-post-id="' . $post->ID . '" data-term-id="' . $featured_cat['term_id'] . '"><i class="dashicons dashicons-admin-generic"></i></a>';
                         $html .= '<a href="#" class="tool-link tool-link-edit wccs-remove-item"  data-scope="featured" data-post-id="' . $post->ID . '" data-term-id="' . $featured_cat['term_id'] . '"><i class="dashicons dashicons-trash"></i></a>';
                         $html .= '</li>';
                         echo $html;
@@ -112,6 +112,7 @@ class Admin {
                         $html = '<li>';
                         $html .= '<img src="' . $additional_cat['image'] . '" alt="">';
                         $html .= '<a href="#" class="tool-link tool-link-edit wccs-remove-item" data-scope="additional" data-post-id="' . $post->ID . '" data-term-id="' . $additional_cat['term_id'] . '"><i class="dashicons dashicons-trash"></i></a>';
+                        $html .= '<span class="name">'.$additional_cat['name'].'</span>';
                         $html .= '</li>';
                         echo $html;
                     }

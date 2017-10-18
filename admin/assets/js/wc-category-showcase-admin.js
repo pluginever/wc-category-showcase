@@ -1,5 +1,5 @@
 /**
- * WooCommerce Category Showcase - v1.0.0 - 2017-10-16
+ * WooCommerce Category Showcase - v1.0.0 - 2017-10-18
  * http://pluginever.com
  *
  * Copyright (c) 2017;
@@ -41,7 +41,6 @@ window.WC_Category_Showcase_Admin = (function (window, document, $, undefined) {
                     nonce: wccs.nonce
                 },
                 success: function (response) {
-                    console.log(response);
                     toolBox.removeClass('adding-item');
                     if(undefined !== response.success && response.success === true ){
                         var html = '<li>';
@@ -52,9 +51,12 @@ window.WC_Category_Showcase_Admin = (function (window, document, $, undefined) {
                             html += '<span class="category-description"><p>'+response.data.category.desc.substr(0, 100)+'</p></span>';
                             html += '</span>';
 
-                            html += '<a href="#" class="tool-link tool-link-settings wccs-edit-item" data-scope="'+scope+'" data-term-id="'+term_id+'"><i class="dashicons dashicons-admin-generic"></i></a>';
+                            // html += '<a href="#" class="tool-link tool-link-settings wccs-edit-item" data-scope="'+scope+'" data-term-id="'+term_id+'"><i class="dashicons dashicons-admin-generic"></i></a>';
                         }
                         html += '<a href="#" class="tool-link tool-link-edit wccs-remove-item" data-scope="'+scope+'" data-term-id="'+term_id+'"><i class="dashicons dashicons-trash"></i></a>';
+                        if( scope === 'additional') {
+                            html += '<span class="name">'+response.data.category.name+'</span>';
+                        }
                         html += '</li>';
 
                         $(html).insertBefore(toolBox);

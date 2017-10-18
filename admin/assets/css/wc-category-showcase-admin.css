@@ -671,7 +671,18 @@
     overflow: hidden; }
     .wccs-admin-builder .additional-categories ul li {
       width: 200px;
-      height: 200px; }
+      height: 200px;
+      position: relative; }
+      .wccs-admin-builder .additional-categories ul li .name {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        bottom: 20px;
+        color: #fff;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 0; }
       .wccs-admin-builder .additional-categories ul li.add-new-slide {
         text-align: center; }
         .wccs-admin-builder .additional-categories ul li.add-new-slide .tools {

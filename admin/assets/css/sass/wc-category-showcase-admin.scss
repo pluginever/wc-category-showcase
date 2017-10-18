@@ -120,6 +120,18 @@
             li{
                 width: 200px;
                 height: 200px;
+                position: relative;
+                .name {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    bottom: 20px;
+                    color: #fff;
+                    font-weight: 600;
+                    background: rgba(00,00,00,0.5);
+                    padding: 5px 0;
+                }
 
                 &.add-new-slide{
                     text-align: center;
