@@ -12,9 +12,8 @@
 .woo-cs {
     max-width: 1170px;
     margin: 0 auto;
-
     .woo-cs-inner {
-        min-height: 550px;
+        //min-height: 550px;
         border-top: 1px solid #eee;
     }
 
@@ -123,18 +122,22 @@
         }
 
         .woo-cs-cat-name {
+            padding: 10px 0;
             position: absolute;
             text-align: center;
             width: 100%;
             left: 0;
             right: 0;
-            bottom: 10px;
+            bottom: 5px;
             color: #333;
+            background: #fff;
+            font-weight: normal;
             &.text-pos-top{
                 top:10px;
             }
         }
     }
+
 
     .woo-cs-left-block{
         .woo-cs-slide-img-container {

@@ -1567,7 +1567,6 @@
   max-width: 1170px;
   margin: 0 auto; }
   .woo-cs .woo-cs-inner {
-    min-height: 550px;
     border-top: 1px solid #eee; }
   .woo-cs img {
     max-width: 100%;
@@ -1647,13 +1646,16 @@
       top: 50%;
       transform: translate(0, -50%); }
   .woo-cs .woo-cs-right-block .woo-cs-cat-name {
+    padding: 10px 0;
     position: absolute;
     text-align: center;
     width: 100%;
     left: 0;
     right: 0;
-    bottom: 10px;
-    color: #333; }
+    bottom: 5px;
+    color: #333;
+    background: #fff;
+    font-weight: normal; }
     .woo-cs .woo-cs-right-block .woo-cs-cat-name.text-pos-top {
       top: 10px; }
   .woo-cs .woo-cs-left-block .woo-cs-slide-img-container {

@@ -22,7 +22,12 @@ window.WC_Category_Showcase = (function(window, document, $, undefined){
         });
 	};
 
-	$(document).ready( app.init );
+    // var $slick_carousel = $('.woo-cs-slider');
+    // $slick_carousel.on('init', function() {
+    //     $slick_carousel.css('display', 'block');
+    // });
+
+    $(document).ready( app.init );
 
 	return app;
 

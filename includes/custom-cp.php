@@ -27,11 +27,35 @@ function wccs_custom_post_type() {
         'show_in_menu'       => true,
         'query_var'          => false,
         'capability_type'    => 'post',
+        'menu_icon'          => 'dashicons-grid-view',
         'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => null,
-        'supports'           => array( 'title')
+        'supports'           => array( 'title' )
     );
 
     register_post_type( 'wccs_showcase', $args );
+}
+
+
+function wccs_shortocode_metabox( ) {
+    add_meta_box(
+        'wccs-shortcode',
+        __( 'Short Code' ),
+        'wccs_shortocode_metabox_callback',
+        'wccs_showcase',
+        'side',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'wccs_shortocode_metabox', 0 );
+
+
+function wccs_shortocode_metabox_callback($post){
+
+    if(! isset($post->ID) || empty($post->ID)){
+        echo __('Please publish the post first. Shortcode will automatically visible here afterward.', '');
+    }else{
+        echo "<pre><code>[wccs_showcase id='{$post->ID}']</code></pre>";
+    }
 }

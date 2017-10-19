@@ -19,7 +19,7 @@ class Shortcode {
         }
         $featured_categories = get_post_meta( $attr['id'], '_wccs_featured_categories', true );
         $additional_categories = get_post_meta( $attr['id'], '_wccs_additional_categories', true );
-        $title_enabled = get_post_meta( $attr['id'], 'wcss_show_title', true);
+        $title_enabled = get_post_meta( $attr['id'], '_wcss_show_title', true);
         ob_start();
         ?>
         <div class="woo-cs has-border">

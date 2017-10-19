@@ -309,7 +309,7 @@ class Admin {
      * @param $post_id
      */
     public function save_meta( $post_id ) {
-        if ( ! 'wccs_showcase' == get_post_type( $post_id ) ) {
+        if ( 'wccs_showcase' !== get_post_type( $post_id ) ) {
             return;
         }
         if ( ! current_user_can( 'edit_post' ) ) {
