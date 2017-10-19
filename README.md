@@ -92,5 +92,5 @@ Place the snippet where you want. Change the id with the appropriate one.
 `<?php echo do_shortcode('[wccs_showcase id="showcase id"]'); ?>`
 ## Changelog ##
 
-### 0.1.0 ###
+### 1.0.0 ###
 * First release
