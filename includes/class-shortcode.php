@@ -39,12 +39,12 @@ class Shortcode {
                                 $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$category_link.'">';
                                 $html .= '<span class="woo-cs-slide-img-container">';
                                 $html .= '<img src="'.$featured_category['image'].'" alt="">';
-                                $html .= '</span>';
+                                $html .= '</a>';
+                                      $html .= '</span>';
                                 $html .= '<span class="woo-cs-cat-details">';
                                 $html .= '<span class="woo-cs-cat-title">'.$featured_category['name'].'</span>';
                                 $html .= '<span class="woo-cs-cat-des">'.$featured_category['desc'].'</span>';
                                 $html .= '</span>';
-                                $html .= '</a>';
                                 $html .= '</div>';
                                 echo $html;
                             }
@@ -70,7 +70,7 @@ class Shortcode {
                             $html .= '<div class="woo-cs-box">';
                             $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$category_link.'">';
 
-                            $html .= '<span class="woo-cs-thumb-container img-middle">';
+                            $html .= '<span class="woo-cs-thumb-container">';
                             $html .= '<img src="'.$image.'" alt="" class="woo-cs-image woo-cs-image-thumb">';
                             $html .= '</span>';
                             $html .= '<span class="woo-cs-cat-name">'.$additional_category['name'].'</span>';

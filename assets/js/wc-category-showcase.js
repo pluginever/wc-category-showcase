@@ -1,5 +1,5 @@
 /**
- * WooCommerce Category Showcase - v1.0.0 - 2017-10-19
+ * WooCommerce Category Showcase - v1.0.0 - 2017-10-20
  * http://pluginever.com
  *
  * Copyright (c) 2017;
@@ -18,9 +18,15 @@ window.WC_Category_Showcase = (function(window, document, $, undefined){
 	app.init = function() {
         $('.woo-cs-slider').slick({
             autoplay: true,
-            dots: true,
+            dots: false,
             speed: 500
         });
+
+    $(window).load(function() {
+        var stHeight = $('.slick-track').height();
+        $('.slick-slide').css('height',stHeight + 'px' );
+    });
+
 	};
 
     // var $slick_carousel = $('.woo-cs-slider');
