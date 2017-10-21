@@ -69,9 +69,10 @@ git tag -a "$NEWVERSION" -m "Tagging version $NEWVERSION"
 
 echo "Pushing latest commit to origin, with tags"
 git checkout master
-git marge develop
+git merge develop
 git push origin master --tags
 
+git checkout develop
 # make sure the destination dir exists
 svn mkdir $TRUNK 2> /dev/null
 svn add $TRUNK 2> /dev/null
