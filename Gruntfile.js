@@ -178,6 +178,8 @@ module.exports = function (grunt) {
                     '!**/sass/**',
                     '!build/**',
                     '!**/*.md',
+                    '!**/*.map',
+                    '!**/*.sh',
                     '!.idea/**',
                     '!bin/**',
                     '!.git/**',
@@ -246,7 +248,8 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'notify:server']);
 
 
-    grunt.registerTask('release', ['makepot', 'zip']);
-    grunt.registerTask('zip', ['clean', 'copy', 'compress']);
+    grunt.registerTask('release', ['makepot']);
+    grunt.registerTask('build', ['clean', 'copy']);
+    grunt.registerTask('zip', ['compress']);
     grunt.util.linefeed = '\n';
 };

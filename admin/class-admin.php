@@ -20,7 +20,10 @@ class Admin {
         add_action( 'save_post', array( $this, 'save_meta' ) );
     }
 
-    public function load_admin_scripts() {
+    public function load_admin_scripts( $hook ) {
+//        wp_die($hook);
+        if( ! in_array( $hook, array('post-new.php', 'post.php'))) return ;
+
         $suffix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min';
         wp_register_style( 'wc-category-showcase-admin', PLVR_WCCS_ADMIN_ASSETS . "/css/wc-category-showcase-admin{$suffix}.css", [], date( 'i' ) );
         wp_register_script( 'wc-category-showcase-admin', PLVR_WCCS_ADMIN_ASSETS . "/js/wc-category-showcase-admin{$suffix}.js", [
@@ -32,13 +35,16 @@ class Admin {
             'wp-color-picker'
         ], date( 'i' ), true );
         global $post;
-        wp_localize_script( 'wc-category-showcase-admin', 'wccs', [
-            'ajaxurl'             => admin_url( 'admin-ajax.php' ),
-            'nonce'               => wp_create_nonce( 'wccs_admin_action' ),
-            'post_id'             => $post->ID,
-            'additional_max'      => 6,
-            'additional_selected' => count( get_post_meta( $post->ID, '_wccs_additional_categories', true ) ),
-        ] );
+        if( isset($post->ID )){
+            wp_localize_script( 'wc-category-showcase-admin', 'wccs', [
+                'ajaxurl'             => admin_url( 'admin-ajax.php' ),
+                'nonce'               => wp_create_nonce( 'wccs_admin_action' ),
+                'post_id'             => $post->ID,
+                'additional_max'      => 6,
+                'additional_selected' => count( get_post_meta( $post->ID, '_wccs_additional_categories', true ) ),
+            ] );
+        }
+
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_style( 'wc-category-showcase-admin' );
         wp_enqueue_script( 'wc-category-showcase-admin' );
@@ -63,7 +69,8 @@ class Admin {
                 <ul class="featured-categories-list">
                     <?php
                     $featured_categories = get_post_meta( $post->ID, '_wccs_featured_categories', true );
-                    foreach ( $featured_categories as $featured_cat ) {
+                    foreach ( $featured_categories as $featured_cat_id ) {
+                        $featured_cat = wccs_get_term_details($featured_cat_id);
                         $description = ( strlen( $featured_cat['desc'] ) > 100 ) ? substr( $featured_cat['desc'], 0, 100 ) . '...' : $featured_cat['desc'];
 
                         $html = '<li>';
@@ -108,7 +115,8 @@ class Admin {
                 <ul class="featured-categories-list">
                     <?php
                     $additional_categories = get_post_meta( $post->ID, '_wccs_additional_categories', true );
-                    foreach ( $additional_categories as $additional_cat ) {
+                    foreach ( $additional_categories as $additional_cat_id ) {
+                        $additional_cat = wccs_get_term_details($additional_cat_id);
                         $html = '<li>';
                         $html .= '<img src="' . $additional_cat['image'] . '" alt="">';
                         $html .= '<a href="#" class="tool-link tool-link-edit wccs-remove-item" data-scope="additional" data-post-id="' . $post->ID . '" data-term-id="' . $additional_cat['term_id'] . '"><i class="dashicons dashicons-trash"></i></a>';
@@ -209,13 +217,11 @@ class Admin {
             wp_send_json_error( array( 'msg' => __( 'Category already added', 'wc-category-showcase' ) ) );
         }
 
-        $saved_categories [] = $term;
+        $saved_categories [] = $term_id;
         $saved_categories    = array_filter( $saved_categories );
         update_post_meta( $post_id, $meta_key, $saved_categories );
 
-        $key = $this->search_array_by_term_id( $term_id, $saved_categories );
-
-        wp_send_json_success( array( 'index' => $key, 'category' => $saved_categories[ $key ] ) );
+        wp_send_json_success( array( 'category' => $term ) );
 
 
         wp_die();
@@ -251,21 +257,16 @@ class Admin {
         $saved_categories = get_post_meta( $post_id, $meta_key, true );
 
 
-        $term_ids = wp_list_pluck( $saved_categories, 'term_id' );
-
-        if ( ! in_array( $term_id, $term_ids ) ) {
+        if ( ! in_array( $term_id, $saved_categories ) ) {
             wp_send_json_error( array( 'msg' => __( 'Category not in selection', 'wc-category-showcase' ) ) );
         }
 
-        foreach ( $saved_categories as $key => $category ) {
-
-            if ( (int) $category['term_id'] == (int) $term_id ) {
-                unset( $saved_categories[ $key ] );
-            };
-        }
+        $key = array_search($term_id, $saved_categories);
 
         $saved_categories = array_filter( $saved_categories );
-        update_post_meta( $post_id, $meta_key, $saved_categories );
+
+        unset( $saved_categories[$key] );
+        update_post_meta( $post_id, $meta_key,  $saved_categories);
         wp_send_json_success();
 
         wp_die();

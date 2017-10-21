@@ -17,6 +17,7 @@ class Shortcode {
         if ( false === get_post_status( $attr['id'] ) ) {
             return;
         }
+
         $featured_categories = get_post_meta( $attr['id'], '_wccs_featured_categories', true );
         $additional_categories = get_post_meta( $attr['id'], '_wccs_additional_categories', true );
         $title_enabled = get_post_meta( $attr['id'], '_wcss_show_title', true);
@@ -33,10 +34,10 @@ class Shortcode {
                         <div class="woo-cs-slider">
 
                             <?php
-                            foreach ( $featured_categories as $featured_category ){
-                                $category_link = get_term_link($featured_category['term_id'], 'product_cat');
+                            foreach ( $featured_categories as $featured_category_id ){
+                                $featured_category = wccs_get_term_details( $featured_category_id );
                                 $html = '<div>';
-                                $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$category_link.'">';
+                                $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$featured_category['link'].'">';
                                 $html .= '<span class="woo-cs-slide-img-container">';
                                 $html .= '<img src="'.$featured_category['image'].'" alt="">';
                                 $html .= '</a>';
@@ -62,16 +63,14 @@ class Shortcode {
                     <div class="plvr-grid-noGutter-equalHeight">
 
                         <?php
-                        foreach ( $additional_categories as $additional_category ){
-                            $image = $additional_category['image'];
-                            $category_link = get_term_link($additional_category['term_id'], 'product_cat');
-
+                        foreach ( $additional_categories as $additional_category_id ){
+                            $additional_category = wccs_get_term_details( $additional_category_id );
                             $html = '<div class="plvr-column-4-middle">';
                             $html .= '<div class="woo-cs-box">';
-                            $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$category_link.'">';
+                            $html .= '<a class="woo-cs-slide woo-cs-box-link" href="'.$additional_category['link'].'">';
 
                             $html .= '<span class="woo-cs-thumb-container">';
-                            $html .= '<img src="'.$image.'" alt="" class="woo-cs-image woo-cs-image-thumb">';
+                            $html .= '<img src="'.$additional_category['image'].'" alt="" class="woo-cs-image woo-cs-image-thumb">';
                             $html .= '</span>';
                             $html .= '<span class="woo-cs-cat-name">'.$additional_category['name'].'</span>';
 

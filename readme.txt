@@ -1,7 +1,7 @@
 === WooCommerce Category Showcase ===
 Contributors:      manikmist09, pluginever
 Donate link:
-Tags: WooCommerce, WooCommerce Category, WooCommerce Category Slider, WooCommerce Category Showcase, Slider
+Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider, product category carousel, product category slider, woocommerce category slider plugin free, product category carousel, product category rotators, product category slider, products category slider, responsive product category slider, woo category slider, woocommerce, woocommerce product category carousel, WooCommerce Products, woocommerce products category slider, woocommerce slider, carousel, woocommerce image slider, woocommerce responsive slider, woocommerce advance slider, best woocommerce product slider, easy woocommerce product slider, woocommerce slider free, woocommerce slider plugin, slider for woocommerce, product slider carousel for woocommerce, woocommerce product category slider and carousel plugin
 Requires at least: 3.6.0
 Tested up to:      4.8.2
 Requires PHP:      5.6
@@ -14,20 +14,19 @@ WooCommerce extension to showcase categories in a nice slider block.
 == Description ==
 WooCommerce Category Showcase is a unique plugin for your WooCommerce store to showcase your product categories and subcategories in nice blocks and slider.
 
-WooCommerce Category Showcase supports two types of category selection. 1) Featured Categories & 2) Additional Categories
+>[DEMO](http://www.demo.pluginever.com/woocommerce-category-showcase-demo/)   |  [Support Forum](https://www.pluginever.com/support/) |
+
+WooCommerce Category Showcase supports two types of category selections.
+
+* Featured Categories &
+* Additional Categories
+
 Featured categories will be shown inside a nice and fancy slider with category name & description where additional categories will be in a nice six blocks with
 categories names.
 
-WooCommerce Category Showcase has two parts one is WooCommerce category slider and another part is WooCommerce category blocks. WooCommerce category slider is used for
-showing featured categories on the left side of the showcase in a nice box. WooCommerce category blocks support additional categories, you can add maximum 6 blocks as
-additional categories. Where WooCommerce category slider part supports a unlimited number of categories.
+WooCommerce Category Showcase has two parts one is WooCommerce category slider and another part is WooCommerce category blocks. WooCommerce category slider is used for showing featured categories on the left side of the showcase in a nice box. WooCommerce category blocks support additional categories, you can add maximum 6 blocks as additional categories. Where WooCommerce category slider part supports a unlimited number of categories.
 
 WooCommerce Category Showcase has built-in shortcode builder with a nice easy interface where you can add and remove your selected category from a drop-down menu.
-
-= Contribute =
-This may have bugs and lack of many features. If you want to contribute on this project, you are more than welcome. For reporting any bugs or feature request open issue on [Github](https://github.com/pluginever/wc-category-showcase).
-
->[DEMO](http://www.demo.pluginever.com/woocommerce-category-showcase-demo/)
 
 ###Shortocode
 `[wccs_showcase id="showcase id"]`
@@ -45,6 +44,12 @@ This may have bugs and lack of many features. If you want to contribute on this 
 * Light Weight
 * Fast Loading
 * Responsive
+
+### You may also like our other plugins
+>[Woo Category Slider By PluginEver](https://wordpress.org/plugins/woo-category-slider-by-pluginever/)  |
+
+= Contribute =
+This may have bugs and lack of many features. If you want to contribute on this project, you are more than welcome. For reporting any bugs or feature request open issue on [Github](https://github.com/pluginever/wc-category-showcase).
 
 == Installation ==
 ###Automatic Install From WordPress Dashboard
@@ -100,6 +105,9 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.0.1 =
+* Fix dynamic image and description
+* Feature Default category image
 
 = 1.0.0 =
 * First release

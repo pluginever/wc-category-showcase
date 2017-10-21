@@ -21,10 +21,10 @@ window.WC_Category_Showcase = (function(window, document, $, undefined){
             speed: 500
         });
 
-    $(window).load(function() {
-        var stHeight = $('.slick-track').height();
-        $('.slick-slide').css('height',stHeight + 'px' );
-    });
+    // $(window).load(function() {
+    //     var stHeight = $('.slick-track').height();
+    //     $('.slick-slide').css('height',stHeight + 'px' );
+    // });
 
 	};
 

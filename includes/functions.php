@@ -19,19 +19,24 @@ function wccs_get_term_details( $id = null ) {
     if ( ! $id ) {
         return [];
     }
-    $term = get_term($id, 'product_cat');
-    if( ! $term ){
+    $term = get_term( $id, 'product_cat' );
+    if ( ! $term ) {
         return false;
     }
 
     $thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
     $image_url    = wp_get_attachment_url( $thumbnail_id ) ? wp_get_attachment_url( $thumbnail_id ) : '';
 
+    if( empty($image_url) ){
+        $image_url = PLVR_WCCS_ASSETS . '/images/placeholder.jpg';
+    }
+
     $response = [
-        'term_id'     => $term->term_id,
+        'term_id'  => $term->term_id,
         'name'     => $term->name,
         'desc'     => term_description( $term->term_id, 'product_cat' ),
         'image'    => $image_url,
+        'link'    => get_term_link($term->term_id, 'product_cat'),
         'bg_color' => 'rgba(0, 0, 0, 0.2)',
         'color'    => '#fff'
     ];
