@@ -62,17 +62,14 @@ cd $SRC_DIR
 echo -e "Enter a commit message for this new version: \c"
 read COMMITMSG
 git commit -am "$COMMITMSG"
-git push origin develop
 
 echo "Tagging new version in git"
 git tag -a "$NEWVERSION" -m "Tagging version $NEWVERSION"
 
 echo "Pushing latest commit to origin, with tags"
-git checkout master
-git merge develop
+git push origin master
 git push origin master --tags
 
-git checkout develop
 # make sure the destination dir exists
 svn mkdir $TRUNK 2> /dev/null
 svn add $TRUNK 2> /dev/null
