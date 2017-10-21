@@ -39,6 +39,7 @@ echo
 if [ "$READMEVERSION" -ne "$PLUGINVERSION" ]; then echo "Version in readme.txt & $MAINFILE don't match. Exiting...."; exit 1; fi
 
 NEWVERSION=$READMEVERSION
+echo $NEWVERSION
 
 #remove build dir
 echo "Removing Build directory"
@@ -50,9 +51,9 @@ grunt build > /dev/null 2>&1
 
 echo ".........................................."
 
-if git show-ref --tags --quiet --verify -- "refs/tags/$NEWVERSION"
+if git show-ref --tags --quiet --verify -- "refs/tags/v$NEWVERSION"
     then
-		echo "Version $NEWVERSION already exists as git tag. Exiting....";
+		echo "Version v$NEWVERSION already exists as git tag. Exiting....";
 		exit 1;
 	else
 		echo "Git version does not exist. Let's proceed..."
