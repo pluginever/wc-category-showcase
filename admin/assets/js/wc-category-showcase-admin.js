@@ -1,5 +1,5 @@
 /**
- * WooCommerce Category Showcase - v1.0.0 - 2018-03-12
+ * WooCommerce Category Showcase - v1.0.3 - 2018-03-19
  * http://pluginever.com
  *
  * Copyright (c) 2018;
