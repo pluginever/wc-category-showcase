@@ -135,7 +135,12 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
-= 1.0.3=
+= 1.0.4 =
+* Bootstrap compatible
+* Category description height fix
+* Placeholder image add
+
+= 1.0.3 =
 * WooCommerce compatibility fix
 * Improved UI
 * Fix Loading issue
