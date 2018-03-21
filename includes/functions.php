@@ -16,6 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 function wccs_get_term_details( $id, $post_id = false, $type = 'featured' ) {
     $term = get_term( $id, 'product_cat' );
 
+
+    if( is_wp_error( $term)){
+        return false;
+    }
+
     if ( ! $term ) {
         return false;
     }

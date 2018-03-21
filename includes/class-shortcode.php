@@ -35,13 +35,18 @@ class Shortcode {
             'wccs_additional_content_bg'  => '#fff',
         ];
 
-        foreach ( $params as $key => $val ){
-            $meta = get_post_meta( $post_id, $key, true );
-            if( false !== $meta  ){
-                if( $meta == '') continue;
-                $params[$key] = $meta;
-            }
+
+        $featured_sets = get_post_meta( $post_id, 'wccs_featured_categories', true );
+        if( false !== $featured_sets  ){
+            $params['wccs_featured_categories'] =  $featured_sets;
         }
+
+        $additional_sets = get_post_meta( $post_id, 'wccs_additional_categories', true );
+        if( false !== $additional_sets  ){
+            $params['wccs_additional_categories'] =  $additional_sets;
+        }
+
+        $params = apply_filters('wccs_showcase_settings', $params, $post_id);
 
         $featured_categories   = $params['wccs_featured_categories'];
         $additional_categories = $params['wccs_additional_categories'];
