@@ -51,7 +51,7 @@ class Shortcode {
         $featured_categories   = $params['wccs_featured_categories'];
         $additional_categories = $params['wccs_additional_categories'];
 
-        if ( is_array( $additional_categories ) && count( $additional_categories > 6 ) ) {
+        if ( is_array( $additional_categories ) && count( $additional_categories ) > 6 ) {
             $additional_categories = array_slice( $additional_categories, 0, 6 );
         }
 
