@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.0.0
+ * Version:     1.0.4
  * Author:      PluginEver
  * Author URI:  http://pluginever.com
  * License:     GPLv2+
@@ -44,7 +44,7 @@ class WC_Category_Showcase {
      * @since 1.0.0
      * @var  string
      */
-	public $version = '1.0.0';
+	public $version = '1.0.4';
 
 	/**
 	 * Initializes the class
@@ -122,6 +122,10 @@ class WC_Category_Showcase {
 	 * @return void
 	 */
 	function install() {
+        //save install date
+        if ( false == get_option( 'wccs_install_date' ) ) {
+            update_option( 'wccs_install_date', current_time( 'timestamp' ) );
+        }
 
 
 	}
@@ -168,11 +172,34 @@ class WC_Category_Showcase {
 		require PLVR_WCCS_INCLUDES .'/functions.php';
 		require PLVR_WCCS_INCLUDES .'/custom-cp.php';
 		require PLVR_WCCS_INCLUDES .'/class-shortcode.php';
+		require PLVR_WCCS_INCLUDES .'/metabox/class-metabox.php';
+        require  PLVR_WCCS_ADMIN_PATH . '/class-admin.php';
+        require  PLVR_WCCS_ADMIN_PATH . '/class-metabox.php';
+        require PLVR_WCCS_INCLUDES .'/class-insights.php';
+        require PLVR_WCCS_INCLUDES .'/class-tracker.php';
+    }
 
-		if( is_admin() ){
-		    require  PLVR_WCCS_ADMIN_PATH . '/class-admin.php';
+    /**
+     * Do plugin upgrades
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    function plugin_upgrades() {
+
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
         }
-	}
+
+        require_once PLVR_WCCS_INCLUDES . '/class-upgrades.php';
+
+        $upgrader = new WCCS_Upgrades();
+
+        if ( $upgrader->needs_update() ) {
+            $upgrader->perform_updates();
+        }
+    }
 
 	/**
 	 * Init Hooks
@@ -183,7 +210,10 @@ class WC_Category_Showcase {
 	 */
 	private function init_actions() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_assets') );
-	}
+        add_action( 'admin_init', array( $this, 'plugin_upgrades' ) );
+        add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( __CLASS__, 'plugin_action_links' ) );
+
+    }
 
 	/**
 	 * Instantiate classes
@@ -194,6 +224,8 @@ class WC_Category_Showcase {
 	 */
 	private function instantiate() {
         new \Pluginever\WCCS\Shortcode();
+        new \Pluginever\WCCCS\Metabox();
+        new \Pluginever\WCCS\Tracker();
 	}
 
 	/**
@@ -212,6 +244,24 @@ class WC_Category_Showcase {
 		wp_enqueue_script('wc-category-showcase');
 	}
 
+
+
+    /**
+     * @param $links
+     *
+     * @return array
+     */
+    public static function plugin_action_links( $links ) {
+        $doc_link = 'https://www.pluginever.com/docs/woocommerce-category-showcase/';
+        $action_links = [];
+        if ( ! wc_category_showcase_is_pro_active() ) {
+            $action_links['Upgrade'] = '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Upgrade To Pro', 'wccs' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Upgrade To Pro', 'woocatlider' ) . '</a>';
+        }
+        $action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wccs' ) ) . '">' . __( 'Documentation', 'wccs' ) . '</a>';
+
+
+        return array_merge( $action_links, $links );
+    }
 
 }
 

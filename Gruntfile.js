@@ -68,7 +68,7 @@ module.exports = function (grunt) {
             all: {
                 files: {
                     'assets/css/wc-category-showcase.css': 'assets/css/sass/wc-category-showcase.scss',
-                    'admin/assets/css/wc-category-showcase-admin.css': 'admin/assets/css/sass/wc-category-showcase-admin.scss',
+                    //'admin/assets/css/wc-category-showcase-admin.css': 'admin/assets/css/sass/wc-category-showcase-admin.scss',
                 }
             }
         },
@@ -248,7 +248,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'notify:server']);
 
 
-    grunt.registerTask('release', ['makepot']);
+    grunt.registerTask('release', ['makepot', 'concat', 'uglify', 'sass', 'cssmin']);
     grunt.registerTask('build', ['clean', 'copy']);
     grunt.registerTask('zip', ['compress']);
     grunt.util.linefeed = '\n';
