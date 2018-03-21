@@ -919,6 +919,10 @@
   visibility: hidden;
   transition: opacity 1.5s ease;
   -webkit-transition: opacity 1.5s ease; }
+  .woo-cs div[class*='col-'] {
+    padding: 0px !important; }
+  .woo-cs div[class*='row'] {
+    margin: 0 auto !important; }
   .woo-cs .woo-cs-inner {
     border-top: 1px solid #eee; }
   .woo-cs.initialized {
@@ -959,7 +963,6 @@
       font-size: 1em;
       font-family: inherit;
       line-height: 18px;
-      max-height: 46px;
       overflow: hidden;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       color: inherit; }

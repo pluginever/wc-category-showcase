@@ -34,6 +34,16 @@
     visibility: hidden;
     transition: opacity 1.5s ease;
     -webkit-transition: opacity 1.5s ease;
+    //bootrap fix
+    div[class*='col-']{
+        padding:0px !important;
+    }
+
+    div[class*='row']{
+        margin: 0 auto !important;
+    }
+
+
     .woo-cs-inner {
         //min-height: 550px;
         border-top: 1px solid #eee;
@@ -84,11 +94,11 @@
             font-size: 1em;
             font-family: inherit;
             line-height: 18px;
-            max-height: 46px;
             overflow: hidden;
             border-top: 1px solid rgba(255, 255, 255, .3);
             color: inherit;
         }
+
 
         .woo-cs-cat-button {
             color: #fff;
