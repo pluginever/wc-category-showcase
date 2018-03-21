@@ -77,7 +77,7 @@ class Pluginever_Insights {
         // cron events
         add_action( 'cron_schedules', array( $this, 'add_weekly_schedule' ) );
         add_action( $this->slug . '_tracker_send_event', array( $this, 'send_tracking_data' ) );
-         add_action( 'admin_init', array( $this, 'send_tracking_data' ) ); // test
+        add_action( 'admin_init', array( $this, 'send_tracking_data' ) ); // test
     }
 
     /**
@@ -229,7 +229,8 @@ class Pluginever_Insights {
      * @return boolean
      */
     private function is_local_server() {
-        return in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) );
+//        return in_array( $_SERVER['REMOTE_ADDR'], array( '127.0.0.1', '::1' ) );
+        return false;
     }
 
     /**

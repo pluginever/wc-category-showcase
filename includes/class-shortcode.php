@@ -37,7 +37,8 @@ class Shortcode {
 
         foreach ( $params as $key => $val ){
             $meta = get_post_meta( $post_id, $key, true );
-            if(false !== $meta ){
+            if( false !== $meta  ){
+                if( $meta == '') continue;
                 $params[$key] = $meta;
             }
         }

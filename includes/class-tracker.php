@@ -11,7 +11,7 @@ class Tracker extends \Pluginever_Insights {
 
         $notice = __( 'Want to help make <strong>WooCommerce  Category Showcase</strong> even more awesome? Allow PluginEver to collect non-sensitive diagnostic data and usage information.', 'wccs' );
 
-        parent::__construct( 'woo-category-slider-by-pluginever', 'Woo Category Slider', PLVR_WCS_FILE, $notice );
+        parent::__construct( 'wc-category-showcase', 'WooCommerce Category Showcase', PLVR_WCCS_FILE, $notice );
     }
 
     /**
