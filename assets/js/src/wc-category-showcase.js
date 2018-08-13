@@ -16,6 +16,8 @@ window.WC_Category_Showcase = (function (window, document, $, undefined) {
 
 
     app.init = function () {
+
+
         function is_mobile() {
             var agents = ['android', 'webos', 'iphone', 'ipad', 'blackberry'];
             for(var i in agents) {
@@ -53,6 +55,12 @@ window.WC_Category_Showcase = (function (window, document, $, undefined) {
             autoplay: true,
             dots: false,
             speed: 500
+        });
+
+        $(".woo-cs-thumb-container").imgLiquid({
+            fill: true,
+            horizontalAlign: "center",
+            verticalAlign: "center"
         });
 
 
