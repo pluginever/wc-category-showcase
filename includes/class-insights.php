@@ -143,7 +143,7 @@ class Pluginever_Insights {
             'url'              => home_url(),
             'site'             => get_bloginfo( 'name' ),
             'admin_email'      => get_option( 'admin_email' ),
-            'user_name'        => $admin_user->display_name,
+            'user_name'        => empty($admin_user->display_name)?'':$admin_user->display_name,
             'user_email'       => $admin_user->user_email,
             'plugin'           => $this->slug,
             'server'           => $this->get_server_info(),

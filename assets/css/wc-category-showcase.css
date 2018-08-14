@@ -1014,7 +1014,8 @@
     text-align: center;
     position: relative;
     left: 0;
-    right: 0; }
+    right: 0;
+    min-height: 100%; }
     .woo-cs .woo-cs-right-block .woo-cs-thumb-container.img-top {
       top: 0; }
     .woo-cs .woo-cs-right-block .woo-cs-thumb-container.img-bottom {
