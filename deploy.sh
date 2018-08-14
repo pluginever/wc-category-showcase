@@ -24,21 +24,27 @@ READMEVERSION=`grep "^Stable tag:" $SRC_DIR/readme.txt | awk -F' ' '{print $NF}'
 PLUGINVERSION=`grep "Version:" $SRC_DIR/$MAINFILE | awk -F' ' '{print $NF}'`
 PLUGINNAME=`grep "Plugin Name" $SRC_DIR/$MAINFILE  |  awk -F':' '{print $2}' | tr -d '' `
 
+SVNPLUGINNAME= `grep "Plugin Name" $TRUNK/$MAINFILE  |  awk -F':' '{print $2}' | tr -d '' `
+SVNPLUGINVERSION=`grep "Version:" $TRUNK/$MAINFILE | awk -F' ' '{print $NF}'`
 echo ".........................................."
 echo "Preparing to deploy $PLUGINNAME"
 echo
-echo "readme version: $READMEVERSION"
-echo "$MAINFILE version: $PLUGINVERSION"
+echo "New version: $PLUGINVERSION"
 echo
-echo "(Current version: $PLUGINVERSION)"
+echo "Previous version: $SVNPLUGINVERSION"
 echo
 echo ".........................................."
 echo
+if [ "$PLUGINVERSION" == "$SVNPLUGINVERSION" ]
+ then echo "Version in development & svn same. Exiting....";
+ exit 1;
+fi
 
-
-if [ "$READMEVERSION" -ne "$PLUGINVERSION" ]; then echo "Version in readme.txt & $MAINFILE don't match. Exiting...."; exit 1; fi
-
-NEWVERSION=$READMEVERSION
+echo -e "Did you tagged version(v$SVNPLUGINVERSION):  (y/n)\c"
+read TAGGED
+if [ "$TAGGED" != "y" ]
+ then svn cp -m"tagging v$PLUGINVERSION" https://plugins.svn.wordpress.org/$DIR_NAME/trunk https://plugins.svn.wordpress.org/$DIR_NAME/tags/$SVNPLUGINVERSION;
+fi
 
 #remove build dir
 echo "Removing Build directory"
@@ -50,35 +56,30 @@ grunt build > /dev/null 2>&1
 
 echo ".........................................."
 
-if git show-ref --tags --quiet --verify -- "refs/tags/$NEWVERSION"
-    then
-		echo "Version $NEWVERSION already exists as git tag. Exiting....";
-		exit 1;
-	else
-		echo "Git version does not exist. Let's proceed..."
-fi
-
-cd $SRC_DIR
-echo -e "Enter a commit message for this new version: \c"
-read COMMITMSG
-git commit -am "$COMMITMSG"
-
-echo "Tagging new version in git"
-git tag -a "$NEWVERSION" -m "Tagging version $NEWVERSION"
-
-echo "Pushing latest commit to origin, with tags"
-git push origin master
-git push origin master --tags
-
 # make sure the destination dir exists
 svn mkdir $TRUNK 2> /dev/null
 svn add $TRUNK 2> /dev/null
 
-# delete everything except .svn dirs
-for file in $(find $TRUNK/* -not -path "*.svn*")
+rsync -r --exclude='*.git*' --exclude="node_modules" --exclude="build" --exclude="*.scss*" $BUILD_DIR/* $TRUNK
+cd $TRUNK
+
+echo -e"Updating SVN repo \c"
+svn up
+# check .svnignore
+for file in $(cat "$TRUNK/.svnignore" 2>/dev/null)
 do
-    rm $file 2>/dev/null
-    #echo $file
+
+    echo "Removing from svn ignore $file"
+    rm -rf $file
 done
 
-rsync -r  $BUILD_DIR/* $TRUNK
+
+# svn addremove
+svn stat | grep '^\?' | awk '{print $2}' | xargs svn add > /dev/null 2>&1
+svn stat | grep '^\!' | awk '{print $2}' | xargs svn rm  > /dev/null 2>&1
+
+svn stat
+
+echo -e "Deploying now"
+
+svn ci -m "Deploy $PLUGINNAME v$PLUGINVERSION"
