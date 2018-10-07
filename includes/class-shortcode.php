@@ -23,7 +23,7 @@ class Shortcode {
         $params = [
             'wccs_featured_categories'    => [],
             'wccs_additional_categories'  => [],
-            'wccs_show_block_title'       => '1',
+            'wccs_show_block_title'       => '0',
             'wccs_featured_show_title'    => '1',
             'wccs_featured_show_desc'     => '1',
             'wccs_featured_show_button'   => '1',
@@ -54,7 +54,7 @@ class Shortcode {
         if ( is_array( $additional_categories ) && count( $additional_categories ) > 6 ) {
             $additional_categories = array_slice( $additional_categories, 0, 6 );
         }
-
+        var_dump($params);
         ob_start();
 
         $additional_cats_width = [];
