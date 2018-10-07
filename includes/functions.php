@@ -109,6 +109,8 @@ add_action( 'wp_ajax_wccs_get_term_html', 'wccs_get_term_html' );
 
 
 function wc_category_showcase_is_pro_active(){
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-    return is_plugin_active('wc-category-showcase-pro/wc-category-showcase-pro.php');
+    if ( in_array( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+        return true;
+    }
+    return false;
 }
