@@ -135,6 +135,13 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.0.7 =
+* Remove Accidentally added debug code
+
+= 1.0.6 =
+* Image height fix
+* Compatibility fix with WC v3.4.5
+
 = 1.0.5 =
 * Image height fix
 * Compatibility fix with WP v4.9.8

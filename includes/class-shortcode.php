@@ -54,7 +54,6 @@ class Shortcode {
         if ( is_array( $additional_categories ) && count( $additional_categories ) > 6 ) {
             $additional_categories = array_slice( $additional_categories, 0, 6 );
         }
-        var_dump($params);
         ob_start();
 
         $additional_cats_width = [];
