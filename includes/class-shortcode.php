@@ -45,6 +45,10 @@ class Shortcode {
         if( false !== $additional_sets  ){
             $params['wccs_additional_categories'] =  $additional_sets;
         }
+        $show_title = get_post_meta( $post_id, 'wccs_show_block_title', true );
+	    if( false !== $show_title  ){
+		    $params['wccs_show_block_title'] =  $show_title;
+	    }
 
         $params = apply_filters('wccs_showcase_settings', $params, $post_id);
 
