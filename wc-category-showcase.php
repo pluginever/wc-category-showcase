@@ -52,24 +52,13 @@ class WC_Category_Showcase {
 	public $version = '1.0.7';
 
 	/**
-	 * Initializes the class
+	 * The single instance of the class.
 	 *
-	 * Checks for an existing instance
-	 * and if it does't find one, creates it.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return object Class instance
+	 * @var WC_Category_Showcase
+	 * @since 1.0.8
 	 */
-	public static function init() {
-		static $instance = false;
+	protected static $instance = null;
 
-		if ( ! $instance ) {
-			$instance = new self();
-		}
-
-		return $instance;
-	}
 
 	/**
 	 * Constructor for the class
@@ -99,8 +88,8 @@ class WC_Category_Showcase {
 		// Initialize the action hooks
 		$this->init_actions();
 
-		// instantiate classes
-		$this->instantiate();
+		// init_plugin classes
+		$this->init_plugin();
 
 		// Loaded action
 		do_action( 'wc_category_showcase' );
@@ -182,7 +171,7 @@ class WC_Category_Showcase {
 		require PLVR_WCCS_ADMIN_PATH . '/class-metabox.php';
 		require PLVR_WCCS_INCLUDES . '/class-insights.php';
 		require PLVR_WCCS_INCLUDES . '/class-tracker.php';
-		if(is_admin()){
+		if ( is_admin() && ! $this->is_pro_installed() ) {
 			require PLVR_WCCS_INCLUDES . '/class-promotion.php';
 		}
 	}
@@ -210,6 +199,18 @@ class WC_Category_Showcase {
 	}
 
 	/**
+	 * Determines if the pro version installed.
+	 *
+	 * @return bool
+	 * @since 1.0.0
+	 *
+	 */
+	public static function is_pro_installed() {
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		return is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) == true;
+	}
+
+	/**
 	 * Init Hooks
 	 *
 	 * @since 1.0.0
@@ -219,7 +220,7 @@ class WC_Category_Showcase {
 	private function init_actions() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_assets' ) );
 		add_action( 'admin_init', array( $this, 'plugin_upgrades' ) );
-		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( __CLASS__, 'plugin_action_links' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
 
 	}
 
@@ -230,7 +231,7 @@ class WC_Category_Showcase {
 	 *
 	 * @return void
 	 */
-	private function instantiate() {
+	private function init_plugin() {
 		new \Pluginever\WCCS\Shortcode();
 		new \Pluginever\WCCCS\Metabox();
 		new \Pluginever\WCCS\Tracker();
@@ -258,10 +259,10 @@ class WC_Category_Showcase {
 	 *
 	 * @return array
 	 */
-	public static function plugin_action_links( $links ) {
+	public function plugin_action_links( $links ) {
 		$doc_link     = 'https://www.pluginever.com/docs/woocommerce-category-showcase/';
 		$action_links = [];
-		if ( ! wc_category_showcase_is_pro_active() ) {
+		if ( ! self::is_pro_installed() ) {
 			$action_links['Upgrade'] = '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Upgrade To Pro', 'wccs' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Upgrade To Pro', 'woocatlider' ) . '</a>';
 		}
 		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wccs' ) ) . '">' . __( 'Documentation', 'wccs' ) . '</a>';
@@ -270,16 +271,31 @@ class WC_Category_Showcase {
 		return array_merge( $action_links, $links );
 	}
 
-}
+	/**
+	 * Returns the plugin loader main instance.
+	 *
+	 * @return \WC_Category_Showcase
+	 * @since 1.0.0
+	 */
+	public static function instance() {
 
-// init our class
-$GLOBALS['WC_Category_Showcase'] = new WC_Category_Showcase();
+		if ( null === self::$instance ) {
+
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
+}
 
 /**
- * Grab the $WC_Category_Showcase object and return it
+ * Fire of the plugin
+ * since 1.0.0
+ * @return object
  */
 function wc_category_showcase() {
-	global $WC_Category_Showcase;
-
-	return $WC_Category_Showcase;
+	return WC_Category_Showcase::instance();
 }
+
+wc_category_showcase();

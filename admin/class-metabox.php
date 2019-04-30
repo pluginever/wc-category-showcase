@@ -8,7 +8,7 @@ class Metabox {
         add_action( 'admin_init', [ $this, 'init_featured_cats_settings_metabox' ] );
         add_action( 'admin_init', [ $this, 'init_additional_cats_settings_metabox' ] );
 
-        if ( ! wc_category_showcase_is_pro_active() ) {
+        if ( ! \WC_Category_Showcase::is_pro_installed() ) {
             add_action( 'add_meta_boxes', [ $this, 'init_promotion_metabox' ] );
         }
     }

@@ -107,10 +107,3 @@ function wccs_get_term_html() {
 
 add_action( 'wp_ajax_wccs_get_term_html', 'wccs_get_term_html' );
 
-
-function wc_category_showcase_is_pro_active(){
-    if ( in_array( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-        return true;
-    }
-    return false;
-}
