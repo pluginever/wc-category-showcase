@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 			all: [
 				'Gruntfile.js',
 				'<%= dirs.js %>/*.js',
-				'!<%= dirs.js %>/wc-category-slider-block.js',
+				'!<%= dirs.js %>/image-liquid.js',
 				'!<%= dirs.js %>/*.min.js'
 			]
 		},
@@ -47,24 +47,7 @@ module.exports = function (grunt) {
 					comments: /@license|@preserve|^!/
 				}
 			},
-			admin: {
-				files: [{
-					expand: true,
-					cwd: '<%= dirs.js %>/admin/',
-					src: [
-						'*.js',
-						'!*.min.js'
-					],
-					dest: '<%= dirs.js %>/admin/',
-					ext: '.min.js'
-				}]
-			},
-			vendor: {
-				files: {
-					// '<%= dirs.js %>/file.min.js': ['<%= dirs.js %>/file.js'],
-				}
-			},
-			frontend: {
+			minify: {
 				files: [{
 					expand: true,
 					cwd: '<%= dirs.js %>/',
@@ -75,6 +58,11 @@ module.exports = function (grunt) {
 					dest: '<%= dirs.js %>/',
 					ext: '.min.js'
 				}]
+			},
+			vendor: {
+				files: {
+					 '<%= dirs.js %>/bundle.min.js': ['<%= dirs.js %>/image-liquid.js', '<%= dirs.js %>/slick.min.js', '<%= dirs.js %>/wc-category-showcase.min.js']
+				}
 			}
 		},
 
@@ -118,10 +106,9 @@ module.exports = function (grunt) {
 		// Watch changes for assets.
 		watch: {
 			css: {
-				files: ['<%= dirs.css %>/**/**.scss'],
+				files: ['<%= dirs.css %>/*.scss'],
 				tasks: ['sass', 'postcss', 'cssmin', 'concat']
 			},
-
 			js: {
 				files: [
 					'<%= dirs.js %>/*js',
@@ -143,7 +130,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				options: {
-					potFilename: 'wc-category-slider.pot',
+					potFilename: 'wc-category-showcase.pot',
 					exclude: [
 						'includes/class-updater.php',
 						'apigen/.*',
@@ -178,14 +165,15 @@ module.exports = function (grunt) {
 			},
 			files: {
 				src: [
-					'**/*.php',               // Include all files
-					'!apigen/**',             // Exclude apigen/
-					'!includes/libraries/**', // Exclude libraries/
-					'!node_modules/**',       // Exclude node_modules/
-					'!tests/**',              // Exclude tests/
-					'!vendor/**',             // Exclude vendor/
-					'!tmp/**',                 // Exclude tmp/
-					'!includes/class-insights.php' // Exclude tracker
+					'**/*.php',
+					'!apigen/**',
+					'!includes/libraries/**',
+					'!node_modules/**',
+					'!tests/**',
+					'!vendor/**',
+					'!tmp/**',
+					'!includes/class-insights.php',
+					'!includes/metabox/class-metabox.php'
 				],
 				expand: true
 			}
@@ -270,9 +258,7 @@ module.exports = function (grunt) {
 					'!.csscomb.json',
 					'!.editorconfig',
 					'!.jshintrc',
-					'!.tmp',
-					'!webpack.config.js',
-					'!src/**'
+					'!.tmp'
 				],
 				dest: 'build/'
 			}
@@ -282,7 +268,7 @@ module.exports = function (grunt) {
 			main: {
 				options: {
 					mode: 'zip',
-					archive: './build/' + pkg.name + '-v' + pkg.version + '.zip'
+					archive: './build/'+pkg.name+'-v' + pkg.version + '.zip'
 				},
 				expand: true,
 				cwd: 'build/',
@@ -319,8 +305,8 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('js', [
 		'jshint',
-		'uglify:admin',
-		'uglify:frontend'
+		'uglify:minify',
+		'uglify:vendor'
 	]);
 
 	grunt.registerTask('css', [

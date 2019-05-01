@@ -3,14 +3,14 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.0.7
+ * Version:     1.0.8
  * Author:      PluginEver
  * Author URI:  http://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
  * Domain Path: /languages
  * WC requires at least: 3.0.0
- * WC tested up to: 3.4.5
+ * WC tested up to: 3.6.2
  */
 
 /**
@@ -49,7 +49,7 @@ class WC_Category_Showcase {
 	 * @since 1.0.0
 	 * @var  string
 	 */
-	public $version = '1.0.7';
+	public $version = '1.0.8';
 
 	/**
 	 * The single instance of the class.
@@ -245,9 +245,8 @@ class WC_Category_Showcase {
 	 * @return void
 	 */
 	function load_assets() {
-		$suffix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min';
-		wp_register_style( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/css/wc-category-showcase{$suffix}.css", [], date( 'i' ) );
-		wp_register_script( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/js/wc-category-showcase{$suffix}.js", [ 'jquery' ], date( 'i' ), true );
+		wp_register_style( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/css/wc-category-showcase.css", [], date( 'i' ) );
+		wp_register_script( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/js/bundle.min.js", [ 'jquery' ], date( 'i' ), true );
 		wp_localize_script( 'wc-category-showcase', 'jsobject', [ 'ajaxurl' => admin_url( 'admin-ajax.php' ) ] );
 		wp_enqueue_style( 'wc-category-showcase' );
 		wp_enqueue_script( 'wc-category-showcase' );
@@ -263,9 +262,9 @@ class WC_Category_Showcase {
 		$doc_link     = 'https://www.pluginever.com/docs/woocommerce-category-showcase/';
 		$action_links = [];
 		if ( ! self::is_pro_installed() ) {
-			$action_links['Upgrade'] = '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Upgrade To Pro', 'wccs' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Upgrade To Pro', 'woocatlider' ) . '</a>';
+			$action_links['Upgrade'] = '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Upgrade To Pro', 'wc-category-showcase' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Upgrade To Pro', 'wc-category-showcase' ) . '</a>';
 		}
-		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wccs' ) ) . '">' . __( 'Documentation', 'wccs' ) . '</a>';
+		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wc-category-showcase' ) ) . '">' . __( 'Documentation', 'wc-category-showcase' ) . '</a>';
 
 
 		return array_merge( $action_links, $links );

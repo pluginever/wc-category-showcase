@@ -21,7 +21,7 @@ class Metabox {
     public function init_featured_cats_settings_metabox() {
         $metabox = new \Pluginever\Framework\Metabox( 'wccs_featured_categories_metabox' );
         $config  = array(
-            'title'        => __( 'Featured Category Settings', 'wccsp' ),
+            'title'        => __( 'Featured Category Settings', 'wc-category-showcase' ),
             'screen'       => 'wccs_showcase',
             'context'      => 'normal',
             'priority'     => 'high',
@@ -30,7 +30,7 @@ class Metabox {
                 array(
                     'type'     => 'select',
                     'name'     => 'wccs_featured_categories',
-                    'label'    => __( 'Select Categories', 'wccsp' ),
+                    'label'    => __( 'Select Categories', 'wc-category-showcase' ),
                     'value'    => 'all',
                     'multiple' => true,
                     'select2'  => 'true',
@@ -40,12 +40,12 @@ class Metabox {
                 array(
                     'type'     => 'select',
                     'name'     => 'wccs_show_block_title',
-                    'label'    => __( 'Show Block Title', 'wccsp' ),
+                    'label'    => __( 'Show Block Title', 'wc-category-showcase' ),
                     'sanitize' => 'intval',
                     'value'    => '1',
                     'options'  => array(
-                        '1' => __( 'Yes', 'wccsp' ),
-                        '0' => __( 'No', 'wccsp' ),
+                        '1' => __( 'Yes', 'wc-category-showcase' ),
+                        '0' => __( 'No', 'wc-category-showcase' ),
                     ),
                 ),
             ),
@@ -61,7 +61,7 @@ class Metabox {
     public function init_additional_cats_settings_metabox() {
         $metabox = new \Pluginever\Framework\Metabox( 'wccs_additional_categories_metabox' );
         $config  = array(
-            'title'        => __( 'Additional Category Settings', 'wccsp' ),
+            'title'        => __( 'Additional Category Settings', 'wc-category-showcase' ),
             'screen'       => 'wccs_showcase',
             'context'      => 'normal',
             'priority'     => 'high',
@@ -70,7 +70,7 @@ class Metabox {
                 array(
                     'type'     => 'select',
                     'name'     => 'wccs_additional_categories',
-                    'label'    => __( 'Select Categories', 'wccsp' ),
+                    'label'    => __( 'Select Categories', 'wc-category-showcase' ),
                     'value'    => 'all',
                     'multiple' => true,
                     'select2'  => 'true',
@@ -84,7 +84,7 @@ class Metabox {
     }
 
     public function init_promotion_metabox() {
-        add_meta_box( 'wccs_showcase-promotion', __( 'What More?', 'wccsp' ), [
+        add_meta_box( 'wccs_showcase-promotion', __( 'What More?', 'wc-category-showcase' ), [
             $this,
             'promotion_metabox_callback'
         ], 'wccs_showcase', 'side' );
@@ -94,7 +94,7 @@ class Metabox {
         ?>
         <img src="<?php echo PLVR_WCCS_ASSETS . '/images/promotion.png'; ?>" alt="WOO Category Showcase Pro"
              style="width: 100%;margin-bottom: 10px;">
-        <h4 style="margin: 0;padding: 0;border-bottom: 1px solid #333;"><?php _e( 'Pro Features', 'wccsp' ); ?></h4>
+        <h4 style="margin: 0;padding: 0;border-bottom: 1px solid #333;"><?php _e( 'Pro Features', 'wc-category-showcase' ); ?></h4>
         <ul style="padding-left: 25px;list-style: disc;">
             <li>Custom featured category image</li>
             <li>Custom additional category image</li>

@@ -41,7 +41,7 @@ function wccs_custom_post_type() {
 function wccs_shortocode_metabox( ) {
     add_meta_box(
         'wccs-shortcode',
-        __( 'Short Code' ),
+        __( 'Short Code', 'wc-category-showcase' ),
         'wccs_shortocode_metabox_callback',
         'wccs_showcase',
         'side',
@@ -54,7 +54,7 @@ add_action( 'add_meta_boxes', 'wccs_shortocode_metabox', 0 );
 function wccs_shortocode_metabox_callback($post){
 
     if(! isset($post->ID) || empty($post->ID)){
-        echo __('Please publish the post first. Shortcode will automatically visible here afterward.', '');
+        echo __('Please publish the post first. Shortcode will automatically visible here afterward.', 'wc-category-showcase');
     }else{
         echo "<pre><code>[wccs_showcase id='{$post->ID}']</code></pre>";
     }

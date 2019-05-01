@@ -17,8 +17,8 @@ class Admin {
      */
     public function set_shortocode_column( $columns ) {
         unset( $columns['date'] );
-        $columns['shortcode'] = __( 'Shortcode', 'woocatslider' );
-        $columns['date']      = __( 'Date', 'woocatslider' );
+        $columns['shortcode'] = __( 'Shortcode', 'wc-category-showcase' );
+        $columns['date']      = __( 'Date', 'wc-category-showcase' );
 
         return $columns;
     }
