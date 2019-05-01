@@ -1,255 +1,346 @@
+/* jshint node:true */
 module.exports = function (grunt) {
-    var pkg = grunt.file.readJSON('package.json');
-    var bannerTemplate = '/**\n' +
-        ' * <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        ' * <%= pkg.homepage %>\n' +
-        ' *\n' +
-        ' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
-        ' * Licensed GPLv2+\n' +
-        ' */\n';
+	'use strict';
+	var pkg = grunt.file.readJSON('package.json');
 
-    var compactBannerTemplate = '/**\n' +
-        ' * <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> | <%= pkg.homepage %> | Copyright (c) <%= grunt.template.today("yyyy") %>; | Licensed GPLv2+\n' +
-        ' */\n';
+	grunt.initConfig({
 
-    // Project configuration
-    grunt.initConfig({
+		// Setting folder templates.
+		dirs: {
+			css: 'assets/css',
+			fonts: 'assets/fonts',
+			images: 'assets/images',
+			js: 'assets/js'
+		},
 
-        pkg: grunt.file.readJSON('package.json'),
+		// JavaScript linting with JSHint.
+		jshint: {
+			options: {
+				jshintrc: '.jshintrc'
+			},
+			all: [
+				'Gruntfile.js',
+				'<%= dirs.js %>/*.js',
+				'!<%= dirs.js %>/image-liquid.js',
+				'!<%= dirs.js %>/*.min.js'
+			]
+		},
 
-        concat: {
-            options: {
-                stripBanners: true,
-                banner: bannerTemplate
-            },
-            wc_category_showcase: {
-                src: [
-                    'assets/js/vendor/*.js',
-                    'assets/js/src/wc-category-showcase.js',
-                ],
-                dest: 'assets/js/wc-category-showcase.js'
-            },
-            wc_category_showcase_admin: {
-                src: [
-                    'admin/assets/js/vendor/*.js',
-                    'admin/assets/js/src/wc-category-showcase-admin.js',
-                ],
-                dest: 'admin/assets/js/wc-category-showcase-admin.js'
-            }
-        },
-        // jshint
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
-            },
-            main: [
-                'assets/js/src/*.js',
-            ]
-        },
+		// Sass linting with Stylelint.
+		stylelint: {
+			options: {
+				configFile: '.stylelintrc'
+			},
+			all: [
+				'<%= dirs.css %>/*.scss'
+			]
+		},
 
-        uglify: {
-            all: {
-                files: {
-                    'assets/js/wc-category-showcase.min.js': ['assets/js/wc-category-showcase.js'],
-                    'admin/assets/js/wc-category-showcase.min.js': ['admin/assets/js/wc-category-showcase.js']
-                },
-                options: {
-                    banner: compactBannerTemplate,
-                    mangle: false
-                },
-                compress: {
-                    drop_console: true
-                }
-            }
-        },
+		// Minify .js files.
+		uglify: {
+			options: {
+				ie8: true,
+				parse: {
+					strict: false
+				},
+				output: {
+					comments: /@license|@preserve|^!/
+				}
+			},
+			minify: {
+				files: [{
+					expand: true,
+					cwd: '<%= dirs.js %>/',
+					src: [
+						'*.js',
+						'!*.min.js'
+					],
+					dest: '<%= dirs.js %>/',
+					ext: '.min.js'
+				}]
+			},
+			vendor: {
+				files: {
+					 '<%= dirs.js %>/bundle.min.js': ['<%= dirs.js %>/image-liquid.js', '<%= dirs.js %>/slick.min.js', '<%= dirs.js %>/wc-category-showcase.min.js']
+				}
+			}
+		},
 
-        sass: {
-            all: {
-                files: {
-                    'assets/css/wc-category-showcase.css': 'assets/css/sass/wc-category-showcase.scss',
-                    //'admin/assets/css/wc-category-showcase-admin.css': 'admin/assets/css/sass/wc-category-showcase-admin.scss',
-                }
-            }
-        },
+		// Compile all .scss files.
+		sass: {
+			compile: {
+				options: {
+					sourceMap: false
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= dirs.css %>/',
+					src: ['*.scss'],
+					dest: '<%= dirs.css %>/',
+					ext: '.css'
+				}]
+			}
+		},
 
+		// Minify all .css files.
+		cssmin: {
+			minify: {
+				expand: true,
+				cwd: '<%= dirs.css %>/',
+				src: ['*.css'],
+				dest: '<%= dirs.css %>/',
+				ext: '.css'
+			}
+		},
 
-        cssmin: {
-            options: {
-                banner: bannerTemplate
-            },
-            minify: {
-                expand: true,
+		// Concatenate files.
+		concat: {
+			admin: {
+				files: {
+					// '<%= dirs.css %>/admin.css' : ['<%= dirs.css %>/select2.css', '<%= dirs.css %>/admin.css'],
+					// '<%= dirs.css %>/admin-rtl.css' : ['<%= dirs.css %>/select2.css', '<%= dirs.css %>/admin-rtl.css']
+				}
+			}
+		},
 
-                cwd: 'assets/css/',
-                src: ['wc-category-showcase.css'],
+		// Watch changes for assets.
+		watch: {
+			css: {
+				files: ['<%= dirs.css %>/*.scss'],
+				tasks: ['sass', 'postcss', 'cssmin', 'concat']
+			},
+			js: {
+				files: [
+					'<%= dirs.js %>/*js',
+					'<%= dirs.js %>/*js',
+					'!<%= dirs.js %>/*.min.js'
+				],
+				tasks: ['jshint', 'uglify']
+			}
+		},
 
-                dest: 'assets/css/',
-                ext: '.min.css'
-            }
-        },
-        imagemin: {
-            static: {
-                options: {
-                    optimizationLevel: 3,
-                    svgoPlugins: [{removeViewBox: false}],
-                    use: [] // Example plugin usage
-                },
-                files: {}
-            },
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'assets/images/src/',
-                    src: ['**/*.{png,jpg,gif,svg}'],
-                    dest: 'assets/images/'
-                }]
-            }
-        },
+		// Generate POT files.
+		makepot: {
+			options: {
+				type: 'wp-plugin',
+				domainPath: 'i18n/languages',
+				potHeaders: {
+					'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
+				}
+			},
+			dist: {
+				options: {
+					potFilename: 'wc-category-showcase.pot',
+					exclude: [
+						'includes/class-updater.php',
+						'apigen/.*',
+						'vendor/.*',
+						'tests/.*',
+						'tmp/.*'
+					]
+				}
+			}
+		},
 
-        watch: {
-            options: {
-                livereload: true,
-            },
+		// Check textdomain errors.
+		checktextdomain: {
+			options: {
+				text_domain: 'wc-category-showcase',
+				keywords: [
+					'__:1,2d',
+					'_e:1,2d',
+					'_x:1,2c,3d',
+					'esc_html__:1,2d',
+					'esc_html_e:1,2d',
+					'esc_html_x:1,2c,3d',
+					'esc_attr__:1,2d',
+					'esc_attr_e:1,2d',
+					'esc_attr_x:1,2c,3d',
+					'_ex:1,2c,3d',
+					'_n:1,2,4d',
+					'_nx:1,2,4c,5d',
+					'_n_noop:1,2,3d',
+					'_nx_noop:1,2,3c,4d'
+				]
+			},
+			files: {
+				src: [
+					'**/*.php',
+					'!apigen/**',
+					'!includes/libraries/**',
+					'!node_modules/**',
+					'!tests/**',
+					'!vendor/**',
+					'!tmp/**',
+					'!includes/class-insights.php',
+					'!includes/metabox/class-metabox.php'
+				],
+				expand: true
+			}
+		},
 
-            sass: {
-                files: ['assets/css/sass/*.scss','admin/assets/css/sass/*.scss'],
-                tasks: ['sass', 'cssmin'],
-                options: {
-                    debounceDelay: 500
-                }
-            },
+		// PHP Code Sniffer.
+		phpcs: {
+			options: {
+				bin: 'vendor/bin/phpcs'
+			},
+			dist: {
+				src: [
+					'**/*.php',                                                  // Include all files
+					'!includes/libraries/**',                                    // Exclude libraries/
+					'!node_modules/**',                                          // Exclude node_modules/
+					'!tests/cli/**',                                             // Exclude tests/cli/
+					'!tmp/**',                                                   // Exclude tmp/
+					'!vendor/**'                                                 // Exclude vendor/
+				]
+			}
+		},
 
-            scripts: {
-                files: ['assets/js/src/**/*.js', 'assets/js/vendor/**/*.js', 'admin/assets/js/src/*.js'],
-                tasks: ['jshint', 'concat', 'uglify'],
-                options: {
-                    debounceDelay: 500
-                }
-            }
-        },
+		// Autoprefixer.
+		postcss: {
+			options: {
+				processors: [
+					require('autoprefixer')({
+						browsers: [
+							'> 0.1%',
+							'ie 8',
+							'ie 9'
+						]
+					})
+				]
+			},
+			dist: {
+				src: [
+					'<%= dirs.css %>/*.css'
+				]
+			}
+		},
 
-        /**
-         * check WP Coding standards
-         * https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-         */
-        phpcs: {
-            application: {
-                dir: [
-                    '**/*.php',
-                    '!*.scss',
-                    '!**/node_modules/**'
-                ]
-            },
-            options: {
-                bin: '~/phpcs/scripts/phpcs',
-                standard: 'WordPress'
-            }
-        },
-        // Generate POT files.
-        makepot: {
-            target: {
-                options: {
-                    exclude: ['build/.*', 'node_modules/*', 'assets/*'],
-                    domainPath: '/i18n/languages/', // Where to save the POT file.
-                    potFilename: 'wc-category-showcase.pot', // Name of the POT file.
-                    type: 'wp-plugin', // Type of project (wp-plugin or wp-theme).
-                    potHeaders: {
-                        'report-msgid-bugs-to': 'http://pluginever.com/support/',
-                        'language-team': 'LANGUAGE <support@pluginever.com>'
-                    }
-                }
-            }
-        },
-        // Clean up build directory
-        clean: {
-            main: ['build/']
-        },
-        copy: {
-            main: {
-                src: [
-                    '**',
-                    '!node_modules/**',
-                    '!**/js/src/**',
-                    '!**/css/src/**',
-                    '!**/js/vendor/**',
-                    '!**/css/vendor/**',
-                    '!**/images/src/**',
-                    '!**/sass/**',
-                    '!build/**',
-                    '!**/*.md',
-                    '!**/*.map',
-                    '!**/*.sh',
-                    '!.idea/**',
-                    '!bin/**',
-                    '!.git/**',
-                    '!Gruntfile.js',
-                    '!package.json',
-                    '!composer.json',
-                    '!composer.lock',
-                    '!debug.log',
-                    '!.gitignore',
-                    '!.gitmodules',
-                    '!npm-debug.log',
-                    '!plugin-deploy.sh',
-                    '!export.sh',
-                    '!config.codekit',
-                    '!nbproject/*',
-                    '!tests/**',
-                    '!.csscomb.json',
-                    '!.editorconfig',
-                    '!.jshintrc',
-                    '!.tmp'
-                ],
-                dest: 'build/'
-            }
-        },
-        compress: {
-            main: {
-                options: {
-                    mode: 'zip',
-                    archive: './build/woocommerce-category-showcase-' + pkg.version + '.zip'
-                },
-                expand: true,
-                cwd: 'build/',
-                src: ['**/*'],
-                dest: 'wc-category-showcase'
-            }
-        },
-        server: {
-            options: {
-                message: 'Server is ready!'
-            }
-        }
+		// Clean up build directory
+		clean: {
+			main: ['build/']
+		},
+		copy: {
+			main: {
+				src: [
+					'**',
+					'!node_modules/**',
+					'!**/js/src/**',
+					'!**/css/src/**',
+					'!**/js/vendor/**',
+					'!**/css/vendor/**',
+					'!**/css/*.scss',
+					'!**/images/src/**',
+					'!**/sass/**',
+					'!build/**',
+					'!**/*.md',
+					'!**/*.map',
+					'!**/*.sh',
+					'!.idea/**',
+					'!bin/**',
+					'!.git/**',
+					'!Gruntfile.js',
+					'!package.json',
+					'!composer.json',
+					'!composer.lock',
+					'!package-lock.json',
+					'!debug.log',
+					'!none',
+					'!.gitignore',
+					'!.gitmodules',
+					'!phpcs.xml.dist',
+					'!npm-debug.log',
+					'!plugin-deploy.sh',
+					'!export.sh',
+					'!config.codekit',
+					'!nbproject/*',
+					'!tests/**',
+					'!.csscomb.json',
+					'!.editorconfig',
+					'!.jshintrc',
+					'!.tmp'
+				],
+				dest: 'build/'
+			}
+		},
 
+		compress: {
+			main: {
+				options: {
+					mode: 'zip',
+					archive: './build/'+pkg.name+'-v' + pkg.version + '.zip'
+				},
+				expand: true,
+				cwd: 'build/',
+				src: ['**/*'],
+				dest: pkg.name
+			}
+		}
 
-    });
+	});
 
-// Load other tasks
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-notify');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-wp-i18n');
-    grunt.loadNpmTasks('grunt-contrib-compress');
+	// Load NPM tasks to be used here.
+	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-phpcs');
+	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-stylelint');
+	grunt.loadNpmTasks('grunt-wp-i18n');
+	grunt.loadNpmTasks('grunt-checktextdomain');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-compress');
+	grunt.loadNpmTasks('grunt-prompt');
 
-    grunt.loadNpmTasks('grunt-contrib-sass');
+	// Register tasks.
+	grunt.registerTask('default', [
+		'js',
+		'css',
+		'i18n'
+	]);
 
-    grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.registerTask('js', [
+		'jshint',
+		'uglify:minify',
+		'uglify:vendor'
+	]);
 
-    grunt.loadNpmTasks('grunt-phpcs');
+	grunt.registerTask('css', [
+		'sass',
+		'postcss',
+		'cssmin',
+		'concat'
+	]);
 
-    // Default task.
+	// Only an alias to 'default' task.
+	grunt.registerTask('dev', [
+		'default'
+	]);
 
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'notify:server']);
+	grunt.registerTask('i18n', [
+		'checktextdomain',
+		'makepot'
+	]);
 
+	grunt.registerTask('release',
+		[
+			'default',
+			'i18n'
+		]);
 
-    grunt.registerTask('release', ['makepot', 'concat', 'uglify', 'sass', 'cssmin']);
-    grunt.registerTask('build', ['clean', 'copy']);
-    grunt.registerTask('zip', ['compress']);
-    grunt.util.linefeed = '\n';
+	grunt.registerTask('build',
+		[
+			'clean',
+			'clean',
+			'copy'
+		]);
+
+	grunt.registerTask('zip',
+		[
+			'compress'
+		]);
 };

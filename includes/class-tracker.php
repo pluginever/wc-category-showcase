@@ -9,7 +9,7 @@ class Tracker extends \Pluginever_Insights {
 
     public function __construct() {
 
-        $notice = __( 'Want to help make <strong>WooCommerce  Category Showcase</strong> even more awesome? Allow PluginEver to collect non-sensitive diagnostic data and usage information.', 'wccs' );
+        $notice = __( 'Want to help make <strong>WooCommerce  Category Showcase</strong> even more awesome? Allow PluginEver to collect non-sensitive diagnostic data and usage information.', 'wc-category-showcase' );
 
         parent::__construct( 'wc-category-showcase', 'WooCommerce Category Showcase', PLVR_WCCS_FILE, $notice );
     }
@@ -24,7 +24,7 @@ class Tracker extends \Pluginever_Insights {
             'wc_products'   => $this->get_post_count( 'product' ),
             'wc_categories' => wp_count_terms( 'product_cat' ),
             'shortcodes'    => $this->get_post_count( 'wccs_showcase' ),
-            'is_pro'        => wc_category_showcase_is_pro_active() ? 'yes' : 'no',
+            'is_pro'        => \WC_Category_Showcase::is_pro_installed() ? 'yes' : 'no',
         );
 
         return $data;
