@@ -9,7 +9,7 @@ class Tracker extends \Pluginever_Insights {
 
     public function __construct() {
 
-        $notice = __( 'Want to help make <strong>WooCommerce  Category Showcase</strong> even more awesome? Allow PluginEver to collect non-sensitive diagnostic data and usage information.', 'wccs' );
+        $notice = __( 'Want to help make <strong>WooCommerce  Category Showcase</strong> even more awesome? Allow PluginEver to collect non-sensitive diagnostic data and usage information.', 'wc-category-showcase' );
 
         parent::__construct( 'wc-category-showcase', 'WooCommerce Category Showcase', PLVR_WCCS_FILE, $notice );
     }

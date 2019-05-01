@@ -3,7 +3,7 @@ Contributors:      manikmist09, pluginever
 Donate link:
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider, product category carousel, product category slider, woocommerce category slider plugin free, product category carousel, product category rotators, product category slider, products category slider, responsive product category slider, woo category slider, woocommerce, woocommerce product category carousel, WooCommerce Products, woocommerce products category slider, woocommerce slider, carousel, woocommerce image slider, woocommerce responsive slider, woocommerce advance slider, best woocommerce product slider, easy woocommerce product slider, woocommerce slider free, woocommerce slider plugin, slider for woocommerce, product slider carousel for woocommerce, woocommerce product category slider and carousel plugin
 Requires at least: 3.6.0
-Tested up to:      4.9.8
+Tested up to:      5.1.1
 Requires PHP:      5.6
 Stable tag:        trunk
 License:           GPLv2 or later
@@ -15,7 +15,7 @@ WooCommerce Category Showcase plugin by PluginEver provides you the opportunity 
 == VIDEO DEMO ==
 http://www.youtube.com/watch?v=TFjWdEETbAs
 
->[DEMO](http://demo.pluginever.com/woocommerce-category-showcase-demo/) |  [Get The PRO Version](https://www.pluginever.com/plugins/woo-category-showcase-pro/)  |  [Support](https://www.pluginever.com/support/)  |  [Documentation ](https://www.pluginever.com/docs/woo-category-showcase-pro/)
+>[DEMO](https://demo.pluginever.com/wc-category-showcase/) |  [Get The PRO Version](https://www.pluginever.com/plugins/woo-category-showcase-pro/)  |  [Support](https://www.pluginever.com/support/)  |  [Documentation ](https://www.pluginever.com/docs/woo-category-showcase-pro/)
 
 ==WHY WOULD YOU NEED WOOCOMMERCE CATEGORY SHOWCASE ==
 When you can display your products and their categories in a proper way to your customers, it attracts them the most. This means you are effectively showing your product categories in a professional looking slider and blocks. Thus, your users loves how they look and also understands what you are offering at a glance. This makes your WooCommerce store popular and you can sell more quickly.
@@ -135,6 +135,11 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.0.8 =
+* [Fix] Title show hide not working
+* WC compatibility with 3.6.2
+* WP compatibility with 5.1.1
+
 = 1.0.7 =
 * Remove Accidentally added debug code
 
