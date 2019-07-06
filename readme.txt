@@ -3,7 +3,7 @@ Contributors:      manikmist09, pluginever
 Donate link:
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider, product category carousel, product category slider, woocommerce category slider plugin free, product category carousel, product category rotators, product category slider, products category slider, responsive product category slider, woo category slider, woocommerce, woocommerce product category carousel, WooCommerce Products, woocommerce products category slider, woocommerce slider, carousel, woocommerce image slider, woocommerce responsive slider, woocommerce advance slider, best woocommerce product slider, easy woocommerce product slider, woocommerce slider free, woocommerce slider plugin, slider for woocommerce, product slider carousel for woocommerce, woocommerce product category slider and carousel plugin
 Requires at least: 3.6.0
-Tested up to:      5.1.1
+Tested up to:      5.2.2
 Requires PHP:      5.6
 Stable tag:        trunk
 License:           GPLv2 or later
@@ -32,7 +32,7 @@ Showing WooCommerce product categories in a slider help your visitors to find th
 You can select either all WooCommerce categories or any custom selected categories to appear in the WooCommerce category slider.
 WooCommerce category slider supports the selection of any categories as well as subcategories and to order those in all possible ways.
 
-Woo Category slider has a built-in very easy to use and user-friendly shortcode builder. So, You don’t need to memorize anything.
+Woo Category slider has a built-in very easy to use and user-friendly shortcode builder. So, You donâ€™t need to memorize anything.
 
 WooCommerce Category Showcase supports two types of category selections.
 
@@ -94,7 +94,7 @@ This may have bugs and lack of many features. If you want to contribute on this 
 If your server is not connected to the Internet, then you can use this method-
 
 1. Download the plugin by clicking on the red button above. A ZIP file will be downloaded.
-2. Login to your site’s admin panel and navigate to Plugins -> Add New -> Upload.
+2. Login to your siteâ€™s admin panel and navigate to Plugins -> Add New -> Upload.
 3. Click choose file, select the plugin file and click install
 
 ###Install Using FTP
@@ -135,6 +135,10 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.0.9 =
+* WC compatibility with 3.6.5
+* WP compatibility with 5.2.2
+
 = 1.0.8 =
 * [Fix] Title show hide not working
 * WC compatibility with 3.6.2
