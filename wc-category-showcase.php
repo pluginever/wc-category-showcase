@@ -3,14 +3,14 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.0.8
+ * Version:     1.0.9
  * Author:      PluginEver
  * Author URI:  http://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
  * Domain Path: /languages
  * WC requires at least: 3.0.0
- * WC tested up to: 3.6.2
+ * WC tested up to: 3.6.5
  */
 
 /**
@@ -49,7 +49,7 @@ class WC_Category_Showcase {
 	 * @since 1.0.0
 	 * @var  string
 	 */
-	public $version = '1.0.8';
+	public $version = '1.0.9';
 
 	/**
 	 * The single instance of the class.
@@ -105,7 +105,7 @@ class WC_Category_Showcase {
 	public function localization_setup() {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'wc_category_showcase' );
 		load_textdomain( 'wc-category-showcase', WP_LANG_DIR . '/wc-category-showcase/wc-category-showcase-' . $locale . '.mo' );
-		load_plugin_textdomain( 'wc-category-showcase', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'wc-category-showcase', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages/' );
 	}
 
 	/**
