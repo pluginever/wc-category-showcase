@@ -16,6 +16,21 @@ class WCCS_Upgrades {
         '1.0.3' => 'updates/update-1.0.3.php',
     );
 
+	/**
+	 * The $wc_cat_showcase_version
+	 *
+	 * @var null
+	 */
+	private $wc_cat_showcase_version = null;
+
+	/**
+	 * WCCS_Upgrades constructor.
+	 */
+	public function __construct() {
+
+		$this->wc_cat_showcase_version = wc_category_showcase()->version;
+	}
+
     /**
      * Get the plugin version
      *
@@ -32,7 +47,7 @@ class WCCS_Upgrades {
      */
     public function needs_update() {
 
-        if ( version_compare( $this->get_version(), PLVR_WCCS_VERSION, '<' ) ) {
+        if ( version_compare( $this->get_version(), $this->wc_cat_showcase_version, '<' ) ) {
             return true;
         }
 
@@ -55,6 +70,6 @@ class WCCS_Upgrades {
             }
         }
 
-        update_option( 'wccs_version', PLVR_WCCS_VERSION );
+        update_option( 'wccs_version', $this->wc_cat_showcase_version );
     }
 }
