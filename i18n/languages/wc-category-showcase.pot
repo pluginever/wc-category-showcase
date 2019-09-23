@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv2+.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Category Showcase 1.0.9\n"
+"Project-Id-Version: WooCommerce Category Showcase 1.1.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wc-category-showcase\n"
-"POT-Creation-Date: 2019-07-06 12:34:47+00:00\n"
+"POT-Creation-Date: 2019-09-23 08:30:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,35 +22,35 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: admin/class-metabox.php:24
+#: admin/class-metabox.php:25
 msgid "Featured Category Settings"
 msgstr ""
 
-#: admin/class-metabox.php:33 admin/class-metabox.php:73
+#: admin/class-metabox.php:34 admin/class-metabox.php:75
 msgid "Select Categories"
 msgstr ""
 
-#: admin/class-metabox.php:43
+#: admin/class-metabox.php:44
 msgid "Show Block Title"
 msgstr ""
 
-#: admin/class-metabox.php:47
+#: admin/class-metabox.php:48
 msgid "Yes"
 msgstr ""
 
-#: admin/class-metabox.php:48
+#: admin/class-metabox.php:49
 msgid "No"
 msgstr ""
 
-#: admin/class-metabox.php:64
+#: admin/class-metabox.php:66
 msgid "Additional Category Settings"
 msgstr ""
 
-#: admin/class-metabox.php:87
+#: admin/class-metabox.php:94
 msgid "What More?"
 msgstr ""
 
-#: admin/class-metabox.php:97
+#: admin/class-metabox.php:109
 msgid "Pro Features"
 msgstr ""
 
@@ -149,15 +149,15 @@ msgstr ""
 msgid "Example Metabox"
 msgstr ""
 
-#: wc-category-showcase.php:265
+#: wc-category-showcase.php:342
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: wc-category-showcase.php:267
+#: wc-category-showcase.php:344
 msgid "View Plugin's Documentation"
 msgstr ""
 
-#: wc-category-showcase.php:267
+#: wc-category-showcase.php:344
 msgid "Documentation"
 msgstr ""
 

@@ -3,14 +3,14 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.0.9
+ * Version:     1.1.0
  * Author:      PluginEver
  * Author URI:  http://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
  * Domain Path: /languages
  * WC requires at least: 3.0.0
- * WC tested up to: 3.6.5
+ * WC tested up to: 3.7.0
  */
 
 /**
@@ -49,7 +49,16 @@ class WC_Category_Showcase {
 	 * @since 1.0.0
 	 * @var  string
 	 */
-	public $version = '1.0.9';
+	public $version = '1.1.0';
+
+	/**
+	 * admin notices
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var array
+	 */
+	protected $notices = array();
 
 	/**
 	 * The single instance of the class.
@@ -59,6 +68,12 @@ class WC_Category_Showcase {
 	 */
 	protected static $instance = null;
 
+	/**
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
+	public $plugin_name = 'WooCommerce Category Showcase';
 
 	/**
 	 * Constructor for the class
@@ -79,20 +94,18 @@ class WC_Category_Showcase {
 		// on deactivate plugin register hook
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 
-		// Define constants
-		$this->define_constants();
+		add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );
+		add_action( 'admin_init', array( $this, 'plugin_upgrades' ) );
 
-		// Include required files
-		$this->includes();
+		if( $this->is_plugin_compatible() ){
+			$this->define_constants();
+			$this->includes();
+			$this->init_actions();
+			$this->init_plugin();
 
-		// Initialize the action hooks
-		$this->init_actions();
+			do_action( 'wc_category_showcase' );
+		}
 
-		// init_plugin classes
-		$this->init_plugin();
-
-		// Loaded action
-		do_action( 'wc_category_showcase' );
 	}
 
 	/**
@@ -133,6 +146,70 @@ class WC_Category_Showcase {
 	 */
 	function deactivate() {
 
+	}
+
+	/**
+	 * Determines if the plugin compatible.
+	 *
+	 * @return bool
+	 * @since 1.0.0
+	 *
+	 */
+	protected function is_plugin_compatible() {
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+			$this->add_notice( 'notice-error', sprintf(
+				'<strong>%s</strong> requires <strong>WooCommerce</strong> installed and active.',
+				$this->plugin_name
+			) );
+
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Adds an admin notice to be displayed.
+	 *
+	 * @param string $class the notice class
+	 * @param string $message the notice message body
+	 *
+	 * @since 1.0.0
+	 *
+	 */
+	public function add_notice( $class, $message ) {
+
+		$notices = get_option( sanitize_key( $this->plugin_name ), [] );
+		if ( is_string( $message ) && is_string( $class ) && ! wp_list_filter( $notices, array( 'message' => $message ) ) ) {
+
+			$notices[] = array(
+				'message' => $message,
+				'class'   => $class
+			);
+
+			update_option( sanitize_key( $this->plugin_name ), $notices );
+		}
+
+	}
+
+	/**
+	 * Displays any admin notices added
+	 *
+	 * @internal
+	 *
+	 * @since 1.0.0
+	 */
+	public function admin_notices() {
+		$notices = (array) array_merge( $this->notices, get_option( sanitize_key( $this->plugin_name ), [] ) );
+		foreach ( $notices as $notice_key => $notice ) :
+			?>
+			<div class="notice notice-<?php echo sanitize_html_class( $notice['class'] ); ?>">
+				<p><?php echo wp_kses( $notice['message'], array( 'a' => array( 'href' => array() ), 'strong' => array() ) ); ?></p>
+			</div>
+			<?php
+			update_option( sanitize_key( $this->plugin_name ), [] );
+		endforeach;
 	}
 
 	/**
@@ -189,7 +266,7 @@ class WC_Category_Showcase {
 			return;
 		}
 
-		require_once PLVR_WCCS_INCLUDES . '/class-upgrades.php';
+		require_once dirname( __FILE__  ) . '/includes/class-upgrades.php';
 
 		$upgrader = new WCCS_Upgrades();
 
@@ -207,6 +284,7 @@ class WC_Category_Showcase {
 	 */
 	public static function is_pro_installed() {
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 		return is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) == true;
 	}
 
@@ -219,7 +297,6 @@ class WC_Category_Showcase {
 	 */
 	private function init_actions() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_assets' ) );
-		add_action( 'admin_init', array( $this, 'plugin_upgrades' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
 
 	}
