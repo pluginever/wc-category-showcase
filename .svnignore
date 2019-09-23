@@ -42,6 +42,11 @@ vendors/composer/
 wpcs/
 composer.lock
 
+package.json
+debug.log
+*.zip
+=======
+
 # Bower #
 ##########
 assets/bower_components/*
