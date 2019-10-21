@@ -51,11 +51,14 @@ window.WC_Category_Showcase = (function (window, document, $, undefined) {
 			speed: 500
 		});
 
+		//we modified imgLiquid core for support data-src attr
 		$('.woo-cs-thumb-container').imgLiquid({
 			fill: true,
 			horizontalAlign: 'center',
 			verticalAlign: 'center'
 		});
+
+
 
 	};
 

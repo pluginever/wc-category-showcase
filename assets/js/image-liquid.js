@@ -34,7 +34,6 @@ imgLiquid.bgs_Available = false;
 imgLiquid.bgs_CheckRunned = false;
 imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 
-
 (function ($) {
 
 	// ___________________________________________________________________
@@ -98,8 +97,6 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 			if (this.settings.onStart) this.settings.onStart();
 
 
-
-
 			// ___________________________________________________________________
 
 			return this.each(function ($i) {
@@ -107,9 +104,12 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 				// MAIN >> each for image
 
 				var settings = imgLiquidRoot.settings,
-				$imgBoxCont = $(this),
-				$img = $('img:first',$imgBoxCont);
-				if (!$img.length) {onError(); return;}
+					$imgBoxCont = $(this),
+					$img = $('img:first', $imgBoxCont);
+				if (!$img.length) {
+					onError();
+					return;
+				}
 
 
 				// Extend settings
@@ -139,8 +139,6 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 				// END MAIN <<
 
 
-
-
 				// ___________________________________________________________________
 
 				function processBgSize() {
@@ -148,19 +146,25 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 					// Check change img src
 					if ($imgBoxCont.css('background-image').indexOf(encodeURI($img.attr('src'))) === -1) {
 						// Change
-						$imgBoxCont.css({'background-image': 'url("' + encodeURI($img.attr('src')) + '")'});
+
+						var dataSrc = $img.data('src');
+						var src = $img.attr('src');
+						if (dataSrc !== undefined) {
+							src = $img.data('src');
+						}
+						$imgBoxCont.css({'background-image': 'url("' + encodeURI(src) + '")'});
 					}
 
 					$imgBoxCont.css({
-						'background-size':		(!settings.fill && $img[0].width <= $imgBoxCont.width() && $img[0].height <= $imgBoxCont.height()) ? 'auto' : (settings.fill) ? 'cover' : 'contain',
-						'background-position':	(settings.horizontalAlign + ' ' + settings.verticalAlign).toLowerCase(),
-						'background-repeat':	'no-repeat'
+						'background-size': (!settings.fill && $img[0].width <= $imgBoxCont.width() && $img[0].height <= $imgBoxCont.height()) ? 'auto' : (settings.fill) ? 'cover' : 'contain',
+						'background-position': (settings.horizontalAlign + ' ' + settings.verticalAlign).toLowerCase(),
+						'background-repeat': 'no-repeat'
 					});
 
 					$('a:first', $imgBoxCont).css({
-						'display':	'block',
-						'width':	'100%',
-						'height':	'100%'
+						'display': 'block',
+						'width': '100%',
+						'height': '100%'
 					});
 
 					$('img', $imgBoxCont).css({'display': 'none'});
@@ -171,8 +175,6 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 					$imgBoxCont.addClass('imgLiquid_ready');
 					checkFinish();
 				}
-
-
 
 
 				// ___________________________________________________________________
@@ -198,7 +200,8 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 
 					// Reproceess?
 					if ($img.data('imgLiquid_oldProcessed')) {
-						makeOldProcess(); return;
+						makeOldProcess();
+						return;
 					}
 
 
@@ -245,8 +248,6 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 				}
 
 
-
-
 				// ___________________________________________________________________
 
 				function checkResponsive() {
@@ -266,8 +267,6 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 				}
 
 
-
-
 				// ___________________________________________________________________
 
 				function onError() {
@@ -278,8 +277,6 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 				}
 
 
-
-
 				// ___________________________________________________________________
 
 				function getSettingsOverwrite() {
@@ -287,20 +284,17 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 
 					if (imgLiquidRoot.settings.useDataHtmlAttr) {
 						var dif = $imgBoxCont.attr('data-imgLiquid-fill'),
-						ha =  $imgBoxCont.attr('data-imgLiquid-horizontalAlign'),
-						va =  $imgBoxCont.attr('data-imgLiquid-verticalAlign');
+							ha = $imgBoxCont.attr('data-imgLiquid-horizontalAlign'),
+							va = $imgBoxCont.attr('data-imgLiquid-verticalAlign');
 
-						if (dif === 'true' || dif === 'false') SettingsOverwrite.fill = Boolean (dif === 'true');
+						if (dif === 'true' || dif === 'false') SettingsOverwrite.fill = Boolean(dif === 'true');
 						if (ha !== undefined && (ha === 'left' || ha === 'center' || ha === 'right' || ha.indexOf('%') !== -1)) SettingsOverwrite.horizontalAlign = ha;
-						if (va !== undefined && (va === 'top' ||  va === 'bottom' || va === 'center' || va.indexOf('%') !== -1)) SettingsOverwrite.verticalAlign = va;
+						if (va !== undefined && (va === 'top' || va === 'bottom' || va === 'center' || va.indexOf('%') !== -1)) SettingsOverwrite.verticalAlign = va;
 					}
 
 					if (imgLiquid.isIE && imgLiquidRoot.settings.ieFadeInDisabled) SettingsOverwrite.fadeInTime = 0; //ie no anims
 					return SettingsOverwrite;
 				}
-
-
-
 
 
 				// ___________________________________________________________________
@@ -309,14 +303,14 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 
 					// Calculate size
 					var w, h, wn, hn, ha, va, hdif, vdif,
-					margT = 0,
-					margL = 0,
-					$imgCW = $imgBoxCont.width(),
-					$imgCH = $imgBoxCont.height();
+						margT = 0,
+						margL = 0,
+						$imgCW = $imgBoxCont.width(),
+						$imgCH = $imgBoxCont.height();
 
 
 					// Save original sizes
-					if ($img.data('owidth')	=== undefined) $img.data('owidth',	$img[0].width);
+					if ($img.data('owidth') === undefined) $img.data('owidth', $img[0].width);
 					if ($img.data('oheight') === undefined) $img.data('oheight', $img[0].height);
 
 
@@ -346,8 +340,8 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 					if (ha === 'left') margL = 0;
 					if (ha === 'center') margL = hdif * 0.5;
 					if (ha === 'right') margL = hdif;
-					if (ha.indexOf('%') !== -1){
-						ha = parseInt (ha.replace('%',''), 10);
+					if (ha.indexOf('%') !== -1) {
+						ha = parseInt(ha.replace('%', ''), 10);
 						if (ha > 0) margL = hdif * ha * 0.01;
 					}
 
@@ -358,14 +352,17 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 					if (va === 'top') margT = 0;
 					if (va === 'center') margT = vdif * 0.5;
 					if (va === 'bottom') margT = vdif;
-					if (va.indexOf('%') !== -1){
-						va = parseInt (va.replace('%',''), 10);
+					if (va.indexOf('%') !== -1) {
+						va = parseInt(va.replace('%', ''), 10);
 						if (va > 0) margT = vdif * va * 0.01;
 					}
 
 
 					// Add Css
-					if (settings.hardPixels) {w = wn; h = hn;}
+					if (settings.hardPixels) {
+						w = wn;
+						h = hn;
+					}
 					$img.css({
 						'width': w,
 						'height': h,
@@ -389,8 +386,6 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 				}
 
 
-
-
 				// ___________________________________________________________________
 
 				function checkFinish() { /* Check callBack */
@@ -404,12 +399,11 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 })(jQuery);
 
 
-
 // Inject css styles ______________________________________________________
 !function () {
 	var css = imgLiquid.injectCss,
-	head = document.getElementsByTagName('head')[0],
-	style = document.createElement('style');
+		head = document.getElementsByTagName('head')[0],
+		style = document.createElement('style');
 	style.type = 'text/css';
 	if (style.styleSheet) {
 		style.styleSheet.cssText = css;
