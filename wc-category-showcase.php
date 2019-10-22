@@ -3,14 +3,14 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.1.0
+ * Version:     1.1.1
  * Author:      PluginEver
  * Author URI:  http://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
  * Domain Path: /languages
  * WC requires at least: 3.0.0
- * WC tested up to: 3.7.0
+ * WC tested up to: 3.7.1
  */
 
 /**
@@ -49,7 +49,7 @@ class WC_Category_Showcase {
 	 * @since 1.0.0
 	 * @var  string
 	 */
-	public $version = '1.1.0';
+	public $version = '1.1.1';
 
 	/**
 	 * admin notices
@@ -97,7 +97,7 @@ class WC_Category_Showcase {
 		add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );
 		add_action( 'admin_init', array( $this, 'plugin_upgrades' ) );
 
-		if( $this->is_plugin_compatible() ){
+		if ( $this->is_plugin_compatible() ) {
 			$this->define_constants();
 			$this->includes();
 			$this->init_actions();
@@ -111,9 +111,9 @@ class WC_Category_Showcase {
 	/**
 	 * Initialize plugin for localization
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	public function localization_setup() {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'wc_category_showcase' );
@@ -124,9 +124,9 @@ class WC_Category_Showcase {
 	/**
 	 * Executes during plugin activation
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	function install() {
 		//save install date
@@ -140,9 +140,9 @@ class WC_Category_Showcase {
 	/**
 	 * Executes during plugin deactivation
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	function deactivate() {
 
@@ -205,7 +205,9 @@ class WC_Category_Showcase {
 		foreach ( $notices as $notice_key => $notice ) :
 			?>
 			<div class="notice notice-<?php echo sanitize_html_class( $notice['class'] ); ?>">
-				<p><?php echo wp_kses( $notice['message'], array( 'a' => array( 'href' => array() ), 'strong' => array() ) ); ?></p>
+				<p><?php echo wp_kses( $notice['message'], array( 'a'      => array( 'href' => array() ),
+				                                                  'strong' => array()
+					) ); ?></p>
 			</div>
 			<?php
 			update_option( sanitize_key( $this->plugin_name ), [] );
@@ -215,9 +217,9 @@ class WC_Category_Showcase {
 	/**
 	 * Define constants
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	private function define_constants() {
 		define( 'PLVR_WCCS_VERSION', $this->version );
@@ -235,9 +237,9 @@ class WC_Category_Showcase {
 	/**
 	 * Include required files
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	private function includes() {
 		require PLVR_WCCS_INCLUDES . '/functions.php';
@@ -256,9 +258,9 @@ class WC_Category_Showcase {
 	/**
 	 * Do plugin upgrades
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	function plugin_upgrades() {
 
@@ -266,7 +268,7 @@ class WC_Category_Showcase {
 			return;
 		}
 
-		require_once dirname( __FILE__  ) . '/includes/class-upgrades.php';
+		require_once dirname( __FILE__ ) . '/includes/class-upgrades.php';
 
 		$upgrader = new WCCS_Upgrades();
 
@@ -285,15 +287,15 @@ class WC_Category_Showcase {
 	public static function is_pro_installed() {
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-		return is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) == true;
+		return is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) == true;
 	}
 
 	/**
 	 * Init Hooks
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	private function init_actions() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_assets' ) );
@@ -304,9 +306,9 @@ class WC_Category_Showcase {
 	/**
 	 * Instantiate classes
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	private function init_plugin() {
 		new \Pluginever\WCCS\Shortcode();
@@ -317,9 +319,9 @@ class WC_Category_Showcase {
 	/**
 	 * Add all the assets required by the plugin
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	function load_assets() {
 		wp_register_style( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/css/wc-category-showcase.css", [], date( 'i' ) );

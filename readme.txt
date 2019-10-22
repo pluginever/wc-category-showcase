@@ -3,7 +3,7 @@ Contributors:      manikmist09, pluginever
 Donate link:
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider, product category carousel, product category slider, woocommerce category slider plugin free, product category carousel, product category rotators, product category slider, products category slider, responsive product category slider, woo category slider, woocommerce, woocommerce product category carousel, WooCommerce Products, woocommerce products category slider, woocommerce slider, carousel, woocommerce image slider, woocommerce responsive slider, woocommerce advance slider, best woocommerce product slider, easy woocommerce product slider, woocommerce slider free, woocommerce slider plugin, slider for woocommerce, product slider carousel for woocommerce, woocommerce product category slider and carousel plugin
 Requires at least: 3.6.0
-Tested up to:      5.2.3
+Tested up to:      5.2.4
 Requires PHP:      5.6
 Stable tag:        trunk
 License:           GPLv2 or later
@@ -135,6 +135,12 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+
+= 1.1.1 =
+* WC compatibility with 3.7.1
+* WP compatibility with 5.2.4
+* Fix conflict Smush Image Optimization plugin
+
 = 1.1.0 =
 * WC compatibility with 3.7.0
 * WP compatibility with 5.2.3
