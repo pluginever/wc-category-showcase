@@ -10,7 +10,7 @@ class WC_Category_Showcase_Promotion {
 	protected $uniq_key;
 
 	public function __construct() {
-		$this->uniq_key = sanitize_key('wc-category-showcase');
+		$this->uniq_key = sanitize_key('wc-category-showcase-2020');
 		add_action( 'admin_notices', array( $this, 'promotional_offer' ) );
 		add_action( 'wp_ajax_'.$this->uniq_key.'-dismiss-promotional-offer-notice', array( $this, 'dismiss_promotional_offer' ) );
 	}
