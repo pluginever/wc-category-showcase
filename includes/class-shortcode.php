@@ -2,101 +2,98 @@
 
 namespace Pluginever\WCCS;
 
-class Shortcode
-{
+class Shortcode {
 
-	public function __construct()
-	{
-		add_shortcode('wccs_showcase', array($this, 'shortcode_render_callback'));
+	public function __construct() {
+		add_shortcode( 'wccs_showcase', array( $this, 'shortcode_render_callback' ) );
 	}
 
-	public function shortcode_render_callback($attr)
-	{
-		$attr = wp_parse_args($attr, array('id' => null));
+	public function shortcode_render_callback( $attr ) {
+		$attr = wp_parse_args( $attr, array( 'id' => null ) );
 
-		if ($attr['id'] == null) {
+		if ( $attr['id'] == null ) {
 			return;
 		}
-		if (false === get_post_status($attr['id'])) {
+		if ( false === get_post_status( $attr['id'] ) ) {
 			return;
 		}
 
-		$post_id = intval($attr['id']);
+		$post_id = intval( $attr['id'] );
 
 		$params = [
-			'wccs_featured_categories' => [],
-			'wccs_additional_categories' => [],
-			'wccs_show_block_title' => '0',
-			'wccs_featured_show_title' => '1',
-			'wccs_featured_show_desc' => '1',
-			'wccs_featured_show_button' => '1',
-			'wccs_featured_button_text' => 'Shop Now',
+			'wccs_featured_categories'    => [],
+			'wccs_additional_categories'  => [],
+			'wccs_show_block_title'       => '0',
+			'wccs_featured_show_title'    => '1',
+			'wccs_featured_show_desc'     => '1',
+			'wccs_featured_show_button'   => '1',
+			'wccs_featured_button_text'   => 'Shop Now',
 			'wccs_featured_content_color' => '#fff',
-			'wccs_featured_content_bg' => 'rgba(150,88,138,.9)',
-			'wccs_additional_show_title' => '1',
+			'wccs_featured_content_bg'    => 'rgba(150,88,138,.9)',
+			'wccs_additional_show_title'  => '1',
 			'wccs_additional_title_color' => '#000',
-			'wccs_additional_content_bg' => '#fff',
+			'wccs_additional_content_bg'  => '#fff',
 		];
 
 
-		$featured_sets = get_post_meta($post_id, 'wccs_featured_categories', true);
-		if (false !== $featured_sets) {
+		$featured_sets = get_post_meta( $post_id, 'wccs_featured_categories', true );
+		if ( false !== $featured_sets ) {
 			$params['wccs_featured_categories'] = $featured_sets;
 		}
 
-		$additional_sets = get_post_meta($post_id, 'wccs_additional_categories', true);
-		if (false !== $additional_sets) {
+		$additional_sets = get_post_meta( $post_id, 'wccs_additional_categories', true );
+		if ( false !== $additional_sets ) {
 			$params['wccs_additional_categories'] = $additional_sets;
 		}
-		$show_title = get_post_meta($post_id, 'wccs_show_block_title', true);
-		if (false !== $show_title) {
+		$show_title = get_post_meta( $post_id, 'wccs_show_block_title', true );
+		if ( false !== $show_title ) {
 			$params['wccs_show_block_title'] = $show_title;
 		}
 
-		$params = apply_filters('wccs_showcase_settings', $params, $post_id);
+		$params = apply_filters( 'wccs_showcase_settings', $params, $post_id );
 
-		$featured_categories = $params['wccs_featured_categories'];
-		$additional_categories = (array)$params['wccs_additional_categories'];
+		$featured_categories   = $params['wccs_featured_categories'];
+		$additional_categories = (array) $params['wccs_additional_categories'];
 
-		if (is_array($additional_categories) && count($additional_categories) > 6) {
-			$additional_categories = array_slice($additional_categories, 0, 6);
+		if ( is_array( $additional_categories ) && count( $additional_categories ) > 6 ) {
+			$additional_categories = array_slice( $additional_categories, 0, 6 );
 		}
 		ob_start();
 
 		$additional_cats_width = [];
-		$set = 0;
-		$total = 0;
+		$set                   = 0;
+		$total                 = 0;
 
-		for ($i = 0; $i < count($additional_categories); $i++) {
+		for ( $i = 0; $i < count( $additional_categories ); $i ++ ) {
 
-			if ($total >= 6) {
+			if ( $total >= 6 ) {
 				break;
 			}
-			$term = wccs_get_term_details($additional_categories[$i], $post_id, 'additional');
+			$term = wccs_get_term_details( $additional_categories[ $i ], $post_id, 'additional' );
 
-			if (!empty($term['col'])) {
+			if ( ! empty( $term['col'] ) ) {
 				$col = $term['col'];
 			} else {
 				$col = 1;
 			}
 
-			if ($set + $col > 3) {
+			if ( $set + $col > 3 ) {
 				$col = 3 - $set;
 			}
 
 			$set += $col;
-			if ($set >= 3) {
+			if ( $set >= 3 ) {
 				$set = 0;
 			}
 
-			$total += $col;
-			$additional_cats_width[$additional_categories[$i]] = "{$col}";
+			$total                                                 += $col;
+			$additional_cats_width[ $additional_categories[ $i ] ] = "{$col}";
 		}
 		$additional_categories = $additional_cats_width;
 		?>
 		<div class="woo-cs has-border" id="wccs-slider-<?php echo $post_id; ?>">
-			<?php if (!empty($params['wccs_show_block_title'])): ?>
-				<h2 class="woo-cs-heading"><?php echo get_the_title($post_id); ?></h2>
+			<?php if ( ! empty( $params['wccs_show_block_title'] ) ): ?>
+				<h2 class="woo-cs-heading"><?php echo get_the_title( $post_id ); ?></h2>
 			<?php endif; ?>
 			<div class="woo-cs-inner">
 				<div class="row eq-height">
@@ -105,28 +102,28 @@ class Shortcode
 							<div class="woo-cs-slider">
 
 								<?php
-								foreach ($featured_categories as $featured_category_id) {
-									$featured_category = wccs_get_term_details($featured_category_id, $post_id, 'featured');
-									$html = '<div>';
-									$html .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $featured_category['link'] . '">';
-									$html .= '<span class="woo-cs-slide-img-container">';
-									$html .= '<img src="' . $featured_category['image'] . '" alt="' . $featured_category['title'] . '">';
-									$html .= '</a>';
-									$html .= '</span>';
+								foreach ( $featured_categories as $featured_category_id ) {
+									$featured_category = wccs_get_term_details( $featured_category_id, $post_id, 'featured' );
+									$html              = '<div>';
+									$html              .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $featured_category['link'] . '">';
+									$html              .= '<span class="woo-cs-slide-img-container">';
+									$html              .= '<img src="' . $featured_category['image'] . '" alt="' . $featured_category['title'] . '">';
+									$html              .= '</a>';
+									$html              .= '</span>';
 
-									if ($params['wccs_featured_show_title'] || $params['wccs_featured_show_desc'] || $params['wccs_featured_show_button']) {
+									if ( $params['wccs_featured_show_title'] || $params['wccs_featured_show_desc'] || $params['wccs_featured_show_button'] ) {
 
 										$html .= '<span class="woo-cs-cat-details">';
 
-										if ($params['wccs_featured_show_title'] == '1') {
+										if ( $params['wccs_featured_show_title'] == '1' ) {
 											$html .= '<span class="woo-cs-cat-title">' . $featured_category['title'] . '</span>';
 										}
 
-										if ($params['wccs_featured_show_desc'] == '1') {
+										if ( $params['wccs_featured_show_desc'] == '1' ) {
 											$html .= '<span class="woo-cs-cat-des">' . $featured_category['desc'] . '</span>';
 										}
 
-										if ($params['wccs_featured_show_button'] == '1') {
+										if ( $params['wccs_featured_show_button'] == '1' ) {
 											$html .= '<a href="' . $featured_category['link'] . '" class="woo-cs-cat-button">' . $params['wccs_featured_button_text'] . '</a>';
 										}
 
@@ -152,17 +149,17 @@ class Shortcode
 
 							<?php
 							$counter = 0;
-							foreach ($additional_categories as $id => $width) {
-								$additional_category = wccs_get_term_details($id, $post_id, 'additional');
+							foreach ( $additional_categories as $id => $width ) {
+								$additional_category = wccs_get_term_details( $id, $post_id, 'additional' );
 
-								$html = '<div class="center col-xs-12 col-sm-12 col-md-' . ($width * 4) . ' col-lg-' . ($width * 4) . '">';
+								$html = '<div class="center col-xs-12 col-sm-12 col-md-' . ( $width * 4 ) . ' col-lg-' . ( $width * 4 ) . '">';
 								$html .= '<div class="woo-cs-box">';
 								$html .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $additional_category['link'] . '">';
 
 								$html .= '<span class="woo-cs-thumb-container">';
 								$html .= '<img src="' . $additional_category['image'] . '" alt="' . $additional_category['title'] . '" class="woo-cs-image woo-cs-image-thumb">';
 								$html .= '</span>';
-								if ($params['wccs_additional_show_title']) {
+								if ( $params['wccs_additional_show_title'] ) {
 									$html .= '<span class="woo-cs-cat-name">' . $additional_category['title'] . '</span>';
 								}
 
@@ -170,7 +167,7 @@ class Shortcode
 								$html .= '</div>';
 								$html .= '</div>';
 								echo $html;
-								$counter++;
+								$counter ++;
 							}
 
 							?>

@@ -135,6 +135,9 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.1.2 =
+* WC compatibility with 3.8.1
+* WP compatibility with 5.3.2
 
 = 1.1.1 =
 * WC compatibility with 3.7.1

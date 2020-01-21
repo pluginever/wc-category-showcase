@@ -72,7 +72,10 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 			register_deactivation_hook( $file, array( $this, 'deactivate_plugin' ) );
 
 			// uninstall reason
-			add_action( 'wp_ajax_' . $this->slug . '_submit-uninstall-reason', array( $this, 'uninstall_reason_submission' ) );
+			add_action( 'wp_ajax_' . $this->slug . '_submit-uninstall-reason', array(
+				$this,
+				'uninstall_reason_submission'
+			) );
 
 			// cron events
 			add_action( 'cron_schedules', array( $this, 'add_weekly_schedule' ) );
@@ -83,7 +86,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 		/**
 		 * Send tracking data to weDevs server
 		 *
-		 * @param  boolean $override
+		 * @param boolean $override
 		 *
 		 * @return void
 		 */
@@ -111,8 +114,8 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 		/**
 		 * Send request to remote endpoint
 		 *
-		 * @param  array  $params
-		 * @param  string $route
+		 * @param array $params
+		 * @param string $route
 		 *
 		 * @return void
 		 */
@@ -331,7 +334,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 		/**
 		 * Get the number of post counts
 		 *
-		 * @param  string $post_type
+		 * @param string $post_type
 		 *
 		 * @return integer
 		 */
@@ -486,7 +489,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 		/**
 		 * Hook into action links and modify the deactivate link
 		 *
-		 * @param  array $links
+		 * @param array $links
 		 *
 		 * @return array
 		 */
@@ -606,8 +609,11 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 					<div class="wd-dr-modal-body">
 						<ul class="reasons">
 							<?php foreach ( $reasons as $reason ) { ?>
-								<li data-type="<?php echo esc_attr( $reason['type'] ); ?>" data-placeholder="<?php echo esc_attr( $reason['placeholder'] ); ?>">
-									<label><input type="radio" name="selected-reason" value="<?php echo $reason['id']; ?>"> <?php echo $reason['text']; ?></label>
+								<li data-type="<?php echo esc_attr( $reason['type'] ); ?>"
+								    data-placeholder="<?php echo esc_attr( $reason['placeholder'] ); ?>">
+									<label><input type="radio" name="selected-reason"
+									              value="<?php echo $reason['id']; ?>"> <?php echo $reason['text']; ?>
+									</label>
 								</li>
 							<?php } ?>
 						</ul>
