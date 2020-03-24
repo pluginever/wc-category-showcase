@@ -247,6 +247,7 @@ class Shortcode {
 		$config = array(
 			'autoplay' => '1' == get_post_meta( $post_id, 'wccs_autoplay_slider', true ) ? true : false,
 			'infinite' => '1' == get_post_meta( $post_id, 'wccs_infinite_scroll', true ) ? true : false,
+			'speed'    => get_post_meta( $post_id, 'wccs_slider_autoplaySpeed', true ) ? get_post_meta( $post_id, 'wccs_slider_speed', true ) : 500,
 		);
 
 		$config = apply_filters( 'wc_slider_config', $config );
