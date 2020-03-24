@@ -45,10 +45,17 @@ window.WC_Category_Showcase = (function (window, document, $, undefined) {
 			$(this).closest('.woo-cs').addClass('initialized');
 		});
 
-		slider.slick({
-			autoplay: true,
-			dots: false,
-			speed: 500
+		slider.each(function(){
+			var config = $(this).data('slider-config');
+			var autoplay = config.autoplay;
+			var infiniteloop = config.infinite;
+
+			$(this).slick({
+				autoplay: autoplay,
+				dots: false,
+				infinite: infiniteloop,
+				speed: 500
+			});
 		});
 
 		//we modified imgLiquid core for support data-src attr
