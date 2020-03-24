@@ -21,18 +21,20 @@ class Shortcode {
 		$post_id = intval( $attr['id'] );
 
 		$params = [
-			'wccs_featured_categories'    => [],
-			'wccs_additional_categories'  => [],
-			'wccs_show_block_title'       => '0',
-			'wccs_featured_show_title'    => '1',
-			'wccs_featured_show_desc'     => '1',
-			'wccs_featured_show_button'   => '1',
-			'wccs_featured_button_text'   => 'Shop Now',
-			'wccs_featured_content_color' => '#fff',
-			'wccs_featured_content_bg'    => 'rgba(150,88,138,.9)',
-			'wccs_additional_show_title'  => '1',
-			'wccs_additional_title_color' => '#000',
-			'wccs_additional_content_bg'  => '#fff',
+			'wccs_featured_categories'          => [],
+			'wccs_additional_categories'        => [],
+			'wccs_show_block_title'             => '0',
+			'wccs_featured_show_title'          => '1',
+			'wccs_featured_show_desc'           => '1',
+			'wccs_featured_show_button'         => '1',
+			'wccs_featured_button_text'         => 'Shop Now',
+			'wccs_featured_content_color'       => '#fff',
+			'wccs_featured_content_bg'          => 'rgba(150,88,138,.9)',
+			'wccs_additional_show_title'        => '1',
+			'wccs_additional_title_color'       => '#000',
+			'wccs_additional_content_bg'        => '#fff',
+			'wccs_featured_show_custom_message' => '1',
+			'wccs_featured_custom_message'      => '',
 		];
 
 
@@ -49,6 +51,8 @@ class Shortcode {
 		if ( false !== $show_title ) {
 			$params['wccs_show_block_title'] = $show_title;
 		}
+
+
 
 		$params = apply_filters( 'wccs_showcase_settings', $params, $post_id );
 
@@ -112,7 +116,7 @@ class Shortcode {
 									$html              .= '</a>';
 									$html              .= '</span>';
 
-									if ( $params['wccs_featured_show_title'] || $params['wccs_featured_show_desc'] || $params['wccs_featured_show_button'] ) {
+									if ( $params['wccs_featured_show_title'] || $params['wccs_featured_show_desc'] || $params['wccs_featured_show_button'] || $params['wccs_featured_show_custom_message'] ) {
 
 										$html .= '<span class="woo-cs-cat-details">';
 
@@ -123,6 +127,10 @@ class Shortcode {
 										if ( $params['wccs_featured_show_desc'] == '1' ) {
 											$html .= '<span class="woo-cs-cat-des">' . $featured_category['desc'] . '</span>';
 										}
+
+										if($params['wccs_featured_show_custom_message'] == '1' && $params['wccs_featured_show_desc'] != '1') {
+											$html .= '<span class="woo-cs-cat-des">' . sanitize_textarea_field($params['wccs_featured_custom_message']) . '</span>';
+                                        }
 
 										if ( $params['wccs_featured_show_button'] == '1' ) {
 											$html .= '<a href="' . $featured_category['link'] . '" class="woo-cs-cat-button">' . $params['wccs_featured_button_text'] . '</a>';
