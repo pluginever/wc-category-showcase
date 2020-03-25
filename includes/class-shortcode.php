@@ -53,7 +53,6 @@ class Shortcode {
 		}
 
 
-
 		$params = apply_filters( 'wccs_showcase_settings', $params, $post_id );
 
 		$featured_categories   = $params['wccs_featured_categories'];
@@ -128,9 +127,9 @@ class Shortcode {
 											$html .= '<span class="woo-cs-cat-des">' . $featured_category['desc'] . '</span>';
 										}
 
-										if($params['wccs_featured_show_custom_message'] == '1' && $params['wccs_featured_show_desc'] != '1') {
-											$html .= '<span class="woo-cs-cat-des">' . sanitize_textarea_field($params['wccs_featured_custom_message']) . '</span>';
-                                        }
+										if ( $params['wccs_featured_show_custom_message'] == '1' && $params['wccs_featured_show_desc'] != '1' ) {
+											$html .= '<span class="woo-cs-cat-des"><p>' . sanitize_textarea_field( $params['wccs_featured_custom_message'] ) . '</p></span>';
+										}
 
 										if ( $params['wccs_featured_show_button'] == '1' ) {
 											$html .= '<a href="' . $featured_category['link'] . '" class="woo-cs-cat-button">' . $params['wccs_featured_button_text'] . '</a>';
