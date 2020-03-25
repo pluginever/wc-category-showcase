@@ -225,9 +225,11 @@
         text-align: center;
         &:hover{
             background: rgba(150, 88, 138, 0.9);
+            text-decoration: none;
         }
         &:active{
             box-shadow: none;
+            text-decoration: none;
         }
     }
 
