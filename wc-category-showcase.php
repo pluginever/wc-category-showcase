@@ -289,7 +289,7 @@ class WC_Category_Showcase {
 	 */
 	public static function is_pro_installed() {
 		$status = false;
-		if ( is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) || is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) ) {
+		if ( is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) || is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) ) {
 			$status = true;
 		}
 
