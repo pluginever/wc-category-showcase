@@ -310,16 +310,17 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                 </div>
 
                 <?php
-                $output = ob_get_contents();
-                ob_get_clean();
-
-                echo $output;
             }
             do_action( 'plvr_framework_after_metabox-' . $this->id, $post, $this->id );
             do_action( 'plvr_framework_after_metabox', $post, $this->id );
 
             echo '</div>';
             echo '</div>';
+
+	        $output = ob_get_contents();
+	        ob_get_clean();
+
+	        echo $output;
         }
 
 
