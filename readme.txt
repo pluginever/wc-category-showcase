@@ -135,6 +135,13 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.1.3 =
+* Fix - conflict with nextgen gallery
+* Fix - upgrade to pro message with pro version
+* Fix - Slider navigation button
+* WC compatibility with 4.3.1
+* WP compatibility with 5.4.2
+
 = 1.1.2 =
 * WC compatibility with 3.8.1
 * WP compatibility with 5.3.2
