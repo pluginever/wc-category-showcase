@@ -108,6 +108,8 @@
             display: inline-block;
             margin-top: 10px;
             transition: 0.3s all;
+            text-decoration: none !important;
+            box-shadow: none;
         }
 
         .woo-cs-cat-button:hover {
@@ -131,6 +133,7 @@
             height: inherit;
             position: relative;
             text-decoration: none;
+            box-shadow: none;
             &:active, &:focus {
                 outline: none !important;
             }
@@ -222,9 +225,11 @@
         text-align: center;
         &:hover{
             background: rgba(150, 88, 138, 0.9);
+            text-decoration: none;
         }
         &:active{
             box-shadow: none;
+            text-decoration: none;
         }
     }
 
@@ -267,7 +272,7 @@
     }
 
     .slick-dots {
-        display: mone;
+        display: none;
     }
 
     &.has-border {
@@ -292,7 +297,7 @@
         }
     }
 
-    .woo-cs-heading {;
+    .woo-cs-heading {
         font-size: 20px;
         color: inherit;
         line-height: 27px;
@@ -300,6 +305,9 @@
         padding: 10px 0;
         text-align: left;
         font-weight: inherit;
+        &:before{
+            display: none;
+        }
     }
 }
 

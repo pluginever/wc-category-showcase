@@ -3,16 +3,16 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.1.2
+ * Version:     1.1.3
  * Author:      PluginEver
  * Author URI:  http://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
  * Domain Path: /languages
  * Requires at least: 4.4
- * Tested up to: 5.3.2
+ * Tested up to: 5.4.2
  * WC requires at least: 3.0.0
- * WC tested up to: 3.8.1
+ * WC tested up to: 4.3.1
  */
 
 /**
@@ -51,7 +51,7 @@ class WC_Category_Showcase {
 	 * @since 1.0.0
 	 * @var  string
 	 */
-	public $version = '1.1.2';
+	public $version = '1.1.3';
 
 	/**
 	 * admin notices
@@ -206,11 +206,12 @@ class WC_Category_Showcase {
 		$notices = (array) array_merge( $this->notices, get_option( sanitize_key( $this->plugin_name ), [] ) );
 		foreach ( $notices as $notice_key => $notice ) :
 			?>
-			<div class="notice notice-<?php echo sanitize_html_class( $notice['class'] ); ?>">
-				<p><?php echo wp_kses( $notice['message'], array( 'a'      => array( 'href' => array() ),
-				                                                  'strong' => array()
+            <div class="notice notice-<?php echo sanitize_html_class( $notice['class'] ); ?>">
+                <p><?php echo wp_kses( $notice['message'], array(
+						'a'      => array( 'href' => array() ),
+						'strong' => array()
 					) ); ?></p>
-			</div>
+            </div>
 			<?php
 			update_option( sanitize_key( $this->plugin_name ), [] );
 		endforeach;
@@ -287,9 +288,12 @@ class WC_Category_Showcase {
 	 *
 	 */
 	public static function is_pro_installed() {
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		$status = false;
+		if ( is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) || is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) ) {
+			$status = true;
+		}
 
-		return is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) == true;
+		return $status;
 	}
 
 	/**
@@ -340,9 +344,10 @@ class WC_Category_Showcase {
 	 * @return array
 	 */
 	public function plugin_action_links( $links ) {
+
 		$doc_link     = 'https://www.pluginever.com/docs/woocommerce-category-showcase/';
 		$action_links = [];
-		if ( ! self::is_pro_installed() ) {
+		if ( ! $this->is_pro_installed() ) {
 			$action_links['Upgrade'] = '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Upgrade To Pro', 'wc-category-showcase' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Upgrade To Pro', 'wc-category-showcase' ) . '</a>';
 		}
 		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wc-category-showcase' ) ) . '">' . __( 'Documentation', 'wc-category-showcase' ) . '</a>';

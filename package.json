@@ -15,7 +15,10 @@
   },
   "scripts": {
     "build": "grunt",
-    "build-watch": "grunt watch"
+    "build-watch": "grunt watch",
+    "block:start": "webpack --watch",
+    "block:build": "webpack --mode production",
+    "block:dev": "webpack"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.5",

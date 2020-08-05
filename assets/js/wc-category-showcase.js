@@ -10,65 +10,72 @@
 /*global jQuery:false */
 
 window.WC_Category_Showcase = (function (window, document, $, undefined) {
-	'use strict';
-	var app = {};
-	app.init = function () {
-		function is_mobile() {
-			var agents = ['android', 'webos', 'iphone', 'ipad', 'blackberry'];
-			for(var i in agents) {
-				if(navigator.userAgent.match('/'+agents[i]+'/i')) {
-					return true;
-				}
-			}
-			return false;
-		}
+    'use strict';
+    var app = {};
+    app.init = function () {
+        function is_mobile() {
+            var agents = ['android', 'webos', 'iphone', 'ipad', 'blackberry'];
+            for (var i in agents) {
+                if (navigator.userAgent.match('/' + agents[i] + '/i')) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
 
-		var slider = $('.woo-cs-slider');
+        var slider = $('.woo-cs-slider');
 
-		slider.on('init', function () {
+        slider.on('init', function () {
 
-			if( !is_mobile()){
-				var showcases = $('.woo-cs');
+            if (!is_mobile()) {
+                var showcases = $('.woo-cs');
 
-				$.each(showcases, function (index, showcase) {
-					var Rheight = $(showcase).find('.woo-cs-right-block>.row').height();
-					var Lheight = $(showcase).find('.woo-cs-left-block').height();
+                $.each(showcases, function (index, showcase) {
+                    var Rheight = $(showcase).find('.woo-cs-right-block>.row').height();
+                    var Lheight = $(showcase).find('.woo-cs-left-block').height();
 
-					if( Lheight !== Rheight){
-						$(showcases).find('.slick-track').css('max-height',  Rheight + 'px');
-						$(showcases).find('.woo-cs-slider-block img').css('width',   'auto');
-					}
-				});
-			}
+                    if (Lheight !== Rheight) {
+                        $(showcases).find('.slick-track').css('max-height', Rheight + 'px');
+                        $(showcases).find('.woo-cs-slider-block img').css('width', 'auto');
+                    }
+                });
+            }
 
-			$(this).closest('.woo-cs').addClass('initialized');
-		});
+            $(this).closest('.woo-cs').addClass('initialized');
+        });
 
-		slider.slick({
-			autoplay: true,
-			dots: false,
-			speed: 500
-		});
+        slider.each(function () {
+            var config = $(this).data('slider-config');
+            var autoplay = config.autoplay;
+            var infiniteloop = config.infinite;
+			var speed = config.speed;
 
-		//we modified imgLiquid core for support data-src attr
-		$('.woo-cs-thumb-container').imgLiquid({
-			fill: true,
-			horizontalAlign: 'center',
-			verticalAlign: 'center'
-		});
+            $(this).slick({
+                autoplay: autoplay,
+                dots: false,
+                infinite: infiniteloop,
+                speed: speed
+            });
+        });
+
+        //we modified imgLiquid core for support data-src attr
+        $('.woo-cs-thumb-container').imgLiquid({
+            fill: true,
+            horizontalAlign: 'center',
+            verticalAlign: 'center'
+        });
 
 
+    };
 
-	};
+    // var $slick_carousel = $('.woo-cs-slider');
+    // $slick_carousel.on('init', function() {
+    //     $slick_carousel.css('display', 'block');
+    // });
 
-	// var $slick_carousel = $('.woo-cs-slider');
-	// $slick_carousel.on('init', function() {
-	//     $slick_carousel.css('display', 'block');
-	// });
+    $(document).ready(app.init);
 
-	$(document).ready(app.init);
-
-	return app;
+    return app;
 
 })(window, document, jQuery);
