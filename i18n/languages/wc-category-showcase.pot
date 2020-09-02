@@ -159,38 +159,6 @@ msgstr ""
 msgid "Example Metabox"
 msgstr ""
 
-#: wc-category-showcase.php:351
-msgid "Upgrade To Pro"
-msgstr ""
-
-#: wc-category-showcase.php:353
-msgid "View Plugin's Documentation"
-msgstr ""
-
-#: wc-category-showcase.php:353
-msgid "Documentation"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "WooCommerce Category Showcase"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://pluginever.com/wc-category-showcase"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "WooCommerce extension to showcase categories in a nice slider blocks"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "PluginEver"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://pluginever.com"
-msgstr ""
-
 #: includes/custom-cp.php:6
 msgctxt "post type general name"
 msgid "WC Category Showcase"
@@ -214,4 +182,45 @@ msgstr ""
 #: includes/custom-cp.php:10
 msgctxt "book"
 msgid "Add New"
+msgstr ""
+
+#: wc-category-showcase.php:191
+msgid ""
+"<strong>WooCommerce Category Showcase</strong> requires <strong>WooCommerce</strong> installed and activated. Please install %s WooCommerce. %s"
+msgstr ""
+
+#: wc-category-showcase.php:379
+msgid "Upgrade To Pro"
+msgstr ""
+
+#: wc-category-showcase.php:381
+msgid "View Plugin's Documentation"
+msgstr ""
+
+#: wc-category-showcase.php:381
+msgid "Documentation"
+msgstr ""
+
+#: wc-category-showcase.php:398 wc-category-showcase.php:409
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WooCommerce Category Showcase"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://pluginever.com/wc-category-showcase"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "WooCommerce extension to showcase categories in a nice slider blocks"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "PluginEver"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://pluginever.com"
 msgstr ""
