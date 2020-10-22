@@ -2,6 +2,10 @@
 
 namespace Pluginever\WCCCS;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Metabox {
 
 	public function __construct() {
@@ -127,24 +131,24 @@ class Metabox {
 	 */
 	public function promotion_metabox_callback() {
 		?>
-        <img src="<?php echo PLVR_WCCS_ASSETS . '/images/promotion.png'; ?>" alt="WOO Category Showcase Pro"
-             style="width: 100%;margin-bottom: 10px;">
-        <h4 style="margin: 0;padding: 0;border-bottom: 1px solid #333;"><?php _e( 'Pro Features', 'wc-category-showcase' ); ?></h4>
-        <ul style="padding-left: 25px;list-style: disc;">
-            <li>Custom featured category image</li>
-            <li>Custom additional category image</li>
-            <li>Custom category title</li>
-            <li>Category title show hide</li>
-            <li>Category description show hide</li>
-            <li>Category button show hide</li>
-            <li>Category button custom text</li>
-            <li>Custom content color</li>
-            <li>Custom content background color</li>
-            <li>Custom image column</li>
-            <li>And Many More</li>
-        </ul>
-        <a href="http://bit.ly/woocommerce-category-showcase-pro"
-           target="_blank" style="text-align: center;font-weight: bold;">Upgrade To PRO Now</a>
+		<img src="<?php echo PLVR_WCCS_ASSETS . '/images/promotion.png'; ?>" alt="WOO Category Showcase Pro"
+			 style="width: 100%;margin-bottom: 10px;">
+		<h4 style="margin: 0;padding: 0;border-bottom: 1px solid #333;"><?php _e( 'Pro Features', 'wc-category-showcase' ); ?></h4>
+		<ul style="padding-left: 25px;list-style: disc;">
+			<li>Custom featured category image</li>
+			<li>Custom additional category image</li>
+			<li>Custom category title</li>
+			<li>Category title show hide</li>
+			<li>Category description show hide</li>
+			<li>Category button show hide</li>
+			<li>Category button custom text</li>
+			<li>Custom content color</li>
+			<li>Custom content background color</li>
+			<li>Custom image column</li>
+			<li>And Many More</li>
+		</ul>
+		<a href="http://bit.ly/woocommerce-category-showcase-pro"
+		   target="_blank" style="text-align: center;font-weight: bold;">Upgrade To PRO Now</a>
 		<?php
 	}
 

@@ -2,11 +2,29 @@
 
 namespace Pluginever\WCCS;
 
+// don't call the file directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Shortcode {
+
+	/*
+	* Class construct function
+	*/
 
 	public function __construct() {
 		add_shortcode( 'wccs_showcase', array( $this, 'shortcode_render_callback' ) );
 	}
+
+	/**
+	 * Slider shortcode render callback
+	 *
+	 * @param $attr
+	 *
+	 * @return mixed
+	 * @since 1.0.0
+	 */
 
 	public function shortcode_render_callback( $attr ) {
 		$attr = wp_parse_args( $attr, array( 'id' => null ) );
@@ -94,16 +112,16 @@ class Shortcode {
 		}
 		$additional_categories = $additional_cats_width;
 		?>
-        <div class="woo-cs has-border" id="wccs-slider-<?php echo $post_id; ?>">
+		<div class="woo-cs has-border" id="wccs-slider-<?php echo $post_id; ?>">
 			<?php if ( ! empty( $params['wccs_show_block_title'] ) ): ?>
-                <h2 class="woo-cs-heading"><?php echo get_the_title( $post_id ); ?></h2>
+				<h2 class="woo-cs-heading"><?php echo get_the_title( $post_id ); ?></h2>
 			<?php endif; ?>
-            <div class="woo-cs-inner">
-                <div class="row eq-height">
-                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5  woo-cs-left-block">
-                        <div class="woo-cs-slider-block">
-                            <div class="woo-cs-slider"
-                                 data-slider-config='<?php echo $this->get_slider_config( $post_id ); ?>'>
+			<div class="woo-cs-inner">
+				<div class="row eq-height">
+					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5  woo-cs-left-block">
+						<div class="woo-cs-slider-block">
+							<div class="woo-cs-slider"
+								 data-slider-config='<?php echo $this->get_slider_config( $post_id ); ?>'>
 
 								<?php
 								foreach ( $featured_categories as $featured_category_id ) {
@@ -144,16 +162,16 @@ class Shortcode {
 								}
 								?>
 
-                            </div>
+							</div>
 
-                        </div>
-                        <!--.woo-cs-slider-block-->
+						</div>
+						<!--.woo-cs-slider-block-->
 
-                    </div>
-                    <!--.woo-cs-left-block-->
+					</div>
+					<!--.woo-cs-left-block-->
 
-                    <div class="show-lg show-md col-xs-12 col-sm-12 col-md-7 col-lg-7 woo-cs-right-block">
-                        <div class="row eq-height">
+					<div class="show-lg show-md col-xs-12 col-sm-12 col-md-7 col-lg-7 woo-cs-right-block">
+						<div class="row eq-height">
 
 							<?php
 							$counter = 0;
@@ -180,61 +198,61 @@ class Shortcode {
 
 							?>
 
-                        </div>       <!--.plvr-grid-noGutter-equalHeight-->
-                    </div>
-                    <!--.woo-cs-right-block-->
-                </div>
+						</div>       <!--.plvr-grid-noGutter-equalHeight-->
+					</div>
+					<!--.woo-cs-right-block-->
+				</div>
 
-            </div>
-        </div>
+			</div>
+		</div>
 
-        <style>
-            #wccs-slider-<?php echo $post_id; ?> .woo-cs-right-block .woo-cs-cat-name {
-                background: <?php echo $params['wccs_additional_content_bg'];?>;
-                color: <?php echo $params['wccs_additional_title_color'];?>;
-            }
+		<style>
+			#wccs-slider-<?php echo $post_id; ?> .woo-cs-right-block .woo-cs-cat-name {
+				background: <?php echo $params['wccs_additional_content_bg'];?>;
+				color: <?php echo $params['wccs_additional_title_color'];?>;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details {
-                background: <?php echo $params['wccs_featured_content_bg'];?>;
-                color: <?php echo $params['wccs_featured_content_color'];?>;
-            }
+			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details {
+				background: <?php echo $params['wccs_featured_content_bg'];?>;
+				color: <?php echo $params['wccs_featured_content_color'];?>;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button {
-                color: <?php echo $params['wccs_featured_content_color'];?>;
-                border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
-                background: transparent;
-            }
+			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button {
+				color: <?php echo $params['wccs_featured_content_color'];?>;
+				border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
+				background: transparent;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button:hover {
-                color: <?php echo $params['wccs_featured_content_bg'];?>;
-                background: <?php echo $params['wccs_featured_content_color'];?>;
-                border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
-            }
+			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button:hover {
+				color: <?php echo $params['wccs_featured_content_bg'];?>;
+				background: <?php echo $params['wccs_featured_content_color'];?>;
+				border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-des {
-                border-top: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
-            }
+			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-des {
+				border-top: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
-                border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
-            }
+			#wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
+				border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
-                border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
-            }
+			#wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
+				border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .slick-prev,
-            #wccs-slider-<?php echo $post_id; ?> .slick-prev:before,
-            #wccs-slider-<?php echo $post_id; ?> .slick-next,
-            #wccs-slider-<?php echo $post_id; ?> .slick-next:before {
-                color: <?php echo $params['wccs_featured_content_color'];?>;
-            }
+			#wccs-slider-<?php echo $post_id; ?> .slick-prev,
+			#wccs-slider-<?php echo $post_id; ?> .slick-prev:before,
+			#wccs-slider-<?php echo $post_id; ?> .slick-next,
+			#wccs-slider-<?php echo $post_id; ?> .slick-next:before {
+				color: <?php echo $params['wccs_featured_content_color'];?>;
+			}
 
-            #wccs-slider-<?php echo $post_id; ?> .slick-prev:hover,
-            #wccs-slider-<?php echo $post_id; ?> .slick-next:hover {
-                background: <?php echo $params['wccs_featured_content_bg'];?>;
-            }
-        </style>
+			#wccs-slider-<?php echo $post_id; ?> .slick-prev:hover,
+			#wccs-slider-<?php echo $post_id; ?> .slick-next:hover {
+				background: <?php echo $params['wccs_featured_content_bg'];?>;
+			}
+		</style>
 
 		<?php
 		$output = ob_get_contents();
