@@ -174,9 +174,13 @@ class Shortcode {
 						<div class="row eq-height">
 
 							<?php
+							if ( is_plugin_active( 'optimole-wp/optimole-wp.php' ) ):
+								echo '<input type="hidden" name="optimole_active" value="1">';
+							endif;
 							$counter = 0;
 							foreach ( $additional_categories as $id => $width ) {
 								$additional_category = wccs_get_term_details( $id, $post_id, 'additional' );
+								error_log( print_r( $additional_category, true ) );
 
 								$html = '<div class="center col-xs-12 col-sm-12 col-md-' . ( $width * 4 ) . ' col-lg-' . ( $width * 4 ) . '">';
 								$html .= '<div class="woo-cs-box">';
