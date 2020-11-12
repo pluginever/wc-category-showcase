@@ -70,7 +70,6 @@ class Shortcode {
 			$params['wccs_show_block_title'] = $show_title;
 		}
 
-
 		$params = apply_filters( 'wccs_showcase_settings', $params, $post_id );
 
 		$featured_categories   = $params['wccs_featured_categories'];
@@ -111,6 +110,15 @@ class Shortcode {
 			$additional_cats_width[ $additional_categories[ $i ] ] = "{$col}";
 		}
 		$additional_categories = $additional_cats_width;
+
+		$show_additonal_categories = get_post_meta( $post_id, 'wccs_show_additional_categories', true );
+		if ( ! empty( $show_additonal_categories ) ) {
+			$left_block_classes  = 'col-xs-12 col-sm-12 col-md-5 col-lg-5  woo-cs-left-block';
+			$right_block_classes = 'show-lg show-md col-xs-12 col-sm-12 col-md-7 col-lg-7 woo-cs-right-block';
+		} else {
+			$left_block_classes  = 'col-xs-12 col-sm-12 col-md-12 col-lg-12  woo-cs-left-block';
+			$right_block_classes = 'hide';
+		}
 		?>
 		<div class="woo-cs has-border" id="wccs-slider-<?php echo $post_id; ?>">
 			<?php if ( ! empty( $params['wccs_show_block_title'] ) ): ?>
@@ -118,11 +126,9 @@ class Shortcode {
 			<?php endif; ?>
 			<div class="woo-cs-inner">
 				<div class="row eq-height">
-					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5  woo-cs-left-block">
+					<div class="<?php echo $left_block_classes; ?>">
 						<div class="woo-cs-slider-block">
-							<div class="woo-cs-slider"
-								 data-slider-config='<?php echo $this->get_slider_config( $post_id ); ?>'>
-
+							<div class="woo-cs-slider" data-slider-config='<?php echo $this->get_slider_config( $post_id ); ?>'>
 								<?php
 								foreach ( $featured_categories as $featured_category_id ) {
 									$featured_category = wccs_get_term_details( $featured_category_id, $post_id, 'featured' );
@@ -170,7 +176,7 @@ class Shortcode {
 					</div>
 					<!--.woo-cs-left-block-->
 
-					<div class="show-lg show-md col-xs-12 col-sm-12 col-md-7 col-lg-7 woo-cs-right-block">
+					<div class="<?php echo $right_block_classes; ?>">
 						<div class="row eq-height">
 
 							<?php
@@ -256,6 +262,18 @@ class Shortcode {
 			#wccs-slider-<?php echo $post_id; ?> .slick-next:hover {
 				background: <?php echo $params['wccs_featured_content_bg'];?>;
 			}
+
+			<?php
+				$show_slider_navigation = get_post_meta($post_id,'wccs_show_navigation',true);
+				if(empty($show_slider_navigation)){ ?>
+			#wccs-slider-<?php echo $post_id;?> .slick-prev,
+			#wccs-slider-<?php echo $post_id; ?> .slick-next {
+				display: none !important;
+			}
+
+			<?php
+				}
+			?>
 		</style>
 
 		<?php

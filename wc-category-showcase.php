@@ -378,7 +378,6 @@ class WC_Category_Showcase {
 		}
 		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wc-category-showcase' ) ) . '">' . __( 'Documentation', 'wc-category-showcase' ) . '</a>';
 
-
 		return array_merge( $action_links, $links );
 	}
 
@@ -391,7 +390,6 @@ class WC_Category_Showcase {
 	 * @access protected
 	 * @return void
 	 */
-
 	public function __clone() {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
 	}
@@ -402,7 +400,6 @@ class WC_Category_Showcase {
 	 * @access protected
 	 * @return void
 	 */
-
 	public function __wakeup() {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
 	}

@@ -121,7 +121,7 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
          */
         protected static function set_options( $options ) {
             $default = array(
-                'title'        => __( 'Example Metabox', 'pluginever_framework' ),
+                'title'        => __( 'Example Metabox', 'wc-category-showcase' ),
                 'screen'       => 'post',   //or array( 'post-type1', 'post-type2')
                 'context'      => 'normal', //('normal', 'advanced', or 'side')
                 'priority'     => 'high',
