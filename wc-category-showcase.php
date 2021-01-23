@@ -3,16 +3,16 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.1.3
+ * Version:     1.1.4
  * Author:      PluginEver
  * Author URI:  https://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
  * Domain Path: /i18n/languages
  * Requires at least: 4.4
- * Tested up to: 5.4.2
+ * Tested up to: 5.6
  * WC requires at least: 3.0.0
- * WC tested up to: 4.3.1
+ * WC tested up to: 4.9.1
  */
 
 /**
@@ -51,7 +51,7 @@ class WC_Category_Showcase {
 	 * @since 1.0.0
 	 * @var  string
 	 */
-	public $version = '1.1.3';
+	public $version = '1.1.4';
 
 	/**
 	 * admin notices

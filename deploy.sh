@@ -1,7 +1,7 @@
 #! /bin/bash
 # ----- START EDITING HERE -----
 PLUGINSLUG="wc-category-showcase"
-SVNUSER="manikmist09"
+SVNUSER="pluginever"
 # ----- STOP EDITING HERE -----
 
 # Exit if any command fails.
