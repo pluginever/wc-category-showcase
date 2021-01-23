@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! class_exists( 'Pluginever_Insights' ) ) :
 
@@ -467,7 +470,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 
 			$schedules['weekly'] = array(
 				'interval' => DAY_IN_SECONDS * 7,
-				'display'  => __( 'Once Weekly', 'textdomain' )
+				'display'  => __( 'Once Weekly', 'wc-category-showcase' )
 			);
 
 			return $schedules;
@@ -506,45 +509,45 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 			$reasons = array(
 				array(
 					'id'          => 'could-not-understand',
-					'text'        => 'I couldn\'t understand how to make it work',
+					'text'        => __( 'I couldn\'t understand how to make it work', 'wc-category-showcase' ),
 					'type'        => 'textarea',
-					'placeholder' => 'Would you like us to assist you?'
+					'placeholder' => __( 'Would you like us to assist you?', 'wc-category-showcase' ),
 				),
 				array(
 					'id'          => 'found-better-plugin',
-					'text'        => 'I found a better plugin',
+					'text'        => __( 'I found a better plugin', 'wc-category-showcase' ),
 					'type'        => 'text',
-					'placeholder' => 'Which plugin?'
+					'placeholder' => __( 'Which plugin?', 'wc-category-showcase' ),
 				),
 				array(
 					'id'          => 'not-have-that-feature',
-					'text'        => 'The plugin is great, but I need specific feature that you don\'t support',
+					'text'        => __( 'The plugin is great, but I need specific feature that you don\'t support', 'wc-category-showcase' ),
 					'type'        => 'textarea',
-					'placeholder' => 'Could you tell us more about that feature?'
+					'placeholder' => __( 'Could you tell us more about that feature?', 'wc-category-showcase' ),
 				),
 				array(
 					'id'          => 'is-not-working',
-					'text'        => 'The plugin is not working',
+					'text'        => __( 'The plugin is not working', 'wc-category-showcase' ),
 					'type'        => 'textarea',
-					'placeholder' => 'Could you tell us a bit more whats not working?'
+					'placeholder' => __( 'Could you tell us a bit more whats not working?', 'wc-category-showcase' ),
 				),
 				array(
 					'id'          => 'looking-for-other',
-					'text'        => 'It\'s not what I was looking for',
+					'text'        => __( 'It\'s not what I was looking for', 'wc-category-showcase' ),
 					'type'        => '',
 					'placeholder' => ''
 				),
 				array(
 					'id'          => 'did-not-work-as-expected',
-					'text'        => 'The plugin didn\'t work as expected',
+					'text'        => __( 'The plugin didn\'t work as expected', 'wc-category-showcase' ),
 					'type'        => 'textarea',
-					'placeholder' => 'What did you expect?'
+					'placeholder' => __( 'What did you expect?', 'wc-category-showcase' ),
 				),
 				array(
 					'id'          => 'other',
-					'text'        => 'Other',
+					'text'        => __( 'Other', 'wc-category-showcase' ),
 					'type'        => 'textarea',
-					'placeholder' => 'Could you tell us a bit more?'
+					'placeholder' => __( 'Could you tell us a bit more?', 'wc-category-showcase' ),
 				),
 			);
 
@@ -603,16 +606,16 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 			<div class="wd-dr-modal" id="<?php echo $this->slug; ?>-wd-dr-modal">
 				<div class="wd-dr-modal-wrap">
 					<div class="wd-dr-modal-header">
-						<h3><?php _e( 'If you have a moment, please let us know why you are deactivating:', 'domain' ); ?></h3>
+						<h3><?php _e( 'If you have a moment, please let us know why you are deactivating:', 'wc-category-showcase' ); ?></h3>
 					</div>
 
 					<div class="wd-dr-modal-body">
 						<ul class="reasons">
 							<?php foreach ( $reasons as $reason ) { ?>
 								<li data-type="<?php echo esc_attr( $reason['type'] ); ?>"
-								    data-placeholder="<?php echo esc_attr( $reason['placeholder'] ); ?>">
+									data-placeholder="<?php echo esc_attr( $reason['placeholder'] ); ?>">
 									<label><input type="radio" name="selected-reason"
-									              value="<?php echo $reason['id']; ?>"> <?php echo $reason['text']; ?>
+												  value="<?php echo $reason['id']; ?>"> <?php echo $reason['text']; ?>
 									</label>
 								</li>
 							<?php } ?>
@@ -620,9 +623,9 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 					</div>
 
 					<div class="wd-dr-modal-footer">
-						<a href="#" class="dont-bother-me"><?php _e( 'I rather wouldn\'t say', 'domain' ); ?></a>
-						<button class="button-secondary"><?php _e( 'Submit & Deactivate', 'domain' ); ?></button>
-						<button class="button-primary"><?php _e( 'Canel', 'domain' ); ?></button>
+						<a href="#" class="dont-bother-me"><?php _e( 'I rather wouldn\'t say', 'wc-category-showcase' ); ?></a>
+						<button class="button-secondary"><?php _e( 'Submit & Deactivate', 'wc-category-showcase' ); ?></button>
+						<button class="button-primary"><?php _e( 'Cancel', 'wc-category-showcase' ); ?></button>
 					</div>
 				</div>
 			</div>

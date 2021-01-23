@@ -3,16 +3,16 @@
  * Plugin Name: WooCommerce Category Showcase
  * Plugin URI:  https://pluginever.com/wc-category-showcase
  * Description: WooCommerce extension to showcase categories in a nice slider blocks
- * Version:     1.1.3
+ * Version:     1.1.4
  * Author:      PluginEver
- * Author URI:  http://pluginever.com
+ * Author URI:  https://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
- * Domain Path: /languages
+ * Domain Path: /i18n/languages
  * Requires at least: 4.4
- * Tested up to: 5.4.2
+ * Tested up to: 5.6
  * WC requires at least: 3.0.0
- * WC tested up to: 4.3.1
+ * WC tested up to: 4.9.1
  */
 
 /**
@@ -51,7 +51,7 @@ class WC_Category_Showcase {
 	 * @since 1.0.0
 	 * @var  string
 	 */
-	public $version = '1.1.3';
+	public $version = '1.1.4';
 
 	/**
 	 * admin notices
@@ -65,8 +65,8 @@ class WC_Category_Showcase {
 	/**
 	 * The single instance of the class.
 	 *
-	 * @var WC_Category_Showcase
 	 * @since 1.0.8
+	 * @var WC_Category_Showcase
 	 */
 	protected static $instance = null;
 
@@ -111,6 +111,36 @@ class WC_Category_Showcase {
 	}
 
 	/**
+	 * Plugin URL getter.
+	 *
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function plugin_url() {
+		return untrailingslashit( plugins_url( '/', __FILE__ ) );
+	}
+
+	/**
+	 * Plugin path getter.
+	 *
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function plugin_path() {
+		return untrailingslashit( plugin_dir_path( __FILE__ ) );
+	}
+
+	/**
+	 * Plugin base path name getter.
+	 *
+	 * @return string
+	 * @since 1.2.0
+	 */
+	public function plugin_basename() {
+		return plugin_basename( __FILE__ );
+	}
+
+	/**
 	 * Initialize plugin for localization
 	 *
 	 * @return void
@@ -118,9 +148,7 @@ class WC_Category_Showcase {
 	 *
 	 */
 	public function localization_setup() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'wc_category_showcase' );
-		load_textdomain( 'wc-category-showcase', WP_LANG_DIR . '/wc-category-showcase/wc-category-showcase-' . $locale . '.mo' );
-		load_plugin_textdomain( 'wc-category-showcase', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages/' );
+		load_plugin_textdomain( 'wc-category-showcase', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
 	}
 
 	/**
@@ -160,10 +188,8 @@ class WC_Category_Showcase {
 	protected function is_plugin_compatible() {
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-			$this->add_notice( 'notice-error', sprintf(
-				'<strong>%s</strong> requires <strong>WooCommerce</strong> installed and active.',
-				$this->plugin_name
-			) );
+			$message = sprintf( __( '<strong>WooCommerce Category Showcase</strong> requires <strong>WooCommerce</strong> installed and activated. Please install %s WooCommerce. %s', 'wc-category-showcase' ), '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">', '</a>' );
+			$this->add_notice( 'error', $message );
 
 			return false;
 		}
@@ -198,20 +224,20 @@ class WC_Category_Showcase {
 	/**
 	 * Displays any admin notices added
 	 *
+	 * @since 1.0.0
 	 * @internal
 	 *
-	 * @since 1.0.0
 	 */
 	public function admin_notices() {
 		$notices = (array) array_merge( $this->notices, get_option( sanitize_key( $this->plugin_name ), [] ) );
 		foreach ( $notices as $notice_key => $notice ) :
 			?>
-            <div class="notice notice-<?php echo sanitize_html_class( $notice['class'] ); ?>">
-                <p><?php echo wp_kses( $notice['message'], array(
+			<div class="notice notice-<?php echo sanitize_html_class( $notice['class'] ); ?>">
+				<p><?php echo wp_kses( $notice['message'], array(
 						'a'      => array( 'href' => array() ),
 						'strong' => array()
 					) ); ?></p>
-            </div>
+			</div>
 			<?php
 			update_option( sanitize_key( $this->plugin_name ), [] );
 		endforeach;
@@ -352,9 +378,32 @@ class WC_Category_Showcase {
 		}
 		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wc-category-showcase' ) ) . '">' . __( 'Documentation', 'wc-category-showcase' ) . '</a>';
 
-
 		return array_merge( $action_links, $links );
 	}
+
+	/**
+	 * Throw error on object clone
+	 *
+	 * The whole idea of the singleton design pattern is that there is a single
+	 * object therefore, we don't want the object to be cloned.
+	 *
+	 * @access protected
+	 * @return void
+	 */
+	public function __clone() {
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
+	}
+
+	/**
+	 * Disable unserializing of the class
+	 *
+	 * @access protected
+	 * @return void
+	 */
+	public function __wakeup() {
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
+	}
+
 
 	/**
 	 * Returns the plugin loader main instance.
