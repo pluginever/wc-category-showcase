@@ -1,0 +1,7 @@
+!.eslintrc.js
+dist
+dist-module
+coverage
+languages
+node_modules
+vendor

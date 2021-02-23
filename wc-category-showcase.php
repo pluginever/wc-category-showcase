@@ -1,0 +1,455 @@
+<?php
+/**
+ * Plugin Name: WooCommerce Category Showcase
+ * Plugin URI:  https://pluginever.com/wc-category-showcase
+ * Description: WooCommerce extension to showcase categories in a nice slider blocks
+ * Version:     1.1.4
+ * Author:      PluginEver
+ * Author URI:  https://pluginever.com
+ * License:     GPLv2+
+ * Text Domain: wc-category-showcase
+ * Domain Path: /i18n/languages
+ * Requires at least: 4.4
+ * Tested up to: 5.6
+ * WC requires at least: 3.0.0
+ * WC tested up to: 4.9.1
+ *
+ * @package WCCategoryShowcase
+ */
+
+/**
+ * Copyright (c) 2017 PluginEver (email : support@pluginever.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2 or, at
+ * your discretion, any later version, as published by the Free
+ * Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Class WC_Category_Showcase
+ *
+ * @since 1.1.0
+ */
+final class WC_Category_Showcase {
+	/**
+	 * WC_Category_Showcase version.
+	 *
+	 * @var string
+	 */
+	public $version = '1.1.4';
+
+	/**
+	 * admin notices
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var array
+	 */
+	protected $notices = array();
+
+	/**
+	 * The single instance of the class.
+	 *
+	 * @since 1.0.0
+	 * @var WC_Category_Showcase
+	 */
+	protected static $instance = null;
+
+	/**
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
+	public $plugin_name = 'WooCommerce Category Showcase';
+
+	/**
+	 * Main plugin Instance.
+	 *
+	 * Insures that only one instance of plugin exists in memory at any
+	 * time. Also prevents needing to define globals all over the place
+	 *
+	 * @return WC_Category_Showcase - Main instance.
+	 * @since 1.0.0
+	 */
+	public static function init() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
+	/**
+	 * Return plugin version.
+	 *
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function get_version() {
+		return $this->version;
+	}
+
+	/**
+	 * Throw error on object clone
+	 *
+	 * The whole idea of the singleton design pattern is that there is a single
+	 * object therefore, we don't want the object to be cloned.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function __clone() {
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
+	}
+
+	/**
+	 * Disable unserializing of the class.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function __wakeup() {
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
+	}
+
+	/**
+	 * Constructor for the class
+	 *
+	 * Sets up all the appropriate hooks and actions
+	 *
+	 * @since 1.0.0
+	 *
+
+	 */
+	public function __construct() {
+		// Localize our plugin
+		add_action( 'init', array( $this, 'localization_setup' ) );
+
+		// on activate plugin register hook
+		register_activation_hook( __FILE__, array( $this, 'install' ) );
+
+		// on deactivate plugin register hook
+		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
+
+		add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );
+		add_action( 'admin_init', array( $this, 'plugin_upgrades' ) );
+
+		if ( $this->is_plugin_compatible() ) {
+			$this->define_constants();
+			$this->includes();
+			$this->init_hooks();
+			$this->init_plugin();
+
+			do_action( 'wc_category_showcase' );
+		}
+	}
+
+	/**
+	 * Initialize plugin for localization
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function localization_setup() {
+		load_plugin_textdomain( 'wc-category-showcase', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+	}
+
+	/**
+	 * Executes during plugin activation
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 *
+	 */
+	function install() {
+		//save install date
+		if ( false == get_option( 'wccs_install_date' ) ) {
+			update_option( 'wccs_install_date', current_time( 'timestamp' ) );
+		}
+
+	}
+
+	/**
+	 * Executes during plugin deactivation
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 *
+	 */
+	function deactivate() {
+
+	}
+
+	/**
+	 * Displays any admin notices added
+	 *
+	 * @since 1.0.0
+	 * @internal
+	 *
+	 */
+	public function admin_notices() {
+		$notices = (array) array_merge( $this->notices, get_option( sanitize_key( $this->plugin_name ), [] ) );
+		foreach ( $notices as $notice_key => $notice ) :
+			?>
+			<div class="notice notice-<?php echo sanitize_html_class( $notice['class'] ); ?>">
+				<p><?php echo wp_kses( $notice['message'], array(
+						'a'      => array( 'href' => array() ),
+						'strong' => array()
+					) ); ?></p>
+			</div>
+			<?php
+			update_option( sanitize_key( $this->plugin_name ), [] );
+		endforeach;
+	}
+
+	/**
+	 * Do plugin upgrades
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 *
+	 */
+	function plugin_upgrades() {
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		require_once dirname( __FILE__ ) . '/includes/class-upgrades.php';
+
+		$upgrader = new WCCS_Upgrades();
+
+		if ( $upgrader->needs_update() ) {
+			$upgrader->perform_updates();
+		}
+	}
+
+	/**
+	 * define all required constants
+	 *
+	 * since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function define_constants() {
+		define( 'WC_CATEGORY_SHOWCASE_VERSION', $this->version );
+		define( 'WC_CATEGORY_SHOWCASE_FILE', __FILE__ );
+		define( 'WC_CATEGORY_SHOWCASE_BASENAME', plugin_basename( __FILE__ ) );
+		define( 'WC_CATEGORY_SHOWCASE_PATH', dirname( WC_CATEGORY_SHOWCASE_FILE ) );
+		define( 'WC_CATEGORY_SHOWCASE_PLUGIN_FILE', __FILE__ );
+		define( 'WC_CATEGORY_SHOWCASE_DIR', dirname( WC_CATEGORY_SHOWCASE_PLUGIN_FILE ) );
+		define( 'WC_CATEGORY_SHOWCASE_URL', plugins_url( '', WC_CATEGORY_SHOWCASE_PLUGIN_FILE ) );
+		define( 'WC_CATEGORY_SHOWCASE_ASSETS_URL', WC_CATEGORY_SHOWCASE_URL . '/assets' );
+		define( 'WC_CATEGORY_SHOWCASE_INCLUDES', WC_CATEGORY_SHOWCASE_PATH . '/includes' );
+		define( 'WC_CATEGORY_SHOWCASE_SRC', WC_CATEGORY_SHOWCASE_PATH . '/src' );
+	}
+
+	/**
+	 * Include all required files
+	 *
+	 * since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function includes() {
+		require WC_CATEGORY_SHOWCASE_INCLUDES . '/functions.php';
+		require WC_CATEGORY_SHOWCASE_INCLUDES . '/custom-cp.php';
+		require WC_CATEGORY_SHOWCASE_INCLUDES . '/class-shortcode.php';
+		require WC_CATEGORY_SHOWCASE_SRC      . '/metabox/class-metabox.php';
+		require WC_CATEGORY_SHOWCASE_INCLUDES . '/admin/class-wccs-admin.php';
+		require WC_CATEGORY_SHOWCASE_INCLUDES . '/admin/class-wccs-metabox.php';
+		require WC_CATEGORY_SHOWCASE_INCLUDES . '/class-insights.php';
+		require WC_CATEGORY_SHOWCASE_INCLUDES . '/class-tracker.php';
+		if ( is_admin() && ! $this->is_pro_installed() ) {
+			require WC_CATEGORY_SHOWCASE_INCLUDES . '/admin/class-wccs-promotion.php';
+		}
+	}
+
+	/**
+	 * Hook into actions and filters.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	private function init_hooks() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'load_assets' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
+	}
+
+	/**
+	 * Plugin URL getter.
+	 *
+	 * @param string $path Relative path.
+	 *
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function plugin_url( $path = '' ) {
+		$url = untrailingslashit( plugins_url( '/', WC_CATEGORY_SHOWCASE_PLUGIN_FILE ) );
+		if ( $path && is_string( $path ) ) {
+			$url = trailingslashit( $url );
+			$url .= ltrim( $path, '/' );
+		}
+
+		return $url;
+	}
+
+	/**
+	 * Plugin path getter.
+	 *
+	 * @param string $path Relative path.
+	 *
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function plugin_path( $path = '' ) {
+		$plugin_path = untrailingslashit( plugin_dir_path( WC_CATEGORY_SHOWCASE_PLUGIN_FILE ) );
+		if ( $path && is_string( $path ) ) {
+			$plugin_path = trailingslashit( $plugin_path );
+			$plugin_path .= ltrim( $path, '/' );
+		}
+
+		return $plugin_path;
+	}
+
+	/**
+	 * Plugin base path name getter.
+	 *
+	 * @return string
+	 * @since 1.2.0
+	 */
+	public function plugin_basename() {
+		return plugin_basename( __FILE__ );
+	}
+
+	/**
+	 * Determines if the plugin compatible.
+	 *
+	 * @return bool
+	 * @since 1.0.0
+	 *
+	 */
+	protected function is_plugin_compatible() {
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+			$message = sprintf( __( '<strong>WooCommerce Category Showcase</strong> requires <strong>WooCommerce</strong> installed and activated. Please install %s WooCommerce. %s', 'wc-category-showcase' ), '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">', '</a>' );
+			$this->add_notice( 'error', $message );
+
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Adds an admin notice to be displayed.
+	 *
+	 * @param string $class the notice class
+	 * @param string $message the notice message body
+	 *
+	 * @since 1.0.0
+	 *
+	 */
+	public function add_notice( $class, $message ) {
+
+		$notices = get_option( sanitize_key( $this->plugin_name ), [] );
+		if ( is_string( $message ) && is_string( $class ) && ! wp_list_filter( $notices, array( 'message' => $message ) ) ) {
+
+			$notices[] = array(
+				'message' => $message,
+				'class'   => $class
+			);
+
+			update_option( sanitize_key( $this->plugin_name ), $notices );
+		}
+
+	}
+
+
+	/**
+	 * Determines if the pro version installed.
+	 *
+	 * @return bool
+	 * @since 1.0.0
+	 *
+	 */
+	public static function is_pro_installed() {
+		$status = false;
+		if ( is_plugin_active( 'wc-category-showcase-pro/wc-category-showcase-pro.php' ) || is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) ) {
+			$status = true;
+		}
+
+		return $status;
+	}
+
+	/**
+	 * Instantiate classes
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 *
+	 */
+	private function init_plugin() {
+		new \Pluginever\WCCS\Shortcode();
+		new \WCCategoryShowcase\Metabox();
+		new \Pluginever\WCCS\Tracker();
+	}
+
+	/**
+	 * Add all the assets required by the plugin
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 *
+	 */
+	function load_assets() {
+		wp_register_style( 'wc-category-showcase', WC_CATEGORY_SHOWCASE_ASSETS_URL . "/css/wc-category-showcase.css", array(), WC_CATEGORY_SHOWCASE_VERSION );
+		wp_register_script( 'wc-category-showcase', WC_CATEGORY_SHOWCASE_ASSETS_URL . "/js/bundle.min.js", [ 'jquery' ], WC_CATEGORY_SHOWCASE_VERSION, true );
+		wp_localize_script( 'wc-category-showcase', 'jsobject', [ 'ajaxurl' => admin_url( 'admin-ajax.php' ) ] );
+		wp_enqueue_style( 'wc-category-showcase' );
+		wp_enqueue_script( 'wc-category-showcase' );
+	}
+
+	/**
+	 * @param $links
+	 *
+	 * @return array
+	 * @since 1.0.0
+	 */
+	public function plugin_action_links( $links ) {
+
+		$doc_link     = 'https://www.pluginever.com/docs/woocommerce-category-showcase/';
+		$action_links = [];
+		if ( ! $this->is_pro_installed() ) {
+			$action_links['Upgrade'] = '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Upgrade To Pro', 'wc-category-showcase' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Upgrade To Pro', 'wc-category-showcase' ) . '</a>';
+		}
+		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wc-category-showcase' ) ) . '">' . __( 'Documentation', 'wc-category-showcase' ) . '</a>';
+
+		return array_merge( $action_links, $links );
+	}
+}
+
+/**
+ * Returns the main instance of Plugin.
+ *
+ * @return WC_Category_Showcase
+ * @since  1.0.0
+ */
+function wc_category_showcase() {
+	return WC_Category_Showcase::init();
+}
+
+// Kit start.
+wc_category_showcase();

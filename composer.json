@@ -1,0 +1,71 @@
+{
+	"name": "byteever/wc-category-showcase",
+	"description": "byteever WC Category Showcase",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"prefer-stable": true,
+	"authors": [
+		{
+			"name": "byteever",
+			"email": "info@byteever.com",
+			"homepage": "https://byteever.com",
+			"role": "developer"
+		}
+	],
+	"repositories": [
+		{
+			"url": "https://github.com/byteever/phpcs-composer.git",
+			"type": "git"
+		}
+	],
+	"require": {
+		"php": ">=5.6",
+		"composer/installers": "~1.7"
+	},
+	"autoload": {
+		"psr-4": {
+      "byteever\\WCCategoryShowcase\\": "src/"
+    }
+	},
+	"require-dev": {
+		"bamarni/composer-bin-plugin": "^1.4",
+		"byteever/phpcs-composer": "dev-master",
+		"phpunit/phpunit": "^6.5"
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"platform": {
+			"php": "7.0"
+		},
+		"sort-packages": true
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"@composer bin all install --ansi",
+			"sh ./bin/package-update.sh"
+		],
+		"makepot-audit": [
+			"wp --allow-root i18n make-pot . --exclude=\".github,.wordpress-org,bin,sample-data,node_modules,tests\" --slug=wc_category_showcase"
+		],
+		"makepot": [
+			"@makepot-audit --skip-audit"
+		],
+		"pre-commit": [
+			"@phpcs"
+		],
+		"phpcs": "phpcs -s -p .",
+		"phpcbf": "phpcbf -p .",
+		"test": [
+			"phpunit"
+		]
+	},
+	"extra": {
+		"scripts-description": {
+			"test": "Run unit tests",
+			"phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+			"phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier",
+			"makepot-audit": "Generate i18n/languages/wc_category_showcase.pot file and run audit",
+			"makepot": "Generate i18n/languages/wc_category_showcase.pot file"
+		}
+	}
+}
