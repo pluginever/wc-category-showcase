@@ -120,15 +120,15 @@ class Shortcode {
 			$right_block_classes = 'hide';
 		}
 		?>
-		<div class="woo-cs has-border" id="wccs-slider-<?php echo $post_id; ?>">
+        <div class="woo-cs has-border" id="wccs-slider-<?php echo $post_id; ?>">
 			<?php if ( ! empty( $params['wccs_show_block_title'] ) ): ?>
-				<h2 class="woo-cs-heading"><?php echo get_the_title( $post_id ); ?></h2>
+                <h2 class="woo-cs-heading"><?php echo get_the_title( $post_id ); ?></h2>
 			<?php endif; ?>
-			<div class="woo-cs-inner">
-				<div class="row eq-height">
-					<div class="<?php echo $left_block_classes; ?>">
-						<div class="woo-cs-slider-block">
-							<div class="woo-cs-slider" data-slider-config='<?php echo $this->get_slider_config( $post_id ); ?>'>
+            <div class="woo-cs-inner">
+                <div class="row eq-height">
+                    <div class="<?php echo $left_block_classes; ?>">
+                        <div class="woo-cs-slider-block">
+                            <div class="woo-cs-slider" data-slider-config='<?php echo $this->get_slider_config( $post_id ); ?>'>
 								<?php
 								foreach ( $featured_categories as $featured_category_id ) {
 									$featured_category = wccs_get_term_details( $featured_category_id, $post_id, 'featured' );
@@ -168,16 +168,16 @@ class Shortcode {
 								}
 								?>
 
-							</div>
+                            </div>
 
-						</div>
-						<!--.woo-cs-slider-block-->
+                        </div>
+                        <!--.woo-cs-slider-block-->
 
-					</div>
-					<!--.woo-cs-left-block-->
+                    </div>
+                    <!--.woo-cs-left-block-->
 
-					<div class="<?php echo $right_block_classes; ?>">
-						<div class="row eq-height">
+                    <div class="<?php echo $right_block_classes; ?>">
+                        <div class="row eq-height">
 
 							<?php
 							if ( is_plugin_active( 'optimole-wp/optimole-wp.php' ) ):
@@ -186,17 +186,23 @@ class Shortcode {
 							$counter = 0;
 							foreach ( $additional_categories as $id => $width ) {
 								$additional_category = wccs_get_term_details( $id, $post_id, 'additional' );
-								error_log( print_r( $additional_category, true ) );
 
 								$html = '<div class="center col-xs-12 col-sm-12 col-md-' . ( $width * 4 ) . ' col-lg-' . ( $width * 4 ) . '">';
 								$html .= '<div class="woo-cs-box">';
-								$html .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $additional_category['link'] . '">';
+								$href = ! empty( $additional_category ) ? $additional_category['link'] : '#';
+								$image = ! empty( $additional_category ) ? $additional_category['image'] : '';;
+								$title = !empty( $additional_category ) ? $additional_category['title'] : '';
+
+								//$html .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $additional_category['link'] . '">';
+								$html .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $href . '">';
 
 								$html .= '<span class="woo-cs-thumb-container">';
-								$html .= '<img src="' . $additional_category['image'] . '" alt="' . $additional_category['title'] . '" class="woo-cs-image woo-cs-image-thumb">';
+								//$html .= '<img src="' . $additional_category['image'] . '" alt="' . $additional_category['title'] . '" class="woo-cs-image woo-cs-image-thumb">';
+								$html .= '<img src="' . $image . '" alt="' . $title . '" class="woo-cs-image woo-cs-image-thumb">';
 								$html .= '</span>';
 								if ( $params['wccs_additional_show_title'] ) {
-									$html .= '<span class="woo-cs-cat-name">' . $additional_category['title'] . '</span>';
+									//$html .= '<span class="woo-cs-cat-name">' . $additional_category['title'] . '</span>';
+									$html .= '<span class="woo-cs-cat-name">' . $title . '</span>';
 								}
 
 								$html .= '</a>';
@@ -208,73 +214,73 @@ class Shortcode {
 
 							?>
 
-						</div>       <!--.plvr-grid-noGutter-equalHeight-->
-					</div>
-					<!--.woo-cs-right-block-->
-				</div>
+                        </div>       <!--.plvr-grid-noGutter-equalHeight-->
+                    </div>
+                    <!--.woo-cs-right-block-->
+                </div>
 
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<style>
-			#wccs-slider-<?php echo $post_id; ?> .woo-cs-right-block .woo-cs-cat-name {
-				background: <?php echo $params['wccs_additional_content_bg'];?>;
-				color: <?php echo $params['wccs_additional_title_color'];?>;
-			}
+        <style>
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-right-block .woo-cs-cat-name {
+                background: <?php echo $params['wccs_additional_content_bg'];?>;
+                color: <?php echo $params['wccs_additional_title_color'];?>;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details {
-				background: <?php echo $params['wccs_featured_content_bg'];?>;
-				color: <?php echo $params['wccs_featured_content_color'];?>;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details {
+                background: <?php echo $params['wccs_featured_content_bg'];?>;
+                color: <?php echo $params['wccs_featured_content_color'];?>;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button {
-				color: <?php echo $params['wccs_featured_content_color'];?>;
-				border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
-				background: transparent;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button {
+                color: <?php echo $params['wccs_featured_content_color'];?>;
+                border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
+                background: transparent;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button:hover {
-				color: <?php echo $params['wccs_featured_content_bg'];?>;
-				background: <?php echo $params['wccs_featured_content_color'];?>;
-				border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-button:hover {
+                color: <?php echo $params['wccs_featured_content_bg'];?>;
+                background: <?php echo $params['wccs_featured_content_color'];?>;
+                border: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-des {
-				border-top: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-cat-details .woo-cs-cat-des {
+                border-top: 1px solid<?php echo $params['wccs_featured_content_color'];?>;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
-				border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
+                border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
-				border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-heading {
+                border-top: 3px solid<?php echo $params['wccs_featured_content_bg'];?>;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .slick-prev,
-			#wccs-slider-<?php echo $post_id; ?> .slick-prev:before,
-			#wccs-slider-<?php echo $post_id; ?> .slick-next,
-			#wccs-slider-<?php echo $post_id; ?> .slick-next:before {
-				color: <?php echo $params['wccs_featured_content_color'];?>;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .slick-prev,
+            #wccs-slider-<?php echo $post_id; ?> .slick-prev:before,
+            #wccs-slider-<?php echo $post_id; ?> .slick-next,
+            #wccs-slider-<?php echo $post_id; ?> .slick-next:before {
+                color: <?php echo $params['wccs_featured_content_color'];?>;
+            }
 
-			#wccs-slider-<?php echo $post_id; ?> .slick-prev:hover,
-			#wccs-slider-<?php echo $post_id; ?> .slick-next:hover {
-				background: <?php echo $params['wccs_featured_content_bg'];?>;
-			}
+            #wccs-slider-<?php echo $post_id; ?> .slick-prev:hover,
+            #wccs-slider-<?php echo $post_id; ?> .slick-next:hover {
+                background: <?php echo $params['wccs_featured_content_bg'];?>;
+            }
 
-			<?php
+            <?php
 				$show_slider_navigation = get_post_meta($post_id,'wccs_show_navigation',true);
 				if(empty($show_slider_navigation)){ ?>
-			#wccs-slider-<?php echo $post_id;?> .slick-prev,
-			#wccs-slider-<?php echo $post_id; ?> .slick-next {
-				display: none !important;
-			}
+            #wccs-slider-<?php echo $post_id;?> .slick-prev,
+            #wccs-slider-<?php echo $post_id; ?> .slick-next {
+                display: none !important;
+            }
 
-			<?php
+            <?php
 				}
 			?>
-		</style>
+        </style>
 
 		<?php
 		$output = ob_get_contents();
