@@ -39,20 +39,22 @@ class Shortcode {
 		$post_id = intval( $attr['id'] );
 
 		$params = [
-			'wccs_featured_categories'          => [],
-			'wccs_additional_categories'        => [],
-			'wccs_show_block_title'             => '0',
-			'wccs_featured_show_title'          => '1',
-			'wccs_featured_show_desc'           => '1',
-			'wccs_featured_show_button'         => '1',
-			'wccs_featured_button_text'         => 'Shop Now',
-			'wccs_featured_content_color'       => '#fff',
-			'wccs_featured_content_bg'          => 'rgba(150,88,138,.9)',
-			'wccs_additional_show_title'        => '1',
-			'wccs_additional_title_color'       => '#000',
-			'wccs_additional_content_bg'        => '#fff',
-			'wccs_featured_show_custom_message' => '1',
-			'wccs_featured_custom_message'      => '',
+			'wccs_featured_categories'                => [],
+			'wccs_additional_categories'              => [],
+			'wccs_show_block_title'                   => '0',
+			'wccs_featured_show_title'                => '1',
+			'wccs_featured_show_desc'                 => '1',
+			'wccs_featured_show_button'               => '1',
+			'wccs_featured_button_text'               => 'Shop Now',
+			'wccs_featured_content_color'             => '#fff',
+			'wccs_featured_content_bg'                => 'rgba(150,88,138,.9)',
+			'wccs_additional_show_title'              => '1',
+			'wccs_additional_title_color'             => '#000',
+			'wccs_additional_content_bg'              => '#fff',
+			'wccs_featured_show_custom_message'       => '1',
+			'wccs_featured_custom_message'            => '',
+			'wccs_additional_button_hover_color'      => 'rgba(150,88,138,.9)',
+			'wccs_additional_button_hover_text_color' => '#ffffff',
 		];
 
 
@@ -187,11 +189,11 @@ class Shortcode {
 							foreach ( $additional_categories as $id => $width ) {
 								$additional_category = wccs_get_term_details( $id, $post_id, 'additional' );
 
-								$html = '<div class="center col-xs-12 col-sm-12 col-md-' . ( $width * 4 ) . ' col-lg-' . ( $width * 4 ) . '">';
-								$html .= '<div class="woo-cs-box">';
-								$href = ! empty( $additional_category ) ? $additional_category['link'] : '#';
+								$html  = '<div class="center col-xs-12 col-sm-12 col-md-' . ( $width * 4 ) . ' col-lg-' . ( $width * 4 ) . '">';
+								$html  .= '<div class="woo-cs-box">';
+								$href  = ! empty( $additional_category ) ? $additional_category['link'] : '#';
 								$image = ! empty( $additional_category ) ? $additional_category['image'] : '';;
-								$title = !empty( $additional_category ) ? $additional_category['title'] : '';
+								$title = ! empty( $additional_category ) ? $additional_category['title'] : '';
 
 								//$html .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $additional_category['link'] . '">';
 								$html .= '<a class="woo-cs-slide woo-cs-box-link" href="' . $href . '">';
@@ -267,6 +269,11 @@ class Shortcode {
             #wccs-slider-<?php echo $post_id; ?> .slick-prev:hover,
             #wccs-slider-<?php echo $post_id; ?> .slick-next:hover {
                 background: <?php echo $params['wccs_featured_content_bg'];?>;
+            }
+
+            #wccs-slider-<?php echo $post_id; ?> .woo-cs-right-block .woo-cs-box-link:hover .woo-cs-cat-name {
+                background: <?php echo $params['wccs_additional_button_hover_color'];?>;
+                color: <?php echo $params['wccs_additional_button_hover_text_color'];?>;
             }
 
             <?php
