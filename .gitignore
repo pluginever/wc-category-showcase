@@ -13,7 +13,6 @@ project.properties
 
 # Grunt
 /node_modules/
-package-lock.json
 none
 
 # Sass
@@ -53,4 +52,4 @@ contributors.md
 
 #build
 build
-package-lock.json
+@next
