@@ -23,7 +23,8 @@ module.exports = function (grunt) {
 			all: [
 				'Gruntfile.js',
 				'<%= dirs.js %>/*.js',
-				'!<%= dirs.js %>/*.min.js'
+				'!<%= dirs.js %>/*.min.js',
+				'!assets/js/image-liquid.js'
 			]
 		},
 
