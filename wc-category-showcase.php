@@ -10,7 +10,7 @@
  * Text Domain: wc-category-showcase
  * Domain Path: /i18n/languages
  * Requires at least: 4.4
- * Tested up to: 5.7.2
+ * Tested up to: 5.8.2
  * WC requires at least: 3.0.0
  * WC tested up to: 6.0.0
  */
