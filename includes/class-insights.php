@@ -281,19 +281,19 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 				$optout_url = add_query_arg( $this->slug . '_tracker_optout', 'true' );
 
 				if ( empty( $this->notice ) ) {
-					$notice = sprintf( __( 'Want to help make <strong>%s</strong> even more awesome? Allow Pluginever to collect non-sensitive diagnostic data and usage information.', 'textdomain' ), $this->name );
+					$notice = sprintf( __( 'Want to help make <strong>%s</strong> even more awesome? Allow Pluginever to collect non-sensitive diagnostic data and usage information.', 'wc-category-showcase' ), $this->name );
 				} else {
 					$notice = $this->notice;
 				}
 
-				$notice .= ' (<a class="insights-data-we-collect" href="#">' . __( 'what we collect', 'textdomain' ) . '</a>)';
+				$notice .= ' (<a class="insights-data-we-collect" href="#">' . __( 'what we collect', 'wc-category-showcase' ) . '</a>)';
 				$notice .= '<p class="description" style="display:none;">' . implode( ', ', $this->data_we_collect() ) . '. No sensitive data is tracked.</p>';
 
 				echo '<div class="updated"><p>';
 				echo $notice;
 				echo '</p><p class="submit">';
-				echo '&nbsp;<a href="' . esc_url( $optin_url ) . '" class="button-primary button-large">' . __( 'Allow', 'textdomain' ) . '</a>';
-				echo '&nbsp;<a href="' . esc_url( $optout_url ) . '" class="button-secondary button-large">' . __( 'No thanks', 'textdomain' ) . '</a>';
+				echo '&nbsp;<a href="' . esc_url( $optin_url ) . '" class="button-primary button-large">' . __( 'Allow', 'wc-category-showcase' ) . '</a>';
+				echo '&nbsp;<a href="' . esc_url( $optout_url ) . '" class="button-secondary button-large">' . __( 'No thanks', 'wc-category-showcase' ) . '</a>';
 				echo '</p></div>';
 
 				echo "<script type='text/javascript'>jQuery('.insights-data-we-collect').on('click', function(e) {
