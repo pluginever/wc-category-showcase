@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce Category Showcase 1.1.6\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wc-category-showcase\n"
-"POT-Creation-Date: 2022-03-31 10:12:28+00:00\n"
+"POT-Creation-Date: 2022-03-31 10:15:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,287 +14,280 @@ msgstr ""
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: admin/class-admin.php:25 build/admin/class-admin.php:25
+#: admin/class-admin.php:25
 msgid "Shortcode"
 msgstr ""
 
-#: admin/class-admin.php:26 build/admin/class-admin.php:26
+#: admin/class-admin.php:26
 msgid "Date"
 msgstr ""
 
-#: admin/class-metabox.php:29 build/admin/class-metabox.php:29
+#: admin/class-metabox.php:29
 msgid "Featured Category Settings"
 msgstr ""
 
 #: admin/class-metabox.php:38 admin/class-metabox.php:125
-#: build/admin/class-metabox.php:38 build/admin/class-metabox.php:125
 msgid "Select Categories"
 msgstr ""
 
-#: admin/class-metabox.php:48 build/admin/class-metabox.php:48
+#: admin/class-metabox.php:48
 msgid "Show Block Title"
 msgstr ""
 
 #: admin/class-metabox.php:52 admin/class-metabox.php:63
 #: admin/class-metabox.php:75 admin/class-metabox.php:86
-#: admin/class-metabox.php:117 build/admin/class-metabox.php:52
-#: build/admin/class-metabox.php:63 build/admin/class-metabox.php:75
-#: build/admin/class-metabox.php:86 build/admin/class-metabox.php:117
+#: admin/class-metabox.php:117
 msgid "Yes"
 msgstr ""
 
 #: admin/class-metabox.php:53 admin/class-metabox.php:64
 #: admin/class-metabox.php:76 admin/class-metabox.php:87
-#: admin/class-metabox.php:118 build/admin/class-metabox.php:53
-#: build/admin/class-metabox.php:64 build/admin/class-metabox.php:76
-#: build/admin/class-metabox.php:87 build/admin/class-metabox.php:118
+#: admin/class-metabox.php:118
 msgid "No"
 msgstr ""
 
-#: admin/class-metabox.php:59 build/admin/class-metabox.php:59
+#: admin/class-metabox.php:59
 msgid "Autoplay the slider"
 msgstr ""
 
-#: admin/class-metabox.php:71 build/admin/class-metabox.php:71
+#: admin/class-metabox.php:71
 msgid "Infinite Looping for the slider"
 msgstr ""
 
-#: admin/class-metabox.php:82 build/admin/class-metabox.php:82
+#: admin/class-metabox.php:82
 msgid "Show navigation for the slider"
 msgstr ""
 
-#: admin/class-metabox.php:104 build/admin/class-metabox.php:104
+#: admin/class-metabox.php:104
 msgid "Additional Category Settings"
 msgstr ""
 
-#: admin/class-metabox.php:113 build/admin/class-metabox.php:113
+#: admin/class-metabox.php:113
 msgid "Show additional categories"
 msgstr ""
 
-#: admin/class-metabox.php:144 build/admin/class-metabox.php:144
+#: admin/class-metabox.php:144
 msgid "What More?"
 msgstr ""
 
-#: admin/class-metabox.php:158 build/admin/class-metabox.php:158
+#: admin/class-metabox.php:158
 msgid "Pro Features"
 msgstr ""
 
-#: admin/class-metabox.php:160 build/admin/class-metabox.php:160
+#: admin/class-metabox.php:160
 msgid "Custom featured category image"
 msgstr ""
 
-#: admin/class-metabox.php:161 build/admin/class-metabox.php:161
+#: admin/class-metabox.php:161
 msgid "Custom additional category image"
 msgstr ""
 
-#: admin/class-metabox.php:162 build/admin/class-metabox.php:162
+#: admin/class-metabox.php:162
 msgid "Custom category title"
 msgstr ""
 
-#: admin/class-metabox.php:163 build/admin/class-metabox.php:163
+#: admin/class-metabox.php:163
 msgid "Category title show hide"
 msgstr ""
 
-#: admin/class-metabox.php:164 build/admin/class-metabox.php:164
+#: admin/class-metabox.php:164
 msgid "Category description show hide"
 msgstr ""
 
-#: admin/class-metabox.php:165 build/admin/class-metabox.php:165
+#: admin/class-metabox.php:165
 msgid "Category button show hide"
 msgstr ""
 
-#: admin/class-metabox.php:166 build/admin/class-metabox.php:166
+#: admin/class-metabox.php:166
 msgid "Category button custom text"
 msgstr ""
 
-#: admin/class-metabox.php:167 build/admin/class-metabox.php:167
+#: admin/class-metabox.php:167
 msgid "Custom content color"
 msgstr ""
 
-#: admin/class-metabox.php:168 build/admin/class-metabox.php:168
+#: admin/class-metabox.php:168
 msgid "Custom content background color"
 msgstr ""
 
-#: admin/class-metabox.php:169 build/admin/class-metabox.php:169
+#: admin/class-metabox.php:169
 msgid "Custom image column"
 msgstr ""
 
-#: admin/class-metabox.php:170 build/admin/class-metabox.php:170
+#: admin/class-metabox.php:170
 msgid "And Many More"
 msgstr ""
 
-#: admin/class-metabox.php:172 build/admin/class-metabox.php:172
+#: admin/class-metabox.php:172
 msgid "Upgrade To PRO Now"
 msgstr ""
 
-#: build/includes/class-insights.php:284 includes/class-insights.php:284
+#: includes/class-insights.php:284
 msgid ""
 "Want to help make <strong>%s</strong> even more awesome? Allow Pluginever "
 "to collect non-sensitive diagnostic data and usage information."
 msgstr ""
 
-#: build/includes/class-insights.php:289 includes/class-insights.php:289
+#: includes/class-insights.php:289
 msgid "what we collect"
 msgstr ""
 
-#: build/includes/class-insights.php:295 includes/class-insights.php:295
+#: includes/class-insights.php:295
 msgid "Allow"
 msgstr ""
 
-#: build/includes/class-insights.php:296 includes/class-insights.php:296
+#: includes/class-insights.php:296
 msgid "No thanks"
 msgstr ""
 
-#: build/includes/class-insights.php:473 includes/class-insights.php:473
+#: includes/class-insights.php:473
 msgid "Once Weekly"
 msgstr ""
 
-#: build/includes/class-insights.php:512 includes/class-insights.php:512
+#: includes/class-insights.php:512
 msgid "I couldn't understand how to make it work"
 msgstr ""
 
-#: build/includes/class-insights.php:514 includes/class-insights.php:514
+#: includes/class-insights.php:514
 msgid "Would you like us to assist you?"
 msgstr ""
 
-#: build/includes/class-insights.php:518 includes/class-insights.php:518
+#: includes/class-insights.php:518
 msgid "I found a better plugin"
 msgstr ""
 
-#: build/includes/class-insights.php:520 includes/class-insights.php:520
+#: includes/class-insights.php:520
 msgid "Which plugin?"
 msgstr ""
 
-#: build/includes/class-insights.php:524 includes/class-insights.php:524
+#: includes/class-insights.php:524
 msgid "The plugin is great, but I need specific feature that you don't support"
 msgstr ""
 
-#: build/includes/class-insights.php:526 includes/class-insights.php:526
+#: includes/class-insights.php:526
 msgid "Could you tell us more about that feature?"
 msgstr ""
 
-#: build/includes/class-insights.php:530 includes/class-insights.php:530
+#: includes/class-insights.php:530
 msgid "The plugin is not working"
 msgstr ""
 
-#: build/includes/class-insights.php:532 includes/class-insights.php:532
+#: includes/class-insights.php:532
 msgid "Could you tell us a bit more whats not working?"
 msgstr ""
 
-#: build/includes/class-insights.php:536 includes/class-insights.php:536
+#: includes/class-insights.php:536
 msgid "It's not what I was looking for"
 msgstr ""
 
-#: build/includes/class-insights.php:542 includes/class-insights.php:542
+#: includes/class-insights.php:542
 msgid "The plugin didn't work as expected"
 msgstr ""
 
-#: build/includes/class-insights.php:544 includes/class-insights.php:544
+#: includes/class-insights.php:544
 msgid "What did you expect?"
 msgstr ""
 
-#: build/includes/class-insights.php:548 includes/class-insights.php:548
+#: includes/class-insights.php:548
 msgid "Other"
 msgstr ""
 
-#: build/includes/class-insights.php:550 includes/class-insights.php:550
+#: includes/class-insights.php:550
 msgid "Could you tell us a bit more?"
 msgstr ""
 
-#: build/includes/class-insights.php:609 includes/class-insights.php:609
+#: includes/class-insights.php:609
 msgid "If you have a moment, please let us know why you are deactivating:"
 msgstr ""
 
-#: build/includes/class-insights.php:626 includes/class-insights.php:626
+#: includes/class-insights.php:626
 msgid "I rather wouldn't say"
 msgstr ""
 
-#: build/includes/class-insights.php:627 includes/class-insights.php:627
+#: includes/class-insights.php:627
 msgid "Submit & Deactivate"
 msgstr ""
 
-#: build/includes/class-insights.php:628 includes/class-insights.php:628
+#: includes/class-insights.php:628
 msgid "Cancel"
 msgstr ""
 
-#: build/includes/class-tracker.php:12 includes/class-tracker.php:12
+#: includes/class-tracker.php:12
 msgid ""
 "Want to help make <strong>WooCommerce  Category Showcase</strong> even more "
 "awesome? Allow PluginEver to collect non-sensitive diagnostic data and "
 "usage information."
 msgstr ""
 
-#: build/includes/custom-cp.php:16 includes/custom-cp.php:16
+#: includes/custom-cp.php:16
 msgid "Add New Category Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:17 includes/custom-cp.php:17
+#: includes/custom-cp.php:17
 msgid "New Category Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:18 includes/custom-cp.php:18
+#: includes/custom-cp.php:18
 msgid "Edit Category Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:19 includes/custom-cp.php:19
+#: includes/custom-cp.php:19
 msgid "View Category Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:20 includes/custom-cp.php:20
+#: includes/custom-cp.php:20
 msgid "All Category Showcases"
 msgstr ""
 
-#: build/includes/custom-cp.php:21 includes/custom-cp.php:21
+#: includes/custom-cp.php:21
 msgid "Search Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:22 includes/custom-cp.php:22
+#: includes/custom-cp.php:22
 msgid "Parent Showcase:"
 msgstr ""
 
-#: build/includes/custom-cp.php:23 includes/custom-cp.php:23
+#: includes/custom-cp.php:23
 msgid "No Showcase found."
 msgstr ""
 
-#: build/includes/custom-cp.php:24 includes/custom-cp.php:24
+#: includes/custom-cp.php:24
 msgid "No Showcase found in Trash."
 msgstr ""
 
-#: build/includes/custom-cp.php:49 includes/custom-cp.php:49
+#: includes/custom-cp.php:49
 msgid "Short Code"
 msgstr ""
 
-#: build/includes/custom-cp.php:63 includes/custom-cp.php:63
+#: includes/custom-cp.php:63
 msgid ""
 "Please publish the post first. Shortcode will automatically visible here "
 "afterward."
 msgstr ""
 
-#: build/includes/metabox/class-metabox.php:124
 #: includes/metabox/class-metabox.php:124
 msgid "Example Metabox"
 msgstr ""
 
-#: build/wc-category-showcase.php:191 wc-category-showcase.php:191
+#: wc-category-showcase.php:191
 msgid ""
 "<strong>WooCommerce Category Showcase</strong> requires "
 "<strong>WooCommerce</strong> installed and activated. Please install %s "
 "WooCommerce. %s"
 msgstr ""
 
-#: build/wc-category-showcase.php:377 wc-category-showcase.php:377
+#: wc-category-showcase.php:377
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: build/wc-category-showcase.php:379 wc-category-showcase.php:379
+#: wc-category-showcase.php:379
 msgid "View Plugin's Documentation"
 msgstr ""
 
-#: build/wc-category-showcase.php:379 wc-category-showcase.php:379
+#: wc-category-showcase.php:379
 msgid "Documentation"
 msgstr ""
 
-#: build/wc-category-showcase.php:394 build/wc-category-showcase.php:404
 #: wc-category-showcase.php:394 wc-category-showcase.php:404
 msgid "Cheatin&#8217; huh?"
 msgstr ""
@@ -319,27 +312,27 @@ msgstr ""
 msgid "https://pluginever.com"
 msgstr ""
 
-#: build/includes/custom-cp.php:11 includes/custom-cp.php:11
+#: includes/custom-cp.php:11
 msgctxt "post type general name"
 msgid "WC Category Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:12 includes/custom-cp.php:12
+#: includes/custom-cp.php:12
 msgctxt "post type singular name"
 msgid "WC Category Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:13 includes/custom-cp.php:13
+#: includes/custom-cp.php:13
 msgctxt "admin menu"
 msgid "WC Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:14 includes/custom-cp.php:14
+#: includes/custom-cp.php:14
 msgctxt "add new on admin bar"
 msgid "WC Category Showcase"
 msgstr ""
 
-#: build/includes/custom-cp.php:15 includes/custom-cp.php:15
+#: includes/custom-cp.php:15
 msgctxt "book"
 msgid "Add New"
 msgstr ""
