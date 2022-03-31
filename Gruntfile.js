@@ -258,7 +258,8 @@ module.exports = function (grunt) {
 					'!.csscomb.json',
 					'!.editorconfig',
 					'!.jshintrc',
-					'!.tmp'
+					'!.tmp',
+					'!changelog.txt'
 				],
 				dest: 'build/'
 			}
