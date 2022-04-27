@@ -10,7 +10,7 @@
     "url": "http://pluginever.com"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.5.2",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
