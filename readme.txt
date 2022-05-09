@@ -136,8 +136,8 @@ Place the snippet where you want. Change the id with the appropriate one.
 
 == Changelog ==
 = 1.1.6 =
-* Fix - Compatibility with WP v5.9.2
-* Fix - Compatibility with WC v6.3.1
+* Fix - Compatibility with WP v5.9.3
+* Fix - Compatibility with WC v6.4.1
 
 = 1.1.5 =
 * Fix - Compatibility with WP v5.7.2
