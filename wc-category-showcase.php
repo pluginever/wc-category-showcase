@@ -279,9 +279,6 @@ class WC_Category_Showcase {
 		require PLVR_WCCS_ADMIN_PATH . '/class-metabox.php';
 		require PLVR_WCCS_INCLUDES . '/class-insights.php';
 		require PLVR_WCCS_INCLUDES . '/class-tracker.php';
-		if ( is_admin() && ! $this->is_pro_installed() ) {
-			require PLVR_WCCS_INCLUDES . '/class-promotion.php';
-		}
 	}
 
 	/**
@@ -372,13 +369,21 @@ class WC_Category_Showcase {
 	public function plugin_action_links( $links ) {
 
 		$doc_link     = 'https://www.pluginever.com/docs/woocommerce-category-showcase/';
-		$action_links = [];
-		if ( ! $this->is_pro_installed() ) {
-			$action_links['Upgrade'] = '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Upgrade To Pro', 'wc-category-showcase' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Upgrade To Pro', 'wc-category-showcase' ) . '</a>';
-		}
-		$action_links['Documentation'] = '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wc-category-showcase' ) ) . '">' . __( 'Documentation', 'wc-category-showcase' ) . '</a>';
+		$docs_links = array(
+			'documentation' => '<a target="_blank" href="' . $doc_link . '" title="' . esc_attr( __( 'View Plugin\'s Documentation', 'wc-category-showcase' ) ) . '">' . __( 'Documentation', 'wc-category-showcase' ) . '</a>',
+		);
 
-		return array_merge( $action_links, $links );
+		$links = array_merge( $docs_links, $links );
+		if ( ! $this->is_pro_installed() ) {
+			$upgrade_links = array(
+				'upgrade' => '<a target="_blank" href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" title="' . esc_attr( __( 'Go Pro', 'wc-category-showcase' ) ) . '" style="color:red;font-weight:bold;">' . __( 'Go Pro', 'wc-category-showcase' ) . '</a>',
+			);
+
+			$links = array_merge( $links, $upgrade_links );
+		}
+
+
+		return $links;
 	}
 
 	/**
