@@ -46,7 +46,7 @@ function wccs_custom_post_type() {
 function wccs_shortocode_metabox() {
 	add_meta_box(
 		'wccs-shortcode',
-		__( 'Short Code', 'wc-category-showcase' ),
+		__( 'Shortcode', 'wc-category-showcase' ),
 		'wccs_shortocode_metabox_callback',
 		'wccs_showcase',
 		'side',

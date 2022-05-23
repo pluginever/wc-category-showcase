@@ -35,7 +35,7 @@ class Metabox {
 				array(
 					'type'     => 'select',
 					'name'     => 'wccs_featured_categories',
-					'label'    => __( 'Select Categories', 'wc-category-showcase' ),
+					'label'    => __( 'Select categories', 'wc-category-showcase' ),
 					'value'    => 'all',
 					'multiple' => true,
 					'select2'  => 'true',
@@ -45,7 +45,7 @@ class Metabox {
 				array(
 					'type'     => 'select',
 					'name'     => 'wccs_show_block_title',
-					'label'    => __( 'Show Block Title', 'wc-category-showcase' ),
+					'label'    => __( 'Show block title', 'wc-category-showcase' ),
 					'sanitize' => 'intval',
 					'value'    => '1',
 					'options'  => array(
@@ -68,7 +68,7 @@ class Metabox {
 				array(
 					'type'     => 'select',
 					'name'     => 'wccs_infinite_scroll',
-					'label'    => __( 'Infinite Looping for the slider', 'wc-category-showcase' ),
+					'label'    => __( 'Infinite loop', 'wc-category-showcase' ),
 					'sanitize' => 'intval',
 					'value'    => '1',
 					'options'  => array(
@@ -79,7 +79,7 @@ class Metabox {
 				array(
 					'type'     => 'select',
 					'name'     => 'wccs_show_navigation',
-					'label'    => __( 'Show navigation for the slider', 'wc-category-showcase' ),
+					'label'    => __( 'Show slider navigation', 'wc-category-showcase' ),
 					'sanitize' => 'intval',
 					'value'    => '1',
 					'options'  => array(
@@ -122,7 +122,7 @@ class Metabox {
 				array(
 					'type'     => 'select',
 					'name'     => 'wccs_additional_categories',
-					'label'    => __( 'Select Categories', 'wc-category-showcase' ),
+					'label'    => __( 'Select categories', 'wc-category-showcase' ),
 					'value'    => 'all',
 					'multiple' => true,
 					'select2'  => 'true',
@@ -141,7 +141,7 @@ class Metabox {
 	 * since 1.0.0
 	 */
 	public function init_promotion_metabox() {
-		add_meta_box( 'wccs_showcase-promotion', __( 'What More?', 'wc-category-showcase' ), [
+		add_meta_box( 'wccs_showcase-promotion', __( 'Pro Features', 'wc-category-showcase' ), [
 			$this,
 			'promotion_metabox_callback'
 		], 'wccs_showcase', 'side' );
@@ -155,7 +155,6 @@ class Metabox {
 	public function promotion_metabox_callback() {
 		?>
 		<img src="<?php echo PLVR_WCCS_ASSETS . '/images/promotion.png'; ?>" alt="WOO Category Showcase Pro" style="width: 100%;margin-bottom: 10px;">
-		<h4 style="margin: 0;padding: 0;border-bottom: 1px solid #333;"><?php _e( 'Pro Features', 'wc-category-showcase' ); ?></h4>
 		<ul style="padding-left: 25px;list-style: disc;">
 			<li><?php _e( 'Custom featured category image', 'wc-category-showcase' ); ?></li>
 			<li><?php _e( 'Custom additional category image', 'wc-category-showcase' ); ?></li>
@@ -169,7 +168,7 @@ class Metabox {
 			<li><?php _e( 'Custom image column', 'wc-category-showcase' ); ?></li>
 			<li><?php _e( 'And Many More', 'wc-category-showcase' ); ?></li>
 		</ul>
-		<a href="http://bit.ly/woocommerce-category-showcase-pro" target="_blank" style="text-align: center;font-weight: bold;"><?php _e( 'Upgrade To PRO Now', 'wc-category-showcase' ); ?></a>
+		<a href="http://bit.ly/woocommerce-category-showcase-pro" target="_blank" style="text-align: center;font-weight: bold;"><?php _e( 'Upgrade to Pro', 'wc-category-showcase' ); ?></a>
 		<?php
 	}
 
