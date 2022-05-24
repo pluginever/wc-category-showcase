@@ -135,6 +135,17 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.1.6 =
+* Fix - Fix typo
+* Fix - Notice when no additional category selected
+* Fix – Compatibility with WP v6.0
+* Fix – Compatibility with WC v6.5.1
+* Enhance - Additional category link hover background and text color
+
+= 1.1.5 =
+* Fix – Compatibility with WP v5.7.2
+* Fix – Compatibility with WC v5.3.0
+
 = 1.1.4 =
 * Enhance - Add support WPML
 * Enhance - Add support optimote-wp
