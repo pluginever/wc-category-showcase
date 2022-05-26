@@ -1,8 +1,7 @@
 /* jshint node:true */
 module.exports = function (grunt) {
 	'use strict';
-	var pkg = grunt.file.readJSON('package.json');
-
+	var sass = require('node-sass');
 	grunt.initConfig({
 
 		// Setting folder templates.
@@ -26,16 +25,6 @@ module.exports = function (grunt) {
 			]
 		},
 
-		// Sass linting with Stylelint.
-		stylelint: {
-			options: {
-				configFile: '.stylelintrc'
-			},
-			all: [
-				'<%= dirs.css %>/*.scss'
-			]
-		},
-
 		// Minify .js files.
 		uglify: {
 			options: {
@@ -47,7 +36,7 @@ module.exports = function (grunt) {
 					comments: /@license|@preserve|^!/
 				}
 			},
-			minify: {
+			dist: {
 				files: [{
 					expand: true,
 					cwd: '<%= dirs.js %>/',
@@ -61,17 +50,19 @@ module.exports = function (grunt) {
 			},
 			vendor: {
 				files: {
-					 '<%= dirs.js %>/bundle.min.js': ['<%= dirs.js %>/image-liquid.js', '<%= dirs.js %>/slick.min.js', '<%= dirs.js %>/wc-category-showcase.min.js']
+					'<%= dirs.js %>/bundle.min.js': ['<%= dirs.js %>/image-liquid.js', '<%= dirs.js %>/slick.min.js', '<%= dirs.js %>/wc-category-showcase.min.js']
 				}
 			}
 		},
 
 		// Compile all .scss files.
 		sass: {
-			compile: {
-				options: {
-					sourceMap: false
-				},
+			options: {
+				implementation: sass,
+				sourceMap: false,
+				outputStyle: 'compressed'
+			},
+			dist: {
 				files: [{
 					expand: true,
 					cwd: '<%= dirs.css %>/',
@@ -79,6 +70,20 @@ module.exports = function (grunt) {
 					dest: '<%= dirs.css %>/',
 					ext: '.css'
 				}]
+			}
+		},
+
+		// Autoprefixer.
+		postcss: {
+			options: {
+				processors: [
+					require('autoprefixer')()
+				]
+			},
+			dist: {
+				src: [
+					'<%= dirs.css %>/*.css'
+				]
 			}
 		},
 
@@ -177,172 +182,11 @@ module.exports = function (grunt) {
 				],
 				expand: true
 			}
-		},
-
-		// PHP Code Sniffer.
-		phpcs: {
-			options: {
-				bin: 'vendor/bin/phpcs'
-			},
-			dist: {
-				src: [
-					'**/*.php',                                                  // Include all files
-					'!includes/libraries/**',                                    // Exclude libraries/
-					'!node_modules/**',                                          // Exclude node_modules/
-					'!tests/cli/**',                                             // Exclude tests/cli/
-					'!tmp/**',                                                   // Exclude tmp/
-					'!vendor/**'                                                 // Exclude vendor/
-				]
-			}
-		},
-
-		// Autoprefixer.
-		postcss: {
-			options: {
-				processors: [
-					require('autoprefixer')({
-						browsers: [
-							'> 0.1%',
-							'ie 8',
-							'ie 9'
-						]
-					})
-				]
-			},
-			dist: {
-				src: [
-					'<%= dirs.css %>/*.css'
-				]
-			}
-		},
-
-		// Clean up build directory
-		clean: {
-			main: ['build/']
-		},
-		copy: {
-			main: {
-				src: [
-					'**',
-					'!node_modules/**',
-					'!**/js/src/**',
-					'!**/css/src/**',
-					'!**/js/vendor/**',
-					'!**/css/vendor/**',
-					'!**/css/*.scss',
-					'!**/images/src/**',
-					'!**/sass/**',
-					'!build/**',
-					'!**/*.md',
-					'!**/*.map',
-					'!**/*.sh',
-					'!.idea/**',
-					'!bin/**',
-					'!.git/**',
-					'!Gruntfile.js',
-					'!package.json',
-					'!composer.json',
-					'!composer.lock',
-					'!package-lock.json',
-					'!debug.log',
-					'!none',
-					'!.gitignore',
-					'!.gitmodules',
-					'!phpcs.xml.dist',
-					'!npm-debug.log',
-					'!plugin-deploy.sh',
-					'!export.sh',
-					'!config.codekit',
-					'!nbproject/*',
-					'!tests/**',
-					'!.csscomb.json',
-					'!.editorconfig',
-					'!.jshintrc',
-					'!.tmp'
-				],
-				dest: 'build/'
-			}
-		},
-
-		compress: {
-			main: {
-				options: {
-					mode: 'zip',
-					archive: './build/'+pkg.name+'-v' + pkg.version + '.zip'
-				},
-				expand: true,
-				cwd: 'build/',
-				src: ['**/*'],
-				dest: pkg.name
-			}
 		}
-
 	});
-
-	// Load NPM tasks to be used here.
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-phpcs');
-	grunt.loadNpmTasks('grunt-postcss');
-	grunt.loadNpmTasks('grunt-stylelint');
-	grunt.loadNpmTasks('grunt-wp-i18n');
-	grunt.loadNpmTasks('grunt-checktextdomain');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-compress');
-	grunt.loadNpmTasks('grunt-prompt');
+	// Saves having to declare each dependency
+	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 	// Register tasks.
-	grunt.registerTask('default', [
-		'js',
-		'css',
-		'i18n'
-	]);
-
-	grunt.registerTask('js', [
-		'jshint',
-		'uglify:minify',
-		'uglify:vendor'
-	]);
-
-	grunt.registerTask('css', [
-		'sass',
-		'postcss',
-		'cssmin',
-		'concat'
-	]);
-
-	// Only an alias to 'default' task.
-	grunt.registerTask('dev', [
-		'default'
-	]);
-
-	grunt.registerTask('i18n', [
-		'checktextdomain',
-		'makepot'
-	]);
-
-	grunt.registerTask('release',
-		[
-			'default',
-			'i18n'
-		]);
-
-	grunt.registerTask('build',
-		[
-			'clean',
-			'clean',
-			'copy'
-		]);
-
-	grunt.registerTask('zip',
-		[
-			'clean',
-			'copy',
-			'compress'
-		]);
+	grunt.registerTask('build', ['jshint', 'uglify', 'sass', 'postcss', 'cssmin', 'concat', 'checktextdomain', 'makepot']);
 };
