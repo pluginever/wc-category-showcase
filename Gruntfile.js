@@ -108,22 +108,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Watch changes for assets.
-		watch: {
-			css: {
-				files: ['<%= dirs.css %>/*.scss'],
-				tasks: ['sass', 'postcss', 'cssmin', 'concat']
-			},
-			js: {
-				files: [
-					'<%= dirs.js %>/*js',
-					'<%= dirs.js %>/*js',
-					'!<%= dirs.js %>/*.min.js'
-				],
-				tasks: ['jshint', 'uglify']
-			}
-		},
-
 		// Generate POT files.
 		makepot: {
 			options: {
@@ -182,7 +166,23 @@ module.exports = function (grunt) {
 				],
 				expand: true
 			}
-		}
+		},
+
+		// Watch changes for assets.
+		watch: {
+			css: {
+				files: ['<%= dirs.css %>/*.scss'],
+				tasks: ['sass', 'postcss', 'cssmin', 'concat']
+			},
+			js: {
+				files: [
+					'<%= dirs.js %>/*js',
+					'<%= dirs.js %>/*js',
+					'!<%= dirs.js %>/*.min.js'
+				],
+				tasks: ['jshint', 'uglify']
+			}
+		},
 	});
 	// Saves having to declare each dependency
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
