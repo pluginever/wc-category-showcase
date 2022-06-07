@@ -15,7 +15,7 @@ WooCommerce Category Showcase plugin by PluginEver provides you the opportunity 
 == VIDEO DEMO ==
 http://www.youtube.com/watch?v=TFjWdEETbAs
 
->[DEMO](https://pluginever.xyz/wc-category-showcase/) |  [Get The PRO Version](https://www.pluginever.com/plugins/woo-category-showcase-pro/)  |  [Support](https://www.pluginever.com/support/)  |  [Documentation ](https://www.pluginever.com/docs/woo-category-showcase-pro/)
+>[DEMO](https://pluginever.xyz/wc-category-showcase/) |  [Get The PRO Version](https://www.pluginever.com/plugins/woo-category-showcase-pro/)  |  [Support](https://www.pluginever.com/support/)  |  [Documentation ](https://www.pluginever.com/docs/woocommerce-category-showcase/)
 
 ==WHY WOULD YOU NEED WOOCOMMERCE CATEGORY SHOWCASE ==
 When you can display your products and their categories in a proper way to your customers, it attracts them the most. This means you are effectively showing your product categories in a professional looking slider and blocks. Thus, your users loves how they look and also understands what you are offering at a glance. This makes your WooCommerce store popular and you can sell more quickly.
