@@ -56,5 +56,11 @@ Thumbs.db
 
 #Plugin Specific
 assets/css/sass
+assets/js/image-liquid.js
+assets/js/image-liquid.min.js
+assets/js/slick.min.js
+assets/js/wc-category-showcase.js
+assets/js/wc-category-showcase.min.js
 vendor
 README.md
+build
