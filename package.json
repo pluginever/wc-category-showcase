@@ -1,8 +1,8 @@
 {
-  "name": "woocommerce-category-showcase",
+  "name": "wc-category-showcase",
   "title": "WooCommerce Category Showcase",
   "description": "The best WordPress plugin ever made!",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "homepage": "http://pluginever.com",
   "author": {
     "name": "PluginEver",
