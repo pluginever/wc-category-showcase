@@ -9,7 +9,7 @@ Stable tag:        trunk
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Category Showcase for WooCommerce is the best WooCommerce extension to showcase categories in a nice slider block. Showing WooCommerce product categories in a slider allow your visitors to quickly identify the category they're looking for without having to search the entire WooCommerce store.
+Product Category Showcase for WooCommerce is the best WooCommerce extension to showcase categories in a nice slider block. Showing WooCommerce product categories in a slider allow your visitors to quickly identify the category they're looking for without having to search the entire WooCommerce store.
 
 == VIDEO DEMO ==
 http://www.youtube.com/watch?v=TFjWdEETbAs
