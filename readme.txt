@@ -1,21 +1,20 @@
-=== WooCommerce Category Showcase ===
+=== Category Showcase for WooCommerce ===
 Contributors: pluginever
 Donate link:
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider, product category carousel, product category slider, woocommerce category slider plugin free, product category carousel, product category rotators, product category slider, products category slider, responsive product category slider, woo category slider, woocommerce, woocommerce product category carousel, WooCommerce Products, woocommerce products category slider, woocommerce slider, carousel, woocommerce image slider, woocommerce responsive slider, woocommerce advance slider, best woocommerce product slider, easy woocommerce product slider, woocommerce slider free, woocommerce slider plugin, slider for woocommerce, product slider carousel for woocommerce, woocommerce product category slider and carousel plugin
 Requires at least: 3.6.0
-Tested up to:      6.0
+Tested up to:      6.1
 Requires PHP:      5.6
 Stable tag:        trunk
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-WooCommerce extension to showcase categories in a nice slider block.
+Category Showcase for WooCommerce is the best WooCommerce extension to showcase categories in a nice slider block. Showing WooCommerce product categories in a slider allow your visitors to quickly identify the category they're looking for without having to search the entire WooCommerce store.
 
-WooCommerce Category Showcase plugin by PluginEver provides you the opportunity of showing WooCommerce product categories in a slider & in a nice blocks. You can show your product categories in a modern looking and descriptive slider that show details of your category.
 == VIDEO DEMO ==
 http://www.youtube.com/watch?v=TFjWdEETbAs
 
->[DEMO](https://demo.pluginever.com/category-showcase/) |  [Get The PRO Version](https://www.pluginever.com/plugins/woo-category-showcase-pro/)  |  [Support](https://www.pluginever.com/support/)  |  [Documentation ](https://www.pluginever.com/docs/woocommerce-category-showcase/)
+>[DEMO](https://demo.pluginever.com/category-showcase/) |  [Get The PRO Version](https://pluginever.com/plugins/woocommerce-category-showcase-pro/)  |  [Support](https://www.pluginever.com/support/)  |  [Documentation ](https://www.pluginever.com/docs/woocommerce-category-showcase/)
 
 ==WHY WOULD YOU NEED WOOCOMMERCE CATEGORY SHOWCASE ==
 When you can display your products and their categories in a proper way to your customers, it attracts them the most. This means you are effectively showing your product categories in a professional looking slider and blocks. Thus, your users loves how they look and also understands what you are offering at a glance. This makes your WooCommerce store popular and you can sell more quickly.
@@ -116,7 +115,7 @@ To create a WooCommerce category showcase from the admin panel, select 'WC Showc
 There will be visible a shortcode on the right side. Copy that and place anywhere on the site you want.
 
 = How to hide the WooCommerce category showcase title? =
-To disable showing title set No from Show Title drop down from the showcase builder panel.
+To disable showing title set to No from Show Title drop down from the showcase builder panel.
 
 = How many featured category can be added =
 You can add an unlimited number of featured categories.
@@ -135,6 +134,10 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 1.1.8 =
+* Enhance - Added support for WooCommerce 7.1
+
+
 = 1.1.6 =
 * Fix - Fix typo
 * Fix - Notice when no additional category selected
