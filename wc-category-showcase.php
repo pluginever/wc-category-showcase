@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Category Showcase for WooCommerce
  * Plugin URI: https://pluginever.com/plugins/woocommerce-category-showcase-pro/
- * Description: WooCommerce extension to showcase categories in a nice slider blocks
+ * Description: WooCommerce extension to showcase categories in interactive slider blocks.
  * Version:     1.1.9
  * Author:      PluginEver
  * Author URI:  https://pluginever.com
