@@ -281,19 +281,19 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 				$optout_url = add_query_arg( $this->slug . '_tracker_optout', 'true' );
 
 				if ( empty( $this->notice ) ) {
-					$notice = sprintf( __( 'Want to help make <strong>%s</strong> even more awesome? Allow Pluginever to collect non-sensitive diagnostic data and usage information.', 'textdomain' ), $this->name );
+					$notice = sprintf( '%s <strong>%s</strong> %s', __( 'Want to help make', 'wc-category-showcase' ), $this->name, __( 'even more awesome? Allow Pluginever to collect non-sensitive diagnostic data and usage information.', 'wc-category-showcase' ) );
 				} else {
 					$notice = $this->notice;
 				}
 
-				$notice .= ' (<a class="insights-data-we-collect" href="#">' . __( 'what we collect', 'textdomain' ) . '</a>)';
+				$notice .= ' (<a class="insights-data-we-collect" href="#">' . __( 'what we collect', 'wc-category-showcase' ) . '</a>)';
 				$notice .= '<p class="description" style="display:none;">' . implode( ', ', $this->data_we_collect() ) . '. No sensitive data is tracked.</p>';
 
 				echo '<div class="updated"><p>';
-				echo $notice;
+				echo wp_kses_post( $notice );
 				echo '</p><p class="submit">';
-				echo '&nbsp;<a href="' . esc_url( $optin_url ) . '" class="button-primary button-large">' . __( 'Allow', 'textdomain' ) . '</a>';
-				echo '&nbsp;<a href="' . esc_url( $optout_url ) . '" class="button-secondary button-large">' . __( 'No thanks', 'textdomain' ) . '</a>';
+				echo '&nbsp;<a href="' . esc_url( $optin_url ) . '" class="button-primary button-large">' . esc_html_e( 'Allow', 'wc-category-showcase' ) . '</a>';
+				echo '&nbsp;<a href="' . esc_url( $optout_url ) . '" class="button-secondary button-large">' . esc_html_e( 'No thanks', 'wc-category-showcase' ) . '</a>';
 				echo '</p></div>';
 
 				echo "<script type='text/javascript'>jQuery('.insights-data-we-collect').on('click', function(e) {
@@ -311,7 +311,8 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 		 * @return void
 		 */
 		public function handle_optin_optout() {
-			if ( isset( $_GET[ $this->slug . '_tracker_optin' ] ) && $_GET[ $this->slug . '_tracker_optin' ] == 'true' ) {
+			// phpcs:disable WordPress.Security.NonceVerification.Missing
+			if ( isset( $_GET[ $this->slug . '_tracker_optin' ] ) && $_GET[ $this->slug . '_tracker_optin' ] == 'true' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				update_option( $this->slug . '_allow_tracking', 'yes' );
 				update_option( $this->slug . '_tracking_notice', 'hide' );
 
@@ -323,7 +324,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 				exit;
 			}
 
-			if ( isset( $_GET[ $this->slug . '_tracker_optout' ] ) && $_GET[ $this->slug . '_tracker_optout' ] == 'true' ) {
+			if ( isset( $_GET[ $this->slug . '_tracker_optout' ] ) && $_GET[ $this->slug . '_tracker_optout' ] == 'true' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				update_option( $this->slug . '_allow_tracking', 'no' );
 				update_option( $this->slug . '_tracking_notice', 'hide' );
 
@@ -343,7 +344,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 		 */
 		protected function get_post_count( $post_type ) {
 			global $wpdb;
-
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 			return (int) $wpdb->get_var( "SELECT count(ID) FROM $wpdb->posts WHERE post_type = '$post_type' and post_status = 'publish'" );
 		}
 
@@ -411,22 +412,22 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 			foreach ( $plugins as $k => $v ) {
 				// Take care of formatting the data how we want it.
 				$formatted         = array();
-				$formatted['name'] = strip_tags( $v['Name'] );
+				$formatted['name'] = wp_strip_all_tags( $v['Name'] );
 
 				if ( isset( $v['Version'] ) ) {
-					$formatted['version'] = strip_tags( $v['Version'] );
+					$formatted['version'] = wp_strip_all_tags( $v['Version'] );
 				}
 
 				if ( isset( $v['Author'] ) ) {
-					$formatted['author'] = strip_tags( $v['Author'] );
+					$formatted['author'] = wp_strip_all_tags( $v['Author'] );
 				}
 
 				if ( isset( $v['Network'] ) ) {
-					$formatted['network'] = strip_tags( $v['Network'] );
+					$formatted['network'] = wp_strip_all_tags( $v['Network'] );
 				}
 
 				if ( isset( $v['PluginURI'] ) ) {
-					$formatted['plugin_uri'] = strip_tags( $v['PluginURI'] );
+					$formatted['plugin_uri'] = wp_strip_all_tags( $v['PluginURI'] );
 				}
 
 				if ( in_array( $k, $active_plugins_keys ) ) {
@@ -574,7 +575,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 				'url'           => home_url(),
 				'user_email'    => $current_user->user_email,
 				'user_name'     => $current_user->display_name,
-				'reason_info'   => isset( $_REQUEST['reason_info'] ) ? trim( stripslashes( $_REQUEST['reason_info'] ) ) : '',
+				'reason_info'   => isset( $_REQUEST['reason_info'] ) ? trim( stripslashes( $_REQUEST['reason_info'] ) ) : '', // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				'software'      => $_SERVER['SERVER_SOFTWARE'],
 				'php_version'   => phpversion(),
 				'mysql_version' => $wpdb->db_version(),
@@ -603,10 +604,10 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 			$reasons = $this->get_uninstall_reasons();
 			?>
 
-			<div class="wd-dr-modal" id="<?php echo $this->slug; ?>-wd-dr-modal">
+			<div class="wd-dr-modal" id="<?php echo esc_attr( $this->slug ); ?>-wd-dr-modal">
 				<div class="wd-dr-modal-wrap">
 					<div class="wd-dr-modal-header">
-						<h3><?php _e( 'If you have a moment, please let us know why you are deactivating:', 'wc-category-showcase' ); ?></h3>
+						<h3><?php esc_html_e( 'If you have a moment, please let us know why you are deactivating:', 'wc-category-showcase' ); ?></h3>
 					</div>
 
 					<div class="wd-dr-modal-body">
@@ -615,7 +616,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 								<li data-type="<?php echo esc_attr( $reason['type'] ); ?>"
 									data-placeholder="<?php echo esc_attr( $reason['placeholder'] ); ?>">
 									<label><input type="radio" name="selected-reason"
-												  value="<?php echo $reason['id']; ?>"> <?php echo $reason['text']; ?>
+												  value="<?php echo esc_attr( $reason['id'] ); ?>"> <?php echo esc_attr( $reason['text'] ); ?>
 									</label>
 								</li>
 							<?php } ?>
@@ -623,9 +624,9 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 					</div>
 
 					<div class="wd-dr-modal-footer">
-						<a href="#" class="dont-bother-me"><?php _e( 'I rather wouldn\'t say', 'wc-category-showcase' ); ?></a>
-						<button class="button-secondary"><?php _e( 'Submit & Deactivate', 'wc-category-showcase' ); ?></button>
-						<button class="button-primary"><?php _e( 'Cancel', 'wc-category-showcase' ); ?></button>
+						<a href="#" class="dont-bother-me"><?php esc_html_e( 'I rather wouldn\'t say', 'wc-category-showcase' ); ?></a>
+						<button class="button-secondary"><?php esc_html_e( 'Submit & Deactivate', 'wc-category-showcase' ); ?></button>
+						<button class="button-primary"><?php esc_html_e( 'Cancel', 'wc-category-showcase' ); ?></button>
 					</div>
 				</div>
 			</div>
@@ -682,10 +683,10 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 			<script type="text/javascript">
 				(function ($) {
 					$(function () {
-						var modal = $('#<?php echo $this->slug; ?>-wd-dr-modal');
+						var modal = $('#<?php echo esc_attr( $this->slug ); ?>-wd-dr-modal');
 						var deactivateLink = '';
 
-						$('#the-list').on('click', 'a.<?php echo $this->slug; ?>-deactivate-link', function (e) {
+						$('#the-list').on('click', 'a.<?php echo esc_attr( $this->slug ); ?>-deactivate-link', function (e) {
 							e.preventDefault();
 
 							modal.addClass('modal-active');
@@ -732,7 +733,7 @@ if ( ! class_exists( 'Pluginever_Insights' ) ) :
 								url: ajaxurl,
 								type: 'POST',
 								data: {
-									action: '<?php echo $this->slug; ?>_submit-uninstall-reason',
+									action: '<?php echo esc_attr( $this->slug ); ?>_submit-uninstall-reason',
 									reason_id: (0 === $radio.length) ? 'none' : $radio.val(),
 									reason_info: (0 !== $input.length) ? $input.val().trim() : ''
 								},

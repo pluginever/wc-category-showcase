@@ -38,7 +38,7 @@ class Admin {
 		switch ( $column ) {
 
 			case 'shortcode' :
-				echo "<code>[wccs_showcase id='{$post_id}']</code>";
+				echo wp_kses_post( "<code>[wccs_showcase id='{$post_id}']</code>" );
 				break;
 
 		}
