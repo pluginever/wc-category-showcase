@@ -35,7 +35,7 @@ function wccs_get_term_details( $id, $post_id = false, $type = 'featured' ) {
 	$response = [
 		'term_id' => $term->term_id,
 		'title'   => $term->name,
-		'desc'    => term_description( $term->term_id, 'product_cat' ),
+		'desc'    => term_description( $term->term_id ),
 		'image'   => $image_url,
 		'col'     => 1,
 		'link'    => get_term_link( $term->term_id, 'product_cat' ),
@@ -67,13 +67,13 @@ function wccs_get_wc_categories( $args = array() ) {
 		'order'      => 'ASC',
 		'hide_empty' => false,
 		'include'    => array(),
-		'exclude'    => array(),
+		'exclude'    => array(), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 		'child_of'   => 0,
 	);
 	//$args = array_intersect_key( $args, $default);
 	if ( version_compare( $wp_version, '4.5.0', '<' ) ) {
 		$args       = wp_parse_args( $args, $default );
-		$categories = get_terms( 'product_cat', $args );
+		$categories = get_terms( 'product_cat' );
 	} else {
 		$args             = wp_parse_args( $args, $default );
 		$args['taxonomy'] = 'product_cat';

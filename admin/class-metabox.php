@@ -154,22 +154,22 @@ class Metabox {
 	 */
 	public function promotion_metabox_callback() {
 		?>
-		<img src="<?php echo PLVR_WCCS_ASSETS . '/images/promotion.png'; ?>" alt="WOO Category Showcase Pro" style="width: 100%;margin-bottom: 10px;">
-		<h4 style="margin: 0;padding: 0;border-bottom: 1px solid #333;"><?php _e( 'Pro Features', 'wc-category-showcase' ); ?></h4>
+		<img src="<?php echo esc_url( PLVR_WCCS_ASSETS ) . '/images/promotion.png'; ?>" alt="WOO Category Showcase Pro" style="width: 100%;margin-bottom: 10px;">
+		<h4 style="margin: 0;padding: 0;border-bottom: 1px solid #333;"><?php esc_html_e( 'Pro Features', 'wc-category-showcase' ); ?></h4>
 		<ul style="padding-left: 25px;list-style: disc;">
-			<li><?php _e( 'Custom featured category image', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Custom additional category image', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Custom category title', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Category title show hide', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Category description show hide', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Category button show hide', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Category button custom text', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Custom content color', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Custom content background color', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'Custom image column', 'wc-category-showcase' ); ?></li>
-			<li><?php _e( 'And Many More', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Custom featured category image', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Custom additional category image', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Custom category title', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Category title show hide', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Category description show hide', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Category button show hide', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Category button custom text', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Custom content color', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Custom content background color', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'Custom image column', 'wc-category-showcase' ); ?></li>
+			<li><?php esc_html_e( 'And Many More', 'wc-category-showcase' ); ?></li>
 		</ul>
-		<a href="http://bit.ly/woocommerce-category-showcase-pro" target="_blank" style="text-align: center;font-weight: bold;"><?php _e( 'Upgrade To PRO Now', 'wc-category-showcase' ); ?></a>
+		<a href="http://bit.ly/woocommerce-category-showcase-pro" target="_blank" style="text-align: center;font-weight: bold;"><?php esc_html_e( 'Upgrade To PRO Now', 'wc-category-showcase' ); ?></a>
 		<?php
 	}
 
