@@ -10,6 +10,12 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
         protected static $_instance = array();
 
         /**
+         * @var string The single instance of the class
+         * @since 1.2.0
+         */
+        protected $id = '';
+
+        /**
          * @var string
          */
         protected $version = '1.0.1';

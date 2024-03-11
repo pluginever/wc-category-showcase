@@ -290,8 +290,6 @@ class WC_Category_Showcase {
 		require PLVR_WCCS_INCLUDES . '/metabox/class-metabox.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-admin.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-metabox.php';
-		require PLVR_WCCS_INCLUDES . '/class-insights.php';
-		require PLVR_WCCS_INCLUDES . '/class-tracker.php';
 	}
 
 	/**
@@ -342,7 +340,6 @@ class WC_Category_Showcase {
 	private function init_actions() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_assets' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
-
 	}
 
 	/**
@@ -355,7 +352,6 @@ class WC_Category_Showcase {
 	private function init_plugin() {
 		new \Pluginever\WCCS\Shortcode();
 		new \Pluginever\WCCCS\Metabox();
-		new \Pluginever\WCCS\Tracker();
 	}
 
 	/**

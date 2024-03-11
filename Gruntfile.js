@@ -177,7 +177,6 @@ module.exports = function (grunt) {
 					'!tests/**',
 					'!vendor/**',
 					'!tmp/**',
-					'!includes/class-insights.php',
 					'!includes/metabox/class-metabox.php'
 				],
 				expand: true
