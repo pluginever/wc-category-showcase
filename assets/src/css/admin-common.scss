@@ -1,0 +1,11 @@
+@import "../../../lib/Lib/assets/css/layout";
+@import "../../../lib/Lib/assets/css/grid";
+@import "../../../lib/Lib/assets/css/card";
+@import "../../../lib/Lib/assets/css/form";
+@import "common";
+
+#wccs-category-showcase {
+	input, select, .select2.select2-container.select2-container--default {
+		width: 100%;
+	}
+}

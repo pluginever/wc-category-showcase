@@ -13,6 +13,12 @@ fi
 
 echo "Preparing release $VERSION for $SLUG..."
 
+echo "➤ Building plugin..."
+npm install && npm run build
+composer install
+composer update --no-dev --no-scripts
+echo "✓ Plugin built!"
+
 # Check if svn user name is provided with -u flag and password with -p flag
 while getopts u:p: flag
 do
@@ -28,6 +34,16 @@ then
 	echo "Please provide svn user name and password with -u and -p flags."
 	exit 1
 fi
+
+# Replace the version in readme.txt
+sed -i '' "s/Stable tag: .*/Stable tag: $VERSION/" readme.txt
+# Replace the version in plugin file
+sed -i '' "s/Version: .*/Version: $VERSION/" $SLUG.php
+
+# Build the plugin
+npm install
+npm run build
+composer update --no-dev --optimize-autoloader
 
 # if directory already exists, delete it
 if [ -d "$SVN_DIR" ]; then

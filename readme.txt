@@ -1,15 +1,15 @@
 === Product Category Showcase for WooCommerce ===
 Contributors: pluginever
 Donate link:
-Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider, product category carousel, product category slider, woocommerce category slider plugin free, product category carousel, product category rotators, product category slider, products category slider, responsive product category slider, woo category slider, woocommerce, woocommerce product category carousel, WooCommerce Products, woocommerce products category slider, woocommerce slider, carousel, woocommerce image slider, woocommerce responsive slider, woocommerce advance slider, best woocommerce product slider, easy woocommerce product slider, woocommerce slider free, woocommerce slider plugin, slider for woocommerce, product slider carousel for woocommerce, woocommerce product category slider and carousel plugin
+Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, product category slider
 Requires at least: 3.6.0
 Tested up to:      6.1
 Requires PHP:      5.6
-Stable tag:        trunk
+Stable tag:        2.0.0
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Product Category Showcase for WooCommerce is the best WooCommerce extension to showcase categories in a nice slider block. Showing WooCommerce product categories in a slider allow your visitors to quickly identify the category they're looking for without having to search the entire WooCommerce store.
+Product Category Showcase for WooCommerce: Best extension to display categories in a slider, aiding quick navigation through your store.
 
 == VIDEO DEMO ==
 http://www.youtube.com/watch?v=TFjWdEETbAs
@@ -174,7 +174,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 = 1.1.0 =
 * WC compatibility with 3.7.0
 * WP compatibility with 5.2.3
-* Fix error when additional category empty 
+* Fix error when additional category empty
 * Fix Warning when woocommerce not installed
 
 
