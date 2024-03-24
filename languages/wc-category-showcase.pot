@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WC Category Showcase 1.0.0\n"
 "Report-Msgid-Bugs-To: https://pluginever.com/plugins/wc-category-showcase/\n"
-"POT-Creation-Date: 2024-03-18 08:57:24+00:00\n"
+"POT-Creation-Date: 2024-03-21 04:21:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,6 +92,10 @@ msgstr ""
 msgid "Version %s"
 msgstr ""
 
+#: src/Admin/Admin.php:126
+msgid "Search to select categories"
+msgstr ""
+
 #: src/Admin/ListTables/CategoryShowcaseListTable.php:126
 msgid "No items found."
 msgstr ""
@@ -101,7 +105,6 @@ msgid "Name"
 msgstr ""
 
 #: src/Admin/ListTables/CategoryShowcaseListTable.php:139
-#: src/Admin/views/add-category-showcase.php:81
 #: src/Admin/views/edit-category-showcase.php:183
 msgid "Shortcode"
 msgstr ""
@@ -230,98 +233,187 @@ msgid "Featured Category Settings"
 msgstr ""
 
 #: src/Admin/views/add-category-showcase.php:37
-#: src/Admin/views/add-category-showcase.php:55
-msgid "???"
+#: src/Admin/views/edit-category-showcase.php:47
+msgid "Select Categories"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:43
-#: src/Admin/views/add-category-showcase.php:61
-msgid "lorem ispum"
+#: src/Admin/views/add-category-showcase.php:44
+#: src/Admin/views/add-category-showcase.php:143
+#: src/Admin/views/edit-category-showcase.php:60
+#: src/Admin/views/edit-category-showcase.php:165
+msgid "Select Categories to show in showcase."
 msgstr ""
 
 #: src/Admin/views/add-category-showcase.php:50
+#: src/Admin/views/edit-category-showcase.php:66
+msgid "Show Block Title"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:54
+#: src/Admin/views/add-category-showcase.php:70
+#: src/Admin/views/add-category-showcase.php:86
+#: src/Admin/views/add-category-showcase.php:102
+#: src/Admin/views/add-category-showcase.php:124
+#: src/Admin/views/edit-category-showcase.php:70
+#: src/Admin/views/edit-category-showcase.php:86
+#: src/Admin/views/edit-category-showcase.php:102
+#: src/Admin/views/edit-category-showcase.php:118
+#: src/Admin/views/edit-category-showcase.php:140
+msgid "--Select option---"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:55
+#: src/Admin/views/add-category-showcase.php:71
+#: src/Admin/views/add-category-showcase.php:87
+#: src/Admin/views/add-category-showcase.php:103
+#: src/Admin/views/add-category-showcase.php:125
+#: src/Admin/views/edit-category-showcase.php:71
+#: src/Admin/views/edit-category-showcase.php:87
+#: src/Admin/views/edit-category-showcase.php:103
+#: src/Admin/views/edit-category-showcase.php:119
+#: src/Admin/views/edit-category-showcase.php:141
+msgid "Yes"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:56
+#: src/Admin/views/add-category-showcase.php:72
+#: src/Admin/views/add-category-showcase.php:88
+#: src/Admin/views/add-category-showcase.php:104
+#: src/Admin/views/add-category-showcase.php:126
+#: src/Admin/views/edit-category-showcase.php:72
+#: src/Admin/views/edit-category-showcase.php:88
+#: src/Admin/views/edit-category-showcase.php:104
+#: src/Admin/views/edit-category-showcase.php:120
+#: src/Admin/views/edit-category-showcase.php:142
+msgid "No"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:60
+#: src/Admin/views/edit-category-showcase.php:76
+msgid "Select option to show block title in showcase."
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:66
+#: src/Admin/views/edit-category-showcase.php:82
+msgid "Autoplay the slider"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:76
+#: src/Admin/views/edit-category-showcase.php:92
+msgid "Select option to autoplay the slider in showcase."
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:82
+#: src/Admin/views/edit-category-showcase.php:98
+msgid "Infinite Looping for the slider"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:92
+#: src/Admin/views/edit-category-showcase.php:108
+msgid "Select option to infinite scroll in showcase"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:98
+#: src/Admin/views/edit-category-showcase.php:114
+msgid "Show navigation for the slider"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:108
+#: src/Admin/views/edit-category-showcase.php:124
+msgid "Select option to navigation in showcase"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:115
 #: src/Admin/views/edit-category-showcase.php:131
 msgid "Additional Category Settings"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:71
+#: src/Admin/views/add-category-showcase.php:120
+#: src/Admin/views/edit-category-showcase.php:136
+msgid "Show additional categories"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:130
+#: src/Admin/views/edit-category-showcase.php:146
+msgid "Select option to show additional categories in showcase"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:136
+#: src/Admin/views/edit-category-showcase.php:152
+msgid "Select Additional Categories"
+msgstr ""
+
+#: src/Admin/views/add-category-showcase.php:153
+#: src/Admin/views/add-category-showcase.php:158
 msgid "Publish"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:76
-msgid "Publish Category Showcase"
-msgstr ""
-
-#: src/Admin/views/add-category-showcase.php:85
-msgid "Category showcase id is not generated yet!"
-msgstr ""
-
-#: src/Admin/views/add-category-showcase.php:90
+#: src/Admin/views/add-category-showcase.php:163
 #: src/Admin/views/edit-category-showcase.php:195
 msgid "What More?"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:94
+#: src/Admin/views/add-category-showcase.php:167
 #: src/Admin/views/edit-category-showcase.php:199
 msgid "Pro Features"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:96
+#: src/Admin/views/add-category-showcase.php:169
 #: src/Admin/views/edit-category-showcase.php:201
 msgid "Custom featured category image"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:97
+#: src/Admin/views/add-category-showcase.php:170
 #: src/Admin/views/edit-category-showcase.php:202
 msgid "Custom additional category image"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:98
+#: src/Admin/views/add-category-showcase.php:171
 #: src/Admin/views/edit-category-showcase.php:203
 msgid "Custom category title"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:99
+#: src/Admin/views/add-category-showcase.php:172
 #: src/Admin/views/edit-category-showcase.php:204
 msgid "Category title show hide"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:100
+#: src/Admin/views/add-category-showcase.php:173
 #: src/Admin/views/edit-category-showcase.php:205
 msgid "Category description show hide"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:101
+#: src/Admin/views/add-category-showcase.php:174
 #: src/Admin/views/edit-category-showcase.php:206
 msgid "Category button show hide"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:102
+#: src/Admin/views/add-category-showcase.php:175
 #: src/Admin/views/edit-category-showcase.php:207
 msgid "Category button custom text"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:103
+#: src/Admin/views/add-category-showcase.php:176
 #: src/Admin/views/edit-category-showcase.php:208
 msgid "Custom content color"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:104
+#: src/Admin/views/add-category-showcase.php:177
 #: src/Admin/views/edit-category-showcase.php:209
 msgid "Custom content background color"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:105
+#: src/Admin/views/add-category-showcase.php:178
 #: src/Admin/views/edit-category-showcase.php:210
 msgid "Custom image column"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:106
+#: src/Admin/views/add-category-showcase.php:179
 #: src/Admin/views/edit-category-showcase.php:211
 msgid "And Many More"
 msgstr ""
 
-#: src/Admin/views/add-category-showcase.php:112
+#: src/Admin/views/add-category-showcase.php:185
 #: src/Admin/views/edit-category-showcase.php:217
 msgid "Upgrade To PRO Now"
 msgstr ""
@@ -339,89 +431,12 @@ msgstr ""
 msgid "Category Showcase Details"
 msgstr ""
 
-#: src/Admin/views/edit-category-showcase.php:47
-msgid "Select Categories"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:60
-#: src/Admin/views/edit-category-showcase.php:165
-msgid "Select Categories to show in showcase."
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:66
-msgid "Show Block Title"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:70
-#: src/Admin/views/edit-category-showcase.php:86
-#: src/Admin/views/edit-category-showcase.php:102
-#: src/Admin/views/edit-category-showcase.php:118
-#: src/Admin/views/edit-category-showcase.php:140
-msgid "--Select option---"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:71
-#: src/Admin/views/edit-category-showcase.php:87
-#: src/Admin/views/edit-category-showcase.php:103
-#: src/Admin/views/edit-category-showcase.php:119
-#: src/Admin/views/edit-category-showcase.php:141
-msgid "Yes"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:72
-#: src/Admin/views/edit-category-showcase.php:88
-#: src/Admin/views/edit-category-showcase.php:104
-#: src/Admin/views/edit-category-showcase.php:120
-#: src/Admin/views/edit-category-showcase.php:142
-msgid "No"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:76
-msgid "Select option to show block title in showcase."
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:82
-msgid "Autoplay the slider"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:92
-msgid "Select option to autoplay the slider in showcase."
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:98
-msgid "Infinite Looping for the slider"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:108
-msgid "Select option to infinite scroll in showcase"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:114
-msgid "Show navigation for the slider"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:124
-msgid "Select option to navigation in showcase"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:136
-msgid "Show additional categories"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:146
-msgid "Select option to show additional categories in showcase"
-msgstr ""
-
-#: src/Admin/views/edit-category-showcase.php:152
-msgid "Select Additional Categories"
-msgstr ""
-
 #: src/Admin/views/edit-category-showcase.php:174
 msgid "Actions"
 msgstr ""
 
 #: src/Admin/views/edit-category-showcase.php:178
-msgid "Update Category Showcase"
+msgid "Update"
 msgstr ""
 
 #: src/Admin/views/edit-category-showcase.php:190
@@ -436,8 +451,20 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/Controllers/Actions.php:45
+#: src/Controllers/Actions.php:67
+msgid "Category showcase added successfully."
+msgstr ""
+
+#: src/Controllers/Actions.php:87
+msgid "Category Showcase not found."
+msgstr ""
+
+#: src/Controllers/Actions.php:119
 msgid "Category showcase updated successfully."
+msgstr ""
+
+#: src/Controllers/Actions.php:137
+msgid "No, search term provided."
 msgstr ""
 
 #: src/Installer.php:79
@@ -445,7 +472,7 @@ msgstr ""
 msgid "%1$s updated to version %2$s successfully."
 msgstr ""
 
-#: src/Models/CategoryShowcase.php:55
+#: src/Models/CategoryShowcase.php:64
 msgid "Please enter a name for the category showcase."
 msgstr ""
 

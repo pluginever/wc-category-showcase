@@ -64,10 +64,10 @@ class Actions {
 			exit;
 		}
 
-		$notice = sprintf( '%s', __( 'Category showcase updated successfully.', 'wc-category-showcase' ) );
+		$notice = sprintf( '%s', __( 'Category showcase added successfully.', 'wc-category-showcase' ) );
 		wc_category_showcase()->add_notice( $notice, 'success' );
 
-		wp_safe_redirect( $referer );
+		wp_safe_redirect( admin_url( 'admin.php?page=wc-category-showcase&tab=category_showcase&edit=' . $category_showcase->get_id() ) );
 		exit;
 	}
 

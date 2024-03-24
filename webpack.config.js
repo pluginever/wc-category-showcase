@@ -10,9 +10,10 @@ module.exports = [
 			...defaultConfig.entry(),
 			'css/admin-common': './assets/src/css/admin-common.scss',
 			'js/admin-common': './assets/src/js/admin-common.js',
-			// 'css/frontend-common': './assets/src/css/frontend-common.scss',
-			// 'js/frontend-common': './assets/src/js/frontend-common.js',
-			// 'js/image-liquid': './assets/src/js/image-liquid.js',
+			'css/frontend-common': './assets/src/css/frontend-common.scss',
+			'js/frontend-common': './assets/src/js/frontend-common.js',
+			'js/image-liquid': './assets/src/js/image-liquid.js',
+			'js/slick': './assets/src/js/slick.js',
 		},
 		output: {
 			...defaultConfig.output,

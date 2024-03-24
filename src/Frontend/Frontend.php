@@ -36,9 +36,11 @@ class Frontend {
 	public static function frontend_scripts() {
 		wc_category_showcase()->register_style( 'wc-category-showcase-frontend', 'css/frontend-common.css' );
 		wc_category_showcase()->register_script( 'wc-category-showcase-frontend', 'js/frontend-common.js' );
+		wc_category_showcase()->register_script( 'wc-category-showcase-slick', 'js/slick.js' );
 
 		wp_enqueue_style( 'wc-category-showcase-frontend' );
 		wp_enqueue_script( 'wc-category-showcase-frontend' );
+		wp_enqueue_script( 'wc-category-showcase-slick' );
 
 		$localize = array(
 			'ajaxurl'  => admin_url( 'admin-ajax.php' ),
