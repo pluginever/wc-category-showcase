@@ -51,7 +51,6 @@ defined( 'ABSPATH' ) || exit;
 						</label>
 						<div>
 							<select id="wccs_show_block_title" name="wccs_show_block_title">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes"><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No"><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -67,7 +66,6 @@ defined( 'ABSPATH' ) || exit;
 						</label>
 						<div>
 							<select id="wccs_autoplay_slider" name="wccs_autoplay_slider">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes"><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No"><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -83,7 +81,6 @@ defined( 'ABSPATH' ) || exit;
 						</label>
 						<div>
 							<select id="wccs_infinite_scroll" name="wccs_infinite_scroll">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes"><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No"><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -99,7 +96,6 @@ defined( 'ABSPATH' ) || exit;
 						</label>
 						<div>
 							<select id="wccs_show_navigation" name="wccs_show_navigation">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes"><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No"><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -121,7 +117,6 @@ defined( 'ABSPATH' ) || exit;
 						</label>
 						<div>
 							<select id="wccs_show_additional_categories" name="wccs_show_additional_categories">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes"><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No" ><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>

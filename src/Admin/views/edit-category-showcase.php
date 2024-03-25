@@ -47,7 +47,7 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 							<?php esc_html_e( 'Select Categories', 'wc-category-showcase' ); ?>
 						</label>
 						<div>
-							<?php $_category = $category_showcase->get_wccs_featured_categories(); ?>
+							<?php $_category = $category_showcase->get_wccs_featured_categories() ? $category_showcase->get_wccs_featured_categories() : array(); ?>
 							<select id="wccs_featured_categories" name="wccs_featured_categories[]" multiple="multiple">
 								<?php foreach ( $_category as $category_id ) : ?>
 									<?php if ( ! empty( $category_id ) ) : ?>
@@ -67,7 +67,6 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 						</label>
 						<div>
 							<select id="wccs_show_block_title" name="wccs_show_block_title">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes" <?php if ( 'Yes' === $category_showcase->get_wccs_show_block_title() ) { echo 'selected'; } ?>><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No" <?php if ( 'No' === $category_showcase->get_wccs_show_block_title() ) { echo 'selected'; } ?>><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -83,7 +82,6 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 						</label>
 						<div>
 							<select id="wccs_autoplay_slider" name="wccs_autoplay_slider">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes" <?php if ( 'Yes' === $category_showcase->get_wccs_autoplay_slider() ) { echo 'selected'; } ?>><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No" <?php if ( 'No' === $category_showcase->get_wccs_autoplay_slider() ) { echo 'selected'; } ?>><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -99,7 +97,6 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 						</label>
 						<div>
 							<select id="wccs_infinite_scroll" name="wccs_infinite_scroll">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes" <?php if ( 'Yes' === $category_showcase->get_wccs_infinite_scroll() ) { echo 'selected'; } ?>><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No" <?php if ( 'No' === $category_showcase->get_wccs_infinite_scroll() ) { echo 'selected'; } ?>><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -115,7 +112,6 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 						</label>
 						<div>
 							<select id="wccs_show_navigation" name="wccs_show_navigation">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes" <?php if ( 'Yes' === $category_showcase->get_wccs_show_navigation() ) { echo 'selected'; } ?>><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No" <?php if ( 'No' === $category_showcase->get_wccs_show_navigation() ) { echo 'selected'; } ?>><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -137,7 +133,6 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 						</label>
 						<div>
 							<select id="wccs_show_additional_categories" name="wccs_show_additional_categories">
-								<option value=""><?php esc_html_e( '--Select option---', 'wc-category-showcase' ); ?></option>
 								<option value="Yes" <?php if ( 'Yes' === $category_showcase->get_wccs_show_additional_categories() ) { echo 'selected'; } ?>><?php esc_html_e( 'Yes', 'wc-category-showcase' ); ?></option>
 								<option value="No" <?php if ( 'No' === $category_showcase->get_wccs_show_additional_categories() ) { echo 'selected'; } ?>><?php esc_html_e( 'No', 'wc-category-showcase' ); ?></option>
 							</select>
@@ -152,7 +147,7 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 							<?php esc_html_e( 'Select Additional Categories', 'wc-category-showcase' ); ?>
 						</label>
 						<div>
-							<?php $_additional_category = $category_showcase->get_wccs_additional_categories(); ?>
+							<?php $_additional_category = $category_showcase->get_wccs_additional_categories() ? $category_showcase->get_wccs_additional_categories() : array(); ?>
 							<select id="wccs_additional_categories" name="wccs_additional_categories[]" multiple="multiple">
 								<?php foreach ( $_additional_category as $category_id ) : ?>
 									<?php if ( ! empty( $category_id ) ) : ?>

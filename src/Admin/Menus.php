@@ -19,7 +19,6 @@ class Menus {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'main_menu' ) );
-		add_action( 'admin_menu', array( $this, 'settings_menu' ), 100 );
 		add_action( 'wc_category_showcase_category-showcase_content', array( $this, 'output_category_showcase_content' ) );
 	}
 
@@ -46,23 +45,6 @@ class Menus {
 			'manage_options',
 			'wc-category-showcase',
 			array( $this, 'output_main_page' )
-		);
-	}
-
-	/**
-	 * Settings menu.
-	 *
-	 * @return void
-	 * @since 1.0.0
-	 */
-	public function settings_menu() {
-		add_submenu_page(
-			'wc-category-showcase',
-			__( 'Settings', 'wc-category-showcase' ),
-			__( 'Settings', 'wc-category-showcase' ),
-			'manage_options',
-			'wccs-settings',
-			array( Settings::class, 'output' )
 		);
 	}
 
