@@ -46,16 +46,16 @@ class Shortcode {
 			'wccs_featured_categories'                => array(),
 			'wccs_additional_categories'              => array(),
 			'wccs_show_block_title'                   => '0',
-			'wccs_featured_show_title'                => '1',
-			'wccs_featured_show_desc'                 => '1',
-			'wccs_featured_show_button'               => '1',
+			'wccs_featured_show_title'                => 'Yes',
+			'wccs_featured_show_desc'                 => 'Yes',
+			'wccs_featured_show_button'               => 'Yes',
 			'wccs_featured_button_text'               => 'Shop Now',
 			'wccs_featured_content_color'             => '#fff',
 			'wccs_featured_content_bg'                => 'rgba(150,88,138,.9)',
-			'wccs_additional_show_title'              => '1',
+			'wccs_additional_show_title'              => 'Yes',
 			'wccs_additional_title_color'             => '#000',
 			'wccs_additional_content_bg'              => '#fff',
-			'wccs_featured_show_custom_message'       => '1',
+			'wccs_featured_show_custom_message'       => 'Yes',
 			'wccs_featured_custom_message'            => '',
 			'wccs_additional_button_hover_color'      => 'rgba(150,88,138,.9)',
 			'wccs_additional_button_hover_text_color' => '#ffffff',
@@ -124,6 +124,19 @@ class Shortcode {
 			$left_block_classes  = 'col-xs-12 col-sm-12 col-md-12 col-lg-12  woo-cs-left-block';
 			$right_block_classes = 'hide';
 		}
+
+		if ( is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) ) {
+			$params['wccs_slider_autoplaySpeed']   = $category_showcase->get_wccs_slider_autoplaySpeed();
+			$params['wccs_featured_show_title']    = $category_showcase->get_wccs_featured_show_title();
+			$params['wccs_featured_show_desc']     = $category_showcase->get_wccs_featured_show_desc();
+			$params['wccs_featured_show_button']   = $category_showcase->get_wccs_featured_show_button();
+			$params['wccs_featured_button_text']   = $category_showcase->get_wccs_featured_button_text();
+			$params['wccs_featured_content_color'] = $category_showcase->get_wccs_featured_content_color();
+			$params['wccs_featured_content_bg']    = $category_showcase->get_wccs_featured_content_bg();
+			$params['wccs_additional_show_title']  = $category_showcase->get_wccs_additional_show_title();
+			$params['wccs_additional_title_color'] = $category_showcase->get_wccs_additional_title_color();
+			$params['wccs_additional_content_bg']  = $category_showcase->get_wccs_additional_content_bg();
+		}
 		?>
 		<div class="woo-cs has-border" id="wccs-slider-<?php echo esc_attr( $post_id ); ?>">
 			<?php if ( ! empty( $params['wccs_show_block_title'] ) ) : ?>
@@ -148,19 +161,19 @@ class Shortcode {
 
 										$html .= '<span class="woo-cs-cat-details">';
 
-										if ( '1' === $params['wccs_featured_show_title'] ) {
+										if ( 'Yes' === $params['wccs_featured_show_title'] ) {
 											$html .= '<span class="woo-cs-cat-title">' . $featured_category['title'] . '</span>';
 										}
 
-										if ( '1' === $params['wccs_featured_show_desc'] ) {
+										if ( 'Yes' === $params['wccs_featured_show_desc'] ) {
 											$html .= '<span class="woo-cs-cat-des">' . $featured_category['desc'] . '</span>';
 										}
 
-										if ( '1' === $params['wccs_featured_show_custom_message'] && '1' !== $params['wccs_featured_show_desc'] ) {
+										if ( 'Yes' === $params['wccs_featured_show_custom_message'] && 'Yes' !== $params['wccs_featured_show_desc'] ) {
 											$html .= '<span class="woo-cs-cat-des"><p>' . sanitize_textarea_field( $params['wccs_featured_custom_message'] ) . '</p></span>';
 										}
 
-										if ( '1' === $params['wccs_featured_show_button'] ) {
+										if ( 'Yes' === $params['wccs_featured_show_button'] ) {
 											$html .= '<a href="' . $featured_category['link'] . '" class="woo-cs-cat-button">' . $params['wccs_featured_button_text'] . '</a>';
 										}
 
@@ -204,7 +217,7 @@ class Shortcode {
 								$html .= '<span class="woo-cs-thumb-container">';
 								$html .= '<img src="' . $image . '" alt="' . $title . '" class="woo-cs-image woo-cs-image-thumb">';
 								$html .= '</span>';
-								if ( $params['wccs_additional_show_title'] ) {
+								if ( 'Yes' === $params['wccs_additional_show_title'] ) {
 									$html .= '<span class="woo-cs-cat-name">' . $title . '</span>';
 								}
 
@@ -311,7 +324,7 @@ class Shortcode {
 		$config            = array(
 			'autoplay' => 'Yes' === $category_showcase->get_wccs_autoplay_slider(),
 			'infinite' => 'Yes' === $category_showcase->get_wccs_infinite_scroll(),
-			'speed'    => 500,
+			'speed'    => $category_showcase->get_wccs_slider_autoplaySpeed() ? $category_showcase->get_wccs_slider_autoplaySpeed() : 500,
 		);
 
 		$config = apply_filters( 'wc_slider_config', $config );

@@ -44,6 +44,55 @@ class Actions {
 		$wccs_show_additional_categories = isset( $postdata['wccs_show_additional_categories'] ) ? sanitize_text_field( $postdata['wccs_show_additional_categories'] ) : '';
 		$wccs_additional_categories      = isset( $postdata['wccs_additional_categories'] ) ? map_deep( $postdata['wccs_additional_categories'], 'sanitize_text_field' ) : '';
 
+		// Pro Module Fields.
+		$wccs_slider_autoplay_speed  = isset( $postdata['wccs_slider_autoplaySpeed'] ) ? sanitize_text_field( $postdata['wccs_slider_autoplaySpeed'] ) : 'Yes';
+		$wccs_featured_show_title    = isset( $postdata['wccs_featured_show_title'] ) ? sanitize_text_field( $postdata['wccs_featured_show_title'] ) : 'Yes';
+		$wccs_featured_show_desc     = isset( $postdata['wccs_featured_show_desc'] ) ? sanitize_text_field( $postdata['wccs_featured_show_desc'] ) : 'Yes';
+		$wccs_featured_show_button   = isset( $postdata['wccs_featured_show_button'] ) ? sanitize_text_field( $postdata['wccs_featured_show_button'] ) : 'Yes';
+		$wccs_featured_button_text   = isset( $postdata['wccs_featured_button_text'] ) ? sanitize_text_field( $postdata['wccs_featured_button_text'] ) : 'Shop Now';
+		$wccs_featured_content_color = isset( $postdata['wccs_featured_content_color'] ) ? sanitize_text_field( $postdata['wccs_featured_content_color'] ) : '#FFFFFF';
+		$wccs_featured_content_bg    = isset( $postdata['wccs_featured_content_bg'] ) ? sanitize_text_field( $postdata['wccs_featured_content_bg'] ) : '#96588A';
+		$wccsp_featured_customizer   = $postdata['wccsp_featured_customizer'] ?? array();
+		$featured_customizer         = array();
+		foreach ( $wccsp_featured_customizer as $term_id => $customizer ) {
+			$item = array();
+			if ( ! empty( $customizer['image'] ) ) {
+				$item['image'] = esc_url_raw( $customizer['image'] );
+			}
+
+			if ( ! empty( $customizer['title'] ) ) {
+				$item['title'] = sanitize_text_field( $customizer['title'] );
+			}
+
+			if ( ! empty( $item ) ) {
+				$featured_customizer[ $term_id ] = $item;
+			}
+		}
+
+		$wccs_additional_show_title  = isset( $postdata['wccs_additional_show_title'] ) ? sanitize_text_field( $postdata['wccs_additional_show_title'] ) : 'Yes';
+		$wccs_additional_title_color = isset( $postdata['wccs_additional_title_color'] ) ? sanitize_text_field( $postdata['wccs_additional_title_color'] ) : '#000000';
+		$wccs_additional_content_bg  = isset( $postdata['wccs_additional_content_bg'] ) ? sanitize_text_field( $postdata['wccs_additional_content_bg'] ) : '#FFFFFF';
+		$wccsp_additional_customizer = $postdata['wccsp_additional_customizer'] ?? array();
+		$additional_customizer       = array();
+		foreach ( $wccsp_additional_customizer as $term_id => $customizer ) {
+			$item = array();
+			if ( ! empty( $customizer['image'] ) ) {
+				$item['image'] = esc_url_raw( $customizer['image'] );
+			}
+
+			if ( ! empty( $customizer['title'] ) ) {
+				$item['title'] = sanitize_text_field( $customizer['title'] );
+			}
+
+			if ( ! empty( $customizer['col'] ) ) {
+				$item['col'] = intval( $customizer['col'] );
+			}
+
+			if ( ! empty( $item ) ) {
+				$additional_customizer[ $term_id ] = $item;
+			}
+		}
+
 		$data = array(
 			'post_title'                      => $category_showcase_title,
 			'category_showcase_title'         => $category_showcase_title,
@@ -54,6 +103,19 @@ class Actions {
 			'wccs_show_navigation'            => $wccs_show_navigation,
 			'wccs_show_additional_categories' => $wccs_show_additional_categories,
 			'wccs_additional_categories'      => $wccs_additional_categories,
+			// Pro features.
+			'wccs_slider_autoplaySpeed'       => $wccs_slider_autoplay_speed,
+			'wccs_featured_show_title'        => $wccs_featured_show_title,
+			'wccs_featured_show_desc'         => $wccs_featured_show_desc,
+			'wccs_featured_show_button'       => $wccs_featured_show_button,
+			'wccs_featured_button_text'       => $wccs_featured_button_text,
+			'wccs_featured_content_color'     => $wccs_featured_content_color,
+			'wccs_featured_content_bg'        => $wccs_featured_content_bg,
+			'wccsp_featured_customizer'       => $featured_customizer,
+			'wccs_additional_show_title'      => $wccs_additional_show_title,
+			'wccs_additional_title_color'     => $wccs_additional_title_color,
+			'wccs_additional_content_bg'      => $wccs_additional_content_bg,
+			'wccsp_additional_customizer'     => $additional_customizer,
 			'date_created'                    => current_time( 'mysql' ),
 		);
 
@@ -100,6 +162,55 @@ class Actions {
 		$wccs_show_additional_categories = isset( $postdata['wccs_show_additional_categories'] ) ? sanitize_text_field( $postdata['wccs_show_additional_categories'] ) : '';
 		$wccs_additional_categories      = isset( $postdata['wccs_additional_categories'] ) ? map_deep( $postdata['wccs_additional_categories'], 'sanitize_text_field' ) : '';
 
+		// Pro Module Fields.
+		$wccs_slider_autoplay_speed  = isset( $postdata['wccs_slider_autoplaySpeed'] ) ? sanitize_text_field( $postdata['wccs_slider_autoplaySpeed'] ) : 'Yes';
+		$wccs_featured_show_title    = isset( $postdata['wccs_featured_show_title'] ) ? sanitize_text_field( $postdata['wccs_featured_show_title'] ) : 'Yes';
+		$wccs_featured_show_desc     = isset( $postdata['wccs_featured_show_desc'] ) ? sanitize_text_field( $postdata['wccs_featured_show_desc'] ) : 'Yes';
+		$wccs_featured_show_button   = isset( $postdata['wccs_featured_show_button'] ) ? sanitize_text_field( $postdata['wccs_featured_show_button'] ) : 'Yes';
+		$wccs_featured_button_text   = isset( $postdata['wccs_featured_button_text'] ) ? sanitize_text_field( $postdata['wccs_featured_button_text'] ) : 'Shop Now';
+		$wccs_featured_content_color = isset( $postdata['wccs_featured_content_color'] ) ? sanitize_text_field( $postdata['wccs_featured_content_color'] ) : '#FFFFFF';
+		$wccs_featured_content_bg    = isset( $postdata['wccs_featured_content_bg'] ) ? sanitize_text_field( $postdata['wccs_featured_content_bg'] ) : '#96588A';
+		$wccsp_featured_customizer   = $postdata['wccsp_featured_customizer'] ?? array();
+		$featured_customizer         = array();
+		foreach ( $wccsp_featured_customizer as $term_id => $customizer ) {
+			$item = array();
+			if ( ! empty( $customizer['image'] ) ) {
+				$item['image'] = esc_url_raw( $customizer['image'] );
+			}
+
+			if ( ! empty( $customizer['title'] ) ) {
+				$item['title'] = sanitize_text_field( $customizer['title'] );
+			}
+
+			if ( ! empty( $item ) ) {
+				$featured_customizer[ $term_id ] = $item;
+			}
+		}
+
+		$wccs_additional_show_title  = isset( $postdata['wccs_additional_show_title'] ) ? sanitize_text_field( $postdata['wccs_additional_show_title'] ) : 'Yes';
+		$wccs_additional_title_color = isset( $postdata['wccs_additional_title_color'] ) ? sanitize_text_field( $postdata['wccs_additional_title_color'] ) : '#000000';
+		$wccs_additional_content_bg  = isset( $postdata['wccs_additional_content_bg'] ) ? sanitize_text_field( $postdata['wccs_additional_content_bg'] ) : '#FFFFFF';
+		$wccsp_additional_customizer = $postdata['wccsp_additional_customizer'] ?? array();
+		$additional_customizer       = array();
+		foreach ( $wccsp_additional_customizer as $term_id => $customizer ) {
+			$item = array();
+			if ( ! empty( $customizer['image'] ) ) {
+				$item['image'] = esc_url_raw( $customizer['image'] );
+			}
+
+			if ( ! empty( $customizer['title'] ) ) {
+				$item['title'] = sanitize_text_field( $customizer['title'] );
+			}
+
+			if ( ! empty( $customizer['col'] ) ) {
+				$item['col'] = intval( $customizer['col'] );
+			}
+
+			if ( ! empty( $item ) ) {
+				$additional_customizer[ $term_id ] = $item;
+			}
+		}
+
 		$data['post_title']                      = $category_showcase_title;
 		$data['category_showcase_title']         = $category_showcase_title;
 		$data['wccs_featured_categories']        = $wccs_featured_categories;
@@ -109,6 +220,18 @@ class Actions {
 		$data['wccs_show_navigation']            = $wccs_show_navigation;
 		$data['wccs_show_additional_categories'] = $wccs_show_additional_categories;
 		$data['wccs_additional_categories']      = $wccs_additional_categories;
+		$data['wccs_slider_autoplaySpeed']       = $wccs_slider_autoplay_speed;
+		$data['wccs_featured_show_title']        = $wccs_featured_show_title;
+		$data['wccs_featured_show_desc']         = $wccs_featured_show_desc;
+		$data['wccs_featured_show_button']       = $wccs_featured_show_button;
+		$data['wccs_featured_button_text']       = $wccs_featured_button_text;
+		$data['wccs_featured_content_color']     = $wccs_featured_content_color;
+		$data['wccs_featured_content_bg']        = $wccs_featured_content_bg;
+		$data['wccsp_featured_customizer']       = $featured_customizer;
+		$data['wccs_additional_show_title']      = $wccs_additional_show_title;
+		$data['wccs_additional_title_color']     = $wccs_additional_title_color;
+		$data['wccs_additional_content_bg']      = $wccs_additional_content_bg;
+		$data['wccsp_additional_customizer']     = $additional_customizer;
 
 		$category_showcase->set_data( $data );
 		$saved = $category_showcase->save();

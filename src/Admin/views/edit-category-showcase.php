@@ -120,6 +120,15 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 							<?php esc_html_e( 'Select option to navigation in showcase', 'wc-category-showcase' ); ?>
 						</p>
 					</div>
+
+					<?php
+					/**
+					 * Fires after the tabs on add category showcase.
+					 *
+					 * @since 2.0.0
+					 */
+					do_action( 'wc_category_showcase_feature_category_metabox' );
+					?>
 				</div>
 			</div>
 			<div class="pev-card">
@@ -160,6 +169,15 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 							<?php esc_html_e( 'Select Categories to show in showcase.', 'wc-category-showcase' ); ?>
 						</p>
 					</div>
+
+					<?php
+					/**
+					 * Fires after the tabs on add category showcase.
+					 *
+					 * @since 2.0.0
+					 */
+					do_action( 'wc_category_showcase_additional_category_metabox' );
+					?>
 				</div>
 			</div>
 		</div>
@@ -185,6 +203,7 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 					<p><?php esc_html_e( 'Click the icon to copy this category showcase shortcode.', 'wc-category-showcase' ); ?></p>
 				</div>
 			</div>
+			<?php if ( ! is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) ) { ?>
 			<div class="pev-card">
 				<div class="pev-card__header">
 					<h3 class="pev-card__title"><?php esc_html_e( 'What More?', 'wc-category-showcase' ); ?></h3>
@@ -213,6 +232,7 @@ $category_showcase    = wccs_get_category_showcase( $category_showcase_id );
 					</a>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 	</div>
 
