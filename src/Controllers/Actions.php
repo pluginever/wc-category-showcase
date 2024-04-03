@@ -48,7 +48,7 @@ class Actions {
 		$wccs_slider_autoplay_speed  = isset( $postdata['wccs_slider_autoplaySpeed'] ) ? sanitize_text_field( $postdata['wccs_slider_autoplaySpeed'] ) : 'Yes';
 		$wccs_featured_show_title    = isset( $postdata['wccs_featured_show_title'] ) ? sanitize_text_field( $postdata['wccs_featured_show_title'] ) : 'Yes';
 		$wccs_featured_show_desc     = isset( $postdata['wccs_featured_show_desc'] ) ? sanitize_text_field( $postdata['wccs_featured_show_desc'] ) : 'Yes';
-		$wccs_featured_show_button   = isset( $postdata['wccs_featured_show_button'] ) ? sanitize_text_field( $postdata['wccs_featured_show_button'] ) : 'Yes';
+		$wccs_featured_show_button   = isset( $postdata['wccs_featured_show_button'] ) ? sanitize_text_field( $postdata['wccs_featured_show_button'] ) : '500';
 		$wccs_featured_button_text   = isset( $postdata['wccs_featured_button_text'] ) ? sanitize_text_field( $postdata['wccs_featured_button_text'] ) : 'Shop Now';
 		$wccs_featured_content_color = isset( $postdata['wccs_featured_content_color'] ) ? sanitize_text_field( $postdata['wccs_featured_content_color'] ) : '#FFFFFF';
 		$wccs_featured_content_bg    = isset( $postdata['wccs_featured_content_bg'] ) ? sanitize_text_field( $postdata['wccs_featured_content_bg'] ) : '#96588A';
@@ -166,7 +166,7 @@ class Actions {
 		$wccs_slider_autoplay_speed  = isset( $postdata['wccs_slider_autoplaySpeed'] ) ? sanitize_text_field( $postdata['wccs_slider_autoplaySpeed'] ) : 'Yes';
 		$wccs_featured_show_title    = isset( $postdata['wccs_featured_show_title'] ) ? sanitize_text_field( $postdata['wccs_featured_show_title'] ) : 'Yes';
 		$wccs_featured_show_desc     = isset( $postdata['wccs_featured_show_desc'] ) ? sanitize_text_field( $postdata['wccs_featured_show_desc'] ) : 'Yes';
-		$wccs_featured_show_button   = isset( $postdata['wccs_featured_show_button'] ) ? sanitize_text_field( $postdata['wccs_featured_show_button'] ) : 'Yes';
+		$wccs_featured_show_button   = isset( $postdata['wccs_featured_show_button'] ) ? sanitize_text_field( $postdata['wccs_featured_show_button'] ) : '500';
 		$wccs_featured_button_text   = isset( $postdata['wccs_featured_button_text'] ) ? sanitize_text_field( $postdata['wccs_featured_button_text'] ) : 'Shop Now';
 		$wccs_featured_content_color = isset( $postdata['wccs_featured_content_color'] ) ? sanitize_text_field( $postdata['wccs_featured_content_color'] ) : '#FFFFFF';
 		$wccs_featured_content_bg    = isset( $postdata['wccs_featured_content_bg'] ) ? sanitize_text_field( $postdata['wccs_featured_content_bg'] ) : '#96588A';
