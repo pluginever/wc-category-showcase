@@ -11,20 +11,61 @@ defined( 'ABSPATH' ) || exit;
  *
  * @package WooCommerceCategoryShowcase
  */
-class Plugin extends Lib\Plugin {
+class Plugin {
+
+	/**
+	 * Plugin file path.
+	 *
+	 * @var string
+	 */
+	protected $file;
+
+	/**
+	 * Plugin version.
+	 *
+	 * @var string
+	 */
+	protected $version = '1.0.0';
+
+	/**
+	 * The single instance of the class.
+	 *
+	 * @since 1.0.0
+	 * @var self
+	 */
+	public static $instance;
 
 	/**
 	 * Plugin constructor.
 	 *
-	 * @param array $data The plugin data.
+	 * @param string $file The plugin file path.
+	 * @param string $version The plugin version.
 	 *
 	 * @since 1.0.0
 	 */
-	protected function __construct( $data ) {
-		parent::__construct( $data );
+	protected function __construct( $file, $version ) {
+		$this->file    = $file;
+		$this->version = $version;
 		$this->define_constants();
-		$this->includes();
 		$this->init_hooks();
+	}
+
+	/**
+	 * Gets the single instance of the class.
+	 * This method is used to create a new instance of the class.
+	 *
+	 * @param string $file The plugin file path.
+	 * @param string $version The plugin version.
+	 *
+	 * @since 1.0.0
+	 * @return static
+	 */
+	final public static function create( $file, $version = '1.0.0' ) {
+		if ( null === self::$instance ) {
+			self::$instance = new static( $file, $version );
+		}
+
+		return self::$instance;
 	}
 
 	/**
@@ -34,12 +75,11 @@ class Plugin extends Lib\Plugin {
 	 * @return void
 	 */
 	public function define_constants() {
-		$this->define( 'WCCS_VERSION', $this->get_version() );
-		$this->define( 'WCCS_FILE', $this->get_file() );
-		$this->define( 'WCCS_PATH', $this->get_dir_path() );
-		$this->define( 'WCCS_URL', $this->get_dir_url() );
-		$this->define( 'WCCS_ASSETS_URL', $this->get_assets_url() );
-		$this->define( 'WCCS_ASSETS_PATH', $this->get_assets_path() );
+		define( 'WCCS_VERSION', $this->version );
+		define( 'WCCS_FILE', $this->file );
+		define( 'WCCS_PATH', plugin_dir_path( $this->file ) );
+		define( 'WCCS_URL', plugin_dir_url( $this->file ) );
+		define( 'WCCS_ASSETS_URL', WCCS_URL . 'assets/dist' );
 	}
 
 	/**
@@ -49,7 +89,6 @@ class Plugin extends Lib\Plugin {
 	 * @return void
 	 */
 	public function includes() {
-		require_once __DIR__ . '/Functions.php';
 	}
 
 	/**
@@ -59,7 +98,6 @@ class Plugin extends Lib\Plugin {
 	 * @return void
 	 */
 	public function init_hooks() {
-		register_activation_hook( $this->get_file(), array( Installer::class, 'install' ) );
 		add_action( 'admin_notices', array( $this, 'dependencies_notices' ) );
 		add_action( 'woocommerce_init', array( $this, 'init' ), 0 );
 	}
@@ -71,13 +109,13 @@ class Plugin extends Lib\Plugin {
 	 * @return void
 	 */
 	public function dependencies_notices() {
-		if ( $this->is_plugin_active( 'woocommerce' ) ) {
+		if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 			return;
 		}
 		$notice = sprintf(
 		/* translators: 1: plugin name 2: WooCommerce */
 			__( '%1$s requires %2$s to be installed and active.', 'wc-category-showcase' ),
-			'<strong>' . esc_html( $this->get_name() ) . '</strong>',
+			'<strong>' . esc_attr( 'wc-category-showcase' ) . '</strong>',
 			'<strong>' . esc_html__( 'WooCommerce', 'wc-category-showcase' ) . '</strong>'
 		);
 
@@ -91,20 +129,8 @@ class Plugin extends Lib\Plugin {
 	 * @return void
 	 */
 	public function init() {
-		$this->services->add( Installer::class );
-		$this->services->add( PostTypes::class );
 
-		if ( self::is_request( 'admin' ) ) {
-			$this->services->add( Admin\Admin::class );
-		}
-
-		$this->services->add( Controllers\Actions::class );
-		$this->services->add( Shortcodes\Shortcode::class );
-
-		if ( self::is_request( 'frontend' ) ) {
-			$this->services->add( Frontend\Frontend::class );
-		}
-
+		new Admin\Admin();
 		// Init action.
 		do_action( 'wc_category_showcase_init' );
 	}

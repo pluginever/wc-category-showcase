@@ -19,10 +19,8 @@ class Admin {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'init' ), 1 );
-		add_filter( 'woocommerce_screen_ids', array( $this, 'screen_ids' ) );
-		add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ), PHP_INT_MAX );
-		add_filter( 'update_footer', array( $this, 'update_footer' ), PHP_INT_MAX );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
+		add_action( 'admin_menu', array( $this, 'main_menu' ) );
+		add_shortcode( 'wccs_showcase', array( $this, 'shortcode_render_callback' ) );
 	}
 
 	/**
@@ -31,103 +29,150 @@ class Admin {
 	 * @since 1.0.0
 	 */
 	public function init() {
-		require_once __DIR__ . '/Functions.php';
-		wc_category_showcase()->services->add( Settings::instance() );
-		wc_category_showcase()->services->add( Menus::class );
+		wp_enqueue_style( 'wccs-frontend', WCCS_ASSETS_URL . '/css/wccs-frontend.css', false, '2.0.0' );
 	}
 
 	/**
-	 * Add the plugin screens to the WooCommerce screens.
-	 * This will load the WooCommerce admin styles and scripts.
-	 *
-	 * @param array $ids Screen ids.
-	 *
-	 * @return array
-	 */
-	public function screen_ids( $ids ) {
-		return array_merge( $ids, self::get_screen_ids() );
-	}
-
-	/**
-	 * Admin footer text.
-	 *
-	 * @param string $footer_text Footer text.
+	 * Main menu.
 	 *
 	 * @since 1.0.0
-	 * @return string
 	 */
-	public function admin_footer_text( $footer_text ) {
-		if ( wc_category_showcase()->get_review_url() && in_array( get_current_screen()->id, self::get_screen_ids(), true ) ) {
-			$footer_text = sprintf(
-			/* translators: 1: Plugin name 2: WordPress */
-				__( 'Thank you for using %1$s. If you like it, please leave us a %2$s rating. A huge thank you from PluginEver in advance!', 'wc-category-showcase' ),
-				'<strong>' . esc_html( wc_category_showcase()->get_name() ) . '</strong>',
-				'<a href="' . esc_url( wc_category_showcase()->get_review_url() ) . '" target="_blank" class="wc-category-showcase-rating-link" data-rated="' . esc_attr__( 'Thanks :)', 'wc-category-showcase' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
-			);
-		}
-
-		return $footer_text;
-	}
-
-	/**
-	 * Update footer.
-	 *
-	 * @param string $footer_text Footer text.
-	 *
-	 * @since 1.0.0
-	 * @return string
-	 */
-	public function update_footer( $footer_text ) {
-		if ( in_array( get_current_screen()->id, self::get_screen_ids(), true ) ) {
-			/* translators: 1: Plugin version */
-			$footer_text = sprintf( esc_html__( 'Version %s', 'wc-category-showcase' ), wc_category_showcase()->get_version() );
-		}
-
-		return $footer_text;
-	}
-
-	/**
-	 * Get screen ids.
-	 *
-	 * @since 1.0.0
-	 * @return array
-	 */
-	public static function get_screen_ids() {
-		$screen_ids = array(
-			'toplevel_page_wc-category-showcase',
-			'woocommerce_page_plugin-wc-category-showcase',
-			'admin_page_plugin-wc-category-showcase',
-			'wc-category-showcase_page_wccs-settings',
+	public function main_menu() {
+		add_menu_page(
+			esc_html__( 'WC Category Showcase', 'wc-category-showcase' ),
+			esc_html__( 'WC Category Showcase', 'wc-category-showcase' ),
+			'manage_options',
+			'wc-category-showcase',
+			null,
+			'dashicons-grid-view',
+			'55.5'
 		);
 
-		return apply_filters( 'wc_category_showcase_screen_ids', $screen_ids );
+		add_submenu_page(
+			'wc-category-showcase',
+			esc_html__( 'All Category Showcase', 'wc-category-showcase' ),
+			esc_html__( 'All Category Showcase', 'wc-category-showcase' ),
+			'manage_options',
+			'wc-category-showcase',
+			array( $this, 'output_main_page' )
+		);
 	}
 
 	/**
-	 * Enqueue admin scripts.
+	 * Output main page.
 	 *
-	 * @param string $hook Hook name.
+	 * @throws \Exception Throws exception if the request is invalid.
 	 *
 	 * @since 1.0.0
+	 * @return \Exception
 	 */
-	public function admin_scripts( $hook ) {
-		$screen_ids = self::get_screen_ids();
-		wc_category_showcase()->register_style( 'wc-category-showcase-admin', 'css/admin-common.css' );
-		wc_category_showcase()->register_script( 'wc-category-showcase-admin', 'js/admin-common.js' );
+	public function output_main_page() {
+		try {
+			if ( ! empty( $_POST ) && ! check_admin_referer( 'save_category_ids' ) ) {
+				throw new \Exception( __( 'Error - please try again', 'wc-category-showcase' ) );
+			}
 
-		if ( in_array( $hook, $screen_ids, true ) ) {
-			wp_enqueue_style( 'wc-category-showcase-admin' );
-			wp_enqueue_script( 'wc-category-showcase-admin' );
+			if ( isset( $_POST['submit'] ) ) {
+				$category_showcase_ids = isset( $_POST['category_showcase_ids'] ) ? sanitize_text_field( wp_unslash( $_POST['category_showcase_ids'] ) ) : '';
 
-			$localize = array(
-				'ajaxurl'  => admin_url( 'admin-ajax.php' ),
-				'security' => wp_create_nonce( 'wc_category_showcase_ajax' ),
-				'i18n'     => array(
-					'search_categories' => esc_html__( 'Search to select categories', 'wc-category-showcase' ),
-				),
-			);
+				$redirect_to = admin_url( 'admin.php?page=wc-category-showcase' );
 
-			wp_localize_script( 'wc-category-showcase-admin', 'category_showcase_admin_vars', $localize );
+				if ( ! empty( $category_showcase_ids ) ) {
+					update_option( 'category_showcase_ids', $category_showcase_ids );
+					wp_safe_redirect( $redirect_to );
+					exit();
+				}
+			}
+		} catch ( \Exception $e ) {
+			return new \Exception( __( 'Error - please try again', 'wc-category-showcase' ) );
 		}
+		?>
+		<h1>
+		<?php esc_html_e( 'WC Category Showcase', 'wc-category-showcase' ); ?>
+		</h1>
+		<p><?php esc_html_e( 'You can manage plugin functionality from here.', 'wc-category-showcase' ); ?></p>
+		<form action="" method="post">
+			<div class="pev-poststuff" id="wccs-category-showcase">
+				<div class="column-1">
+					<div class="pev-card">
+						<div class="pev-card__header">
+							<h3 class="pev-card__title">
+								<label for="category_showcase_ids">
+									<strong><?php esc_html_e( 'Add category ids', 'wc-category-showcase' ); ?></strong>
+								</label>
+							</h3>
+							<p><?php esc_html_e( 'Add this shortcode to show category showcase ', 'wc-category-showcase' ); ?><code><?php echo esc_attr( 'wccs_showcase' ); ?></code></p>
+						</div>
+						<div class="pev-card__body form-inline">
+							<div class="pev-form-field">
+								<input type="text" name="category_showcase_ids" id="category_showcase_ids" class="regular-text" value="<?php echo esc_attr( get_option( 'category_showcase_ids', '' ) ); ?>"/>
+								<p><?php esc_html_e( 'Add category ids and seperated with comma.', 'wc-category-showcase' ); ?></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php wp_nonce_field( 'save_category_ids' ); ?>
+		<?php submit_button( __( 'Save changes', 'wc-category-showcase' ) ); ?>
+		</form>
+		<?php
+	}
+
+	/**
+	 * Slider shortcode render callback
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function shortcode_render_callback() {
+		$category_ids = get_option( 'category_showcase_ids', '' );
+		$category_ids = explode( ',', $category_ids );
+		?>
+		<div class="category-showcase">
+			<?php
+			foreach ( $category_ids as $category ) {
+				$category_details = self::wccs_get_term_details( $category );
+				?>
+				<div class="column">
+					<a href="<?php echo esc_url( $category_details['link'] ); ?>">
+						<img src="<?php echo esc_url( $category_details['image'] ); ?>" alt="<?php esc_attr( $category ); ?>">
+						<h3><?php echo esc_attr( $category_details['title'] ); ?></h3>
+					</a>
+				</div>
+			<?php } ?>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Get a specific term details
+	 *
+	 * @param string $category Term id.
+	 *
+	 * @return array|bool
+	 */
+	public static function wccs_get_term_details( $category ) {
+		$term = get_term( $category );
+
+		if ( is_wp_error( $term ) ) {
+			return false;
+		}
+
+		if ( ! $term ) {
+			return false;
+		}
+
+		$thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
+		$image_url    = wp_get_attachment_url( $thumbnail_id ) ? wp_get_attachment_url( $thumbnail_id ) : '';
+
+		$response = array(
+			'term_id' => $term->term_id,
+			'title'   => $term->name,
+			'image'   => $image_url,
+			'col'     => 1,
+			'link'    => get_term_link( $term->term_id, 'product_cat' ),
+		);
+
+		return $response;
 	}
 }

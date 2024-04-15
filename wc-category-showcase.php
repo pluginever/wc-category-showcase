@@ -97,16 +97,7 @@ add_action(
  * @return Plugin
  */
 function wc_category_showcase() { // phpcs:ignore
-	$data = array(
-		'file'             => __FILE__,
-		'settings_url'     => admin_url( 'admin.php?page=wc-category-showcase' ),
-		'docs_url'         => 'https://pluginever.com/docs/wc-category-showcase/',
-		'premium_url'      => 'https://pluginever.com/plugins/woocommerce-category-showcase-pro/',
-		'premium_basename' => 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php',
-		'review_url'       => 'https://wordpress.org/support/plugin/wc-category-showcase/reviews/?filter=5#new-post',
-	);
-
-	return Plugin::create( $data );
+	return Plugin::create( __FILE__ );
 }
 
 // Initialize the plugin.
