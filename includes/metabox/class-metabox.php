@@ -369,7 +369,6 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
             }
 
             $custom_attributes = self::get_custom_attribute( $field_attributes );
-            var_dump(array_map('sanitize_key',$custom_attributes));
 
             switch ( $field['type'] ) {
 
@@ -378,10 +377,10 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                 case 'number':
                 case 'hidden':
                 case 'url':
-                    echo '<input type="' . esc_attr( $field['type'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />';
+                    echo '<input type="' . esc_attr( $field['type'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_text_field', $custom_attributes ) ) . ' />';
                     break;
                 case 'colorpicker':
-                    echo '<input type="' . esc_attr( $field['type'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />';
+                    echo '<input type="' . esc_attr( $field['type'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_text_field', $custom_attributes ) ) . ' />';
                     break;
 
                 case 'select':
