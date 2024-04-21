@@ -30,8 +30,6 @@ then
 fi
 
 echo "➤ Building plugin..."
-composer install
-composer update --no-dev --no-scripts
 npm install && npm run build
 echo "✓ Plugin built!"
 
