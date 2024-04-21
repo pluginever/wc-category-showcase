@@ -38,7 +38,7 @@ class Admin {
 		switch ( $column ) {
 
 			case 'shortcode' :
-				echo "<code>[wccs_showcase id='{ ".esc_attr( $post_id ) ."}']</code>";
+				echo "<code>[wccs_showcase id='".esc_attr( $post_id ) ."']</code>";
 				break;
 
 		}
