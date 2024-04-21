@@ -369,7 +369,6 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
             }
 
             $custom_attributes = self::get_custom_attribute( $field_attributes );
-            var_dump(array_map('sanitize_key',$custom_attributes));
 
             switch ( $field['type'] ) {
 

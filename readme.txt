@@ -5,7 +5,7 @@ Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerc
 Requires at least: 3.6.0
 Tested up to:      6.5
 Requires PHP:      5.6
-Stable tag:        2.0.1
+Stable tag:        2.0.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +134,9 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 2.0.2 =
+* Fix - Resolved some known issues. 
+
 = 2.0.1 =
 * Fix - Woocommerce HPOS issue.
 * Fix - Resolved some known issues. 
