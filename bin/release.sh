@@ -29,6 +29,10 @@ then
 	exit 1
 fi
 
+echo "➤ Building plugin..."
+npm install && npm run build
+echo "✓ Plugin built!"
+
 # if directory already exists, delete it
 if [ -d "$SVN_DIR" ]; then
 	rm -rf $SVN_DIR
