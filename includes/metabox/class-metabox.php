@@ -21,6 +21,13 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
         private $options = array();
 
         /**
+         * @var string Metabox id
+         *
+         * @since 1.0
+         */
+        private $id;
+
+        /**
          * @since 1.0.0
          * @var array
          */
@@ -95,7 +102,7 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                 wp_enqueue_media();
                 wp_enqueue_style( 'wp-color-picker' );
                 wp_enqueue_style( 'select2', plugins_url( 'assets/css/select2.min.css', __FILE__ ), false, $this->version );
-                wp_enqueue_style( 'tooltipster', plugins_url( 'assets/css/tooltipster.bundle.min.css', __FILE__ ) );
+                wp_enqueue_style( 'tooltipster', plugins_url( 'assets/css/tooltipster.bundle.min.css', __FILE__ ), false, $this->version );
                 wp_enqueue_script( 'select2-js', plugins_url( 'assets/js/select2.min.js', __FILE__ ), [ 'jquery' ], $this->version, true );
                 wp_enqueue_script( 'conditionize', plugins_url( 'assets/js/conditionize.js', __FILE__ ), [ 'jquery' ], $this->version, true );
                 wp_enqueue_script( 'tooltipster', plugins_url( 'assets/js/tooltipster.bundle.min.js', __FILE__ ), [ 'jquery' ], $this->version, true );
@@ -264,13 +271,15 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
         public function show_metabox( $post ) {
             global $post_id;
             $post_id = $post->ID;
-            ob_start();
             $lazy_loading = $this->options['lazy_loading'] == 'true' ? 'plvr-lazy-loading loading' : 'loaded';
-            echo '<div class="plvr-framework ' . $lazy_loading . '">';
-            echo '<div class="container">';
+            ?>
+            <div class="plvr-framework <?php  esc_attr( $lazy_loading ) ?>">'
+            <div class="container">
+            <?php
             echo wp_nonce_field( 'pluginever_fields_nonce', 'pluginever_metabox_nonce' );
             do_action( 'plvr_framework_before_metabox-' . $this->id, $post, $this->id );
             do_action( 'plvr_framework_before_metabox', $post, $this->id );
+
             foreach ( $this->fields as $field ) {
 
                 $class         = [];
@@ -288,22 +297,22 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                 }
                 //if any special wrapper required around field
                 $wrapper_class[] = ! empty( $field['wrapper_class'] ) ? sanitize_key( $field['wrapper_class'] ) : '';
-                $tooltip         = ! empty( $field['tooltip'] ) ? strip_tags( $field['tooltip'] ) : false;
+                $tooltip         = ! empty( $field['tooltip'] ) ? wp_strip_all_tags( $field['tooltip'] ) : false;
                 if ( $tooltip ) {
                     $class[] = "plvr-has-tooltip";
                 }
                 ?>
                 <div
-                    class="row plvr-form-field <?php echo implode( ' ', $wrapper_class ); ?>" <?php echo $attributes; ?>>
+                    class="row plvr-form-field <?php echo implode( ' ', array_map( 'sanitize_html_class', $wrapper_class ) ); ?>" <?php echo esc_attr( $attributes ); ?>>
                     <?php if ( '' !== $field['label'] ): ?>
                         <div class="col-4">
-                            <label for="<?php echo $field['name']; ?>"><?php echo $field['label'] ?></label>
+                            <label for="<?php echo esc_attr( $field['name'] ); ?>"><?php echo esc_attr( $field['label'] ); ?></label>
                         </div>
                     <?php endif; ?>
-                    <div class="col <?php echo implode( ' ', $class ); ?>">
+                    <div class="col <?php echo implode( ' ',  array_map( 'sanitize_html_class', $class ) ); ?>">
                         <?php if ( $tooltip ) : ?>
                             <span class="dashicons dashicons-editor-help plvr-tooltip"
-                                  title="<?php echo $tooltip; ?>"></span>
+                                  title="<?php echo esc_attr( $tooltip ); ?>"></span>
                         <?php endif; ?>
                         <?php self::add_field( $post_id, $field ); ?>
                     </div>
@@ -313,14 +322,10 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
             }
             do_action( 'plvr_framework_after_metabox-' . $this->id, $post, $this->id );
             do_action( 'plvr_framework_after_metabox', $post, $this->id );
-
-            echo '</div>';
-            echo '</div>';
-
-	        $output = ob_get_contents();
-	        ob_get_clean();
-
-	        echo $output;
+?>
+            </div>
+            </div>
+            <?php
         }
 
 
@@ -364,6 +369,7 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
             }
 
             $custom_attributes = self::get_custom_attribute( $field_attributes );
+            var_dump(array_map('sanitize_key',$custom_attributes));
 
             switch ( $field['type'] ) {
 
@@ -372,32 +378,32 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                 case 'number':
                 case 'hidden':
                 case 'url':
-                    echo '<input type="' . $field['type'] . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
+                    echo '<input type="' . esc_attr( $field['type'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />';
                     break;
                 case 'colorpicker':
-                    echo '<input type="' . $field['type'] . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', $custom_attributes ) . ' />';
+                    echo '<input type="' . esc_attr( $field['type'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />';
                     break;
 
                 case 'select':
                     if ( $field['options'] ) {
-                        echo '<select ' . implode( ' ', $custom_attributes ) . '>';
+                        echo '<select ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . '>';
                         foreach ( $field['options'] as $key => $value ) {
                             $saved_value = (array) $saved_value;
                             $selected    = in_array( $key, $saved_value ) ? " selected='selected' " : '';
-                            printf( "<option value='%s' %s>%s</option>\n", $key, $selected, $value );
+                            printf( "<option value='%s' %s>%s</option>\n", esc_attr( $key ), esc_attr( $selected ), esc_attr( $value ) );
                         }
                         echo '</select>';
                     }
                     break;
 
                 case 'textarea':
-                    echo '<textarea ' . implode( ' ', $custom_attributes ) . '>' . esc_textarea( $saved_value ) . '</textarea>';
+                    echo '<textarea ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . '>' . esc_textarea( $saved_value ) . '</textarea>';
                     break;
 
                 case 'checkbox':
                     echo '<span class="checkbox">';
                     echo '<label for="' . esc_attr( $field_attributes['id'] ) . '">';
-                    echo '<input type="checkbox" ' . checked( $saved_value, '1', false ) . ' value="1" ' . implode( ' ', $custom_attributes ) . ' />';
+                    echo '<input type="checkbox" ' . checked( $saved_value, '1', false ) . ' value="1" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />';
                     echo wp_kses_post( $field['title'] );
                     echo wp_kses_post( $field['help'] );
                     echo '</label>';
@@ -408,14 +414,14 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                     if ( $field['options'] ) {
                         foreach ( $field['options'] as $key => $value ) {
                             echo '<div class="checkbox">';
-                            echo '<label><input type="radio" ' . checked( $saved_value, $key, false ) . ' value="' . $key . '" ' . implode( ' ', $custom_attributes ) . ' />' . $value . '&nbsp;</label>';
+                            echo '<label><input type="radio" ' . checked( $saved_value, esc_attr( $key ), false ) . ' value="' . esc_attr( $key ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />' . esc_attr( $value ) . '&nbsp;</label>';
                             echo '</div>';
                         }
                     }
                     break;
 
                 case 'date':
-                    echo '<input type="date" format="dd/mm/yyyy" name="' . esc_attr( $field_attributes['id'] ) . '" id="' . esc_attr( $field_attributes['id'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', $custom_attributes ) . '>';
+                    echo '<input type="date" format="dd/mm/yyyy" name="' . esc_attr( $field_attributes['id'] ) . '" id="' . esc_attr( $field_attributes['id'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . '>';
                     break;
 
                 default:
@@ -425,7 +431,7 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
             }
 
             if ( ! empty( $field['help'] ) ) {
-                echo '<span class="help">' .  $field['help'] . '</span>';
+                echo '<span class="help">' .  esc_attr( $field['help'] ) . '</span>';
             }
         }
 

@@ -3,16 +3,16 @@
  * Plugin Name: Product Category Showcase for WooCommerce
  * Plugin URI: https://pluginever.com/plugins/woocommerce-category-showcase-pro/
  * Description: WooCommerce extension to showcase categories in interactive slider blocks.
- * Version:     1.1.9
+ * Version:     2.0.1
  * Author:      PluginEver
  * Author URI:  https://pluginever.com
  * License:     GPLv2+
  * Text Domain: wc-category-showcase
  * Domain Path: /i18n/languages
  * Requires at least: 4.4
- * Tested up to: 6.1
+ * Tested up to: 6.5
  * WC requires at least: 3.0.0
- * WC tested up to: 7.1
+ * WC tested up to: 8.8
  */
 
 /**
@@ -188,7 +188,7 @@ class WC_Category_Showcase {
 	protected function is_plugin_compatible() {
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-			$message = sprintf( __( '<strong>WooCommerce Category Showcase</strong> requires <strong>WooCommerce</strong> installed and activated. Please install %s WooCommerce. %s', 'wc-category-showcase' ), '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">', '</a>' );
+			$message = sprintf( '<strong>WooCommerce Category Showcase</strong> requires <strong>WooCommerce</strong> installed and activated. Please install %s WooCommerce. %s', '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">', '</a>' );
 			$this->add_notice( 'error', $message );
 
 			return false;
@@ -277,8 +277,6 @@ class WC_Category_Showcase {
 		require PLVR_WCCS_INCLUDES . '/metabox/class-metabox.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-admin.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-metabox.php';
-		require PLVR_WCCS_INCLUDES . '/class-insights.php';
-		require PLVR_WCCS_INCLUDES . '/class-tracker.php';
 	}
 
 	/**
@@ -342,7 +340,6 @@ class WC_Category_Showcase {
 	private function init_plugin() {
 		new \Pluginever\WCCS\Shortcode();
 		new \Pluginever\WCCCS\Metabox();
-		new \Pluginever\WCCS\Tracker();
 	}
 
 	/**
@@ -353,8 +350,8 @@ class WC_Category_Showcase {
 	 *
 	 */
 	function load_assets() {
-		wp_register_style( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/css/wc-category-showcase.css", [], date( 'i' ) );
-		wp_register_script( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/js/bundle.min.js", [ 'jquery' ], date( 'i' ), true );
+		wp_register_style( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/css/wc-category-showcase.css", [], gmdate( 'i' ) );
+		wp_register_script( 'wc-category-showcase', PLVR_WCCS_ASSETS . "/js/bundle.min.js", [ 'jquery' ], gmdate( 'i' ), true );
 		wp_localize_script( 'wc-category-showcase', 'jsobject', [ 'ajaxurl' => admin_url( 'admin-ajax.php' ) ] );
 		wp_enqueue_style( 'wc-category-showcase' );
 		wp_enqueue_script( 'wc-category-showcase' );
@@ -396,7 +393,7 @@ class WC_Category_Showcase {
 	 * @return void
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
 	}
 
 	/**
@@ -406,7 +403,7 @@ class WC_Category_Showcase {
 	 * @return void
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wc-category-showcase' ), '1.0.0' );
 	}
 
 
@@ -427,6 +424,21 @@ class WC_Category_Showcase {
 	}
 
 }
+
+/**
+ * Plugin compatibility with WooCommerce HPOS
+ *
+ * @since 1.0.0
+ * @return void
+ */
+add_action(
+	'before_woocommerce_init',
+	function () {
+		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+		}
+	}
+);
 
 /**
  * Fire of the plugin

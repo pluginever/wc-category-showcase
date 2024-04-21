@@ -60,8 +60,8 @@ add_action( 'add_meta_boxes', 'wccs_shortocode_metabox', 0 );
 function wccs_shortocode_metabox_callback( $post ) {
 
 	if ( ! isset( $post->ID ) || empty( $post->ID ) ) {
-		echo __( 'Please publish the post first. Shortcode will automatically visible here afterward.', 'wc-category-showcase' );
+		echo esc_html__( 'Please publish the post first. Shortcode will automatically visible here afterward.', 'wc-category-showcase' );
 	} else {
-		echo "<pre><code>[wccs_showcase id='{$post->ID}']</code></pre>";
+		echo "<pre><code>[wccs_showcase id='".esc_attr($post->ID)."']</code></pre>";
 	}
 }
