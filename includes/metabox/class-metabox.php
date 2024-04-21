@@ -385,7 +385,7 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
 
                 case 'select':
                     if ( $field['options'] ) {
-                        echo '<select ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . '>';
+                        echo '<select ' . implode( ' ', array_map( 'sanitize_text_field', $custom_attributes ) ) . '>';
                         foreach ( $field['options'] as $key => $value ) {
                             $saved_value = (array) $saved_value;
                             $selected    = in_array( $key, $saved_value ) ? " selected='selected' " : '';
@@ -396,13 +396,13 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                     break;
 
                 case 'textarea':
-                    echo '<textarea ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . '>' . esc_textarea( $saved_value ) . '</textarea>';
+                    echo '<textarea ' . implode( ' ', array_map( 'sanitize_text_field', $custom_attributes ) ) . '>' . esc_textarea( $saved_value ) . '</textarea>';
                     break;
 
                 case 'checkbox':
                     echo '<span class="checkbox">';
                     echo '<label for="' . esc_attr( $field_attributes['id'] ) . '">';
-                    echo '<input type="checkbox" ' . checked( $saved_value, '1', false ) . ' value="1" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />';
+                    echo '<input type="checkbox" ' . checked( $saved_value, '1', false ) . ' value="1" ' . implode( ' ', array_map( 'sanitize_text_field', $custom_attributes ) ) . ' />';
                     echo wp_kses_post( $field['title'] );
                     echo wp_kses_post( $field['help'] );
                     echo '</label>';
@@ -413,14 +413,14 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
                     if ( $field['options'] ) {
                         foreach ( $field['options'] as $key => $value ) {
                             echo '<div class="checkbox">';
-                            echo '<label><input type="radio" ' . checked( $saved_value, esc_attr( $key ), false ) . ' value="' . esc_attr( $key ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . ' />' . esc_attr( $value ) . '&nbsp;</label>';
+                            echo '<label><input type="radio" ' . checked( $saved_value, esc_attr( $key ), false ) . ' value="' . esc_attr( $key ) . '" ' . implode( ' ', array_map( 'sanitize_text_field', $custom_attributes ) ) . ' />' . esc_attr( $value ) . '&nbsp;</label>';
                             echo '</div>';
                         }
                     }
                     break;
 
                 case 'date':
-                    echo '<input type="date" format="dd/mm/yyyy" name="' . esc_attr( $field_attributes['id'] ) . '" id="' . esc_attr( $field_attributes['id'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_key', $custom_attributes ) ) . '>';
+                    echo '<input type="date" format="dd/mm/yyyy" name="' . esc_attr( $field_attributes['id'] ) . '" id="' . esc_attr( $field_attributes['id'] ) . '" value="' . esc_attr( $saved_value ) . '" ' . implode( ' ', array_map( 'sanitize_text_field', $custom_attributes ) ) . '>';
                     break;
 
                 default:
