@@ -21,6 +21,13 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
         private $options = array();
 
         /**
+         * @var string Metabox id
+         *
+         * @since 1.0
+         */
+        private $id;
+
+        /**
          * @since 1.0.0
          * @var array
          */
