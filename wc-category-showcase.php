@@ -277,8 +277,6 @@ class WC_Category_Showcase {
 		require PLVR_WCCS_INCLUDES . '/metabox/class-metabox.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-admin.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-metabox.php';
-		require PLVR_WCCS_INCLUDES . '/class-insights.php';
-		require PLVR_WCCS_INCLUDES . '/class-tracker.php';
 	}
 
 	/**
@@ -342,7 +340,6 @@ class WC_Category_Showcase {
 	private function init_plugin() {
 		new \Pluginever\WCCS\Shortcode();
 		new \Pluginever\WCCCS\Metabox();
-		new \Pluginever\WCCS\Tracker();
 	}
 
 	/**
@@ -427,6 +424,21 @@ class WC_Category_Showcase {
 	}
 
 }
+
+/**
+ * Plugin compatibility with WooCommerce HPOS
+ *
+ * @since 1.0.0
+ * @return void
+ */
+add_action(
+	'before_woocommerce_init',
+	function () {
+		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+		}
+	}
+);
 
 /**
  * Fire of the plugin
