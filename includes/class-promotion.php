@@ -38,15 +38,15 @@ class WC_Category_Showcase_Promotion {
 		}
 
 		?>
-		<div class="notice notice-info is-dismissible" id="<?php echo $this->uniq_key;?>-promotional-offer-notice">
+		<div class="notice notice-info is-dismissible" id="<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice">
 			<p>Thank you for installing <strong><a href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro/" target="_blank">WooCommerce Category Showcase</a></strong>. <strong>WooCommerce Category Showcase</strong> is now powering <strong>1000+</strong> stores. Use the coupon code <strong>SHOWCASEFREETOPRO</strong> for 20% discount on PRO. <a href="https://www.pluginever.com/plugins/woocommerce-category-showcase-pro//?utm_source=plugin_activation_promotion&utm_medium=link&utm_campaign=wc-category-slider&utm_content=Upgrade" target="_blank" style="text-decoration: none;"><span
 						class="dashicons dashicons-smiley" style="margin-left: 10px;"></span> Get the Offer</a></p>
 			<span class="dashicons dashicons-megaphone"></span>
-		</div><!-- #<?php echo $this->uniq_key;?>-promotional-offer-notice -->
+		</div><!-- #<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice -->
 
 		<style>
 
-			#<?php echo $this->uniq_key;?>-promotional-offer-notice p {
+			#<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice p {
 				color: #000;
 				font-size: 14px;
 				margin-bottom: 10px;
@@ -58,7 +58,7 @@ class WC_Category_Showcase_Promotion {
 			}
 
 
-			#<?php echo $this->uniq_key;?>-promotional-offer-notice span.dashicons-megaphone {
+			#<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice span.dashicons-megaphone {
 				position: absolute;
 				top: 8px;
 				left: 0;
@@ -69,10 +69,10 @@ class WC_Category_Showcase_Promotion {
 		</style>
 
 		<script type='text/javascript'>
-			jQuery('body').on('click', '#<?php echo $this->uniq_key;?>-promotional-offer-notice .notice-dismiss', function (e) {
+			jQuery('body').on('click', '#<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice .notice-dismiss', function (e) {
 				e.preventDefault();
 
-				wp.ajax.post('<?php echo $this->uniq_key;?>-dismiss-promotional-offer-notice', {
+				wp.ajax.post('<?php echo esc_attr( $this->uniq_key );?>-dismiss-promotional-offer-notice', {
 					dismissed: true
 				});
 			});
