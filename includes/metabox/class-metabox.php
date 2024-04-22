@@ -273,7 +273,7 @@ if ( ! class_exists( '\Pluginever\Framework\Metabox' ) ):
             $post_id = $post->ID;
             $lazy_loading = $this->options['lazy_loading'] == 'true' ? 'plvr-lazy-loading loading' : 'loaded';
             ?>
-            <div class="plvr-framework <?php  esc_attr( $lazy_loading ) ?>">'
+            <div class="plvr-framework <?php  esc_attr( $lazy_loading ) ?>">
             <div class="container">
             <?php
             echo wp_nonce_field( 'pluginever_fields_nonce', 'pluginever_metabox_nonce' );

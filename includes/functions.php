@@ -89,10 +89,6 @@ function wccs_get_wc_categories( $args = array() ) {
  */
 function wccs_get_term_html() {
 
-	if ( ! wp_verify_nonce( $_POST['nonce'], 'wccs_admin_action' ) ) {
-		wp_send_json_error( [ 'message' => 'no cheating' ] );
-	}
-
 	if ( empty( intval( $_POST['term_id'] ) ) ) {
 		wp_send_json_error( [ 'message' => 'no term id' ] );
 	}
