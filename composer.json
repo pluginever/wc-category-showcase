@@ -1,0 +1,78 @@
+{
+  "name": "pluginever/wc-category-showcase",
+  "description": "Product Category Showcase for WooCommerce.",
+  "homepage": "https://pluginever.com",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "keywords": [
+    "wordpress",
+    "plugin"
+  ],
+  "authors": [
+    {
+      "name": "pluginever",
+      "email": "support@pluginever.com"
+    }
+  ],
+  "repositories": [
+    {
+      "url": "git@github.com:byteever/bytekit-core.git",
+      "type": "github"
+    },
+    {
+      "url": "git@github.com:byteever/bytekit-models.git",
+      "type": "github"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "byteever/bytekit-core": "dev-master",
+    "byteever/bytekit-models": "dev-master",
+    "woocommerce/action-scheduler": "^3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "EverAccounting\\": "assets/src/"
+    },
+    "classmap": [
+      "includes/"
+    ]
+  },
+  "require-dev": {
+    "byteever/byteever-sniffs": "^1.0",
+    "roave/security-advisories": "dev-latest",
+    "lucatume/wp-browser": "<3.5",
+    "codeception/module-asserts": "^1.0",
+    "codeception/module-phpbrowser": "^1.0",
+    "codeception/module-webdriver": "^1.0",
+    "codeception/module-db": "^1.0",
+    "codeception/module-filesystem": "^1.0",
+    "codeception/module-cli": "^1.0",
+    "codeception/util-universalframework": "^1.0",
+    "codeception/module-rest": "^2.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "phpcs": "@php ./vendor/bin/phpcs --standard=phpcs.xml -s -v",
+    "phpcbf": "@php ./vendor/bin/phpcbf --standard=phpcs.xml -v",
+    "test:setup": "bash bin/install-test-env.sh",
+    "test:init": "vendor/bin/codecept init wpbrowser",
+    "test:build": "vendor/bin/codecept build",
+    "test:wpunit": "vendor/bin/codecept run wpunit --",
+    "test:functional": "vendor/bin/codecept run functional --",
+    "test:acceptance": "vendor/bin/codecept run acceptance --",
+    "test:gen:wpunit": "vendor/bin/codecept generate:wpunit wpunit",
+    "test:gen:functional": "vendor/bin/codecept generate:wpunit functional",
+    "test:gen:acceptance": "vendor/bin/codecept generate:acceptance acceptance",
+    "test": "vendor/bin/codecept run functional --"
+  },
+  "extra": {}
+}
