@@ -29,7 +29,10 @@
   },
   "autoload": {
     "psr-4": {
-      "WooCommerceCategoryShowcase\\": "includes/"
+      "WooCommerceCategoryShowcase\\": [
+        "includes/",
+        "lib/"
+      ]
     }
   },
   "require-dev": {

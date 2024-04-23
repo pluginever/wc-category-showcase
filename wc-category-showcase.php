@@ -13,6 +13,8 @@
  * Tested up to: 6.5
  * WC requires at least: 3.0.0
  * WC tested up to: 8.8
+ *
+ * @package WooCommerceCategoryShowcase
  */
 
 /**
@@ -32,7 +34,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-use WooCommerceCategoryShowcase\Plugin;
 
 defined( 'ABSPATH' ) || exit();
 
@@ -41,8 +42,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * Plugin compatibility with WooCommerce HPOS
  *
- * @return void
  * @since 1.0.0
+ * @return void
  */
 add_action(
 	'before_woocommerce_init',
@@ -64,9 +65,5 @@ add_action(
 function wc_category_showcase() {
 	return WooCommerceCategoryShowcase\Plugin::create( __FILE__ );
 }
-
 // Instantiate the plugin.
 wc_category_showcase();
-
-
-

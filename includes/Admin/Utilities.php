@@ -1,6 +1,6 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\admin;
+namespace WooCommerceCategoryShowcase\Admin;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -71,7 +71,7 @@ class Utilities {
 				'page_hook'  => 'tools',
 				'tabs'       => array(
 					'import' => __( 'Import', 'wp-ever-accounting' ),
-					'export' => __( 'Export', 'wp-ever-accounting' )
+					'export' => __( 'Export', 'wp-ever-accounting' ),
 				),
 			),
 		);
@@ -115,4 +115,3 @@ class Utilities {
 		return filter_input( INPUT_GET, 'edit', FILTER_VALIDATE_INT );
 	}
 }
-
