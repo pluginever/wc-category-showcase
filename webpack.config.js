@@ -7,8 +7,8 @@ module.exports = [
 		...defaultConfig,
 		entry: {
 			...defaultConfig.entry(),
-			'css/admin': './src/css/admin.scss',
-			'js/admin': './src/js/admin.js',
+			'css/admin': './src/css/admin/admin.scss',
+			'js/admin': './src/js/admin/admin.js',
 		},
 		output: {
 			...defaultConfig.output,

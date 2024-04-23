@@ -13,8 +13,13 @@
     "node": ">=8.9.3",
     "npm": ">=5.5.1"
   },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.7.0",
+    "webpack-remove-empty-scripts": "^1.0.4",
+    "webpack-rtl-plugin": "^2.0.0"
+  },
   "scripts": {
-    "build": "wp-scripts build && grunt build",
+    "build": "wp-scripts build",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses",
     "format": "wp-scripts format",
@@ -22,42 +27,10 @@
     "lint:js": "wp-scripts lint-js",
     "lint:md:docs": "wp-scripts lint-md-docs",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "packages-update": "wp-scripts packages-update",
-    "plugin-zip": "wp-scripts plugin-zip",
-    "start": "wp-scripts start --webpack-src-dir=ui && grunt watch",
-    "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
-  },
-  "devDependencies": {
-    "@lodder/time-grunt": "^4.0.0",
-    "@wordpress/interactivity": "^5.4.0",
-    "@wordpress/prettier-config": "^2.19.0",
-    "@wordpress/scripts": "^26.6.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "grunt": "^1.6.1",
-    "grunt-checktextdomain": "^1.0.1",
-    "grunt-wp-i18n": "^1.0.3",
-    "grunt-wp-readme-to-markdown": "^2.1.0",
-    "lint-staged": "^12.5.0",
-    "load-grunt-tasks": "^5.1.0",
-    "matchdep": "^2.0.0",
-    "mini-css-extract-plugin": "^2.7.6",
-    "webpack-remove-empty-scripts": "^0.8.4",
-    "wp-prettier": "^2.8.5"
-  },
-  "stylelint": {
-    "extends": "@wordpress/stylelint-config",
-    "defaultSeverity": "warning"
-  },
-  "lint-staged": {
-    "*.scss": [
-      "wp-scripts lint-style --fix --custom-syntax postcss-scss"
-    ]
+    "packages-update": "wp-scripts packages-update"
   },
   "browserslist": [
-    "> 0.1%",
-    "ie 8",
-    "ie 9"
+    "last 1 version",
+    "> 1%"
   ]
 }

@@ -52,5 +52,5 @@ contributors.md
 /screenshots/
 
 #build
-build
-package-lock.json
+lib
+assets
