@@ -47,7 +47,9 @@ class Admin {
 			return;
 		}
 		// Early core enqueue.
-		wc_category_showcase()->scripts->enqueue_style( 'bytekit-core' );
+		wc_category_showcase()->scripts->enqueue_style( 'wccs-admin', '/css/admin.css' );
+		wc_category_showcase()->scripts->enqueue_script( 'wccs-admin', '/js/admin.js', array(), true );
+		wc_category_showcase()->scripts->enqueue_style( 'wccs-admin-tailwind', '/css/tailwind.css' );
 	}
 
 	/**
@@ -63,7 +65,7 @@ class Admin {
 			$text = sprintf(
 			/* translators: %s: Plugin name */
 				__( 'Thank you for using %s!', 'wc-category-showcase' ),
-				'<strong>' . esc_html( wc_category_showcase()->get_name() ) . '</strong>',
+				'<strong>' . esc_html( wc_category_showcase()->get_name() ) . '</strong>'
 			);
 			if ( wc_category_showcase()->review_url ) {
 				$text .= sprintf(

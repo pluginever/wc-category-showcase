@@ -27,6 +27,7 @@ class Menus {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'admin_menu', array( $this, 'add_submenu' ) );
 	}
 
 	/**
@@ -48,17 +49,75 @@ class Menus {
 	}
 
 	/**
+	 * Add sub-menu.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public function add_submenu() {
+		$menus = Utilities::get_menus();
+		usort(
+			$menus,
+			function ( $a, $b ) {
+				$a = isset( $a['position'] ) ? $a['position'] : PHP_INT_MAX;
+				$b = isset( $b['position'] ) ? $b['position'] : PHP_INT_MAX;
+
+				return $a - $b;
+			}
+		);
+		foreach ( $menus as $menu ) {
+			$menu = wp_parse_args(
+				$menu,
+				array(
+					'page_title' => '',
+					'menu_title' => '',
+					'capability' => 'manage_options',
+					'menu_slug'  => '',
+					'callback'   => null,
+					'position'   => '10',
+					'page_hook'  => null,
+					'tabs'       => array(),
+					'load_hook'  => null,
+				)
+			);
+			if ( ! is_callable( $menu['callback'] ) && ! empty( $menu['page_hook'] ) ) {
+				$menu['callback'] = function () use ( $menu ) {
+					$page_hook = $menu['page_hook'];
+					$tabs      = $menu['tabs'];
+					include_once __DIR__ . '/views/admin-page.php';
+				};
+			}
+			$load = add_submenu_page(
+				self::PARENT_SLUG,
+				$menu['page_title'],
+				$menu['menu_title'],
+				$menu['capability'],
+				$menu['menu_slug'],
+				$menu['callback'],
+				$menu['position']
+			);
+			if ( ! empty( $menu['load_hook'] ) && is_callable( $menu['load_hook'] ) ) {
+				add_action( 'load-' . $load, $menu['load_hook'] );
+			}
+		}
+	}
+
+	/**
 	 * Render menu.
 	 *
 	 * @since 1.0.0
 	 * @return void
 	 */
 	public function render_menu() {
-		?>
-		<div class="wrap">
-			<h1><?php esc_html_e( 'Category Showcase', 'wc-category-showcase' ); ?></h1>
-			<p><?php esc_html_e( 'Welcome to the Category Showcase plugin.', 'wc-category-showcase' ); ?></p>
-		</div>
-		<?php
+		$add  = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$edit = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		if ( $add ) {
+			include __DIR__ . '/views/add-category-showcase.php';
+		} elseif ( $edit ) {
+			include __DIR__ . '/views/edit-category-showcase.php';
+		} else {
+			include __DIR__ . '/views/list-category-showcase.php';
+		}
 	}
 }

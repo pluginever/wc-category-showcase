@@ -35,6 +35,7 @@ class Plugin extends ByteKit\Core\Plugin {
 		define( 'WC_CATEGORY_SHOWCASE_VERSION', $this->get_version() );
 		define( 'WC_CATEGORY_SHOWCASE_FILE', $this->get_file() );
 		define( 'WC_CATEGORY_SHOWCASE_PATH', $this->get_dir_path() . '/' );
+		define( 'WC_CATEGORY_SHOWCASE_ASSETS_URL', $this->get_assets_url() );
 	}
 
 	/**
@@ -52,7 +53,6 @@ class Plugin extends ByteKit\Core\Plugin {
 	 * @return void
 	 */
 	public function init_hooks() {
-		// register_activation_hook( $this->get_file(), array( $this, 'on_activation' ) );
 		add_action( 'plugins_loaded', array( $this, 'on_init' ), 0 );
 	}
 

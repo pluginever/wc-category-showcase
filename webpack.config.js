@@ -8,6 +8,7 @@ module.exports = [
 		entry: {
 			...defaultConfig.entry(),
 			'css/admin': './src/css/admin/admin.scss',
+			'css/tailwind': './src/css/common/tailwind.css',
 			'js/admin': './src/js/admin/admin.js',
 		},
 		output: {

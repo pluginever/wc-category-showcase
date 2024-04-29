@@ -14,12 +14,19 @@
     "npm": ">=5.5.1"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "@wordpress/scripts": "^27.7.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "mini-css-extract-plugin": "^2.7.6",
+    "tailwindcss": "^3.4.3",
     "webpack-remove-empty-scripts": "^1.0.4",
-    "webpack-rtl-plugin": "^2.0.0"
+    "webpack-rtl-plugin": "^2.0.0",
+    "wp-prettier": "^2.8.5"
   },
   "scripts": {
     "build": "wp-scripts build",
+    "watch": "npx tailwindcss -i ./src/css/common/tailwind.css -o ./assets/css/tailwind.css --watch",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses",
     "format": "wp-scripts format",
@@ -32,5 +39,8 @@
   "browserslist": [
     "last 1 version",
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "cssnano": "^7.0.1"
+  }
 }
