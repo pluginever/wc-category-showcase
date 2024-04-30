@@ -5,18 +5,18 @@
  * @package WooCommerceCategoryShowcase
  */
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 ?>
 <div class="wrap bkit-wrap">
 	<h1 class="wp-heading-inline text-center">
-		<?php esc_html_e('Add Category Showcase', 'wc-category-showcase'); ?>
-		<a href="<?php echo esc_attr(remove_query_arg('add')); ?>" class="page-title-action"
-		   title="<?php esc_attr_e('Go back', 'wc-category-showcase'); ?>">
+		<?php esc_html_e( 'Add Category Showcase', 'wc-category-showcase' ); ?>
+		<a href="<?php echo esc_attr( remove_query_arg( 'add' ) ); ?>" class="page-title-action"
+			title="<?php esc_attr_e( 'Go back', 'wc-category-showcase' ); ?>">
 			<span class="dashicons dashicons-undo"></span>
 		</a>
 	</h1>
 
-	<form method="post" action="<?php echo esc_html(admin_url('admin-post.php')); ?>">
+	<form method="post" action="<?php echo esc_html( admin_url( 'admin-post.php' ) ); ?>">
 		<span data-wp-text="name"></span>
 		<div class="bkit-poststuff">
 			<div class="column-1">
@@ -58,10 +58,10 @@ defined('ABSPATH') || exit;
 							<nav id="tabs" class="tw-flex tw-space-x-4 " aria-label="Tabs">
 								<!-- Current: "bg-indigo-100 text-indigo-700", Default: "text-gray-500 hover:text-gray-700" -->
 								<a href="#first"
-								   class="tw-no-underline tw-bg-indigo-100 tw-text-indigo-700 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-flex-auto tw-gap-1"
-								   aria-current="page">
+									class="tw-no-underline tw-bg-indigo-100 tw-text-indigo-700 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-flex-auto tw-gap-1"
+									aria-current="page">
 									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18"
-										 viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
+										viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
 										<g clip-path="url(#clip0_156_445)">
 											<path
 												d="M5.7002 17H2.2002C2.06759 17 1.94041 16.9473 1.84664 16.8536C1.75287 16.7598 1.7002 16.6326 1.7002 16.5V1.5C1.7002 1.36739 1.75287 1.24021 1.84664 1.14645C1.94041 1.05268 2.06759 1 2.2002 1H5.7002V17ZM9.4102 15.4685C9.0817 15.3312 8.80108 15.1 8.6036 14.8037C8.40611 14.5075 8.30056 14.1595 8.3002 13.8035V13.1965C8.30049 12.8405 8.40602 12.4925 8.60351 12.1962C8.80101 11.9 9.08166 11.6687 9.4102 11.5315C9.27187 11.2011 9.23486 10.8371 9.30385 10.4856C9.37285 10.1341 9.54474 9.81108 9.7977 9.5575L10.2567 9.098C10.4239 8.92988 10.6227 8.7966 10.8417 8.70588C11.0608 8.61516 11.2956 8.56881 11.5327 8.5695C11.5897 8.5695 11.6442 8.581 11.6997 8.586V1H7.7002V17H9.4732C9.35152 16.7648 9.28282 16.5058 9.27194 16.2412C9.26105 15.9767 9.30825 15.7129 9.4102 15.4685ZM13.8967 7.6H14.5037C14.8596 7.60042 15.2074 7.70594 15.5035 7.90333C15.7997 8.10072 16.0309 8.38117 16.1682 8.7095C16.4126 8.60602 16.6772 8.55876 16.9424 8.57122C17.2075 8.58369 17.4665 8.65555 17.7002 8.7815V1.5C17.7002 1.36739 17.6475 1.24021 17.5537 1.14645C17.46 1.05268 17.3328 1 17.2002 1H13.7002V7.63C13.7651 7.6162 13.8307 7.60618 13.8967 7.6Z"/>
@@ -72,9 +72,9 @@ defined('ABSPATH') || exit;
 									General
 								</a>
 								<a href="#second"
-								   class="tw-no-underline tw-text-gray-500 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
+									class="tw-no-underline tw-text-gray-500 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
 									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18"
-										 viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
+										viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
 										<g clip-path="url(#clip0_156_445)">
 											<path
 												d="M5.7002 17H2.2002C2.06759 17 1.94041 16.9473 1.84664 16.8536C1.75287 16.7598 1.7002 16.6326 1.7002 16.5V1.5C1.7002 1.36739 1.75287 1.24021 1.84664 1.14645C1.94041 1.05268 2.06759 1 2.2002 1H5.7002V17ZM9.4102 15.4685C9.0817 15.3312 8.80108 15.1 8.6036 14.8037C8.40611 14.5075 8.30056 14.1595 8.3002 13.8035V13.1965C8.30049 12.8405 8.40602 12.4925 8.60351 12.1962C8.80101 11.9 9.08166 11.6687 9.4102 11.5315C9.27187 11.2011 9.23486 10.8371 9.30385 10.4856C9.37285 10.1341 9.54474 9.81108 9.7977 9.5575L10.2567 9.098C10.4239 8.92988 10.6227 8.7966 10.8417 8.70588C11.0608 8.61516 11.2956 8.56881 11.5327 8.5695C11.5897 8.5695 11.6442 8.581 11.6997 8.586V1H7.7002V17H9.4732C9.35152 16.7648 9.28282 16.5058 9.27194 16.2412C9.26105 15.9767 9.30825 15.7129 9.4102 15.4685ZM13.8967 7.6H14.5037C14.8596 7.60042 15.2074 7.70594 15.5035 7.90333C15.7997 8.10072 16.0309 8.38117 16.1682 8.7095C16.4126 8.60602 16.6772 8.55876 16.9424 8.57122C17.2075 8.58369 17.4665 8.65555 17.7002 8.7815V1.5C17.7002 1.36739 17.6475 1.24021 17.5537 1.14645C17.46 1.05268 17.3328 1 17.2002 1H13.7002V7.63C13.7651 7.6162 13.8307 7.60618 13.8967 7.6Z"/>
@@ -85,9 +85,9 @@ defined('ABSPATH') || exit;
 									Display
 								</a>
 								<a href="#third"
-								   class="tw-no-underline tw-text-gray-500 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
+									class="tw-no-underline tw-text-gray-500 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
 									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18"
-										 viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
+										viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
 										<g clip-path="url(#clip0_156_445)">
 											<path
 												d="M5.7002 17H2.2002C2.06759 17 1.94041 16.9473 1.84664 16.8536C1.75287 16.7598 1.7002 16.6326 1.7002 16.5V1.5C1.7002 1.36739 1.75287 1.24021 1.84664 1.14645C1.94041 1.05268 2.06759 1 2.2002 1H5.7002V17ZM9.4102 15.4685C9.0817 15.3312 8.80108 15.1 8.6036 14.8037C8.40611 14.5075 8.30056 14.1595 8.3002 13.8035V13.1965C8.30049 12.8405 8.40602 12.4925 8.60351 12.1962C8.80101 11.9 9.08166 11.6687 9.4102 11.5315C9.27187 11.2011 9.23486 10.8371 9.30385 10.4856C9.37285 10.1341 9.54474 9.81108 9.7977 9.5575L10.2567 9.098C10.4239 8.92988 10.6227 8.7966 10.8417 8.70588C11.0608 8.61516 11.2956 8.56881 11.5327 8.5695C11.5897 8.5695 11.6442 8.581 11.6997 8.586V1H7.7002V17H9.4732C9.35152 16.7648 9.28282 16.5058 9.27194 16.2412C9.26105 15.9767 9.30825 15.7129 9.4102 15.4685ZM13.8967 7.6H14.5037C14.8596 7.60042 15.2074 7.70594 15.5035 7.90333C15.7997 8.10072 16.0309 8.38117 16.1682 8.7095C16.4126 8.60602 16.6772 8.55876 16.9424 8.57122C17.2075 8.58369 17.4665 8.65555 17.7002 8.7815V1.5C17.7002 1.36739 17.6475 1.24021 17.5537 1.14645C17.46 1.05268 17.3328 1 17.2002 1H13.7002V7.63C13.7651 7.6162 13.8307 7.60618 13.8967 7.6Z"/>
@@ -98,9 +98,9 @@ defined('ABSPATH') || exit;
 									Thumbnail
 								</a>
 								<a href="#fourth"
-								   class="tw-no-underline tw-text-gray-500 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
+									class="tw-no-underline tw-text-gray-500 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
 									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18"
-										 viewBox="0 0 19 18" fill="currentColor" class="text-indigo-700">
+										viewBox="0 0 19 18" fill="currentColor" class="text-indigo-700">
 										<g clip-path="url(#clip0_156_445)">
 											<path
 												d="M5.7002 17H2.2002C2.06759 17 1.94041 16.9473 1.84664 16.8536C1.75287 16.7598 1.7002 16.6326 1.7002 16.5V1.5C1.7002 1.36739 1.75287 1.24021 1.84664 1.14645C1.94041 1.05268 2.06759 1 2.2002 1H5.7002V17ZM9.4102 15.4685C9.0817 15.3312 8.80108 15.1 8.6036 14.8037C8.40611 14.5075 8.30056 14.1595 8.3002 13.8035V13.1965C8.30049 12.8405 8.40602 12.4925 8.60351 12.1962C8.80101 11.9 9.08166 11.6687 9.4102 11.5315C9.27187 11.2011 9.23486 10.8371 9.30385 10.4856C9.37285 10.1341 9.54474 9.81108 9.7977 9.5575L10.2567 9.098C10.4239 8.92988 10.6227 8.7966 10.8417 8.70588C11.0608 8.61516 11.2956 8.56881 11.5327 8.5695C11.5897 8.5695 11.6442 8.581 11.6997 8.586V1H7.7002V17H9.4732C9.35152 16.7648 9.28282 16.5058 9.27194 16.2412C9.26105 15.9767 9.30825 15.7129 9.4102 15.4685ZM13.8967 7.6H14.5037C14.8596 7.60042 15.2074 7.70594 15.5035 7.90333C15.7997 8.10072 16.0309 8.38117 16.1682 8.7095C16.4126 8.60602 16.6772 8.55876 16.9424 8.57122C17.2075 8.58369 17.4665 8.65555 17.7002 8.7815V1.5C17.7002 1.36739 17.6475 1.24021 17.5537 1.14645C17.46 1.05268 17.3328 1 17.2002 1H13.7002V7.63C13.7651 7.6162 13.8307 7.60618 13.8967 7.6Z"/>
@@ -111,9 +111,9 @@ defined('ABSPATH') || exit;
 									Slider
 								</a>
 								<a href="#fifth"
-								   class="tw-no-underline tw-text-gray-500 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
+									class="tw-no-underline tw-text-gray-500 tw-hover:text-gray-700 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto">
 									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18"
-										 viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
+										viewBox="0 0 19 18" fill="currentColor" class="tw-text-indigo-700">
 										<g clip-path="url(#clip0_156_445)">
 											<path
 												d="M5.7002 17H2.2002C2.06759 17 1.94041 16.9473 1.84664 16.8536C1.75287 16.7598 1.7002 16.6326 1.7002 16.5V1.5C1.7002 1.36739 1.75287 1.24021 1.84664 1.14645C1.94041 1.05268 2.06759 1 2.2002 1H5.7002V17ZM9.4102 15.4685C9.0817 15.3312 8.80108 15.1 8.6036 14.8037C8.40611 14.5075 8.30056 14.1595 8.3002 13.8035V13.1965C8.30049 12.8405 8.40602 12.4925 8.60351 12.1962C8.80101 11.9 9.08166 11.6687 9.4102 11.5315C9.27187 11.2011 9.23486 10.8371 9.30385 10.4856C9.37285 10.1341 9.54474 9.81108 9.7977 9.5575L10.2567 9.098C10.4239 8.92988 10.6227 8.7966 10.8417 8.70588C11.0608 8.61516 11.2956 8.56881 11.5327 8.5695C11.5897 8.5695 11.6442 8.581 11.6997 8.586V1H7.7002V17H9.4732C9.35152 16.7648 9.28282 16.5058 9.27194 16.2412C9.26105 15.9767 9.30825 15.7129 9.4102 15.4685ZM13.8967 7.6H14.5037C14.8596 7.60042 15.2074 7.70594 15.5035 7.90333C15.7997 8.10072 16.0309 8.38117 16.1682 8.7095C16.4126 8.60602 16.6772 8.55876 16.9424 8.57122C17.2075 8.58369 17.4665 8.65555 17.7002 8.7815V1.5C17.7002 1.36739 17.6475 1.24021 17.5537 1.14645C17.46 1.05268 17.3328 1 17.2002 1H13.7002V7.63C13.7651 7.6162 13.8307 7.60618 13.8967 7.6Z"/>
@@ -134,36 +134,22 @@ defined('ABSPATH') || exit;
 									<h3 class="wccs-settings-title">Select Layout:</h3>
 									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
 								</div>
-								<div class="tw-flex tw-gap-2">
-									<div class="">
-										<label for="hosting-small"
-											   class="tw-inline-flex tw-items-center tw-justify-between tw-rounded-lg tw-cursor-pointer tw-peer-checked:border-blue-600 tw-peer-checked:text-blue-600 tw-before:absolute tw-before:content-['\2705'] tw-before:text-sm tw-before:top-2 tw-before:right-2">
-											<input type="radio" id="hosting-small" name="wccs_showcase_layout"
-												   value="hosting-big" class="tw-hidden" style="display: none">
-											<svg class="tw-h-16 tw-w-16 tw-text-fade-blue-600 tw-hover:text-gray-500 p-1 wccs-border-active tw-hover:border-gray-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-												<g clip-path="url(#clip0_172_5519)">
-													<path d="M13 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H13C14.1046 15 15 14.1046 15 13V2C15 0.89543 14.1046 0 13 0Z"/>
-													<path d="M13 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H13C14.1046 32 15 31.1046 15 30V19C15 17.8954 14.1046 17 13 17Z"/>
-													<path d="M30 0H19C17.8954 0 17 0.89543 17 2V13C17 14.1046 17.8954 15 19 15H30C31.1046 15 32 14.1046 32 13V2C32 0.89543 31.1046 0 30 0Z"/>
-													<path d="M30 17H19C17.8954 17 17 17.8954 17 19V30C17 31.1046 17.8954 32 19 32H30C31.1046 32 32 31.1046 32 30V19C32 17.8954 31.1046 17 30 17Z"/>
-												</g>
+								<div class="tw-flex tw-items-center tw-gap-x-4">
+									<div class="tw-relative">
+										<div>
+											<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+												<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+												<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
 											</svg>
-										</label>
+										</div>
 									</div>
-									<div class="">
-										<label for="hosting-big"
-											   class="tw-inline-flex tw-items-center tw-justify-between tw-rounded-lg tw-cursor-pointer tw-peer-checked:border-blue-600 tw-peer-checked:text-blue-600">
-											<input type="radio" id="hosting-big" name="wccs_showcase_layout"
-												   value="hosting-big" class="tw-hidden" style="display: none">
-											<svg class="tw-h-16 tw-w-16 tw-text-gray-300 tw-border-gray-300 tw-hover:text-gray-500 tw-border-2 tw-p-1 tw-rounded-lg tw-hover:border-gray-500" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
-												<g clip-path="url(#clip0_172_5539)">
-													<path d="M18 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H18C19.1046 32 20 31.1046 20 30V2C20 0.89543 19.1046 0 18 0Z"/>
-													<path d="M30 0H24C22.8954 0 22 0.89543 22 2V7.33333C22 8.4379 22.8954 9.33333 24 9.33333H30C31.1046 9.33333 32 8.4379 32 7.33333V2C32 0.89543 31.1046 0 30 0Z"/>
-													<path d="M30 11.3333H24C22.8954 11.3333 22 12.2287 22 13.3333V18.6666C22 19.7712 22.8954 20.6666 24 20.6666H30C31.1046 20.6666 32 19.7712 32 18.6666V13.3333C32 12.2287 31.1046 11.3333 30 11.3333Z"/>
-													<path d="M30 22.6667H24C22.8954 22.6667 22 23.5621 22 24.6667V30C22 31.1046 22.8954 32 24 32H30C31.1046 32 32 31.1046 32 30V24.6667C32 23.5621 31.1046 22.6667 30 22.6667Z"/>
-												</g>
+									<div class="tw-relative">
+										<div class="wccs-layout-active-before-content">
+											<svg class="wccs-layout-active" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+												<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+												<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
 											</svg>
-										</label>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -172,15 +158,15 @@ defined('ABSPATH') || exit;
 									<h3 class="wccs-settings-title">Display Mode</h3>
 									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
 								</div>
-								<div class="tw-flex tw-gap-2 tw-p-2 tw-rounded-md tw-bg-gray-300">
-									<span class="tw-isolate tw-inline-flex tw-rounded-md tw-shadow-sm">
-									  	<label class="tw-relative tw-inline-flex tw-gap-1 tw-items-center tw-rounded-l-md tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
+								<div class="tw-flex tw-items-center tw-gap-2 tw-rounded-md ">
+									<span class="tw-isolate tw-inline-flex tw-items-center tw-bg-gray-300 tw-p-2 tw-rounded-md tw-shadow-sm">
+											<label class="tw-relative tw-inline-flex tw-gap-1 tw-items-center tw-rounded-l-md tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
 											<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
 												<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z" fill="#2270B1"/>
 											</svg>
 											Fixed
 										</label>
-									  	<label class="tw-relative tw--ml-px tw-inline-flex tw-gap-1 tw-items-center tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
+											<label class="tw-relative tw--ml-px tw-inline-flex tw-gap-1 tw-items-center tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
 											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 												<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z" fill="#64748B"/>
 												<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z" fill="#64748B"/>
@@ -191,7 +177,7 @@ defined('ABSPATH') || exit;
 											</svg>
 											Slider
 										</label>
-									  	<label class="tw-relative tw--ml-px tw-inline-flex tw-gap-1 tw-items-center tw-rounded-r-md tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
+											<label class="tw-relative tw--ml-px tw-inline-flex tw-gap-1 tw-items-center tw-rounded-r-md tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
 											<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
 												<path d="M17.6665 2H14.6665V18H17.6665C17.9317 18 18.1861 17.8946 18.3736 17.7071C18.5611 17.5196 18.6665 17.2652 18.6665 17V3C18.6665 2.73478 18.5611 2.48043 18.3736 2.29289C18.1861 2.10536 17.9317 2 17.6665 2ZM12.6665 2H3.6665C3.40129 2 3.14693 2.10536 2.9594 2.29289C2.77186 2.48043 2.6665 2.73478 2.6665 3V17C2.6665 17.2652 2.77186 17.5196 2.9594 17.7071C3.14693 17.8946 3.40129 18 3.6665 18H12.6665V2Z" fill="#64748B"/>
 											</svg>
@@ -205,330 +191,529 @@ defined('ABSPATH') || exit;
 									<h3 class="wccs-settings-title">Number of Columns</h3>
 									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
 								</div>
-								<div class="tw-p-12 tw-border tw-m-6 tw-rounded tw-bg-gray-50">
-									<label for="two">
-										<input id="two" type="checkbox" checked />
-										Toggle switch
-									</label>
+								<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
+									<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>1</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>2</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-active-before-content">
+												<svg class="wccs-layout-active" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>3</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>4</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>4</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>6</span>
+										</div>
+									</div>
+									<div class="tw-max-w-[385px] ">
+										<div class="tw-mt-3 tw-flex tw-flex-row tw-items-center tw-gap-1 tw-w-full">
+											<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M15.1337 15.5891L17.3499 7.57164L13.7187 9.62914C13.6292 9.67993 13.5304 9.71235 13.4283 9.72449C13.3261 9.73663 13.2225 9.72825 13.1236 9.69984C13.0247 9.67144 12.9325 9.62357 12.8523 9.55906C12.7722 9.49454 12.7057 9.41468 12.6568 9.32414L9.9999 4.41602L7.34303 9.32352C7.29394 9.41387 7.22737 9.49355 7.14719 9.55792C7.067 9.62229 6.97481 9.67006 6.87598 9.69845C6.77715 9.72683 6.67366 9.73527 6.57154 9.72326C6.46942 9.71126 6.3707 9.67905 6.28115 9.62852L2.6499 7.57102L4.86615 15.5891H15.1337Z" fill="#FFD731"/>
+												<path d="M17.35 7.56836L15.1312 15.5871H12.6375C13.2106 14.6374 13.5723 13.5754 13.6981 12.4734C13.8018 11.5489 13.7368 10.6133 13.5062 9.71211C13.5812 9.69961 13.65 9.66836 13.7187 9.63086L17.35 7.56836Z" fill="#FFC933"/>
+												<path d="M16.9055 15.334C16.9067 15.5781 16.8256 15.8156 16.6754 16.0081C16.5252 16.2006 16.3145 16.337 16.0774 16.3952C14.0568 16.8702 12.0249 17.0983 9.99988 17.0983C7.97487 17.0983 5.94238 16.8702 3.92238 16.3952C3.68524 16.337 3.4746 16.2006 3.32438 16.0081C3.17416 15.8156 3.0931 15.5781 3.09425 15.334C3.09425 14.6483 3.72363 14.1258 4.39363 14.2702C6.25863 14.6727 8.13238 14.8671 9.99988 14.8671C11.8674 14.8671 13.7411 14.6733 15.6061 14.2702C16.2761 14.1258 16.9055 14.6483 16.9055 15.334Z" fill="#FFD731"/>
+												<path d="M16.906 15.3367C16.906 15.8367 16.5623 16.2805 16.0748 16.393C15.4248 16.543 14.7748 16.6742 14.1248 16.7742C14.4498 16.5492 14.6498 16.1742 14.6498 15.768C14.6498 15.1992 14.2623 14.7305 13.7498 14.5992C14.3685 14.5117 14.9873 14.4055 15.606 14.268C16.2748 14.1242 16.906 14.6492 16.906 15.3367Z" fill="#FFC933"/>
+												<path d="M2.64976 8.97188C3.42295 8.97188 4.04976 8.34507 4.04976 7.57188C4.04976 6.79868 3.42295 6.17188 2.64976 6.17188C1.87656 6.17188 1.24976 6.79868 1.24976 7.57188C1.24976 8.34507 1.87656 8.97188 2.64976 8.97188Z" fill="#FFD731"/>
+												<path d="M17.35 8.97188C18.1231 8.97188 18.75 8.34507 18.75 7.57188C18.75 6.79868 18.1231 6.17188 17.35 6.17188C16.5768 6.17188 15.95 6.79868 15.95 7.57188C15.95 8.34507 16.5768 8.97188 17.35 8.97188Z" fill="#FFC933"/>
+												<path d="M9.99985 5.70039C10.7731 5.70039 11.3999 5.07359 11.3999 4.30039C11.3999 3.52719 10.7731 2.90039 9.99985 2.90039C9.22665 2.90039 8.59985 3.52719 8.59985 4.30039C8.59985 5.07359 9.22665 5.70039 9.99985 5.70039Z" fill="#FFD731"/>
+												<path d="M9.99981 13.3123C10.7261 13.3123 11.3148 12.601 11.3148 11.7235C11.3148 10.8461 10.7261 10.1348 9.99981 10.1348C9.27356 10.1348 8.68481 10.8461 8.68481 11.7235C8.68481 12.601 9.27356 13.3123 9.99981 13.3123Z" fill="#FF7F0E"/>
+												<path d="M11.3125 11.7242C11.3125 12.5992 10.725 13.3117 10 13.3117C9.85005 13.3117 9.71255 13.2805 9.5813 13.2305C10.1 13.018 10.475 12.4242 10.475 11.7242C10.475 11.0242 10.1 10.4305 9.5813 10.218C9.71255 10.168 9.85005 10.1367 10 10.1367C10.725 10.1367 11.3125 10.8492 11.3125 11.7242Z" fill="#FF7F0E"/>
+												<path d="M5.25379 11.6526L4.76379 9.88074C4.75477 9.84704 4.73912 9.81547 4.71776 9.78788C4.69639 9.7603 4.66975 9.73724 4.63937 9.72008C4.60899 9.70291 4.5755 9.69197 4.54084 9.6879C4.50619 9.68383 4.47107 9.68671 4.43754 9.69637C4.40396 9.70562 4.37253 9.7214 4.34505 9.74281C4.31757 9.76422 4.29458 9.79084 4.2774 9.82114C4.26022 9.85144 4.24918 9.88483 4.24491 9.9194C4.24065 9.95398 4.24324 9.98905 4.25254 10.0226L4.74254 11.7945C4.76151 11.8623 4.80655 11.9198 4.8678 11.9545C4.92906 11.9891 5.00154 11.9981 5.06942 11.9795C5.13718 11.9605 5.19465 11.9155 5.22921 11.8542C5.26378 11.7929 5.27262 11.7204 5.25379 11.6526ZM5.55942 12.757C5.5504 12.7232 5.53473 12.6916 5.51333 12.6639C5.49194 12.6362 5.46524 12.6131 5.43481 12.5959C5.40437 12.5787 5.37081 12.5677 5.33608 12.5636C5.30135 12.5595 5.26615 12.5623 5.23254 12.572C5.19896 12.5812 5.16753 12.597 5.14005 12.6184C5.11257 12.6398 5.08958 12.6665 5.0724 12.6968C5.05522 12.7271 5.04418 12.7605 5.03991 12.795C5.03565 12.8296 5.03824 12.8647 5.04754 12.8982L5.09317 13.0639C5.11583 13.1271 5.16155 13.1794 5.22116 13.2104C5.28078 13.2413 5.34988 13.2486 5.41463 13.2307C5.47937 13.2128 5.53497 13.1711 5.57029 13.114C5.6056 13.0569 5.61801 12.9885 5.60504 12.9226L5.55942 12.757ZM8.72254 9.20449C8.7532 9.22125 8.78687 9.23176 8.82162 9.23542C8.85636 9.23908 8.89149 9.23582 8.92496 9.22582C8.95844 9.21582 8.9896 9.19929 9.01665 9.17718C9.04369 9.15507 9.06609 9.12781 9.08254 9.09699L9.50567 8.31574C9.53915 8.25375 9.54664 8.18099 9.52648 8.11348C9.50632 8.04597 9.46016 7.98923 9.39817 7.95574C9.33617 7.92226 9.26342 7.91478 9.1959 7.93494C9.12839 7.9551 9.07165 8.00125 9.03817 8.06324L8.61567 8.84449C8.58229 8.90644 8.5748 8.97909 8.59483 9.04655C8.61485 9.114 8.66077 9.17079 8.72254 9.20449Z" fill="#FFE576"/>
+												<path d="M17.3499 5.90539C16.9083 5.90589 16.4849 6.08153 16.1727 6.39379C15.8604 6.70605 15.6848 7.12942 15.6843 7.57102C15.6843 7.77477 15.7261 7.96789 15.7936 8.14852L13.588 9.39977C13.5291 9.43314 13.464 9.4544 13.3967 9.46231C13.3295 9.47021 13.2613 9.4646 13.1962 9.44579C13.1311 9.42699 13.0704 9.39537 13.0177 9.3528C12.965 9.31023 12.9213 9.25757 12.8893 9.19789L10.9661 5.65164C11.1818 5.4983 11.3577 5.29569 11.4792 5.06066C11.6007 4.82563 11.6644 4.56498 11.6649 4.30039C11.6649 3.38164 10.918 2.63477 9.99927 2.63477C9.08052 2.63477 8.33364 3.38164 8.33364 4.30039C8.33364 4.85789 8.61114 5.34914 9.03239 5.65164L7.10927 9.19789C7.07732 9.25752 7.03376 9.31017 6.98117 9.35272C6.92858 9.39528 6.86801 9.42689 6.80303 9.4457C6.73804 9.46451 6.66995 9.47013 6.60276 9.46224C6.53557 9.45436 6.47063 9.43311 6.41177 9.39977L4.20552 8.14852C4.27638 7.96415 4.31343 7.76852 4.31489 7.57102C4.31489 6.65227 3.56802 5.90539 2.64927 5.90539C1.73052 5.90539 0.983643 6.65227 0.983643 7.57102C0.983643 8.48977 1.73052 9.23664 2.64927 9.23664C2.71177 9.23664 2.77114 9.22477 2.83177 9.21852L4.14989 13.9816C3.79647 13.9895 3.46018 14.1355 3.21309 14.3883C2.966 14.6411 2.82777 14.9806 2.82802 15.3341C2.82802 15.9579 3.26239 16.5135 3.86052 16.6541C7.89816 17.6018 12.1004 17.6018 16.138 16.6541C16.7368 16.5129 17.1705 15.9579 17.1705 15.3341C17.1712 14.9805 17.0332 14.6407 16.786 14.3877C16.5388 14.1348 16.2022 13.989 15.8486 13.9816L17.1668 9.21914C17.2274 9.22602 17.2868 9.23727 17.3493 9.23727C18.268 9.23727 19.0149 8.49039 19.0149 7.57164C19.0149 6.65289 18.268 5.90539 17.3499 5.90539ZM9.99989 3.16602C10.6255 3.16602 11.1343 3.67477 11.1343 4.30039C11.1343 4.92602 10.6255 5.43539 9.99989 5.43539C9.37427 5.43539 8.86552 4.92664 8.86552 4.30102C8.86552 3.67539 9.37427 3.16602 9.99989 3.16602ZM1.51552 7.57102C1.51552 6.94539 2.02427 6.43664 2.64989 6.43664C3.27489 6.43664 3.78427 6.94539 3.78427 7.57102C3.78427 8.19664 3.27552 8.70602 2.64989 8.70602C2.02427 8.70602 1.51552 8.19664 1.51552 7.57102ZM16.6405 15.3341C16.6411 15.5183 16.5801 15.6973 16.4671 15.8427C16.3542 15.9881 16.1959 16.0916 16.0174 16.1366C12.0592 17.061 7.94123 17.061 3.98302 16.1366C3.8045 16.0916 3.64618 15.9881 3.53326 15.8427C3.42035 15.6973 3.35932 15.5183 3.35989 15.3341C3.35989 15.0835 3.47239 14.8491 3.66739 14.691C3.75986 14.6157 3.86808 14.5621 3.98404 14.5342C4.10001 14.5062 4.22077 14.5047 4.33739 14.5298C8.06994 15.3304 11.9298 15.3304 15.6624 14.5298C15.8974 14.4804 16.143 14.5379 16.3324 14.691C16.528 14.8491 16.6405 15.0835 16.6405 15.3341ZM15.2755 14.0623C11.794 14.7691 8.20583 14.7691 4.72427 14.0623L3.34552 9.07977C3.57989 8.97102 3.78177 8.80852 3.94239 8.60914L6.14989 9.86227C6.2699 9.93077 6.40248 9.97437 6.53972 9.99048C6.67696 10.0066 6.81604 9.99487 6.94864 9.95602C7.08188 9.91832 7.20617 9.85418 7.31408 9.76742C7.422 9.68066 7.51134 9.57305 7.57677 9.45102L9.51052 5.88477C9.66677 5.93289 9.82864 5.96664 9.99989 5.96664C10.1711 5.96664 10.333 5.93289 10.4886 5.88477L12.4224 9.45102C12.5561 9.69852 12.7793 9.87789 13.0505 9.95602C13.1831 9.99513 13.3223 10.0069 13.4596 9.99072C13.5969 9.9745 13.7294 9.93058 13.8493 9.86164L16.0568 8.60852C16.2174 8.80789 16.4193 8.97102 16.6536 9.07914L15.2755 14.0623ZM17.3499 8.70602C16.7249 8.70602 16.2155 8.19727 16.2155 7.57164C16.2155 6.94602 16.7243 6.43727 17.3499 6.43727C17.9755 6.43727 18.4843 6.94602 18.4843 7.57164C18.4843 8.19727 17.9755 8.70602 17.3499 8.70602Z" fill="#020617"/>
+												<path d="M9.99981 9.86914C9.12794 9.86914 8.41919 10.701 8.41919 11.7235C8.41919 12.746 9.12794 13.5779 9.99981 13.5779C10.8717 13.5779 11.5804 12.746 11.5804 11.7235C11.5804 10.701 10.8717 9.86914 9.99981 9.86914ZM9.99981 13.0466C9.42106 13.0466 8.95044 12.4529 8.95044 11.7235C8.95044 10.9941 9.42106 10.4004 9.99981 10.4004C10.5786 10.4004 11.0492 10.9941 11.0492 11.7235C11.0492 12.4529 10.5786 13.0466 9.99981 13.0466Z" fill="#020617"/>
+											</svg>
+											<span class="tw-text-text-grey-500 tw-text-xs tw-italic tw-leading-4 tw-w-full tw-font-medium">Unlock a variety of professionally designed layouts to enhance the presentation of your product categories.<a href="#" class="tw-text-accent-orange-500 tw-text-xs tw-leading-4 tw-font-semibold">Upgrade To Pro!</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="wcss-settings-row">
+								<div class="tw-w-1/3">
+									<h3 class="wccs-settings-title">Block Count</h3>
+									<p class="wccs-settings-description">Determine the number of columns you want your category showcase to have.</p>
+								</div>
+								<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
+									<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4 tw-overflow-auto tw-max-h-72">
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>1</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>2</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-active-before-content">
+												<svg class="wccs-layout-active" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>3</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>4</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>4</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>6</span>
+										</div>
+									</div>
+									<div class="tw-max-w-[385px] ">
+										<div class="tw-mt-3 tw-flex tw-flex-row tw-items-center tw-gap-1 tw-w-full">
+											<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M15.1337 15.5891L17.3499 7.57164L13.7187 9.62914C13.6292 9.67993 13.5304 9.71235 13.4283 9.72449C13.3261 9.73663 13.2225 9.72825 13.1236 9.69984C13.0247 9.67144 12.9325 9.62357 12.8523 9.55906C12.7722 9.49454 12.7057 9.41468 12.6568 9.32414L9.9999 4.41602L7.34303 9.32352C7.29394 9.41387 7.22737 9.49355 7.14719 9.55792C7.067 9.62229 6.97481 9.67006 6.87598 9.69845C6.77715 9.72683 6.67366 9.73527 6.57154 9.72326C6.46942 9.71126 6.3707 9.67905 6.28115 9.62852L2.6499 7.57102L4.86615 15.5891H15.1337Z" fill="#FFD731"/>
+												<path d="M17.35 7.56836L15.1312 15.5871H12.6375C13.2106 14.6374 13.5723 13.5754 13.6981 12.4734C13.8018 11.5489 13.7368 10.6133 13.5062 9.71211C13.5812 9.69961 13.65 9.66836 13.7187 9.63086L17.35 7.56836Z" fill="#FFC933"/>
+												<path d="M16.9055 15.334C16.9067 15.5781 16.8256 15.8156 16.6754 16.0081C16.5252 16.2006 16.3145 16.337 16.0774 16.3952C14.0568 16.8702 12.0249 17.0983 9.99988 17.0983C7.97487 17.0983 5.94238 16.8702 3.92238 16.3952C3.68524 16.337 3.4746 16.2006 3.32438 16.0081C3.17416 15.8156 3.0931 15.5781 3.09425 15.334C3.09425 14.6483 3.72363 14.1258 4.39363 14.2702C6.25863 14.6727 8.13238 14.8671 9.99988 14.8671C11.8674 14.8671 13.7411 14.6733 15.6061 14.2702C16.2761 14.1258 16.9055 14.6483 16.9055 15.334Z" fill="#FFD731"/>
+												<path d="M16.906 15.3367C16.906 15.8367 16.5623 16.2805 16.0748 16.393C15.4248 16.543 14.7748 16.6742 14.1248 16.7742C14.4498 16.5492 14.6498 16.1742 14.6498 15.768C14.6498 15.1992 14.2623 14.7305 13.7498 14.5992C14.3685 14.5117 14.9873 14.4055 15.606 14.268C16.2748 14.1242 16.906 14.6492 16.906 15.3367Z" fill="#FFC933"/>
+												<path d="M2.64976 8.97188C3.42295 8.97188 4.04976 8.34507 4.04976 7.57188C4.04976 6.79868 3.42295 6.17188 2.64976 6.17188C1.87656 6.17188 1.24976 6.79868 1.24976 7.57188C1.24976 8.34507 1.87656 8.97188 2.64976 8.97188Z" fill="#FFD731"/>
+												<path d="M17.35 8.97188C18.1231 8.97188 18.75 8.34507 18.75 7.57188C18.75 6.79868 18.1231 6.17188 17.35 6.17188C16.5768 6.17188 15.95 6.79868 15.95 7.57188C15.95 8.34507 16.5768 8.97188 17.35 8.97188Z" fill="#FFC933"/>
+												<path d="M9.99985 5.70039C10.7731 5.70039 11.3999 5.07359 11.3999 4.30039C11.3999 3.52719 10.7731 2.90039 9.99985 2.90039C9.22665 2.90039 8.59985 3.52719 8.59985 4.30039C8.59985 5.07359 9.22665 5.70039 9.99985 5.70039Z" fill="#FFD731"/>
+												<path d="M9.99981 13.3123C10.7261 13.3123 11.3148 12.601 11.3148 11.7235C11.3148 10.8461 10.7261 10.1348 9.99981 10.1348C9.27356 10.1348 8.68481 10.8461 8.68481 11.7235C8.68481 12.601 9.27356 13.3123 9.99981 13.3123Z" fill="#FF7F0E"/>
+												<path d="M11.3125 11.7242C11.3125 12.5992 10.725 13.3117 10 13.3117C9.85005 13.3117 9.71255 13.2805 9.5813 13.2305C10.1 13.018 10.475 12.4242 10.475 11.7242C10.475 11.0242 10.1 10.4305 9.5813 10.218C9.71255 10.168 9.85005 10.1367 10 10.1367C10.725 10.1367 11.3125 10.8492 11.3125 11.7242Z" fill="#FF7F0E"/>
+												<path d="M5.25379 11.6526L4.76379 9.88074C4.75477 9.84704 4.73912 9.81547 4.71776 9.78788C4.69639 9.7603 4.66975 9.73724 4.63937 9.72008C4.60899 9.70291 4.5755 9.69197 4.54084 9.6879C4.50619 9.68383 4.47107 9.68671 4.43754 9.69637C4.40396 9.70562 4.37253 9.7214 4.34505 9.74281C4.31757 9.76422 4.29458 9.79084 4.2774 9.82114C4.26022 9.85144 4.24918 9.88483 4.24491 9.9194C4.24065 9.95398 4.24324 9.98905 4.25254 10.0226L4.74254 11.7945C4.76151 11.8623 4.80655 11.9198 4.8678 11.9545C4.92906 11.9891 5.00154 11.9981 5.06942 11.9795C5.13718 11.9605 5.19465 11.9155 5.22921 11.8542C5.26378 11.7929 5.27262 11.7204 5.25379 11.6526ZM5.55942 12.757C5.5504 12.7232 5.53473 12.6916 5.51333 12.6639C5.49194 12.6362 5.46524 12.6131 5.43481 12.5959C5.40437 12.5787 5.37081 12.5677 5.33608 12.5636C5.30135 12.5595 5.26615 12.5623 5.23254 12.572C5.19896 12.5812 5.16753 12.597 5.14005 12.6184C5.11257 12.6398 5.08958 12.6665 5.0724 12.6968C5.05522 12.7271 5.04418 12.7605 5.03991 12.795C5.03565 12.8296 5.03824 12.8647 5.04754 12.8982L5.09317 13.0639C5.11583 13.1271 5.16155 13.1794 5.22116 13.2104C5.28078 13.2413 5.34988 13.2486 5.41463 13.2307C5.47937 13.2128 5.53497 13.1711 5.57029 13.114C5.6056 13.0569 5.61801 12.9885 5.60504 12.9226L5.55942 12.757ZM8.72254 9.20449C8.7532 9.22125 8.78687 9.23176 8.82162 9.23542C8.85636 9.23908 8.89149 9.23582 8.92496 9.22582C8.95844 9.21582 8.9896 9.19929 9.01665 9.17718C9.04369 9.15507 9.06609 9.12781 9.08254 9.09699L9.50567 8.31574C9.53915 8.25375 9.54664 8.18099 9.52648 8.11348C9.50632 8.04597 9.46016 7.98923 9.39817 7.95574C9.33617 7.92226 9.26342 7.91478 9.1959 7.93494C9.12839 7.9551 9.07165 8.00125 9.03817 8.06324L8.61567 8.84449C8.58229 8.90644 8.5748 8.97909 8.59483 9.04655C8.61485 9.114 8.66077 9.17079 8.72254 9.20449Z" fill="#FFE576"/>
+												<path d="M17.3499 5.90539C16.9083 5.90589 16.4849 6.08153 16.1727 6.39379C15.8604 6.70605 15.6848 7.12942 15.6843 7.57102C15.6843 7.77477 15.7261 7.96789 15.7936 8.14852L13.588 9.39977C13.5291 9.43314 13.464 9.4544 13.3967 9.46231C13.3295 9.47021 13.2613 9.4646 13.1962 9.44579C13.1311 9.42699 13.0704 9.39537 13.0177 9.3528C12.965 9.31023 12.9213 9.25757 12.8893 9.19789L10.9661 5.65164C11.1818 5.4983 11.3577 5.29569 11.4792 5.06066C11.6007 4.82563 11.6644 4.56498 11.6649 4.30039C11.6649 3.38164 10.918 2.63477 9.99927 2.63477C9.08052 2.63477 8.33364 3.38164 8.33364 4.30039C8.33364 4.85789 8.61114 5.34914 9.03239 5.65164L7.10927 9.19789C7.07732 9.25752 7.03376 9.31017 6.98117 9.35272C6.92858 9.39528 6.86801 9.42689 6.80303 9.4457C6.73804 9.46451 6.66995 9.47013 6.60276 9.46224C6.53557 9.45436 6.47063 9.43311 6.41177 9.39977L4.20552 8.14852C4.27638 7.96415 4.31343 7.76852 4.31489 7.57102C4.31489 6.65227 3.56802 5.90539 2.64927 5.90539C1.73052 5.90539 0.983643 6.65227 0.983643 7.57102C0.983643 8.48977 1.73052 9.23664 2.64927 9.23664C2.71177 9.23664 2.77114 9.22477 2.83177 9.21852L4.14989 13.9816C3.79647 13.9895 3.46018 14.1355 3.21309 14.3883C2.966 14.6411 2.82777 14.9806 2.82802 15.3341C2.82802 15.9579 3.26239 16.5135 3.86052 16.6541C7.89816 17.6018 12.1004 17.6018 16.138 16.6541C16.7368 16.5129 17.1705 15.9579 17.1705 15.3341C17.1712 14.9805 17.0332 14.6407 16.786 14.3877C16.5388 14.1348 16.2022 13.989 15.8486 13.9816L17.1668 9.21914C17.2274 9.22602 17.2868 9.23727 17.3493 9.23727C18.268 9.23727 19.0149 8.49039 19.0149 7.57164C19.0149 6.65289 18.268 5.90539 17.3499 5.90539ZM9.99989 3.16602C10.6255 3.16602 11.1343 3.67477 11.1343 4.30039C11.1343 4.92602 10.6255 5.43539 9.99989 5.43539C9.37427 5.43539 8.86552 4.92664 8.86552 4.30102C8.86552 3.67539 9.37427 3.16602 9.99989 3.16602ZM1.51552 7.57102C1.51552 6.94539 2.02427 6.43664 2.64989 6.43664C3.27489 6.43664 3.78427 6.94539 3.78427 7.57102C3.78427 8.19664 3.27552 8.70602 2.64989 8.70602C2.02427 8.70602 1.51552 8.19664 1.51552 7.57102ZM16.6405 15.3341C16.6411 15.5183 16.5801 15.6973 16.4671 15.8427C16.3542 15.9881 16.1959 16.0916 16.0174 16.1366C12.0592 17.061 7.94123 17.061 3.98302 16.1366C3.8045 16.0916 3.64618 15.9881 3.53326 15.8427C3.42035 15.6973 3.35932 15.5183 3.35989 15.3341C3.35989 15.0835 3.47239 14.8491 3.66739 14.691C3.75986 14.6157 3.86808 14.5621 3.98404 14.5342C4.10001 14.5062 4.22077 14.5047 4.33739 14.5298C8.06994 15.3304 11.9298 15.3304 15.6624 14.5298C15.8974 14.4804 16.143 14.5379 16.3324 14.691C16.528 14.8491 16.6405 15.0835 16.6405 15.3341ZM15.2755 14.0623C11.794 14.7691 8.20583 14.7691 4.72427 14.0623L3.34552 9.07977C3.57989 8.97102 3.78177 8.80852 3.94239 8.60914L6.14989 9.86227C6.2699 9.93077 6.40248 9.97437 6.53972 9.99048C6.67696 10.0066 6.81604 9.99487 6.94864 9.95602C7.08188 9.91832 7.20617 9.85418 7.31408 9.76742C7.422 9.68066 7.51134 9.57305 7.57677 9.45102L9.51052 5.88477C9.66677 5.93289 9.82864 5.96664 9.99989 5.96664C10.1711 5.96664 10.333 5.93289 10.4886 5.88477L12.4224 9.45102C12.5561 9.69852 12.7793 9.87789 13.0505 9.95602C13.1831 9.99513 13.3223 10.0069 13.4596 9.99072C13.5969 9.9745 13.7294 9.93058 13.8493 9.86164L16.0568 8.60852C16.2174 8.80789 16.4193 8.97102 16.6536 9.07914L15.2755 14.0623ZM17.3499 8.70602C16.7249 8.70602 16.2155 8.19727 16.2155 7.57164C16.2155 6.94602 16.7243 6.43727 17.3499 6.43727C17.9755 6.43727 18.4843 6.94602 18.4843 7.57164C18.4843 8.19727 17.9755 8.70602 17.3499 8.70602Z" fill="#020617"/>
+												<path d="M9.99981 9.86914C9.12794 9.86914 8.41919 10.701 8.41919 11.7235C8.41919 12.746 9.12794 13.5779 9.99981 13.5779C10.8717 13.5779 11.5804 12.746 11.5804 11.7235C11.5804 10.701 10.8717 9.86914 9.99981 9.86914ZM9.99981 13.0466C9.42106 13.0466 8.95044 12.4529 8.95044 11.7235C8.95044 10.9941 9.42106 10.4004 9.99981 10.4004C10.5786 10.4004 11.0492 10.9941 11.0492 11.7235C11.0492 12.4529 10.5786 13.0466 9.99981 13.0466Z" fill="#020617"/>
+											</svg>
+											<span class="tw-text-text-grey-500 tw-text-xs tw-italic tw-leading-4 tw-w-full tw-font-medium">Unlock a variety of professionally designed layouts to enhance the presentation of your product categories.<a href="#" class="tw-text-accent-orange-500 tw-text-xs tw-leading-4 tw-font-semibold">Upgrade To Pro!</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="wcss-settings-row">
+								<div class="tw-w-1/3">
+									<h3 class="wccs-settings-title">Choose Layout Options</h3>
+									<p class="wccs-settings-description">Select the template that best fits your store's aesthetic and presentation preferences.</p>
+								</div>
+								<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-bg-input-grey-50 tw-p-3 tw-rounded-md">
+									<div class="tw-max-w-[385px] tw-grid tw-grid-cols-4 tw-gap-y-3 tw-bg-input-grey-50 tw-overflow-auto tw-max-auto tw-max-h-72">
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-active-before-content">
+												<svg class="wccs-layout-active" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div>
+												<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+										<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+											<div class="wccs-layout-pro-before-content">
+												<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+													<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
+													<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+												</svg>
+											</div>
+											<span>Basic</span>
+										</div>
+									</div>
+									<div class="tw-max-w-[385px] ">
+										<div class="tw-mt-3 tw-flex tw-flex-row tw-items-center tw-gap-1 tw-w-full">
+											<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M15.1337 15.5891L17.3499 7.57164L13.7187 9.62914C13.6292 9.67993 13.5304 9.71235 13.4283 9.72449C13.3261 9.73663 13.2225 9.72825 13.1236 9.69984C13.0247 9.67144 12.9325 9.62357 12.8523 9.55906C12.7722 9.49454 12.7057 9.41468 12.6568 9.32414L9.9999 4.41602L7.34303 9.32352C7.29394 9.41387 7.22737 9.49355 7.14719 9.55792C7.067 9.62229 6.97481 9.67006 6.87598 9.69845C6.77715 9.72683 6.67366 9.73527 6.57154 9.72326C6.46942 9.71126 6.3707 9.67905 6.28115 9.62852L2.6499 7.57102L4.86615 15.5891H15.1337Z" fill="#FFD731"/>
+												<path d="M17.35 7.56836L15.1312 15.5871H12.6375C13.2106 14.6374 13.5723 13.5754 13.6981 12.4734C13.8018 11.5489 13.7368 10.6133 13.5062 9.71211C13.5812 9.69961 13.65 9.66836 13.7187 9.63086L17.35 7.56836Z" fill="#FFC933"/>
+												<path d="M16.9055 15.334C16.9067 15.5781 16.8256 15.8156 16.6754 16.0081C16.5252 16.2006 16.3145 16.337 16.0774 16.3952C14.0568 16.8702 12.0249 17.0983 9.99988 17.0983C7.97487 17.0983 5.94238 16.8702 3.92238 16.3952C3.68524 16.337 3.4746 16.2006 3.32438 16.0081C3.17416 15.8156 3.0931 15.5781 3.09425 15.334C3.09425 14.6483 3.72363 14.1258 4.39363 14.2702C6.25863 14.6727 8.13238 14.8671 9.99988 14.8671C11.8674 14.8671 13.7411 14.6733 15.6061 14.2702C16.2761 14.1258 16.9055 14.6483 16.9055 15.334Z" fill="#FFD731"/>
+												<path d="M16.906 15.3367C16.906 15.8367 16.5623 16.2805 16.0748 16.393C15.4248 16.543 14.7748 16.6742 14.1248 16.7742C14.4498 16.5492 14.6498 16.1742 14.6498 15.768C14.6498 15.1992 14.2623 14.7305 13.7498 14.5992C14.3685 14.5117 14.9873 14.4055 15.606 14.268C16.2748 14.1242 16.906 14.6492 16.906 15.3367Z" fill="#FFC933"/>
+												<path d="M2.64976 8.97188C3.42295 8.97188 4.04976 8.34507 4.04976 7.57188C4.04976 6.79868 3.42295 6.17188 2.64976 6.17188C1.87656 6.17188 1.24976 6.79868 1.24976 7.57188C1.24976 8.34507 1.87656 8.97188 2.64976 8.97188Z" fill="#FFD731"/>
+												<path d="M17.35 8.97188C18.1231 8.97188 18.75 8.34507 18.75 7.57188C18.75 6.79868 18.1231 6.17188 17.35 6.17188C16.5768 6.17188 15.95 6.79868 15.95 7.57188C15.95 8.34507 16.5768 8.97188 17.35 8.97188Z" fill="#FFC933"/>
+												<path d="M9.99985 5.70039C10.7731 5.70039 11.3999 5.07359 11.3999 4.30039C11.3999 3.52719 10.7731 2.90039 9.99985 2.90039C9.22665 2.90039 8.59985 3.52719 8.59985 4.30039C8.59985 5.07359 9.22665 5.70039 9.99985 5.70039Z" fill="#FFD731"/>
+												<path d="M9.99981 13.3123C10.7261 13.3123 11.3148 12.601 11.3148 11.7235C11.3148 10.8461 10.7261 10.1348 9.99981 10.1348C9.27356 10.1348 8.68481 10.8461 8.68481 11.7235C8.68481 12.601 9.27356 13.3123 9.99981 13.3123Z" fill="#FF7F0E"/>
+												<path d="M11.3125 11.7242C11.3125 12.5992 10.725 13.3117 10 13.3117C9.85005 13.3117 9.71255 13.2805 9.5813 13.2305C10.1 13.018 10.475 12.4242 10.475 11.7242C10.475 11.0242 10.1 10.4305 9.5813 10.218C9.71255 10.168 9.85005 10.1367 10 10.1367C10.725 10.1367 11.3125 10.8492 11.3125 11.7242Z" fill="#FF7F0E"/>
+												<path d="M5.25379 11.6526L4.76379 9.88074C4.75477 9.84704 4.73912 9.81547 4.71776 9.78788C4.69639 9.7603 4.66975 9.73724 4.63937 9.72008C4.60899 9.70291 4.5755 9.69197 4.54084 9.6879C4.50619 9.68383 4.47107 9.68671 4.43754 9.69637C4.40396 9.70562 4.37253 9.7214 4.34505 9.74281C4.31757 9.76422 4.29458 9.79084 4.2774 9.82114C4.26022 9.85144 4.24918 9.88483 4.24491 9.9194C4.24065 9.95398 4.24324 9.98905 4.25254 10.0226L4.74254 11.7945C4.76151 11.8623 4.80655 11.9198 4.8678 11.9545C4.92906 11.9891 5.00154 11.9981 5.06942 11.9795C5.13718 11.9605 5.19465 11.9155 5.22921 11.8542C5.26378 11.7929 5.27262 11.7204 5.25379 11.6526ZM5.55942 12.757C5.5504 12.7232 5.53473 12.6916 5.51333 12.6639C5.49194 12.6362 5.46524 12.6131 5.43481 12.5959C5.40437 12.5787 5.37081 12.5677 5.33608 12.5636C5.30135 12.5595 5.26615 12.5623 5.23254 12.572C5.19896 12.5812 5.16753 12.597 5.14005 12.6184C5.11257 12.6398 5.08958 12.6665 5.0724 12.6968C5.05522 12.7271 5.04418 12.7605 5.03991 12.795C5.03565 12.8296 5.03824 12.8647 5.04754 12.8982L5.09317 13.0639C5.11583 13.1271 5.16155 13.1794 5.22116 13.2104C5.28078 13.2413 5.34988 13.2486 5.41463 13.2307C5.47937 13.2128 5.53497 13.1711 5.57029 13.114C5.6056 13.0569 5.61801 12.9885 5.60504 12.9226L5.55942 12.757ZM8.72254 9.20449C8.7532 9.22125 8.78687 9.23176 8.82162 9.23542C8.85636 9.23908 8.89149 9.23582 8.92496 9.22582C8.95844 9.21582 8.9896 9.19929 9.01665 9.17718C9.04369 9.15507 9.06609 9.12781 9.08254 9.09699L9.50567 8.31574C9.53915 8.25375 9.54664 8.18099 9.52648 8.11348C9.50632 8.04597 9.46016 7.98923 9.39817 7.95574C9.33617 7.92226 9.26342 7.91478 9.1959 7.93494C9.12839 7.9551 9.07165 8.00125 9.03817 8.06324L8.61567 8.84449C8.58229 8.90644 8.5748 8.97909 8.59483 9.04655C8.61485 9.114 8.66077 9.17079 8.72254 9.20449Z" fill="#FFE576"/>
+												<path d="M17.3499 5.90539C16.9083 5.90589 16.4849 6.08153 16.1727 6.39379C15.8604 6.70605 15.6848 7.12942 15.6843 7.57102C15.6843 7.77477 15.7261 7.96789 15.7936 8.14852L13.588 9.39977C13.5291 9.43314 13.464 9.4544 13.3967 9.46231C13.3295 9.47021 13.2613 9.4646 13.1962 9.44579C13.1311 9.42699 13.0704 9.39537 13.0177 9.3528C12.965 9.31023 12.9213 9.25757 12.8893 9.19789L10.9661 5.65164C11.1818 5.4983 11.3577 5.29569 11.4792 5.06066C11.6007 4.82563 11.6644 4.56498 11.6649 4.30039C11.6649 3.38164 10.918 2.63477 9.99927 2.63477C9.08052 2.63477 8.33364 3.38164 8.33364 4.30039C8.33364 4.85789 8.61114 5.34914 9.03239 5.65164L7.10927 9.19789C7.07732 9.25752 7.03376 9.31017 6.98117 9.35272C6.92858 9.39528 6.86801 9.42689 6.80303 9.4457C6.73804 9.46451 6.66995 9.47013 6.60276 9.46224C6.53557 9.45436 6.47063 9.43311 6.41177 9.39977L4.20552 8.14852C4.27638 7.96415 4.31343 7.76852 4.31489 7.57102C4.31489 6.65227 3.56802 5.90539 2.64927 5.90539C1.73052 5.90539 0.983643 6.65227 0.983643 7.57102C0.983643 8.48977 1.73052 9.23664 2.64927 9.23664C2.71177 9.23664 2.77114 9.22477 2.83177 9.21852L4.14989 13.9816C3.79647 13.9895 3.46018 14.1355 3.21309 14.3883C2.966 14.6411 2.82777 14.9806 2.82802 15.3341C2.82802 15.9579 3.26239 16.5135 3.86052 16.6541C7.89816 17.6018 12.1004 17.6018 16.138 16.6541C16.7368 16.5129 17.1705 15.9579 17.1705 15.3341C17.1712 14.9805 17.0332 14.6407 16.786 14.3877C16.5388 14.1348 16.2022 13.989 15.8486 13.9816L17.1668 9.21914C17.2274 9.22602 17.2868 9.23727 17.3493 9.23727C18.268 9.23727 19.0149 8.49039 19.0149 7.57164C19.0149 6.65289 18.268 5.90539 17.3499 5.90539ZM9.99989 3.16602C10.6255 3.16602 11.1343 3.67477 11.1343 4.30039C11.1343 4.92602 10.6255 5.43539 9.99989 5.43539C9.37427 5.43539 8.86552 4.92664 8.86552 4.30102C8.86552 3.67539 9.37427 3.16602 9.99989 3.16602ZM1.51552 7.57102C1.51552 6.94539 2.02427 6.43664 2.64989 6.43664C3.27489 6.43664 3.78427 6.94539 3.78427 7.57102C3.78427 8.19664 3.27552 8.70602 2.64989 8.70602C2.02427 8.70602 1.51552 8.19664 1.51552 7.57102ZM16.6405 15.3341C16.6411 15.5183 16.5801 15.6973 16.4671 15.8427C16.3542 15.9881 16.1959 16.0916 16.0174 16.1366C12.0592 17.061 7.94123 17.061 3.98302 16.1366C3.8045 16.0916 3.64618 15.9881 3.53326 15.8427C3.42035 15.6973 3.35932 15.5183 3.35989 15.3341C3.35989 15.0835 3.47239 14.8491 3.66739 14.691C3.75986 14.6157 3.86808 14.5621 3.98404 14.5342C4.10001 14.5062 4.22077 14.5047 4.33739 14.5298C8.06994 15.3304 11.9298 15.3304 15.6624 14.5298C15.8974 14.4804 16.143 14.5379 16.3324 14.691C16.528 14.8491 16.6405 15.0835 16.6405 15.3341ZM15.2755 14.0623C11.794 14.7691 8.20583 14.7691 4.72427 14.0623L3.34552 9.07977C3.57989 8.97102 3.78177 8.80852 3.94239 8.60914L6.14989 9.86227C6.2699 9.93077 6.40248 9.97437 6.53972 9.99048C6.67696 10.0066 6.81604 9.99487 6.94864 9.95602C7.08188 9.91832 7.20617 9.85418 7.31408 9.76742C7.422 9.68066 7.51134 9.57305 7.57677 9.45102L9.51052 5.88477C9.66677 5.93289 9.82864 5.96664 9.99989 5.96664C10.1711 5.96664 10.333 5.93289 10.4886 5.88477L12.4224 9.45102C12.5561 9.69852 12.7793 9.87789 13.0505 9.95602C13.1831 9.99513 13.3223 10.0069 13.4596 9.99072C13.5969 9.9745 13.7294 9.93058 13.8493 9.86164L16.0568 8.60852C16.2174 8.80789 16.4193 8.97102 16.6536 9.07914L15.2755 14.0623ZM17.3499 8.70602C16.7249 8.70602 16.2155 8.19727 16.2155 7.57164C16.2155 6.94602 16.7243 6.43727 17.3499 6.43727C17.9755 6.43727 18.4843 6.94602 18.4843 7.57164C18.4843 8.19727 17.9755 8.70602 17.3499 8.70602Z" fill="#020617"/>
+												<path d="M9.99981 9.86914C9.12794 9.86914 8.41919 10.701 8.41919 11.7235C8.41919 12.746 9.12794 13.5779 9.99981 13.5779C10.8717 13.5779 11.5804 12.746 11.5804 11.7235C11.5804 10.701 10.8717 9.86914 9.99981 9.86914ZM9.99981 13.0466C9.42106 13.0466 8.95044 12.4529 8.95044 11.7235C8.95044 10.9941 9.42106 10.4004 9.99981 10.4004C10.5786 10.4004 11.0492 10.9941 11.0492 11.7235C11.0492 12.4529 10.5786 13.0466 9.99981 13.0466Z" fill="#020617"/>
+											</svg>
+											<span class="tw-text-text-grey-500 tw-text-xs tw-italic tw-leading-4 tw-w-full tw-font-medium">Unlock a variety of professionally designed layouts to enhance the presentation of your product categories.<a href="#" class="tw-text-accent-orange-500 tw-text-xs tw-leading-4 tw-font-semibold">Upgrade To Pro!</a></span>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="wcss-settings-row wcss-settings-row-border">
 								<div class="tw-w-1/3">
 									<h3 class="wccs-settings-title">Column Breakpoints</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
+									<p class="wccs-settings-description">Configure how many columns your category showcase should display based on the user's device screen size.</p>
 								</div>
-								<div class="flex gap-2">
-									<div class="">
-										<label for="1x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="1x_column_layout"
-												   name="wccs_showcase_column_layout" value="1x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">1x</span>
-										</label>
+								<div class="tw-flex tw-flex-col">
+									<div class="tw-flex tw-w-60 tw-h-9 !tw-bg-input-grey-50 !tw-border-divider-grey-100">
+										<span class="tw-flex tw-gap-2 tw-w-36 tw-items-center tw-px-3 tw-text-gray-900 tw-bg-gray-200 tw-border tw-rounded-e-0 tw-border-gray-300 tw-border-e-0 tw-rounded-s-md dark:tw-bg-gray-600 dark:tw-text-gray-400 dark:tw-border-gray-600">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="">
+												<path d="M18.5 2H1.5C1.36739 2 1.24021 2.05268 1.14645 2.14645C1.05268 2.24021 1 2.36739 1 2.5V14.5C1 14.6326 1.05268 14.7598 1.14645 14.8536C1.24021 14.9473 1.36739 15 1.5 15H8V16.5C8 16.6326 7.94732 16.7598 7.85355 16.8536C7.75979 16.9473 7.63261 17 7.5 17H6.5C6.36739 17 6.24021 17.0527 6.14645 17.1464C6.05268 17.2402 6 17.3674 6 17.5V18.5C6 18.6326 6.05268 18.7598 6.14645 18.8536C6.24021 18.9473 6.36739 19 6.5 19H13.5C13.6326 19 13.7598 18.9473 13.8536 18.8536C13.9473 18.7598 14 18.6326 14 18.5V17.5C14 17.3674 13.9473 17.2402 13.8536 17.1464C13.7598 17.0527 13.6326 17 13.5 17H12.5C12.3674 17 12.2402 16.9473 12.1464 16.8536C12.0527 16.7598 12 16.6326 12 16.5V15H18.5C18.6326 15 18.7598 14.9473 18.8536 14.8536C18.9473 14.7598 19 14.6326 19 14.5V2.5C19 2.36739 18.9473 2.24021 18.8536 2.14645C18.7598 2.05268 18.6326 2 18.5 2ZM17 13H3V4H17V13Z" fill="#2270B1"/>
+											</svg>
+											<span class="tw-text-sm tw-text-text-grey-500">Desktop (1400px)</span>
+										</span>
+										<input type="number" id="website-admin" class="tw-rounded-none tw-rounded-e-lg tw-bg-gray-50 tw-border tw-text-gray-900 focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-flex-1 tw-min-w-0 tw-w-full tw-text-sm tw-border-gray-300 tw-p-2.5  dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500" min="0">
 									</div>
-									<div class="">
-										<label for="2x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="2x_column_layout"
-												   name="wccs_showcase_column_layout" value="2x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">2x</span>
-										</label>
+									<div class="tw-flex gap-3 tw-w-60 tw-h-9 !tw-bg-input-grey-50 !tw-border-divider-grey-100 tw-mt-2">
+										<span class="tw-w-36 tw-flex tw-gap-2 tw-items-center tw-px-3 tw-text-gray-900 tw-bg-gray-200 tw-border tw-rounded-e-0 tw-border-gray-300 tw-border-e-0 tw-rounded-s-md dark:tw-bg-gray-600 dark:tw-text-gray-400 dark:tw-border-gray-600">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M18.974 16.342L17 11V3.5C17 3.36739 16.9473 3.24021 16.8536 3.14645C16.7598 3.05268 16.6326 3 16.5 3H3.5C3.36739 3 3.24021 3.05268 3.14645 3.14645C3.05268 3.24021 3 3.36739 3 3.5V11L1.026 16.342C1.00899 16.393 1.00022 16.4463 1 16.5C1 16.6326 1.05268 16.7598 1.14645 16.8536C1.24021 16.9473 1.36739 17 1.5 17H18.5C18.6326 17 18.7598 16.9473 18.8536 16.8536C18.9473 16.7598 19 16.6326 19 16.5C18.9998 16.4463 18.991 16.393 18.974 16.342ZM7 16L7.6665 14H12.3335L13 16H7ZM16 11H4V4H16V11Z" fill="#2270B1"/>
+											</svg>
+											<span class="tw-text-sm tw-text-text-grey-500">Laptop (1200px)</span>
+										</span>
+										<input type="number" id="website-admin" class="tw-rounded-none tw-rounded-e-lg tw-bg-gray-50 tw-border tw-text-gray-900 focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-flex-1 tw-min-w-0 tw-w-full tw-text-sm tw-border-gray-300 tw-p-2.5  dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500" min="0">
 									</div>
-									<div class="">
-										<label for="3x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="3x_column_layout"
-												   name="wccs_showcase_column_layout" value="3x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">3x</span>
-										</label>
+									<div class="tw-flex tw-w-60 tw-h-9 !tw-bg-input-grey-50 !tw-border-divider-grey-100 tw-mt-2">
+										<span class="tw-w-36 tw-flex tw-gap-2 tw-items-center tw-px-3 tw-text-gray-900 tw-bg-gray-200 tw-border tw-rounded-e-0 tw-border-gray-300 tw-border-e-0 tw-rounded-s-md dark:tw-bg-gray-600 dark:tw-text-gray-400 dark:tw-border-gray-600">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M18 3H2C1.73478 3 1.48043 3.10536 1.29289 3.29289C1.10536 3.48043 1 3.73478 1 4L1 16C1 16.2652 1.10536 16.5196 1.29289 16.7071C1.48043 16.8946 1.73478 17 2 17H18C18.2652 17 18.5196 16.8946 18.7071 16.7071C18.8946 16.5196 19 16.2652 19 16V4C19 3.73478 18.8946 3.48043 18.7071 3.29289C18.5196 3.10536 18.2652 3 18 3ZM16 15H3V5H16V15ZM17.5 11.25C17.2528 11.25 17.0111 11.1767 16.8055 11.0393C16.6 10.902 16.4398 10.7068 16.3452 10.4784C16.2505 10.2499 16.2258 9.99861 16.274 9.75614C16.3222 9.51366 16.4413 9.29093 16.6161 9.11612C16.7909 8.9413 17.0137 8.82225 17.2561 8.77402C17.4986 8.72579 17.7499 8.75054 17.9784 8.84515C18.2068 8.93976 18.402 9.09998 18.5393 9.30554C18.6767 9.5111 18.75 9.75277 18.75 10C18.75 10.1642 18.7177 10.3267 18.6549 10.4784C18.592 10.63 18.5 10.7678 18.3839 10.8839C18.2678 11 18.13 11.092 17.9784 11.1548C17.8267 11.2177 17.6642 11.25 17.5 11.25Z" fill="#2270B1"/>
+											</svg>
+											<span class="tw-text-sm tw-text-text-grey-500">Tablet (768px)</span>
+										</span>
+										<input type="number" id="website-admin" class="tw-rounded-none tw-rounded-e-lg tw-bg-gray-50 tw-border tw-text-gray-900 focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-flex-1 tw-min-w-0 tw-w-full tw-text-sm tw-border-gray-300 tw-p-2.5  dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500" min="0">
 									</div>
-									<div class="">
-										<label for="4x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="4x_column_layout"
-												   name="wccs_showcase_column_layout" value="4x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">4x</span>
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="wcss-settings-row">
-								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Filter Categories</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
-								</div>
-								<div class="flex gap-2">
-									<div class="">
-										<label for="1x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="1x_column_layout"
-												   name="wccs_showcase_column_layout" value="1x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">1x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="2x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="2x_column_layout"
-												   name="wccs_showcase_column_layout" value="2x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">2x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="3x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="3x_column_layout"
-												   name="wccs_showcase_column_layout" value="3x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">3x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="4x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="4x_column_layout"
-												   name="wccs_showcase_column_layout" value="4x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">4x</span>
-										</label>
+									<div class="tw-flex tw-w-60 tw-h-9 !tw-bg-input-grey-50 !tw-border-divider-grey-100 tw-mt-2">
+										<span class="tw-w-36 tw-flex tw-gap-2 tw-items-center tw-px-3 tw-text-gray-900 tw-bg-gray-200 tw-border tw-rounded-e-0 tw-border-gray-300 tw-border-e-0 tw-rounded-s-md dark:tw-bg-gray-600 dark:tw-text-gray-400 dark:tw-border-gray-600">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M14 1H6C5.73478 1 5.48043 1.10536 5.29289 1.29289C5.10536 1.48043 5 1.73478 5 2V18C5 18.2652 5.10536 18.5196 5.29289 18.7071C5.48043 18.8946 5.73478 19 6 19H14C14.2652 19 14.5196 18.8946 14.7071 18.7071C14.8946 18.5196 15 18.2652 15 18V2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1V1ZM9.5 2H10.5C10.631 2.00506 10.7552 2.05937 10.8479 2.15206C10.9406 2.24476 10.9949 2.36901 11 2.5C10.9951 2.63103 10.9408 2.75535 10.8481 2.84807C10.7553 2.94078 10.631 2.99505 10.5 3H9.5C9.36831 2.99707 9.24283 2.94345 9.14969 2.85031C9.05655 2.75717 9.00293 2.63169 9 2.5C9.00305 2.36835 9.05671 2.24294 9.14982 2.14982C9.24294 2.05671 9.36835 2.00305 9.5 2ZM10 18.55C9.79233 18.55 9.58932 18.4884 9.41665 18.373C9.24398 18.2577 9.1094 18.0937 9.02993 17.9018C8.95045 17.71 8.92966 17.4988 8.97018 17.2952C9.01069 17.0915 9.11069 16.9044 9.25754 16.7575C9.40438 16.6107 9.59148 16.5107 9.79516 16.4702C9.99884 16.4297 10.21 16.4505 10.4018 16.5299C10.5937 16.6094 10.7577 16.744 10.873 16.9167C10.9884 17.0893 11.05 17.2923 11.05 17.5C11.05 17.6379 11.0228 17.7744 10.9701 17.9018C10.9173 18.0292 10.84 18.145 10.7425 18.2425C10.645 18.34 10.5292 18.4173 10.4018 18.4701C10.2744 18.5228 10.1379 18.55 10 18.55ZM14 16H6V4H14V16Z" fill="#2270B1"/>
+											</svg>
+											<span class="tw-text-sm tw-text-text-grey-500">Mobile (576px)</span>
+										</span>
+										<input type="number" id="website-admin" class="tw-rounded-none tw-rounded-e-lg tw-bg-gray-50 tw-border tw-text-gray-900 focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-flex-1 tw-min-w-0 tw-w-full tw-text-sm tw-border-gray-300 tw-p-2.5  dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400 dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500" min="0">
 									</div>
 								</div>
 							</div>
 							<div class="wcss-settings-row">
 								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Select Categories</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
+									<h3 class="wccs-settings-title">Category Filter</h3>
+									<p class="wccs-settings-description">Decide whether to display all product categories or selectively choose specific ones to showcase.</p>
 								</div>
-								<div class="flex gap-2">
-									<div class="">
-										<label for="1x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="1x_column_layout"
-												   name="wccs_showcase_column_layout" value="1x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">1x</span>
+								<div class="tw-flex tw-items-center">
+									<span class="tw-isolate tw-inline-flex tw-p-2 tw-rounded-md tw-bg-gray-300 tw-shadow-sm">
+										<label class="tw-relative tw-inline-flex tw-gap-1 tw-items-center tw-rounded-l-md tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
+											<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+												<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z" fill="#2270B1"/>
+											</svg>
+											All
 										</label>
-									</div>
-									<div class="">
-										<label for="2x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="2x_column_layout"
-												   name="wccs_showcase_column_layout" value="2x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">2x</span>
+										<label class="tw-relative tw--ml-px tw-inline-flex tw-gap-1 tw-items-center tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-semibold tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-hover:bg-gray-50 tw-focus:z-10">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+												<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z" fill="#64748B"/>
+												<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z" fill="#64748B"/>
+												<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z" fill="#64748B"/>
+												<path d="M7.77778 18.7223C8.42211 18.7223 8.94445 18.1999 8.94445 17.5556C8.94445 16.9113 8.42211 16.3889 7.77778 16.3889C7.13345 16.3889 6.61111 16.9113 6.61111 17.5556C6.61111 18.1999 7.13345 18.7223 7.77778 18.7223Z" fill="#64748B"/>
+												<path d="M11.1111 18.3334C11.5407 18.3334 11.8889 17.9851 11.8889 17.5556C11.8889 17.126 11.5407 16.7778 11.1111 16.7778C10.6816 16.7778 10.3333 17.126 10.3333 17.5556C10.3333 17.9851 10.6816 18.3334 11.1111 18.3334Z" fill="#64748B"/>
+												<path d="M14.4444 18.3334C14.874 18.3334 15.2222 17.9851 15.2222 17.5556C15.2222 17.126 14.874 16.7778 14.4444 16.7778C14.0149 16.7778 13.6667 17.126 13.6667 17.5556C13.6667 17.9851 14.0149 18.3334 14.4444 18.3334Z" fill="#64748B"/>
+											</svg>
+											Specific
 										</label>
-									</div>
-									<div class="">
-										<label for="3x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="3x_column_layout"
-												   name="wccs_showcase_column_layout" value="3x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">3x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="4x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="4x_column_layout"
-												   name="wccs_showcase_column_layout" value="4x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">4x</span>
-										</label>
-									</div>
+									</span>
 								</div>
 							</div>
 							<div class="wcss-settings-row">
 								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Include Child</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
+									<h3 class="wccs-settings-title">Category Selection</h3>
+									<p class="wccs-settings-description">If selecting specific categories, use multi-select mode to easily pick the ones you want to showcase.</p>
 								</div>
-								<div class="flex">
-									<label class="inline-flex items-center cursor-pointer">
-										<input type="checkbox" value="" class="sr-only peer"
-											   name="wccs_showcase_is_slider">
-										<div
-											class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+								<div class="tw-flex tw-items-center">
+									<select name="" id="" class="tw-w-60 !tw-bg-input-grey-50 !tw-border-divider-grey-100">
+										<option value="">T-Shirt</option>
+									</select>
+								</div>
+							</div>
+							<div class="wcss-settings-row">
+								<div class="tw-w-1/3">
+									<h3 class="wccs-settings-title">Sort By</h3>
+									<p class="wccs-settings-description">Specify the criteria by which you want your categories to be ordered within the showcase display.</p>
+								</div>
+								<div class="tw-flex tw-items-center">
+									<select id="select_graphtype" class="tw-w-60 !tw-bg-input-grey-50 !tw-border-divider-grey-100">
+										<option value="default">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+												<path d="M5.77049 0.524336H0.52459C0.234867 0.524336 0 0.759203 0 1.04893V2.09811C0 2.38783 0.234867 2.6227 0.52459 2.6227H5.77049C6.06021 2.6227 6.29508 2.38783 6.29508 2.09811V1.04893C6.29508 0.759203 6.06021 0.524336 5.77049 0.524336Z" fill="#2270B1"/>
+												<path d="M7.86885 4.72105H0.52459C0.234867 4.72105 0 4.95592 0 5.24564V6.29482C0 6.58455 0.234867 6.81941 0.52459 6.81941H7.86885C8.15857 6.81941 8.39344 6.58455 8.39344 6.29482V5.24564C8.39344 4.95592 8.15857 4.72105 7.86885 4.72105Z" fill="#2270B1"/>
+												<path d="M9.96721 8.91777H0.52459C0.234867 8.91777 0 9.15264 0 9.44236V10.4915C0 10.7813 0.234867 11.0161 0.52459 11.0161H9.96721C10.2569 11.0161 10.4918 10.7813 10.4918 10.4915V9.44236C10.4918 9.15264 10.2569 8.91777 9.96721 8.91777Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+											</svg>
+											Default
+										</option>
+										<option value="name">Name</option>
+										<option value="date">Date</option>
+										<option value="product-count">Product Count</option>
+										<option value="cat-id">Category ID</option>
+									</select>
+								</div>
+							</div>
+							<div class="wcss-settings-row">
+								<div class="tw-w-1/3">
+									<h3 class="wccs-settings-title">Sort Order</h3>
+									<p class="wccs-settings-description">Determine whether your categories should be arranged in ascending or descending order according to the selected criteria.</p>
+								</div>
+								<div class="tw-flex tw-items-center">
+									<select id="select_graphtype" class="tw-w-60 !tw-bg-input-grey-50 !tw-border-divider-grey-100">
+										<option value="asc">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+												<path d="M5.77049 0.524336H0.52459C0.234867 0.524336 0 0.759203 0 1.04893V2.09811C0 2.38783 0.234867 2.6227 0.52459 2.6227H5.77049C6.06021 2.6227 6.29508 2.38783 6.29508 2.09811V1.04893C6.29508 0.759203 6.06021 0.524336 5.77049 0.524336Z" fill="#2270B1"/>
+												<path d="M7.86885 4.72105H0.52459C0.234867 4.72105 0 4.95592 0 5.24564V6.29482C0 6.58455 0.234867 6.81941 0.52459 6.81941H7.86885C8.15857 6.81941 8.39344 6.58455 8.39344 6.29482V5.24564C8.39344 4.95592 8.15857 4.72105 7.86885 4.72105Z" fill="#2270B1"/>
+												<path d="M9.96721 8.91777H0.52459C0.234867 8.91777 0 9.15264 0 9.44236V10.4915C0 10.7813 0.234867 11.0161 0.52459 11.0161H9.96721C10.2569 11.0161 10.4918 10.7813 10.4918 10.4915V9.44236C10.4918 9.15264 10.2569 8.91777 9.96721 8.91777Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+												<path d="M15.7371 8.39344H14.6848V0.52459C14.6856 0.456042 14.6729 0.388011 14.6472 0.324434C14.6216 0.260858 14.5836 0.203001 14.5354 0.154211C14.4873 0.105421 14.4299 0.0666686 14.3667 0.0401983C14.3034 0.0137281 14.2356 6.40368e-05 14.167 0H13.6466C13.5076 0 13.3743 0.0551968 13.2759 0.153463C13.1775 0.25173 13.1222 0.385026 13.1221 0.524065L13.1184 8.39344H12.0661C12.0314 8.39337 11.997 8.40017 11.965 8.41345C11.933 8.42673 11.9039 8.44623 11.8795 8.47082C11.8551 8.4954 11.8357 8.52459 11.8226 8.55669C11.8096 8.58879 11.803 8.62317 11.8032 8.65783C11.8032 8.69203 11.81 8.72589 11.8232 8.75742C11.8365 8.78895 11.8559 8.81752 11.8803 8.84144L13.7358 10.9571C13.7826 10.9953 13.8412 11.0161 13.9016 11.0161C13.962 11.0161 14.0206 10.9953 14.0674 10.9571L15.9228 8.84144C15.9473 8.81752 15.9667 8.78895 15.9799 8.75742C15.9932 8.72589 16 8.69203 16 8.65783C16.0002 8.62317 15.9936 8.58879 15.9805 8.55669C15.9675 8.52459 15.9481 8.4954 15.9237 8.47082C15.8992 8.44623 15.8702 8.42673 15.8382 8.41345C15.8061 8.40017 15.7718 8.39337 15.7371 8.39344Z" fill="#2270B1"/>
+											</svg>
+											Ascending
+										</option>
+										<option value="desc">Descending</option>
+									</select>
+								</div>
+							</div>
+							<div class="wcss-settings-row">
+								<div class="tw-w-1/3">
+									<h3 class="wccs-settings-title">Categories Display Limit</h3>
+									<p class="wccs-settings-description">Set the maximum number of categories to be displayed in your showcase.</p>
+								</div>
+								<div class="tw-flex tw-items-center tw-bg-bg-grey-50">
+									<input type="number" min="0" class="wccs-settings-field" placeholder="Ex: 12">
+								</div>
+							</div>
+							<div class="wcss-settings-row">
+								<div class="tw-w-1/3">
+									<h3 class="wccs-settings-title">Include Sub-categories</h3>
+									<p class="wccs-settings-description">Choose whether to include child categories along with parent categories in your showcase display.</p>
+								</div>
+								<div class="tw-flex tw-items-center">
+									<label class="tw-inline-flex tw-cursor-pointer">
+										<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider">
+										<div class="wccs-toggle"></div>
 									</label>
-								</div>
-							</div>
-							<div class="wcss-settings-row">
-								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Hide Empty Categories</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
-								</div>
-								<div class="flex">
-									<label class="inline-flex items-center cursor-pointer">
-										<input type="checkbox" value="" class="sr-only peer"
-											   name="wccs_showcase_is_slider">
-										<div
-											class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-									</label>
-								</div>
-							</div>
-							<div class="wcss-settings-row">
-								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Order By</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
-								</div>
-								<div class="flex gap-2">
-									<div class="">
-										<label for="1x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="1x_column_layout"
-												   name="wccs_showcase_column_layout" value="1x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">1x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="2x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="2x_column_layout"
-												   name="wccs_showcase_column_layout" value="2x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">2x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="3x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="3x_column_layout"
-												   name="wccs_showcase_column_layout" value="3x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">3x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="4x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="4x_column_layout"
-												   name="wccs_showcase_column_layout" value="4x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">4x</span>
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="wcss-settings-row">
-								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Order</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
-								</div>
-								<div class="flex gap-2">
-									<div class="">
-										<label for="1x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="1x_column_layout"
-												   name="wccs_showcase_column_layout" value="1x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">1x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="2x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="2x_column_layout"
-												   name="wccs_showcase_column_layout" value="2x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">2x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="3x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="3x_column_layout"
-												   name="wccs_showcase_column_layout" value="3x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">3x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="4x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="4x_column_layout"
-												   name="wccs_showcase_column_layout" value="4x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">4x</span>
-										</label>
-									</div>
 								</div>
 							</div>
 							<div class="wcss-settings-row wcss-settings-row-border">
 								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Total Categories to Show</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
+									<h3 class="wccs-settings-title">Hide Empty Categories</h3>
+									<p class="wccs-settings-description">Hide empty categories if categories has no products to show.</p>
 								</div>
-								<div class="flex gap-2">
-									<div class="">
-										<label for="1x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="1x_column_layout"
-												   name="wccs_showcase_column_layout" value="1x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">1x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="2x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="2x_column_layout"
-												   name="wccs_showcase_column_layout" value="2x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">2x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="3x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="3x_column_layout"
-												   name="wccs_showcase_column_layout" value="3x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">3x</span>
-										</label>
-									</div>
-									<div class="">
-										<label for="4x_column_layout"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
-											<input type="radio" id="4x_column_layout"
-												   name="wccs_showcase_column_layout" value="4x" class="hidden"
-												   style="display: none">
-											<span class="h-16 w-16">4x</span>
-										</label>
-									</div>
+								<div class="tw-flex tw-items-center">
+									<label class="tw-inline-flex tw-cursor-pointer">
+										<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider">
+										<div class="wccs-toggle"></div>
+									</label>
 								</div>
 							</div>
 							<div class="wcss-settings-row">
 								<div class="tw-w-1/3">
-									<h3 class="wccs-settings-title">Auto Adjust Slider</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
+									<h3 class="wccs-settings-title">Automatic Column Adjustment</h3>
+									<p class="wccs-settings-description">Enable this feature to allow the plugin to automatically adjust the number of columns based on the available screen space.</p>
 								</div>
-								<div class="flex">
-									<label class="tw-inline-flex tw-items-center tw-cursor-pointer">
+								<div class="tw-flex tw-items-center">
+									<label class="inline-flex tw-cursor-pointer">
 										<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider">
-										<div class="wcss-settings-checkbox">
-
-										</div>
+										<div class="wccs-toggle"></div>
 									</label>
 								</div>
 							</div>
 							<div class="wcss-settings-row">
 								<div class="tw-w-1/3">
 									<h3 class="wccs-settings-title">Pre-loader</h3>
-									<p class="wccs-settings-description">Choose how you want your product categories to be visually presented on your store page.</p>
+									<p class="wccs-settings-description">Slider will be hidden until the page has fully loaded.</p>
 								</div>
-								<div class="tw-flex">
-									<label class="tw-inline-flex tw-items-center tw-cursor-pointer">
-										<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider">
-										<div class="wcss-settings-checkbox">
-
-										</div>
+								<div class="tw-flex tw-items-center">
+									<label class="tw-inline-flex tw-cursor-pointer">
+										<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider" checked>
+										<div class="wccs-toggle"></div>
 									</label>
 								</div>
 							</div>
@@ -541,22 +726,22 @@ defined('ABSPATH') || exit;
 								<div class="flex gap-2">
 									<div class="">
 										<label for="hosting-small"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-small" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 									<div class="">
 										<label for="hosting-big"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-big" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 								</div>
@@ -570,22 +755,22 @@ defined('ABSPATH') || exit;
 								<div class="flex gap-2">
 									<div class="">
 										<label for="hosting-small"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-small" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 									<div class="">
 										<label for="hosting-big"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-big" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 								</div>
@@ -599,22 +784,22 @@ defined('ABSPATH') || exit;
 								<div class="flex gap-2">
 									<div class="">
 										<label for="hosting-small"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-small" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 									<div class="">
 										<label for="hosting-big"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-big" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 								</div>
@@ -628,22 +813,22 @@ defined('ABSPATH') || exit;
 								<div class="flex gap-2">
 									<div class="">
 										<label for="hosting-small"
-											   class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-600 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-small" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 									<div class="">
 										<label for="hosting-big"
-											   class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
+												class="inline-flex border-2 items-center p-1 justify-between  rounded-lg cursor-pointer dark:hover:text-gray-300 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-green-700 hover:bg-green-700 dark:text-gray-400  dark:hover:bg-green-700">
 											<input type="radio" id="hosting-big" name="wccs_showcase_layout"
-												   value="hosting-big" class="hidden" style="display: none">
+													value="hosting-big" class="hidden" style="display: none">
 											<img class="h-16 w-16"
-												 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
-												 alt="">
+												src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIp7fq-0LjUBCLTpPZPyFnvDrozDPgkc046V5dV-J3Q&s"
+												alt="">
 										</label>
 									</div>
 								</div>
@@ -656,7 +841,7 @@ defined('ABSPATH') || exit;
 			<div class="column-2">
 				<div class="bkit-card">
 					<div class="bkit-card__header">
-						<h2 class="bkit-card__title"><?php esc_html_e('Actions', 'wc-category-showcase'); ?></h2>
+						<h2 class="bkit-card__title"><?php esc_html_e( 'Actions', 'wc-category-showcase' ); ?></h2>
 					</div>
 					<div class="bkit-card__footer">
 						<input type="hidden" name="action" value="wccs_add_category_showcase"/>

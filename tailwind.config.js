@@ -9,6 +9,7 @@ module.exports = {
 		join(__dirname, 'includes/Admin/views/**/*.php'),
 	],
 	media: false,
+	darkMode: 'class',
 	theme: {
 		extend: {
 			colors: {
@@ -20,7 +21,7 @@ module.exports = {
 				'accent-cyan-500': '#17A2B8',
 				'accent-grey-200':'#D4D4D4',
 				'divider-grey-100':'#E2E8F0',
-				'bg-grey-50': '#F1F5F9',
+				'input-grey-50': '#F1F5F9',
 				'text-black-950': '#020617',
 				'text-grey-500': '#64748B',
 				'text-light-grey-500':'#939EAE',
@@ -29,10 +30,15 @@ module.exports = {
 				'green-500':'#37C372',
 				'orange-600':'#F57300',
 			},
+			content: {
+				'check-circle': 'url("/assets/images/check-circle.svg")',
+				'pro-badge': 'url("/assets/images/pro-badge.svg")',
+			},
 		},
 	},
 	plugins: [
 		require('@tailwindcss/forms'),
+		require("tailwindcss-inner-border"),
 	],
 }
 

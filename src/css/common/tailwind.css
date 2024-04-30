@@ -3,38 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-
-	label {
-		@apply tw-h-6 tw-relative tw-inline-block;
-	}
-
-	[type="checkbox"] {
-		@apply tw-w-11 tw-h-0 tw-cursor-pointer tw-inline-block;
-		@apply focus:outline-0 dark:focus:outline-0;
-		@apply border-0 dark:border-0;
-		@apply focus:ring-offset-transparent dark:focus:ring-offset-transparent;
-		@apply focus:ring-transparent dark:focus:ring-transparent;
-		@apply focus-within:ring-0 dark:focus-within:ring-0;
-		@apply focus:shadow-none dark:focus:shadow-none;
-
-		@apply after:absolute before:absolute;
-		@apply after:top-0 before:top-0;
-		@apply after:block before:inline-block;
-		@apply before:rounded-full after:rounded-full;
-
-		@apply after:content-[''] after:w-5 after:h-5 after:mt-0.5 after:ml-0.5;
-		@apply after:shadow-md after:duration-100;
-
-		@apply before:content-[''] before:w-10 before:h-full;
-		@apply before:shadow-[inset_0_0_#000];
-
-		@apply after:bg-white dark:after:bg-gray-50;
-		@apply before:bg-gray-300 dark:before:bg-gray-600;
-		@apply before:checked:bg-lime-500 dark:before:checked:bg-lime-500;
-		@apply checked:after:duration-300 checked:after:translate-x-4;
-
-		@apply disabled:after:bg-opacity-75 disabled:cursor-not-allowed;
-		@apply disabled:checked:before:bg-opacity-40;
+	.wccs-toggle{
+		@apply tw-relative tw-w-11 tw-h-6 tw-bg-divider-grey-100;
+		@apply hover:tw-bg-accent-grey-200;
+		@apply peer-focus:tw-outline-none ;
+		/*@apply peer-focus:tw-ring-4;*/
+		@apply peer-focus:tw-accent-green-500 dark:peer-focus:tw-accent-green-500;
+		@apply tw-rounded-full;
+		@apply dark:tw-bg-gray-700 peer-checked:after:tw-translate-x-full;
+		@apply rtl:peer-checked:after:tw--translate-x-full peer-checked:after:tw-border-accent-green-500;
+		@apply after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-start-[2px] after:tw-bg-white;
+		@apply after:tw-border-accent-green-500 after:tw-border after:tw-rounded-full after:tw-h-5;
+		@apply after:tw-w-5 after:tw-transition-all dark:tw-border-gray-600 peer-checked:tw-bg-accent-green-500;
 	}
 }
 
@@ -44,7 +24,7 @@
 		@apply tw-border-accent-green-500 tw-border-2 tw-rounded-lg;
 	}
 	.wcss-settings-row{
-		@apply tw-pb-5 tw-flex tw-justify-start tw-items-center tw-gap-32 tw-mt-4;
+		@apply tw-pb-5 tw-flex tw-justify-start tw-gap-32 tw-mt-4;
 	}
 	.wcss-settings-row-border{
 		@apply tw-border-b tw-border-b-gray-200;
@@ -55,7 +35,32 @@
 	.wccs-settings-title{
 		@apply tw-text-base tw-font-semibold tw-leading-6 tw-text-black;
 	}
-	.wcss-settings-checkbox {
-		/*@apply relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600;*/
+
+	.wccs-settings-field{
+		@apply tw-w-60 !tw-bg-input-grey-50 !tw-border-divider-grey-100;
+	}
+
+	.wccs-layout-primary {
+		@apply tw-text-text-light-grey-300 tw-p-2 tw-border tw-border-text-light-grey-300 tw-rounded-md tw-bg-white hover:tw-text-text-light-grey-500;
+		border: 1px solid;
+	}
+
+	.wccs-layout-active {
+		@apply tw-text-fade-blue-600 tw-p-2 tw-border !tw-border-accent-green-500 tw-rounded-md tw-bg-white hover:tw-text-text-light-grey-500 tw-inner-border tw-inner-border-accent-green-500;
+		border: 1px solid;
+		/*box-sizing: border-box;*/
+	}
+
+	.wccs-layout-active-before-content {
+		@apply before:tw-absolute before:tw-content-check-circle before:tw-text-sm before:tw-top-1 before:tw-left-5;
+	}
+
+	.wccs-layout-disable {
+		@apply tw-text-text-light-grey-300 tw-p-2 tw-border tw-border-text-light-grey-300 tw-rounded-md tw-bg-white;
+		border: 1px solid;
+	}
+
+	.wccs-layout-pro-before-content {
+		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-4;
 	}
 }
