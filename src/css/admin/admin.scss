@@ -1,8 +1,27 @@
 @import "../../../lib/ByteKit/Core/assets/css/bytekit-core.css";
 
-
-.wcss-settings-row-border{
-	border-bottom: 1px solid;
+.select2.select2-container.select2-container--default{
+	width: 100% !important;
 }
 
+.select2-selection.select2-selection--multiple, .select2-results {
+	background-color: #F1F5F9 !important;
+}
 
+.select2-search__field{
+	background-color: #F1F5F9 !important;
+	border-color: #E2E8F0 !important;
+}
+
+.select2-selection__choice {
+	border-radius: 4px !important;
+	border: 1px solid var(--divider-grey-100, #E2E8F0) !important;
+	background: var(--white, #FFF) !important;
+}
+
+.select2-selection__choice span{
+	float: right;
+	margin-left: 5px;
+}
+
+//select2-results__option select2-results__option--highlighted
