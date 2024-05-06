@@ -7,11 +7,24 @@
  * @package WooCommerceCategoryShowcase
  */
 
-$category     = get_term_by( 'id', $term_id, 'product_cat' );
-$thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
-$image        = wp_get_attachment_url( $thumbnail_id );
+$category           = get_term_by( 'id', $term_id, 'product_cat' );
+$thumbnail_id       = get_term_meta( $category->term_id, 'thumbnail_id', true );
+$image              = wp_get_attachment_url( $thumbnail_id );
+$cat_position       = 0;
+$cat_id             = $category->term_id;
+$cat_title          = $category->name;
+$cat_slug           = $category->slug;
+$cat_description    = $category->description;
+$is_cat_custom_text = 'yes';
+$cat_custom_text    = 'lorem ispum';
+$image_url          = esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/placeholder-image.png' );
+$image_icon_url     = esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/placeholder-icon.png' );
+$is_icon            = 'yes';
+$is_label           = 'yes';
+$label_text         = 'lorem ispum';
+$label_color        = 'lorem ispum';
 ?>
-<div class="wcss-category-list-item">
+<div class="wcss-category-list-item" data-id="<?php echo esc_attr( $cat_id ); ?>">
 	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcss-custom-border wccs-move">
 		<div class="tw-flex tw-gap-1">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -22,7 +35,7 @@ $image        = wp_get_attachment_url( $thumbnail_id );
 				<path d="M12.4 11.625C13.2837 11.625 14 10.8975 14 10C14 9.10254 13.2837 8.375 12.4 8.375C11.5163 8.375 10.8 9.10254 10.8 10C10.8 10.8975 11.5163 11.625 12.4 11.625Z" fill="#64748B"/>
 				<path d="M12.4 6.75C13.2837 6.75 14 6.02246 14 5.125C14 4.22754 13.2837 3.5 12.4 3.5C11.5163 3.5 10.8 4.22754 10.8 5.125C10.8 6.02246 11.5163 6.75 12.4 6.75Z" fill="#64748B"/>
 			</svg>
-			<span><?php echo esc_attr( $category->name ); ?></span>
+			<span><?php echo esc_attr( $cat_title ); ?></span>
 		</div>
 		<div>
 			<svg class="wccs-category-details-show tw-text-text-grey-500 hover:tw-text-fade-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
@@ -35,53 +48,53 @@ $image        = wp_get_attachment_url( $thumbnail_id );
 	<div class="tw-p-2 wccs-category-custom-details tw-hidden">
 		<div>
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'NAME', 'wc-category-showcase' ); ?></h4>
-			<input class="tw-w-full wccs-settings-field-border tw-mt-1" type="text" placeholder="Type here..." value="<?php echo esc_attr( $category->name ); ?>">
+			<input class="tw-text-sm tw-w-full wccs-settings-field-border tw-mt-1" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][title]" type="text" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $cat_title ); ?>">
 		</div>
 		<div class="tw-mt-3">
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'DESCRIPTION', 'wc-category-showcase' ); ?></h4>
-			<textarea class="tw-w-full wccs-settings-field-border tw-mt-1" rows="4" name="wccs_overwrite_description" id="wccs_overwrite_description" placeholder="Add description"><?php echo esc_attr( $category->description ); ?></textarea>
+			<textarea class="tw-text-sm tw-w-full wccs-settings-field-border tw-mt-1" rows="4" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][description]" id="wccs_overwrite_description" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $cat_description ); ?></textarea>
 		</div>
 		<div class="tw-mt-3 wcss-custom-border tw-pb-4">
 			<div class="tw-flex tw-justify-between tw-items-center">
 				<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'ADD CUSTOM TEXT', 'wc-category-showcase' ); ?></h4>
 				<label class="tw-inline-flex tw-cursor-pointer">
-					<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider" checked>
+					<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="text-sm tw-sr-only tw-peer wccs-custom-des-show-hide" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][is_custom_text]" <?php echo 'yes' === $is_cat_custom_text ? 'checked' : ''; ?>>
 					<div class="wccs-toggle-small"></div>
 				</label>
 			</div>
-			<textarea class="tw-w-full wccs-settings-field-border tw-mt-2" rows="4" name="wccs_custom_text" id="wccs_custom_text" placeholder="Add custom description"></textarea>
+			<textarea class="tw-text-sm tw-w-full wccs-settings-field-border tw-mt-2 <?php echo 'yes' === $is_cat_custom_text ? '' : 'tw-hidden'; ?>" rows="4" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][custom_text]" id="wccs_custom_text" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $cat_custom_text ); ?></textarea>
 		</div>
 		<div class="tw-mt-3 tw-flex tw-justify-around wcss-custom-border tw-pb-4">
 			<div>
 				<h4 class="tw-text-xs tw-my-0"><?php esc_html_e( 'CATEGORY IMAGE', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-mt-2">
-					<button class="tw-flex tw-absolute tw-top-2 tw-right-2 tw-rounded-md">
-						<?php esc_html_e( 'Replace', 'wc-category-showcase' ); ?>
+					<a href="#" class="wcss-upload-button">
+						<?php esc_html_e( 'Add Image', 'wc-category-showcase' ); ?>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 							<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-					</button>
-					<img class="tw-h-32 tw-w-40" src="<?php echo $image; ?>" alt="<?php echo esc_attr( $category->slug ); ?>">
+					</a>
+					<img class="tw-h-32 tw-w-40" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_url( $cat_slug ); ?>">
+					<input type="hidden" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][image_url]" value="<?php echo esc_url( $image_url ); ?>">
 				</div>
 			</div>
 			<div>
 				<div class="tw-flex tw-justify-between tw-items-center">
 					<h4 class="tw-text-xs tw-my-0"><?php esc_html_e( 'CATEGORY ICON', 'wc-category-showcase' ); ?></h4>
 					<label class="tw-inline-flex tw-cursor-pointer">
-						<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider" checked>
+						<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wccs-icon-show-hide" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][is_icon]" <?php echo 'yes' === $is_icon ? 'checked' : ''; ?>>
 						<div class="wccs-toggle-small"></div>
 					</label>
 				</div>
 				<div class="tw-relative tw-mt-2">
-					<button class="tw-h-32 tw-w-40 tw-flex tw-flex-col tw-justify-center tw-items-center">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-							<path d="M11.9999 16.6162L11.9999 9.97001M11.9999 9.97001L14.9537 12.9239M11.9999 9.97001L9.04606 12.9239M6.83067 19.57C4.38363 19.57 2.3999 17.5863 2.3999 15.1392C2.3999 13.177 3.67552 11.5126 5.44276 10.9302C5.38432 10.6191 5.35375 10.2981 5.35375 9.97001C5.35375 7.11512 7.66809 4.80078 10.523 4.80078C12.9168 4.80078 14.9306 6.42796 15.5186 8.63659C15.8058 8.54343 16.1124 8.49309 16.4307 8.49309C18.062 8.49309 19.3845 9.81557 19.3845 11.4469C19.3845 11.7897 19.3261 12.1189 19.2188 12.425C20.6107 12.9538 21.5999 14.3003 21.5999 15.8777C21.5999 17.9169 19.9468 19.57 17.9076 19.57H6.83067Z" stroke="#2270B1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					<a href="#" class="wcss-upload-button wccs-icon-selection <?php echo 'yes' === $is_icon ? '' : 'tw-hidden'; ?>">
+						<?php esc_html_e( 'Add Icon', 'wc-category-showcase' ); ?>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+							<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-						<span>
-							<span class="tw-underline"><?php esc_html_e( 'Upload icon', 'wc-category-showcase' ); ?></span>
-						</span>
-						<span>PNG, JPG, GIF up to 5MB</span>
-					</button>
+					</a>
+					<img class="tw-h-32 tw-w-40" src="<?php echo esc_attr( $image_icon_url ); ?>" alt="<?php echo esc_url( $cat_slug ); ?>">
+					<input type="hidden" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][icon_url]" value="<?php echo esc_url( $image_icon_url ); ?>">
 				</div>
 			</div>
 		</div>
@@ -89,19 +102,21 @@ $image        = wp_get_attachment_url( $thumbnail_id );
 			<div class="tw-flex tw-justify-between tw-items-center">
 				<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'ADD LABEL', 'wc-category-showcase' ); ?></h4>
 				<label class="tw-inline-flex tw-cursor-pointer">
-					<input type="checkbox" value="" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider" checked>
+					<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wccs-label-show-hide" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][is_label]" <?php echo 'yes' === $is_label ? 'checked' : ''; ?>>
 					<div class="wccs-toggle-small"></div>
 				</label>
 			</div>
-			<input class="tw-w-full wccs-settings-field-border tw-mt-2" type="text" placeholder="Type here...">
+			<input type="text" class="wccs-label-selection tw-w-full tw-text-sm wccs-settings-field-border tw-mt-2 wccs-label-text <?php echo 'yes' === $is_label ? '' : 'tw-hidden'; ?>" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][label_text]" value="<?php echo esc_attr( $label_text ); ?>" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>">
 		</div>
-		<div class="tw-mt-3">
+		<div class="tw-mt-3 wccs-label-selection <?php echo 'yes' === $is_label ? '' : 'tw-hidden'; ?>">
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'LABEL COLOR', 'wc-category-showcase' ); ?></h4>
-			<select name="wccs_label_color" id="wccs_label_color" class="tw-w-full wccs-settings-field-border tw-mt-1">
+			<select name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][label_color]" id="wccs_label_color" class="tw-w-full wccs-settings-field-border tw-mt-1">
 				<option value="yellow">Yellow</option>
 				<option value="red">Red</option>
 				<option value="green">Green</option>
 			</select>
 		</div>
+		<input type="hidden" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][position]" class="wccs_category_position" value="<?php echo esc_attr( $cat_position ); ?>">
 	</div>
 </div>
+

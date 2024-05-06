@@ -6,6 +6,25 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$wcss_showcase_layout          = 'block';
+$wccs_pre_loader               = 'yes';
+$wccs_number_of_grid_column    = 3;
+$wccs_number_of_block_column   = 2;
+$wccs_column_adjustment        = 'yes';
+$wccs_hide_empty_categories    = 'yes';
+$wccs_includes_sub_categories  = 'yes';
+$wcss_category_display_limit   = 12;
+$wccs_block_slider_category    = array( 17 );
+$wccs_specific_category_select = array();
+$wccs_category_filter          = 'all';
+$wccs_display_mode             = 'slider';
+$wcss_column_breakpoint        = array(
+	'desktop' => '4',
+	'laptop'  => '3',
+	'tablet'  => '2',
+	'mobile'  => '1',
+);
 ?>
 <div class="wcss-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -21,22 +40,32 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center tw-gap-x-4">
 		<div class="tw-relative">
-			<div class="wccs_layout_select wccs-layout-active-before-content-2">
-				<input type="radio" name="wcss_layout" class="!tw-hidden" value="<?php echo esc_attr( 'grid' ); ?>" checked>
-				<svg class="wccs-layout-active" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
-					<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
-					<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+			<div class="wccs_layout_select <?php echo 'grid' === $wcss_showcase_layout ? 'wccs-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcss_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'grid' ); ?>" <?php if ( 'grid' === $wcss_showcase_layout ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'grid' === $wcss_showcase_layout ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+					<g clip-path="url(#clip0_233_3496)">
+						<path d="M13 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H13C14.1046 15 15 14.1046 15 13V2C15 0.89543 14.1046 0 13 0Z"/>
+						<path d="M13 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H13C14.1046 32 15 31.1046 15 30V19C15 17.8954 14.1046 17 13 17Z"/>
+						<path d="M30 0H19C17.8954 0 17 0.89543 17 2V13C17 14.1046 17.8954 15 19 15H30C31.1046 15 32 14.1046 32 13V2C32 0.89543 31.1046 0 30 0Z"/>
+						<path d="M30 17H19C17.8954 17 17 17.8954 17 19V30C17 31.1046 17.8954 32 19 32H30C31.1046 32 32 31.1046 32 30V19C32 17.8954 31.1046 17 30 17Z"/>
+					</g>
 				</svg>
 			</div>
+			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Grid', 'wc-category-showcase' ); ?></p>
 		</div>
 		<div class="tw-relative">
-			<div class="wccs_layout_select">
-				<input type="radio" name="wcss_layout" class="!tw-hidden" value="<?php echo esc_attr( 'block' ); ?>">
-				<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
-					<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
-					<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
+			<div class="wccs_layout_select <?php echo 'block' === $wcss_showcase_layout ? 'wccs-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcss_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'block' ); ?>" <?php if ( 'block' === $wcss_showcase_layout ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'block' === $wcss_showcase_layout ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+					<g clip-path="url(#clip0_265_819)">
+						<path d="M18 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H18C19.1046 32 20 31.1046 20 30V2C20 0.89543 19.1046 0 18 0Z"/>
+						<path d="M30 0H24C22.8954 0 22 0.89543 22 2V7.33333C22 8.4379 22.8954 9.33333 24 9.33333H30C31.1046 9.33333 32 8.4379 32 7.33333V2C32 0.89543 31.1046 0 30 0Z"/>
+						<path d="M30 11.332H24C22.8954 11.332 22 12.2275 22 13.332V18.6654C22 19.7699 22.8954 20.6654 24 20.6654H30C31.1046 20.6654 32 19.7699 32 18.6654V13.332C32 12.2275 31.1046 11.332 30 11.332Z"/>
+						<path d="M30 22.668H24C22.8954 22.668 22 23.5634 22 24.668V30.0013C22 31.1059 22.8954 32.0013 24 32.0013H30C31.1046 32.0013 32 31.1059 32 30.0013V24.668C32 23.5634 31.1046 22.668 30 22.668Z"/>
+					</g>
 				</svg>
 			</div>
+			<p class="tw-text-center tw-text-text-grey-500"><?php esc_html_e( 'Block', 'wc-category-showcase' ); ?></p>
 		</div>
 	</div>
 </div>
@@ -46,34 +75,34 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wccs-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center tw-gap-2 tw-rounded-md tw-max-w-[385px]">
-									<span class="tw-isolate tw-flex tw-flex-row tw-items-center tw-bg-input-grey-50 tw-p-1 tw-rounded-md tw-shadow-sm tw-min-w-[385px]">
-										<label class="tw-w-1/3 wccs-display-mode wcss-group-button-active">
-											<svg class="wcss-group-button-active-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
-												<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
-											</svg>
-											<input type="radio" name="wccs_display_mode" checked class="!tw-hidden" value="<?php echo esc_attr( 'fixed' ); ?>">
-											<?php esc_html_e( 'Fixed', 'wc-category-showcase' ); ?>
-										</label>
-										<label class="tw-w-1/3 wccs-display-mode wcss-group-button">
-											<svg class="wcss-group-button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-												<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z"/>
-												<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z"/>
-												<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z"/>
-												<path d="M7.77778 18.7223C8.42211 18.7223 8.94445 18.1999 8.94445 17.5556C8.94445 16.9113 8.42211 16.3889 7.77778 16.3889C7.13345 16.3889 6.61111 16.9113 6.61111 17.5556C6.61111 18.1999 7.13345 18.7223 7.77778 18.7223Z"/>
-												<path d="M11.1111 18.3334C11.5407 18.3334 11.8889 17.9851 11.8889 17.5556C11.8889 17.126 11.5407 16.7778 11.1111 16.7778C10.6816 16.7778 10.3333 17.126 10.3333 17.5556C10.3333 17.9851 10.6816 18.3334 11.1111 18.3334Z"/>
-												<path d="M14.4444 18.3334C14.874 18.3334 15.2222 17.9851 15.2222 17.5556C15.2222 17.126 14.874 16.7778 14.4444 16.7778C14.0149 16.7778 13.6667 17.126 13.6667 17.5556C13.6667 17.9851 14.0149 18.3334 14.4444 18.3334Z"/>
-											</svg>
-											<input type="radio" name="wccs_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'slider' ); ?>">
-											<?php esc_html_e( 'Slider', 'wc-category-showcase' ); ?>
-										</label>
-										<label class="tw-w-1/3 wccs-display-mode wcss-group-button">
-											<svg class="wcss-group-button-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
-												<path d="M17.6665 2H14.6665V18H17.6665C17.9317 18 18.1861 17.8946 18.3736 17.7071C18.5611 17.5196 18.6665 17.2652 18.6665 17V3C18.6665 2.73478 18.5611 2.48043 18.3736 2.29289C18.1861 2.10536 17.9317 2 17.6665 2ZM12.6665 2H3.6665C3.40129 2 3.14693 2.10536 2.9594 2.29289C2.77186 2.48043 2.6665 2.73478 2.6665 3V17C2.6665 17.2652 2.77186 17.5196 2.9594 17.7071C3.14693 17.8946 3.40129 18 3.6665 18H12.6665V2Z"/>
-											</svg>
-											<input type="radio" name="wccs_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'ticker' ); ?>">
-											<?php esc_html_e( 'Ticker', 'wc-category-showcase' ); ?>
-										</label>
-									</span>
+		<span class="tw-isolate tw-flex tw-flex-row tw-items-center tw-bg-input-grey-50 tw-p-1 tw-rounded-md tw-shadow-sm tw-min-w-[385px]">
+			<label class="tw-w-1/3 wccs-display-mode <?php echo 'fixed' === $wccs_display_mode ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
+				<svg class="<?php echo 'fixed' === $wccs_display_mode ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
+					<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
+				</svg>
+				<input type="radio" name="wccs_display_mode" checked class="!tw-hidden" value="<?php echo esc_attr( 'fixed' ); ?>" <?php if ( 'fixed' === $wccs_display_mode ) { echo 'checked'; } ?>>
+				<?php esc_html_e( 'Fixed', 'wc-category-showcase' ); ?>
+			</label>
+			<label class="tw-w-1/3 wccs-display-mode <?php echo 'slider' === $wccs_display_mode ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
+				<svg class="<?php echo 'slider' === $wccs_display_mode ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+					<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z"/>
+					<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z"/>
+					<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z"/>
+					<path d="M7.77778 18.7223C8.42211 18.7223 8.94445 18.1999 8.94445 17.5556C8.94445 16.9113 8.42211 16.3889 7.77778 16.3889C7.13345 16.3889 6.61111 16.9113 6.61111 17.5556C6.61111 18.1999 7.13345 18.7223 7.77778 18.7223Z"/>
+					<path d="M11.1111 18.3334C11.5407 18.3334 11.8889 17.9851 11.8889 17.5556C11.8889 17.126 11.5407 16.7778 11.1111 16.7778C10.6816 16.7778 10.3333 17.126 10.3333 17.5556C10.3333 17.9851 10.6816 18.3334 11.1111 18.3334Z"/>
+					<path d="M14.4444 18.3334C14.874 18.3334 15.2222 17.9851 15.2222 17.5556C15.2222 17.126 14.874 16.7778 14.4444 16.7778C14.0149 16.7778 13.6667 17.126 13.6667 17.5556C13.6667 17.9851 14.0149 18.3334 14.4444 18.3334Z"/>
+				</svg>
+				<input type="radio" name="wccs_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'slider' ); ?>" <?php if ( 'slider' === $wccs_display_mode ) { echo 'checked'; } ?>>
+				<?php esc_html_e( 'Slider', 'wc-category-showcase' ); ?>
+			</label>
+			<label class="tw-w-1/3 wccs-display-mode <?php echo 'ticker' === $wccs_display_mode ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
+				<svg class="<?php echo 'ticker' === $wccs_display_mode ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
+					<path d="M17.6665 2H14.6665V18H17.6665C17.9317 18 18.1861 17.8946 18.3736 17.7071C18.5611 17.5196 18.6665 17.2652 18.6665 17V3C18.6665 2.73478 18.5611 2.48043 18.3736 2.29289C18.1861 2.10536 17.9317 2 17.6665 2ZM12.6665 2H3.6665C3.40129 2 3.14693 2.10536 2.9594 2.29289C2.77186 2.48043 2.6665 2.73478 2.6665 3V17C2.6665 17.2652 2.77186 17.5196 2.9594 17.7071C3.14693 17.8946 3.40129 18 3.6665 18H12.6665V2Z"/>
+				</svg>
+				<input type="radio" name="wccs_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'ticker' ); ?>" <?php if ( 'ticker' === $wccs_display_mode ) { echo 'checked'; } ?>>
+				<?php esc_html_e( 'Ticker', 'wc-category-showcase' ); ?>
+			</label>
+		</span>
 	</div>
 </div>
 <div class="wcss-settings-row-title">
@@ -82,7 +111,7 @@ defined( 'ABSPATH' ) || exit;
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Layout Settings', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wcss-settings-row wccs-grid-selection">
+<div class="wcss-settings-row wccs-grid-selection <?php echo 'grid' === $wcss_showcase_layout ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccs-settings-title"><?php esc_html_e( 'Number of Columns', 'wc-category-showcase' ); ?></h3>
 		<p class="wccs-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
@@ -90,31 +119,31 @@ defined( 'ABSPATH' ) || exit;
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
 		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column">
-				<div class="wccs-layout-active-before-content-2">
-					<svg class="wccs-layout-active" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
+				<div class="<?php echo 1 === $wccs_number_of_grid_column ? 'wccs-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 1 === $wccs_number_of_grid_column ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
 						<g clip-path="url(#clip0_358_9312)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_column" value="<?php echo esc_attr( 1 ); ?>" checked>
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_grid_column" value="<?php echo esc_attr( 1 ); ?>" <?php echo 1 === $wccs_number_of_grid_column ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '1', 'wc-category-showcase' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column">
-				<div class="">
-					<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
+				<div class="<?php echo 2 === $wccs_number_of_grid_column ? 'wccs-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 2 === $wccs_number_of_grid_column ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
 						<g clip-path="url(#clip0_358_9326)">
 							<path d="M20.5 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H20.5C21.6046 16 22.5 15.1046 22.5 14V2C22.5 0.89543 21.6046 0 20.5 0Z"/>
 							<path d="M46 0H27.5C26.3954 0 25.5 0.89543 25.5 2V14C25.5 15.1046 26.3954 16 27.5 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_column" value="<?php echo esc_attr( 2 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_grid_column" value="<?php echo esc_attr( 2 ); ?>" <?php echo 2 === $wccs_number_of_grid_column ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '2', 'wc-category-showcase' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column">
-				<div class="">
-					<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
+				<div class="<?php echo 3 === $wccs_number_of_grid_column ? 'wccs-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 3 === $wccs_number_of_grid_column ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
 						<g clip-path="url(#clip0_358_9329)">
 							<path d="M12 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H12C13.1046 16 14 15.1046 14 14V2C14 0.89543 13.1046 0 12 0Z"/>
 							<path d="M29 0H19C17.8954 0 17 0.89543 17 2V14C17 15.1046 17.8954 16 19 16H29C30.1046 16 31 15.1046 31 14V2C31 0.89543 30.1046 0 29 0Z"/>
@@ -122,10 +151,10 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_column" value="<?php echo esc_attr( 3 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_grid_column" value="<?php echo esc_attr( 3 ); ?>" <?php echo 3 === $wccs_number_of_grid_column ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '3', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column wcss-pro">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column-pro">
 				<div class="wccs-number-of-column wccs-layout-pro-before-content-2">
 					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
 						<g clip-path="url(#clip0_358_9314)">
@@ -136,10 +165,10 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_column" value="<?php echo esc_attr( 4 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_grid_column" value="<?php echo esc_attr( 4 ); ?>" <?php echo 4 === $wccs_number_of_grid_column ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '4', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column wcss-pro">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column-pro">
 				<div class="wccs-number-of-column wccs-layout-pro-before-content-2">
 					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
 						<g clip-path="url(#clip0_358_9306)">
@@ -151,10 +180,10 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_column" value="<?php echo esc_attr( 5 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_grid_column" value="<?php echo esc_attr( 5 ); ?>" <?php echo 5 === $wccs_number_of_grid_column ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '5', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column wcss-pro">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column-pro">
 				<div class="wccs-layout-pro-before-content-2">
 					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
 						<g clip-path="url(#clip0_358_9319)">
@@ -167,7 +196,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_column" value="<?php echo esc_attr( 6 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_grid_column" value="<?php echo esc_attr( 6 ); ?>" <?php echo 6 === $wccs_number_of_grid_column ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '6', 'wc-category-showcase' ); ?></span>
 			</div>
 		</div>
@@ -192,7 +221,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row wccs-block-selection tw-hidden">
+<div class="wcss-settings-row wccs-block-selection <?php echo 'block' === $wcss_showcase_layout ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccs-settings-title"><?php esc_html_e( 'Block Count', 'wc-category-showcase' ); ?></h3>
 		<p class="wccs-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
@@ -200,18 +229,18 @@ defined( 'ABSPATH' ) || exit;
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
 		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4 tw-overflow-auto tw-max-h-72">
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column">
-				<div>
-					<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 2 === $wccs_number_of_block_column ? 'wccs-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 2 === $wccs_number_of_block_column ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
 						<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 1 ); ?>">
-				<span><?php esc_html_e( '1', 'wc-category-showcase' ); ?></span>
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 2 ); ?>" <?php echo 2 === $wccs_number_of_block_column ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '2', 'wc-category-showcase' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column">
-				<div>
-					<svg class="wccs-layout-primary" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 3 === $wccs_number_of_block_column ? 'wccs-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 3 === $wccs_number_of_block_column ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3595)">
 							<path d="M20.5 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H20.5C21.6046 32 22.5 31.1046 22.5 30V2C22.5 0.89543 21.6046 0 20.5 0Z"/>
 							<path d="M46 0H27.5C26.3954 0 25.5 0.89543 25.5 2V12.5C25.5 13.6046 26.3954 14.5 27.5 14.5H46C47.1046 14.5 48 13.6046 48 12.5V2C48 0.89543 47.1046 0 46 0Z"/>
@@ -219,12 +248,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 2 ); ?>">
-				<span><?php esc_html_e( '2', 'wc-category-showcase' ); ?></span>
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 3 ); ?>" <?php echo 3 === $wccs_number_of_block_column ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '3', 'wc-category-showcase' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column">
-				<div class="wccs-layout-active-before-content-2">
-					<svg class="wccs-layout-active" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 4 === $wccs_number_of_block_column ? 'wccs-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 4 === $wccs_number_of_block_column ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3599)">
 							<path d="M20.5 0H2C0.89543 0 0 0.89543 0 2V12.5C0 13.6046 0.89543 14.5 2 14.5H20.5C21.6046 14.5 22.5 13.6046 22.5 12.5V2C22.5 0.89543 21.6046 0 20.5 0Z"/>
 							<path d="M20.5 17.5H2C0.89543 17.5 0 18.3954 0 19.5V30C0 31.1046 0.89543 32 2 32H20.5C21.6046 32 22.5 31.1046 22.5 30V19.5C22.5 18.3954 21.6046 17.5 20.5 17.5Z"/>
@@ -233,10 +262,10 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 3 ); ?>" checked>
-				<span><?php esc_html_e( '3', 'wc-category-showcase' ); ?></span>
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 4 ); ?>" <?php echo 4 === $wccs_number_of_block_column ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '4', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column-pro">
 				<div class="wccs-layout-pro-before-content-2">
 					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3604)">
@@ -248,10 +277,10 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 4 ); ?>">
-				<span><?php esc_html_e( '4', 'wc-category-showcase' ); ?></span>
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 5 ); ?>">
+				<span><?php esc_html_e( '5', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column-pro">
 				<div class="wccs-layout-pro-before-content-2">
 					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3585)">
@@ -264,10 +293,10 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 5 ); ?>" checked>
-				<span><?php esc_html_e( '5', 'wc-category-showcase' ); ?></span>
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 6 ); ?>">
+				<span><?php esc_html_e( '6', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-block-column-pro">
 				<div class="wccs-layout-pro-before-content-2">
 					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3577)">
@@ -281,8 +310,8 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 6 ); ?>">
-				<span><?php esc_html_e( '6', 'wc-category-showcase' ); ?></span>
+				<input class="!tw-hidden" type="radio" name="wccs_number_of_block_column" value="<?php echo esc_attr( 7 ); ?>">
+				<span><?php esc_html_e( '7', 'wc-category-showcase' ); ?></span>
 			</div>
 		</div>
 		<div class="tw-max-w-[385px] ">
@@ -306,7 +335,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row wccs-block-selection tw-hidden">
+<div class="wcss-settings-row wccs-block-selection <?php echo 'block' === $wcss_showcase_layout ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccs-settings-title">Choose Layout Options</h3>
 		<p class="wccs-settings-description">Select the template that best fits your store's aesthetic and presentation preferences.</p>
@@ -486,40 +515,71 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-flex-col">
 		<div class="wcss-column-breakpoint">
-										<span class="wcss-column-breakpoint-inner">
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="">
-												<path d="M18.5 2H1.5C1.36739 2 1.24021 2.05268 1.14645 2.14645C1.05268 2.24021 1 2.36739 1 2.5V14.5C1 14.6326 1.05268 14.7598 1.14645 14.8536C1.24021 14.9473 1.36739 15 1.5 15H8V16.5C8 16.6326 7.94732 16.7598 7.85355 16.8536C7.75979 16.9473 7.63261 17 7.5 17H6.5C6.36739 17 6.24021 17.0527 6.14645 17.1464C6.05268 17.2402 6 17.3674 6 17.5V18.5C6 18.6326 6.05268 18.7598 6.14645 18.8536C6.24021 18.9473 6.36739 19 6.5 19H13.5C13.6326 19 13.7598 18.9473 13.8536 18.8536C13.9473 18.7598 14 18.6326 14 18.5V17.5C14 17.3674 13.9473 17.2402 13.8536 17.1464C13.7598 17.0527 13.6326 17 13.5 17H12.5C12.3674 17 12.2402 16.9473 12.1464 16.8536C12.0527 16.7598 12 16.6326 12 16.5V15H18.5C18.6326 15 18.7598 14.9473 18.8536 14.8536C18.9473 14.7598 19 14.6326 19 14.5V2.5C19 2.36739 18.9473 2.24021 18.8536 2.14645C18.7598 2.05268 18.6326 2 18.5 2ZM17 13H3V4H17V13Z" fill="#2270B1"/>
-											</svg>
-											<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Desktop (1400px)', 'wc-category-showcase' ); ?></span>
-										</span>
-			<input type="number" name="wcss_column_breakpoint[desktop]" class="wcss-column-breakpoint-inner-input" min="0">
+			<span class="wcss-column-breakpoint-inner">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="">
+					<path d="M18.5 2H1.5C1.36739 2 1.24021 2.05268 1.14645 2.14645C1.05268 2.24021 1 2.36739 1 2.5V14.5C1 14.6326 1.05268 14.7598 1.14645 14.8536C1.24021 14.9473 1.36739 15 1.5 15H8V16.5C8 16.6326 7.94732 16.7598 7.85355 16.8536C7.75979 16.9473 7.63261 17 7.5 17H6.5C6.36739 17 6.24021 17.0527 6.14645 17.1464C6.05268 17.2402 6 17.3674 6 17.5V18.5C6 18.6326 6.05268 18.7598 6.14645 18.8536C6.24021 18.9473 6.36739 19 6.5 19H13.5C13.6326 19 13.7598 18.9473 13.8536 18.8536C13.9473 18.7598 14 18.6326 14 18.5V17.5C14 17.3674 13.9473 17.2402 13.8536 17.1464C13.7598 17.0527 13.6326 17 13.5 17H12.5C12.3674 17 12.2402 16.9473 12.1464 16.8536C12.0527 16.7598 12 16.6326 12 16.5V15H18.5C18.6326 15 18.7598 14.9473 18.8536 14.8536C18.9473 14.7598 19 14.6326 19 14.5V2.5C19 2.36739 18.9473 2.24021 18.8536 2.14645C18.7598 2.05268 18.6326 2 18.5 2ZM17 13H3V4H17V13Z" fill="#2270B1"/>
+				</svg>
+				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Desktop (1400px)', 'wc-category-showcase' ); ?></span>
+			</span>
+			<input type="number" name="wcss_column_breakpoint[desktop]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['desktop'] ); ?>">
 		</div>
 		<div class="wcss-column-breakpoint tw-mt-1">
-										<span class="wcss-column-breakpoint-inner">
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-												<path d="M18.974 16.342L17 11V3.5C17 3.36739 16.9473 3.24021 16.8536 3.14645C16.7598 3.05268 16.6326 3 16.5 3H3.5C3.36739 3 3.24021 3.05268 3.14645 3.14645C3.05268 3.24021 3 3.36739 3 3.5V11L1.026 16.342C1.00899 16.393 1.00022 16.4463 1 16.5C1 16.6326 1.05268 16.7598 1.14645 16.8536C1.24021 16.9473 1.36739 17 1.5 17H18.5C18.6326 17 18.7598 16.9473 18.8536 16.8536C18.9473 16.7598 19 16.6326 19 16.5C18.9998 16.4463 18.991 16.393 18.974 16.342ZM7 16L7.6665 14H12.3335L13 16H7ZM16 11H4V4H16V11Z" fill="#2270B1"/>
-											</svg>
-											<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Laptop (1200px)', 'wc-category-showcase' ); ?></span>
-										</span>
-			<input type="number" name="wcss_column_breakpoint[laptop]" class="wcss-column-breakpoint-inner-input" min="0">
+			<span class="wcss-column-breakpoint-inner">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+					<path d="M18.974 16.342L17 11V3.5C17 3.36739 16.9473 3.24021 16.8536 3.14645C16.7598 3.05268 16.6326 3 16.5 3H3.5C3.36739 3 3.24021 3.05268 3.14645 3.14645C3.05268 3.24021 3 3.36739 3 3.5V11L1.026 16.342C1.00899 16.393 1.00022 16.4463 1 16.5C1 16.6326 1.05268 16.7598 1.14645 16.8536C1.24021 16.9473 1.36739 17 1.5 17H18.5C18.6326 17 18.7598 16.9473 18.8536 16.8536C18.9473 16.7598 19 16.6326 19 16.5C18.9998 16.4463 18.991 16.393 18.974 16.342ZM7 16L7.6665 14H12.3335L13 16H7ZM16 11H4V4H16V11Z" fill="#2270B1"/>
+				</svg>
+				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Laptop (1200px)', 'wc-category-showcase' ); ?></span>
+			</span>
+			<input type="number" name="wcss_column_breakpoint[laptop]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['laptop'] ); ?>">
 		</div>
 		<div class="wcss-column-breakpoint tw-mt-1">
-										<span class="wcss-column-breakpoint-inner">
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-												<path d="M18 3H2C1.73478 3 1.48043 3.10536 1.29289 3.29289C1.10536 3.48043 1 3.73478 1 4L1 16C1 16.2652 1.10536 16.5196 1.29289 16.7071C1.48043 16.8946 1.73478 17 2 17H18C18.2652 17 18.5196 16.8946 18.7071 16.7071C18.8946 16.5196 19 16.2652 19 16V4C19 3.73478 18.8946 3.48043 18.7071 3.29289C18.5196 3.10536 18.2652 3 18 3ZM16 15H3V5H16V15ZM17.5 11.25C17.2528 11.25 17.0111 11.1767 16.8055 11.0393C16.6 10.902 16.4398 10.7068 16.3452 10.4784C16.2505 10.2499 16.2258 9.99861 16.274 9.75614C16.3222 9.51366 16.4413 9.29093 16.6161 9.11612C16.7909 8.9413 17.0137 8.82225 17.2561 8.77402C17.4986 8.72579 17.7499 8.75054 17.9784 8.84515C18.2068 8.93976 18.402 9.09998 18.5393 9.30554C18.6767 9.5111 18.75 9.75277 18.75 10C18.75 10.1642 18.7177 10.3267 18.6549 10.4784C18.592 10.63 18.5 10.7678 18.3839 10.8839C18.2678 11 18.13 11.092 17.9784 11.1548C17.8267 11.2177 17.6642 11.25 17.5 11.25Z" fill="#2270B1"/>
-											</svg>
-											<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Tablet (768px)', 'wc-category-showcase' ); ?></span>
-										</span>
-			<input type="number" name="wcss_column_breakpoint[tablet]" class="wcss-column-breakpoint-inner-input" min="0">
+			<span class="wcss-column-breakpoint-inner">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+					<path d="M18 3H2C1.73478 3 1.48043 3.10536 1.29289 3.29289C1.10536 3.48043 1 3.73478 1 4L1 16C1 16.2652 1.10536 16.5196 1.29289 16.7071C1.48043 16.8946 1.73478 17 2 17H18C18.2652 17 18.5196 16.8946 18.7071 16.7071C18.8946 16.5196 19 16.2652 19 16V4C19 3.73478 18.8946 3.48043 18.7071 3.29289C18.5196 3.10536 18.2652 3 18 3ZM16 15H3V5H16V15ZM17.5 11.25C17.2528 11.25 17.0111 11.1767 16.8055 11.0393C16.6 10.902 16.4398 10.7068 16.3452 10.4784C16.2505 10.2499 16.2258 9.99861 16.274 9.75614C16.3222 9.51366 16.4413 9.29093 16.6161 9.11612C16.7909 8.9413 17.0137 8.82225 17.2561 8.77402C17.4986 8.72579 17.7499 8.75054 17.9784 8.84515C18.2068 8.93976 18.402 9.09998 18.5393 9.30554C18.6767 9.5111 18.75 9.75277 18.75 10C18.75 10.1642 18.7177 10.3267 18.6549 10.4784C18.592 10.63 18.5 10.7678 18.3839 10.8839C18.2678 11 18.13 11.092 17.9784 11.1548C17.8267 11.2177 17.6642 11.25 17.5 11.25Z" fill="#2270B1"/>
+				</svg>
+				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Tablet (768px)', 'wc-category-showcase' ); ?></span>
+			</span>
+			<input type="number" name="wcss_column_breakpoint[tablet]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['tablet'] ); ?>">
 		</div>
 		<div class="wcss-column-breakpoint tw-mt-1">
-										<span class="wcss-column-breakpoint-inner">
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-												<path d="M14 1H6C5.73478 1 5.48043 1.10536 5.29289 1.29289C5.10536 1.48043 5 1.73478 5 2V18C5 18.2652 5.10536 18.5196 5.29289 18.7071C5.48043 18.8946 5.73478 19 6 19H14C14.2652 19 14.5196 18.8946 14.7071 18.7071C14.8946 18.5196 15 18.2652 15 18V2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1V1ZM9.5 2H10.5C10.631 2.00506 10.7552 2.05937 10.8479 2.15206C10.9406 2.24476 10.9949 2.36901 11 2.5C10.9951 2.63103 10.9408 2.75535 10.8481 2.84807C10.7553 2.94078 10.631 2.99505 10.5 3H9.5C9.36831 2.99707 9.24283 2.94345 9.14969 2.85031C9.05655 2.75717 9.00293 2.63169 9 2.5C9.00305 2.36835 9.05671 2.24294 9.14982 2.14982C9.24294 2.05671 9.36835 2.00305 9.5 2ZM10 18.55C9.79233 18.55 9.58932 18.4884 9.41665 18.373C9.24398 18.2577 9.1094 18.0937 9.02993 17.9018C8.95045 17.71 8.92966 17.4988 8.97018 17.2952C9.01069 17.0915 9.11069 16.9044 9.25754 16.7575C9.40438 16.6107 9.59148 16.5107 9.79516 16.4702C9.99884 16.4297 10.21 16.4505 10.4018 16.5299C10.5937 16.6094 10.7577 16.744 10.873 16.9167C10.9884 17.0893 11.05 17.2923 11.05 17.5C11.05 17.6379 11.0228 17.7744 10.9701 17.9018C10.9173 18.0292 10.84 18.145 10.7425 18.2425C10.645 18.34 10.5292 18.4173 10.4018 18.4701C10.2744 18.5228 10.1379 18.55 10 18.55ZM14 16H6V4H14V16Z" fill="#2270B1"/>
-											</svg>
-											<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Mobile (576px)', 'wc-category-showcase' ); ?></span>
-										</span>
-			<input type="number" name="wcss_column_breakpoint[mobile]" class="wcss-column-breakpoint-inner-input" min="0">
+			<span class="wcss-column-breakpoint-inner">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+					<path d="M14 1H6C5.73478 1 5.48043 1.10536 5.29289 1.29289C5.10536 1.48043 5 1.73478 5 2V18C5 18.2652 5.10536 18.5196 5.29289 18.7071C5.48043 18.8946 5.73478 19 6 19H14C14.2652 19 14.5196 18.8946 14.7071 18.7071C14.8946 18.5196 15 18.2652 15 18V2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1V1ZM9.5 2H10.5C10.631 2.00506 10.7552 2.05937 10.8479 2.15206C10.9406 2.24476 10.9949 2.36901 11 2.5C10.9951 2.63103 10.9408 2.75535 10.8481 2.84807C10.7553 2.94078 10.631 2.99505 10.5 3H9.5C9.36831 2.99707 9.24283 2.94345 9.14969 2.85031C9.05655 2.75717 9.00293 2.63169 9 2.5C9.00305 2.36835 9.05671 2.24294 9.14982 2.14982C9.24294 2.05671 9.36835 2.00305 9.5 2ZM10 18.55C9.79233 18.55 9.58932 18.4884 9.41665 18.373C9.24398 18.2577 9.1094 18.0937 9.02993 17.9018C8.95045 17.71 8.92966 17.4988 8.97018 17.2952C9.01069 17.0915 9.11069 16.9044 9.25754 16.7575C9.40438 16.6107 9.59148 16.5107 9.79516 16.4702C9.99884 16.4297 10.21 16.4505 10.4018 16.5299C10.5937 16.6094 10.7577 16.744 10.873 16.9167C10.9884 17.0893 11.05 17.2923 11.05 17.5C11.05 17.6379 11.0228 17.7744 10.9701 17.9018C10.9173 18.0292 10.84 18.145 10.7425 18.2425C10.645 18.34 10.5292 18.4173 10.4018 18.4701C10.2744 18.5228 10.1379 18.55 10 18.55ZM14 16H6V4H14V16Z" fill="#2270B1"/>
+				</svg>
+				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Mobile (576px)', 'wc-category-showcase' ); ?></span>
+			</span>
+			<input type="number" name="wcss_column_breakpoint[mobile]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['mobile'] ); ?>">
+		</div>
+	</div>
+</div>
+<div class="wcss-settings-row-title wccs-block-slider-category-selection <?php echo ( 'block' === $wcss_showcase_layout && 'slider' === $wccs_display_mode ) ? '' : 'tw-hidden'; ?>">
+	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+		<path d="M19.3333 2.40039H4.66667C4.29848 2.40039 4 2.69887 4 3.06706V16.4004C4 16.7686 4.29848 17.0671 4.66667 17.0671H19.3333C19.7015 17.0671 20 16.7686 20 16.4004V3.06706C20 2.69887 19.7015 2.40039 19.3333 2.40039Z" fill="#2270B1"/>
+		<path d="M2.66667 15.7337H0.666667C0.489856 15.7337 0.320286 15.6635 0.195262 15.5385C0.0702379 15.4134 0 15.2439 0 15.0671V5.73372C0 5.55691 0.0702379 5.38734 0.195262 5.26232C0.320286 5.1373 0.489856 5.06706 0.666667 5.06706H2.66667V15.7337ZM23.3333 15.7337H21.3333V5.06706H23.3333C23.5101 5.06706 23.6797 5.1373 23.8047 5.26232C23.9298 5.38734 24 5.55691 24 5.73372V15.0671C24 15.2439 23.9298 15.4134 23.8047 15.5385C23.6797 15.6635 23.5101 15.7337 23.3333 15.7337Z" fill="#2270B1"/>
+		<path d="M5.33333 22.0004C5.8488 22.0004 6.26667 21.5825 6.26667 21.0671C6.26667 20.5516 5.8488 20.1337 5.33333 20.1337C4.81787 20.1337 4.4 20.5516 4.4 21.0671C4.4 21.5825 4.81787 22.0004 5.33333 22.0004Z" fill="#2270B1"/>
+		<path d="M9.33333 22.4671C10.1065 22.4671 10.7333 21.8403 10.7333 21.0671C10.7333 20.2939 10.1065 19.6671 9.33333 19.6671C8.56013 19.6671 7.93333 20.2939 7.93333 21.0671C7.93333 21.8403 8.56013 22.4671 9.33333 22.4671Z" fill="#2270B1"/>
+		<path d="M13.3333 22.0004C13.8488 22.0004 14.2667 21.5825 14.2667 21.0671C14.2667 20.5516 13.8488 20.1337 13.3333 20.1337C12.8179 20.1337 12.4 20.5516 12.4 21.0671C12.4 21.5825 12.8179 22.0004 13.3333 22.0004Z" fill="#2270B1"/>
+		<path d="M17.3333 22.0004C17.8488 22.0004 18.2667 21.5825 18.2667 21.0671C18.2667 20.5516 17.8488 20.1337 17.3333 20.1337C16.8179 20.1337 16.4 20.5516 16.4 21.0671C16.4 21.5825 16.8179 22.0004 17.3333 22.0004Z" fill="#2270B1"/>
+	</svg>
+	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slider Block', 'wc-category-showcase' ); ?></h2>
+</div>
+<div class="wcss-settings-row wccs-block-slider-category-selection <?php echo ( 'block' === $wcss_showcase_layout && 'slider' === $wccs_display_mode ) ? '' : 'tw-hidden'; ?>">
+	<div class="tw-w-1/3">
+		<h3 class="wccs-settings-title"><label for="wccs_block_slider_category"><?php esc_html_e( 'Choose Categories for Block Slider', 'wc-category-showcase' ); ?></label></h3>
+		<p class="wccs-settings-description"><?php esc_html_e( 'Decide whether to display all product categories or selectively choose specific ones to showcase.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-flex-col tw-items-center">
+		<div class="tw-min-w-[400px] tw-max-w-[400px]">
+			<select multiple="multiple" name="wccs_block_slider_category[]" id="wccs_block_slider_category" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100">
+				<?php foreach ( $wccs_block_slider_category as $category_id ) : ?>
+					<?php if ( ! empty( $category_id ) ) : ?>
+						<option value="<?php echo esc_attr( $category_id ); ?>" selected="selected"><?php echo esc_attr( \WooCommerceCategoryShowcase\Controllers\Helpers::get_category_title( $category_id ) ); ?></option>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</select>
+		</div>
+		<div class="tw-mt-6 wccs-selected-category-list">
+<!--			<div class="wcss-category-list-item"></div>-->
 		</div>
 	</div>
 </div>
@@ -536,140 +596,53 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wccs-settings-description"><?php esc_html_e( 'Decide whether to display all product categories or selectively choose specific ones to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-									<span class="tw-isolate tw-inline-flex tw-p-1 tw-rounded-md tw-bg-input-grey-50 tw-shadow-sm tw-min-w-[385px]">
-										<label class="tw-w-1/2 wccs-category-filter wcss-group-button-active">
-											<svg class="wcss-group-button-active-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
-												<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
-											</svg>
-											<input type="radio" name="wccs_category_filter" class="!tw-hidden" value="<?php echo esc_attr( 'all' ); ?>" checked>
-											<?php esc_html_e( 'All', 'wc-category-showcase' ); ?>
-										</label>
-										<label class="tw-w-1/2 wccs-category-filter wcss-group-button">
-											<svg class="wcss-group-button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-												<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z"/>
-												<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z"/>
-												<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z"/>
-												<path d="M7.77778 18.7223C8.42211 18.7223 8.94445 18.1999 8.94445 17.5556C8.94445 16.9113 8.42211 16.3889 7.77778 16.3889C7.13345 16.3889 6.61111 16.9113 6.61111 17.5556C6.61111 18.1999 7.13345 18.7223 7.77778 18.7223Z"/>
-												<path d="M11.1111 18.3334C11.5407 18.3334 11.8889 17.9851 11.8889 17.5556C11.8889 17.126 11.5407 16.7778 11.1111 16.7778C10.6816 16.7778 10.3333 17.126 10.3333 17.5556C10.3333 17.9851 10.6816 18.3334 11.1111 18.3334Z"/>
-												<path d="M14.4444 18.3334C14.874 18.3334 15.2222 17.9851 15.2222 17.5556C15.2222 17.126 14.874 16.7778 14.4444 16.7778C14.0149 16.7778 13.6667 17.126 13.6667 17.5556C13.6667 17.9851 14.0149 18.3334 14.4444 18.3334Z"/>
-											</svg>
-											<input type="radio" name="wccs_category_filter" class="!tw-hidden" value="<?php echo esc_attr( 'specific' ); ?>">
-											<?php esc_html_e( 'Specific', 'wc-category-showcase' ); ?>
-										</label>
-									</span>
+		<span class="tw-isolate tw-inline-flex tw-p-1 tw-rounded-md tw-bg-input-grey-50 tw-shadow-sm tw-min-w-[385px]">
+			<label class="tw-w-1/2 wccs-category-filter <?php echo 'all' === $wccs_category_filter ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
+				<svg class="<?php echo 'all' === $wccs_category_filter ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
+					<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
+				</svg>
+				<input type="radio" name="wccs_category_filter" class="!tw-hidden" value="<?php echo esc_attr( 'all' ); ?>" <?php if ( 'all' === $wccs_category_filter ) { echo 'checked'; } ?>>
+				<?php esc_html_e( 'All', 'wc-category-showcase' ); ?>
+			</label>
+			<label class="tw-w-1/2 wccs-category-filter <?php echo 'specific' === $wccs_category_filter ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
+				<svg class="<?php echo 'specific' === $wccs_category_filter ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+					<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z"/>
+					<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z"/>
+					<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z"/>
+					<path d="M7.77778 18.7223C8.42211 18.7223 8.94445 18.1999 8.94445 17.5556C8.94445 16.9113 8.42211 16.3889 7.77778 16.3889C7.13345 16.3889 6.61111 16.9113 6.61111 17.5556C6.61111 18.1999 7.13345 18.7223 7.77778 18.7223Z"/>
+					<path d="M11.1111 18.3334C11.5407 18.3334 11.8889 17.9851 11.8889 17.5556C11.8889 17.126 11.5407 16.7778 11.1111 16.7778C10.6816 16.7778 10.3333 17.126 10.3333 17.5556C10.3333 17.9851 10.6816 18.3334 11.1111 18.3334Z"/>
+					<path d="M14.4444 18.3334C14.874 18.3334 15.2222 17.9851 15.2222 17.5556C15.2222 17.126 14.874 16.7778 14.4444 16.7778C14.0149 16.7778 13.6667 17.126 13.6667 17.5556C13.6667 17.9851 14.0149 18.3334 14.4444 18.3334Z"/>
+				</svg>
+				<input type="radio" name="wccs_category_filter" class="!tw-hidden" value="<?php echo esc_attr( 'specific' ); ?>" <?php echo 'specific' === $wccs_category_filter ? 'checked' : ''; ?>>
+				<?php esc_html_e( 'Specific', 'wc-category-showcase' ); ?>
+			</label>
+		</span>
 	</div>
 </div>
-<div class="wcss-settings-row wccs-category-selection tw-hidden">
+<div class="wcss-settings-row wccs-category-selection <?php echo 'specific' === $wccs_category_filter ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Category Selection', 'wc-category-showcase' ); ?></h3>
+		<h3 class="wccs-settings-title"><label for="wccs_specific_category_select"><?php esc_html_e( 'Category Selection', 'wc-category-showcase' ); ?></label></h3>
 		<p class="wccs-settings-description"><?php esc_html_e( 'If selecting specific categories, use multi-select mode to easily pick the ones you want to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col tw-items-center">
 		<div class="tw-min-w-[400px] tw-max-w-[400px]">
 			<select multiple="multiple" name="wccs_specific_category_select[]" id="wccs_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100">
+				<?php foreach ( $wccs_specific_category_select as $category_id ) : ?>
+					<?php if ( ! empty( $category_id ) ) : ?>
+						<option value="<?php echo esc_attr( $category_id ); ?>" selected="selected"><?php echo esc_attr( \WooCommerceCategoryShowcase\Controllers\Helpers::get_category_title( $category_id ) ); ?></option>
+					<?php endif; ?>
+				<?php endforeach; ?>
 			</select>
 		</div>
 		<div class="tw-mt-6 wccs-selected-category-list">
-			<div class="wcss-category-list-item">
-				<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcss-custom-border wccs-move">
-					<div class="tw-flex tw-gap-1">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-							<path d="M7.6 16.5C8.48366 16.5 9.2 15.7725 9.2 14.875C9.2 13.9775 8.48366 13.25 7.6 13.25C6.71634 13.25 6 13.9775 6 14.875C6 15.7725 6.71634 16.5 7.6 16.5Z" fill="#64748B"/>
-							<path d="M7.6 11.625C8.48366 11.625 9.2 10.8975 9.2 10C9.2 9.10254 8.48366 8.375 7.6 8.375C6.71634 8.375 6 9.10254 6 10C6 10.8975 6.71634 11.625 7.6 11.625Z" fill="#64748B"/>
-							<path d="M7.6 6.75C8.48366 6.75 9.2 6.02246 9.2 5.125C9.2 4.22754 8.48366 3.5 7.6 3.5C6.71634 3.5 6 4.22754 6 5.125C6 6.02246 6.71634 6.75 7.6 6.75Z" fill="#64748B"/>
-							<path d="M12.4 16.5C13.2837 16.5 14 15.7725 14 14.875C14 13.9775 13.2837 13.25 12.4 13.25C11.5163 13.25 10.8 13.9775 10.8 14.875C10.8 15.7725 11.5163 16.5 12.4 16.5Z" fill="#64748B"/>
-							<path d="M12.4 11.625C13.2837 11.625 14 10.8975 14 10C14 9.10254 13.2837 8.375 12.4 8.375C11.5163 8.375 10.8 9.10254 10.8 10C10.8 10.8975 11.5163 11.625 12.4 11.625Z" fill="#64748B"/>
-							<path d="M12.4 6.75C13.2837 6.75 14 6.02246 14 5.125C14 4.22754 13.2837 3.5 12.4 3.5C11.5163 3.5 10.8 4.22754 10.8 5.125C10.8 6.02246 11.5163 6.75 12.4 6.75Z" fill="#64748B"/>
-						</svg>
-						<span>Category</span>
-					</div>
-					<div>
-						<svg class="wccs-category-details-show tw-text-text-grey-500 hover:tw-text-fade-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-							<path d="M8.19788 14.2882L9.1139 13.373H3.94387V3.943H17.158V6.76351C17.3385 6.83924 17.5025 6.94943 17.6408 7.0879L18.1019 7.54856V3.4715C18.1019 3.34645 18.0522 3.22652 17.9637 3.1381C17.8752 3.04968 17.7551 3 17.63 3H3.47193C3.34677 3 3.22673 3.04968 3.13823 3.1381C3.04972 3.22652 3 3.34645 3 3.4715V13.8445C3 13.9695 3.04972 14.0895 3.13823 14.1779C3.22673 14.2663 3.34677 14.316 3.47193 14.316H8.17617C8.1842 14.3075 8.19127 14.2967 8.19788 14.2882Z"/>
-							<path d="M18.8782 9.92397L16.838 7.88568C16.7977 7.84562 16.7499 7.81395 16.6972 7.7925C16.6445 7.77105 16.5882 7.76025 16.5313 7.76073H16.5176C16.3934 7.76389 16.2752 7.81451 16.1873 7.90218L8.99875 15.0888C8.95723 15.1303 8.92673 15.1815 8.91003 15.2378L7.75709 18.6986C7.71698 18.8315 7.91944 18.9994 8.03412 18.9994C8.04133 19.0002 8.04861 19.0002 8.05583 18.9994C8.15352 18.9768 11.0101 18.0008 11.5217 17.847C11.5772 17.8304 11.6277 17.8001 11.6685 17.7589L18.857 10.5718C18.9405 10.4884 18.9909 10.3774 18.9986 10.2597C19.0036 10.1984 18.9954 10.1367 18.9747 10.0788C18.9539 10.0209 18.921 9.96814 18.8782 9.92397ZM8.68161 18.0753L9.6151 15.473L11.2857 17.1379C10.5207 17.3675 9.34232 17.8782 8.68161 18.0753Z"/>
-						</svg>
-						<a href="#" class="wccs-category-details-hide tw-hidden">Done</a>
-					</div>
-				</div>
-				<div class="tw-p-2 wccs-category-custom-details tw-hidden">
-					<div>
-						<h4 class="tw-text-xs tw-my-0 tw-pl-1">NAME</h4>
-						<input class="tw-text-sm tw-w-full wccs-settings-field-border tw-mt-1" type="text" placeholder="Type here...">
-					</div>
-					<div class="tw-mt-3">
-						<h4 class="tw-text-xs tw-my-0 tw-pl-1">DESCRIPTION</h4>
-						<textarea class="tw-text-sm tw-w-full wccs-settings-field-border tw-mt-1" rows="4" name="wccs_overwrite_description" id="wccs_overwrite_description" placeholder="Add custom description"></textarea>
-					</div>
-					<div class="tw-mt-3 wcss-custom-border tw-pb-4">
-						<div class="tw-flex tw-justify-between tw-items-center">
-							<h4 class="tw-text-xs tw-my-0 tw-pl-1">ADD CUSTOM TEXT</h4>
-							<label class="tw-inline-flex tw-cursor-pointer">
-								<input type="checkbox" value="" class="text-sm tw-sr-only tw-peer wccs-custom-des-show-hide" name="wccs_showcase_is_slider">
-								<div class="wccs-toggle-small"></div>
-							</label>
-						</div>
-						<textarea class="tw-text-sm tw-w-full tw-hidden wccs-settings-field-border tw-mt-2" rows="4" name="wccs_custom_text" id="wccs_custom_text" placeholder="Add custom description"></textarea>
-					</div>
-					<div class="tw-mt-3 tw-flex tw-justify-around wcss-custom-border tw-pb-4">
-						<div>
-							<h4 class="tw-text-xs tw-my-0">CATEGORY IMAGE</h4>
-							<div class="tw-relative tw-mt-2">
-								<a href="#" class="wcss-upload-button">
-									Add Image
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-										<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-								</a>
-								<img class="tw-h-32 tw-w-40" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/placeholder-image.png') ?>" alt="">
-							</div>
-						</div>
-						<div>
-							<div class="tw-flex tw-justify-between tw-items-center">
-								<h4 class="tw-text-xs tw-my-0">CATEGORY ICON</h4>
-								<label class="tw-inline-flex tw-cursor-pointer">
-									<input type="checkbox" value="" class="tw-sr-only tw-peer wccs-icon-show-hide" name="wccs_showcase_is_slider">
-									<div class="wccs-toggle-small"></div>
-								</label>
-							</div>
-							<div class="tw-relative tw-mt-2">
-								<a href="#" class="wcss-upload-button wccs-icon-selection tw-hidden" disabled="disabled">
-									Add Icon
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-										<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-									</svg>
-								</a>
-								<img class="tw-h-32 tw-w-40" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/placeholder-icon.png') ?>" alt="">
-							</div>
-						</div>
-					</div>
-					<div class="tw-mt-3">
-						<div class="tw-flex tw-justify-between tw-items-center">
-							<h4 class="tw-text-xs tw-my-0 tw-pl-1">ADD LABEL</h4>
-							<label class="tw-inline-flex tw-cursor-pointer">
-								<input type="checkbox" value="" class="tw-sr-only tw-peer wccs-label-show-hide" name="wccs_showcase_is_slider">
-								<div class="wccs-toggle-small"></div>
-							</label>
-						</div>
-						<input class="wccs-label-selection tw-hidden tw-w-full tw-text-sm wccs-settings-field-border tw-mt-2 wccs-label-text" type="text" placeholder="Type here...">
-						<div class="wccs-label-selection tw-hidden tw-flex tw-flex-row tw-justify-between">
-							<p class="tw-text-text-light-grey-500 tw-m-0">Maximum  10 Letters!</p>
-							<p class="tw-text-text-light-grey-500 tw-m-0 wccs-label-text-count-show"><span>0</span>/10</p>
-						</div>
-					</div>
-					<div class="tw-mt-3 wccs-label-selection tw-hidden">
-						<h4 class="tw-text-xs tw-my-0 tw-pl-1">LABEL COLOR</h4>
-						<select name="wccs_label_color" id="wccs_label_color" class="tw-w-full wccs-settings-field-border tw-mt-1">
-							<option value="yellow">Yellow</option>
-							<option value="red">Red</option>
-							<option value="green">Green</option>
-						</select>
-					</div>
-					<input type="hidden" name="wccs_category_position[]" class="wccs_category_position" value="<?php echo esc_attr( 0 ); ?>">
-				</div>
-			</div>
+			<div class="wcss-category-list-item"></div>
+		</div>
+		<div class="tw-width-[56px] tw-h-[56px] wccs-loader tw-hidden">
+			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
 		</div>
 	</div>
 </div>
+
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccs-settings-title"><?php esc_html_e( 'Sort By', 'wc-category-showcase' ); ?></h3>
@@ -697,13 +670,16 @@ defined( 'ABSPATH' ) || exit;
 		</select>
 	</div>
 </div>
+
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Categories Display Limit', 'wc-category-showcase' ); ?></h3>
+		<h3 class="wccs-settings-title">
+			<label for="wcss_category_display_limit"><?php esc_html_e( 'Categories Display Limit', 'wc-category-showcase' ); ?></label>
+		</h3>
 		<p class="wccs-settings-description"><?php esc_html_e( 'Set the maximum number of categories to be displayed in your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center tw-bg-bg-grey-50">
-		<input type="number" name="wcss_category_display_limit" min="1" class="wccs-settings-field" placeholder="Ex: 12">
+		<input type="number" name="wcss_category_display_limit" id="wcss_category_display_limit" min="1" step="any" class="wccs-settings-field" placeholder="<?php esc_html_e( 'Ex: 12', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $wcss_category_display_limit ); ?>">
 	</div>
 </div>
 <div class="wcss-settings-row">
@@ -713,7 +689,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_includes_sub_categories" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer">
+			<input class="tw-sr-only tw-peer" type="checkbox" name="wccs_includes_sub_categories" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $wccs_includes_sub_categories ) { echo 'checked'; } ?>>
 			<div class="wccs-toggle"></div>
 		</label>
 	</div>
@@ -725,7 +701,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_hide_empty_categories" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer">
+			<input class="tw-sr-only tw-peer" type="checkbox" name="wccs_hide_empty_categories" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $wccs_hide_empty_categories ) { echo 'checked'; } ?>>
 			<div class="wccs-toggle"></div>
 		</label>
 	</div>
@@ -746,7 +722,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_column_adjustment" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer">
+			<input class="tw-sr-only tw-peer" type="checkbox" name="wccs_column_adjustment" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $wccs_column_adjustment ) { echo 'checked'; } ?>>
 			<div class="wccs-toggle"></div>
 		</label>
 	</div>
@@ -758,7 +734,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_pre_loader" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" name="wccs_showcase_is_slider" checked>
+			<input class="tw-sr-only tw-peer" type="checkbox" name="wccs_pre_loader" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $wccs_pre_loader ) { echo 'checked'; } ?>>
 			<div class="wccs-toggle"></div>
 		</label>
 	</div>

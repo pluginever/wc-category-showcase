@@ -206,7 +206,7 @@ class Admin {
 			wp_send_json_success( esc_html__( 'No, search term id provided.', 'wc-category-showcase' ) );
 			wp_die();
 		}
-		include __DIR__ . '/views/load-category-details.php';
+		include __DIR__ . '/views/showcase/load-category-details.php';
 		wp_die();
 	}
 }

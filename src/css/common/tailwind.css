@@ -155,4 +155,14 @@
 		@apply tw-text-fade-blue-600 tw-no-underline tw-flex tw-p-1 tw-bg-white tw-absolute tw-border !tw-border-divider-grey-100 tw-top-2 tw-right-2 tw-rounded-md;
 		border: 1px solid;
 	}
+
+
+	/*Showcase Tab css*/
+	.wcss-button-border-top{
+		border-top: 1px solid;
+	}
+
+	h3{
+		margin-bottom: 8px !important;
+	}
 }

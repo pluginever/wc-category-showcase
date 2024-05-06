@@ -1,6 +1,6 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\controllers;
+namespace WooCommerceCategoryShowcase\Controllers;
 
 defined( 'ABSPATH' ) || exit;
 
