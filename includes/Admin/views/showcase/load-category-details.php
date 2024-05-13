@@ -22,7 +22,7 @@ $image_icon_url     = esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/placeh
 $is_icon            = 'yes';
 $is_label           = 'yes';
 $label_text         = 'lorem ispum';
-$label_color        = 'lorem ispum';
+$label_color        = 'yellow';
 ?>
 <div class="wcss-category-list-item" data-id="<?php echo esc_attr( $cat_id ); ?>">
 	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcss-custom-border wccs-move">
@@ -110,11 +110,91 @@ $label_color        = 'lorem ispum';
 		</div>
 		<div class="tw-mt-3 wccs-label-selection <?php echo 'yes' === $is_label ? '' : 'tw-hidden'; ?>">
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'LABEL COLOR', 'wc-category-showcase' ); ?></h4>
-			<select name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][label_color]" id="wccs_label_color" class="tw-w-full wccs-settings-field-border tw-mt-1">
-				<option value="yellow">Yellow</option>
-				<option value="red">Red</option>
-				<option value="green">Green</option>
-			</select>
+			<div class="select-wrapper wccs-select-category-list-update">
+				<div class="select tw-w-[98%] tw-bg-input-grey-50 tw-border-divider-grey-100 tw-rounded-md">
+					<div class="select__trigger tw-bg-input-grey-50">
+					<span class="tw-flex tw-items-center tw-gap-1 tw-text-text-grey-500">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<g clip-path="url(#clip0_321_13967)">
+								<path d="M18.6293 0.102975C18.7641 -0.0343249 18.9844 -0.0343249 19.1192 0.102975L20 1H17.75L18.6308 0.102975H18.6293Z" fill="#A36200"/>
+								<path d="M0.102975 19.1207C-0.0343249 18.9859 -0.0343249 18.7656 0.102975 18.6308L1 17.75V20L0.102975 19.1192V19.1207Z" fill="#A36200"/>
+								<path d="M18.7649 0.100315C18.8293 0.0359338 18.9147 0.00299448 19 0H12.248C12.0668 0 11.8932 0.0718676 11.7659 0.199133L0.199117 11.7653C0.0718619 11.8926 0 12.0663 0 12.2474V19L0.0059885 18.994C0.00898274 18.9087 0.0419195 18.8248 0.106296 18.7589L18.7649 0.100315Z" fill="#FF9B04"/>
+							</g>
+						</svg>
+						<?php esc_html_e( 'Yellow', 'wc-category-showcase' ); ?>
+					</span>
+						<div class="wccs-arrow">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none">
+								<path d="M4.66663 10L7.99996 13.3333L11.3333 10" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M4.66663 6.00033L7.99996 2.66699L11.3333 6.00033" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+					<div class="custom-options tw-bg-white tw-w-[224px] tw-border-divider-grey-100 tw-rounded-md tw-hidden">
+						<span class="custom-option <?php echo 'yellow' === $label_color ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'yellow' ); ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<g clip-path="url(#clip0_321_13967)">
+									<path d="M18.6293 0.102975C18.7641 -0.0343249 18.9844 -0.0343249 19.1192 0.102975L20 1H17.75L18.6308 0.102975H18.6293Z" fill="#A36200"/>
+									<path d="M0.102975 19.1207C-0.0343249 18.9859 -0.0343249 18.7656 0.102975 18.6308L1 17.75V20L0.102975 19.1192V19.1207Z" fill="#A36200"/>
+									<path d="M18.7649 0.100315C18.8293 0.0359338 18.9147 0.00299448 19 0H12.248C12.0668 0 11.8932 0.0718676 11.7659 0.199133L0.199117 11.7653C0.0718619 11.8926 0 12.0663 0 12.2474V19L0.0059885 18.994C0.00898274 18.9087 0.0419195 18.8248 0.106296 18.7589L18.7649 0.100315Z" fill="#FF9B04"/>
+								</g>
+							</svg>
+							<?php esc_html_e( 'Yellow', 'wc-category-showcase' ); ?>
+						</span>
+						<span class="custom-option <?php echo 'red' === $label_color ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'red' ); ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<g clip-path="url(#clip0_321_13984)">
+								<path d="M18.6293 0.102975C18.7641 -0.0343249 18.9844 -0.0343249 19.1192 0.102975L20 1H17.75L18.6308 0.102975H18.6293Z" fill="#911212"/>
+								<path d="M0.102975 19.1207C-0.0343249 18.9859 -0.0343249 18.7656 0.102975 18.6308L1 17.75V20L0.102975 19.1192V19.1207Z" fill="#911212"/>
+								<path d="M18.7649 0.100315C18.8293 0.0359338 18.9147 0.00299448 19 0H12.248C12.0668 0 11.8932 0.0718676 11.7659 0.199133L0.199117 11.7653C0.0718619 11.8926 0 12.0663 0 12.2474V19L0.0059885 18.994C0.00898274 18.9087 0.0419195 18.8248 0.106296 18.7589L18.7649 0.100315Z" fill="#E42727"/>
+								</g>
+							</svg>
+							<?php esc_html_e( 'Red', 'wc-category-showcase' ); ?>
+						</span>
+						<span class="custom-option <?php echo 'blue' === $label_color ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'blue' ); ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<g clip-path="url(#clip0_321_13995)">
+								<path d="M18.6293 0.102975C18.7641 -0.0343249 18.9844 -0.0343249 19.1192 0.102975L20 1H17.75L18.6308 0.102975H18.6293Z" fill="#0E5295"/>
+								<path d="M0.102975 19.1207C-0.0343249 18.9859 -0.0343249 18.7656 0.102975 18.6308L1 17.75V20L0.102975 19.1192V19.1207Z" fill="#0E5295"/>
+								<path d="M18.7649 0.100315C18.8293 0.0359338 18.9147 0.00299448 19 0H12.248C12.0668 0 11.8932 0.0718676 11.7659 0.199133L0.199117 11.7653C0.0718619 11.8926 0 12.0663 0 12.2474V19L0.0059885 18.994C0.00898274 18.9087 0.0419195 18.8248 0.106296 18.7589L18.7649 0.100315Z" fill="#1370CC"/>
+								</g>
+							</svg>
+							<?php esc_html_e( 'Blue', 'wc-category-showcase' ); ?>
+						</span>
+						<span class="custom-option <?php echo 'purple' === $label_color ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'purple' ); ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<g clip-path="url(#clip0_321_13998)">
+								<path d="M18.6293 0.102975C18.7641 -0.0343249 18.9844 -0.0343249 19.1192 0.102975L20 1H17.75L18.6308 0.102975H18.6293Z" fill="#5B0E95"/>
+								<path d="M0.102975 19.1207C-0.0343249 18.9859 -0.0343249 18.7656 0.102975 18.6308L1 17.75V20L0.102975 19.1192V19.1207Z" fill="#5B0E95"/>
+								<path d="M18.7649 0.100315C18.8293 0.0359338 18.9147 0.00299448 19 0H12.248C12.0668 0 11.8932 0.0718676 11.7659 0.199133L0.199117 11.7653C0.0718619 11.8926 0 12.0663 0 12.2474V19L0.0059885 18.994C0.00898274 18.9087 0.0419195 18.8248 0.106296 18.7589L18.7649 0.100315Z" fill="#7B13CC"/>
+								</g>
+							</svg>
+							<?php esc_html_e( 'Purple', 'wc-category-showcase' ); ?>
+						</span>
+						<span class="custom-option <?php echo 'green' === $label_color ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'green' ); ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<g clip-path="url(#clip0_321_14005)">
+								<path d="M18.6293 0.102975C18.7641 -0.0343249 18.9844 -0.0343249 19.1192 0.102975L20 1H17.75L18.6308 0.102975H18.6293Z" fill="#0E9552"/>
+								<path d="M0.102975 19.1207C-0.0343249 18.9859 -0.0343249 18.7656 0.102975 18.6308L1 17.75V20L0.102975 19.1192V19.1207Z" fill="#0E9552"/>
+								<path d="M18.7649 0.100315C18.8293 0.0359338 18.9147 0.00299448 19 0H12.248C12.0668 0 11.8932 0.0718676 11.7659 0.199133L0.199117 11.7653C0.0718619 11.8926 0 12.0663 0 12.2474V19L0.0059885 18.994C0.00898274 18.9087 0.0419195 18.8248 0.106296 18.7589L18.7649 0.100315Z" fill="#13CC70"/>
+								</g>
+							</svg>
+							<?php esc_html_e( 'Green', 'wc-category-showcase' ); ?>
+						</span>
+						<span class="custom-option <?php echo 'magento' === $label_color ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'magento' ); ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<g clip-path="url(#clip0_321_14012)">
+								<path d="M18.6293 0.102975C18.7641 -0.0343249 18.9844 -0.0343249 19.1192 0.102975L20 1H17.75L18.6308 0.102975H18.6293Z" fill="#950E40"/>
+								<path d="M0.102975 19.1207C-0.0343249 18.9859 -0.0343249 18.7656 0.102975 18.6308L1 17.75V20L0.102975 19.1192V19.1207Z" fill="#950E40"/>
+								<path d="M18.7649 0.100315C18.8293 0.0359338 18.9147 0.00299448 19 0H12.248C12.0668 0 11.8932 0.0718676 11.7659 0.199133L0.199117 11.7653C0.0718619 11.8926 0 12.0663 0 12.2474V19L0.0059885 18.994C0.00898274 18.9087 0.0419195 18.8248 0.106296 18.7589L18.7649 0.100315Z" fill="#CC1356"/>
+								</g>
+							</svg>
+							<?php esc_html_e( 'Magento', 'wc-category-showcase' ); ?>
+						</span>
+					</div>
+				</div>
+				<input type="hidden" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][label_color]" value="<?php echo esc_attr( $label_color ); ?>">
+			</div>
 		</div>
 		<input type="hidden" name="wccs_category_list_item[<?php echo esc_attr( $cat_position ); ?>][position]" class="wccs_category_position" value="<?php echo esc_attr( $cat_position ); ?>">
 	</div>

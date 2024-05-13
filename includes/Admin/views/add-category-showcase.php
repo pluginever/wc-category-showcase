@@ -24,7 +24,7 @@ $wccs_showcase_title = 'lorem ispum';
 				<div class="tw-mx-auto">
 					<div class="w-full">
 						<label for="wccs_showcase_title">
-							<input type="text" class="tw-w-full" placeholder="<?php esc_html_e( 'Add title...')?>" name="wccs_showcase_title" id="wccs_showcase_title" value="<?php echo esc_attr( $wccs_showcase_title ); ?>">
+							<input type="text" class="tw-w-full" placeholder="<?php esc_html_e( 'Add title...', 'wc-category-showcase' ); ?>" name="wccs_showcase_title" id="wccs_showcase_title" value="<?php echo esc_attr( $wccs_showcase_title ); ?>">
 						</label>
 					</div>
 				</div>

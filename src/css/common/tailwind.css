@@ -113,6 +113,11 @@
 		border-bottom: 1px solid;
 	}
 
+	.wcss-custom-border-top{
+		@apply !tw-border-divider-grey-100;
+		border-top: 1px solid;
+	}
+
 	.wcss-group-button {
 		@apply tw-relative tw-flex tw-justify-center tw-gap-1 tw-items-center tw-rounded-md;
 		@apply tw-px-3 tw-py-2 tw-text-sm tw-font-semibold;

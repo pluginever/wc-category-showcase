@@ -17,3 +17,15 @@ tabTogglers.forEach(function (toggler) {
 		}
 	});
 });
+
+// window.addEventListener("DOMContentLoaded", function() {
+// 	// const select = document.querySelectorAll('.custom-option');
+// 	for (const option of document.querySelectorAll(".custom-option")) {
+// 		if (option.classList.contains('selected')) {
+// 			option.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
+// 			option.classList.add('selected');
+// 			document.getElementById("wccs_category_sort_order").value = option.dataset.value;
+// 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+// 		}
+// 	}
+// }, false);
