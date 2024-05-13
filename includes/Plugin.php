@@ -2,6 +2,8 @@
 
 namespace WooCommerceCategoryShowcase;
 
+use Codeception\Step\Condition;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -68,6 +70,7 @@ class Plugin extends ByteKit\Core\Plugin {
 			new Admin\Admin();
 			new Admin\Menus();
 		}
+//		new Controllers\GoogleFonts();
 
 		/**
 		 * Fires when the plugin is initialized.

@@ -18,6 +18,6 @@ class Actions {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'admin_post_wccs_add_category_showcase', array( __CLASS__, 'handle_add_category_showcase' ) );
+		add_action( 'admin_post_wccshowcase_add_category_showcase', array( __CLASS__, 'handle_add_category_showcase' ) );
 	}
 }

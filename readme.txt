@@ -46,7 +46,7 @@ WooCommerce Category Showcase has two parts one is WooCommerce category slider a
 WooCommerce Category Showcase has built-in shortcode builder with a nice easy interface where you can add and remove your selected category from a drop-down menu.
 
 ###Shortocode
-`[wccs_showcase id="showcase id"]`
+`[wccshowcase_showcase id="showcase id"]`
 
 ### Plugin Features
 * WooCommerce Category Slider
@@ -125,7 +125,7 @@ You can add maximum 6 categories as additional categories.
 
 = How to use WooCommerce Category Showcase in the template file =
 Place the snippet where you want. Change the id with the appropriate one.
-`<?php echo do_shortcode('[wccs_showcase id="showcase id"]'); ?>`
+`<?php echo do_shortcode('[wccshowcase_showcase id="showcase id"]'); ?>`
 
 == Screenshots ==
 1. WooCommerce category showcase

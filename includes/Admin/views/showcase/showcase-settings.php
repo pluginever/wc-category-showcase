@@ -7,43 +7,43 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$wccs_section_title                     = '';
-$wccs_section_description               = '';
-$wccs_show_section_description          = '';
-$wccs_content_margin                    = 12;
-$wccs_content_margin_is_all             = '';
-$wccs_content_margin_all                = array(
+$wccshowcase_section_title                     = '';
+$wccshowcase_section_description               = '';
+$wccshowcase_show_section_description          = '';
+$wccshowcase_content_margin                    = 12;
+$wccshowcase_content_margin_is_all             = '';
+$wccshowcase_content_margin_all                = array(
 	'top'    => '10',
 	'right'  => '20',
 	'bottom' => '10',
 	'left'   => '20',
 );
-$wccs_content_placement                 = 'top';
-$wccs_border_radius                     = 8;
-$wccs_border_is_all                     = '';
-$wccs_border_radius_all                 = array(
+$wccshowcase_content_placement                 = 'top';
+$wccshowcase_border_radius                     = 8;
+$wccshowcase_border_is_all                     = '';
+$wccshowcase_border_radius_all                 = array(
 	'top'    => '8',
 	'right'  => '8',
 	'bottom' => '8',
 	'left'   => '8',
 );
-$wccs_show_section_title                = '';
-$wccs_show_category_icon                = '';
-$wccs_show_category_product_title       = '';
-$wccs_show_category_description         = '';
-$wccs_show_category_product_quantity    = '';
-$wccs_show_subcategory_product_quantity = '';
-$wccs_show_custom_text                  = '';
-$wccs_show_button                       = '';
-$wccs_button_text                       = 'Shop Now';
-$wccs_button_style                      = 'only_text';
-$wccs_show_button_icon                  = 'yes';
-$wccs_button_background_color           = '#ffffff';
-$wccs_button_text_color                 = '#ffffff';
-$wccs_button_hover_color                = '#ffffff';
-$wccs_card_background_color             = '#ffffff';
-$wccs_card_text_color                   = '#ffffff';
-$wccs_card_hover_color                  = '#ffffff';
+$wccshowcase_show_section_title                = '';
+$wccshowcase_show_category_icon                = '';
+$wccshowcase_show_category_product_title       = '';
+$wccshowcase_show_category_description         = '';
+$wccshowcase_show_category_product_quantity    = '';
+$wccshowcase_show_subcategory_product_quantity = '';
+$wccshowcase_show_custom_text                  = '';
+$wccshowcase_show_button                       = '';
+$wccshowcase_button_text                       = 'Shop Now';
+$wccshowcase_button_style                      = 'only_text';
+$wccshowcase_show_button_icon                  = 'yes';
+$wccshowcase_button_background_color           = '#ffffff';
+$wccshowcase_button_text_color                 = '#ffffff';
+$wccshowcase_button_hover_color                = '#ffffff';
+$wccshowcase_card_background_color             = '#ffffff';
+$wccshowcase_card_text_color                   = '#ffffff';
+$wccshowcase_card_hover_color                  = '#ffffff';
 
 ?>
 <div class="wcss-settings-row-title">
@@ -55,31 +55,31 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Section Heading', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Section Heading', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-flex tw-cursor-pointer tw-flex-col">
 			<div>
-				<input type="checkbox" name="wccs_show_section_title" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wccs-show-hide-section-title" <?php if ( 'yes' === $wccs_show_section_title ) { echo 'checked'; } ?>>
-				<div class="wccs-toggle"></div>
+				<input type="checkbox" name="wccshowcase_show_section_title" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wccshowcase-show-hide-section-title" <?php if ( 'yes' === $wccshowcase_show_section_title ) { echo 'checked'; } ?>>
+				<div class="wccshowcase-toggle"></div>
 			</div>
-			<input class="tw-w-[350px] tw-mt-2 <?php echo 'yes' === $wccs_show_section_title ? '' : 'tw-hidden'; ?> tw-text-sm wccs-settings-field-border" type="text" name="wccs_section_title" id="wccs_section_title" value="<?php echo esc_attr( $wccs_section_title ); ?>" placeholder="<?php esc_html_e( 'Add title...', 'wc-category-showcase' ); ?>">
+			<input class="tw-w-[350px] tw-mt-2 <?php echo 'yes' === $wccshowcase_show_section_title ? '' : 'tw-hidden'; ?> tw-text-sm wccshowcase-settings-field-border" type="text" name="wccshowcase_section_title" id="wccshowcase_section_title" value="<?php echo esc_attr( $wccshowcase_section_title ); ?>" placeholder="<?php esc_html_e( 'Add title...', 'wc-category-showcase' ); ?>">
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Section Description', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Customize the description or subtext for each section of your category showcase.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Section Description', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Customize the description or subtext for each section of your category showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-flex tw-flex-col tw-cursor-pointer">
 			<div>
-				<input type="checkbox" name="wccs_show_section_description" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wccs-show-hide-section-description" <?php if ( 'yes' === $wccs_show_section_description ) { echo 'checked'; } ?>>
-				<div class="wccs-toggle"></div>
+				<input type="checkbox" name="wccshowcase_show_section_description" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wccshowcase-show-hide-section-description" <?php if ( 'yes' === $wccshowcase_show_section_description ) { echo 'checked'; } ?>>
+				<div class="wccshowcase-toggle"></div>
 			</div>
-			<textarea class="tw-w-[350px] tw-mt-2 <?php echo 'yes' === $wccs_show_section_description ? '' : 'tw-hidden'; ?> tw-text-sm wccs-settings-field-border" name="wccs_section_description" id="wccs_section_description" cols="30" rows="4" placeholder="<?php esc_html_e( 'Add description...', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $wccs_section_description ); ?></textarea>
+			<textarea class="tw-w-[350px] tw-mt-2 <?php echo 'yes' === $wccshowcase_show_section_description ? '' : 'tw-hidden'; ?> tw-text-sm wccshowcase-settings-field-border" name="wccshowcase_section_description" id="wccshowcase_section_description" cols="30" rows="4" placeholder="<?php esc_html_e( 'Add description...', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $wccshowcase_section_description ); ?></textarea>
 		</label>
 	</div>
 </div>
@@ -91,32 +91,32 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Choose Card Color', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Customize the color or tint of the category showcase cards to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Choose Card Color', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Customize the color or tint of the category showcase cards to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[348px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2">
+		<div class="tw-w-[348px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcss-category-list-item">
 			<div class="tw-mt-3 wcss-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccs-change-card-style"></span>
-					<input class="wccs-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccs_card_background_color" value="<?php echo esc_attr( $wccs_card_background_color ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
+					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_card_background_color" value="<?php echo esc_attr( $wccshowcase_card_background_color ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3 wcss-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccs-change-card-style"></span>
-					<input class="wccs-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccs_card_text_color" value="<?php echo esc_attr( $wccs_card_text_color ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
+					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_card_text_color" value="<?php echo esc_attr( $wccshowcase_card_text_color ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccs-change-card-style"></span>
-					<input class="wccs-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccs_card_hover_color" value="<?php echo esc_attr( $wccs_card_hover_color ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
+					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_card_hover_color" value="<?php echo esc_attr( $wccshowcase_card_hover_color ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
@@ -125,10 +125,10 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Border Radius', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Adjust the degree of curvature for the corners of the category showcase cards.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Border Radius', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Adjust the degree of curvature for the corners of the category showcase cards.', 'wc-category-showcase' ); ?></p>
 	</div>
-	<div class="tw-flex tw-items-center <?php echo 'yes' === $wccs_border_is_all ? 'tw-flex-col' : ''; ?>">
+	<div class="tw-flex tw-items-center <?php echo 'yes' === $wccshowcase_border_is_all ? 'tw-flex-col' : ''; ?>">
 		<div class="tw-flex tw-items-center tw-justify-start tw-w-full tw-pb-2">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 				<path d="M4 7.5V12.5C4 12.7761 4.22386 13 4.5 13H15.5C15.7761 13 16 12.7761 16 12.5V7.5C16 7.22386 15.7761 7 15.5 7H4.5C4.22386 7 4 7.22386 4 7.5Z" fill="#D3D9DF"/>
@@ -137,24 +137,24 @@ $wccs_card_hover_color                  = '#ffffff';
 				<path d="M1 3.19444L1 16.8056C1 16.9129 1.11193 17 1.25 17H1.75C1.88807 17 2 16.9129 2 16.8056L2 3.19444C2 3.08706 1.88807 3 1.75 3H1.25C1.11193 3 1 3.08706 1 3.19444Z" fill="#D3D9DF"/>
 				<path d="M18 3.19444V16.8056C18 16.9129 18.1119 17 18.25 17H18.75C18.8881 17 19 16.9129 19 16.8056V3.19444C19 3.08706 18.8881 3 18.75 3H18.25C18.1119 3 18 3.08706 18 3.19444Z" fill="#D3D9DF"/>
 			</svg>
-			<label class="tw-inline-flex tw-cursor-pointer">
-				<input type="number" name="wccs_border_radius" id="wccs_border_radius" value="<?php echo esc_attr( $wccs_border_radius ); ?>" class="" <?php echo 'yes' === $wccs_border_is_all ? 'disabled' : ''; ?>>
+			<label class="tw-inline-flex tw-cursor-pointer tw-pl-[4px]">
+				<input type="number" name="wccshowcase_border_radius" id="wccshowcase_border_radius" value="<?php echo esc_attr( $wccshowcase_border_radius ); ?>" class="wccshowcase-settings-field-border" <?php echo 'yes' === $wccshowcase_border_is_all ? 'disabled' : ''; ?>>
 			</label>
-			<div class="wccs-border-is-all <?php echo 'yes' === $wccs_border_is_all ? 'tw-text-fade-blue-600' : 'tw-text-text-grey-500'; ?>">
+			<div class="wccshowcase-border-is-all tw-pl-[8px] <?php echo 'yes' === $wccshowcase_border_is_all ? 'tw-text-fade-blue-600' : 'tw-text-text-grey-500'; ?>">
 				<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 					<path d="M17.45 8.89651H15.8945C15.7454 8.09011 15.4319 7.32303 14.9735 6.64301L16.076 5.54001C16.1274 5.4889 16.1682 5.42813 16.196 5.3612C16.2239 5.29427 16.2382 5.2225 16.2382 5.15001C16.2382 5.07752 16.2239 5.00575 16.196 4.93882C16.1682 4.87189 16.1274 4.81112 16.076 4.76001L15.2395 3.92401C15.1884 3.87261 15.1276 3.83182 15.0607 3.80399C14.9938 3.77615 14.922 3.76183 14.8495 3.76183C14.777 3.76183 14.7053 3.77615 14.6383 3.80399C14.5714 3.83182 14.5106 3.87261 14.4595 3.92401L13.357 5.02651C12.6771 4.56798 11.91 4.25461 11.1035 4.10601V2.55001C11.1035 2.47749 11.0892 2.40568 11.0613 2.33872C11.0335 2.27177 10.9926 2.21098 10.9412 2.15986C10.8897 2.10874 10.8287 2.0683 10.7616 2.04087C10.6944 2.01344 10.6225 1.99955 10.55 2.00001H9.45001C9.30414 2.00001 9.16425 2.05796 9.0611 2.1611C8.95796 2.26425 8.90001 2.40414 8.90001 2.55001V4.10601C8.09354 4.25461 7.32639 4.56798 6.64651 5.02651L5.54651 3.92401C5.4954 3.87261 5.43463 3.83182 5.3677 3.80399C5.30077 3.77615 5.229 3.76183 5.15651 3.76183C5.08402 3.76183 5.01225 3.77615 4.94532 3.80399C4.87839 3.83182 4.81762 3.87261 4.76651 3.92401L3.92401 4.76001C3.87261 4.81112 3.83182 4.87189 3.80399 4.93882C3.77615 5.00575 3.76183 5.07752 3.76183 5.15001C3.76183 5.2225 3.77615 5.29427 3.80399 5.3612C3.83182 5.42813 3.87261 5.4889 3.92401 5.54001L5.02651 6.64301C4.56815 7.32303 4.25465 8.09011 4.10551 8.89651H2.55001C2.47749 8.89651 2.40568 8.91085 2.33872 8.93871C2.27177 8.96657 2.21098 9.00739 2.15986 9.05884C2.10874 9.11028 2.0683 9.17133 2.04087 9.23846C2.01344 9.30559 1.99955 9.37749 2.00001 9.45001V10.55C2.00001 10.6959 2.05796 10.8358 2.1611 10.9389C2.26425 11.0421 2.40414 11.1 2.55001 11.1H4.10551C4.25439 11.9065 4.56791 12.6736 5.02651 13.3535L3.92401 14.4595C3.87261 14.5106 3.83182 14.5714 3.80399 14.6383C3.77615 14.7053 3.76183 14.777 3.76183 14.8495C3.76183 14.922 3.77615 14.9938 3.80399 15.0607C3.83182 15.1276 3.87261 15.1884 3.92401 15.2395L4.76051 16.076C4.81162 16.1274 4.87239 16.1682 4.93932 16.196C5.00625 16.2239 5.07802 16.2382 5.15051 16.2382C5.223 16.2382 5.29477 16.2239 5.3617 16.196C5.42863 16.1682 5.4894 16.1274 5.54051 16.076L6.64301 14.9735C7.32289 15.432 8.09004 15.7454 8.89651 15.894V17.45C8.89651 17.5225 8.91085 17.5943 8.93871 17.6613C8.96657 17.7283 9.00739 17.789 9.05884 17.8402C9.11028 17.8913 9.17133 17.9317 9.23846 17.9592C9.30559 17.9866 9.37749 18.0005 9.45001 18H10.55C10.6959 18 10.8358 17.9421 10.9389 17.8389C11.0421 17.7358 11.1 17.5959 11.1 17.45V15.894C11.9065 15.7454 12.6736 15.432 13.3535 14.9735L14.456 16.076C14.5071 16.1274 14.5679 16.1682 14.6348 16.196C14.7018 16.2239 14.7735 16.2382 14.846 16.2382C14.9185 16.2382 14.9903 16.2239 15.0572 16.196C15.1241 16.1682 15.1849 16.1274 15.236 16.076L16.0725 15.2395C16.1239 15.1884 16.1647 15.1276 16.1925 15.0607C16.2204 14.9938 16.2347 14.922 16.2347 14.8495C16.2347 14.777 16.2204 14.7053 16.1925 14.6383C16.1647 14.5714 16.1239 14.5106 16.0725 14.4595L14.97 13.357C15.4286 12.6771 15.7421 11.91 15.891 11.1035H17.45C17.5225 11.1035 17.5943 11.0892 17.6613 11.0613C17.7283 11.0335 17.789 10.9926 17.8402 10.9412C17.8913 10.8897 17.9317 10.8287 17.9592 10.7616C17.9866 10.6944 18.0005 10.6225 18 10.55V9.45001C18.0005 9.37749 17.9866 9.30559 17.9592 9.23846C17.9317 9.17133 17.8913 9.11028 17.8402 9.05884C17.789 9.00739 17.7283 8.96657 17.6613 8.93871C17.5943 8.91085 17.5225 8.89651 17.45 8.89651ZM12.207 10C12.207 10.4365 12.0776 10.8632 11.8351 11.2262C11.5926 11.5891 11.2479 11.872 10.8446 12.039C10.4413 12.2061 9.99756 12.2498 9.56945 12.1646C9.14133 12.0794 8.74808 11.8693 8.43943 11.5606C8.13077 11.2519 7.92058 10.8587 7.83542 10.4306C7.75026 10.0025 7.79397 9.5587 7.96101 9.15543C8.12805 8.75215 8.41093 8.40747 8.77387 8.16496C9.13681 7.92245 9.56351 7.79301 10 7.79301C10.5853 7.79301 11.1467 8.02553 11.5606 8.43943C11.9745 8.85332 12.207 9.41468 12.207 10Z"/>
 				</svg>
-				<input type="hidden" value="<?php echo 'yes' === $wccs_border_is_all ? esc_attr( 'yes' ) : ''; ?>" name="wccs_border_is_all">
+				<input type="hidden" value="<?php echo 'yes' === $wccshowcase_border_is_all ? esc_attr( 'yes' ) : ''; ?>" name="wccshowcase_border_is_all">
 			</div>
 		</div>
-		<div class="tw-mt-3 tw-grid tw-grid-cols-2 tw-gap-y-6 tw-gap-x-3 wcss-custom-border-top tw-pt-4 wccs_content_margin_all <?php echo 'yes' === $wccs_border_is_all ? '' : 'tw-hidden'; ?>">
+		<div class="tw-mt-3 tw-grid tw-grid-cols-2 tw-gap-y-6 tw-gap-x-3 wcss-custom-border-top tw-pt-4 wccshowcase_content_margin_all <?php echo 'yes' === $wccshowcase_border_is_all ? '' : 'tw-hidden'; ?>">
 			<div class="tw-flex tw-items-center">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 					<path d="M2 15.3333V7.33333C2 4.38801 4.38801 2 7.33333 2H15.3333C16.8061 2 18 3.19391 18 4.66667C18 6.13943 16.8061 7.33333 15.3333 7.33333H10C8.52668 7.33333 7.33333 8.52668 7.33333 10V15.3333C7.33333 16.8061 6.13943 18 4.66667 18C3.19391 18 2 16.8061 2 15.3333Z" fill="#2270B1"/>
 				</svg>
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_border_radius_all[top]" value="<?php echo esc_attr( $wccs_content_margin_all['top'] ); ?>">
+						<input type="number" name="wccshowcase_border_radius_all[top]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['top'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -162,7 +162,7 @@ $wccs_card_hover_color                  = '#ffffff';
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_border_radius_all[bottom]" value="<?php echo esc_attr( $wccs_content_margin_all['bottom'] ); ?>">
+						<input type="number" name="wccshowcase_border_radius_all[bottom]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['bottom'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -176,7 +176,7 @@ $wccs_card_hover_color                  = '#ffffff';
 				</svg>
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_border_radius_all[left]" value="<?php echo esc_attr( $wccs_content_margin_all['left'] ); ?>">
+						<input type="number" name="wccshowcase_border_radius_all[left]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['left'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -184,7 +184,7 @@ $wccs_card_hover_color                  = '#ffffff';
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_border_radius_all[right]" value="<?php echo esc_attr( $wccs_content_margin_all['right'] ); ?>">
+						<input type="number" name="wccshowcase_border_radius_all[right]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['right'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -197,8 +197,8 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Gap Between Cards', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Control the amount of space between category cards in your showcase.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Gap Between Cards', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Control the amount of space between category cards in your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -206,47 +206,47 @@ $wccs_card_hover_color                  = '#ffffff';
 			<path d="M3.75 1H3.25C3.11193 1 3 1.11193 3 1.25V18.75C3 18.8881 3.11193 19 3.25 19H3.75C3.88807 19 4 18.8881 4 18.75V1.25C4 1.11193 3.88807 1 3.75 1Z" fill="#D3D9DF"/>
 			<path d="M16.75 1H16.25C16.1119 1 16 1.11193 16 1.25V18.75C16 18.8881 16.1119 19 16.25 19H16.75C16.8881 19 17 18.8881 17 18.75V1.25C17 1.11193 16.8881 1 16.75 1Z" fill="#D3D9DF"/>
 		</svg>
-		<label class="tw-inline-flex tw-cursor-pointer tw-relative">
-			<input type="number" name="wccs_gap_between_cards" value="<?php echo esc_attr( $wccs_content_margin ); ?>" class="">
-			<span>px</span>
+		<label class="tw-inline-flex tw-cursor-pointer tw-relative tw-pl-[4px]">
+			<input type="number" name="wccshowcase_gap_between_cards" value="<?php echo esc_attr( $wccshowcase_content_margin ); ?>" class="wccshowcase-settings-field-border">
+			<span class="tw-absolute tw-bg-input-grey-50 tw-py-[6px] tw-px-4 tw-items-center tw-top-[2px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'px' ); ?></span>
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row-title"></div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Content Placement', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Choose the alignment or position of the contents.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Content Placement', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose the alignment or position of the contents.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
 		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column">
-				<div class="<?php echo 'top' === $wccs_content_placement ? 'wccs-layout-active-before-content-2' : ''; ?>">
-					<svg class="<?php echo 'top' === $wccs_content_placement ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccshowcase-number-of-column">
+				<div class="<?php echo 'top' === $wccshowcase_content_placement ? 'wccshowcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 'top' === $wccshowcase_content_placement ? 'wccshowcase-layout-active' : 'wccshowcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3534)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V12.5C0 13.6046 0.89543 14.5 2 14.5H46C47.1046 14.5 48 13.6046 48 12.5V2C48 0.89543 47.1046 0 46 0Z" fill="#2270B1"/>
 							<path d="M46 17.5H2C0.89543 17.5 0 18.3954 0 19.5V30C0 31.1046 0.89543 32 2 32H46C47.1046 32 48 31.1046 48 30V19.5C48 18.3954 47.1046 17.5 46 17.5Z" fill="#D3D9DF"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_content_placement" value="<?php echo esc_attr( 'top' ); ?>" <?php echo 'top' === $wccs_content_placement ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wccshowcase_content_placement" value="<?php echo esc_attr( 'top' ); ?>" <?php echo 'top' === $wccshowcase_content_placement ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Top', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column">
-				<div class="<?php echo 'bottom' === $wccs_content_placement ? 'wccs-layout-active-before-content-2' : ''; ?>">
-					<svg class="<?php echo 'bottom' === $wccs_content_placement ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccshowcase-number-of-column">
+				<div class="<?php echo 'bottom' === $wccshowcase_content_placement ? 'wccshowcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 'bottom' === $wccshowcase_content_placement ? 'wccshowcase-layout-active' : 'wccshowcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3549)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V12.5C0 13.6046 0.89543 14.5 2 14.5H46C47.1046 14.5 48 13.6046 48 12.5V2C48 0.89543 47.1046 0 46 0Z" fill="#D3D9DF"/>
 							<path d="M46 17.5H2C0.89543 17.5 0 18.3954 0 19.5V30C0 31.1046 0.89543 32 2 32H46C47.1046 32 48 31.1046 48 30V19.5C48 18.3954 47.1046 17.5 46 17.5Z" fill="#2270B1"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_content_placement" value="<?php echo esc_attr( 'bottom' ); ?>" <?php echo 'bottom' === $wccs_content_placement ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wccshowcase_content_placement" value="<?php echo esc_attr( 'bottom' ); ?>" <?php echo 'bottom' === $wccshowcase_content_placement ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Bottom', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column">
-				<div class="<?php echo 'center' === $wccs_content_placement ? 'wccs-layout-active-before-content-2' : ''; ?>">
-					<svg class="<?php echo 'center' === $wccs_content_placement ? 'wccs-layout-active' : 'wccs-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccshowcase-number-of-column">
+				<div class="<?php echo 'center' === $wccshowcase_content_placement ? 'wccshowcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 'center' === $wccshowcase_content_placement ? 'wccshowcase-layout-active' : 'wccshowcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3545)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V6.66667C0 7.77124 0.89543 8.66667 2 8.66667H46C47.1046 8.66667 48 7.77124 48 6.66667V2C48 0.89543 47.1046 0 46 0Z" fill="#D3D9DF"/>
 							<path d="M46 11.667H2C0.89543 11.667 0 12.5624 0 13.667V18.3337C0 19.4382 0.89543 20.3337 2 20.3337H46C47.1046 20.3337 48 19.4382 48 18.3337V13.667C48 12.5624 47.1046 11.667 46 11.667Z" fill="#2270B1"/>
@@ -254,36 +254,36 @@ $wccs_card_hover_color                  = '#ffffff';
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_content_placement" value="<?php echo esc_attr( 'center' ); ?>" <?php echo 'center' === $wccs_content_placement ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wccshowcase_content_placement" value="<?php echo esc_attr( 'center' ); ?>" <?php echo 'center' === $wccshowcase_content_placement ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Center', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column-pro">
-				<div class="wccs-number-of-column wccs-layout-pro-before-content-2">
-					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccshowcase-number-of-column-pro">
+				<div class="wccshowcase-number-of-column wccshowcase-layout-pro-before-content-2">
+					<svg class="wccshowcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3552)">
 							<path d="M25 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H25C26.1046 32 27 31.1046 27 30V2C27 0.89543 26.1046 0 25 0Z" fill="#D3D9DF"/>
 							<path d="M46 0H32C30.8954 0 30 0.89543 30 2V30C30 31.1046 30.8954 32 32 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z" fill="#2270B1"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_content_placement" value="<?php echo esc_attr( 'right' ); ?>" <?php echo 'right' === $wccs_content_placement ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wccshowcase_content_placement" value="<?php echo esc_attr( 'right' ); ?>" <?php echo 'right' === $wccshowcase_content_placement ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Right', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column-pro">
-				<div class="wccs-number-of-column wccs-layout-pro-before-content-2">
-					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccshowcase-number-of-column-pro">
+				<div class="wccshowcase-number-of-column wccshowcase-layout-pro-before-content-2">
+					<svg class="wccshowcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3555)">
 							<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z" fill="#2270B1"/>
 							<path d="M46 0H23C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z" fill="#D3D9DF"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_content_placement" value="<?php echo esc_attr( 'left' ); ?>" <?php echo 'left' === $wccs_content_placement ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wccshowcase_content_placement" value="<?php echo esc_attr( 'left' ); ?>" <?php echo 'left' === $wccshowcase_content_placement ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Left', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccs-number-of-column-pro">
-				<div class="wccs-layout-pro-before-content-2">
-					<svg class="wccs-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wccshowcase-number-of-column-pro">
+				<div class="wccshowcase-layout-pro-before-content-2">
+					<svg class="wccshowcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3537)">
 							<mask id="mask0_609_3537" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="32">
 								<path d="M46 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z" fill="white"/>
@@ -297,7 +297,7 @@ $wccs_card_hover_color                  = '#ffffff';
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wccs_content_placement" value="<?php echo esc_attr( 'overlay' ); ?>" <?php echo 'overlay' === $wccs_content_placement ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wccshowcase_content_placement" value="<?php echo esc_attr( 'overlay' ); ?>" <?php echo 'overlay' === $wccshowcase_content_placement ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Overlay', 'wc-category-showcase' ); ?></span>
 			</div>
 		</div>
@@ -324,10 +324,10 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Content Margin', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Adjust the amount of space between the content and the edges of each category card.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Content Margin', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Adjust the amount of space between the content and the edges of each category card.', 'wc-category-showcase' ); ?></p>
 	</div>
-	<div class="tw-flex tw-items-center <?php echo 'yes' === $wccs_content_margin_is_all ? 'tw-flex-col' : ''; ?>">
+	<div class="tw-flex tw-items-center <?php echo 'yes' === $wccshowcase_content_margin_is_all ? 'tw-flex-col' : ''; ?>">
 		<div class="tw-flex tw-items-center tw-justify-start tw-w-full tw-pb-2">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 				<path d="M4 7.5V12.5C4 12.7761 4.22386 13 4.5 13H15.5C15.7761 13 16 12.7761 16 12.5V7.5C16 7.22386 15.7761 7 15.5 7H4.5C4.22386 7 4 7.22386 4 7.5Z" fill="#D3D9DF"/>
@@ -336,17 +336,17 @@ $wccs_card_hover_color                  = '#ffffff';
 				<path d="M1 3.19444L1 16.8056C1 16.9129 1.11193 17 1.25 17H1.75C1.88807 17 2 16.9129 2 16.8056L2 3.19444C2 3.08706 1.88807 3 1.75 3H1.25C1.11193 3 1 3.08706 1 3.19444Z" fill="#D3D9DF"/>
 				<path d="M18 3.19444V16.8056C18 16.9129 18.1119 17 18.25 17H18.75C18.8881 17 19 16.9129 19 16.8056V3.19444C19 3.08706 18.8881 3 18.75 3H18.25C18.1119 3 18 3.08706 18 3.19444Z" fill="#D3D9DF"/>
 			</svg>
-			<label class="tw-inline-flex tw-cursor-pointer">
-				<input type="number" name="wccs_content_margin" id="wccs_content_margin" value="<?php echo esc_attr( $wccs_content_margin ); ?>" class="" <?php echo 'yes' === $wccs_content_margin_is_all ? 'disabled' : ''; ?>>
+			<label class="tw-inline-flex tw-cursor-pointer tw-pl-[4px]">
+				<input type="number" name="wccshowcase_content_margin" id="wccshowcase_content_margin" value="<?php echo esc_attr( $wccshowcase_content_margin ); ?>" class="wccshowcase-settings-field-border" <?php echo 'yes' === $wccshowcase_content_margin_is_all ? 'disabled' : ''; ?>>
 			</label>
-			<div class="wccs-content-margin-is-all <?php echo 'yes' === $wccs_content_margin_is_all ? 'tw-text-fade-blue-600' : 'tw-text-text-grey-500'; ?>">
+			<div class="wccshowcase-content-margin-is-all tw-pl-[8px] <?php echo 'yes' === $wccshowcase_content_margin_is_all ? 'tw-text-fade-blue-600' : 'tw-text-text-grey-500'; ?>">
 				<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 					<path d="M17.45 8.89651H15.8945C15.7454 8.09011 15.4319 7.32303 14.9735 6.64301L16.076 5.54001C16.1274 5.4889 16.1682 5.42813 16.196 5.3612C16.2239 5.29427 16.2382 5.2225 16.2382 5.15001C16.2382 5.07752 16.2239 5.00575 16.196 4.93882C16.1682 4.87189 16.1274 4.81112 16.076 4.76001L15.2395 3.92401C15.1884 3.87261 15.1276 3.83182 15.0607 3.80399C14.9938 3.77615 14.922 3.76183 14.8495 3.76183C14.777 3.76183 14.7053 3.77615 14.6383 3.80399C14.5714 3.83182 14.5106 3.87261 14.4595 3.92401L13.357 5.02651C12.6771 4.56798 11.91 4.25461 11.1035 4.10601V2.55001C11.1035 2.47749 11.0892 2.40568 11.0613 2.33872C11.0335 2.27177 10.9926 2.21098 10.9412 2.15986C10.8897 2.10874 10.8287 2.0683 10.7616 2.04087C10.6944 2.01344 10.6225 1.99955 10.55 2.00001H9.45001C9.30414 2.00001 9.16425 2.05796 9.0611 2.1611C8.95796 2.26425 8.90001 2.40414 8.90001 2.55001V4.10601C8.09354 4.25461 7.32639 4.56798 6.64651 5.02651L5.54651 3.92401C5.4954 3.87261 5.43463 3.83182 5.3677 3.80399C5.30077 3.77615 5.229 3.76183 5.15651 3.76183C5.08402 3.76183 5.01225 3.77615 4.94532 3.80399C4.87839 3.83182 4.81762 3.87261 4.76651 3.92401L3.92401 4.76001C3.87261 4.81112 3.83182 4.87189 3.80399 4.93882C3.77615 5.00575 3.76183 5.07752 3.76183 5.15001C3.76183 5.2225 3.77615 5.29427 3.80399 5.3612C3.83182 5.42813 3.87261 5.4889 3.92401 5.54001L5.02651 6.64301C4.56815 7.32303 4.25465 8.09011 4.10551 8.89651H2.55001C2.47749 8.89651 2.40568 8.91085 2.33872 8.93871C2.27177 8.96657 2.21098 9.00739 2.15986 9.05884C2.10874 9.11028 2.0683 9.17133 2.04087 9.23846C2.01344 9.30559 1.99955 9.37749 2.00001 9.45001V10.55C2.00001 10.6959 2.05796 10.8358 2.1611 10.9389C2.26425 11.0421 2.40414 11.1 2.55001 11.1H4.10551C4.25439 11.9065 4.56791 12.6736 5.02651 13.3535L3.92401 14.4595C3.87261 14.5106 3.83182 14.5714 3.80399 14.6383C3.77615 14.7053 3.76183 14.777 3.76183 14.8495C3.76183 14.922 3.77615 14.9938 3.80399 15.0607C3.83182 15.1276 3.87261 15.1884 3.92401 15.2395L4.76051 16.076C4.81162 16.1274 4.87239 16.1682 4.93932 16.196C5.00625 16.2239 5.07802 16.2382 5.15051 16.2382C5.223 16.2382 5.29477 16.2239 5.3617 16.196C5.42863 16.1682 5.4894 16.1274 5.54051 16.076L6.64301 14.9735C7.32289 15.432 8.09004 15.7454 8.89651 15.894V17.45C8.89651 17.5225 8.91085 17.5943 8.93871 17.6613C8.96657 17.7283 9.00739 17.789 9.05884 17.8402C9.11028 17.8913 9.17133 17.9317 9.23846 17.9592C9.30559 17.9866 9.37749 18.0005 9.45001 18H10.55C10.6959 18 10.8358 17.9421 10.9389 17.8389C11.0421 17.7358 11.1 17.5959 11.1 17.45V15.894C11.9065 15.7454 12.6736 15.432 13.3535 14.9735L14.456 16.076C14.5071 16.1274 14.5679 16.1682 14.6348 16.196C14.7018 16.2239 14.7735 16.2382 14.846 16.2382C14.9185 16.2382 14.9903 16.2239 15.0572 16.196C15.1241 16.1682 15.1849 16.1274 15.236 16.076L16.0725 15.2395C16.1239 15.1884 16.1647 15.1276 16.1925 15.0607C16.2204 14.9938 16.2347 14.922 16.2347 14.8495C16.2347 14.777 16.2204 14.7053 16.1925 14.6383C16.1647 14.5714 16.1239 14.5106 16.0725 14.4595L14.97 13.357C15.4286 12.6771 15.7421 11.91 15.891 11.1035H17.45C17.5225 11.1035 17.5943 11.0892 17.6613 11.0613C17.7283 11.0335 17.789 10.9926 17.8402 10.9412C17.8913 10.8897 17.9317 10.8287 17.9592 10.7616C17.9866 10.6944 18.0005 10.6225 18 10.55V9.45001C18.0005 9.37749 17.9866 9.30559 17.9592 9.23846C17.9317 9.17133 17.8913 9.11028 17.8402 9.05884C17.789 9.00739 17.7283 8.96657 17.6613 8.93871C17.5943 8.91085 17.5225 8.89651 17.45 8.89651ZM12.207 10C12.207 10.4365 12.0776 10.8632 11.8351 11.2262C11.5926 11.5891 11.2479 11.872 10.8446 12.039C10.4413 12.2061 9.99756 12.2498 9.56945 12.1646C9.14133 12.0794 8.74808 11.8693 8.43943 11.5606C8.13077 11.2519 7.92058 10.8587 7.83542 10.4306C7.75026 10.0025 7.79397 9.5587 7.96101 9.15543C8.12805 8.75215 8.41093 8.40747 8.77387 8.16496C9.13681 7.92245 9.56351 7.79301 10 7.79301C10.5853 7.79301 11.1467 8.02553 11.5606 8.43943C11.9745 8.85332 12.207 9.41468 12.207 10Z"/>
 				</svg>
-				<input type="hidden" value="<?php echo 'yes' === $wccs_content_margin_is_all ? esc_attr( 'yes' ) : ''; ?>" name="wccs_content_margin_is_all">
+				<input type="hidden" value="<?php echo 'yes' === $wccshowcase_content_margin_is_all ? esc_attr( 'yes' ) : ''; ?>" name="wccshowcase_content_margin_is_all">
 			</div>
 		</div>
-		<div class="tw-mt-3 tw-grid tw-grid-cols-2 tw-gap-y-6 tw-gap-x-3 wcss-custom-border-top tw-pt-4 wccs_content_margin_all <?php echo 'yes' === $wccs_content_margin_is_all ? '' : 'tw-hidden'; ?>">
+		<div class="tw-mt-3 tw-grid tw-grid-cols-2 tw-gap-y-6 tw-gap-x-3 wcss-custom-border-top tw-pt-4 wccshowcase_content_margin_all <?php echo 'yes' === $wccshowcase_content_margin_is_all ? '' : 'tw-hidden'; ?>">
 			<div class="tw-flex tw-items-center">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 					<path d="M15.5 9H4.5C4.22386 9 4 9.22386 4 9.5V14.5C4 14.7761 4.22386 15 4.5 15H15.5C15.7761 15 16 14.7761 16 14.5V9.5C16 9.22386 15.7761 9 15.5 9Z" fill="#2270B1"/>
@@ -354,7 +354,7 @@ $wccs_card_hover_color                  = '#ffffff';
 				</svg>
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_content_margin_all[top]" value="<?php echo esc_attr( $wccs_content_margin_all['top'] ); ?>">
+						<input type="number" name="wccshowcase_content_margin_all[top]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['top'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -362,7 +362,7 @@ $wccs_card_hover_color                  = '#ffffff';
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_content_margin_all[bottom]" value="<?php echo esc_attr( $wccs_content_margin_all['bottom'] ); ?>">
+						<input type="number" name="wccshowcase_content_margin_all[bottom]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['bottom'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -378,7 +378,7 @@ $wccs_card_hover_color                  = '#ffffff';
 				</svg>
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_content_margin_all[left]" value="<?php echo esc_attr( $wccs_content_margin_all['left'] ); ?>">
+						<input type="number" name="wccshowcase_content_margin_all[left]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['left'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -386,7 +386,7 @@ $wccs_card_hover_color                  = '#ffffff';
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
 					<label for="">
-						<input type="number" name="wccs_content_margin_all[right]" value="<?php echo esc_attr( $wccs_content_margin_all['right'] ); ?>">
+						<input type="number" name="wccshowcase_content_margin_all[right]" value="<?php echo esc_attr( $wccshowcase_content_margin_all['right'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
 				</div>
@@ -407,73 +407,73 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Categories Icon', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Choose to Show/Hide icons to visually represent each category in your showcase.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Categories Icon', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose to Show/Hide icons to visually represent each category in your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_show_category_icon" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_show_category_icon ) { echo 'checked'; } ?>>
-			<div class="wccs-toggle"></div>
+			<input type="checkbox" name="wccshowcase_show_category_icon" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_show_category_icon ) { echo 'checked'; } ?>>
+			<div class="wccshowcase-toggle"></div>
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Category Title', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Show/Hide category title to be displayed in the showcase.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Category Title', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Show/Hide category title to be displayed in the showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_show_category_product_title" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_show_category_product_title ) { echo 'checked'; } ?>>
-			<div class="wccs-toggle"></div>
+			<input type="checkbox" name="wccshowcase_show_category_product_title" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_show_category_product_title ) { echo 'checked'; } ?>>
+			<div class="wccshowcase-toggle"></div>
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Category Description', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Show/Hide description or summary for each category to provide additional context or information.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Category Description', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Show/Hide description or summary for each category to provide additional context or information.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_show_category_description" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_show_category_description ) { echo 'checked'; } ?>>
-			<div class="wccs-toggle"></div>
+			<input type="checkbox" name="wccshowcase_show_category_description" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_show_category_description ) { echo 'checked'; } ?>>
+			<div class="wccshowcase-toggle"></div>
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Product Quantity', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Display the total number of products within each category.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Product Quantity', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Display the total number of products within each category.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_show_category_product_quantity" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_show_category_product_quantity ) { echo 'checked'; } ?>>
-			<div class="wccs-toggle"></div>
+			<input type="checkbox" name="wccshowcase_show_category_product_quantity" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_show_category_product_quantity ) { echo 'checked'; } ?>>
+			<div class="wccshowcase-toggle"></div>
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Sub-categories Product Quantity', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Show/Hide the total number of products within each subcategory.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Sub-categories Product Quantity', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Show/Hide the total number of products within each subcategory.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_show_subcategory_product_quantity" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_show_subcategory_product_quantity ) { echo 'checked'; } ?>>
-			<div class="wccs-toggle"></div>
+			<input type="checkbox" name="wccshowcase_show_subcategory_product_quantity" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_show_subcategory_product_quantity ) { echo 'checked'; } ?>>
+			<div class="wccshowcase-toggle"></div>
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Custom Text', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Add custom text or message like Price Range, Category Details to further enhance the description or information for each category.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Custom Text', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Add custom text or message like Price Range, Category Details to further enhance the description or information for each category.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_show_custom_text" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_show_custom_text ) { echo 'checked'; } ?>>
-			<div class="wccs-toggle"></div>
+			<input type="checkbox" name="wccshowcase_show_custom_text" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_show_custom_text ) { echo 'checked'; } ?>>
+			<div class="wccshowcase-toggle"></div>
 		</label>
 	</div>
 </div>
@@ -487,39 +487,39 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Button', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Show/Hide the button to prompt user action, such as exploring the category or making a purchase.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Button', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Show/Hide the button to prompt user action, such as exploring the category or making a purchase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccs_show_button" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_show_button ) { echo 'checked'; } ?>>
-			<div class="wccs-toggle"></div>
+			<input type="checkbox" name="wccshowcase_show_button" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_show_button ) { echo 'checked'; } ?>>
+			<div class="wccshowcase-toggle"></div>
 		</label>
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Button Text', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Enter the text or label to be displayed on the call-to-action button.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Button Text', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Enter the text or label to be displayed on the call-to-action button.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center tw-bg-bg-grey-50">
-		<input type="text" name="wccs_button_text" min="1" class="wccs-settings-field tw-text-sm tw-w-[350px]" placeholder="<?php esc_html_e( 'type button text...', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $wccs_button_text ); ?>">
+		<input type="text" name="wccshowcase_button_text" min="1" class="wccshowcase-settings-field tw-text-sm tw-w-[350px]" placeholder="<?php esc_html_e( 'type button text...', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $wccshowcase_button_text ); ?>">
 	</div>
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Button Style', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Choose the visual style or design for the call-to-action button.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Button Style', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose the visual style or design for the call-to-action button.', 'wc-category-showcase' ); ?></p>
 	</div>
-	<div class="tw-bg-input-grey-50 tw-w-[360px] tw-h-[292px]">
+	<div class="tw-bg-input-grey-50 tw-w-[360px] tw-h-[292px] wcss-category-list-item">
 		<div class="tw-grid tw-grid-cols-2 tw-gap-x-2 tw-gap-y-6 tw-justify-items-center tw-m-3 tw-pb-1">
 			<div class="tw-text-center">
 				<div class="tw-w-[160px] tw-h-[68px] tw-bg-white tw-flex tw-rounded-md">
 					<span class="tw-w-[108px] tw-text-button-bg-color tw-m-auto tw-py-[9px]"><?php esc_html_e( 'Shop Now', 'wc-category-showcase' ); ?></span>
 				</div>
 				<div class="tw-mt-2">
-					<label for="wccs_button_style_only_text">
-						<input type="radio" name="wccs_button_style" id="wccs_button_style_only_text" <?php if ( 'only_text' === $wccs_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'only_text' ); ?>">
+					<label for="wccshowcase_button_style_only_text">
+						<input type="radio" name="wccshowcase_button_style" id="wccshowcase_button_style_only_text" <?php if ( 'only_text' === $wccshowcase_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'only_text' ); ?>">
 						<?php esc_html_e( 'Only Text', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
@@ -529,8 +529,8 @@ $wccs_card_hover_color                  = '#ffffff';
 					<span class="tw-w-[108px] tw-bg-button-bg-color tw-text-white tw-m-auto tw-py-[9px]"><?php esc_html_e( 'Shop Now', 'wc-category-showcase' ); ?></span>
 				</div>
 				<div class="tw-mt-2">
-					<label for="wccs_button_style_sharp_corner">
-						<input type="radio" name="wccs_button_style" id="wccs_button_style_sharp_corner" <?php if ( 'sharp_corner' === $wccs_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'sharp_corner' ); ?>">
+					<label for="wccshowcase_button_style_sharp_corner">
+						<input type="radio" name="wccshowcase_button_style" id="wccshowcase_button_style_sharp_corner" <?php if ( 'sharp_corner' === $wccshowcase_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'sharp_corner' ); ?>">
 						<?php esc_html_e( 'Sharp Corner', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
@@ -540,8 +540,8 @@ $wccs_card_hover_color                  = '#ffffff';
 					<span class="tw-w-[108px] tw-bg-button-bg-color tw-text-white tw-m-auto tw-py-[9px] tw-rounded-md"><?php esc_html_e( 'Shop Now', 'wc-category-showcase' ); ?></span>
 				</div>
 				<div class="tw-mt-2">
-					<label for="wccs_button_style_slightly_rounded">
-						<input type="radio" name="wccs_button_style" id="wccs_button_style_slightly_rounded" <?php if ( 'slightly_rounded' === $wccs_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'slightly_rounded' ); ?>">
+					<label for="wccshowcase_button_style_slightly_rounded">
+						<input type="radio" name="wccshowcase_button_style" id="wccshowcase_button_style_slightly_rounded" <?php if ( 'slightly_rounded' === $wccshowcase_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'slightly_rounded' ); ?>">
 						<?php esc_html_e( 'Slightly Rounded', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
@@ -551,16 +551,16 @@ $wccs_card_hover_color                  = '#ffffff';
 					<span class="tw-w-[108px] tw-bg-button-bg-color tw-text-white tw-m-auto tw-py-[9px] tw-rounded-[18px]"><?php esc_html_e( 'Shop Now', 'wc-category-showcase' ); ?></span>
 				</div>
 				<div class="tw-mt-2">
-					<label for="wccs_button_style_rounded">
-						<input type="radio" name="wccs_button_style" id="wccs_button_style_rounded" <?php if ( 'rounded' === $wccs_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'rounded' ); ?>">
+					<label for="wccshowcase_button_style_rounded">
+						<input type="radio" name="wccshowcase_button_style" id="wccshowcase_button_style_rounded" <?php if ( 'rounded' === $wccshowcase_button_style ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'rounded' ); ?>">
 						<?php esc_html_e( 'Rounded', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
 		</div>
 		<div class="tw-m-3 tw-pt-4 tw-border-t tw-border-divider-grey-100 wcss-button-border-top">
-			<label for="wccs_show_button_icon">
-				<input type="checkbox" name="wccs_show_button_icon" id="wccs_show_button_icon" <?php if ( 'yes' === $wccs_show_button_icon ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'yes' ); ?>">
+			<label for="wccshowcase_show_button_icon">
+				<input type="checkbox" name="wccshowcase_show_button_icon" id="wccshowcase_show_button_icon" <?php if ( 'yes' === $wccshowcase_show_button_icon ) { echo 'checked'; } ?> value="<?php echo esc_attr( 'yes' ); ?>">
 				<?php esc_html_e( 'Show Arrow Icon', 'wc-category-showcase' ); ?>
 			</label>
 		</div>
@@ -568,32 +568,32 @@ $wccs_card_hover_color                  = '#ffffff';
 </div>
 <div class="wcss-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccs-settings-title"><?php esc_html_e( 'Button Color', 'wc-category-showcase' ); ?></h3>
-		<p class="wccs-settings-description"><?php esc_html_e( 'Select the color for the call-to-action button to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Button Color', 'wc-category-showcase' ); ?></h3>
+		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Select the color for the call-to-action button to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[348px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2">
+		<div class="tw-w-[348px] tw-h-[240px] tw-rounded-md tw-p-2 wcss-category-list-item">
 			<div class="tw-mt-3 wcss-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccs-change-button-style"></span>
-					<input class="wccs-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccs_button_background_color" value="<?php echo esc_attr( $wccs_button_background_color ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-button-style"></span>
+					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_button_background_color" value="<?php echo esc_attr( $wccshowcase_button_background_color ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3 wcss-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccs-change-button-style"></span>
-					<input class="wccs-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccs_button_text_color" value="<?php echo esc_attr( $wccs_button_text_color ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-button-style"></span>
+					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_button_text_color" value="<?php echo esc_attr( $wccshowcase_button_text_color ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccs-change-button-style"></span>
-					<input class="wccs-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccs_button_hover_color" value="<?php echo esc_attr( $wccs_button_hover_color ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-button-style"></span>
+					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_button_hover_color" value="<?php echo esc_attr( $wccshowcase_button_hover_color ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>

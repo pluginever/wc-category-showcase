@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-	.wccs-toggle{
+	.wccshowcase-toggle{
 		@apply tw-relative tw-w-11 tw-h-6 tw-bg-divider-grey-100;
 		@apply hover:tw-bg-accent-grey-200;
 		@apply peer-focus:tw-outline-none ;
@@ -17,7 +17,7 @@
 		@apply after:tw-w-5 after:tw-transition-all dark:tw-border-gray-600 peer-checked:tw-bg-accent-green-500;
 	}
 
-	.wccs-toggle-small{
+	.wccshowcase-toggle-small{
 		@apply tw-relative tw-w-[28px] tw-h-4 tw-bg-divider-grey-100;
 		@apply hover:tw-bg-accent-grey-200;
 		@apply peer-focus:tw-outline-none ;
@@ -34,18 +34,18 @@
 
 /* Custom Styles */
 @layer components {
-	.wccs-tabs {
+	.wccshowcase-tabs {
 		@apply tw-no-underline tw-text-text-light-grey-500 hover:tw-text-fade-blue-600 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm;
 		@apply tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto;
 	}
-	.wccs-tabs-active {
+	.wccshowcase-tabs-active {
 		@apply tw-no-underline tw-bg-input-grey-50 tw-text-fade-blue-600 tw-rounded-md tw-px-3;
 		@apply tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-flex-auto tw-gap-1 !tw-shadow-none;
 		@apply focus:tw-text-fade-blue-600 tw-outline-0;
 		outline: none !important;
 	}
 
-	.wccs-border-active{
+	.wccshowcase-border-active{
 		@apply tw-border-accent-green-500 tw-border-2 tw-rounded-lg;
 	}
 	.wcss-settings-row{
@@ -55,51 +55,51 @@
 		@apply tw-flex tw-items-center tw-gap-1 tw-border-b !tw-border-divider-grey-100;
 		border-bottom: 1px solid;
 	}
-	.wccs-settings-description{
+	.wccshowcase-settings-description{
 		@apply tw-text-xs tw-font-normal tw-leading-4 tw-text-gray-400;
 	}
-	.wccs-settings-title{
+	.wccshowcase-settings-title{
 		@apply tw-text-base tw-font-semibold tw-leading-6 tw-text-black;
 	}
 
-	.wccs-settings-field{
+	.wccshowcase-settings-field{
 		@apply tw-w-60 !tw-bg-input-grey-50 !tw-border-divider-grey-100;
 	}
 
-	.wccs-settings-field-border{
+	.wccshowcase-settings-field-border{
 		@apply !tw-border-divider-grey-100 !tw-rounded-md;
 		border: 1px solid;
 	}
 
-	.wccs-layout-primary {
+	.wccshowcase-layout-primary {
 		@apply tw-text-text-light-grey-300 tw-p-2 tw-border tw-border-text-light-grey-300 tw-rounded-md tw-bg-white hover:tw-text-text-light-grey-500;
 		border: 1px solid;
 	}
 
-	.wccs-layout-active {
+	.wccshowcase-layout-active {
 		@apply tw-text-fade-blue-600 tw-p-2 tw-border !tw-border-accent-green-500 tw-rounded-md tw-bg-white tw-inner-border tw-inner-border-accent-green-500;
 		border: 1px solid;
 		/*box-sizing: border-box;*/
 	}
 
-	.wccs-layout-active-before-content {
+	.wccshowcase-layout-active-before-content {
 		@apply before:tw-absolute before:tw-content-check-circle before:tw-text-sm before:tw-top-1 before:tw-left-5;
 	}
 
-	.wccs-layout-active-before-content-2 {
+	.wccshowcase-layout-active-before-content-2 {
 		@apply before:tw-absolute before:tw-content-check-circle before:tw-text-sm before:tw-top-1 before:tw-left-1;
 	}
 
-	.wccs-layout-disable {
+	.wccshowcase-layout-disable {
 		@apply tw-text-text-light-grey-300 tw-p-2 tw-border tw-border-text-light-grey-300 tw-rounded-md tw-bg-white;
 		border: 1px solid;
 	}
 
-	.wccs-layout-pro-before-content {
+	.wccshowcase-layout-pro-before-content {
 		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-4;
 	}
 
-	.wccs-layout-pro-before-content-2 {
+	.wccshowcase-layout-pro-before-content-2 {
 		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-0;
 	}
 
@@ -169,5 +169,29 @@
 
 	h3{
 		margin-bottom: 8px !important;
+	}
+
+	/*Font tab*/
+
+	.wccshowcase-font-tag-select{
+		@apply tw-bg-white tw-text-center tw-py-2 tw-rounded-md tw-w-[41px] tw-font-bold tw-text-text-grey-500;
+		@apply hover:tw-border-fade-blue-600 tw-rounded-md hover:tw-text-fade-blue-600;
+		border: 2px solid #E2E8F0;
+		cursor: pointer;
+		margin: 0;
+	}
+	.wccshowcase-font-tag-select.active{
+		@apply !tw-border-fade-blue-600 tw-text-fade-blue-600;
+	}
+
+	.wccshowcase-font-design-select{
+		@apply tw-bg-white tw-text-center tw-pt-2 tw-rounded-md tw-w-[41px] tw-text-text-grey-500;
+		@apply hover:tw-border-fade-blue-600 tw-rounded-md hover:tw-text-fade-blue-600;
+		border: 2px solid #E2E8F0;
+		cursor: pointer;
+		margin: 0;
+	}
+	.wccshowcase-font-design-select.active{
+		@apply !tw-border-fade-blue-600 tw-text-fade-blue-600;
 	}
 }
