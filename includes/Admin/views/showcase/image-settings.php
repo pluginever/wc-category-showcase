@@ -6,6 +6,10 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$wccs_image_lazy_load         = 'yes';
+$wccs_image_zoom_on_hover     = 'yes';
+$wccs_interactive_hover_style = 'always_gray';
 ?>
 <div class="wcss-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -14,3 +18,63 @@ defined( 'ABSPATH' ) || exit;
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Images Settings', 'wc-category-showcase' ); ?></h2>
 </div>
+<div class="wcss-settings-row">
+	<div class="tw-w-1/3">
+		<h3 class="wccs-settings-title"><?php esc_html_e( 'Lazy Load', 'wc-category-showcase' ); ?></h3>
+		<p class="wccs-settings-description"><?php esc_html_e( 'Delays the loading of non-essential resources, such as images or scripts, until they are required, improving webpage performance and speed.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<label class="tw-inline-flex tw-cursor-pointer">
+			<input type="checkbox" name="wccs_image_lazy_load" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_image_lazy_load ) { echo 'checked'; } ?>>
+			<div class="wccs-toggle"></div>
+		</label>
+	</div>
+</div>
+<div class="wcss-settings-row">
+	<div class="tw-w-1/3">
+		<h3 class="wccs-settings-title"><?php esc_html_e( 'Zoom on Hover', 'wc-category-showcase' ); ?></h3>
+		<p class="wccs-settings-description"><?php esc_html_e( 'Enable the zoom effect to occur when hovering over the images associated with each category.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<label class="tw-inline-flex tw-cursor-pointer">
+			<input type="checkbox" name="wccs_image_zoom_on_hover" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccs_image_zoom_on_hover ) { echo 'checked'; } ?>>
+			<div class="wccs-toggle"></div>
+		</label>
+	</div>
+</div>
+<div class="wcss-settings-row">
+	<div class="tw-w-1/3">
+		<h3 class="wccs-settings-title"><?php esc_html_e( 'Interactive Hover Styles', 'wc-category-showcase' ); ?></h3>
+		<p class="wccs-settings-description"><?php esc_html_e( 'Choose from a variety of effects that occur when hovering over the images, adding interactivity and visual appeal.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<div class="select-wrapper" id="wccs-select-interactive-hover-style">
+			<div class="select wccs-sort-order tw-w-[224px] tw-bg-input-grey-50 tw-border-divider-grey-100 tw-rounded-md">
+				<div class="select__trigger tw-bg-input-grey-50">
+					<span class="tw-flex tw-items-center tw-gap-1 tw-text-text-grey-500">
+						<?php esc_html_e( 'Grayscale & Normal on Hover', 'wc-category-showcase' ); ?>
+					</span>
+					<div class="wccs-arrow">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none">
+							<path d="M4.66663 10L7.99996 13.3333L11.3333 10" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M4.66663 6.00033L7.99996 2.66699L11.3333 6.00033" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
+				</div>
+				<div class="custom-options tw-w-[224px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden">
+					<span class="custom-option <?php echo 'normal_gray' === $wccs_interactive_hover_style ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'normal_gray' ); ?>">
+						<?php esc_html_e( 'Grayscale & Normal on Hover', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option <?php echo 'only_gray' === $wccs_interactive_hover_style ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'only_gray' ); ?>">
+						<?php esc_html_e( 'Grayscale Hover', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option <?php echo 'always_gray' === $wccs_interactive_hover_style ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'always_gray' ); ?>">
+						<?php esc_html_e( 'Always Gray Scale', 'wc-category-showcase' ); ?>
+					</span>
+				</div>
+			</div>
+			<input type="hidden" name="wccs_interactive_hover_style" id="wccs_interactive_hover_style" value="<?php echo esc_attr( $wccs_interactive_hover_style ); ?>">
+		</div>
+	</div>
+</div>
+

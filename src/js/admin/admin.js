@@ -159,11 +159,11 @@
 			});
 
 			// custom select option start
-			$(document).on('click', '#wccs-select-sort-by, #wccs-select-sort, .wccs-select-category-list-update', function (e) {
+			$(document).on('click', '#wccs-select-sort-by, #wccs-select-sort, .wccs-select-category-list-update, #wccs-select-interactive-hover-style', function (e) {
 				$(this).children().children('.custom-options').toggleClass('tw-hidden');
 			});
 
-			$(document).on('click', '#wccs-select-sort-by .custom-options .custom-option, #wccs-select-sort .custom-options .custom-option, .wccs-select-category-list-update .custom-options .custom-option', function (e) {
+			$(document).on('click', '#wccs-select-sort-by .custom-options .custom-option, #wccs-select-sort .custom-options .custom-option, .wccs-select-category-list-update .custom-options .custom-option, #wccs-select-interactive-hover-style .custom-options .custom-option', function (e) {
 				var currentOption = $(this).data('value');
 				$($(this).parent()).find('.custom-option').each(function() {
 					$(this).removeClass('selected');
