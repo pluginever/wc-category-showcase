@@ -11,8 +11,8 @@ $category     = get_term_by( 'id', $term_id, 'product_cat' );
 $thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
 $image        = wp_get_attachment_url( $thumbnail_id );
 ?>
-<div class="wcss-category-list-item">
-	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcss-custom-border wccshowcase-move">
+<div class="wccshowcase-category-list-item">
+	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wccshowcase-custom-border wccshowcase-move">
 		<div class="tw-flex tw-gap-1">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 				<path d="M7.6 16.5C8.48366 16.5 9.2 15.7725 9.2 14.875C9.2 13.9775 8.48366 13.25 7.6 13.25C6.71634 13.25 6 13.9775 6 14.875C6 15.7725 6.71634 16.5 7.6 16.5Z" fill="#64748B"/>
@@ -41,7 +41,7 @@ $image        = wp_get_attachment_url( $thumbnail_id );
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1">DESCRIPTION</h4>
 			<textarea class="tw-text-sm tw-w-full wccshowcase-settings-field-border tw-mt-1" rows="4" name="wccshowcase_overwrite_description" id="wccshowcase_overwrite_description" placeholder="Add custom description"></textarea>
 		</div>
-		<div class="tw-mt-3 wcss-custom-border tw-pb-4">
+		<div class="tw-mt-3 wccshowcase-custom-border tw-pb-4">
 			<div class="tw-flex tw-justify-between tw-items-center">
 				<h4 class="tw-text-xs tw-my-0 tw-pl-1">ADD CUSTOM TEXT</h4>
 				<label class="tw-inline-flex tw-cursor-pointer">
@@ -51,11 +51,11 @@ $image        = wp_get_attachment_url( $thumbnail_id );
 			</div>
 			<textarea class="tw-text-sm tw-w-full tw-hidden wccshowcase-settings-field-border tw-mt-2" rows="4" name="wccshowcase_custom_text" id="wccshowcase_custom_text" placeholder="Add custom description"></textarea>
 		</div>
-		<div class="tw-mt-3 tw-flex tw-justify-around wcss-custom-border tw-pb-4">
+		<div class="tw-mt-3 tw-flex tw-justify-around wccshowcase-custom-border tw-pb-4">
 			<div>
 				<h4 class="tw-text-xs tw-my-0">CATEGORY IMAGE</h4>
 				<div class="tw-relative tw-mt-2">
-					<a href="#" class="wcss-upload-button">
+					<a href="#" class="wccshowcase-upload-button">
 						Add Image
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 							<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -73,7 +73,7 @@ $image        = wp_get_attachment_url( $thumbnail_id );
 					</label>
 				</div>
 				<div class="tw-relative tw-mt-2">
-					<a href="#" class="wcss-upload-button wccshowcase-icon-selection tw-hidden" disabled="disabled">
+					<a href="#" class="wccshowcase-upload-button wccshowcase-icon-selection tw-hidden" disabled="disabled">
 						Add Icon
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 							<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>

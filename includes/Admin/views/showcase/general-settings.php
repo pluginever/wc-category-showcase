@@ -7,19 +7,19 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$wcss_showcase_layout          = 'block';
+$wccshowcase_showcase_layout          = 'block';
 $wccshowcase_pre_loader               = 'yes';
 $wccshowcase_number_of_grid_column    = 3;
 $wccshowcase_number_of_block_column   = 2;
 $wccshowcase_column_adjustment        = 'yes';
 $wccshowcase_hide_empty_categories    = 'yes';
 $wccshowcase_includes_sub_categories  = 'yes';
-$wcss_category_display_limit   = 12;
+$wccshowcase_category_display_limit   = 12;
 $wccshowcase_block_slider_category    = array( 17 );
 $wccshowcase_specific_category_select = array();
 $wccshowcase_category_filter          = 'all';
 $wccshowcase_display_mode             = 'slider';
-$wcss_column_breakpoint        = array(
+$wccshowcase_column_breakpoint        = array(
 	'desktop' => '4',
 	'laptop'  => '3',
 	'tablet'  => '2',
@@ -28,23 +28,23 @@ $wcss_column_breakpoint        = array(
 $wccshowcase_category_sort_order      = 'desc';
 $wccshowcase_category_sort_order_by   = 'default';
 ?>
-<div class="wcss-settings-row-title">
+<div class="wccshowcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M21.607 15.4393H20.2284C20.1275 14.93 19.9299 14.4452 19.6466 14.0117L20.628 13.0204C20.6645 12.9834 20.6935 12.9396 20.7133 12.8913C20.7331 12.8431 20.7433 12.7914 20.7433 12.7391C20.7433 12.6869 20.7331 12.6352 20.7133 12.5869C20.6935 12.5387 20.6645 12.4948 20.628 12.4579L20.0325 11.8563C19.9959 11.8194 19.9525 11.7901 19.9047 11.7701C19.857 11.7501 19.8058 11.7398 19.7541 11.7398C19.7024 11.7398 19.6512 11.7501 19.6034 11.7701C19.5556 11.7901 19.5122 11.8194 19.4757 11.8563L18.4955 12.8465C18.0664 12.5601 17.5865 12.3604 17.0823 12.2582V10.8661C17.0823 10.7607 17.0409 10.6595 16.967 10.585C16.8932 10.5104 16.7931 10.4685 16.6887 10.4685H15.8985C15.7941 10.4685 15.694 10.5104 15.6201 10.585C15.5463 10.6595 15.5048 10.7607 15.5048 10.8661V12.2588C15.0006 12.3609 14.5208 12.5607 14.0917 12.8471L13.1103 11.8551C13.0738 11.8182 13.0304 11.7889 12.9826 11.7689C12.9348 11.7489 12.8836 11.7386 12.8319 11.7386C12.7802 11.7386 12.729 11.7489 12.6812 11.7689C12.6335 11.7889 12.5901 11.8182 12.5535 11.8551L11.958 12.4567C11.9214 12.4936 11.8924 12.5375 11.8726 12.5857C11.8529 12.634 11.8427 12.6857 11.8427 12.7379C11.8427 12.7902 11.8529 12.8419 11.8726 12.8901C11.8924 12.9384 11.9214 12.9822 11.958 13.0192L12.9394 14.0105C12.6561 14.444 12.4585 14.9288 12.3576 15.4381H10.9778C10.8734 15.4381 10.7733 15.48 10.6995 15.5545C10.6257 15.6291 10.5842 15.7302 10.5842 15.8357V16.631C10.5842 16.7364 10.6257 16.8376 10.6995 16.9122C10.7733 16.9867 10.8734 17.0286 10.9778 17.0286H12.3564C12.4573 17.5379 12.6549 18.0227 12.9382 18.4561L11.9568 19.4493C11.9203 19.4863 11.8912 19.5301 11.8715 19.5784C11.8517 19.6266 11.8415 19.6783 11.8415 19.7306C11.8415 19.7828 11.8517 19.8345 11.8715 19.8828C11.8912 19.931 11.9203 19.9749 11.9568 20.0118L12.5523 20.6134C12.5889 20.6503 12.6323 20.6796 12.6801 20.6996C12.7278 20.7196 12.779 20.7299 12.8307 20.7299C12.8824 20.7299 12.9336 20.7196 12.9814 20.6996C13.0292 20.6796 13.0726 20.6503 13.1091 20.6134L14.0905 19.622C14.5196 19.9082 14.9995 20.1077 15.5036 20.2097V21.6024C15.5036 21.7078 15.5451 21.809 15.6189 21.8835C15.6928 21.9581 15.7929 22 15.8973 22H16.6845C16.7889 22 16.8891 21.9581 16.9629 21.8835C17.0367 21.809 17.0782 21.7078 17.0782 21.6024V20.2109C17.5823 20.1089 18.0622 19.9094 18.4913 19.6232L19.4727 20.6146C19.5092 20.6515 19.5526 20.6808 19.6004 20.7008C19.6482 20.7208 19.6994 20.7311 19.7511 20.7311C19.8028 20.7311 19.854 20.7208 19.9018 20.7008C19.9495 20.6808 19.9929 20.6515 20.0295 20.6146L20.625 20.013C20.6616 19.9761 20.6906 19.9322 20.7104 19.884C20.7301 19.8357 20.7403 19.784 20.7403 19.7318C20.7403 19.6795 20.7301 19.6278 20.7104 19.5796C20.6906 19.5313 20.6616 19.4875 20.625 19.4505L19.646 18.4604C19.9293 18.0269 20.1269 17.5421 20.2278 17.0328H21.6064C21.6581 17.0328 21.7092 17.0225 21.757 17.0026C21.8048 16.9826 21.8482 16.9533 21.8847 16.9164C21.9213 16.8794 21.9503 16.8356 21.97 16.7874C21.9898 16.7391 22 16.6874 22 16.6352V15.8369C22 15.7316 21.9586 15.6305 21.8849 15.556C21.8112 15.4814 21.7113 15.4394 21.607 15.4393ZM16.2921 18.4002C15.8681 18.4002 15.4536 18.2732 15.1011 18.0352C14.7485 17.7973 14.4737 17.459 14.3115 17.0633C14.1492 16.6676 14.1068 16.2321 14.1895 15.8121C14.2722 15.392 14.4764 15.0061 14.7762 14.7032C15.076 14.4003 15.458 14.1941 15.8739 14.1105C16.2897 14.0269 16.7208 14.0698 17.1125 14.2337C17.5042 14.3977 17.839 14.6752 18.0746 15.0314C18.3102 15.3875 18.4359 15.8062 18.4359 16.2345C18.4359 16.5189 18.3805 16.8006 18.2727 17.0633C18.165 17.3261 18.0071 17.5648 17.808 17.7659C17.6089 17.967 17.3726 18.1265 17.1125 18.2354C16.8524 18.3442 16.5736 18.4002 16.2921 18.4002Z" fill="#2270B1"/>
 		<path d="M9.55337 18.6408H3.19101V6.60942H19.8651V9.98122C20.2906 10.2303 20.6897 10.5227 21.0561 10.8541V3.60157C21.0561 3.44202 20.9934 3.28901 20.8817 3.1762C20.77 3.06338 20.6186 3 20.4606 3H2.5955C2.43757 3 2.2861 3.06338 2.17442 3.1762C2.06274 3.28901 2 3.44202 2 3.60157V19.2424C2 19.4019 2.06274 19.555 2.17442 19.6678C2.2861 19.7806 2.43757 19.844 2.5955 19.844H10.1018C9.88298 19.4607 9.69939 19.058 9.55337 18.6408Z" fill="#2270B1"/>
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Display Settings', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Select Layout', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center tw-gap-x-4">
 		<div class="tw-relative">
-			<div class="wccshowcase_layout_select <?php echo 'grid' === $wcss_showcase_layout ? 'wccshowcase-layout-active-before-content-2' : ''; ?>">
-				<input type="radio" name="wcss_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'grid' ); ?>" <?php if ( 'grid' === $wcss_showcase_layout ) { echo 'checked'; } ?>>
-				<svg class="<?php echo 'grid' === $wcss_showcase_layout ? 'wccshowcase-layout-active' : 'wccshowcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+			<div class="wccshowcase_layout_select <?php echo 'grid' === $wccshowcase_showcase_layout ? 'wccshowcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wccshowcase_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'grid' ); ?>" <?php if ( 'grid' === $wccshowcase_showcase_layout ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'grid' === $wccshowcase_showcase_layout ? 'wccshowcase-layout-active' : 'wccshowcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
 					<g clip-path="url(#clip0_233_3496)">
 						<path d="M13 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H13C14.1046 15 15 14.1046 15 13V2C15 0.89543 14.1046 0 13 0Z"/>
 						<path d="M13 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H13C14.1046 32 15 31.1046 15 30V19C15 17.8954 14.1046 17 13 17Z"/>
@@ -56,9 +56,9 @@ $wccshowcase_category_sort_order_by   = 'default';
 			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Grid', 'wc-category-showcase' ); ?></p>
 		</div>
 		<div class="tw-relative">
-			<div class="wccshowcase_layout_select <?php echo 'block' === $wcss_showcase_layout ? 'wccshowcase-layout-active-before-content-2' : ''; ?>">
-				<input type="radio" name="wcss_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'block' ); ?>" <?php if ( 'block' === $wcss_showcase_layout ) { echo 'checked'; } ?>>
-				<svg class="<?php echo 'block' === $wcss_showcase_layout ? 'wccshowcase-layout-active' : 'wccshowcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+			<div class="wccshowcase_layout_select <?php echo 'block' === $wccshowcase_showcase_layout ? 'wccshowcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wccshowcase_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'block' ); ?>" <?php if ( 'block' === $wccshowcase_showcase_layout ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'block' === $wccshowcase_showcase_layout ? 'wccshowcase-layout-active' : 'wccshowcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
 					<g clip-path="url(#clip0_265_819)">
 						<path d="M18 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H18C19.1046 32 20 31.1046 20 30V2C20 0.89543 19.1046 0 18 0Z"/>
 						<path d="M30 0H24C22.8954 0 22 0.89543 22 2V7.33333C22 8.4379 22.8954 9.33333 24 9.33333H30C31.1046 9.33333 32 8.4379 32 7.33333V2C32 0.89543 31.1046 0 30 0Z"/>
@@ -71,22 +71,22 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Display Mode', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center tw-gap-2 tw-rounded-md tw-max-w-[385px]">
 		<span class="tw-isolate tw-flex tw-flex-row tw-items-center tw-bg-input-grey-50 tw-p-1 tw-rounded-md tw-shadow-sm tw-min-w-[385px]">
-			<label class="tw-w-1/3 wccshowcase-display-mode <?php echo 'fixed' === $wccshowcase_display_mode ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
-				<svg class="<?php echo 'fixed' === $wccshowcase_display_mode ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
+			<label class="tw-w-1/3 wccshowcase-display-mode <?php echo 'fixed' === $wccshowcase_display_mode ? 'wccshowcase-group-button-active' : 'wccshowcase-group-button'; ?>">
+				<svg class="<?php echo 'fixed' === $wccshowcase_display_mode ? 'wccshowcase-group-button-active-icon' : 'wccshowcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 					<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
 				</svg>
 				<input type="radio" name="wccshowcase_display_mode" checked class="!tw-hidden" value="<?php echo esc_attr( 'fixed' ); ?>" <?php if ( 'fixed' === $wccshowcase_display_mode ) { echo 'checked'; } ?>>
 				<?php esc_html_e( 'Fixed', 'wc-category-showcase' ); ?>
 			</label>
-			<label class="tw-w-1/3 wccshowcase-display-mode <?php echo 'slider' === $wccshowcase_display_mode ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
-				<svg class="<?php echo 'slider' === $wccshowcase_display_mode ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+			<label class="tw-w-1/3 wccshowcase-display-mode <?php echo 'slider' === $wccshowcase_display_mode ? 'wccshowcase-group-button-active' : 'wccshowcase-group-button'; ?>">
+				<svg class="<?php echo 'slider' === $wccshowcase_display_mode ? 'wccshowcase-group-button-active-icon' : 'wccshowcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 					<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z"/>
 					<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z"/>
 					<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z"/>
@@ -97,8 +97,8 @@ $wccshowcase_category_sort_order_by   = 'default';
 				<input type="radio" name="wccshowcase_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'slider' ); ?>" <?php if ( 'slider' === $wccshowcase_display_mode ) { echo 'checked'; } ?>>
 				<?php esc_html_e( 'Slider', 'wc-category-showcase' ); ?>
 			</label>
-			<label class="tw-w-1/3 wccshowcase-display-mode <?php echo 'ticker' === $wccshowcase_display_mode ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
-				<svg class="<?php echo 'ticker' === $wccshowcase_display_mode ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
+			<label class="tw-w-1/3 wccshowcase-display-mode <?php echo 'ticker' === $wccshowcase_display_mode ? 'wccshowcase-group-button-active' : 'wccshowcase-group-button'; ?>">
+				<svg class="<?php echo 'ticker' === $wccshowcase_display_mode ? 'wccshowcase-group-button-active-icon' : 'wccshowcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 					<path d="M17.6665 2H14.6665V18H17.6665C17.9317 18 18.1861 17.8946 18.3736 17.7071C18.5611 17.5196 18.6665 17.2652 18.6665 17V3C18.6665 2.73478 18.5611 2.48043 18.3736 2.29289C18.1861 2.10536 17.9317 2 17.6665 2ZM12.6665 2H3.6665C3.40129 2 3.14693 2.10536 2.9594 2.29289C2.77186 2.48043 2.6665 2.73478 2.6665 3V17C2.6665 17.2652 2.77186 17.5196 2.9594 17.7071C3.14693 17.8946 3.40129 18 3.6665 18H12.6665V2Z"/>
 				</svg>
 				<input type="radio" name="wccshowcase_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'ticker' ); ?>" <?php if ( 'ticker' === $wccshowcase_display_mode ) { echo 'checked'; } ?>>
@@ -107,13 +107,13 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</span>
 	</div>
 </div>
-<div class="wcss-settings-row-title">
+<div class="wccshowcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M21.375 3H2.625C2.45924 3 2.30027 3.06773 2.18306 3.18829C2.06585 3.30885 2 3.47236 2 3.64286V20.3571C2 20.5276 2.06585 20.6912 2.18306 20.8117C2.30027 20.9323 2.45924 21 2.625 21H21.375C21.5408 21 21.6997 20.9323 21.8169 20.8117C21.9342 20.6912 22 20.5276 22 20.3571V3.64286C22 3.47236 21.9342 3.30885 21.8169 3.18829C21.6997 3.06773 21.5408 3 21.375 3ZM8.25 18.4286H4.5V12H8.25V18.4286ZM19.5 18.4286H9.5V15.8571H19.5V18.4286ZM19.5 14.5714H9.5V12H19.5V14.5714ZM19.5 10.7143H4.5V5.57143H19.5V10.7143Z" fill="#2270B1"/>
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Layout Settings', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wcss-settings-row wccshowcase-grid-selection <?php echo 'grid' === $wcss_showcase_layout ? '' : 'tw-hidden'; ?>">
+<div class="wccshowcase-settings-row wccshowcase-grid-selection <?php echo 'grid' === $wccshowcase_showcase_layout ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Number of Columns', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
@@ -223,7 +223,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row wccshowcase-block-selection <?php echo 'block' === $wcss_showcase_layout ? '' : 'tw-hidden'; ?>">
+<div class="wccshowcase-settings-row wccshowcase-block-selection <?php echo 'block' === $wccshowcase_showcase_layout ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Block Count', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
@@ -337,7 +337,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row wccshowcase-block-selection <?php echo 'block' === $wcss_showcase_layout ? '' : 'tw-hidden'; ?>">
+<div class="wccshowcase-settings-row wccshowcase-block-selection <?php echo 'block' === $wccshowcase_showcase_layout ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title">Choose Layout Options</h3>
 		<p class="wccshowcase-settings-description">Select the template that best fits your store's aesthetic and presentation preferences.</p>
@@ -510,51 +510,51 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Column Breakpoints', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Configure how many columns your category showcase should display based on the users device screen size.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col">
-		<div class="wcss-column-breakpoint">
-			<span class="wcss-column-breakpoint-inner">
+		<div class="wccshowcase-column-breakpoint">
+			<span class="wccshowcase-column-breakpoint-inner">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="">
 					<path d="M18.5 2H1.5C1.36739 2 1.24021 2.05268 1.14645 2.14645C1.05268 2.24021 1 2.36739 1 2.5V14.5C1 14.6326 1.05268 14.7598 1.14645 14.8536C1.24021 14.9473 1.36739 15 1.5 15H8V16.5C8 16.6326 7.94732 16.7598 7.85355 16.8536C7.75979 16.9473 7.63261 17 7.5 17H6.5C6.36739 17 6.24021 17.0527 6.14645 17.1464C6.05268 17.2402 6 17.3674 6 17.5V18.5C6 18.6326 6.05268 18.7598 6.14645 18.8536C6.24021 18.9473 6.36739 19 6.5 19H13.5C13.6326 19 13.7598 18.9473 13.8536 18.8536C13.9473 18.7598 14 18.6326 14 18.5V17.5C14 17.3674 13.9473 17.2402 13.8536 17.1464C13.7598 17.0527 13.6326 17 13.5 17H12.5C12.3674 17 12.2402 16.9473 12.1464 16.8536C12.0527 16.7598 12 16.6326 12 16.5V15H18.5C18.6326 15 18.7598 14.9473 18.8536 14.8536C18.9473 14.7598 19 14.6326 19 14.5V2.5C19 2.36739 18.9473 2.24021 18.8536 2.14645C18.7598 2.05268 18.6326 2 18.5 2ZM17 13H3V4H17V13Z" fill="#2270B1"/>
 				</svg>
 				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Desktop (1400px)', 'wc-category-showcase' ); ?></span>
 			</span>
-			<input type="number" name="wcss_column_breakpoint[desktop]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['desktop'] ); ?>">
+			<input type="number" name="wccshowcase_column_breakpoint[desktop]" class="wccshowcase-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wccshowcase_column_breakpoint['desktop'] ); ?>">
 		</div>
-		<div class="wcss-column-breakpoint tw-mt-1">
-			<span class="wcss-column-breakpoint-inner">
+		<div class="wccshowcase-column-breakpoint tw-mt-1">
+			<span class="wccshowcase-column-breakpoint-inner">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 					<path d="M18.974 16.342L17 11V3.5C17 3.36739 16.9473 3.24021 16.8536 3.14645C16.7598 3.05268 16.6326 3 16.5 3H3.5C3.36739 3 3.24021 3.05268 3.14645 3.14645C3.05268 3.24021 3 3.36739 3 3.5V11L1.026 16.342C1.00899 16.393 1.00022 16.4463 1 16.5C1 16.6326 1.05268 16.7598 1.14645 16.8536C1.24021 16.9473 1.36739 17 1.5 17H18.5C18.6326 17 18.7598 16.9473 18.8536 16.8536C18.9473 16.7598 19 16.6326 19 16.5C18.9998 16.4463 18.991 16.393 18.974 16.342ZM7 16L7.6665 14H12.3335L13 16H7ZM16 11H4V4H16V11Z" fill="#2270B1"/>
 				</svg>
 				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Laptop (1200px)', 'wc-category-showcase' ); ?></span>
 			</span>
-			<input type="number" name="wcss_column_breakpoint[laptop]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['laptop'] ); ?>">
+			<input type="number" name="wccshowcase_column_breakpoint[laptop]" class="wccshowcase-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wccshowcase_column_breakpoint['laptop'] ); ?>">
 		</div>
-		<div class="wcss-column-breakpoint tw-mt-1">
-			<span class="wcss-column-breakpoint-inner">
+		<div class="wccshowcase-column-breakpoint tw-mt-1">
+			<span class="wccshowcase-column-breakpoint-inner">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 					<path d="M18 3H2C1.73478 3 1.48043 3.10536 1.29289 3.29289C1.10536 3.48043 1 3.73478 1 4L1 16C1 16.2652 1.10536 16.5196 1.29289 16.7071C1.48043 16.8946 1.73478 17 2 17H18C18.2652 17 18.5196 16.8946 18.7071 16.7071C18.8946 16.5196 19 16.2652 19 16V4C19 3.73478 18.8946 3.48043 18.7071 3.29289C18.5196 3.10536 18.2652 3 18 3ZM16 15H3V5H16V15ZM17.5 11.25C17.2528 11.25 17.0111 11.1767 16.8055 11.0393C16.6 10.902 16.4398 10.7068 16.3452 10.4784C16.2505 10.2499 16.2258 9.99861 16.274 9.75614C16.3222 9.51366 16.4413 9.29093 16.6161 9.11612C16.7909 8.9413 17.0137 8.82225 17.2561 8.77402C17.4986 8.72579 17.7499 8.75054 17.9784 8.84515C18.2068 8.93976 18.402 9.09998 18.5393 9.30554C18.6767 9.5111 18.75 9.75277 18.75 10C18.75 10.1642 18.7177 10.3267 18.6549 10.4784C18.592 10.63 18.5 10.7678 18.3839 10.8839C18.2678 11 18.13 11.092 17.9784 11.1548C17.8267 11.2177 17.6642 11.25 17.5 11.25Z" fill="#2270B1"/>
 				</svg>
 				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Tablet (768px)', 'wc-category-showcase' ); ?></span>
 			</span>
-			<input type="number" name="wcss_column_breakpoint[tablet]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['tablet'] ); ?>">
+			<input type="number" name="wccshowcase_column_breakpoint[tablet]" class="wccshowcase-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wccshowcase_column_breakpoint['tablet'] ); ?>">
 		</div>
-		<div class="wcss-column-breakpoint tw-mt-1">
-			<span class="wcss-column-breakpoint-inner">
+		<div class="wccshowcase-column-breakpoint tw-mt-1">
+			<span class="wccshowcase-column-breakpoint-inner">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 					<path d="M14 1H6C5.73478 1 5.48043 1.10536 5.29289 1.29289C5.10536 1.48043 5 1.73478 5 2V18C5 18.2652 5.10536 18.5196 5.29289 18.7071C5.48043 18.8946 5.73478 19 6 19H14C14.2652 19 14.5196 18.8946 14.7071 18.7071C14.8946 18.5196 15 18.2652 15 18V2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1V1ZM9.5 2H10.5C10.631 2.00506 10.7552 2.05937 10.8479 2.15206C10.9406 2.24476 10.9949 2.36901 11 2.5C10.9951 2.63103 10.9408 2.75535 10.8481 2.84807C10.7553 2.94078 10.631 2.99505 10.5 3H9.5C9.36831 2.99707 9.24283 2.94345 9.14969 2.85031C9.05655 2.75717 9.00293 2.63169 9 2.5C9.00305 2.36835 9.05671 2.24294 9.14982 2.14982C9.24294 2.05671 9.36835 2.00305 9.5 2ZM10 18.55C9.79233 18.55 9.58932 18.4884 9.41665 18.373C9.24398 18.2577 9.1094 18.0937 9.02993 17.9018C8.95045 17.71 8.92966 17.4988 8.97018 17.2952C9.01069 17.0915 9.11069 16.9044 9.25754 16.7575C9.40438 16.6107 9.59148 16.5107 9.79516 16.4702C9.99884 16.4297 10.21 16.4505 10.4018 16.5299C10.5937 16.6094 10.7577 16.744 10.873 16.9167C10.9884 17.0893 11.05 17.2923 11.05 17.5C11.05 17.6379 11.0228 17.7744 10.9701 17.9018C10.9173 18.0292 10.84 18.145 10.7425 18.2425C10.645 18.34 10.5292 18.4173 10.4018 18.4701C10.2744 18.5228 10.1379 18.55 10 18.55ZM14 16H6V4H14V16Z" fill="#2270B1"/>
 				</svg>
 				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Mobile (576px)', 'wc-category-showcase' ); ?></span>
 			</span>
-			<input type="number" name="wcss_column_breakpoint[mobile]" class="wcss-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wcss_column_breakpoint['mobile'] ); ?>">
+			<input type="number" name="wccshowcase_column_breakpoint[mobile]" class="wccshowcase-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $wccshowcase_column_breakpoint['mobile'] ); ?>">
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row-title wccshowcase-block-slider-category-selection <?php echo ( 'block' === $wcss_showcase_layout && 'slider' === $wccshowcase_display_mode ) ? '' : 'tw-hidden'; ?>">
+<div class="wccshowcase-settings-row-title wccshowcase-block-slider-category-selection <?php echo ( 'block' === $wccshowcase_showcase_layout && 'slider' === $wccshowcase_display_mode ) ? '' : 'tw-hidden'; ?>">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M19.3333 2.40039H4.66667C4.29848 2.40039 4 2.69887 4 3.06706V16.4004C4 16.7686 4.29848 17.0671 4.66667 17.0671H19.3333C19.7015 17.0671 20 16.7686 20 16.4004V3.06706C20 2.69887 19.7015 2.40039 19.3333 2.40039Z" fill="#2270B1"/>
 		<path d="M2.66667 15.7337H0.666667C0.489856 15.7337 0.320286 15.6635 0.195262 15.5385C0.0702379 15.4134 0 15.2439 0 15.0671V5.73372C0 5.55691 0.0702379 5.38734 0.195262 5.26232C0.320286 5.1373 0.489856 5.06706 0.666667 5.06706H2.66667V15.7337ZM23.3333 15.7337H21.3333V5.06706H23.3333C23.5101 5.06706 23.6797 5.1373 23.8047 5.26232C23.9298 5.38734 24 5.55691 24 5.73372V15.0671C24 15.2439 23.9298 15.4134 23.8047 15.5385C23.6797 15.6635 23.5101 15.7337 23.3333 15.7337Z" fill="#2270B1"/>
@@ -565,7 +565,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slider Block', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wcss-settings-row wccshowcase-block-slider-category-selection <?php echo ( 'block' === $wcss_showcase_layout && 'slider' === $wccshowcase_display_mode ) ? '' : 'tw-hidden'; ?>">
+<div class="wccshowcase-settings-row wccshowcase-block-slider-category-selection <?php echo ( 'block' === $wccshowcase_showcase_layout && 'slider' === $wccshowcase_display_mode ) ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><label for="wccshowcase_block_slider_category"><?php esc_html_e( 'Choose Categories for Block Slider', 'wc-category-showcase' ); ?></label></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Decide whether to display all product categories or selectively choose specific ones to showcase.', 'wc-category-showcase' ); ?></p>
@@ -581,33 +581,33 @@ $wccshowcase_category_sort_order_by   = 'default';
 			</select>
 		</div>
 		<div class="tw-mt-6 wccshowcase-selected-category-list">
-<!--			<div class="wcss-category-list-item"></div>-->
+<!--			<div class="wccshowcase-category-list-item"></div>-->
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row-title">
+<div class="wccshowcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M9.71917 17.4482H9.07965V11.4281H10.7864C11.0859 10.9903 11.4307 10.5866 11.8147 10.2241H9.07965V4.20401H13.7994V8.881C14.1803 8.70897 14.5751 8.57099 14.9794 8.46863V4.20401H19.6991V8.881C20.1123 9.06847 20.5073 9.29501 20.8791 9.55766V3.60201C20.8791 3.44234 20.8169 3.28922 20.7063 3.17632C20.5956 3.06343 20.4456 3 20.2891 3H2.58997C2.4335 3 2.28344 3.06343 2.1728 3.17632C2.06216 3.28922 2 3.44234 2 3.60201V18.0502C2 18.2098 2.06216 18.363 2.1728 18.4758C2.28344 18.5887 2.4335 18.6522 2.58997 18.6522H10.1233C9.95471 18.2635 9.81949 17.8607 9.71917 17.4482ZM7.8997 17.4482H3.17994V11.4281H7.8997V17.4482ZM7.8997 10.2241H3.17994V4.20401H7.8997V10.2241Z" fill="#2270B1"/>
 		<path d="M16.7493 10.2843C15.7108 10.2843 14.6956 10.5985 13.8321 11.1872C12.9686 11.776 12.2956 12.6128 11.8982 13.5918C11.5008 14.5708 11.3968 15.6481 11.5994 16.6874C11.802 17.7267 12.3021 18.6814 13.0364 19.4307C13.7708 20.18 14.7064 20.6903 15.7249 20.897C16.7434 21.1038 17.7992 20.9977 18.7586 20.5922C19.7181 20.1866 20.5381 19.4999 21.1151 18.6188C21.692 17.7377 22 16.7018 22 15.6421C22 14.2211 21.4468 12.8584 20.4621 11.8536C19.4774 10.8488 18.1418 10.2843 16.7493 10.2843ZM15.3699 18.9002L12.9345 16.4157C12.8792 16.3593 12.8481 16.2827 12.8481 16.2029C12.8481 16.1231 12.8792 16.0465 12.9345 15.9901L13.5457 15.3664C13.601 15.31 13.6761 15.2783 13.7543 15.2783C13.8325 15.2783 13.9075 15.31 13.9628 15.3664L15.574 17.0105L19.1764 13.3346C19.2317 13.2782 19.3067 13.2465 19.385 13.2465C19.4632 13.2465 19.5382 13.2782 19.5935 13.3346L20.2088 13.9625C20.2641 14.019 20.2952 14.0955 20.2952 14.1753C20.2952 14.2552 20.2641 14.3317 20.2088 14.3882L15.7841 18.9032C15.7285 18.9583 15.6539 18.9889 15.5764 18.9883C15.4989 18.9878 15.4247 18.9561 15.3699 18.9002Z" fill="#2270B1"/>
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Category Selection', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Category Filter', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Decide whether to display all product categories or selectively choose specific ones to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<span class="tw-isolate tw-inline-flex tw-p-1 tw-rounded-md tw-bg-input-grey-50 tw-shadow-sm tw-min-w-[385px]">
-			<label class="tw-w-1/2 wccshowcase-category-filter <?php echo 'all' === $wccshowcase_category_filter ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
-				<svg class="<?php echo 'all' === $wccshowcase_category_filter ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
+			<label class="tw-w-1/2 wccshowcase-category-filter <?php echo 'all' === $wccshowcase_category_filter ? 'wccshowcase-group-button-active' : 'wccshowcase-group-button'; ?>">
+				<svg class="<?php echo 'all' === $wccshowcase_category_filter ? 'wccshowcase-group-button-active-icon' : 'wccshowcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 					<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
 				</svg>
 				<input type="radio" name="wccshowcase_category_filter" class="!tw-hidden" value="<?php echo esc_attr( 'all' ); ?>" <?php if ( 'all' === $wccshowcase_category_filter ) { echo 'checked'; } ?>>
 				<?php esc_html_e( 'All', 'wc-category-showcase' ); ?>
 			</label>
-			<label class="tw-w-1/2 wccshowcase-category-filter <?php echo 'specific' === $wccshowcase_category_filter ? 'wcss-group-button-active' : 'wcss-group-button'; ?>">
-				<svg class="<?php echo 'specific' === $wccshowcase_category_filter ? 'wcss-group-button-active-icon' : 'wcss-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+			<label class="tw-w-1/2 wccshowcase-category-filter <?php echo 'specific' === $wccshowcase_category_filter ? 'wccshowcase-group-button-active' : 'wccshowcase-group-button'; ?>">
+				<svg class="<?php echo 'specific' === $wccshowcase_category_filter ? 'wccshowcase-group-button-active-icon' : 'wccshowcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 					<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z"/>
 					<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z"/>
 					<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z"/>
@@ -621,7 +621,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</span>
 	</div>
 </div>
-<div class="wcss-settings-row wccshowcase-category-selection <?php echo 'specific' === $wccshowcase_category_filter ? '' : 'tw-hidden'; ?>">
+<div class="wccshowcase-settings-row wccshowcase-category-selection <?php echo 'specific' === $wccshowcase_category_filter ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><label for="wccshowcase_specific_category_select"><?php esc_html_e( 'Category Selection', 'wc-category-showcase' ); ?></label></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'If selecting specific categories, use multi-select mode to easily pick the ones you want to showcase.', 'wc-category-showcase' ); ?></p>
@@ -637,7 +637,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 			</select>
 		</div>
 		<div class="tw-mt-6 wccshowcase-selected-category-list">
-			<div class="wcss-category-list-item"></div>
+			<div class="wccshowcase-category-list-item"></div>
 		</div>
 		<div class="tw-width-[56px] tw-h-[56px] wccshowcase-loader tw-hidden">
 			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
@@ -645,7 +645,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 	</div>
 </div>
 
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Sort By', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Specify the criteria by which you want your categories to be ordered within the showcase display.', 'wc-category-showcase' ); ?></p>
@@ -707,7 +707,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</div>
 	</div>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Sort Order', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Determine whether your categories should be arranged in ascending or descending order according to the selected criteria.', 'wc-category-showcase' ); ?></p>
@@ -768,18 +768,18 @@ $wccshowcase_category_sort_order_by   = 'default';
 	</div>
 </div>
 
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title">
-			<label for="wcss_category_display_limit"><?php esc_html_e( 'Categories Display Limit', 'wc-category-showcase' ); ?></label>
+			<label for="wccshowcase_category_display_limit"><?php esc_html_e( 'Categories Display Limit', 'wc-category-showcase' ); ?></label>
 		</h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Set the maximum number of categories to be displayed in your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center tw-bg-bg-grey-50 tw-w-[230px]">
-		<input type="number" name="wcss_category_display_limit" id="wcss_category_display_limit" min="1" step="any" class="wccshowcase-settings-field tw-h-10" placeholder="<?php esc_html_e( 'Ex: 12', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $wcss_category_display_limit ); ?>">
+		<input type="number" name="wccshowcase_category_display_limit" id="wccshowcase_category_display_limit" min="1" step="any" class="wccshowcase-settings-field tw-h-10" placeholder="<?php esc_html_e( 'Ex: 12', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $wccshowcase_category_display_limit ); ?>">
 	</div>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Include Sub-categories', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose whether to include child categories along with parent categories in your showcase display.', 'wc-category-showcase' ); ?></p>
@@ -791,7 +791,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</label>
 	</div>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Hide Empty Categories', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Hide empty categories if categories has no products to show.', 'wc-category-showcase' ); ?></p>
@@ -803,7 +803,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</label>
 	</div>
 </div>
-<div class="wcss-settings-row-title">
+<div class="wccshowcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M21.6875 5.03566H10.6875C10.5441 4.32005 10.1608 3.67668 9.60266 3.21456C9.04453 2.75245 8.34585 2.5 7.625 2.5C6.90415 2.5 6.20547 2.75245 5.64734 3.21456C5.08921 3.67668 4.70595 4.32005 4.5625 5.03566H2.3125C2.22962 5.03566 2.15013 5.06901 2.09153 5.12838C2.03292 5.18775 2 5.26826 2 5.35222V5.98534C2 6.0693 2.03292 6.14982 2.09153 6.20919C2.15013 6.26855 2.22962 6.3019 2.3125 6.3019H4.5625C4.70595 7.01751 5.08921 7.66088 5.64734 8.123C6.20547 8.58512 6.90415 8.83756 7.625 8.83756C8.34585 8.83756 9.04453 8.58512 9.60266 8.123C10.1608 7.66088 10.5441 7.01751 10.6875 6.3019H21.6875C21.7704 6.3019 21.8499 6.26855 21.9085 6.20919C21.9671 6.14982 22 6.0693 22 5.98534V5.35222C22 5.26826 21.9671 5.18775 21.9085 5.12838C21.8499 5.06901 21.7704 5.03566 21.6875 5.03566ZM7.625 7.56815C7.25416 7.56815 6.89165 7.45675 6.58331 7.24805C6.27496 7.03934 6.03464 6.7427 5.89273 6.39564C5.75081 6.04857 5.71368 5.66668 5.78603 5.29823C5.85837 4.92979 6.03695 4.59136 6.29917 4.32573C6.5614 4.0601 6.89549 3.8792 7.25921 3.80591C7.62292 3.73263 7.99992 3.77024 8.34253 3.914C8.68514 4.05776 8.97798 4.3012 9.18401 4.61355C9.39003 4.9259 9.5 5.29312 9.5 5.66878C9.5 6.17253 9.30246 6.65564 8.95083 7.01184C8.59919 7.36804 8.12228 7.56815 7.625 7.56815ZM21.6875 17.6981H13.1875C13.0441 16.9825 12.6608 16.3391 12.1027 15.877C11.5445 15.4149 10.8458 15.1624 10.125 15.1624C9.40415 15.1624 8.70547 15.4149 8.14734 15.877C7.58921 16.3391 7.20595 16.9825 7.0625 17.6981H2.3125C2.22962 17.6981 2.15013 17.7314 2.09153 17.7908C2.03292 17.8502 2 17.9307 2 18.0147V18.6478C2 18.7317 2.03292 18.8123 2.09153 18.8716C2.15013 18.931 2.22962 18.9643 2.3125 18.9643H7.0625C7.20595 19.68 7.58921 20.3233 8.14734 20.7854C8.70547 21.2476 9.40415 21.5 10.125 21.5C10.8458 21.5 11.5445 21.2476 12.1027 20.7854C12.6608 20.3233 13.0441 19.68 13.1875 18.9643H21.6875C21.7704 18.9643 21.8499 18.931 21.9085 18.8716C21.9671 18.8123 22 18.7317 22 18.6478V18.0147C22 17.9307 21.9671 17.8502 21.9085 17.7908C21.8499 17.7314 21.7704 17.6981 21.6875 17.6981ZM10.125 20.2306C9.75416 20.2306 9.39165 20.1192 9.08331 19.9105C8.77496 19.7018 8.53464 19.4051 8.39273 19.0581C8.25081 18.711 8.21368 18.3291 8.28603 17.9607C8.35837 17.5922 8.53695 17.2538 8.79917 16.9882C9.0614 16.7225 9.39549 16.5416 9.75921 16.4683C10.1229 16.3951 10.4999 16.4327 10.8425 16.5764C11.1851 16.7202 11.478 16.9636 11.684 17.276C11.89 17.5883 12 17.9556 12 18.3312C12 18.835 11.8025 19.3181 11.4508 19.6743C11.0992 20.0305 10.6223 20.2306 10.125 20.2306ZM2 11.6834V12.3166C2 12.4005 2.03292 12.481 2.09153 12.5404C2.15013 12.5998 2.22962 12.6331 2.3125 12.6331H13.3125C13.4559 13.3487 13.8392 13.9921 14.3973 14.4542C14.9555 14.9163 15.6542 15.1688 16.375 15.1688C17.0958 15.1688 17.7945 14.9163 18.3527 14.4542C18.9108 13.9921 19.2941 13.3487 19.4375 12.6331H21.6875C21.7704 12.6331 21.8499 12.5998 21.9085 12.5404C21.9671 12.481 22 12.4005 22 12.3166V11.6834C22 11.5995 21.9671 11.519 21.9085 11.4596C21.8499 11.4002 21.7704 11.3669 21.6875 11.3669H19.4375C19.2941 10.6513 18.9108 10.0079 18.3527 9.54578C17.7945 9.08366 17.0958 8.83122 16.375 8.83122C15.6542 8.83122 14.9555 9.08366 14.3973 9.54578C13.8392 10.0079 13.4559 10.6513 13.3125 11.3669H2.3125C2.22962 11.3669 2.15013 11.4002 2.09153 11.4596C2.03292 11.519 2 11.5995 2 11.6834ZM14.5 12C14.5 11.6243 14.61 11.2571 14.816 10.9448C15.022 10.6324 15.3149 10.389 15.6575 10.2452C16.0001 10.1015 16.3771 10.0638 16.7408 10.1371C17.1045 10.2104 17.4386 10.3913 17.7008 10.6569C17.963 10.9226 18.1416 11.261 18.214 11.6295C18.2863 11.9979 18.2492 12.3798 18.1073 12.7269C17.9654 13.0739 17.725 13.3706 17.4167 13.5793C17.1084 13.788 16.7458 13.8994 16.375 13.8994C15.8777 13.8994 15.4008 13.6993 15.0492 13.3431C14.6975 12.9869 14.5 12.5037 14.5 12Z" fill="#2270B1"/>
 		<circle cx="7.5" cy="5.5" r="2.5" fill="#2270B1"/>
@@ -812,7 +812,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Key Settings', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Automatic Column Adjustment', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Enable this feature to allow the plugin to automatically adjust the number of columns based on the available screen space.', 'wc-category-showcase' ); ?></p>
@@ -824,7 +824,7 @@ $wccshowcase_category_sort_order_by   = 'default';
 		</label>
 	</div>
 </div>
-<div class="wcss-settings-row">
+<div class="wccshowcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Pre-loader', 'wc-category-showcase' ); ?></h3>
 		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Slider will be hidden until the page has fully loaded.', 'wc-category-showcase' ); ?></p>

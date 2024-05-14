@@ -48,10 +48,10 @@
 	.wccshowcase-border-active{
 		@apply tw-border-accent-green-500 tw-border-2 tw-rounded-lg;
 	}
-	.wcss-settings-row{
-		@apply tw-pb-5 tw-flex tw-justify-start tw-gap-32 tw-mt-4;
+	.wccshowcase-settings-row{
+		@apply tw-pb-4 tw-flex tw-justify-start tw-gap-32 tw-mt-3;
 	}
-	.wcss-settings-row-title {
+	.wccshowcase-settings-row-title {
 		@apply tw-flex tw-items-center tw-gap-1 tw-border-b !tw-border-divider-grey-100;
 		border-bottom: 1px solid;
 	}
@@ -103,67 +103,67 @@
 		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-0;
 	}
 
-	.wcss-category-list-item {
+	.wccshowcase-category-list-item {
 		@apply tw-mt-1 tw-border !tw-border-divider-grey-100 tw-rounded tw-bg-input-grey-50;
 		border: 1px solid;
 	}
 
-	.wcss-custom-border{
+	.wccshowcase-custom-border{
 		@apply !tw-border-divider-grey-100;
 		border-bottom: 1px solid;
 	}
 
-	.wcss-custom-border-top{
+	.wccshowcase-custom-border-top{
 		@apply !tw-border-divider-grey-100;
 		border-top: 1px solid;
 	}
 
-	.wcss-group-button {
+	.wccshowcase-group-button {
 		@apply tw-relative tw-flex tw-justify-center tw-gap-1 tw-items-center tw-rounded-md;
 		@apply tw-px-3 tw-py-2 tw-text-sm tw-font-semibold;
 		@apply tw-text-text-grey-500 hover:tw-bg-divider-grey-100 hover:tw-text-fade-blue-600 focus:tw-z-10;
 	}
 
-	.wcss-group-button-active{
+	.wccshowcase-group-button-active{
 		@apply tw-relative tw-flex tw-justify-center tw-gap-1 tw-items-center tw-rounded-md;
 		@apply tw-px-3 tw-py-2 tw-text-sm tw-font-semibold;
 		@apply tw-text-text-grey-500 focus:tw-z-10;
 		@apply tw-bg-white tw-text-fade-blue-600;
 	}
 
-	.wcss-group-button-active-icon{
+	.wccshowcase-group-button-active-icon{
 		@apply tw-text-fade-blue-600;
 	}
 
-	.wcss-group-button-icon{
+	.wccshowcase-group-button-icon{
 		@apply tw-text-text-grey-500 hover:tw-text-fade-blue-600;
 	}
 
-	.wcss-column-breakpoint {
+	.wccshowcase-column-breakpoint {
 		@apply tw-flex tw-w-60 tw-h-9 !tw-bg-input-grey-50 !tw-border-divider-grey-100;
 	}
-	.wcss-column-breakpoint-inner {
+	.wccshowcase-column-breakpoint-inner {
 		@apply tw-w-36 tw-flex tw-gap-2 tw-items-center tw-px-3 tw-text-gray-900;
 		@apply tw-bg-gray-200 tw-border;
 		@apply tw-border-gray-300 tw-border-e-0;
 		@apply tw-rounded-s-md dark:tw-bg-gray-600 dark:tw-text-gray-400 dark:tw-border-gray-600;
 	}
 
-	.wcss-column-breakpoint-inner-input {
+	.wccshowcase-column-breakpoint-inner-input {
 		@apply !tw-bg-input-grey-50 !tw-border-divider-grey-100 tw-rounded-none tw-rounded-e-lg tw-border;
 		@apply tw-text-gray-900 focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-flex-1 tw-min-w-0 tw-w-full;
 		@apply tw-text-sm tw-p-2.5  dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400;
 		@apply dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500;
 	}
 
-	.wcss-upload-button {
+	.wccshowcase-upload-button {
 		@apply tw-text-fade-blue-600 tw-no-underline tw-flex tw-p-1 tw-bg-white tw-absolute tw-border !tw-border-divider-grey-100 tw-top-2 tw-right-2 tw-rounded-md;
 		border: 1px solid;
 	}
 
 
 	/*Showcase Tab css*/
-	.wcss-button-border-top{
+	.wccshowcase-button-border-top{
 		border-top: 1px solid;
 	}
 
