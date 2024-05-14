@@ -1,8 +1,13 @@
 (function ($, window, document, wp, undefined) {
 	window.wccshowcase_admin = {
 		bindEvents: function () {
-
 			// Sabbir May 2, 2024//
+			// Modal Show Hide
+			$(document).on('click', '.wccshowcase-pro, .wccshowcase-pro-close', function (e) {
+				e.preventDefault();
+				$('#modelConfirm').toggleClass('tw-hidden');
+			});
+
 			$('.wccshowcase_layout_select').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
 				$('.wccshowcase_layout_select').find('input:radio').each(function() {
@@ -74,6 +79,22 @@
 						$(this).attr('checked', false);
 						$(this).siblings('div').children().addClass('wccshowcase-layout-primary').removeClass('wccshowcase-layout-active');
 						$(this).siblings('div').removeClass('wccshowcase-layout-active-before-content-2');
+					}
+				});
+			});
+
+			// wccshowcase-choose-layout-option
+			$('.wccshowcase-choose-layout-option').on('click', function (e) {
+				var current_val = $(this).find('input:radio').val();
+				$('.wccshowcase-choose-layout-option').find('input:radio').each(function() {
+					if ( current_val === $(this).val() ) {
+						$(this).attr('checked', true);
+						$(this).siblings('div').children().addClass('wccshowcase-layout-active').removeClass('wccshowcase-layout-primary');
+						$(this).siblings('div').addClass('wccshowcase-layout-active-before-content');
+					} else {
+						$(this).attr('checked', false);
+						$(this).siblings('div').children().addClass('wccshowcase-layout-primary').removeClass('wccshowcase-layout-active');
+						$(this).siblings('div').removeClass('wccshowcase-layout-active-before-content');
 					}
 				});
 			});
