@@ -7,113 +7,89 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$wccshowcase_slide_slideshow               = 'yes';
-$wccshowcase_slide_counter_style           = 'dashes';
-$wccshowcase_slide_arrow_style             = 'arrow';
-$wccshowcase_slide_button_style            = 'rounded';
-$wccshowcase_slide_button_background_style = 'filled';
-$wccshowcase_slide_speed                   = '10';
-$wccshowcase_slide_stop_on_hover           = 'yes';
-$wccshowcase_slide_unlimited_loop          = 'yes';
-$wccshowcase_slide_navigation_arrow        = 'yes';
-$wccshowcase_slide_counter                 = array(
-	'background_color' => '#000000',
-	'text_color'       => '#000000',
-	'hover_color'      => '#000000',
-);
-$wccshowcase_slide_button                  = array(
-	'background_color' => '#000000',
-	'text_color'       => '#000000',
-	'hover_color'      => '#000000',
-);
-$wccshowcase_slide_counters                = 'yes';
-$wccshowcase_slide_touch_interaction       = 'yes';
-$wccshowcase_slide_scroll_interaction      = 'yes';
-$wccshowcase_slide_draggable_slide         = 'yes';
-$wccshowcase_slide_free_mode               = 'yes';
 ?>
-<div class="wccshowcase-settings-row-title">
+<div class="wcc_showcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M21.6875 5.4022H10.6875C10.5441 4.72426 10.1608 4.11475 9.60266 3.67695C9.04453 3.23916 8.34585 3 7.625 3C6.90415 3 6.20547 3.23916 5.64734 3.67695C5.08921 4.11475 4.70595 4.72426 4.5625 5.4022H2.3125C2.22962 5.4022 2.15013 5.4338 2.09153 5.49004C2.03292 5.54629 2 5.62257 2 5.7021V6.3019C2 6.38144 2.03292 6.45772 2.09153 6.51397C2.15013 6.57021 2.22962 6.6018 2.3125 6.6018H4.5625C4.70595 7.27975 5.08921 7.88926 5.64734 8.32705C6.20547 8.76485 6.90415 9.00401 7.625 9.00401C8.34585 9.00401 9.04453 8.76485 9.60266 8.32705C10.1608 7.88926 10.5441 7.27975 10.6875 6.6018H21.6875C21.7704 6.6018 21.8499 6.57021 21.9085 6.51397C21.9671 6.45772 22 6.38144 22 6.3019V5.7021C22 5.62257 21.9671 5.54629 21.9085 5.49004C21.8499 5.4338 21.7704 5.4022 21.6875 5.4022ZM7.625 7.8014C7.25416 7.8014 6.89165 7.69587 6.58331 7.49815C6.27496 7.30043 6.03464 7.0194 5.89273 6.6906C5.75081 6.36181 5.71368 6.00001 5.78603 5.65096C5.85837 5.30191 6.03695 4.98129 6.29917 4.72964C6.5614 4.47799 6.89549 4.30661 7.25921 4.23718C7.62292 4.16775 7.99992 4.20338 8.34253 4.33958C8.68514 4.47577 8.97798 4.7064 9.18401 5.00231C9.39003 5.29822 9.5 5.64612 9.5 6.002C9.5 6.47923 9.30246 6.93692 8.95083 7.27437C8.59919 7.61182 8.12228 7.8014 7.625 7.8014ZM21.6875 17.3982H13.1875C13.0441 16.7203 12.6608 16.1107 12.1027 15.6729C11.5445 15.2352 10.8458 14.996 10.125 14.996C9.40415 14.996 8.70547 15.2352 8.14734 15.6729C7.58921 16.1107 7.20595 16.7203 7.0625 17.3982H2.3125C2.22962 17.3982 2.15013 17.4298 2.09153 17.486C2.03292 17.5423 2 17.6186 2 17.6981V18.2979C2 18.3774 2.03292 18.4537 2.09153 18.51C2.15013 18.5662 2.22962 18.5978 2.3125 18.5978H7.0625C7.20595 19.2757 7.58921 19.8853 8.14734 20.323C8.70547 20.7608 9.40415 21 10.125 21C10.8458 21 11.5445 20.7608 12.1027 20.323C12.6608 19.8853 13.0441 19.2757 13.1875 18.5978H21.6875C21.7704 18.5978 21.8499 18.5662 21.9085 18.51C21.9671 18.4537 22 18.3774 22 18.2979V17.6981C22 17.6186 21.9671 17.5423 21.9085 17.486C21.8499 17.4298 21.7704 17.3982 21.6875 17.3982ZM10.125 19.7974C9.75416 19.7974 9.39165 19.6919 9.08331 19.4941C8.77496 19.2964 8.53464 19.0154 8.39273 18.6866C8.25081 18.3578 8.21368 17.996 8.28603 17.6469C8.35837 17.2979 8.53695 16.9773 8.79917 16.7256C9.0614 16.474 9.39549 16.3026 9.75921 16.2332C10.1229 16.1637 10.4999 16.1994 10.8425 16.3356C11.1851 16.4718 11.478 16.7024 11.684 16.9983C11.89 17.2942 12 17.6421 12 17.998C12 18.4752 11.8025 18.9329 11.4508 19.2704C11.0992 19.6078 10.6223 19.7974 10.125 19.7974ZM2 11.7001V12.2999C2 12.3794 2.03292 12.4557 2.09153 12.512C2.15013 12.5682 2.22962 12.5998 2.3125 12.5998H13.3125C13.4559 13.2777 13.8392 13.8873 14.3973 14.325C14.9555 14.7628 15.6542 15.002 16.375 15.002C17.0958 15.002 17.7945 14.7628 18.3527 14.325C18.9108 13.8873 19.2941 13.2777 19.4375 12.5998H21.6875C21.7704 12.5998 21.8499 12.5682 21.9085 12.512C21.9671 12.4557 22 12.3794 22 12.2999V11.7001C22 11.6206 21.9671 11.5443 21.9085 11.488C21.8499 11.4318 21.7704 11.4002 21.6875 11.4002H19.4375C19.2941 10.7223 18.9108 10.1127 18.3527 9.67495C17.7945 9.23715 17.0958 8.998 16.375 8.998C15.6542 8.998 14.9555 9.23715 14.3973 9.67495C13.8392 10.1127 13.4559 10.7223 13.3125 11.4002H2.3125C2.22962 11.4002 2.15013 11.4318 2.09153 11.488C2.03292 11.5443 2 11.6206 2 11.7001ZM14.5 12C14.5 11.6441 14.61 11.2962 14.816 11.0003C15.022 10.7044 15.3149 10.4738 15.6575 10.3376C16.0001 10.2014 16.3771 10.1657 16.7408 10.2352C17.1045 10.3046 17.4386 10.476 17.7008 10.7276C17.963 10.9793 18.1416 11.2999 18.214 11.649C18.2863 11.998 18.2492 12.3598 18.1073 12.6886C17.9654 13.0174 17.725 13.2984 17.4167 13.4961C17.1084 13.6939 16.7458 13.7994 16.375 13.7994C15.8777 13.7994 15.4008 13.6098 15.0492 13.2724C14.6975 12.9349 14.5 12.4772 14.5 12Z" fill="#2270B1"/>
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slider Settings', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Automatic Slideshow', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Enable or disable automatic transitioning between slides in the slider without user input.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Automatic Slideshow', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable automatic transitioning between slides in the slider without user input.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_slideshow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_slideshow ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_slideshow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_slideshow'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Slide Speed', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Set the duration of the animation effect when transitioning between slides within the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slide Speed', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Set the duration of the animation effect when transitioning between slides within the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
 			<path d="M15.9833 4.14095L14.9583 5.68262C15.4526 6.66852 15.6946 7.76165 15.6626 8.86406C15.6306 9.96647 15.3256 11.0437 14.775 11.9993H3.22498C2.50929 10.7577 2.21273 9.31855 2.37926 7.89518C2.5458 6.4718 3.16657 5.13998 4.14955 4.09714C5.13252 3.05431 6.42537 2.35599 7.83643 2.1057C9.24749 1.85541 10.7016 2.06648 11.9833 2.70762L13.525 1.68262C11.9554 0.676134 10.0936 0.225125 8.23739 0.401734C6.38119 0.578344 4.63785 1.37237 3.28622 2.6568C1.9346 3.94123 1.05278 5.64185 0.781829 7.48663C0.510875 9.33142 0.86644 11.2138 1.79165 12.8326C1.93707 13.0845 2.14589 13.294 2.39734 13.4402C2.64879 13.5864 2.93412 13.6642 3.22498 13.666H14.7666C15.0603 13.6671 15.3491 13.5907 15.6037 13.4443C15.8584 13.298 16.0698 13.087 16.2166 12.8326C16.9845 11.5026 17.3698 9.98618 17.3301 8.45092C17.2904 6.91565 16.8272 5.42122 15.9916 4.13262L15.9833 4.14095ZM7.82498 9.84095C7.97966 9.99611 8.16344 10.1192 8.36578 10.2032C8.56813 10.2872 8.78506 10.3305 9.00415 10.3305C9.22324 10.3305 9.44017 10.2872 9.64251 10.2032C9.84486 10.1192 10.0286 9.99611 10.1833 9.84095L14.9 2.76595L7.82498 7.48262C7.67002 7.63741 7.54709 7.82122 7.46321 8.02355C7.37934 8.22588 7.33617 8.44276 7.33617 8.66179C7.33617 8.88081 7.37934 9.09769 7.46321 9.30002C7.54709 9.50235 7.67002 9.68617 7.82498 9.84095Z" fill="#2270B1"/>
 		</svg>
 		<label class="tw-inline-flex tw-cursor-pointer tw-relative tw-pl-[4px]">
-			<input type="number" name="wccshowcase_slide_speed" value="<?php echo esc_attr( $wccshowcase_slide_speed ); ?>" class="wccshowcase-settings-field-border">
+			<input type="number" name="wcc_showcase_slide_speed" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_speed'] ); ?>" class="wcc_showcase-settings-field-border">
 			<span class="tw-absolute tw-bg-input-grey-50 tw-py-[6px] tw-px-4 tw-items-center tw-top-[2px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'ms' ); ?></span>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Stop on Hover', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Control whether the slider pauses when the user hovers over it with their cursor.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Stop on Hover', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Control whether the slider pauses when the user hovers over it with their cursor.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_stop_on_hover" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_stop_on_hover ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_stop_on_hover" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_stop_on_hover'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Unlimited Loop', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Determine if the slider should cycle endlessly or stop after reaching the last slide.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Unlimited Loop', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine if the slider should cycle endlessly or stop after reaching the last slide.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_unlimited_loop" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_unlimited_loop ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_unlimited_loop" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_unlimited_loop'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row-title">
+<div class="wcc_showcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M21.6875 5.4022H10.6875C10.5441 4.72426 10.1608 4.11475 9.60266 3.67695C9.04453 3.23916 8.34585 3 7.625 3C6.90415 3 6.20547 3.23916 5.64734 3.67695C5.08921 4.11475 4.70595 4.72426 4.5625 5.4022H2.3125C2.22962 5.4022 2.15013 5.4338 2.09153 5.49004C2.03292 5.54629 2 5.62257 2 5.7021V6.3019C2 6.38144 2.03292 6.45772 2.09153 6.51397C2.15013 6.57021 2.22962 6.6018 2.3125 6.6018H4.5625C4.70595 7.27975 5.08921 7.88926 5.64734 8.32705C6.20547 8.76485 6.90415 9.00401 7.625 9.00401C8.34585 9.00401 9.04453 8.76485 9.60266 8.32705C10.1608 7.88926 10.5441 7.27975 10.6875 6.6018H21.6875C21.7704 6.6018 21.8499 6.57021 21.9085 6.51397C21.9671 6.45772 22 6.38144 22 6.3019V5.7021C22 5.62257 21.9671 5.54629 21.9085 5.49004C21.8499 5.4338 21.7704 5.4022 21.6875 5.4022ZM7.625 7.8014C7.25416 7.8014 6.89165 7.69587 6.58331 7.49815C6.27496 7.30043 6.03464 7.0194 5.89273 6.6906C5.75081 6.36181 5.71368 6.00001 5.78603 5.65096C5.85837 5.30191 6.03695 4.98129 6.29917 4.72964C6.5614 4.47799 6.89549 4.30661 7.25921 4.23718C7.62292 4.16775 7.99992 4.20338 8.34253 4.33958C8.68514 4.47577 8.97798 4.7064 9.18401 5.00231C9.39003 5.29822 9.5 5.64612 9.5 6.002C9.5 6.47923 9.30246 6.93692 8.95083 7.27437C8.59919 7.61182 8.12228 7.8014 7.625 7.8014ZM21.6875 17.3982H13.1875C13.0441 16.7203 12.6608 16.1107 12.1027 15.6729C11.5445 15.2352 10.8458 14.996 10.125 14.996C9.40415 14.996 8.70547 15.2352 8.14734 15.6729C7.58921 16.1107 7.20595 16.7203 7.0625 17.3982H2.3125C2.22962 17.3982 2.15013 17.4298 2.09153 17.486C2.03292 17.5423 2 17.6186 2 17.6981V18.2979C2 18.3774 2.03292 18.4537 2.09153 18.51C2.15013 18.5662 2.22962 18.5978 2.3125 18.5978H7.0625C7.20595 19.2757 7.58921 19.8853 8.14734 20.323C8.70547 20.7608 9.40415 21 10.125 21C10.8458 21 11.5445 20.7608 12.1027 20.323C12.6608 19.8853 13.0441 19.2757 13.1875 18.5978H21.6875C21.7704 18.5978 21.8499 18.5662 21.9085 18.51C21.9671 18.4537 22 18.3774 22 18.2979V17.6981C22 17.6186 21.9671 17.5423 21.9085 17.486C21.8499 17.4298 21.7704 17.3982 21.6875 17.3982ZM10.125 19.7974C9.75416 19.7974 9.39165 19.6919 9.08331 19.4941C8.77496 19.2964 8.53464 19.0154 8.39273 18.6866C8.25081 18.3578 8.21368 17.996 8.28603 17.6469C8.35837 17.2979 8.53695 16.9773 8.79917 16.7256C9.0614 16.474 9.39549 16.3026 9.75921 16.2332C10.1229 16.1637 10.4999 16.1994 10.8425 16.3356C11.1851 16.4718 11.478 16.7024 11.684 16.9983C11.89 17.2942 12 17.6421 12 17.998C12 18.4752 11.8025 18.9329 11.4508 19.2704C11.0992 19.6078 10.6223 19.7974 10.125 19.7974ZM2 11.7001V12.2999C2 12.3794 2.03292 12.4557 2.09153 12.512C2.15013 12.5682 2.22962 12.5998 2.3125 12.5998H13.3125C13.4559 13.2777 13.8392 13.8873 14.3973 14.325C14.9555 14.7628 15.6542 15.002 16.375 15.002C17.0958 15.002 17.7945 14.7628 18.3527 14.325C18.9108 13.8873 19.2941 13.2777 19.4375 12.5998H21.6875C21.7704 12.5998 21.8499 12.5682 21.9085 12.512C21.9671 12.4557 22 12.3794 22 12.2999V11.7001C22 11.6206 21.9671 11.5443 21.9085 11.488C21.8499 11.4318 21.7704 11.4002 21.6875 11.4002H19.4375C19.2941 10.7223 18.9108 10.1127 18.3527 9.67495C17.7945 9.23715 17.0958 8.998 16.375 8.998C15.6542 8.998 14.9555 9.23715 14.3973 9.67495C13.8392 10.1127 13.4559 10.7223 13.3125 11.4002H2.3125C2.22962 11.4002 2.15013 11.4318 2.09153 11.488C2.03292 11.5443 2 11.6206 2 11.7001ZM14.5 12C14.5 11.6441 14.61 11.2962 14.816 11.0003C15.022 10.7044 15.3149 10.4738 15.6575 10.3376C16.0001 10.2014 16.3771 10.1657 16.7408 10.2352C17.1045 10.3046 17.4386 10.476 17.7008 10.7276C17.963 10.9793 18.1416 11.2999 18.214 11.649C18.2863 11.998 18.2492 12.3598 18.1073 12.6886C17.9654 13.0174 17.725 13.2984 17.4167 13.4961C17.1084 13.6939 16.7458 13.7994 16.375 13.7994C15.8777 13.7994 15.4008 13.6098 15.0492 13.2724C14.6975 12.9349 14.5 12.4772 14.5 12Z" fill="#2270B1"/>
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slide Controls', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Navigation Arrows', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Enable or disable navigation elements such as arrows or dots for users to control the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Navigation Arrows', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable navigation elements such as arrows or dots for users to control the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_navigation_arrow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_navigation_arrow ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_navigation_arrow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_navigation_arrow'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Arrow Styles', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose the style or design of the navigation arrows in the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Arrow Styles', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the style or design of the navigation arrows in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[360px] tw-h-[110px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wccshowcase-category-list-item tw-flex tw-flex-row tw-justify-between">
+		<div class="tw-w-[360px] tw-h-[110px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item tw-flex tw-flex-row tw-justify-between">
 			<div class="tw-mt-3 tw-pb-4">
 				<div class="tw-flex tw-flex-col tw-items-center tw-text-center">
 					<div class="tw-py-5 tw-w-[160px] tw-bg-white tw-rounded-md">
@@ -123,7 +99,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_arrow_style" value="<?php echo esc_attr( 'chevron' ); ?>" <?php echo 'chevron' === $wccshowcase_slide_arrow_style ? 'checked' : ''; ?>><?php esc_html_e( 'Chevron', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_arrow_style" value="<?php echo esc_attr( 'chevron' ); ?>" <?php echo 'chevron' === $showcase_details['wcc_showcase_slide_arrow_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Chevron', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -136,20 +112,20 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_arrow_style" value="<?php echo esc_attr( 'arrow' ); ?>" <?php echo 'arrow' === $wccshowcase_slide_arrow_style ? 'checked' : ''; ?>><?php esc_html_e( 'Arrow', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_arrow_style" value="<?php echo esc_attr( 'arrow' ); ?>" <?php echo 'arrow' === $showcase_details['wcc_showcase_slide_arrow_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Arrow', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Button Styles', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Select the style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Styles', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[360px] tw-h-[230px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wccshowcase-category-list-item tw-grid tw-grid-cols-2 tw-gap-y-0">
+		<div class="tw-w-[360px] tw-h-[230px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item tw-grid tw-grid-cols-2 tw-gap-y-0">
 			<div class="tw-mt-3">
 				<div class="tw-flex tw-flex-col tw-items-center tw-text-center">
 					<div class="tw-py-4 tw-w-[160px] tw-bg-white tw-rounded-md">
@@ -163,7 +139,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_style" value="<?php echo esc_attr( 'sharp' ); ?>" <?php echo 'sharp' === $wccshowcase_slide_button_style ? 'checked' : ''; ?>><?php esc_html_e( 'Sharp', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'sharp' ); ?>" <?php echo 'sharp' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Sharp', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -180,7 +156,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_style" value="<?php echo esc_attr( 'rounded' ); ?>" <?php echo 'rounded' === $wccshowcase_slide_button_style ? 'checked' : ''; ?>><?php esc_html_e( 'Rounded', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'rounded' ); ?>" <?php echo 'rounded' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Rounded', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -197,7 +173,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_style" value="<?php echo esc_attr( 'circle' ); ?>" <?php echo 'circle' === $wccshowcase_slide_button_style ? 'checked' : ''; ?>><?php esc_html_e( 'Circle', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'circle' ); ?>" <?php echo 'circle' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Circle', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -210,20 +186,20 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_style" value="<?php echo esc_attr( 'only_icons' ); ?>" <?php echo 'only_icons' === $wccshowcase_slide_button_style ? 'checked' : ''; ?>><?php esc_html_e( 'Only Icons', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'only_icons' ); ?>" <?php echo 'only_icons' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Only Icons', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Button Background Styles', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Select the button background style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Background Styles', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the button background style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[360px] tw-h-[230px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wccshowcase-category-list-item tw-grid tw-grid-cols-2 tw-gap-y-0">
+		<div class="tw-w-[360px] tw-h-[230px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item tw-grid tw-grid-cols-2 tw-gap-y-0">
 			<div class="tw-mt-3">
 				<div class="tw-flex tw-flex-col tw-items-center tw-text-center">
 					<div class="tw-py-4 tw-w-[160px] tw-bg-white tw-rounded-md">
@@ -237,7 +213,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_background_style" value="<?php echo esc_attr( 'filled' ); ?>" <?php echo 'filled' === $wccshowcase_slide_button_background_style ? 'checked' : ''; ?>><?php esc_html_e( 'Filled', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'filled' ); ?>" <?php echo 'filled' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Filled', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -256,7 +232,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_background_style" value="<?php echo esc_attr( 'outline' ); ?>" <?php echo 'outline' === $wccshowcase_slide_button_background_style ? 'checked' : ''; ?>><?php esc_html_e( 'Outline', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'outline' ); ?>" <?php echo 'outline' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Outline', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -273,7 +249,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_background_style" value="<?php echo esc_attr( 'transparent' ); ?>" <?php echo 'transparent' === $wccshowcase_slide_button_background_style ? 'checked' : ''; ?>><?php esc_html_e( 'Transparent', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'transparent' ); ?>" <?php echo 'transparent' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Transparent', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -292,68 +268,68 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_button_background_style" value="<?php echo esc_attr( 'shadow' ); ?>" <?php echo 'shadow' === $wccshowcase_slide_button_background_style ? 'checked' : ''; ?>><?php esc_html_e( 'Shadow', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'shadow' ); ?>" <?php echo 'shadow' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Shadow', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Button Color', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose the color or tint of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Color', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the color or tint of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[360px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wccshowcase-category-list-item">
-			<div class="tw-mt-3 wccshowcase-custom-border tw-pb-4">
+		<div class="tw-w-[360px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
-					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_slide_button[background_color]" value="<?php echo esc_attr( $wccshowcase_slide_button['background_color'] ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[background_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_button']['background_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
-			<div class="tw-mt-3 wccshowcase-custom-border tw-pb-4">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
-					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_slide_button[text_color]" value="<?php echo esc_attr( $wccshowcase_slide_button['text_color'] ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_button']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
-					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_slide_button[hover_color]" value="<?php echo esc_attr( $wccshowcase_slide_button['hover_color'] ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[hover_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_button']['hover_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="wccshowcase-settings-row-title"></div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row-title"></div>
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Slide Counters', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Enable or disable pagination elements such as dots to indicate slide position.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slide Counters', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable pagination elements such as dots to indicate slide position.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_counters" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_counters ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_show_counter" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_show_counter'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Counters Styles', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Choose the style or design of the pagination indicators in the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Counters Styles', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the style or design of the pagination indicators in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[360px] tw-h-[360px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wccshowcase-category-list-item">
-			<div class="tw-mt-3 wccshowcase-custom-border tw-pb-4">
+		<div class="tw-w-[360px] tw-h-[360px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<div class="tw-flex tw-flex-col tw-items-center tw-text-center">
 					<div class="tw-py-6 tw-w-[336px] tw-bg-white tw-rounded-md">
 						<svg xmlns="http://www.w3.org/2000/svg" width="304" height="8" viewBox="0 0 304 8" fill="none">
@@ -367,11 +343,11 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_counter_style" value="<?php echo esc_attr( 'dashes' ); ?>" <?php echo 'dashes' === $wccshowcase_slide_counter_style ? 'checked' : ''; ?>><?php esc_html_e( 'Dashes', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dashes' ); ?>" <?php echo 'dashes' === $showcase_details['wcc_showcase_slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dashes', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
-			<div class="tw-mt-3 wccshowcase-custom-border tw-pb-4">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<div class="tw-flex tw-flex-col tw-items-center tw-text-center">
 					<div class="tw-py-6 tw-w-[336px] tw-bg-white tw-rounded-md">
 						<svg xmlns="http://www.w3.org/2000/svg" width="92" height="12" viewBox="0 0 92 12" fill="none">
@@ -385,7 +361,7 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_counter_style" value="<?php echo esc_attr( 'dots' ); ?>" <?php echo 'dots' === $wccshowcase_slide_counter_style ? 'checked' : ''; ?>><?php esc_html_e( 'Dots', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dots' ); ?>" <?php echo 'dots' === $showcase_details['wcc_showcase_slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dots', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -403,98 +379,98 @@ $wccshowcase_slide_free_mode               = 'yes';
 						</svg>
 					</div>
 					<label for="" class="tw-mt-2">
-						<input type="radio" name="wccshowcase_slide_counter_style" value="<?php echo esc_attr( 'dash_with_dots' ); ?>" <?php echo 'dash_with_dots' === $wccshowcase_slide_counter_style ? 'checked' : ''; ?>><?php esc_html_e( 'Dash with Dots', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dash_with_dots' ); ?>" <?php echo 'dash_with_dots' === $showcase_details['wcc_showcase_slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dash with Dots', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Counters Color', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Select the color or tint of the pagination indicators in the slider.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Counters Color', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the color or tint of the pagination indicators in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[360px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wccshowcase-category-list-item">
-			<div class="tw-mt-3 wccshowcase-custom-border tw-pb-4">
+		<div class="tw-w-[360px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
-					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_slide_counter[background_color]" value="<?php echo esc_attr( $wccshowcase_slide_counter['background_color'] ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[background_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_counter']['background_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
-			<div class="tw-mt-3 wccshowcase-custom-border tw-pb-4">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
-					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_slide_counter[text_color]" value="<?php echo esc_attr( $wccshowcase_slide_counter['text_color'] ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_counter']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wccshowcase-change-card-style"></span>
-					<input class="wccshowcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wccshowcase_slide_counter[hover_color]" value="<?php echo esc_attr( $wccshowcase_slide_counter['hover_color'] ); ?>">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[hover_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_counter']['hover_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="wccshowcase-settings-row-title">
+<div class="wcc_showcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M21.6875 5.4022H10.6875C10.5441 4.72426 10.1608 4.11475 9.60266 3.67695C9.04453 3.23916 8.34585 3 7.625 3C6.90415 3 6.20547 3.23916 5.64734 3.67695C5.08921 4.11475 4.70595 4.72426 4.5625 5.4022H2.3125C2.22962 5.4022 2.15013 5.4338 2.09153 5.49004C2.03292 5.54629 2 5.62257 2 5.7021V6.3019C2 6.38144 2.03292 6.45772 2.09153 6.51397C2.15013 6.57021 2.22962 6.6018 2.3125 6.6018H4.5625C4.70595 7.27975 5.08921 7.88926 5.64734 8.32705C6.20547 8.76485 6.90415 9.00401 7.625 9.00401C8.34585 9.00401 9.04453 8.76485 9.60266 8.32705C10.1608 7.88926 10.5441 7.27975 10.6875 6.6018H21.6875C21.7704 6.6018 21.8499 6.57021 21.9085 6.51397C21.9671 6.45772 22 6.38144 22 6.3019V5.7021C22 5.62257 21.9671 5.54629 21.9085 5.49004C21.8499 5.4338 21.7704 5.4022 21.6875 5.4022ZM7.625 7.8014C7.25416 7.8014 6.89165 7.69587 6.58331 7.49815C6.27496 7.30043 6.03464 7.0194 5.89273 6.6906C5.75081 6.36181 5.71368 6.00001 5.78603 5.65096C5.85837 5.30191 6.03695 4.98129 6.29917 4.72964C6.5614 4.47799 6.89549 4.30661 7.25921 4.23718C7.62292 4.16775 7.99992 4.20338 8.34253 4.33958C8.68514 4.47577 8.97798 4.7064 9.18401 5.00231C9.39003 5.29822 9.5 5.64612 9.5 6.002C9.5 6.47923 9.30246 6.93692 8.95083 7.27437C8.59919 7.61182 8.12228 7.8014 7.625 7.8014ZM21.6875 17.3982H13.1875C13.0441 16.7203 12.6608 16.1107 12.1027 15.6729C11.5445 15.2352 10.8458 14.996 10.125 14.996C9.40415 14.996 8.70547 15.2352 8.14734 15.6729C7.58921 16.1107 7.20595 16.7203 7.0625 17.3982H2.3125C2.22962 17.3982 2.15013 17.4298 2.09153 17.486C2.03292 17.5423 2 17.6186 2 17.6981V18.2979C2 18.3774 2.03292 18.4537 2.09153 18.51C2.15013 18.5662 2.22962 18.5978 2.3125 18.5978H7.0625C7.20595 19.2757 7.58921 19.8853 8.14734 20.323C8.70547 20.7608 9.40415 21 10.125 21C10.8458 21 11.5445 20.7608 12.1027 20.323C12.6608 19.8853 13.0441 19.2757 13.1875 18.5978H21.6875C21.7704 18.5978 21.8499 18.5662 21.9085 18.51C21.9671 18.4537 22 18.3774 22 18.2979V17.6981C22 17.6186 21.9671 17.5423 21.9085 17.486C21.8499 17.4298 21.7704 17.3982 21.6875 17.3982ZM10.125 19.7974C9.75416 19.7974 9.39165 19.6919 9.08331 19.4941C8.77496 19.2964 8.53464 19.0154 8.39273 18.6866C8.25081 18.3578 8.21368 17.996 8.28603 17.6469C8.35837 17.2979 8.53695 16.9773 8.79917 16.7256C9.0614 16.474 9.39549 16.3026 9.75921 16.2332C10.1229 16.1637 10.4999 16.1994 10.8425 16.3356C11.1851 16.4718 11.478 16.7024 11.684 16.9983C11.89 17.2942 12 17.6421 12 17.998C12 18.4752 11.8025 18.9329 11.4508 19.2704C11.0992 19.6078 10.6223 19.7974 10.125 19.7974ZM2 11.7001V12.2999C2 12.3794 2.03292 12.4557 2.09153 12.512C2.15013 12.5682 2.22962 12.5998 2.3125 12.5998H13.3125C13.4559 13.2777 13.8392 13.8873 14.3973 14.325C14.9555 14.7628 15.6542 15.002 16.375 15.002C17.0958 15.002 17.7945 14.7628 18.3527 14.325C18.9108 13.8873 19.2941 13.2777 19.4375 12.5998H21.6875C21.7704 12.5998 21.8499 12.5682 21.9085 12.512C21.9671 12.4557 22 12.3794 22 12.2999V11.7001C22 11.6206 21.9671 11.5443 21.9085 11.488C21.8499 11.4318 21.7704 11.4002 21.6875 11.4002H19.4375C19.2941 10.7223 18.9108 10.1127 18.3527 9.67495C17.7945 9.23715 17.0958 8.998 16.375 8.998C15.6542 8.998 14.9555 9.23715 14.3973 9.67495C13.8392 10.1127 13.4559 10.7223 13.3125 11.4002H2.3125C2.22962 11.4002 2.15013 11.4318 2.09153 11.488C2.03292 11.5443 2 11.6206 2 11.7001ZM14.5 12C14.5 11.6441 14.61 11.2962 14.816 11.0003C15.022 10.7044 15.3149 10.4738 15.6575 10.3376C16.0001 10.2014 16.3771 10.1657 16.7408 10.2352C17.1045 10.3046 17.4386 10.476 17.7008 10.7276C17.963 10.9793 18.1416 11.2999 18.214 11.649C18.2863 11.998 18.2492 12.3598 18.1073 12.6886C17.9654 13.0174 17.725 13.2984 17.4167 13.4961C17.1084 13.6939 16.7458 13.7994 16.375 13.7994C15.8777 13.7994 15.4008 13.6098 15.0492 13.2724C14.6975 12.9349 14.5 12.4772 14.5 12Z" fill="#2270B1"/>
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Others', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Touch Interaction', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Enable or disable the ability for users to navigate slides by swiping on touch-enabled devices.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Touch Interaction', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable the ability for users to navigate slides by swiping on touch-enabled devices.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_touch_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_touch_interaction ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_touch_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_touch_interaction'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Scroll Interaction', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Control whether users can navigate slides using the mousewheel.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Scroll Interaction', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Control whether users can navigate slides using the mousewheel.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_scroll_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_scroll_interaction ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_scroll_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_scroll_interaction'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Draggable Slides', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Enable or disable the ability for users to drag slides using the mouse.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Draggable Slides', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable the ability for users to drag slides using the mouse.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_draggable_slide" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_draggable_slide ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_draggable_slide" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_draggable_slide'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wccshowcase-settings-row">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
-		<h3 class="wccshowcase-settings-title"><?php esc_html_e( 'Free Mode', 'wc-category-showcase' ); ?></h3>
-		<p class="wccshowcase-settings-description"><?php esc_html_e( 'Determine if slides should move freely without alignment constraints.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Free Mode', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine if slides should move freely without alignment constraints.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wccshowcase_slide_free_mode" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $wccshowcase_slide_free_mode ) { echo 'checked'; } ?>>
-			<div class="wccshowcase-toggle"></div>
+			<input type="checkbox" name="wcc_showcase_slide_free_mode" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_free_mode'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>

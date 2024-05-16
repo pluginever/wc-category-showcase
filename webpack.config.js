@@ -8,9 +8,11 @@ module.exports = [
 		entry: {
 			...defaultConfig.entry(),
 			'css/admin': './src/css/admin/admin.scss',
+			'css/slick': './src/css/slick/slick.css',
 			'css/tailwind': './src/css/common/tailwind.css',
 			'js/tabs-control': './src/js/admin/tabs-control.js',
 			'js/admin': './src/js/admin/admin.js',
+			'js/slick': './src/js/slick/slick.js',
 		},
 		output: {
 			...defaultConfig.output,

@@ -2,6 +2,8 @@
 
 namespace WooCommerceCategoryShowcase\Admin;
 
+use WooCommerceCategoryShowcase\Controllers\Helpers;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -109,13 +111,14 @@ class Menus {
 	 * @return void
 	 */
 	public function render_menu() {
-		$add  = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$edit = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$add              = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$post_id          = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$showcase_details = Helpers::get_slider_settings( $post_id );
 
 		if ( $add ) {
 			include __DIR__ . '/views/add-category-showcase.php';
-		} elseif ( $edit ) {
-			include __DIR__ . '/views/edit-category-showcase.php';
+		} elseif ( $post_id ) {
+			include __DIR__ . '/views/add-category-showcase.php';
 		} else {
 			include __DIR__ . '/views/list-category-showcase.php';
 		}

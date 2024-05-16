@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-	.wccshowcase-toggle{
+	.wcc_showcase-toggle{
 		@apply tw-relative tw-w-11 tw-h-6 tw-bg-divider-grey-100;
 		@apply hover:tw-bg-accent-grey-200;
 		@apply peer-focus:tw-outline-none ;
@@ -17,7 +17,7 @@
 		@apply after:tw-w-5 after:tw-transition-all dark:tw-border-gray-600 peer-checked:tw-bg-accent-green-500;
 	}
 
-	.wccshowcase-toggle-small{
+	.wcc_showcase-toggle-small{
 		@apply tw-relative tw-w-[28px] tw-h-4 tw-bg-divider-grey-100;
 		@apply hover:tw-bg-accent-grey-200;
 		@apply peer-focus:tw-outline-none ;
@@ -34,136 +34,136 @@
 
 /* Custom Styles */
 @layer components {
-	.wccshowcase-tabs {
+	.wcc_showcase-tabs {
 		@apply tw-no-underline tw-text-text-light-grey-500 hover:tw-text-fade-blue-600 tw-rounded-md tw-px-3 tw-py-2 tw-text-sm;
 		@apply tw-font-medium tw-flex tw-justify-center tw-gap-1 tw-flex-auto;
 	}
-	.wccshowcase-tabs-active {
+	.wcc_showcase-tabs-active {
 		@apply tw-no-underline tw-bg-input-grey-50 tw-text-fade-blue-600 tw-rounded-md tw-px-3;
 		@apply tw-py-2 tw-text-sm tw-font-medium tw-flex tw-justify-center tw-flex-auto tw-gap-1 !tw-shadow-none;
 		@apply focus:tw-text-fade-blue-600 tw-outline-0;
 		outline: none !important;
 	}
 
-	.wccshowcase-border-active{
+	.wcc_showcase-border-active{
 		@apply tw-border-accent-green-500 tw-border-2 tw-rounded-lg;
 	}
-	.wccshowcase-settings-row{
+	.wcc_showcase-settings-row{
 		@apply tw-pb-4 tw-flex tw-justify-start tw-gap-32 tw-mt-3;
 	}
-	.wccshowcase-settings-row-title {
+	.wcc_showcase-settings-row-title {
 		@apply tw-flex tw-items-center tw-gap-1 tw-border-b !tw-border-divider-grey-100;
 		border-bottom: 1px solid;
 	}
-	.wccshowcase-settings-description{
+	.wcc_showcase-settings-description{
 		@apply tw-text-xs tw-font-normal tw-leading-4 tw-text-gray-400;
 	}
-	.wccshowcase-settings-title{
+	.wcc_showcase-settings-title{
 		@apply tw-text-base tw-font-semibold tw-leading-6 tw-text-black;
 	}
 
-	.wccshowcase-settings-field{
+	.wcc_showcase-settings-field{
 		@apply tw-w-60 !tw-bg-input-grey-50 !tw-border-divider-grey-100;
 	}
 
-	.wccshowcase-settings-field-border{
+	.wcc_showcase-settings-field-border{
 		@apply !tw-border-divider-grey-100 !tw-rounded-md;
 		border: 1px solid;
 	}
 
-	.wccshowcase-layout-primary {
+	.wcc_showcase-layout-primary {
 		@apply tw-text-text-light-grey-300 tw-p-2 tw-border tw-border-text-light-grey-300 tw-rounded-md tw-bg-white hover:tw-text-text-light-grey-500;
 		border: 1px solid;
 	}
 
-	.wccshowcase-layout-active {
+	.wcc_showcase-layout-active {
 		@apply tw-text-fade-blue-600 tw-p-2 tw-border !tw-border-accent-green-500 tw-rounded-md tw-bg-white tw-inner-border tw-inner-border-accent-green-500;
 		border: 1px solid;
 		/*box-sizing: border-box;*/
 	}
 
-	.wccshowcase-layout-active-before-content {
+	.wcc_showcase-layout-active-before-content {
 		@apply before:tw-absolute before:tw-content-check-circle before:tw-text-sm before:tw-top-1 before:tw-left-5;
 	}
 
-	.wccshowcase-layout-active-before-content-2 {
+	.wcc_showcase-layout-active-before-content-2 {
 		@apply before:tw-absolute before:tw-content-check-circle before:tw-text-sm before:tw-top-1 before:tw-left-1;
 	}
 
-	.wccshowcase-layout-disable {
+	.wcc_showcase-layout-disable {
 		@apply tw-text-text-light-grey-300 tw-p-2 tw-border tw-border-text-light-grey-300 tw-rounded-md tw-bg-white;
 		border: 1px solid;
 	}
 
-	.wccshowcase-layout-pro-before-content {
+	.wcc_showcase-layout-pro-before-content {
 		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-4;
 	}
 
-	.wccshowcase-layout-pro-before-content-2 {
+	.wcc_showcase-layout-pro-before-content-2 {
 		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-0;
 	}
 
-	.wccshowcase-category-list-item {
+	.wcc_showcase-category-list-item {
 		@apply tw-mt-1 tw-border !tw-border-divider-grey-100 tw-rounded tw-bg-input-grey-50;
 		border: 1px solid;
 	}
 
-	.wccshowcase-custom-border{
+	.wcc_showcase-custom-border{
 		@apply !tw-border-divider-grey-100;
 		border-bottom: 1px solid;
 	}
 
-	.wccshowcase-custom-border-top{
+	.wcc_showcase-custom-border-top{
 		@apply !tw-border-divider-grey-100;
 		border-top: 1px solid;
 	}
 
-	.wccshowcase-group-button {
+	.wcc_showcase-group-button {
 		@apply tw-relative tw-flex tw-justify-center tw-gap-1 tw-items-center tw-rounded-md;
 		@apply tw-px-3 tw-py-2 tw-text-sm tw-font-semibold;
 		@apply tw-text-text-grey-500 hover:tw-bg-divider-grey-100 hover:tw-text-fade-blue-600 focus:tw-z-10;
 	}
 
-	.wccshowcase-group-button-active{
+	.wcc_showcase-group-button-active{
 		@apply tw-relative tw-flex tw-justify-center tw-gap-1 tw-items-center tw-rounded-md;
 		@apply tw-px-3 tw-py-2 tw-text-sm tw-font-semibold;
 		@apply tw-text-text-grey-500 focus:tw-z-10;
 		@apply tw-bg-white tw-text-fade-blue-600;
 	}
 
-	.wccshowcase-group-button-active-icon{
+	.wcc_showcase-group-button-active-icon{
 		@apply tw-text-fade-blue-600;
 	}
 
-	.wccshowcase-group-button-icon{
+	.wcc_showcase-group-button-icon{
 		@apply tw-text-text-grey-500 hover:tw-text-fade-blue-600;
 	}
 
-	.wccshowcase-column-breakpoint {
+	.wcc_showcase-column-breakpoint {
 		@apply tw-flex tw-w-60 tw-h-9 !tw-bg-input-grey-50 !tw-border-divider-grey-100;
 	}
-	.wccshowcase-column-breakpoint-inner {
+	.wcc_showcase-column-breakpoint-inner {
 		@apply tw-w-36 tw-flex tw-gap-2 tw-items-center tw-px-3 tw-text-gray-900;
 		@apply tw-bg-gray-200 tw-border;
 		@apply tw-border-gray-300 tw-border-e-0;
 		@apply tw-rounded-s-md dark:tw-bg-gray-600 dark:tw-text-gray-400 dark:tw-border-gray-600;
 	}
 
-	.wccshowcase-column-breakpoint-inner-input {
+	.wcc_showcase-column-breakpoint-inner-input {
 		@apply !tw-bg-input-grey-50 !tw-border-divider-grey-100 tw-rounded-none tw-rounded-e-lg tw-border;
 		@apply tw-text-gray-900 focus:tw-ring-blue-500 focus:tw-border-blue-500 tw-block tw-flex-1 tw-min-w-0 tw-w-full;
 		@apply tw-text-sm tw-p-2.5  dark:tw-bg-gray-700 dark:tw-border-gray-600 dark:tw-placeholder-gray-400;
 		@apply dark:tw-text-white dark:focus:tw-ring-blue-500 dark:focus:tw-border-blue-500;
 	}
 
-	.wccshowcase-upload-button {
+	.wcc_showcase-upload-button {
 		@apply tw-text-fade-blue-600 tw-no-underline tw-flex tw-p-1 tw-bg-white tw-absolute tw-border !tw-border-divider-grey-100 tw-top-2 tw-right-2 tw-rounded-md;
 		border: 1px solid;
 	}
 
 
 	/*Showcase Tab css*/
-	.wccshowcase-button-border-top{
+	.wcc_showcase-button-border-top{
 		border-top: 1px solid;
 	}
 
@@ -173,25 +173,25 @@
 
 	/*Font tab*/
 
-	.wccshowcase-font-tag-select{
+	.wcc_showcase-font-tag-select{
 		@apply tw-bg-white tw-text-center tw-py-2 tw-rounded-md tw-w-[41px] tw-font-bold tw-text-text-grey-500;
 		@apply hover:tw-border-fade-blue-600 tw-rounded-md hover:tw-text-fade-blue-600;
 		border: 2px solid #E2E8F0;
 		cursor: pointer;
 		margin: 0;
 	}
-	.wccshowcase-font-tag-select.active{
+	.wcc_showcase-font-tag-select.active{
 		@apply !tw-border-fade-blue-600 tw-text-fade-blue-600;
 	}
 
-	.wccshowcase-font-design-select{
+	.wcc_showcase-font-design-select{
 		@apply tw-bg-white tw-text-center tw-pt-2 tw-rounded-md tw-w-[41px] tw-text-text-grey-500;
 		@apply hover:tw-border-fade-blue-600 tw-rounded-md hover:tw-text-fade-blue-600;
 		border: 2px solid #E2E8F0;
 		cursor: pointer;
 		margin: 0;
 	}
-	.wccshowcase-font-design-select.active{
+	.wcc_showcase-font-design-select.active{
 		@apply !tw-border-fade-blue-600 tw-text-fade-blue-600;
 	}
 }

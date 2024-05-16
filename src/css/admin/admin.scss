@@ -1,4 +1,5 @@
 @import "../../../lib/ByteKit/Core/assets/css/bytekit-core.css";
+@import "common";
 
 .select2.select2-container.select2-container--default{
 	width: 100% !important;
@@ -90,10 +91,10 @@
 
 ///arrow dropdown
 
-.wccshowcase-arrow {
+.wcc_showcase-arrow {
 	position: relative;
 }
-.wccshowcase-arrow svg {
+.wcc_showcase-arrow svg {
 	content: "";
 	position: absolute;
 	top:-10px;

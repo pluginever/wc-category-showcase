@@ -8,6 +8,11 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$list_table = new \WooCommerceCategoryShowcase\Admin\listTables\ShowcaseListTable();
+$action     = $list_table->current_action();
+$list_table->process_bulk_action( $action );
+$list_table->prepare_items();
+
 ?>
 <div class="wrap bkit-wrap">
 	<h1 class="wp-heading-inline">
@@ -20,5 +25,15 @@ defined( 'ABSPATH' ) || exit;
 	<hr class="wp-header-end">
 
 	<form id="wc-category-showcase-table" method="get">
+	</form>
+	<form id="wc-category-showcase-table" method="get">
+		<?php
+		$status = isset( $_GET['status'] ) ? sanitize_text_field( wp_unslash( $_GET['status'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$list_table->views();
+		$list_table->search_box( __( 'Search', 'wc-category-showcase' ), 'key' );
+		$list_table->display();
+		?>
+		<input type="hidden" name="status" value="<?php echo esc_attr( $status ); ?>">
+		<input type="hidden" name="page" value="wc-category-showcase">
 	</form>
 </div>

@@ -23,7 +23,7 @@ class Utilities {
 				'page_title' => __( 'Settings', 'wc-category-showcase' ),
 				'menu_title' => __( 'Settings', 'wc-category-showcase' ),
 				'capability' => 'manage_options',
-				'menu_slug'  => 'wccshowcase-items',
+				'menu_slug'  => 'wcc_showcase-items',
 				'page_hook'  => 'settings',
 			),
 		);
