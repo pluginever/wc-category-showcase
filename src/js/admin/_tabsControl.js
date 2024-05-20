@@ -45,7 +45,6 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.parentNode.querySelector('.wccs-interactive-hover-style.selected').classList.remove('selected');
 			option.classList.add('selected');
 			document.getElementById("wcc_showcase_interactive_hover_style").value = option.dataset.value;
-			console.log(option.innerHTML);
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
 		}
 	}
@@ -56,7 +55,6 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.parentNode.querySelector('.wccs-font_category_title-font-family.selected').classList.remove('selected');
 			option.classList.add('selected');
 			document.getElementById("wcc_showcase_font_category_title_font_family").value = option.dataset.value;
-			console.log(option.innerHTML);
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
 		}
 	}
@@ -67,7 +65,6 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.parentNode.querySelector('.wccs-font_category_title-font-weight.selected').classList.remove('selected');
 			option.classList.add('selected');
 			document.getElementById("wcc_showcase_font_category_title_text_weight").value = option.dataset.value;
-			console.log(option.innerHTML);
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
 		}
 	}
@@ -78,7 +75,6 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.parentNode.querySelector('.wcc_showcase_font_main_title-font-family.selected').classList.remove('selected');
 			option.classList.add('selected');
 			document.getElementById("wcc_showcase_font_main_title_font_family").value = option.dataset.value;
-			console.log(option.innerHTML);
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
 		}
 	}

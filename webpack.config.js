@@ -8,11 +8,9 @@ module.exports = [
 		entry: {
 			...defaultConfig.entry(),
 			'css/admin': './src/css/admin/admin.scss',
-			'css/slick': './src/css/slick/slick.css',
-			'css/tailwind': './src/css/common/tailwind.css',
-			'js/tabs-control': './src/js/admin/tabs-control.js',
+			'css/showcase': './src/css/frontend/showcase.scss',
 			'js/admin': './src/js/admin/admin.js',
-			'js/slick': './src/js/slick/slick.js',
+			'js/showcase': './src/js/frontend/showcase.js',
 		},
 		output: {
 			...defaultConfig.output,
@@ -50,6 +48,14 @@ module.exports = [
 					{
 						from: path.resolve(__dirname, 'src/images'),
 						to: path.resolve(__dirname, 'assets/images'),
+					},
+					{
+						from: path.resolve( __dirname, './node_modules/@splidejs/splide/dist/js/splide.js'),
+						to: path.resolve(__dirname, 'assets/js'),
+					},
+					{
+						from: path.resolve(__dirname, './node_modules/@splidejs/splide-extension-grid/dist/js/splide-extension-grid.js'),
+						to: path.resolve(__dirname, 'assets/js'),
 					}
 				]
 			}),

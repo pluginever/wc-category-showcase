@@ -5,7 +5,7 @@
  * Copyright (c) 2018 pluginever
  * Licensed under the GPLv2+ license.
  */
-
+import './_tabsControl';
 import './_common';
 
 (function ($, window, document, wp, undefined) {
@@ -313,54 +313,4 @@ jQuery(document).ready(function($) {
 			}
 		},1000);
 	});
-
-	// Admin preview slick jquery
-	// $(document).ready(function(){
-	// 	$('.admin-preview').slick();
-	// });
-	// $('.admin-preview').slick({
-	// 	slidesToShow: 3,
-	// 	slidesToScroll: 4,
-	// 	asNavFor: '.slider-for',
-	// 	dots: true,
-	// 	centerMode: true,
-	// 	focusOnSelect: true,
-	// 	infinite: true,
-	// 	speed: 300,
-	// 	arrows: true,
-	// });
-	//
-	// $('.admin-preview2').slick({
-	// 	dots: true,
-	// 	infinite: true,
-	// 	speed: 300,
-	// 	slidesToShow: 3,
-	// 	slidesToScroll: 4,
-	// 	arrows: true,
-	// 	responsive: [
-	// 		{
-	// 			breakpoint: 1024,
-	// 			settings: {
-	// 				slidesToShow: 3,
-	// 				slidesToScroll: 3,
-	// 				infinite: true,
-	// 				dots: true
-	// 			}
-	// 		},
-	// 		{
-	// 			breakpoint: 600,
-	// 			settings: {
-	// 				slidesToShow: 2,
-	// 				slidesToScroll: 2
-	// 			}
-	// 		},
-	// 		{
-	// 			breakpoint: 480,
-	// 			settings: {
-	// 				slidesToShow: 1,
-	// 				slidesToScroll: 1
-	// 			}
-	// 		}
-	// 	]
-	// });
 });

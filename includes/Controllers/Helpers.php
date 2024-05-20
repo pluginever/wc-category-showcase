@@ -11,6 +11,26 @@ defined( 'ABSPATH' ) || exit;
  * @package WooCommerceCategoryShowcase
  */
 class Helpers {
+	/**
+	 * Get category details.
+	 *
+	 * @param \WP_Term| int $category Category title.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	public static function get_category_details( $category ) {
+		$category = get_term( $category );
+		if ( $category && ! is_wp_error( $category ) ) {
+			return sprintf(
+				'%2$s',
+				$category->term_id,
+				html_entity_decode( $category->name )
+			);
+		}
+		return null;
+	}
 
 	/**
 	 * Get category title.

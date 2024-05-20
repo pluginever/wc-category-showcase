@@ -18,12 +18,10 @@
     "@wordpress/scripts": "^27.7.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
-    "mini-css-extract-plugin": "^2.7.6",
     "tailwindcss": "^3.4.3",
     "tailwindcss-inner-border": "^0.2.0",
     "webpack-remove-empty-scripts": "^1.0.4",
-    "webpack-rtl-plugin": "^1.3.0",
-    "wp-prettier": "^2.8.5"
+    "webpack-rtl-plugin": "^1.3.0"
   },
   "scripts": {
     "build": "wp-scripts build",
@@ -43,6 +41,6 @@
   ],
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
-    "cssnano": "^7.0.1"
+    "@splidejs/splide-extension-grid": "^0.4.1"
   }
 }

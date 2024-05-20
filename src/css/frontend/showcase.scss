@@ -1,0 +1,104 @@
+@import "~@splidejs/splide/dist/css/splide.min.css";
+
+.category-showcase-slide-item {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	padding: 24px;
+	.item-image {
+		width: 256px;
+		height: 256px;
+	}
+	.item-icon {
+		margin-top: 20px;
+		width: 64px;
+		height: 64px;
+	}
+	.item-button {
+		display: flex;
+		width: 217px;
+		padding: 0px 57px;
+		border: 1px solid #130F31;
+		text-decoration: none !important;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
+		color: #130F31;
+		text-align: center;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 24px; /* 150% */
+	}
+}
+
+.wcc-showcase-item{
+	border: 1px solid #D3D9DF;
+	border-radius: 8px;
+	padding: 24px;
+	.wcc-showcase-item__cat-thumbnails{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		.wcc-showcase-item__cat-thumbnails__image{
+			max-width: 256px;
+			max-height: 256px;
+		}
+		.wcc-showcase-item__cat-thumbnails__icon{
+			margin-top: 20px;
+			max-width: 64px;
+			max-height: 64px;
+		}
+		.wcc-showcase-item__cat-products a {
+			color: #130F31;
+			text-align: center;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px;
+			text-decoration-line: underline;
+		}
+	}
+
+	.wcc-showcase-item__cat-details {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		.wcc-showcase-item__cat-button {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			a {
+				display: flex;
+				align-items: center;
+				text-align: center;
+				width: 100%;
+				padding: 8px 40px;
+				border: 1px solid #130F31;
+				border-radius: 8px;
+				text-decoration: none;
+				justify-content: center;
+				align-items: center;
+				gap: 4px;
+				color: #130F31;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 24px;
+			}
+		}
+	}
+}
+
+.wcc-showcase__slide-arrow {
+	position: absolute;
+	top: -80px;
+	right: 80px;
+}
+.wcc-showcase__slider-heading {
+	max-width: 80%;
+}
