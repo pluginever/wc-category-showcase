@@ -3,6 +3,7 @@
 namespace WooCommerceCategoryShowcase\Admin\listTables;
 
 use WooCommerceCategoryShowcase\Admin\listTables\AbstractListTable;
+use WooCommerceCategoryShowcase\Controllers\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -172,17 +173,11 @@ class ShowcaseListTable extends AbstractListTable {
 					$deleted_count = 0;
 					foreach ( $ids as $id ) {
 						wp_delete_post( $id, true );
-						delete_post_meta( $id, '_showcase_enable_disable' );
-						delete_post_meta( $id, '_showcase_visibility' );
-						delete_post_meta( $id, '_showcase_product' );
-						delete_post_meta( $id, '_showcase_category' );
-						delete_post_meta( $id, '_showcase_searchable' );
 						++$deleted_count;
 					}
 					break;
 			}
 			// translators: %d: number of things deleted.
-			wc_category_showcase()->add_notice( sprintf( _n( '%d showcase deleted.', '%d showcases deleted.', $deleted_count, 'wc-category-showcase' ), $deleted_count ), 'success' );
 			wp_safe_redirect( admin_url( 'admin.php?page=wc-category-showcase' ) );
 			exit();
 		}

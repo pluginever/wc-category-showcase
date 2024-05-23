@@ -90,6 +90,10 @@
 		@apply before:tw-absolute before:tw-content-check-circle before:tw-text-sm before:tw-top-1 before:tw-left-1;
 	}
 
+	.wcc_showcase-layout-active-before-content-3 {
+		@apply before:tw-absolute before:tw-content-check-circle before:tw-text-sm before:tw-top-1 before:tw-left-2.5;
+	}
+
 	.wcc_showcase-layout-disable {
 		@apply tw-text-text-light-grey-300 tw-p-2 tw-border tw-border-text-light-grey-300 tw-rounded-md tw-bg-white;
 		border: 1px solid;
@@ -101,6 +105,10 @@
 
 	.wcc_showcase-layout-pro-before-content-2 {
 		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-0;
+	}
+
+	.wcc_showcase-layout-pro-before-content-3 {
+		@apply before:tw-absolute before:tw-content-pro-badge before:tw-text-sm before:tw-top-0 before:tw-right-2;
 	}
 
 	.wcc_showcase-category-list-item {

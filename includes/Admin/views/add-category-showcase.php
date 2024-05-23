@@ -96,7 +96,7 @@ defined( 'ABSPATH' ) || exit;
 									</svg>
 									<?php esc_html_e( 'Showcase', 'wc-category-showcase' ); ?>
 								</a>
-								<a href="#third" class="wcc_showcase-tabs">
+								<a href="#third" class="wcc_showcase-tabs <?php echo 'slider' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?> is-wcc-slider">
 									<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 										<g clip-path="url(#clip0_379_1756)">
 											<path d="M16.4112 2H4.18894C3.88211 2 3.63338 2.24873 3.63338 2.55556V13.6667C3.63338 13.9735 3.88211 14.2222 4.18894 14.2222H16.4112C16.718 14.2222 16.9667 13.9735 16.9667 13.6667V2.55556C16.9667 2.24873 16.718 2 16.4112 2Z"/>

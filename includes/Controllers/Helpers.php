@@ -65,17 +65,22 @@ class Helpers {
 			// General tab settings data.
 			'post_title'                        => '',
 			'layout'                            => 'grid',
-			'display_mode'                      => 'fixed',
+			'slider'                            => array(
+				'column' => '3',
+				'row'    => '1',
+			),
+			'block'                             => array(
+				'column' => '3',
+				'row'    => '2',
+			),
 			'number_of_grid_column'             => '3',
 			'number_of_block_column'            => '3',
 			'layout_option'                     => 'basic',
 			'column_breakpoint'                 => array(
-				'desktop' => '4',
-				'laptop'  => '3',
-				'tablet'  => '2',
-				'mobile'  => '1',
+				'laptop' => '3',
+				'tablet' => '2',
+				'mobile' => '1',
 			),
-			'block_slider_category'             => array(),
 			'category_filter'                   => 'all',
 			'specific_category_select'          => array(),
 			'category_sort_order'               => 'default',
@@ -83,13 +88,13 @@ class Helpers {
 			'category_display_limit'            => '12',
 			'includes_sub_categories'           => 'no',
 			'hide_empty_categories'             => 'no',
-			'column_adjustment'                 => 'no',
 			'pre_loader'                        => 'no',
 			// Showcase tab settings data.
 			'show_section_title'                => 'no',
 			'section_title'                     => '',
 			'show_section_description'          => 'no',
 			'section_description'               => '',
+			'heading_alignment'                 => 'left',
 			'card'                              => array(
 				'background_color' => '#000000',
 				'text_color'       => '#000000',
@@ -122,7 +127,7 @@ class Helpers {
 			'show_button'                       => 'no',
 			'button_text'                       => 'Shop Now',
 			'button_style'                      => 'only_text',
-			'show_button_icon'                  => 'yes',
+			'show_button_icon'                  => 'no',
 			'button'                            => array(
 				'background_color' => '#ffffff',
 				'text_color'       => '#ffffff',
@@ -130,13 +135,14 @@ class Helpers {
 			),
 			// Slide tab settings data.
 			'slide_slideshow'                   => 'no',
-			'slide_arrow_style'                 => 'arrow',
 			'slide_button_style'                => 'rounded',
 			'slide_button_background_style'     => 'filled',
 			'slide_speed'                       => '3000',
 			'slide_stop_on_hover'               => 'no',
 			'slide_unlimited_loop'              => 'no',
 			'slide_navigation_arrow'            => 'no',
+			'slide_arrow_style'                 => 'arrow',
+			'slider_navigation_position'        => 'top-right',
 			'slide_button'                      => array(
 				'background_color' => '#000000',
 				'text_color'       => '#000000',

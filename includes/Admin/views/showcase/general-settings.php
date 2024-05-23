@@ -22,9 +22,23 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center tw-gap-x-4">
 		<div class="tw-relative">
-			<div class="wcc_showcase_layout_select <?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-				<input type="radio" name="wcc_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'grid' ); ?>" <?php if ( 'grid' === $showcase_details['wcc_showcase_layout'] ) { echo 'checked'; } ?>>
-				<svg class="<?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+			<div class="wcc_showcase_layout_select <?php echo 'slider' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcc_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'slider' ); ?>" <?php if ( 'slider' === $showcase_details['wcc_showcase_layout'] ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'slider' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 -4 32 32" fill="currentColor">
+					<path d="M25.7778 0.200043H6.22222C5.7313 0.200043 5.33333 0.598012 5.33333 1.08893V18.8667C5.33333 19.3576 5.7313 19.7556 6.22222 19.7556H25.7778C26.2687 19.7556 26.6667 19.3576 26.6667 18.8667V1.08893C26.6667 0.598012 26.2687 0.200043 25.7778 0.200043Z"/>
+					<path d="M3.55556 17.9778H0.888889C0.653141 17.9778 0.427049 17.8842 0.26035 17.7175C0.0936505 17.5508 0 17.3247 0 17.0889V4.64449C0 4.40874 0.0936505 4.18265 0.26035 4.01595C0.427049 3.84925 0.653141 3.7556 0.888889 3.7556H3.55556V17.9778ZM31.1111 17.9778H28.4444V3.7556H31.1111C31.3469 3.7556 31.573 3.84925 31.7397 4.01595C31.9064 4.18265 32 4.40874 32 4.64449V17.0889C32 17.3247 31.9064 17.5508 31.7397 17.7175C31.573 17.8842 31.3469 17.9778 31.1111 17.9778Z"/>
+					<path d="M7.11111 26.3334C7.7984 26.3334 8.35556 25.7762 8.35556 25.0889C8.35556 24.4016 7.7984 23.8445 7.11111 23.8445C6.42382 23.8445 5.86667 24.4016 5.86667 25.0889C5.86667 25.7762 6.42382 26.3334 7.11111 26.3334Z"/>
+					<path d="M12.4444 26.9556C13.4754 26.9556 14.3111 26.1199 14.3111 25.0889C14.3111 24.058 13.4754 23.2223 12.4444 23.2223C11.4135 23.2223 10.5778 24.058 10.5778 25.0889C10.5778 26.1199 11.4135 26.9556 12.4444 26.9556Z"/>
+					<path d="M17.7778 26.3334C18.4651 26.3334 19.0222 25.7762 19.0222 25.0889C19.0222 24.4016 18.4651 23.8445 17.7778 23.8445C17.0905 23.8445 16.5333 24.4016 16.5333 25.0889C16.5333 25.7762 17.0905 26.3334 17.7778 26.3334Z"/>
+					<path d="M23.1111 26.3334C23.7984 26.3334 24.3556 25.7762 24.3556 25.0889C24.3556 24.4016 23.7984 23.8445 23.1111 23.8445C22.4238 23.8445 21.8667 24.4016 21.8667 25.0889C21.8667 25.7762 22.4238 26.3334 23.1111 26.3334Z"/>
+				</svg>
+			</div>
+			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Slider', 'wc-category-showcase' ); ?></p>
+		</div>
+		<div class="tw-relative">
+			<div class="wcc_showcase_layout_select <?php echo 'block' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcc_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'block' ); ?>" <?php if ( 'block' === $showcase_details['wcc_showcase_layout'] ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'block' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
 					<g clip-path="url(#clip0_233_3496)">
 						<path d="M13 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H13C14.1046 15 15 14.1046 15 13V2C15 0.89543 14.1046 0 13 0Z"/>
 						<path d="M13 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H13C14.1046 32 15 31.1046 15 30V19C15 17.8954 14.1046 17 13 17Z"/>
@@ -33,12 +47,12 @@ defined( 'ABSPATH' ) || exit;
 					</g>
 				</svg>
 			</div>
-			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Grid', 'wc-category-showcase' ); ?></p>
+			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Block', 'wc-category-showcase' ); ?></p>
 		</div>
 		<div class="tw-relative">
-			<div class="wcc_showcase_layout_select <?php echo 'block' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-				<input type="radio" name="wcc_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'block' ); ?>" <?php if ( 'block' === $showcase_details['wcc_showcase_layout'] ) { echo 'checked'; } ?>>
-				<svg class="<?php echo 'block' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+			<div class="wcc_showcase_layout_select <?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcc_showcase_layout" class="!tw-hidden" value="<?php echo esc_attr( 'grid' ); ?>" <?php if ( 'grid' === $showcase_details['wcc_showcase_layout'] ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
 					<g clip-path="url(#clip0_265_819)">
 						<path d="M18 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H18C19.1046 32 20 31.1046 20 30V2C20 0.89543 19.1046 0 18 0Z"/>
 						<path d="M30 0H24C22.8954 0 22 0.89543 22 2V7.33333C22 8.4379 22.8954 9.33333 24 9.33333H30C31.1046 9.33333 32 8.4379 32 7.33333V2C32 0.89543 31.1046 0 30 0Z"/>
@@ -47,44 +61,8 @@ defined( 'ABSPATH' ) || exit;
 					</g>
 				</svg>
 			</div>
-			<p class="tw-text-center tw-text-text-grey-500"><?php esc_html_e( 'Block', 'wc-category-showcase' ); ?></p>
+			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Grid', 'wc-category-showcase' ); ?></p>
 		</div>
-	</div>
-</div>
-<div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
-		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Display Mode', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
-	</div>
-	<div class="tw-flex tw-items-center tw-gap-2 tw-rounded-md tw-max-w-[385px]">
-		<span class="tw-isolate tw-flex tw-flex-row tw-items-center tw-bg-input-grey-50 tw-p-1 tw-rounded-md tw-shadow-sm tw-min-w-[385px]">
-			<label class="tw-w-1/3 wcc_showcase-display-mode <?php echo 'fixed' === $showcase_details['wcc_showcase_display_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
-				<svg class="<?php echo 'fixed' === $showcase_details['wcc_showcase_display_mode'] ? 'wcc_showcase-group-button-active-icon' : 'wcc_showcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
-					<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
-				</svg>
-				<input type="radio" name="wcc_showcase_display_mode" checked class="!tw-hidden" value="<?php echo esc_attr( 'fixed' ); ?>" <?php if ( 'fixed' === $showcase_details['wcc_showcase_display_mode'] ) { echo 'checked'; } ?>>
-				<?php esc_html_e( 'Fixed', 'wc-category-showcase' ); ?>
-			</label>
-			<label class="tw-w-1/3 wcc_showcase-display-mode <?php echo 'slider' === $showcase_details['wcc_showcase_display_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
-				<svg class="<?php echo 'slider' === $showcase_details['wcc_showcase_display_mode'] ? 'wcc_showcase-group-button-active-icon' : 'wcc_showcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-					<path d="M16.1111 2.00003H3.88889C3.58206 2.00003 3.33333 2.24876 3.33333 2.55559V13.6667C3.33333 13.9735 3.58206 14.2223 3.88889 14.2223H16.1111C16.4179 14.2223 16.6667 13.9735 16.6667 13.6667V2.55559C16.6667 2.24876 16.4179 2.00003 16.1111 2.00003Z"/>
-					<path d="M2.22222 13.1111H0.555556C0.408213 13.1111 0.266905 13.0526 0.162718 12.9484C0.0585316 12.8442 0 12.7029 0 12.5556V4.77781C0 4.63047 0.0585316 4.48916 0.162718 4.38497C0.266905 4.28078 0.408213 4.22225 0.555556 4.22225H2.22222V13.1111ZM19.4444 13.1111H17.7778V4.22225H19.4444C19.5918 4.22225 19.7331 4.28078 19.8373 4.38497C19.9415 4.48916 20 4.63047 20 4.77781V12.5556C20 12.7029 19.9415 12.8442 19.8373 12.9484C19.7331 13.0526 19.5918 13.1111 19.4444 13.1111Z"/>
-					<path d="M4.44444 18.3334C4.874 18.3334 5.22222 17.9851 5.22222 17.5556C5.22222 17.126 4.874 16.7778 4.44444 16.7778C4.01489 16.7778 3.66667 17.126 3.66667 17.5556C3.66667 17.9851 4.01489 18.3334 4.44444 18.3334Z"/>
-					<path d="M7.77778 18.7223C8.42211 18.7223 8.94445 18.1999 8.94445 17.5556C8.94445 16.9113 8.42211 16.3889 7.77778 16.3889C7.13345 16.3889 6.61111 16.9113 6.61111 17.5556C6.61111 18.1999 7.13345 18.7223 7.77778 18.7223Z"/>
-					<path d="M11.1111 18.3334C11.5407 18.3334 11.8889 17.9851 11.8889 17.5556C11.8889 17.126 11.5407 16.7778 11.1111 16.7778C10.6816 16.7778 10.3333 17.126 10.3333 17.5556C10.3333 17.9851 10.6816 18.3334 11.1111 18.3334Z"/>
-					<path d="M14.4444 18.3334C14.874 18.3334 15.2222 17.9851 15.2222 17.5556C15.2222 17.126 14.874 16.7778 14.4444 16.7778C14.0149 16.7778 13.6667 17.126 13.6667 17.5556C13.6667 17.9851 14.0149 18.3334 14.4444 18.3334Z"/>
-				</svg>
-				<input type="radio" name="wcc_showcase_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'slider' ); ?>" <?php if ( 'slider' === $showcase_details['wcc_showcase_display_mode'] ) { echo 'checked'; } ?>>
-				<?php esc_html_e( 'Slider', 'wc-category-showcase' ); ?>
-			</label>
-			<label class="tw-w-1/3 wcc_showcase-display-mode <?php echo 'ticker' === $showcase_details['wcc_showcase_display_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
-				<svg class="<?php echo 'ticker' === $showcase_details['wcc_showcase_display_mode'] ? 'wcc_showcase-group-button-active-icon' : 'wcc_showcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
-					<path d="M17.6665 2H14.6665V18H17.6665C17.9317 18 18.1861 17.8946 18.3736 17.7071C18.5611 17.5196 18.6665 17.2652 18.6665 17V3C18.6665 2.73478 18.5611 2.48043 18.3736 2.29289C18.1861 2.10536 17.9317 2 17.6665 2ZM12.6665 2H3.6665C3.40129 2 3.14693 2.10536 2.9594 2.29289C2.77186 2.48043 2.6665 2.73478 2.6665 3V17C2.6665 17.2652 2.77186 17.5196 2.9594 17.7071C3.14693 17.8946 3.40129 18 3.6665 18H12.6665V2Z"/>
-				</svg>
-				<input type="radio" name="wcc_showcase_display_mode" class="!tw-hidden" value="<?php echo esc_attr( 'ticker' ); ?>" <?php if ( 'ticker' === $showcase_details['wcc_showcase_display_mode'] ) { echo 'checked'; } ?>>
-				<?php esc_html_e( 'Ticker', 'wc-category-showcase' ); ?>
-			</label>
-		</span>
 	</div>
 </div>
 <div class="wcc_showcase-settings-row-title">
@@ -93,92 +71,251 @@ defined( 'ABSPATH' ) || exit;
 	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Layout Settings', 'wc-category-showcase' ); ?></h2>
 </div>
-<div class="wcc_showcase-settings-row wcc_showcase-grid-selection <?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
+<div class="wcc_showcase-settings-row wcc_showcase-slider-selection <?php echo 'slider' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
-		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Number of Columns', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slider Column Count', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
 		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column">
-				<div class="<?php echo '1' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-					<svg class="<?php echo '1' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
-						<g clip-path="url(#clip0_358_9312)">
-							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z"/>
-						</g>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-slider-column">
+				<div class="<?php echo '1' === $showcase_details['wcc_showcase_slider']['column'] ? 'wcc_showcase-layout-active-before-content-3' : ''; ?>">
+					<svg class="<?php echo '1' === $showcase_details['wcc_showcase_slider']['column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 32" fill="currentColor">
+						<path d="M12 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H12C13.1046 32 14 31.1046 14 30V2C14 0.89543 13.1046 0 12 0Z"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '1' ); ?>" <?php echo '1' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[column]" value="<?php echo esc_attr( '1' ); ?>" <?php echo '1' === $showcase_details['wcc_showcase_slider']['column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '1', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column">
-				<div class="<?php echo '2' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-					<svg class="<?php echo '2' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
-						<g clip-path="url(#clip0_358_9326)">
-							<path d="M20.5 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H20.5C21.6046 16 22.5 15.1046 22.5 14V2C22.5 0.89543 21.6046 0 20.5 0Z"/>
-							<path d="M46 0H27.5C26.3954 0 25.5 0.89543 25.5 2V14C25.5 15.1046 26.3954 16 27.5 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z"/>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-slider-column">
+				<div class="<?php echo '2' === $showcase_details['wcc_showcase_slider']['column'] ? 'wcc_showcase-layout-active-before-content-3' : ''; ?>">
+					<svg class="<?php echo '2' === $showcase_details['wcc_showcase_slider']['column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35337)">
+							<path d="M12.5 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H12.5C13.6046 32 14.5 31.1046 14.5 30V2C14.5 0.89543 13.6046 0 12.5 0Z"/>
+							<path d="M30 0H19.5C18.3954 0 17.5 0.89543 17.5 2V30C17.5 31.1046 18.3954 32 19.5 32H30C31.1046 32 32 31.1046 32 30V2C32 0.89543 31.1046 0 30 0Z"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '2' ); ?>" <?php echo '2' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[column]" value="<?php echo esc_attr( '2' ); ?>" <?php echo '2' === $showcase_details['wcc_showcase_slider']['column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '2', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column">
-				<div class="<?php echo '3' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-					<svg class="<?php echo '3' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
-						<g clip-path="url(#clip0_358_9329)">
-							<path d="M12 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H12C13.1046 16 14 15.1046 14 14V2C14 0.89543 13.1046 0 12 0Z"/>
-							<path d="M29 0H19C17.8954 0 17 0.89543 17 2V14C17 15.1046 17.8954 16 19 16H29C30.1046 16 31 15.1046 31 14V2C31 0.89543 30.1046 0 29 0Z"/>
-							<path d="M46 0H36C34.8954 0 34 0.89543 34 2V14C34 15.1046 34.8954 16 36 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z"/>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-slider-column">
+				<div class="<?php echo '3' === $showcase_details['wcc_showcase_slider']['column'] ? 'wcc_showcase-layout-active-before-content-3' : ''; ?>">
+					<svg class="<?php echo '3' === $showcase_details['wcc_showcase_slider']['column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35333)">
+							<path d="M6.66667 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H6.66667C7.77124 32 8.66667 31.1046 8.66667 30V2C8.66667 0.89543 7.77124 0 6.66667 0Z"/>
+							<path d="M18.3337 0H13.667C12.5624 0 11.667 0.89543 11.667 2V30C11.667 31.1046 12.5624 32 13.667 32H18.3337C19.4382 32 20.3337 31.1046 20.3337 30V2C20.3337 0.89543 19.4382 0 18.3337 0Z"/>
+							<path d="M29.9997 0H25.333C24.2284 0 23.333 0.89543 23.333 2V30C23.333 31.1046 24.2284 32 25.333 32H29.9997C31.1042 32 31.9997 31.1046 31.9997 30V2C31.9997 0.89543 31.1042 0 29.9997 0Z"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '3' ); ?>" <?php echo '3' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[column]" value="<?php echo esc_attr( '3' ); ?>" <?php echo '3' === $showcase_details['wcc_showcase_slider']['column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '3', 'wc-category-showcase' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
-				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-2">
-					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
-						<g clip-path="url(#clip0_358_9314)">
-							<path d="M7.75 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H7.75C8.85457 16 9.75 15.1046 9.75 14V2C9.75 0.89543 8.85457 0 7.75 0Z"/>
-							<path d="M20.5 0H14.75C13.6454 0 12.75 0.89543 12.75 2V14C12.75 15.1046 13.6454 16 14.75 16H20.5C21.6046 16 22.5 15.1046 22.5 14V2C22.5 0.89543 21.6046 0 20.5 0Z"/>
-							<path d="M33.25 0H27.5C26.3954 0 25.5 0.89543 25.5 2V14C25.5 15.1046 26.3954 16 27.5 16H33.25C34.3546 16 35.25 15.1046 35.25 14V2C35.25 0.89543 34.3546 0 33.25 0Z"/>
-							<path d="M46 0H40.25C39.1454 0 38.25 0.89543 38.25 2V14C38.25 15.1046 39.1454 16 40.25 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z"/>
+				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-3">
+
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35342)">
+							<path d="M3.75 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H3.75C4.85457 32 5.75 31.1046 5.75 30V2C5.75 0.89543 4.85457 0 3.75 0Z"/>
+							<path d="M12.5 0H10.75C9.64543 0 8.75 0.89543 8.75 2V30C8.75 31.1046 9.64543 32 10.75 32H12.5C13.6046 32 14.5 31.1046 14.5 30V2C14.5 0.89543 13.6046 0 12.5 0Z"/>
+							<path d="M21.25 0H19.5C18.3954 0 17.5 0.89543 17.5 2V30C17.5 31.1046 18.3954 32 19.5 32H21.25C22.3546 32 23.25 31.1046 23.25 30V2C23.25 0.89543 22.3546 0 21.25 0Z"/>
+							<path d="M30 0H28.25C27.1454 0 26.25 0.89543 26.25 2V30C26.25 31.1046 27.1454 32 28.25 32H30C31.1046 32 32 31.1046 32 30V2C32 0.89543 31.1046 0 30 0Z"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '4' ); ?>" <?php echo '4' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[column]" value="<?php echo esc_attr( '4' ); ?>" <?php echo '4' === $showcase_details['wcc_showcase_slider']['column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '4', 'wc-category-showcase' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
-				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-2">
-					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
-						<g clip-path="url(#clip0_358_9306)">
-							<path d="M5.2 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H5.2C6.30457 16 7.2 15.1046 7.2 14V2C7.2 0.89543 6.30457 0 5.2 0Z"/>
-							<path d="M15.4 0H12.2C11.0954 0 10.2 0.89543 10.2 2V14C10.2 15.1046 11.0954 16 12.2 16H15.4C16.5045 16 17.4 15.1046 17.4 14V2C17.4 0.89543 16.5045 0 15.4 0Z"/>
-							<path d="M25.5999 0H22.3999C21.2953 0 20.3999 0.89543 20.3999 2V14C20.3999 15.1046 21.2953 16 22.3999 16H25.5999C26.7045 16 27.5999 15.1046 27.5999 14V2C27.5999 0.89543 26.7045 0 25.5999 0Z"/>
-							<path d="M35.8001 0H32.6001C31.4955 0 30.6001 0.89543 30.6001 2V14C30.6001 15.1046 31.4955 16 32.6001 16H35.8001C36.9047 16 37.8001 15.1046 37.8001 14V2C37.8001 0.89543 36.9047 0 35.8001 0Z"/>
-							<path d="M46 0H42.8C41.6955 0 40.8 0.89543 40.8 2V14C40.8 15.1046 41.6955 16 42.8 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z" fill="#D3D9DF"/>
+				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-3">
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35347)">
+							<path d="M4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32C3.10457 32 4 31.1046 4 30V2Z"/>
+							<path d="M11 2C11 0.89543 10.1046 0 9 0C7.89543 0 7 0.89543 7 2V30C7 31.1046 7.89543 32 9 32C10.1046 32 11 31.1046 11 30V2Z"/>
+							<path d="M18 2C18 0.89543 17.1046 0 16 0C14.8954 0 14 0.89543 14 2V30C14 31.1046 14.8954 32 16 32C17.1046 32 18 31.1046 18 30V2Z"/>
+							<path d="M25 2C25 0.89543 24.1046 0 23 0C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32C24.1046 32 25 31.1046 25 30V2Z"/>
+							<path d="M32 2C32 0.89543 31.1046 0 30 0C28.8954 0 28 0.89543 28 2V30C28 31.1046 28.8954 32 30 32C31.1046 32 32 31.1046 32 30V2Z"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '5' ); ?>" <?php echo '5' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[column]" value="<?php echo esc_attr( '5' ); ?>" <?php echo '5' === $showcase_details['wcc_showcase_slider']['column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '5', 'wc-category-showcase' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
-				<div class="wcc_showcase-layout-pro-before-content-2">
-					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16" fill="currentColor">
-						<g clip-path="url(#clip0_358_9319)">
-							<path d="M3.5 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H3.5C4.60457 16 5.5 15.1046 5.5 14V2C5.5 0.89543 4.60457 0 3.5 0Z"/>
-							<path d="M12 0H10.5C9.39543 0 8.5 0.89543 8.5 2V14C8.5 15.1046 9.39543 16 10.5 16H12C13.1046 16 14 15.1046 14 14V2C14 0.89543 13.1046 0 12 0Z"/>
-							<path d="M20.5 0H19C17.8954 0 17 0.89543 17 2V14C17 15.1046 17.8954 16 19 16H20.5C21.6046 16 22.5 15.1046 22.5 14V2C22.5 0.89543 21.6046 0 20.5 0Z"/>
-							<path d="M29 0H27.5C26.3954 0 25.5 0.89543 25.5 2V14C25.5 15.1046 26.3954 16 27.5 16H29C30.1046 16 31 15.1046 31 14V2C31 0.89543 30.1046 0 29 0Z"/>
-							<path d="M37.5 0H36C34.8954 0 34 0.89543 34 2V14C34 15.1046 34.8954 16 36 16H37.5C38.6046 16 39.5 15.1046 39.5 14V2C39.5 0.89543 38.6046 0 37.5 0Z"/>
-							<path d="M46 0H44.5C43.3954 0 42.5 0.89543 42.5 2V14C42.5 15.1046 43.3954 16 44.5 16H46C47.1046 16 48 15.1046 48 14V2C48 0.89543 47.1046 0 46 0Z"/>
+				<div class="wcc_showcase-layout-pro-before-content-3">
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35326)">
+							<path d="M2.83333 1.41667C2.83333 0.634265 2.19907 0 1.41666 0C0.634263 0 0 0.634265 0 1.41667V30.5833C0 31.3657 0.634263 32 1.41666 32C2.19907 32 2.83333 31.3657 2.83333 30.5833V1.41667Z"/>
+							<path d="M8.66634 1.41667C8.66634 0.634265 8.03207 0 7.24967 0C6.46727 0 5.83301 0.634265 5.83301 1.41667V30.5833C5.83301 31.3657 6.46727 32 7.24967 32C8.03207 32 8.66634 31.3657 8.66634 30.5833V1.41667Z"/>
+							<path d="M14.5003 1.41667C14.5003 0.634265 13.8661 0 13.0837 0C12.3013 0 11.667 0.634265 11.667 1.41667V30.5833C11.667 31.3657 12.3013 32 13.0837 32C13.8661 32 14.5003 31.3657 14.5003 30.5833V1.41667Z"/>
+							<path d="M20.3333 1.41667C20.3333 0.634265 19.6991 0 18.9167 0C18.1343 0 17.5 0.634265 17.5 1.41667V30.5833C17.5 31.3657 18.1343 32 18.9167 32C19.6991 32 20.3333 31.3657 20.3333 30.5833V1.41667Z" />
+							<path d="M26.1663 1.41667C26.1663 0.634265 25.5321 0 24.7497 0C23.9673 0 23.333 0.634265 23.333 1.41667V30.5833C23.333 31.3657 23.9673 32 24.7497 32C25.5321 32 26.1663 31.3657 26.1663 30.5833V1.41667Z"/>
+							<path d="M32.0003 1.41667C32.0003 0.634265 31.3661 0 30.5837 0C29.8013 0 29.167 0.634265 29.167 1.41667V30.5833C29.167 31.3657 29.8013 32 30.5837 32C31.3661 32 32.0003 31.3657 32.0003 30.5833V1.41667Z"/>
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '6' ); ?>" <?php echo '6' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[column]" value="<?php echo esc_attr( '6' ); ?>" <?php echo '6' === $showcase_details['wcc_showcase_slider']['column'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '6', 'wc-category-showcase' ); ?></span>
+			</div>
+		</div>
+		<div class="tw-max-w-[385px] ">
+			<div class="tw-mt-3 tw-flex tw-flex-row tw-items-center tw-gap-1 tw-w-full">
+				<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+					<path d="M15.1337 15.5891L17.3499 7.57164L13.7187 9.62914C13.6292 9.67993 13.5304 9.71235 13.4283 9.72449C13.3261 9.73663 13.2225 9.72825 13.1236 9.69984C13.0247 9.67144 12.9325 9.62357 12.8523 9.55906C12.7722 9.49454 12.7057 9.41468 12.6568 9.32414L9.9999 4.41602L7.34303 9.32352C7.29394 9.41387 7.22737 9.49355 7.14719 9.55792C7.067 9.62229 6.97481 9.67006 6.87598 9.69845C6.77715 9.72683 6.67366 9.73527 6.57154 9.72326C6.46942 9.71126 6.3707 9.67905 6.28115 9.62852L2.6499 7.57102L4.86615 15.5891H15.1337Z" fill="#FFD731"/>
+					<path d="M17.35 7.56836L15.1312 15.5871H12.6375C13.2106 14.6374 13.5723 13.5754 13.6981 12.4734C13.8018 11.5489 13.7368 10.6133 13.5062 9.71211C13.5812 9.69961 13.65 9.66836 13.7187 9.63086L17.35 7.56836Z" fill="#FFC933"/>
+					<path d="M16.9055 15.334C16.9067 15.5781 16.8256 15.8156 16.6754 16.0081C16.5252 16.2006 16.3145 16.337 16.0774 16.3952C14.0568 16.8702 12.0249 17.0983 9.99988 17.0983C7.97487 17.0983 5.94238 16.8702 3.92238 16.3952C3.68524 16.337 3.4746 16.2006 3.32438 16.0081C3.17416 15.8156 3.0931 15.5781 3.09425 15.334C3.09425 14.6483 3.72363 14.1258 4.39363 14.2702C6.25863 14.6727 8.13238 14.8671 9.99988 14.8671C11.8674 14.8671 13.7411 14.6733 15.6061 14.2702C16.2761 14.1258 16.9055 14.6483 16.9055 15.334Z" fill="#FFD731"/>
+					<path d="M16.906 15.3367C16.906 15.8367 16.5623 16.2805 16.0748 16.393C15.4248 16.543 14.7748 16.6742 14.1248 16.7742C14.4498 16.5492 14.6498 16.1742 14.6498 15.768C14.6498 15.1992 14.2623 14.7305 13.7498 14.5992C14.3685 14.5117 14.9873 14.4055 15.606 14.268C16.2748 14.1242 16.906 14.6492 16.906 15.3367Z" fill="#FFC933"/>
+					<path d="M2.64976 8.97188C3.42295 8.97188 4.04976 8.34507 4.04976 7.57188C4.04976 6.79868 3.42295 6.17188 2.64976 6.17188C1.87656 6.17188 1.24976 6.79868 1.24976 7.57188C1.24976 8.34507 1.87656 8.97188 2.64976 8.97188Z" fill="#FFD731"/>
+					<path d="M17.35 8.97188C18.1231 8.97188 18.75 8.34507 18.75 7.57188C18.75 6.79868 18.1231 6.17188 17.35 6.17188C16.5768 6.17188 15.95 6.79868 15.95 7.57188C15.95 8.34507 16.5768 8.97188 17.35 8.97188Z" fill="#FFC933"/>
+					<path d="M9.99985 5.70039C10.7731 5.70039 11.3999 5.07359 11.3999 4.30039C11.3999 3.52719 10.7731 2.90039 9.99985 2.90039C9.22665 2.90039 8.59985 3.52719 8.59985 4.30039C8.59985 5.07359 9.22665 5.70039 9.99985 5.70039Z" fill="#FFD731"/>
+					<path d="M9.99981 13.3123C10.7261 13.3123 11.3148 12.601 11.3148 11.7235C11.3148 10.8461 10.7261 10.1348 9.99981 10.1348C9.27356 10.1348 8.68481 10.8461 8.68481 11.7235C8.68481 12.601 9.27356 13.3123 9.99981 13.3123Z" fill="#FF7F0E"/>
+					<path d="M11.3125 11.7242C11.3125 12.5992 10.725 13.3117 10 13.3117C9.85005 13.3117 9.71255 13.2805 9.5813 13.2305C10.1 13.018 10.475 12.4242 10.475 11.7242C10.475 11.0242 10.1 10.4305 9.5813 10.218C9.71255 10.168 9.85005 10.1367 10 10.1367C10.725 10.1367 11.3125 10.8492 11.3125 11.7242Z" fill="#FF7F0E"/>
+					<path d="M5.25379 11.6526L4.76379 9.88074C4.75477 9.84704 4.73912 9.81547 4.71776 9.78788C4.69639 9.7603 4.66975 9.73724 4.63937 9.72008C4.60899 9.70291 4.5755 9.69197 4.54084 9.6879C4.50619 9.68383 4.47107 9.68671 4.43754 9.69637C4.40396 9.70562 4.37253 9.7214 4.34505 9.74281C4.31757 9.76422 4.29458 9.79084 4.2774 9.82114C4.26022 9.85144 4.24918 9.88483 4.24491 9.9194C4.24065 9.95398 4.24324 9.98905 4.25254 10.0226L4.74254 11.7945C4.76151 11.8623 4.80655 11.9198 4.8678 11.9545C4.92906 11.9891 5.00154 11.9981 5.06942 11.9795C5.13718 11.9605 5.19465 11.9155 5.22921 11.8542C5.26378 11.7929 5.27262 11.7204 5.25379 11.6526ZM5.55942 12.757C5.5504 12.7232 5.53473 12.6916 5.51333 12.6639C5.49194 12.6362 5.46524 12.6131 5.43481 12.5959C5.40437 12.5787 5.37081 12.5677 5.33608 12.5636C5.30135 12.5595 5.26615 12.5623 5.23254 12.572C5.19896 12.5812 5.16753 12.597 5.14005 12.6184C5.11257 12.6398 5.08958 12.6665 5.0724 12.6968C5.05522 12.7271 5.04418 12.7605 5.03991 12.795C5.03565 12.8296 5.03824 12.8647 5.04754 12.8982L5.09317 13.0639C5.11583 13.1271 5.16155 13.1794 5.22116 13.2104C5.28078 13.2413 5.34988 13.2486 5.41463 13.2307C5.47937 13.2128 5.53497 13.1711 5.57029 13.114C5.6056 13.0569 5.61801 12.9885 5.60504 12.9226L5.55942 12.757ZM8.72254 9.20449C8.7532 9.22125 8.78687 9.23176 8.82162 9.23542C8.85636 9.23908 8.89149 9.23582 8.92496 9.22582C8.95844 9.21582 8.9896 9.19929 9.01665 9.17718C9.04369 9.15507 9.06609 9.12781 9.08254 9.09699L9.50567 8.31574C9.53915 8.25375 9.54664 8.18099 9.52648 8.11348C9.50632 8.04597 9.46016 7.98923 9.39817 7.95574C9.33617 7.92226 9.26342 7.91478 9.1959 7.93494C9.12839 7.9551 9.07165 8.00125 9.03817 8.06324L8.61567 8.84449C8.58229 8.90644 8.5748 8.97909 8.59483 9.04655C8.61485 9.114 8.66077 9.17079 8.72254 9.20449Z" fill="#FFE576"/>
+					<path d="M17.3499 5.90539C16.9083 5.90589 16.4849 6.08153 16.1727 6.39379C15.8604 6.70605 15.6848 7.12942 15.6843 7.57102C15.6843 7.77477 15.7261 7.96789 15.7936 8.14852L13.588 9.39977C13.5291 9.43314 13.464 9.4544 13.3967 9.46231C13.3295 9.47021 13.2613 9.4646 13.1962 9.44579C13.1311 9.42699 13.0704 9.39537 13.0177 9.3528C12.965 9.31023 12.9213 9.25757 12.8893 9.19789L10.9661 5.65164C11.1818 5.4983 11.3577 5.29569 11.4792 5.06066C11.6007 4.82563 11.6644 4.56498 11.6649 4.30039C11.6649 3.38164 10.918 2.63477 9.99927 2.63477C9.08052 2.63477 8.33364 3.38164 8.33364 4.30039C8.33364 4.85789 8.61114 5.34914 9.03239 5.65164L7.10927 9.19789C7.07732 9.25752 7.03376 9.31017 6.98117 9.35272C6.92858 9.39528 6.86801 9.42689 6.80303 9.4457C6.73804 9.46451 6.66995 9.47013 6.60276 9.46224C6.53557 9.45436 6.47063 9.43311 6.41177 9.39977L4.20552 8.14852C4.27638 7.96415 4.31343 7.76852 4.31489 7.57102C4.31489 6.65227 3.56802 5.90539 2.64927 5.90539C1.73052 5.90539 0.983643 6.65227 0.983643 7.57102C0.983643 8.48977 1.73052 9.23664 2.64927 9.23664C2.71177 9.23664 2.77114 9.22477 2.83177 9.21852L4.14989 13.9816C3.79647 13.9895 3.46018 14.1355 3.21309 14.3883C2.966 14.6411 2.82777 14.9806 2.82802 15.3341C2.82802 15.9579 3.26239 16.5135 3.86052 16.6541C7.89816 17.6018 12.1004 17.6018 16.138 16.6541C16.7368 16.5129 17.1705 15.9579 17.1705 15.3341C17.1712 14.9805 17.0332 14.6407 16.786 14.3877C16.5388 14.1348 16.2022 13.989 15.8486 13.9816L17.1668 9.21914C17.2274 9.22602 17.2868 9.23727 17.3493 9.23727C18.268 9.23727 19.0149 8.49039 19.0149 7.57164C19.0149 6.65289 18.268 5.90539 17.3499 5.90539ZM9.99989 3.16602C10.6255 3.16602 11.1343 3.67477 11.1343 4.30039C11.1343 4.92602 10.6255 5.43539 9.99989 5.43539C9.37427 5.43539 8.86552 4.92664 8.86552 4.30102C8.86552 3.67539 9.37427 3.16602 9.99989 3.16602ZM1.51552 7.57102C1.51552 6.94539 2.02427 6.43664 2.64989 6.43664C3.27489 6.43664 3.78427 6.94539 3.78427 7.57102C3.78427 8.19664 3.27552 8.70602 2.64989 8.70602C2.02427 8.70602 1.51552 8.19664 1.51552 7.57102ZM16.6405 15.3341C16.6411 15.5183 16.5801 15.6973 16.4671 15.8427C16.3542 15.9881 16.1959 16.0916 16.0174 16.1366C12.0592 17.061 7.94123 17.061 3.98302 16.1366C3.8045 16.0916 3.64618 15.9881 3.53326 15.8427C3.42035 15.6973 3.35932 15.5183 3.35989 15.3341C3.35989 15.0835 3.47239 14.8491 3.66739 14.691C3.75986 14.6157 3.86808 14.5621 3.98404 14.5342C4.10001 14.5062 4.22077 14.5047 4.33739 14.5298C8.06994 15.3304 11.9298 15.3304 15.6624 14.5298C15.8974 14.4804 16.143 14.5379 16.3324 14.691C16.528 14.8491 16.6405 15.0835 16.6405 15.3341ZM15.2755 14.0623C11.794 14.7691 8.20583 14.7691 4.72427 14.0623L3.34552 9.07977C3.57989 8.97102 3.78177 8.80852 3.94239 8.60914L6.14989 9.86227C6.2699 9.93077 6.40248 9.97437 6.53972 9.99048C6.67696 10.0066 6.81604 9.99487 6.94864 9.95602C7.08188 9.91832 7.20617 9.85418 7.31408 9.76742C7.422 9.68066 7.51134 9.57305 7.57677 9.45102L9.51052 5.88477C9.66677 5.93289 9.82864 5.96664 9.99989 5.96664C10.1711 5.96664 10.333 5.93289 10.4886 5.88477L12.4224 9.45102C12.5561 9.69852 12.7793 9.87789 13.0505 9.95602C13.1831 9.99513 13.3223 10.0069 13.4596 9.99072C13.5969 9.9745 13.7294 9.93058 13.8493 9.86164L16.0568 8.60852C16.2174 8.80789 16.4193 8.97102 16.6536 9.07914L15.2755 14.0623ZM17.3499 8.70602C16.7249 8.70602 16.2155 8.19727 16.2155 7.57164C16.2155 6.94602 16.7243 6.43727 17.3499 6.43727C17.9755 6.43727 18.4843 6.94602 18.4843 7.57164C18.4843 8.19727 17.9755 8.70602 17.3499 8.70602Z" fill="#020617"/>
+					<path d="M9.99981 9.86914C9.12794 9.86914 8.41919 10.701 8.41919 11.7235C8.41919 12.746 9.12794 13.5779 9.99981 13.5779C10.8717 13.5779 11.5804 12.746 11.5804 11.7235C11.5804 10.701 10.8717 9.86914 9.99981 9.86914ZM9.99981 13.0466C9.42106 13.0466 8.95044 12.4529 8.95044 11.7235C8.95044 10.9941 9.42106 10.4004 9.99981 10.4004C10.5786 10.4004 11.0492 10.9941 11.0492 11.7235C11.0492 12.4529 10.5786 13.0466 9.99981 13.0466Z" fill="#020617"/>
+				</svg>
+				<span class="tw-text-text-grey-500 tw-text-xs tw-italic tw-leading-4 tw-w-full tw-font-medium"><?php esc_html_e( 'Unlock a variety of professionally designed layouts to enhance the presentation of your product categories.', 'wc-category-showcase' ); ?><a href="#" class="wcc_showcase-pro tw-text-accent-orange-500 tw-text-xs tw-leading-4 tw-font-semibold"><?php esc_html_e( 'Upgrade To Pro!', 'wc-category-showcase' ); ?></a></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="wcc_showcase-settings-row wcc_showcase-slider-selection <?php echo 'slider' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
+	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slider Row Count', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of rows you want your category showcase to have..', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
+		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-slider-row">
+				<div class="<?php echo '1' === $showcase_details['wcc_showcase_slider']['row'] ? 'wcc_showcase-layout-active-before-content-3' : ''; ?>">
+					<svg class="<?php echo '1' === $showcase_details['wcc_showcase_slider']['row'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 16" fill="currentColor">
+						<path d="M30 0H2C0.89543 0 0 0.89543 0 2V12C0 13.1046 0.89543 14 2 14H30C31.1046 14 32 13.1046 32 12V2C32 0.89543 31.1046 0 30 0Z"/>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[row]" value="<?php echo esc_attr( '1' ); ?>" <?php echo '1' === $showcase_details['wcc_showcase_slider']['row'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '1', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-3">
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_878_35455)">
+							<path d="M30 0H2C0.89543 0 0 0.89543 0 2V12.5C0 13.6046 0.89543 14.5 2 14.5H30C31.1046 14.5 32 13.6046 32 12.5V2C32 0.89543 31.1046 0 30 0Z"/>
+							<path d="M30 17.5H2C0.89543 17.5 0 18.3954 0 19.5V30C0 31.1046 0.89543 32 2 32H30C31.1046 32 32 31.1046 32 30V19.5C32 18.3954 31.1046 17.5 30 17.5Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_slider[row]" value="<?php echo esc_attr( '2' ); ?>" <?php echo '2' === $showcase_details['wcc_showcase_slider']['row'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '2', 'wc-category-showcase' ); ?></span>
+			</div>
+		</div>
+		<div class="tw-max-w-[385px] ">
+			<div class="tw-mt-3 tw-flex tw-flex-row tw-items-center tw-gap-1 tw-w-full">
+				<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+					<path d="M15.1337 15.5891L17.3499 7.57164L13.7187 9.62914C13.6292 9.67993 13.5304 9.71235 13.4283 9.72449C13.3261 9.73663 13.2225 9.72825 13.1236 9.69984C13.0247 9.67144 12.9325 9.62357 12.8523 9.55906C12.7722 9.49454 12.7057 9.41468 12.6568 9.32414L9.9999 4.41602L7.34303 9.32352C7.29394 9.41387 7.22737 9.49355 7.14719 9.55792C7.067 9.62229 6.97481 9.67006 6.87598 9.69845C6.77715 9.72683 6.67366 9.73527 6.57154 9.72326C6.46942 9.71126 6.3707 9.67905 6.28115 9.62852L2.6499 7.57102L4.86615 15.5891H15.1337Z" fill="#FFD731"/>
+					<path d="M17.35 7.56836L15.1312 15.5871H12.6375C13.2106 14.6374 13.5723 13.5754 13.6981 12.4734C13.8018 11.5489 13.7368 10.6133 13.5062 9.71211C13.5812 9.69961 13.65 9.66836 13.7187 9.63086L17.35 7.56836Z" fill="#FFC933"/>
+					<path d="M16.9055 15.334C16.9067 15.5781 16.8256 15.8156 16.6754 16.0081C16.5252 16.2006 16.3145 16.337 16.0774 16.3952C14.0568 16.8702 12.0249 17.0983 9.99988 17.0983C7.97487 17.0983 5.94238 16.8702 3.92238 16.3952C3.68524 16.337 3.4746 16.2006 3.32438 16.0081C3.17416 15.8156 3.0931 15.5781 3.09425 15.334C3.09425 14.6483 3.72363 14.1258 4.39363 14.2702C6.25863 14.6727 8.13238 14.8671 9.99988 14.8671C11.8674 14.8671 13.7411 14.6733 15.6061 14.2702C16.2761 14.1258 16.9055 14.6483 16.9055 15.334Z" fill="#FFD731"/>
+					<path d="M16.906 15.3367C16.906 15.8367 16.5623 16.2805 16.0748 16.393C15.4248 16.543 14.7748 16.6742 14.1248 16.7742C14.4498 16.5492 14.6498 16.1742 14.6498 15.768C14.6498 15.1992 14.2623 14.7305 13.7498 14.5992C14.3685 14.5117 14.9873 14.4055 15.606 14.268C16.2748 14.1242 16.906 14.6492 16.906 15.3367Z" fill="#FFC933"/>
+					<path d="M2.64976 8.97188C3.42295 8.97188 4.04976 8.34507 4.04976 7.57188C4.04976 6.79868 3.42295 6.17188 2.64976 6.17188C1.87656 6.17188 1.24976 6.79868 1.24976 7.57188C1.24976 8.34507 1.87656 8.97188 2.64976 8.97188Z" fill="#FFD731"/>
+					<path d="M17.35 8.97188C18.1231 8.97188 18.75 8.34507 18.75 7.57188C18.75 6.79868 18.1231 6.17188 17.35 6.17188C16.5768 6.17188 15.95 6.79868 15.95 7.57188C15.95 8.34507 16.5768 8.97188 17.35 8.97188Z" fill="#FFC933"/>
+					<path d="M9.99985 5.70039C10.7731 5.70039 11.3999 5.07359 11.3999 4.30039C11.3999 3.52719 10.7731 2.90039 9.99985 2.90039C9.22665 2.90039 8.59985 3.52719 8.59985 4.30039C8.59985 5.07359 9.22665 5.70039 9.99985 5.70039Z" fill="#FFD731"/>
+					<path d="M9.99981 13.3123C10.7261 13.3123 11.3148 12.601 11.3148 11.7235C11.3148 10.8461 10.7261 10.1348 9.99981 10.1348C9.27356 10.1348 8.68481 10.8461 8.68481 11.7235C8.68481 12.601 9.27356 13.3123 9.99981 13.3123Z" fill="#FF7F0E"/>
+					<path d="M11.3125 11.7242C11.3125 12.5992 10.725 13.3117 10 13.3117C9.85005 13.3117 9.71255 13.2805 9.5813 13.2305C10.1 13.018 10.475 12.4242 10.475 11.7242C10.475 11.0242 10.1 10.4305 9.5813 10.218C9.71255 10.168 9.85005 10.1367 10 10.1367C10.725 10.1367 11.3125 10.8492 11.3125 11.7242Z" fill="#FF7F0E"/>
+					<path d="M5.25379 11.6526L4.76379 9.88074C4.75477 9.84704 4.73912 9.81547 4.71776 9.78788C4.69639 9.7603 4.66975 9.73724 4.63937 9.72008C4.60899 9.70291 4.5755 9.69197 4.54084 9.6879C4.50619 9.68383 4.47107 9.68671 4.43754 9.69637C4.40396 9.70562 4.37253 9.7214 4.34505 9.74281C4.31757 9.76422 4.29458 9.79084 4.2774 9.82114C4.26022 9.85144 4.24918 9.88483 4.24491 9.9194C4.24065 9.95398 4.24324 9.98905 4.25254 10.0226L4.74254 11.7945C4.76151 11.8623 4.80655 11.9198 4.8678 11.9545C4.92906 11.9891 5.00154 11.9981 5.06942 11.9795C5.13718 11.9605 5.19465 11.9155 5.22921 11.8542C5.26378 11.7929 5.27262 11.7204 5.25379 11.6526ZM5.55942 12.757C5.5504 12.7232 5.53473 12.6916 5.51333 12.6639C5.49194 12.6362 5.46524 12.6131 5.43481 12.5959C5.40437 12.5787 5.37081 12.5677 5.33608 12.5636C5.30135 12.5595 5.26615 12.5623 5.23254 12.572C5.19896 12.5812 5.16753 12.597 5.14005 12.6184C5.11257 12.6398 5.08958 12.6665 5.0724 12.6968C5.05522 12.7271 5.04418 12.7605 5.03991 12.795C5.03565 12.8296 5.03824 12.8647 5.04754 12.8982L5.09317 13.0639C5.11583 13.1271 5.16155 13.1794 5.22116 13.2104C5.28078 13.2413 5.34988 13.2486 5.41463 13.2307C5.47937 13.2128 5.53497 13.1711 5.57029 13.114C5.6056 13.0569 5.61801 12.9885 5.60504 12.9226L5.55942 12.757ZM8.72254 9.20449C8.7532 9.22125 8.78687 9.23176 8.82162 9.23542C8.85636 9.23908 8.89149 9.23582 8.92496 9.22582C8.95844 9.21582 8.9896 9.19929 9.01665 9.17718C9.04369 9.15507 9.06609 9.12781 9.08254 9.09699L9.50567 8.31574C9.53915 8.25375 9.54664 8.18099 9.52648 8.11348C9.50632 8.04597 9.46016 7.98923 9.39817 7.95574C9.33617 7.92226 9.26342 7.91478 9.1959 7.93494C9.12839 7.9551 9.07165 8.00125 9.03817 8.06324L8.61567 8.84449C8.58229 8.90644 8.5748 8.97909 8.59483 9.04655C8.61485 9.114 8.66077 9.17079 8.72254 9.20449Z" fill="#FFE576"/>
+					<path d="M17.3499 5.90539C16.9083 5.90589 16.4849 6.08153 16.1727 6.39379C15.8604 6.70605 15.6848 7.12942 15.6843 7.57102C15.6843 7.77477 15.7261 7.96789 15.7936 8.14852L13.588 9.39977C13.5291 9.43314 13.464 9.4544 13.3967 9.46231C13.3295 9.47021 13.2613 9.4646 13.1962 9.44579C13.1311 9.42699 13.0704 9.39537 13.0177 9.3528C12.965 9.31023 12.9213 9.25757 12.8893 9.19789L10.9661 5.65164C11.1818 5.4983 11.3577 5.29569 11.4792 5.06066C11.6007 4.82563 11.6644 4.56498 11.6649 4.30039C11.6649 3.38164 10.918 2.63477 9.99927 2.63477C9.08052 2.63477 8.33364 3.38164 8.33364 4.30039C8.33364 4.85789 8.61114 5.34914 9.03239 5.65164L7.10927 9.19789C7.07732 9.25752 7.03376 9.31017 6.98117 9.35272C6.92858 9.39528 6.86801 9.42689 6.80303 9.4457C6.73804 9.46451 6.66995 9.47013 6.60276 9.46224C6.53557 9.45436 6.47063 9.43311 6.41177 9.39977L4.20552 8.14852C4.27638 7.96415 4.31343 7.76852 4.31489 7.57102C4.31489 6.65227 3.56802 5.90539 2.64927 5.90539C1.73052 5.90539 0.983643 6.65227 0.983643 7.57102C0.983643 8.48977 1.73052 9.23664 2.64927 9.23664C2.71177 9.23664 2.77114 9.22477 2.83177 9.21852L4.14989 13.9816C3.79647 13.9895 3.46018 14.1355 3.21309 14.3883C2.966 14.6411 2.82777 14.9806 2.82802 15.3341C2.82802 15.9579 3.26239 16.5135 3.86052 16.6541C7.89816 17.6018 12.1004 17.6018 16.138 16.6541C16.7368 16.5129 17.1705 15.9579 17.1705 15.3341C17.1712 14.9805 17.0332 14.6407 16.786 14.3877C16.5388 14.1348 16.2022 13.989 15.8486 13.9816L17.1668 9.21914C17.2274 9.22602 17.2868 9.23727 17.3493 9.23727C18.268 9.23727 19.0149 8.49039 19.0149 7.57164C19.0149 6.65289 18.268 5.90539 17.3499 5.90539ZM9.99989 3.16602C10.6255 3.16602 11.1343 3.67477 11.1343 4.30039C11.1343 4.92602 10.6255 5.43539 9.99989 5.43539C9.37427 5.43539 8.86552 4.92664 8.86552 4.30102C8.86552 3.67539 9.37427 3.16602 9.99989 3.16602ZM1.51552 7.57102C1.51552 6.94539 2.02427 6.43664 2.64989 6.43664C3.27489 6.43664 3.78427 6.94539 3.78427 7.57102C3.78427 8.19664 3.27552 8.70602 2.64989 8.70602C2.02427 8.70602 1.51552 8.19664 1.51552 7.57102ZM16.6405 15.3341C16.6411 15.5183 16.5801 15.6973 16.4671 15.8427C16.3542 15.9881 16.1959 16.0916 16.0174 16.1366C12.0592 17.061 7.94123 17.061 3.98302 16.1366C3.8045 16.0916 3.64618 15.9881 3.53326 15.8427C3.42035 15.6973 3.35932 15.5183 3.35989 15.3341C3.35989 15.0835 3.47239 14.8491 3.66739 14.691C3.75986 14.6157 3.86808 14.5621 3.98404 14.5342C4.10001 14.5062 4.22077 14.5047 4.33739 14.5298C8.06994 15.3304 11.9298 15.3304 15.6624 14.5298C15.8974 14.4804 16.143 14.5379 16.3324 14.691C16.528 14.8491 16.6405 15.0835 16.6405 15.3341ZM15.2755 14.0623C11.794 14.7691 8.20583 14.7691 4.72427 14.0623L3.34552 9.07977C3.57989 8.97102 3.78177 8.80852 3.94239 8.60914L6.14989 9.86227C6.2699 9.93077 6.40248 9.97437 6.53972 9.99048C6.67696 10.0066 6.81604 9.99487 6.94864 9.95602C7.08188 9.91832 7.20617 9.85418 7.31408 9.76742C7.422 9.68066 7.51134 9.57305 7.57677 9.45102L9.51052 5.88477C9.66677 5.93289 9.82864 5.96664 9.99989 5.96664C10.1711 5.96664 10.333 5.93289 10.4886 5.88477L12.4224 9.45102C12.5561 9.69852 12.7793 9.87789 13.0505 9.95602C13.1831 9.99513 13.3223 10.0069 13.4596 9.99072C13.5969 9.9745 13.7294 9.93058 13.8493 9.86164L16.0568 8.60852C16.2174 8.80789 16.4193 8.97102 16.6536 9.07914L15.2755 14.0623ZM17.3499 8.70602C16.7249 8.70602 16.2155 8.19727 16.2155 7.57164C16.2155 6.94602 16.7243 6.43727 17.3499 6.43727C17.9755 6.43727 18.4843 6.94602 18.4843 7.57164C18.4843 8.19727 17.9755 8.70602 17.3499 8.70602Z" fill="#020617"/>
+					<path d="M9.99981 9.86914C9.12794 9.86914 8.41919 10.701 8.41919 11.7235C8.41919 12.746 9.12794 13.5779 9.99981 13.5779C10.8717 13.5779 11.5804 12.746 11.5804 11.7235C11.5804 10.701 10.8717 9.86914 9.99981 9.86914ZM9.99981 13.0466C9.42106 13.0466 8.95044 12.4529 8.95044 11.7235C8.95044 10.9941 9.42106 10.4004 9.99981 10.4004C10.5786 10.4004 11.0492 10.9941 11.0492 11.7235C11.0492 12.4529 10.5786 13.0466 9.99981 13.0466Z" fill="#020617"/>
+				</svg>
+				<span class="tw-text-text-grey-500 tw-text-xs tw-italic tw-leading-4 tw-w-full tw-font-medium"><?php esc_html_e( 'Unlock a variety of professionally designed layouts to enhance the presentation of your product categories.', 'wc-category-showcase' ); ?><a href="#" class="wcc_showcase-pro tw-text-accent-orange-500 tw-text-xs tw-leading-4 tw-font-semibold"><?php esc_html_e( 'Upgrade To Pro!', 'wc-category-showcase' ); ?></a></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="wcc_showcase-settings-row wcc_showcase-block-selection <?php echo 'block' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
+	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Block Column Count', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
+		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-block-column">
+				<div class="<?php echo '1' === $showcase_details['wcc_showcase_block']['column'] ? 'wcc_showcase-layout-active-before-content-3' : ''; ?>">
+					<svg class="<?php echo '1' === $showcase_details['wcc_showcase_block']['column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 32" fill="currentColor">
+						<path d="M12 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H12C13.1046 32 14 31.1046 14 30V2C14 0.89543 13.1046 0 12 0Z"/>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[column]" value="<?php echo esc_attr( '1' ); ?>" <?php echo '1' === $showcase_details['wcc_showcase_block']['column'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '1', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-block-column">
+				<div class="<?php echo '2' === $showcase_details['wcc_showcase_block']['column'] ? 'wcc_showcase-layout-active-before-content-3' : ''; ?>">
+					<svg class="<?php echo '2' === $showcase_details['wcc_showcase_block']['column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35337)">
+							<path d="M12.5 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H12.5C13.6046 32 14.5 31.1046 14.5 30V2C14.5 0.89543 13.6046 0 12.5 0Z"/>
+							<path d="M30 0H19.5C18.3954 0 17.5 0.89543 17.5 2V30C17.5 31.1046 18.3954 32 19.5 32H30C31.1046 32 32 31.1046 32 30V2C32 0.89543 31.1046 0 30 0Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[column]" value="<?php echo esc_attr( '2' ); ?>" <?php echo '2' === $showcase_details['wcc_showcase_block']['column'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '2', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-block-column">
+				<div class="<?php echo '3' === $showcase_details['wcc_showcase_block']['column'] ? 'wcc_showcase-layout-active-before-content-3' : ''; ?>">
+					<svg class="<?php echo '3' === $showcase_details['wcc_showcase_block']['column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35333)">
+							<path d="M6.66667 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H6.66667C7.77124 32 8.66667 31.1046 8.66667 30V2C8.66667 0.89543 7.77124 0 6.66667 0Z"/>
+							<path d="M18.3337 0H13.667C12.5624 0 11.667 0.89543 11.667 2V30C11.667 31.1046 12.5624 32 13.667 32H18.3337C19.4382 32 20.3337 31.1046 20.3337 30V2C20.3337 0.89543 19.4382 0 18.3337 0Z"/>
+							<path d="M29.9997 0H25.333C24.2284 0 23.333 0.89543 23.333 2V30C23.333 31.1046 24.2284 32 25.333 32H29.9997C31.1042 32 31.9997 31.1046 31.9997 30V2C31.9997 0.89543 31.1042 0 29.9997 0Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[column]" value="<?php echo esc_attr( '3' ); ?>" <?php echo '3' === $showcase_details['wcc_showcase_block']['column'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '3', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-3">
+
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35342)">
+							<path d="M3.75 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H3.75C4.85457 32 5.75 31.1046 5.75 30V2C5.75 0.89543 4.85457 0 3.75 0Z"/>
+							<path d="M12.5 0H10.75C9.64543 0 8.75 0.89543 8.75 2V30C8.75 31.1046 9.64543 32 10.75 32H12.5C13.6046 32 14.5 31.1046 14.5 30V2C14.5 0.89543 13.6046 0 12.5 0Z"/>
+							<path d="M21.25 0H19.5C18.3954 0 17.5 0.89543 17.5 2V30C17.5 31.1046 18.3954 32 19.5 32H21.25C22.3546 32 23.25 31.1046 23.25 30V2C23.25 0.89543 22.3546 0 21.25 0Z"/>
+							<path d="M30 0H28.25C27.1454 0 26.25 0.89543 26.25 2V30C26.25 31.1046 27.1454 32 28.25 32H30C31.1046 32 32 31.1046 32 30V2C32 0.89543 31.1046 0 30 0Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[column]" value="<?php echo esc_attr( '4' ); ?>" <?php echo '4' === $showcase_details['wcc_showcase_block']['column'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '4', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-3">
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35347)">
+							<path d="M4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32C3.10457 32 4 31.1046 4 30V2Z"/>
+							<path d="M11 2C11 0.89543 10.1046 0 9 0C7.89543 0 7 0.89543 7 2V30C7 31.1046 7.89543 32 9 32C10.1046 32 11 31.1046 11 30V2Z"/>
+							<path d="M18 2C18 0.89543 17.1046 0 16 0C14.8954 0 14 0.89543 14 2V30C14 31.1046 14.8954 32 16 32C17.1046 32 18 31.1046 18 30V2Z"/>
+							<path d="M25 2C25 0.89543 24.1046 0 23 0C21.8954 0 21 0.89543 21 2V30C21 31.1046 21.8954 32 23 32C24.1046 32 25 31.1046 25 30V2Z"/>
+							<path d="M32 2C32 0.89543 31.1046 0 30 0C28.8954 0 28 0.89543 28 2V30C28 31.1046 28.8954 32 30 32C31.1046 32 32 31.1046 32 30V2Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[column]" value="<?php echo esc_attr( '5' ); ?>" <?php echo '5' === $showcase_details['wcc_showcase_block']['column'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '5', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+				<div class="wcc_showcase-layout-pro-before-content-3">
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_877_35326)">
+							<path d="M2.83333 1.41667C2.83333 0.634265 2.19907 0 1.41666 0C0.634263 0 0 0.634265 0 1.41667V30.5833C0 31.3657 0.634263 32 1.41666 32C2.19907 32 2.83333 31.3657 2.83333 30.5833V1.41667Z"/>
+							<path d="M8.66634 1.41667C8.66634 0.634265 8.03207 0 7.24967 0C6.46727 0 5.83301 0.634265 5.83301 1.41667V30.5833C5.83301 31.3657 6.46727 32 7.24967 32C8.03207 32 8.66634 31.3657 8.66634 30.5833V1.41667Z"/>
+							<path d="M14.5003 1.41667C14.5003 0.634265 13.8661 0 13.0837 0C12.3013 0 11.667 0.634265 11.667 1.41667V30.5833C11.667 31.3657 12.3013 32 13.0837 32C13.8661 32 14.5003 31.3657 14.5003 30.5833V1.41667Z"/>
+							<path d="M20.3333 1.41667C20.3333 0.634265 19.6991 0 18.9167 0C18.1343 0 17.5 0.634265 17.5 1.41667V30.5833C17.5 31.3657 18.1343 32 18.9167 32C19.6991 32 20.3333 31.3657 20.3333 30.5833V1.41667Z" />
+							<path d="M26.1663 1.41667C26.1663 0.634265 25.5321 0 24.7497 0C23.9673 0 23.333 0.634265 23.333 1.41667V30.5833C23.333 31.3657 23.9673 32 24.7497 32C25.5321 32 26.1663 31.3657 26.1663 30.5833V1.41667Z"/>
+							<path d="M32.0003 1.41667C32.0003 0.634265 31.3661 0 30.5837 0C29.8013 0 29.167 0.634265 29.167 1.41667V30.5833C29.167 31.3657 29.8013 32 30.5837 32C31.3661 32 32.0003 31.3657 32.0003 30.5833V1.41667Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[column]" value="<?php echo esc_attr( '6' ); ?>" <?php echo '6' === $showcase_details['wcc_showcase_block']['column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '6', 'wc-category-showcase' ); ?></span>
 			</div>
 		</div>
@@ -205,7 +342,85 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row wcc_showcase-block-selection <?php echo 'block' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
-		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Block Count', 'wc-category-showcase' ); ?></h3>
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Block Row Count', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of rows you want your category showcase to have..', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
+		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-4 tw-gap-x-4 tw-gap-y-4">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-block-row">
+				<div class="<?php echo '1' === $showcase_details['wcc_showcase_block']['row'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo '1' === $showcase_details['wcc_showcase_block']['row'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 16" fill="currentColor">
+						<path d="M30 0H2C0.89543 0 0 0.89543 0 2V12C0 13.1046 0.89543 14 2 14H30C31.1046 14 32 13.1046 32 12V2C32 0.89543 31.1046 0 30 0Z"/>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[row]" value="<?php echo esc_attr( '1' ); ?>" <?php echo '1' === $showcase_details['wcc_showcase_block']['row'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '1', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-block-row">
+				<div class="<?php echo '2' === $showcase_details['wcc_showcase_block']['row'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo '2' === $showcase_details['wcc_showcase_block']['row'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_878_35455)">
+							<path d="M30 0H2C0.89543 0 0 0.89543 0 2V12.5C0 13.6046 0.89543 14.5 2 14.5H30C31.1046 14.5 32 13.6046 32 12.5V2C32 0.89543 31.1046 0 30 0Z"/>
+							<path d="M30 17.5H2C0.89543 17.5 0 18.3954 0 19.5V30C0 31.1046 0.89543 32 2 32H30C31.1046 32 32 31.1046 32 30V19.5C32 18.3954 31.1046 17.5 30 17.5Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[row]" value="<?php echo esc_attr( '2' ); ?>" <?php echo '2' === $showcase_details['wcc_showcase_block']['row'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '2', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-2">
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_878_35479)">
+							<path d="M30 0H2C0.89543 0 0 0.89543 0 2V6.66667C0 7.77124 0.89543 8.66667 2 8.66667H30C31.1046 8.66667 32 7.77124 32 6.66667V2C32 0.89543 31.1046 0 30 0Z"/>
+							<path d="M30 11.6667H2C0.89543 11.6667 0 12.5622 0 13.6667V18.3334C0 19.438 0.89543 20.3334 2 20.3334H30C31.1046 20.3334 32 19.438 32 18.3334V13.6667C32 12.5622 31.1046 11.6667 30 11.6667Z"/>
+							<path d="M30 23.3333H2C0.89543 23.3333 0 24.2287 0 25.3333V29.9999C0 31.1045 0.89543 31.9999 2 31.9999H30C31.1046 31.9999 32 31.1045 32 29.9999V25.3333C32 24.2287 31.1046 23.3333 30 23.3333Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[row]" value="<?php echo esc_attr( '3' ); ?>" <?php echo '3' === $showcase_details['wcc_showcase_block']['row'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '3', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+				<div class="wcc_showcase-number-of-column wcc_showcase-layout-pro-before-content-2">
+					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+						<g clip-path="url(#clip0_878_35483)">
+							<path d="M30 0H2C0.89543 0 0 0.89543 0 2V3.75C0 4.85457 0.89543 5.75 2 5.75H30C31.1046 5.75 32 4.85457 32 3.75V2C32 0.89543 31.1046 0 30 0Z"/>
+							<path d="M30 8.75H2C0.89543 8.75 0 9.64543 0 10.75V12.5C0 13.6046 0.89543 14.5 2 14.5H30C31.1046 14.5 32 13.6046 32 12.5V10.75C32 9.64543 31.1046 8.75 30 8.75Z"/>
+							<path d="M30 17.5H2C0.89543 17.5 0 18.3954 0 19.5V21.25C0 22.3546 0.89543 23.25 2 23.25H30C31.1046 23.25 32 22.3546 32 21.25V19.5C32 18.3954 31.1046 17.5 30 17.5Z"/>
+							<path d="M30 26.25H2C0.89543 26.25 0 27.1454 0 28.25V30C0 31.1046 0.89543 32 2 32H30C31.1046 32 32 31.1046 32 30V28.25C32 27.1454 31.1046 26.25 30 26.25Z"/>
+						</g>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_block[row]" value="<?php echo esc_attr( '4' ); ?>" <?php echo '4' === $showcase_details['wcc_showcase_block']['row'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( '4', 'wc-category-showcase' ); ?></span>
+			</div>
+		</div>
+		<div class="tw-max-w-[385px] ">
+			<div class="tw-mt-3 tw-flex tw-flex-row tw-items-center tw-gap-1 tw-w-full">
+				<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+					<path d="M15.1337 15.5891L17.3499 7.57164L13.7187 9.62914C13.6292 9.67993 13.5304 9.71235 13.4283 9.72449C13.3261 9.73663 13.2225 9.72825 13.1236 9.69984C13.0247 9.67144 12.9325 9.62357 12.8523 9.55906C12.7722 9.49454 12.7057 9.41468 12.6568 9.32414L9.9999 4.41602L7.34303 9.32352C7.29394 9.41387 7.22737 9.49355 7.14719 9.55792C7.067 9.62229 6.97481 9.67006 6.87598 9.69845C6.77715 9.72683 6.67366 9.73527 6.57154 9.72326C6.46942 9.71126 6.3707 9.67905 6.28115 9.62852L2.6499 7.57102L4.86615 15.5891H15.1337Z" fill="#FFD731"/>
+					<path d="M17.35 7.56836L15.1312 15.5871H12.6375C13.2106 14.6374 13.5723 13.5754 13.6981 12.4734C13.8018 11.5489 13.7368 10.6133 13.5062 9.71211C13.5812 9.69961 13.65 9.66836 13.7187 9.63086L17.35 7.56836Z" fill="#FFC933"/>
+					<path d="M16.9055 15.334C16.9067 15.5781 16.8256 15.8156 16.6754 16.0081C16.5252 16.2006 16.3145 16.337 16.0774 16.3952C14.0568 16.8702 12.0249 17.0983 9.99988 17.0983C7.97487 17.0983 5.94238 16.8702 3.92238 16.3952C3.68524 16.337 3.4746 16.2006 3.32438 16.0081C3.17416 15.8156 3.0931 15.5781 3.09425 15.334C3.09425 14.6483 3.72363 14.1258 4.39363 14.2702C6.25863 14.6727 8.13238 14.8671 9.99988 14.8671C11.8674 14.8671 13.7411 14.6733 15.6061 14.2702C16.2761 14.1258 16.9055 14.6483 16.9055 15.334Z" fill="#FFD731"/>
+					<path d="M16.906 15.3367C16.906 15.8367 16.5623 16.2805 16.0748 16.393C15.4248 16.543 14.7748 16.6742 14.1248 16.7742C14.4498 16.5492 14.6498 16.1742 14.6498 15.768C14.6498 15.1992 14.2623 14.7305 13.7498 14.5992C14.3685 14.5117 14.9873 14.4055 15.606 14.268C16.2748 14.1242 16.906 14.6492 16.906 15.3367Z" fill="#FFC933"/>
+					<path d="M2.64976 8.97188C3.42295 8.97188 4.04976 8.34507 4.04976 7.57188C4.04976 6.79868 3.42295 6.17188 2.64976 6.17188C1.87656 6.17188 1.24976 6.79868 1.24976 7.57188C1.24976 8.34507 1.87656 8.97188 2.64976 8.97188Z" fill="#FFD731"/>
+					<path d="M17.35 8.97188C18.1231 8.97188 18.75 8.34507 18.75 7.57188C18.75 6.79868 18.1231 6.17188 17.35 6.17188C16.5768 6.17188 15.95 6.79868 15.95 7.57188C15.95 8.34507 16.5768 8.97188 17.35 8.97188Z" fill="#FFC933"/>
+					<path d="M9.99985 5.70039C10.7731 5.70039 11.3999 5.07359 11.3999 4.30039C11.3999 3.52719 10.7731 2.90039 9.99985 2.90039C9.22665 2.90039 8.59985 3.52719 8.59985 4.30039C8.59985 5.07359 9.22665 5.70039 9.99985 5.70039Z" fill="#FFD731"/>
+					<path d="M9.99981 13.3123C10.7261 13.3123 11.3148 12.601 11.3148 11.7235C11.3148 10.8461 10.7261 10.1348 9.99981 10.1348C9.27356 10.1348 8.68481 10.8461 8.68481 11.7235C8.68481 12.601 9.27356 13.3123 9.99981 13.3123Z" fill="#FF7F0E"/>
+					<path d="M11.3125 11.7242C11.3125 12.5992 10.725 13.3117 10 13.3117C9.85005 13.3117 9.71255 13.2805 9.5813 13.2305C10.1 13.018 10.475 12.4242 10.475 11.7242C10.475 11.0242 10.1 10.4305 9.5813 10.218C9.71255 10.168 9.85005 10.1367 10 10.1367C10.725 10.1367 11.3125 10.8492 11.3125 11.7242Z" fill="#FF7F0E"/>
+					<path d="M5.25379 11.6526L4.76379 9.88074C4.75477 9.84704 4.73912 9.81547 4.71776 9.78788C4.69639 9.7603 4.66975 9.73724 4.63937 9.72008C4.60899 9.70291 4.5755 9.69197 4.54084 9.6879C4.50619 9.68383 4.47107 9.68671 4.43754 9.69637C4.40396 9.70562 4.37253 9.7214 4.34505 9.74281C4.31757 9.76422 4.29458 9.79084 4.2774 9.82114C4.26022 9.85144 4.24918 9.88483 4.24491 9.9194C4.24065 9.95398 4.24324 9.98905 4.25254 10.0226L4.74254 11.7945C4.76151 11.8623 4.80655 11.9198 4.8678 11.9545C4.92906 11.9891 5.00154 11.9981 5.06942 11.9795C5.13718 11.9605 5.19465 11.9155 5.22921 11.8542C5.26378 11.7929 5.27262 11.7204 5.25379 11.6526ZM5.55942 12.757C5.5504 12.7232 5.53473 12.6916 5.51333 12.6639C5.49194 12.6362 5.46524 12.6131 5.43481 12.5959C5.40437 12.5787 5.37081 12.5677 5.33608 12.5636C5.30135 12.5595 5.26615 12.5623 5.23254 12.572C5.19896 12.5812 5.16753 12.597 5.14005 12.6184C5.11257 12.6398 5.08958 12.6665 5.0724 12.6968C5.05522 12.7271 5.04418 12.7605 5.03991 12.795C5.03565 12.8296 5.03824 12.8647 5.04754 12.8982L5.09317 13.0639C5.11583 13.1271 5.16155 13.1794 5.22116 13.2104C5.28078 13.2413 5.34988 13.2486 5.41463 13.2307C5.47937 13.2128 5.53497 13.1711 5.57029 13.114C5.6056 13.0569 5.61801 12.9885 5.60504 12.9226L5.55942 12.757ZM8.72254 9.20449C8.7532 9.22125 8.78687 9.23176 8.82162 9.23542C8.85636 9.23908 8.89149 9.23582 8.92496 9.22582C8.95844 9.21582 8.9896 9.19929 9.01665 9.17718C9.04369 9.15507 9.06609 9.12781 9.08254 9.09699L9.50567 8.31574C9.53915 8.25375 9.54664 8.18099 9.52648 8.11348C9.50632 8.04597 9.46016 7.98923 9.39817 7.95574C9.33617 7.92226 9.26342 7.91478 9.1959 7.93494C9.12839 7.9551 9.07165 8.00125 9.03817 8.06324L8.61567 8.84449C8.58229 8.90644 8.5748 8.97909 8.59483 9.04655C8.61485 9.114 8.66077 9.17079 8.72254 9.20449Z" fill="#FFE576"/>
+					<path d="M17.3499 5.90539C16.9083 5.90589 16.4849 6.08153 16.1727 6.39379C15.8604 6.70605 15.6848 7.12942 15.6843 7.57102C15.6843 7.77477 15.7261 7.96789 15.7936 8.14852L13.588 9.39977C13.5291 9.43314 13.464 9.4544 13.3967 9.46231C13.3295 9.47021 13.2613 9.4646 13.1962 9.44579C13.1311 9.42699 13.0704 9.39537 13.0177 9.3528C12.965 9.31023 12.9213 9.25757 12.8893 9.19789L10.9661 5.65164C11.1818 5.4983 11.3577 5.29569 11.4792 5.06066C11.6007 4.82563 11.6644 4.56498 11.6649 4.30039C11.6649 3.38164 10.918 2.63477 9.99927 2.63477C9.08052 2.63477 8.33364 3.38164 8.33364 4.30039C8.33364 4.85789 8.61114 5.34914 9.03239 5.65164L7.10927 9.19789C7.07732 9.25752 7.03376 9.31017 6.98117 9.35272C6.92858 9.39528 6.86801 9.42689 6.80303 9.4457C6.73804 9.46451 6.66995 9.47013 6.60276 9.46224C6.53557 9.45436 6.47063 9.43311 6.41177 9.39977L4.20552 8.14852C4.27638 7.96415 4.31343 7.76852 4.31489 7.57102C4.31489 6.65227 3.56802 5.90539 2.64927 5.90539C1.73052 5.90539 0.983643 6.65227 0.983643 7.57102C0.983643 8.48977 1.73052 9.23664 2.64927 9.23664C2.71177 9.23664 2.77114 9.22477 2.83177 9.21852L4.14989 13.9816C3.79647 13.9895 3.46018 14.1355 3.21309 14.3883C2.966 14.6411 2.82777 14.9806 2.82802 15.3341C2.82802 15.9579 3.26239 16.5135 3.86052 16.6541C7.89816 17.6018 12.1004 17.6018 16.138 16.6541C16.7368 16.5129 17.1705 15.9579 17.1705 15.3341C17.1712 14.9805 17.0332 14.6407 16.786 14.3877C16.5388 14.1348 16.2022 13.989 15.8486 13.9816L17.1668 9.21914C17.2274 9.22602 17.2868 9.23727 17.3493 9.23727C18.268 9.23727 19.0149 8.49039 19.0149 7.57164C19.0149 6.65289 18.268 5.90539 17.3499 5.90539ZM9.99989 3.16602C10.6255 3.16602 11.1343 3.67477 11.1343 4.30039C11.1343 4.92602 10.6255 5.43539 9.99989 5.43539C9.37427 5.43539 8.86552 4.92664 8.86552 4.30102C8.86552 3.67539 9.37427 3.16602 9.99989 3.16602ZM1.51552 7.57102C1.51552 6.94539 2.02427 6.43664 2.64989 6.43664C3.27489 6.43664 3.78427 6.94539 3.78427 7.57102C3.78427 8.19664 3.27552 8.70602 2.64989 8.70602C2.02427 8.70602 1.51552 8.19664 1.51552 7.57102ZM16.6405 15.3341C16.6411 15.5183 16.5801 15.6973 16.4671 15.8427C16.3542 15.9881 16.1959 16.0916 16.0174 16.1366C12.0592 17.061 7.94123 17.061 3.98302 16.1366C3.8045 16.0916 3.64618 15.9881 3.53326 15.8427C3.42035 15.6973 3.35932 15.5183 3.35989 15.3341C3.35989 15.0835 3.47239 14.8491 3.66739 14.691C3.75986 14.6157 3.86808 14.5621 3.98404 14.5342C4.10001 14.5062 4.22077 14.5047 4.33739 14.5298C8.06994 15.3304 11.9298 15.3304 15.6624 14.5298C15.8974 14.4804 16.143 14.5379 16.3324 14.691C16.528 14.8491 16.6405 15.0835 16.6405 15.3341ZM15.2755 14.0623C11.794 14.7691 8.20583 14.7691 4.72427 14.0623L3.34552 9.07977C3.57989 8.97102 3.78177 8.80852 3.94239 8.60914L6.14989 9.86227C6.2699 9.93077 6.40248 9.97437 6.53972 9.99048C6.67696 10.0066 6.81604 9.99487 6.94864 9.95602C7.08188 9.91832 7.20617 9.85418 7.31408 9.76742C7.422 9.68066 7.51134 9.57305 7.57677 9.45102L9.51052 5.88477C9.66677 5.93289 9.82864 5.96664 9.99989 5.96664C10.1711 5.96664 10.333 5.93289 10.4886 5.88477L12.4224 9.45102C12.5561 9.69852 12.7793 9.87789 13.0505 9.95602C13.1831 9.99513 13.3223 10.0069 13.4596 9.99072C13.5969 9.9745 13.7294 9.93058 13.8493 9.86164L16.0568 8.60852C16.2174 8.80789 16.4193 8.97102 16.6536 9.07914L15.2755 14.0623ZM17.3499 8.70602C16.7249 8.70602 16.2155 8.19727 16.2155 7.57164C16.2155 6.94602 16.7243 6.43727 17.3499 6.43727C17.9755 6.43727 18.4843 6.94602 18.4843 7.57164C18.4843 8.19727 17.9755 8.70602 17.3499 8.70602Z" fill="#020617"/>
+					<path d="M9.99981 9.86914C9.12794 9.86914 8.41919 10.701 8.41919 11.7235C8.41919 12.746 9.12794 13.5779 9.99981 13.5779C10.8717 13.5779 11.5804 12.746 11.5804 11.7235C11.5804 10.701 10.8717 9.86914 9.99981 9.86914ZM9.99981 13.0466C9.42106 13.0466 8.95044 12.4529 8.95044 11.7235C8.95044 10.9941 9.42106 10.4004 9.99981 10.4004C10.5786 10.4004 11.0492 10.9941 11.0492 11.7235C11.0492 12.4529 10.5786 13.0466 9.99981 13.0466Z" fill="#020617"/>
+				</svg>
+				<span class="tw-text-text-grey-500 tw-text-xs tw-italic tw-leading-4 tw-w-full tw-font-medium"><?php esc_html_e( 'Unlock a variety of professionally designed layouts to enhance the presentation of your product categories.', 'wc-category-showcase' ); ?><a href="#" class="wcc_showcase-pro tw-text-accent-orange-500 tw-text-xs tw-leading-4 tw-font-semibold"><?php esc_html_e( 'Upgrade To Pro!', 'wc-category-showcase' ); ?></a></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="wcc_showcase-settings-row wcc_showcase-grid-selection <?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
+	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Number of Categories to show', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
@@ -317,7 +532,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row wcc_showcase-block-selection <?php echo 'block' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
+<div class="wcc_showcase-settings-row wcc_showcase-grid-selection <?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Choose Layout Options', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the template that best fits your store\'s aesthetic and presentation preferences.', 'wc-category-showcase' ); ?></p>
@@ -501,15 +716,6 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Configure how many columns your category showcase should display based on the users device screen size.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col">
-		<div class="wcc_showcase-column-breakpoint">
-			<span class="wcc_showcase-column-breakpoint-inner">
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="">
-					<path d="M18.5 2H1.5C1.36739 2 1.24021 2.05268 1.14645 2.14645C1.05268 2.24021 1 2.36739 1 2.5V14.5C1 14.6326 1.05268 14.7598 1.14645 14.8536C1.24021 14.9473 1.36739 15 1.5 15H8V16.5C8 16.6326 7.94732 16.7598 7.85355 16.8536C7.75979 16.9473 7.63261 17 7.5 17H6.5C6.36739 17 6.24021 17.0527 6.14645 17.1464C6.05268 17.2402 6 17.3674 6 17.5V18.5C6 18.6326 6.05268 18.7598 6.14645 18.8536C6.24021 18.9473 6.36739 19 6.5 19H13.5C13.6326 19 13.7598 18.9473 13.8536 18.8536C13.9473 18.7598 14 18.6326 14 18.5V17.5C14 17.3674 13.9473 17.2402 13.8536 17.1464C13.7598 17.0527 13.6326 17 13.5 17H12.5C12.3674 17 12.2402 16.9473 12.1464 16.8536C12.0527 16.7598 12 16.6326 12 16.5V15H18.5C18.6326 15 18.7598 14.9473 18.8536 14.8536C18.9473 14.7598 19 14.6326 19 14.5V2.5C19 2.36739 18.9473 2.24021 18.8536 2.14645C18.7598 2.05268 18.6326 2 18.5 2ZM17 13H3V4H17V13Z" fill="#2270B1"/>
-				</svg>
-				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Desktop (1400px)', 'wc-category-showcase' ); ?></span>
-			</span>
-			<input type="number" name="wcc_showcase_column_breakpoint[desktop]" class="wcc_showcase-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $showcase_details['wcc_showcase_column_breakpoint']['desktop'] ); ?>">
-		</div>
 		<div class="wcc_showcase-column-breakpoint tw-mt-1">
 			<span class="wcc_showcase-column-breakpoint-inner">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -536,37 +742,6 @@ defined( 'ABSPATH' ) || exit;
 				<span class="tw-text-sm tw-text-text-grey-500"><?php esc_html_e( 'Mobile (576px)', 'wc-category-showcase' ); ?></span>
 			</span>
 			<input type="number" name="wcc_showcase_column_breakpoint[mobile]" class="wcc_showcase-column-breakpoint-inner-input" min="1" value="<?php echo esc_attr( $showcase_details['wcc_showcase_column_breakpoint']['mobile'] ); ?>">
-		</div>
-	</div>
-</div>
-<div class="wcc_showcase-settings-row-title wcc_showcase-block-slider-category-selection <?php echo ( 'block' === $showcase_details['wcc_showcase_layout'] && 'slider' === $showcase_details['wcc_showcase_display_mode'] ) ? '' : 'tw-hidden'; ?>">
-	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-		<path d="M19.3333 2.40039H4.66667C4.29848 2.40039 4 2.69887 4 3.06706V16.4004C4 16.7686 4.29848 17.0671 4.66667 17.0671H19.3333C19.7015 17.0671 20 16.7686 20 16.4004V3.06706C20 2.69887 19.7015 2.40039 19.3333 2.40039Z" fill="#2270B1"/>
-		<path d="M2.66667 15.7337H0.666667C0.489856 15.7337 0.320286 15.6635 0.195262 15.5385C0.0702379 15.4134 0 15.2439 0 15.0671V5.73372C0 5.55691 0.0702379 5.38734 0.195262 5.26232C0.320286 5.1373 0.489856 5.06706 0.666667 5.06706H2.66667V15.7337ZM23.3333 15.7337H21.3333V5.06706H23.3333C23.5101 5.06706 23.6797 5.1373 23.8047 5.26232C23.9298 5.38734 24 5.55691 24 5.73372V15.0671C24 15.2439 23.9298 15.4134 23.8047 15.5385C23.6797 15.6635 23.5101 15.7337 23.3333 15.7337Z" fill="#2270B1"/>
-		<path d="M5.33333 22.0004C5.8488 22.0004 6.26667 21.5825 6.26667 21.0671C6.26667 20.5516 5.8488 20.1337 5.33333 20.1337C4.81787 20.1337 4.4 20.5516 4.4 21.0671C4.4 21.5825 4.81787 22.0004 5.33333 22.0004Z" fill="#2270B1"/>
-		<path d="M9.33333 22.4671C10.1065 22.4671 10.7333 21.8403 10.7333 21.0671C10.7333 20.2939 10.1065 19.6671 9.33333 19.6671C8.56013 19.6671 7.93333 20.2939 7.93333 21.0671C7.93333 21.8403 8.56013 22.4671 9.33333 22.4671Z" fill="#2270B1"/>
-		<path d="M13.3333 22.0004C13.8488 22.0004 14.2667 21.5825 14.2667 21.0671C14.2667 20.5516 13.8488 20.1337 13.3333 20.1337C12.8179 20.1337 12.4 20.5516 12.4 21.0671C12.4 21.5825 12.8179 22.0004 13.3333 22.0004Z" fill="#2270B1"/>
-		<path d="M17.3333 22.0004C17.8488 22.0004 18.2667 21.5825 18.2667 21.0671C18.2667 20.5516 17.8488 20.1337 17.3333 20.1337C16.8179 20.1337 16.4 20.5516 16.4 21.0671C16.4 21.5825 16.8179 22.0004 17.3333 22.0004Z" fill="#2270B1"/>
-	</svg>
-	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slider Block', 'wc-category-showcase' ); ?></h2>
-</div>
-<div class="wcc_showcase-settings-row wcc_showcase-block-slider-category-selection <?php echo ( 'block' === $showcase_details['wcc_showcase_layout'] && 'slider' === $showcase_details['wcc_showcase_display_mode'] ) ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
-		<h3 class="wcc_showcase-settings-title"><label for="wcc_showcase_block_slider_category"><?php esc_html_e( 'Choose Categories for Block Slider', 'wc-category-showcase' ); ?></label></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Decide whether to display all product categories or selectively choose specific ones to showcase.', 'wc-category-showcase' ); ?></p>
-	</div>
-	<div class="tw-flex tw-flex-col tw-items-center">
-		<div class="tw-min-w-[400px] tw-max-w-[400px]">
-			<select multiple="multiple" name="wcc_showcase_block_slider_category[]" id="wcc_showcase_block_slider_category" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100">
-				<?php if ( ! empty( $showcase_details['wcc_showcase_block_slider_category'] ) ) : ?>
-					<?php foreach ( $showcase_details['wcc_showcase_block_slider_category'] as $category_id ) : ?>
-						<option value="<?php echo esc_attr( $category_id ); ?>" selected="selected"><?php echo esc_attr( \WooCommerceCategoryShowcase\Controllers\Helpers::get_category_title( $category_id ) ); ?></option>
-					<?php endforeach; ?>
-				<?php endif; ?>
-			</select>
-		</div>
-		<div class="tw-mt-6 wcc_showcase-selected-category-list">
-<!--			<div class="wcc_showcase-category-list-item"></div>-->
 		</div>
 	</div>
 </div>
@@ -784,27 +959,6 @@ defined( 'ABSPATH' ) || exit;
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
 			<input class="tw-sr-only tw-peer" type="checkbox" name="wcc_showcase_hide_empty_categories" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $showcase_details['wcc_showcase_hide_empty_categories'] ) { echo 'checked'; } ?>>
-			<div class="wcc_showcase-toggle"></div>
-		</label>
-	</div>
-</div>
-<div class="wcc_showcase-settings-row-title">
-	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-		<path d="M21.6875 5.03566H10.6875C10.5441 4.32005 10.1608 3.67668 9.60266 3.21456C9.04453 2.75245 8.34585 2.5 7.625 2.5C6.90415 2.5 6.20547 2.75245 5.64734 3.21456C5.08921 3.67668 4.70595 4.32005 4.5625 5.03566H2.3125C2.22962 5.03566 2.15013 5.06901 2.09153 5.12838C2.03292 5.18775 2 5.26826 2 5.35222V5.98534C2 6.0693 2.03292 6.14982 2.09153 6.20919C2.15013 6.26855 2.22962 6.3019 2.3125 6.3019H4.5625C4.70595 7.01751 5.08921 7.66088 5.64734 8.123C6.20547 8.58512 6.90415 8.83756 7.625 8.83756C8.34585 8.83756 9.04453 8.58512 9.60266 8.123C10.1608 7.66088 10.5441 7.01751 10.6875 6.3019H21.6875C21.7704 6.3019 21.8499 6.26855 21.9085 6.20919C21.9671 6.14982 22 6.0693 22 5.98534V5.35222C22 5.26826 21.9671 5.18775 21.9085 5.12838C21.8499 5.06901 21.7704 5.03566 21.6875 5.03566ZM7.625 7.56815C7.25416 7.56815 6.89165 7.45675 6.58331 7.24805C6.27496 7.03934 6.03464 6.7427 5.89273 6.39564C5.75081 6.04857 5.71368 5.66668 5.78603 5.29823C5.85837 4.92979 6.03695 4.59136 6.29917 4.32573C6.5614 4.0601 6.89549 3.8792 7.25921 3.80591C7.62292 3.73263 7.99992 3.77024 8.34253 3.914C8.68514 4.05776 8.97798 4.3012 9.18401 4.61355C9.39003 4.9259 9.5 5.29312 9.5 5.66878C9.5 6.17253 9.30246 6.65564 8.95083 7.01184C8.59919 7.36804 8.12228 7.56815 7.625 7.56815ZM21.6875 17.6981H13.1875C13.0441 16.9825 12.6608 16.3391 12.1027 15.877C11.5445 15.4149 10.8458 15.1624 10.125 15.1624C9.40415 15.1624 8.70547 15.4149 8.14734 15.877C7.58921 16.3391 7.20595 16.9825 7.0625 17.6981H2.3125C2.22962 17.6981 2.15013 17.7314 2.09153 17.7908C2.03292 17.8502 2 17.9307 2 18.0147V18.6478C2 18.7317 2.03292 18.8123 2.09153 18.8716C2.15013 18.931 2.22962 18.9643 2.3125 18.9643H7.0625C7.20595 19.68 7.58921 20.3233 8.14734 20.7854C8.70547 21.2476 9.40415 21.5 10.125 21.5C10.8458 21.5 11.5445 21.2476 12.1027 20.7854C12.6608 20.3233 13.0441 19.68 13.1875 18.9643H21.6875C21.7704 18.9643 21.8499 18.931 21.9085 18.8716C21.9671 18.8123 22 18.7317 22 18.6478V18.0147C22 17.9307 21.9671 17.8502 21.9085 17.7908C21.8499 17.7314 21.7704 17.6981 21.6875 17.6981ZM10.125 20.2306C9.75416 20.2306 9.39165 20.1192 9.08331 19.9105C8.77496 19.7018 8.53464 19.4051 8.39273 19.0581C8.25081 18.711 8.21368 18.3291 8.28603 17.9607C8.35837 17.5922 8.53695 17.2538 8.79917 16.9882C9.0614 16.7225 9.39549 16.5416 9.75921 16.4683C10.1229 16.3951 10.4999 16.4327 10.8425 16.5764C11.1851 16.7202 11.478 16.9636 11.684 17.276C11.89 17.5883 12 17.9556 12 18.3312C12 18.835 11.8025 19.3181 11.4508 19.6743C11.0992 20.0305 10.6223 20.2306 10.125 20.2306ZM2 11.6834V12.3166C2 12.4005 2.03292 12.481 2.09153 12.5404C2.15013 12.5998 2.22962 12.6331 2.3125 12.6331H13.3125C13.4559 13.3487 13.8392 13.9921 14.3973 14.4542C14.9555 14.9163 15.6542 15.1688 16.375 15.1688C17.0958 15.1688 17.7945 14.9163 18.3527 14.4542C18.9108 13.9921 19.2941 13.3487 19.4375 12.6331H21.6875C21.7704 12.6331 21.8499 12.5998 21.9085 12.5404C21.9671 12.481 22 12.4005 22 12.3166V11.6834C22 11.5995 21.9671 11.519 21.9085 11.4596C21.8499 11.4002 21.7704 11.3669 21.6875 11.3669H19.4375C19.2941 10.6513 18.9108 10.0079 18.3527 9.54578C17.7945 9.08366 17.0958 8.83122 16.375 8.83122C15.6542 8.83122 14.9555 9.08366 14.3973 9.54578C13.8392 10.0079 13.4559 10.6513 13.3125 11.3669H2.3125C2.22962 11.3669 2.15013 11.4002 2.09153 11.4596C2.03292 11.519 2 11.5995 2 11.6834ZM14.5 12C14.5 11.6243 14.61 11.2571 14.816 10.9448C15.022 10.6324 15.3149 10.389 15.6575 10.2452C16.0001 10.1015 16.3771 10.0638 16.7408 10.1371C17.1045 10.2104 17.4386 10.3913 17.7008 10.6569C17.963 10.9226 18.1416 11.261 18.214 11.6295C18.2863 11.9979 18.2492 12.3798 18.1073 12.7269C17.9654 13.0739 17.725 13.3706 17.4167 13.5793C17.1084 13.788 16.7458 13.8994 16.375 13.8994C15.8777 13.8994 15.4008 13.6993 15.0492 13.3431C14.6975 12.9869 14.5 12.5037 14.5 12Z" fill="#2270B1"/>
-		<circle cx="7.5" cy="5.5" r="2.5" fill="#2270B1"/>
-		<circle cx="16.5" cy="11.5" r="2.5" fill="#2270B1"/>
-		<circle cx="10.5" cy="18.5" r="2.5" fill="#2270B1"/>
-	</svg>
-	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Key Settings', 'wc-category-showcase' ); ?></h2>
-</div>
-<div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
-		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Automatic Column Adjustment', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable this feature to allow the plugin to automatically adjust the number of columns based on the available screen space.', 'wc-category-showcase' ); ?></p>
-	</div>
-	<div class="tw-flex tw-items-center">
-		<label class="inline-flex tw-cursor-pointer">
-			<input class="tw-sr-only tw-peer" type="checkbox" name="wcc_showcase_column_adjustment" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $showcase_details['wcc_showcase_column_adjustment'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>

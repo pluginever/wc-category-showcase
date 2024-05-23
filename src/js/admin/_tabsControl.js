@@ -89,5 +89,16 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
 		}
 	}
+
+	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-weight');
+	for (const option of document.querySelectorAll(".wccs-navigation-position-option")) {
+		if (option.classList.contains('selected')) {
+			option.parentNode.querySelector('.wccs-navigation-position-option.selected').classList.remove('selected');
+			option.classList.add('selected');
+			document.getElementById("wcc_showcase_slider_navigation_position").value = option.dataset.value;
+			console.log(option.innerHTML);
+			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+		}
+	}
 }, false);
 

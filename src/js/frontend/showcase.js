@@ -8,11 +8,29 @@
 
 jQuery(document).ready(function ($) {
 	var splide = new Splide( '.splide', {
-		// autoplay:true,
-		perPage: 2,
-		rewind : true,
-		padding: '2%',
-	} );
-
-	splide.mount();
+		loop: true,
+		autoplay:true,
+		perPage: 1,
+		grid: {
+			dimensions: [ [2,2] ],
+			gap : {
+				row: '1rem',
+				col: '1rem',
+			},
+		},
+		breakpoints: {
+			600: {
+				height: '10rem',
+				perPage: 1,
+				grid: {
+					dimensions: [ [ 2, 2 ] ],
+					gap: {
+						row: '.5em',
+						col: '.5em'
+					}
+				}
+			}
+		}
+	});
+	splide.mount( window.splide.Extensions );
 });

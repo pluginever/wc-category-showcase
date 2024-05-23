@@ -85,6 +85,50 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Navigation Position', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the navigation position to show in your slider.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<div class="select-wrapper" id="wcc-showcase-navigation-position">
+			<div class="select tw-w-[224px] tw-bg-input-grey-50 tw-border-divider-grey-100 tw-rounded-md">
+				<div class="select__trigger tw-bg-input-grey-50">
+					<span class="tw-flex tw-items-center tw-gap-1 tw-text-text-grey-500">
+						<?php esc_html_e( 'Default', 'wc-category-showcase' ); ?>
+					</span>
+					<div class="wcc_showcase-arrow">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none">
+							<path d="M4.66663 10L7.99996 13.3333L11.3333 10" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M4.66663 6.00033L7.99996 2.66699L11.3333 6.00033" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
+				</div>
+				<div class="custom-options tw-bg-white tw-w-[224px] tw-border-divider-grey-100 tw-rounded-md tw-hidden">
+					<span class="custom-option wccs-navigation-position-option <?php echo 'default' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'default' ); ?>">
+						<?php esc_html_e( 'Default', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option wccs-navigation-position-option <?php echo 'top-right' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-right' ); ?>">
+						<?php esc_html_e( 'Top Right', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option wccs-navigation-position-option <?php echo 'top-left' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-left' ); ?>">
+						<?php esc_html_e( 'Top Left', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-right' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-right' ); ?>">
+						<?php esc_html_e( 'Bottom Right', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-left' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-left' ); ?>">
+						<?php esc_html_e( 'Bottom Left', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-center' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-center' ); ?>">
+						<?php esc_html_e( 'Bottom Center', 'wc-category-showcase' ); ?>
+					</span>
+				</div>
+			</div>
+			<input type="hidden" name="wcc_showcase_slider_navigation_position" id="wcc_showcase_slider_navigation_position" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slider_navigation_position'] ); ?>">
+		</div>
+	</div>
+</div>
+<div class="wcc_showcase-settings-row">
+	<div class="tw-w-1/3">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Arrow Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the style or design of the navigation arrows in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
