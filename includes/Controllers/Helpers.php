@@ -14,22 +14,107 @@ class Helpers {
 	/**
 	 * Get category details.
 	 *
-	 * @param \WP_Term| int $category Category title.
+	 * @param \WP_Term| int $category Category ID.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	public static function get_category_details( $category ) {
+		$category_details = array();
+		$category         = get_term( $category );
+		if ( $category && ! is_wp_error( $category ) ) {
+			$category_details['name']             = esc_attr( $category->name );
+			$category_details['slug']             = esc_attr( $category->slug );
+			$category_details['description']      = wp_kses_post( $category->description );
+			$category_details['image_url']        = esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) );
+			$category_details['icon_url']         = esc_url( esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/category-placeholder-icon.jpg' ) );
+			$category_details['cat_link']         = esc_url( get_category_link( $category->term_id ) );
+			$category_details['custom_text']      = esc_attr( 'Price Range: $250 - $1100' );
+			$category_details['total_count']      = self::get_product_count_in_category( $category->term_id );
+			$category_details['child_categories'] = self::get_child_categories( $category->term_id );
+		}
+		return $category_details;
+	}
+
+	/**
+	 * Category Product Counts.
+	 *
+	 * @param \WP_Term| int $parent_category_id Parent Category id.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return string
 	 */
-	public static function get_category_details( $category ) {
-		$category = get_term( $category );
-		if ( $category && ! is_wp_error( $category ) ) {
-			return sprintf(
-				'%2$s',
-				$category->term_id,
-				html_entity_decode( $category->name )
-			);
+	public static function get_product_count_in_category( $parent_category_id ) {
+		$categories = get_terms(
+			array(
+				'taxonomy'   => 'product_cat',
+				'child_of'   => $parent_category_id,
+				'hide_empty' => false,
+			)
+		);
+
+		// Add the parent category to the array of categories.
+		$category_ids = array( $parent_category_id );
+		foreach ( $categories as $category ) {
+			$category_ids[] = $category->term_id;
 		}
-		return null;
+
+		// Set up the query arguments to get products in these categories.
+		$args = array(
+			'post_type'      => 'product',
+			'posts_per_page' => -1, // No limit.
+			'tax_query'      => array(
+				array(
+					'taxonomy' => 'product_cat',
+					'field'    => 'term_id',
+					'terms'    => $category_ids,
+					'operator' => 'IN',
+				),
+			),
+			'fields'         => 'ids', // Only get product IDs to count them.
+		);
+
+		// Execute the query.
+		$query = new \WP_Query( $args );
+
+		// Get the number of products.
+		$product_count = $query->found_posts;
+
+		// Reset the post data.
+		wp_reset_postdata();
+		return $product_count;
+	}
+
+	/**
+	 * Get all child categories.
+	 *
+	 * @param \WP_Term| int $parent_category_id Parent Category ID.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	public static function get_child_categories( $parent_category_id ) {
+		// Define the arguments for get_terms.
+		$args = array(
+			'taxonomy'   => 'product_cat', // WooCommerce product category taxonomy.
+			'child_of'   => $parent_category_id, // Parent category ID.
+			'hide_empty' => true, // Show all categories, including those without products.
+		);
+
+		// Get the child categories.
+		$child_categories     = array();
+		$all_child_categories = get_terms( $args );
+		foreach ( $all_child_categories as $child_category ) {
+			$child_categories[ $child_category->term_id ]['name']          = $child_category->name;
+			$child_categories[ $child_category->term_id ]['cat_link']      = esc_url( get_category_link( $child_category->term_id ) );
+			$child_categories[ $child_category->term_id ]['total_product'] = esc_attr( self::get_product_count_in_category( $child_category->term_id ) );
+		}
+
+		// Return the child categories.
+		return $child_categories;
 	}
 
 	/**
@@ -64,7 +149,7 @@ class Helpers {
 		$defaults = array(
 			// General tab settings data.
 			'post_title'                        => '',
-			'layout'                            => 'grid',
+			'layout'                            => 'block',
 			'slider'                            => array(
 				'column' => '3',
 				'row'    => '1',
@@ -91,14 +176,15 @@ class Helpers {
 			'pre_loader'                        => 'no',
 			// Showcase tab settings data.
 			'show_section_title'                => 'no',
-			'section_title'                     => '',
+			'section_title'                     => 'Lorem Ispum',
 			'show_section_description'          => 'no',
-			'section_description'               => '',
+			'section_description'               => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
 			'heading_alignment'                 => 'left',
 			'card'                              => array(
 				'background_color' => '#000000',
 				'text_color'       => '#000000',
 				'hover_color'      => '#000000',
+				'hover_text_color' => '#000000',
 			),
 			'border_radius'                     => 8,
 			'border_is_all'                     => 'no',
@@ -111,7 +197,7 @@ class Helpers {
 			'gap_between_cards'                 => '8',
 			'content_placement'                 => 'top',
 			'content_margin'                    => 12,
-			'content_margin_is_all'             => '',
+			'content_margin_is_all'             => 'no',
 			'content_margin_all'                => array(
 				'top'    => '10',
 				'right'  => '20',
@@ -132,6 +218,7 @@ class Helpers {
 				'background_color' => '#ffffff',
 				'text_color'       => '#ffffff',
 				'hover_color'      => '#ffffff',
+				'hover_text_color' => '#000000',
 			),
 			// Slide tab settings data.
 			'slide_slideshow'                   => 'no',
@@ -147,6 +234,7 @@ class Helpers {
 				'background_color' => '#000000',
 				'text_color'       => '#000000',
 				'hover_color'      => '#000000',
+				'hover_text_color' => '#000000',
 			),
 			'slide_show_counter'                => 'no',
 			'slide_counter_style'               => 'dashes',
@@ -154,12 +242,14 @@ class Helpers {
 				'background_color' => '#000000',
 				'text_color'       => '#000000',
 				'hover_color'      => '#000000',
+				'hover_text_color' => '#000000',
 			),
 			'slide_touch_interaction'           => 'no',
 			'slide_scroll_interaction'          => 'no',
 			'slide_draggable_slide'             => 'no',
 			'slide_free_mode'                   => 'no',
 			// Image tab settings data.
+			'image_layout'                      => 'rectangle',
 			'image_lazy_load'                   => 'no',
 			'image_zoom_on_hover'               => 'no',
 			'interactive_hover_style'           => 'always_gray',

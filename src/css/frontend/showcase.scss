@@ -16,20 +16,28 @@
 }
 
 .wcc-showcase__slider-body{
+	.splide__slide__row{
+		height: auto !important;
+	}
 }
 
 .wcc-showcase-slide-item{
 	border: 1px solid #D3D9DF;
 	border-radius: 8px;
-	padding: 24px;
+	//padding: 24px;
+	position: relative;
 	.wcc-showcase-slide-item__cat-thumbnails{
 		display: flex;
 		flex-direction: column;
 		text-align: center;
 		align-items: center;
+		height: auto;
 		.wcc-showcase-slide-item__cat-thumbnails__image{
-			max-width: 256px;
-			max-height: 256px;
+			width: 100%;
+			height: auto;
+			.slider-cat-image{
+				height: auto;
+			}
 		}
 		.wcc-showcase-slide-item__cat-thumbnails__icon{
 			margin-top: 20px;
@@ -42,15 +50,18 @@
 		flex-direction: column;
 		text-align: center;
 		align-items: center;
-		row-gap: 1.5rem;
+		row-gap: .5em;
 		margin-top: 10px;
+		p{
+			margin: 0;
+		}
 		.wcc-showcase-slide-item__cat-title a {
 			color: #130F31;
 			text-align: center;
-			font-size: 24px;
+			font-size: 1.5rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 32px;
+			line-height: 2rem;
 			text-decoration: none;
 		}
 		.wcc-showcase-slide-item__sub-cat__sub-cat-list {
@@ -59,7 +70,7 @@
 			.wcc-showcase-slide-item__sub-cat__sub-cat-list__item a{
 				color: #130F31;
 				text-align: center;
-				font-size: 16px;
+				font-size: 1rem;
 				font-style: normal;
 				font-weight: 400;
 				line-height: 24px;
@@ -82,20 +93,19 @@
 		.wcc-showcase-slide-item__cat-products a:hover {
 			color: #D4D4D4;
 		}
+		.wcc-showcase-slide-item__cat-custom-text{
+			color:#000;
+		}
 		.wcc-showcase-slide-item__cat-button {
 			display: flex;
 			flex-direction: column;
 			text-align: center;
 			align-items: center;
+			margin-bottom: .5rem;
 			a {
 				display: flex;
 				align-items: center;
 				text-align: center;
-				width: 100%;
-				padding: 8px 40px;
-				border: 1px solid #130F31;
-				border-radius: 8px;
-				text-decoration: none;
 				justify-content: center;
 				gap: 4px;
 				color: #130F31;
@@ -104,6 +114,108 @@
 				font-weight: 600;
 				line-height: 24px;
 			}
+			a:hover{
+				color: gray;
+			}
+		}
+	}
+
+	// Shop Now button style
+	.is-button-sharp_corner &{
+		.wcc-showcase-slide-item__cat-button {
+			a {
+				padding: 8px 16px;
+				border: 1px solid #130F31;
+				text-decoration: none;
+				background-color: #130F31;
+				color: #fff;
+			}
+			a:hover{
+				background-color: #fff;
+				color: #130F31;
+			}
+		}
+	}
+	.is-button-slightly_rounded &{
+		.wcc-showcase-slide-item__cat-button {
+			a {
+				padding: 8px 16px;
+				border: 1px solid #130F31;
+				border-radius: 8px;
+				text-decoration: none;
+				background-color: #130F31;
+				color: #fff;
+			}
+			a:hover{
+				background-color: #fff;
+				color: #130F31;
+			}
+		}
+	}
+	.is-button-rounded &{
+		.wcc-showcase-slide-item__cat-button {
+			a {
+				padding: 8px 16px;
+				border: 1px solid #130F31;
+				border-radius: 24px;
+				text-decoration: none;
+				background-color: #130F31;
+				color: #fff;
+			}
+			a:hover{
+				background-color: #fff;
+				color: #130F31;
+			}
+		}
+	}
+
+	.is_content_top_left &{
+		.wcc-showcase-slide-item__cat-details {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			text-align: left;
+			align-items: flex-start;
+			row-gap: 0;
+			max-width: 50%;
+			margin-top:0;
+			.wcc-showcase-slide-item__cat-title {
+				position: relative;
+				h3{
+					font-size: 32px;
+				}
+				h3:after {
+					position: absolute;
+					content: ' ';
+					left: 2px;
+					bottom: 12px;
+					width: 44px;
+					background-color: #000;
+					height: 2px;
+				}
+			}
+			.wcc-showcase-slide-item__cat-description{
+				p{
+					font-size: 12px;
+					color:#000;
+				}
+			}
+			.wcc-showcase-slide-item__cat-button{
+				margin-top: .5rem;
+				a{
+					font-size: 16px;
+				}
+			}
+		}
+		.slider-cat-image{
+			//position: absolute;
+			//top: 0;
+			//left: 0;
+			width: 100%;
+			height: auto;
+		}
+		.splide__slide{
+			height:550px !important;
 		}
 	}
 }
@@ -118,12 +230,14 @@
 		right: 4px;
 		content: url("../../images/right-arrow.svg");
 		transform: scaleX(-1);
+		color: #fff;
 	}
 	.splide__arrow--next::before {
 		position: absolute;
 		top: 5px;
 		left: 4px;
 		content: url("../../images/right-arrow.svg");
+		color: #fff;
 	}
 
 	// Navigation icon chevron style.
@@ -189,6 +303,12 @@
 		.splide__arrow{
 			position: static;
 		}
+	}
+
+	// Navigation Styles
+	button {
+		background-color: #130F31;
+		color: #fff;
 	}
 }
 

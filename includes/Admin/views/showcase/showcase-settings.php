@@ -99,7 +99,7 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Customize the color or tint of the category showcase cards to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[348px] tw-h-[240px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
+		<div class="tw-w-[348px] tw-h-[320px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
@@ -116,11 +116,19 @@ defined( 'ABSPATH' ) || exit;
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
-			<div class="tw-mt-3">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
 					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
 					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_card[hover_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_card']['hover_color'] ); ?>">
+					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
+				</div>
+			</div>
+			<div class="tw-mt-3 ">
+				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Text Color', 'wc-category-showcase' ); ?></h4>
+				<div class="tw-relative tw-flex">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_card[hover_text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_card']['hover_text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
@@ -157,7 +165,7 @@ defined( 'ABSPATH' ) || exit;
 					<path d="M2 15.3333V7.33333C2 4.38801 4.38801 2 7.33333 2H15.3333C16.8061 2 18 3.19391 18 4.66667C18 6.13943 16.8061 7.33333 15.3333 7.33333H10C8.52668 7.33333 7.33333 8.52668 7.33333 10V15.3333C7.33333 16.8061 6.13943 18 4.66667 18C3.19391 18 2 16.8061 2 15.3333Z" fill="#2270B1"/>
 				</svg>
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_border_radius_all[top]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_border_radius_all']['top'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -165,7 +173,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_border_radius_all[bottom]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_border_radius_all']['bottom'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -179,7 +187,7 @@ defined( 'ABSPATH' ) || exit;
 					<path d="M2 4.66667V12.6667C2 15.612 4.38801 18 7.33333 18H15.3333C16.8061 18 18 16.8061 18 15.3333C18 13.8606 16.8061 12.6667 15.3333 12.6667H10C8.52668 12.6667 7.33333 11.4733 7.33333 10V4.66667C7.33333 3.19391 6.13943 2 4.66667 2C3.19391 2 2 3.19391 2 4.66667Z" fill="#D3D9DF"/>
 				</svg>
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_border_radius_all[left]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_border_radius_all']['left'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -187,7 +195,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_border_radius_all[right]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_border_radius_all']['right'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -358,7 +366,7 @@ defined( 'ABSPATH' ) || exit;
 					<path d="M18.75 5H1.25C1.11193 5 1 5.11193 1 5.25V5.75C1 5.88807 1.11193 6 1.25 6H18.75C18.8881 6 19 5.88807 19 5.75V5.25C19 5.11193 18.8881 5 18.75 5Z" fill="#2270B1"/>
 				</svg>
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_content_margin_all[top]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_content_margin_all']['top'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -366,7 +374,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_content_margin_all[bottom]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_content_margin_all']['bottom'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -382,7 +390,7 @@ defined( 'ABSPATH' ) || exit;
 					<path d="M5.75 1H5.25C5.11193 1 5 1.11193 5 1.25V18.75C5 18.8881 5.11193 19 5.25 19H5.75C5.88807 19 6 18.8881 6 18.75V1.25C6 1.11193 5.88807 1 5.75 1Z" fill="#D3D9DF"/>
 				</svg>
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_content_margin_all[left]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_content_margin_all']['left'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -390,7 +398,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div class="tw-flex tw-items-center">
 				<div class="tw-relative">
-					<label for="">
+					<label>
 						<input type="number" name="wcc_showcase_content_margin_all[right]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_content_margin_all']['right'] ); ?>">
 					</label>
 					<span><?php echo esc_attr( 'px' ); ?></span>
@@ -576,7 +584,7 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the color for the call-to-action button to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[348px] tw-h-[240px] tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
+		<div class="tw-w-[348px] tw-h-[320px] tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
@@ -593,11 +601,19 @@ defined( 'ABSPATH' ) || exit;
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
-			<div class="tw-mt-3">
+			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
 					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-button-style"></span>
 					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_button[hover_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_button']['hover_color'] ); ?>">
+					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
+				</div>
+			</div>
+			<div class="tw-mt-3">
+				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Text Color', 'wc-category-showcase' ); ?></h4>
+				<div class="tw-relative tw-flex">
+					<span class="tw-p-3 tw-bg-[#000000] tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style"></span>
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_button[hover_text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_button']['hover_text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>

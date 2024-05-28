@@ -5,8 +5,6 @@
  * Copyright (c) 2018 pluginever
  * Licensed under the GPLv2+ license.
  */
-import './_tabsControl';
-import './_common';
 
 (function ($, window, document, wp, undefined) {
 	window.wcc_showcase_admin = {
@@ -49,6 +47,20 @@ import './_common';
 						$(this).siblings().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
 						$(this).parent().removeClass('wcc_showcase-layout-active-before-content-2');
 						$('.wcc_showcase-block-slider-category-selection').addClass('tw-hidden');
+					}
+				});
+			});
+			$('.wcc_showcase_image_layout_select').on('click', function (e) {
+				var current_val = $(this).find('input:radio').val();
+				$('.wcc_showcase_image_layout_select').find('input:radio').each(function() {
+					if(current_val === $(this).val()){
+						$(this).attr( 'checked', true );
+						$(this).siblings().addClass('wcc_showcase-layout-active').removeClass('wcc_showcase-layout-primary');
+						$(this).parent().addClass('wcc_showcase-layout-active-before-content-2');
+					} else {
+						$(this).attr( 'checked', false );
+						$(this).siblings().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
+						$(this).parent().removeClass('wcc_showcase-layout-active-before-content-2');
 					}
 				});
 			});
@@ -114,6 +126,27 @@ import './_common';
 			});
 
 			// Grid Layout Select
+			$('.wcc_showcase-number-of-grid-column').on('click', function (e) {
+				var current_val = $(this).find('input:radio').val();
+				$('.wcc_showcase-number-of-grid-column').find('input:radio').each(function() {
+					if ( current_val === $(this).val() ) {
+						$(this).attr('checked', true);
+						$(this).siblings('div').children().addClass('wcc_showcase-layout-active').removeClass('wcc_showcase-layout-primary');
+						$(this).siblings('div').addClass('wcc_showcase-layout-active-before-content-2');
+						$('.wcc_showcase-choose-layout-option').each(function() {
+							if( $(this).hasClass( 'layout-'+current_val+'x' ) ){
+								$(this).removeClass('tw-hidden');
+							} else {
+								$(this).addClass('tw-hidden');
+							}
+						});
+					} else {
+						$(this).attr('checked', false);
+						$(this).siblings('div').children().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
+						$(this).siblings('div').removeClass('wcc_showcase-layout-active-before-content-2');
+					}
+				});
+			});
 			$('.wcc_showcase-choose-layout-option').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
 				$('.wcc_showcase-choose-layout-option').find('input:radio').each(function() {
@@ -349,3 +382,5 @@ jQuery(document).ready(function($) {
 		},1000);
 	});
 });
+import './_common';
+import './_tabsControl';

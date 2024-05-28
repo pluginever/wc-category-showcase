@@ -56,6 +56,10 @@ module.exports = [
 					{
 						from: path.resolve(__dirname, './node_modules/@splidejs/splide-extension-grid/dist/js/splide-extension-grid.js'),
 						to: path.resolve(__dirname, 'assets/js'),
+					},
+					{
+						from: path.resolve(__dirname, './node_modules/@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.js'),
+						to: path.resolve(__dirname, 'assets/js'),
 					}
 				]
 			}),

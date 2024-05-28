@@ -85,7 +85,6 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.parentNode.querySelector('.wcc_showcase_font_main_title-font-weight.selected').classList.remove('selected');
 			option.classList.add('selected');
 			document.getElementById("wcc_showcase_font_main_title_text_weight").value = option.dataset.value;
-			console.log(option.innerHTML);
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
 		}
 	}
@@ -96,8 +95,17 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.parentNode.querySelector('.wccs-navigation-position-option.selected').classList.remove('selected');
 			option.classList.add('selected');
 			document.getElementById("wcc_showcase_slider_navigation_position").value = option.dataset.value;
-			console.log(option.innerHTML);
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+		}
+	}
+
+	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-weight');
+	for (const option of document.querySelectorAll(".wcc_showcase-choose-layout-option")) {
+		let layout_value = document.querySelector('input[name="wcc_showcase_number_of_grid_column"]:checked').value;
+		if ( option.classList.contains('layout-'+ layout_value +'x') ) {
+			option.classList.remove('tw-hidden');
+		} else {
+			option.classList.add('tw-hidden');
 		}
 	}
 }, false);

@@ -7,30 +7,47 @@
  */
 
 jQuery(document).ready(function ($) {
-	var splide = new Splide( '.splide', {
-		loop: true,
-		autoplay:true,
-		perPage: 1,
-		grid: {
-			dimensions: [ [2,2] ],
-			gap : {
-				row: '1rem',
-				col: '1rem',
+	$('.splide').each(function() {
+		var sliderId = $(this).attr('id');
+		var grid_value = $('#'+sliderId).data( 'grid' );
+		var splide = new Splide( '#'+sliderId, {
+			grid: {
+				dimensions: [ [grid_value.rows, grid_value.columns] ],
+				gap : {
+					row: '1rem',
+					col: '1rem',
+				},
 			},
-		},
-		breakpoints: {
-			600: {
-				height: '10rem',
-				perPage: 1,
-				grid: {
-					dimensions: [ [ 2, 2 ] ],
-					gap: {
-						row: '.5em',
-						col: '.5em'
+			breakpoints: {
+				1200: {
+					grid: {
+						dimensions: [ [ grid_value.rows, grid_value.laptop ] ],
+						gap: {
+							row: '.5em',
+							col: '.5em'
+						}
+					}
+				},
+				768: {
+					grid: {
+						dimensions: [ [ grid_value.rows, grid_value.tablet ] ],
+						gap: {
+							row: '.5em',
+							col: '.5em'
+						}
+					}
+				},
+				576: {
+					grid: {
+						dimensions: [ [ 1, grid_value.mobile ] ],
+						gap: {
+							row: '.5em',
+							col: '.5em'
+						}
 					}
 				}
 			}
-		}
+		});
+		splide.mount( window.splide.Extensions );
 	});
-	splide.mount( window.splide.Extensions );
 });

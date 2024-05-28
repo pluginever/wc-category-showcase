@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 			<div class="column-1">
 				<div class="tw-mx-auto">
 					<div class="w-full">
-						<label for="wcc_showcase_showcase_title">
+						<label for="wcc_showcase_title">
 							<input type="text" class="tw-w-full" placeholder="<?php esc_html_e( 'Add title...', 'wc-category-showcase' ); ?>" name="wcc_showcase_title" id="wcc_showcase_title" value="<?php echo esc_attr( $showcase_details['wcc_showcase_post_title'] ); ?>">
 						</label>
 					</div>

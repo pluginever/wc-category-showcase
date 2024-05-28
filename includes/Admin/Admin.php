@@ -67,8 +67,6 @@ class Admin {
 		}
 		// Early core enqueue.
 		wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/css/admin.css' );
-		wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin-tailwind', '/css/tailwind.css' );
-		wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-tabs-controls', '/js/tabs-control.js', array(), true );
 		wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/js/admin.js', array(), true );
 
 		wp_localize_script(

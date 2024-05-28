@@ -94,6 +94,7 @@ class Plugin extends ByteKit\Core\Plugin {
 		$this->scripts->register_style( 'wcc-showcase-showcase', 'css/showcase.css' );
 		$this->scripts->register_script( 'wcc-showcase-splide', '/js/splide.js' );
 		$this->scripts->register_script( 'wcc-showcase-splide-grid', '/js/splide-extension-grid.js' );
-		$this->scripts->register_script( 'wcc-showcase-showcase', '/js/showcase.js', array( 'jquery', 'wcc-showcase-splide', 'wcc-showcase-splide-grid' ) );
+		$this->scripts->register_script( 'wcc-showcase-splide-auto-scroll', '/js/splide-extension-auto-scroll.js' );
+		$this->scripts->register_script( 'wcc-showcase-showcase', '/js/showcase.js', array( 'jquery', 'wcc-showcase-splide', 'wcc-showcase-splide-grid', 'wcc-showcase-splide-auto-scroll' ), true );
 	}
 }
