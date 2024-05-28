@@ -75,9 +75,10 @@ add_shortcode( 'wc_category_showcase_test', 'wc_category_showcase_test_shortcode
  * Block category showcase shortcode.
  *
  * @param mixed $atts Shortcode attributes.
+ * @param null  $content Shortcode content.
  *
- * @since 2.0.5
  * @return string
+ * @since 2.0.5
  */
 function wc_category_showcase_test_shortcode( $atts, $content = null ) {
 	$atts = shortcode_atts(
