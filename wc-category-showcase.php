@@ -67,3 +67,51 @@ function wc_category_showcase() {
 }
 // Instantiate the plugin.
 wc_category_showcase();
+
+// Category showcase view (BLock & Grid).
+add_shortcode( 'wc_category_showcase_test', 'wc_category_showcase_test_shortcode' );
+
+/**
+ * Block category showcase shortcode.
+ *
+ * @param mixed $atts Shortcode attributes.
+ *
+ * @since 2.0.5
+ * @return string
+ */
+function wc_category_showcase_test_shortcode( $atts, $content = null ) {
+	$atts = shortcode_atts(
+		array(
+			'id' => null,
+		),
+		$atts,
+		'wc_category_showcase_test'
+	);
+
+	if ( null === $atts['id'] ) {
+		return null;
+	}
+
+	$content  = $content ?? null;
+	$showcase = WooCommerceCategoryShowcase\Controllers\Helpers::get_slider_settings( $atts['id'] );
+
+	wp_enqueue_style( 'wcc-showcase-showcase' );
+	wp_enqueue_script( 'wcc-showcase-showcase' );
+
+	$layout  = isset( $showcase['wcc_showcase_layout'] ) ? 'is-layout__' . $showcase['wcc_showcase_layout'] : 'is-layout__default';
+	$rows    = isset( $showcase['wcc_showcase_block']['row'] ) ? 'row__x' . $showcase['wcc_showcase_block']['row'] : 'row__x1';
+	$columns = isset( $showcase['wcc_showcase_block']['column'] ) ? 'column__x' . $showcase['wcc_showcase_block']['column'] : 'column__x1';
+
+	ob_start();
+	?>
+	<section class="wccs-section <?php echo sanitize_html_class( $layout ); ?>">
+		<div class="wccs-categories <?php echo sanitize_html_class( $rows ); ?> <?php echo sanitize_html_class( $columns ); ?>">
+			<div class="wccs-category">Showcase 1</div>
+			<div class="wccs-category">Showcase 2</div>
+			<div class="wccs-category">Showcase 3</div>
+			<div class="wccs-category">Showcase 4</div>
+		</div>
+	</section>
+	<?php
+	return wp_kses_post( ob_get_clean() );
+}

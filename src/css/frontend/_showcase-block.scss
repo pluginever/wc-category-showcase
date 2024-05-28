@@ -1,0 +1,50 @@
+//:root {
+//	--wccs--rows: repeat(4, 1fr); // TODO: The value should be dynamic & set to the css root variable to the wp_head
+//	--wccs--mobile-rows: repeat(1, 1fr);
+//}
+
+// Global section style.
+.wccs-section {
+	border: 1px solid red;
+	&.is-layout__block {
+		border: 1px solid green;
+	}
+}
+
+// Layout style: Block.
+.is-layout__block {
+	.wccs-categories {
+		display: grid;
+		gap: 1.25rem;
+		grid-template-columns: repeat(1, 1fr);
+		.wccs-category{
+			border: 1px solid red;
+		}
+		&.column__x2{
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&.column__x3{
+			grid-template-columns: repeat(3, 1fr);
+		}
+		&.column__x4{
+			grid-template-columns: repeat(4, 1fr);
+		}
+		&.column__x5{
+			grid-template-columns: repeat(5, 1fr);
+		}
+		&.column__x6{
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+	@media (max-width: 768px) {
+		.wccs-categories {
+			gap: 1rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (max-width: 776px) {
+		.wccs-categories {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
