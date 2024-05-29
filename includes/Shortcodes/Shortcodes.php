@@ -51,11 +51,17 @@ class Shortcodes {
 		$slider_config     = self::get_slider_config( $category_showcase );
 
 		?>
-		<div class="wcc-showcase-slider-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?> is_content_top_left">
-			<div class="wcc-showcase__slider-heading">
-				<h2><?php echo esc_attr( $category_showcase['wcc_showcase_section_title'] ); ?></h2>
-				<p><?php echo esc_attr( $category_showcase['wcc_showcase_section_description'] ); ?></p>
-			</div>
+		<div class="wcc-showcase-slider-<?php echo esc_attr( $post_id ); ?> <?php echo sanitize_html_class( $slider_class_list ); ?> is_content_top_left">
+			<?php if ( 'yes' === $category_showcase['wcc_showcase_show_section_title'] || 'yes' === $category_showcase['wcc_showcase_show_section_description'] ) { ?>
+				<div class="wcc-showcase__slider-heading">
+					<?php if ( 'yes' === $category_showcase['wcc_showcase_show_section_title'] ) { ?>
+						<h2><?php echo esc_attr( $category_showcase['wcc_showcase_section_title'] ); ?></h2>
+					<?php } ?>
+					<?php if ( 'yes' === $category_showcase['wcc_showcase_show_section_description'] ) { ?>
+						<p><?php echo esc_attr( $category_showcase['wcc_showcase_section_description'] ); ?></p>
+					<?php } ?>
+				</div>
+			<?php } ?>
 			<div class="wcc-showcase__slider-body">
 				<section class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-grid='{"rows": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
 					<div class="splide__track">
@@ -168,7 +174,7 @@ class Shortcodes {
 		"releaseWheel":' . ( 'yes' === $category_showcase['wcc_showcase_slide_scroll_interaction'] ? 'true' : 'false' ) . ',
 		"direction": "ltr",
 		"wheel":false,
-		"autoScroll": false
+		"autoScroll":false
 		}';
 		return $slider_config;
 	}

@@ -100,6 +100,26 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 
 	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-weight');
+	for (const option of document.querySelectorAll(".wccs-overlay-content")) {
+		if (option.classList.contains('selected')) {
+			option.parentNode.querySelector('.wccs-overlay-content.selected').classList.remove('selected');
+			option.classList.add('selected');
+			document.getElementById("wcc_showcase_overlay_content_position").value = option.dataset.value;
+			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+		}
+	}
+
+	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-weight');
+	for (const option of document.querySelectorAll(".wccs-ticker-direction")) {
+		if (option.classList.contains('selected')) {
+			option.parentNode.querySelector('.wccs-ticker-direction.selected').classList.remove('selected');
+			option.classList.add('selected');
+			document.getElementById("wcc_showcase_slider_ticker_direction").value = option.dataset.value;
+			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+		}
+	}
+
+	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-weight');
 	for (const option of document.querySelectorAll(".wcc_showcase-choose-layout-option")) {
 		let layout_value = document.querySelector('input[name="wcc_showcase_number_of_grid_column"]:checked').value;
 		if ( option.classList.contains('layout-'+ layout_value +'x') ) {

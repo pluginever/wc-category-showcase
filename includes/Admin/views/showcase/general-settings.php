@@ -462,9 +462,9 @@ defined( 'ABSPATH' ) || exit;
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '4' ); ?>" <?php echo '4' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '4', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-grid-column-pro wcc_showcase-pro">
-				<div class="wcc_showcase-layout-pro-before-content-2">
-					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-grid-column">
+				<div class="<?php echo '5' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo '5' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3604)">
 							<path d="M16 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H16C17.1046 32 18 31.1046 18 30V2C18 0.89543 17.1046 0 16 0Z"/>
 							<path d="M31 0H23C21.8954 0 21 0.89543 21 2V12.5C21 13.6046 21.8954 14.5 23 14.5H31C32.1046 14.5 33 13.6046 33 12.5V2C33 0.89543 32.1046 0 31 0Z"/>
@@ -474,12 +474,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( 5 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '5' ); ?>" <?php echo '5' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '5', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-grid-column-pro wcc_showcase-pro">
-				<div class="wcc_showcase-layout-pro-before-content-2">
-					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-grid-column">
+				<div class="<?php echo '6' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo '6' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3585)">
 							<path d="M12 0H2C0.89543 0 0 0.89543 0 2V12.5C0 13.6046 0.89543 14.5 2 14.5H12C13.1046 14.5 14 13.6046 14 12.5V2C14 0.89543 13.1046 0 12 0Z"/>
 							<path d="M12 17.5H2C0.89543 17.5 0 18.3954 0 19.5V30C0 31.1046 0.89543 32 2 32H12C13.1046 32 14 31.1046 14 30V19.5C14 18.3954 13.1046 17.5 12 17.5Z"/>
@@ -490,12 +490,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( 6 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '6' ); ?>" <?php echo '6' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '6', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-grid-column-pro wcc_showcase-pro">
-				<div class="wcc_showcase-layout-pro-before-content-2">
-					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-grid-column">
+				<div class="<?php echo '7' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo '7' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_367_3577)">
 							<path d="M14 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H14C15.1046 32 16 31.1046 16 30V2C16 0.89543 15.1046 0 14 0Z"/>
 							<path d="M24.6667 0H21C19.8954 0 19 0.89543 19 2V12.5C19 13.6046 19.8954 14.5 21 14.5H24.6667C25.7712 14.5 26.6667 13.6046 26.6667 12.5V2C26.6667 0.89543 25.7712 0 24.6667 0Z"/>
@@ -507,7 +507,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( 7 ); ?>">
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_number_of_grid_column" value="<?php echo esc_attr( '7' ); ?>" <?php echo '7' === $showcase_details['wcc_showcase_number_of_grid_column'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( '7', 'wc-category-showcase' ); ?></span>
 			</div>
 		</div>
@@ -540,73 +540,73 @@ defined( 'ABSPATH' ) || exit;
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-bg-input-grey-50 tw-p-3 tw-rounded-md">
 		<div class="tw-max-w-[385px] tw-grid tw-grid-cols-4 tw-gap-y-3 tw-bg-input-grey-50 tw-overflow-auto tw-max-auto tw-max-h-72">
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-2x">
-				<div class="<?php echo 'basic' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'basic' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'simple_1x2' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'simple_1x2' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<path d="M28 8.75H2C0.89543 8.75 0 9.64543 0 10.75V21.25C0 22.3546 0.89543 23.25 2 23.25H28C29.1046 23.25 30 22.3546 30 21.25V10.75C30 9.64543 29.1046 8.75 28 8.75Z"/>
 						<path d="M46 8.75H34C32.8954 8.75 32 9.64543 32 10.75V21.25C32 22.3546 32.8954 23.25 34 23.25H46C47.1046 23.25 48 22.3546 48 21.25V10.75C48 9.64543 47.1046 8.75 46 8.75Z"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'basic' ); ?>" <?php echo 'basic' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'simple_1x2' ); ?>" <?php echo 'simple_1x2' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Simple 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-2x">
-				<div class="<?php echo 'classic' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'classic' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'simple_2x2' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'simple_2x2' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<path d="M14 8.75H2C0.89543 8.75 0 9.64543 0 10.75V21.25C0 22.3546 0.89543 23.25 2 23.25H14C15.1046 23.25 16 22.3546 16 21.25V10.75C16 9.64543 15.1046 8.75 14 8.75Z"/>
 						<path d="M46 8.75H20C18.8954 8.75 18 9.64543 18 10.75V21.25C18 22.3546 18.8954 23.25 20 23.25H46C47.1046 23.25 48 22.3546 48 21.25V10.75C48 9.64543 47.1046 8.75 46 8.75Z"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'classic' ); ?>" <?php echo 'classic' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'simple_2x2' ); ?>" <?php echo 'simple_2x2' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Simple 2' ); ?></span>
 			</div>
 
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
-				<div class="<?php echo 'standard' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'standard' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'simple_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'simple_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<path d="M39.5 8.75H46C47.1046 8.75 48 9.64543 48 10.75V21.25C48 22.3546 47.1046 23.25 46 23.25H39.5C38.3954 23.25 37.5 22.3546 37.5 21.25V10.75C37.5 9.64543 38.3954 8.75 39.5 8.75Z"/>
 						<path d="M27 8.75H33.5C34.6046 8.75 35.5 9.64543 35.5 10.75V21.25C35.5 22.3546 34.6046 23.25 33.5 23.25H27C25.8954 23.25 25 22.3546 25 21.25V10.75C25 9.64543 25.8954 8.75 27 8.75Z"/>
 						<path d="M2 8.75H21C22.1046 8.75 23 9.64543 23 10.75V21.25C23 22.3546 22.1046 23.25 21 23.25H2C0.89543 23.25 0 22.3546 0 21.25V10.75C0 9.64543 0.89543 8.75 2 8.75Z"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'standard' ); ?>" <?php echo 'standard' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'simple_1x3' ); ?>" <?php echo 'simple_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Simple 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
-				<div class="<?php echo 'super' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'super' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'simple_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'simple_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<path d="M8.5 8.75H2C0.89543 8.75 0 9.64543 0 10.75V21.25C0 22.3546 0.89543 23.25 2 23.25H8.5C9.60457 23.25 10.5 22.3546 10.5 21.25V10.75C10.5 9.64543 9.60457 8.75 8.5 8.75Z" fill="#D3D9DF"/>
 						<path d="M21 8.75H14.5C13.3954 8.75 12.5 9.64543 12.5 10.75V21.25C12.5 22.3546 13.3954 23.25 14.5 23.25H21C22.1046 23.25 23 22.3546 23 21.25V10.75C23 9.64543 22.1046 8.75 21 8.75Z" fill="#D3D9DF"/>
 						<path d="M46 8.75H27C25.8954 8.75 25 9.64543 25 10.75V21.25C25 22.3546 25.8954 23.25 27 23.25H46C47.1046 23.25 48 22.3546 48 21.25V10.75C48 9.64543 47.1046 8.75 46 8.75Z" fill="#D3D9DF"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'super' ); ?>" <?php echo 'super' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'simple_2x3' ); ?>" <?php echo 'simple_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Simple 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'standard_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'standard_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<path d="M21 6H2C0.89543 6 0 6.89543 0 8V24C0 25.1046 0.89543 26 2 26H21C22.1046 26 23 25.1046 23 24V8C23 6.89543 22.1046 6 21 6Z"/>
 						<path d="M46 6H27C25.8954 6 25 6.89543 25 8V13C25 14.1046 25.8954 15 27 15H46C47.1046 15 48 14.1046 48 13V8C48 6.89543 47.1046 6 46 6Z"/>
 						<path d="M46 17H27C25.8954 17 25 17.8954 25 19V24C25 25.1046 25.8954 26 27 26H46C47.1046 26 48 25.1046 48 24V19C48 17.8954 47.1046 17 46 17Z"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'standard_1x3' ); ?>" <?php echo 'standard_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Standard 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'standard_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'standard_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<path d="M21 6H2C0.89543 6 0 6.89543 0 8V13C0 14.1046 0.89543 15 2 15H21C22.1046 15 23 14.1046 23 13V8C23 6.89543 22.1046 6 21 6Z" fill="#D3D9DF"/>
 						<path d="M21 17H2C0.89543 17 0 17.8954 0 19V24C0 25.1046 0.89543 26 2 26H21C22.1046 26 23 25.1046 23 24V19C23 17.8954 22.1046 17 21 17Z" fill="#D3D9DF"/>
 						<path d="M46 6H27C25.8954 6 25 6.89543 25 8V24C25 25.1046 25.8954 26 27 26H46C47.1046 26 48 25.1046 48 24V8C48 6.89543 47.1046 6 46 6Z" fill="#D3D9DF"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'standard_2x3' ); ?>" <?php echo 'standard_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Standard 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'cross_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'cross_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13622)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H46C47.1046 15 48 14.1046 48 13V2C48 0.89543 47.1046 0 46 0Z"/>
 							<path d="M21 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H21C22.1046 32 23 31.1046 23 30V19C23 17.8954 22.1046 17 21 17Z"/>
@@ -614,12 +614,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'cross_1x3' ); ?>" <?php echo 'cross_1x3' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Cross 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'cross_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'cross_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13618)">
 							<path d="M21 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H21C22.1046 15 23 14.1046 23 13V2C23 0.89543 22.1046 0 21 0Z"/>
 							<path d="M46 0H27C25.8954 0 25 0.89543 25 2V13C25 14.1046 25.8954 15 27 15H46C47.1046 15 48 14.1046 48 13V2C48 0.89543 47.1046 0 46 0Z"/>
@@ -627,13 +627,13 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'cross_2x3' ); ?>" <?php echo 'cross_2x3' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Cross 2' ); ?></span>
 			</div>
 
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'crescent_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'crescent_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13781)">
 							<path d="M14 0.25H2C0.89543 0.25 0 1.14543 0 2.25V12.75C0 13.8546 0.89543 14.75 2 14.75H14C15.1046 14.75 16 13.8546 16 12.75V2.25C16 1.14543 15.1046 0.25 14 0.25Z"/>
 							<path d="M46 0.25H20C18.8954 0.25 18 1.14543 18 2.25V12.75C18 13.8546 18.8954 14.75 20 14.75H46C47.1046 14.75 48 13.8546 48 12.75V2.25C48 1.14543 47.1046 0.25 46 0.25Z"/>
@@ -642,12 +642,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'crescent_1x4' ); ?>" <?php echo 'crescent_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Crescent 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'crescent_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'crescent_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13776)">
 							<path d="M28 0.25H2C0.89543 0.25 0 1.14543 0 2.25V12.75C0 13.8546 0.89543 14.75 2 14.75H28C29.1046 14.75 30 13.8546 30 12.75V2.25C30 1.14543 29.1046 0.25 28 0.25Z"/>
 							<path d="M46 0.25H34C32.8954 0.25 32 1.14543 32 2.25V12.75C32 13.8546 32.8954 14.75 34 14.75H46C47.1046 14.75 48 13.8546 48 12.75V2.25C48 1.14543 47.1046 0.25 46 0.25Z"/>
@@ -655,12 +655,12 @@ defined( 'ABSPATH' ) || exit;
 							<path d="M46 17.25H34C32.8954 17.25 32 18.1454 32 19.25V29.75C32 30.8546 32.8954 31.75 34 31.75H46C47.1046 31.75 48 30.8546 48 29.75V19.25C48 18.1454 47.1046 17.25 46 17.25Z"/>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'crescent_2x4' ); ?>" <?php echo 'crescent_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Crescent 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'zen_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'zen_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13771)">
 							<path d="M14 0.25H2C0.89543 0.25 0 1.14543 0 2.25V12.75C0 13.8546 0.89543 14.75 2 14.75H14C15.1046 14.75 16 13.8546 16 12.75V2.25C16 1.14543 15.1046 0.25 14 0.25Z"/>
 							<path d="M46 0.25H20C18.8954 0.25 18 1.14543 18 2.25V12.75C18 13.8546 18.8954 14.75 20 14.75H46C47.1046 14.75 48 13.8546 48 12.75V2.25C48 1.14543 47.1046 0.25 46 0.25Z"/>
@@ -669,12 +669,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'zen_1x4' ); ?>" <?php echo 'zen_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Zen 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'zen_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'zen_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13766)">
 							<path d="M28 0.25H2C0.89543 0.25 0 1.14543 0 2.25V12.75C0 13.8546 0.89543 14.75 2 14.75H28C29.1046 14.75 30 13.8546 30 12.75V2.25C30 1.14543 29.1046 0.25 28 0.25Z"/>
 							<path d="M46 0.25H34C32.8954 0.25 32 1.14543 32 2.25V12.75C32 13.8546 32.8954 14.75 34 14.75H46C47.1046 14.75 48 13.8546 48 12.75V2.25C48 1.14543 47.1046 0.25 46 0.25Z"/>
@@ -683,12 +683,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'zen_2x4' ); ?>" <?php echo 'zen_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Zen 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13751)">
 							<path d="M28 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H28C29.1046 32 30 31.1046 30 30V2C30 0.89543 29.1046 0 28 0Z"/>
 							<path d="M46 0H34C32.8954 0 32 0.89543 32 2V7.33333C32 8.4379 32.8954 9.33333 34 9.33333H46C47.1046 9.33333 48 8.4379 48 7.33333V2C48 0.89543 47.1046 0 46 0Z"/>
@@ -697,12 +697,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_1x4' ); ?>" <?php echo 'catalog_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13751)">
 							<path d="M28 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H28C29.1046 32 30 31.1046 30 30V2C30 0.89543 29.1046 0 28 0Z"/>
 							<path d="M46 0H34C32.8954 0 32 0.89543 32 2V7.33333C32 8.4379 32.8954 9.33333 34 9.33333H46C47.1046 9.33333 48 8.4379 48 7.33333V2C48 0.89543 47.1046 0 46 0Z"/>
@@ -711,12 +711,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_2x4' ); ?>" <?php echo 'catalog_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_3x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_3x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13736)">
 							<path d="M12.6667 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H12.6667C13.7713 15 14.6667 14.1046 14.6667 13V2C14.6667 0.89543 13.7713 0 12.6667 0Z"/>
 							<path d="M29.3327 0H18.666C17.5614 0 16.666 0.89543 16.666 2V13C16.666 14.1046 17.5614 15 18.666 15H29.3327C30.4373 15 31.3327 14.1046 31.3327 13V2C31.3327 0.89543 30.4373 0 29.3327 0Z"/>
@@ -725,12 +725,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_3x4' ); ?>" <?php echo 'catalog_3x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 3' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_4x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_4x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13741)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H46C47.1046 15 48 14.1046 48 13V2C48 0.89543 47.1046 0 46 0Z"/>
 							<path d="M12.6667 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H12.6667C13.7713 32 14.6667 31.1046 14.6667 30V19C14.6667 17.8954 13.7713 17 12.6667 17Z"/>
@@ -739,12 +739,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_4x4' ); ?>" <?php echo 'catalog_4x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 4' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
+				<div class="<?php echo 'matrix_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'matrix_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
 						<g clip-path="url(#clip0_908_13731)">
 							<path d="M8.5 0H2C0.89543 0 0 0.89543 0 2V22C0 23.1046 0.89543 24 2 24H8.5C9.60457 24 10.5 23.1046 10.5 22V2C10.5 0.89543 9.60457 0 8.5 0Z"/>
 							<path d="M21 0H14.5C13.3954 0 12.5 0.89543 12.5 2V22C12.5 23.1046 13.3954 24 14.5 24H21C22.1046 24 23 23.1046 23 22V2C23 0.89543 22.1046 0 21 0Z"/>
@@ -753,12 +753,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'matrix_1x4' ); ?>" <?php echo 'matrix_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Matrix 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
+				<div class="<?php echo 'matrix_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'matrix_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
 						<g clip-path="url(#clip0_908_13726)">
 							<path d="M21 0H2C0.89543 0 0 0.89543 0 2V9C0 10.1046 0.89543 11 2 11H21C22.1046 11 23 10.1046 23 9V2C23 0.89543 22.1046 0 21 0Z"/>
 							<path d="M21 13H2C0.89543 13 0 13.8954 0 15V22C0 23.1046 0.89543 24 2 24H21C22.1046 24 23 23.1046 23 22V15C23 13.8954 22.1046 13 21 13Z"/>
@@ -767,12 +767,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'matrix_2x4' ); ?>" <?php echo 'matrix_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Matrix 2' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-4x">
-				<div class="wcc_showcase-layout-pro-before-content">
-					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
+				<div class="<?php echo 'matrix_3x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'matrix_3x4' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
 						<g clip-path="url(#clip0_908_13721)">
 							<path d="M12.6667 0H2C0.89543 0 0 0.89543 0 2V22C0 23.1046 0.89543 24 2 24H12.6667C13.7713 24 14.6667 23.1046 14.6667 22V2C14.6667 0.89543 13.7713 0 12.6667 0Z"/>
 							<path d="M29.3327 0H18.666C17.5614 0 16.666 0.89543 16.666 2V9C16.666 10.1046 17.5614 11 18.666 11H29.3327C30.4373 11 31.3327 10.1046 31.3327 9V2C31.3327 0.89543 30.4373 0 29.3327 0Z"/>
@@ -781,6 +781,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'matrix_3x4' ); ?>" <?php echo 'matrix_3x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Matrix 3' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-4x">
@@ -794,6 +795,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'matrix_4x4' ); ?>" <?php echo 'matrix_4x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Matrix 4' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-4x">
@@ -807,6 +809,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'matrix_5x4' ); ?>" <?php echo 'matrix_5x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Matrix 5' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-4x">
@@ -820,6 +823,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mystic_1x4' ); ?>" <?php echo 'mystic_1x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Mystic 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-4x">
@@ -833,6 +837,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mystic_2x4' ); ?>" <?php echo 'mystic_2x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Mystic 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-4x">
@@ -846,6 +851,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mystic_3x4' ); ?>" <?php echo 'mystic_3x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Mystic 3' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-4x">
@@ -859,12 +865,13 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mystic_4x4' ); ?>" <?php echo 'mystic_4x4' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Mystic 4' ); ?></span>
 			</div>
 
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-5x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_1x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_1x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13612)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V16C0 17.1046 0.89543 18 2 18H46C47.1046 18 48 17.1046 48 16V2C48 0.89543 47.1046 0 46 0Z"/>
 							<path d="M8.5 20H2C0.89543 20 0 20.8954 0 22V30C0 31.1046 0.89543 32 2 32H8.5C9.60457 32 10.5 31.1046 10.5 30V22C10.5 20.8954 9.60457 20 8.5 20Z"/>
@@ -874,12 +881,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_1x5' ); ?>" <?php echo 'catalog_1x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-5x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_2x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_2x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13606)">
 							<path d="M8.5 0H2C0.89543 0 0 0.89543 0 2V10C0 11.1046 0.89543 12 2 12H8.5C9.60457 12 10.5 11.1046 10.5 10V2C10.5 0.89543 9.60457 0 8.5 0Z"/>
 							<path d="M21 0H14.5C13.3954 0 12.5 0.89543 12.5 2V10C12.5 11.1046 13.3954 12 14.5 12H21C22.1046 12 23 11.1046 23 10V2C23 0.89543 22.1046 0 21 0Z"/>
@@ -889,12 +896,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_2x5' ); ?>" <?php echo 'catalog_2x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-5x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_3x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_3x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13600)">
 							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V8C0 9.10457 0.89543 10 2 10H46C47.1046 10 48 9.10457 48 8V2C48 0.89543 47.1046 0 46 0Z"/>
 							<path d="M21 12H2C0.89543 12 0 12.8954 0 14V19C0 20.1046 0.89543 21 2 21H21C22.1046 21 23 20.1046 23 19V14C23 12.8954 22.1046 12 21 12Z"/>
@@ -904,12 +911,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_3x5' ); ?>" <?php echo 'catalog_3x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 3' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-5x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_4x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_4x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13594)">
 							<path d="M21 0H2C0.89543 0 0 0.89543 0 2V7C0 8.10457 0.89543 9 2 9H21C22.1046 9 23 8.10457 23 7V2C23 0.89543 22.1046 0 21 0Z"/>
 							<path d="M46 0H27C25.8954 0 25 0.89543 25 2V7C25 8.10457 25.8954 9 27 9H46C47.1046 9 48 8.10457 48 7V2C48 0.89543 47.1046 0 46 0Z"/>
@@ -919,12 +926,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_4x5' ); ?>" <?php echo 'catalog_4x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 4' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-5x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'schema_1x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'schema_1x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13588)">
 							<path d="M21 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H21C22.1046 32 23 31.1046 23 30V2C23 0.89543 22.1046 0 21 0Z"ß/>
 							<path d="M33.5 0H27C25.8954 0 25 0.89543 25 2V13C25 14.1046 25.8954 15 27 15H33.5C34.6046 15 35.5 14.1046 35.5 13V2C35.5 0.89543 34.6046 0 33.5 0Z"ß/>
@@ -934,12 +941,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'schema_1x5' ); ?>" <?php echo 'schema_1x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Schema 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-5x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'schema_2x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'schema_2x5' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13582)">
 							<path d="M8.5 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H8.5C9.60457 15 10.5 14.1046 10.5 13V2C10.5 0.89543 9.60457 0 8.5 0Z"/>
 							<path d="M21 0H14.5C13.3954 0 12.5 0.89543 12.5 2V13C12.5 14.1046 13.3954 15 14.5 15H21C22.1046 15 23 14.1046 23 13V2C23 0.89543 22.1046 0 21 0Z"/>
@@ -949,7 +956,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'schema_2x5' ); ?>" <?php echo 'schema_2x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Schema 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-5x">
@@ -964,6 +971,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'modern_1x5' ); ?>" <?php echo 'modern_1x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Modern 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-5x">
@@ -978,6 +986,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'modern_2x5' ); ?>" <?php echo 'modern_2x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Modern 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-5x">
@@ -992,12 +1001,13 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'modern_3x5' ); ?>" <?php echo 'modern_3x5' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Modern 3' ); ?></span>
 			</div>
 
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-6x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_1x6' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_1x6' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13670)">
 							<path d="M14.5 0H21C22.1046 0 23 0.89543 23 2V12.5C23 13.6046 22.1046 14.5 21 14.5H14.5C13.3954 14.5 12.5 13.6046 12.5 12.5V2C12.5 0.89543 13.3954 0 14.5 0Z"/>
 							<path d="M2 0H8.5C9.60457 0 10.5 0.89543 10.5 2V12.5C10.5 13.6046 9.60457 14.5 8.5 14.5H2C0.895431 14.5 0 13.6046 0 12.5V2C0 0.89543 0.895431 0 2 0Z"/>
@@ -1008,12 +1018,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_1x6' ); ?>" <?php echo 'catalog_1x6' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-6x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
+				<div class="<?php echo 'catalog_2x6' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_2x6' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_908_13663)">
 							<path d="M2 0H21C22.1046 0 23 0.89543 23 2V12.5C23 13.6046 22.1046 14.5 21 14.5H2C0.89543 14.5 0 13.6046 0 12.5V2C0 0.89543 0.89543 0 2 0Z"/>
 							<path d="M39.5 0H46C47.1046 0 48 0.89543 48 2V12.5C48 13.6046 47.1046 14.5 46 14.5H39.5C38.3954 14.5 37.5 13.6046 37.5 12.5V2C37.5 0.89543 38.3954 0 39.5 0Z"/>
@@ -1024,7 +1034,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_2x6' ); ?>" <?php echo 'catalog_2x6' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-6x">
@@ -1040,6 +1050,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'matrix_1x6' ); ?>" <?php echo 'matrix_1x6' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Matrix 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-6x">
@@ -1055,6 +1066,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'matrix_2x6' ); ?>" <?php echo 'matrix_2x6' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Matrix 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-6x">
@@ -1070,6 +1082,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'zen_1x6' ); ?>" <?php echo 'zen_1x6' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Zen 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-6x">
@@ -1085,6 +1098,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'zen_2x6' ); ?>" <?php echo 'zen_2x6' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Zen 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-6x">
@@ -1100,12 +1114,13 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'zen_3x6' ); ?>" <?php echo 'zen_3x6' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Zen 3' ); ?></span>
 			</div>
 
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-7x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
+				<div class="<?php echo 'catalog_1x7' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_1x7' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
 						<g clip-path="url(#clip0_908_13556)">
 							<path d="M18 0H2C0.89543 0 0 0.89543 0 2V22C0 23.1046 0.89543 24 2 24H18C19.1046 24 20 23.1046 20 22V2C20 0.89543 19.1046 0 18 0Z"/>
 							<path d="M27.3333 0H24C22.8954 0 22 0.89543 22 2V9C22 10.1046 22.8954 11 24 11H27.3333C28.4379 11 29.3333 10.1046 29.3333 9V2C29.3333 0.89543 28.4379 0 27.3333 0Z"/>
@@ -1117,12 +1132,12 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_1x7' ); ?>" <?php echo 'catalog_1x7' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-7x">
-				<div class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
-					<svg class="<?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
+				<div class="<?php echo 'catalog_2x7' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
+					<svg class="<?php echo 'catalog_2x7' === $showcase_details['wcc_showcase_layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 24" fill="currentColor">
 						<g clip-path="url(#clip0_908_13548)">
 							<path d="M5.33333 0H2C0.89543 0 0 0.89543 0 2V9C0 10.1046 0.89543 11 2 11H5.33333C6.4379 11 7.33333 10.1046 7.33333 9V2C7.33333 0.89543 6.4379 0 5.33333 0Z"/>
 							<path d="M14.6673 0H11.334C10.2294 0 9.33398 0.89543 9.33398 2V9C9.33398 10.1046 10.2294 11 11.334 11H14.6673C15.7719 11 16.6673 10.1046 16.6673 9V2C16.6673 0.89543 15.7719 0 14.6673 0Z"/>
@@ -1134,7 +1149,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'mixed' ); ?>" <?php echo 'mixed' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'catalog_2x7' ); ?>" <?php echo 'catalog_2x7' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Catalog 2' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-7x">
@@ -1151,6 +1166,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'helix_1x7' ); ?>" <?php echo 'helix_1x7' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Helix 1' ); ?></span>
 			</div>
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option wcc_showcase-pro layout-7x">
@@ -1167,6 +1183,7 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'helix_2x7' ); ?>" <?php echo 'helix_2x7' === $showcase_details['wcc_showcase_layout_option'] ? 'checked' : ''; ?>>
 				<span><?php echo esc_attr( 'Helix 2' ); ?></span>
 			</div>
 		</div>
@@ -1191,7 +1208,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row">
+<div class="wcc_showcase-settings-row wcc_showcase-breakpoint <?php echo 'grid' === $showcase_details['wcc_showcase_layout'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Column Breakpoints', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Configure how many columns your category showcase should display based on the users device screen size.', 'wc-category-showcase' ); ?></p>

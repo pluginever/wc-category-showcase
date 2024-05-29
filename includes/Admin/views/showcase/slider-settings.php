@@ -12,6 +12,88 @@ defined( 'ABSPATH' ) || exit;
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 		<path d="M21.6875 5.4022H10.6875C10.5441 4.72426 10.1608 4.11475 9.60266 3.67695C9.04453 3.23916 8.34585 3 7.625 3C6.90415 3 6.20547 3.23916 5.64734 3.67695C5.08921 4.11475 4.70595 4.72426 4.5625 5.4022H2.3125C2.22962 5.4022 2.15013 5.4338 2.09153 5.49004C2.03292 5.54629 2 5.62257 2 5.7021V6.3019C2 6.38144 2.03292 6.45772 2.09153 6.51397C2.15013 6.57021 2.22962 6.6018 2.3125 6.6018H4.5625C4.70595 7.27975 5.08921 7.88926 5.64734 8.32705C6.20547 8.76485 6.90415 9.00401 7.625 9.00401C8.34585 9.00401 9.04453 8.76485 9.60266 8.32705C10.1608 7.88926 10.5441 7.27975 10.6875 6.6018H21.6875C21.7704 6.6018 21.8499 6.57021 21.9085 6.51397C21.9671 6.45772 22 6.38144 22 6.3019V5.7021C22 5.62257 21.9671 5.54629 21.9085 5.49004C21.8499 5.4338 21.7704 5.4022 21.6875 5.4022ZM7.625 7.8014C7.25416 7.8014 6.89165 7.69587 6.58331 7.49815C6.27496 7.30043 6.03464 7.0194 5.89273 6.6906C5.75081 6.36181 5.71368 6.00001 5.78603 5.65096C5.85837 5.30191 6.03695 4.98129 6.29917 4.72964C6.5614 4.47799 6.89549 4.30661 7.25921 4.23718C7.62292 4.16775 7.99992 4.20338 8.34253 4.33958C8.68514 4.47577 8.97798 4.7064 9.18401 5.00231C9.39003 5.29822 9.5 5.64612 9.5 6.002C9.5 6.47923 9.30246 6.93692 8.95083 7.27437C8.59919 7.61182 8.12228 7.8014 7.625 7.8014ZM21.6875 17.3982H13.1875C13.0441 16.7203 12.6608 16.1107 12.1027 15.6729C11.5445 15.2352 10.8458 14.996 10.125 14.996C9.40415 14.996 8.70547 15.2352 8.14734 15.6729C7.58921 16.1107 7.20595 16.7203 7.0625 17.3982H2.3125C2.22962 17.3982 2.15013 17.4298 2.09153 17.486C2.03292 17.5423 2 17.6186 2 17.6981V18.2979C2 18.3774 2.03292 18.4537 2.09153 18.51C2.15013 18.5662 2.22962 18.5978 2.3125 18.5978H7.0625C7.20595 19.2757 7.58921 19.8853 8.14734 20.323C8.70547 20.7608 9.40415 21 10.125 21C10.8458 21 11.5445 20.7608 12.1027 20.323C12.6608 19.8853 13.0441 19.2757 13.1875 18.5978H21.6875C21.7704 18.5978 21.8499 18.5662 21.9085 18.51C21.9671 18.4537 22 18.3774 22 18.2979V17.6981C22 17.6186 21.9671 17.5423 21.9085 17.486C21.8499 17.4298 21.7704 17.3982 21.6875 17.3982ZM10.125 19.7974C9.75416 19.7974 9.39165 19.6919 9.08331 19.4941C8.77496 19.2964 8.53464 19.0154 8.39273 18.6866C8.25081 18.3578 8.21368 17.996 8.28603 17.6469C8.35837 17.2979 8.53695 16.9773 8.79917 16.7256C9.0614 16.474 9.39549 16.3026 9.75921 16.2332C10.1229 16.1637 10.4999 16.1994 10.8425 16.3356C11.1851 16.4718 11.478 16.7024 11.684 16.9983C11.89 17.2942 12 17.6421 12 17.998C12 18.4752 11.8025 18.9329 11.4508 19.2704C11.0992 19.6078 10.6223 19.7974 10.125 19.7974ZM2 11.7001V12.2999C2 12.3794 2.03292 12.4557 2.09153 12.512C2.15013 12.5682 2.22962 12.5998 2.3125 12.5998H13.3125C13.4559 13.2777 13.8392 13.8873 14.3973 14.325C14.9555 14.7628 15.6542 15.002 16.375 15.002C17.0958 15.002 17.7945 14.7628 18.3527 14.325C18.9108 13.8873 19.2941 13.2777 19.4375 12.5998H21.6875C21.7704 12.5998 21.8499 12.5682 21.9085 12.512C21.9671 12.4557 22 12.3794 22 12.2999V11.7001C22 11.6206 21.9671 11.5443 21.9085 11.488C21.8499 11.4318 21.7704 11.4002 21.6875 11.4002H19.4375C19.2941 10.7223 18.9108 10.1127 18.3527 9.67495C17.7945 9.23715 17.0958 8.998 16.375 8.998C15.6542 8.998 14.9555 9.23715 14.3973 9.67495C13.8392 10.1127 13.4559 10.7223 13.3125 11.4002H2.3125C2.22962 11.4002 2.15013 11.4318 2.09153 11.488C2.03292 11.5443 2 11.6206 2 11.7001ZM14.5 12C14.5 11.6441 14.61 11.2962 14.816 11.0003C15.022 10.7044 15.3149 10.4738 15.6575 10.3376C16.0001 10.2014 16.3771 10.1657 16.7408 10.2352C17.1045 10.3046 17.4386 10.476 17.7008 10.7276C17.963 10.9793 18.1416 11.2999 18.214 11.649C18.2863 11.998 18.2492 12.3598 18.1073 12.6886C17.9654 13.0174 17.725 13.2984 17.4167 13.4961C17.1084 13.6939 16.7458 13.7994 16.375 13.7994C15.8777 13.7994 15.4008 13.6098 15.0492 13.2724C14.6975 12.9349 14.5 12.4772 14.5 12Z" fill="#2270B1"/>
 	</svg>
+	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Ticker Settings', 'wc-category-showcase' ); ?></h2>
+</div>
+<div class="wcc_showcase-settings-row">
+	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Ticker Carousel', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Showcase your product categories in a continuous, scrolling format. Ideal for grabbing visitor\'s attention with a steady stream of category highlights.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<label class="tw-inline-flex tw-cursor-pointer">
+			<input type="checkbox" name="wcc_showcase_slide_is_ticker" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_is_ticker'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
+		</label>
+	</div>
+</div>
+<div class="wcc_showcase-settings-row">
+	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Ticker Slider Direction', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Set the direction in which the ticker scrolls. Choose between left-to-right or right-to-left scrolling.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<div class="select-wrapper" id="wcc_showcase-ticker-direction">
+			<div class="select wcc_showcase-ticker-direction tw-w-[224px] tw-bg-input-grey-50 tw-border-divider-grey-100 tw-rounded-md">
+				<div class="select__trigger tw-bg-input-grey-50">
+					<span class="tw-flex tw-items-center tw-gap-1 tw-text-text-grey-500">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+							<path d="M13.5 17L14.375 17C15.8247 17 17 15.8247 17 14.375L17 5.625C17 4.17525 15.8247 3 14.375 3L13.5 3M10 6.5L13.5 10M13.5 10L10 13.5M13.5 10L3 10" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<?php esc_html_e( 'Left to Right', 'wc-category-showcase' ); ?>
+					</span>
+					<div class="wcc_showcase-arrow">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none">
+							<path d="M4.66663 10L7.99996 13.3333L11.3333 10" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M4.66663 6.00033L7.99996 2.66699L11.3333 6.00033" stroke="#64748B" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
+				</div>
+				<div class="custom-options tw-w-[224px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden">
+					<span class="custom-option wccs-ticker-direction <?php echo 'left_to_right' === $showcase_details['wcc_showcase_slider_ticker_direction'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'left_to_right' ); ?>">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+							<path d="M13.5 17L14.375 17C15.8247 17 17 15.8247 17 14.375L17 5.625C17 4.17525 15.8247 3 14.375 3L13.5 3M10 6.5L13.5 10M13.5 10L10 13.5M13.5 10L3 10" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<?php esc_html_e( 'Left to Right', 'wc-category-showcase' ); ?>
+					</span>
+					<span class="custom-option wccs-ticker-direction <?php echo 'right_to_left' === $showcase_details['wcc_showcase_slider_ticker_direction'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'right_to_left' ); ?>">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+							<path d="M6.5 17L5.625 17C4.17525 17 3 15.8247 3 14.375L3 5.625C3 4.17525 4.17525 3 5.625 3L6.5 3M10 6.5L6.5 10M6.5 10L10 13.5M6.5 10L17 10" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<?php esc_html_e( 'Right to Left', 'wc-category-showcase' ); ?>
+					</span>
+				</div>
+			</div>
+			<input type="hidden" name="wcc_showcase_slider_ticker_direction" id="wcc_showcase_slider_ticker_direction" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slider_ticker_direction'] ); ?>">
+		</div>
+	</div>
+</div>
+<div class="wcc_showcase-settings-row">
+	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Ticker Speed', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Adjust the speed at which the categories scroll. A higher value will make the ticker move faster, while a lower value will slow it down.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center tw-gap-2 tw-rounded-md tw-max-w-[385px]">
+		<span class="tw-isolate tw-flex tw-flex-row tw-items-center tw-bg-input-grey-50 tw-p-1 tw-rounded-md tw-shadow-sm tw-min-w-[385px]">
+			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'slow' === $showcase_details['wcc_showcase_ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
+				<input type="radio" name="wcc_showcase_ticket_mode" checked class="!tw-hidden" value="<?php echo esc_attr( 'slow' ); ?>" <?php if ( 'slow' === $showcase_details['wcc_showcase_ticket_mode'] ) { echo 'checked'; } ?>>
+				<?php esc_html_e( 'Slow', 'wc-category-showcase' ); ?>
+			</label>
+			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'medium' === $showcase_details['wcc_showcase_ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
+				<input type="radio" name="wcc_showcase_ticket_mode" class="!tw-hidden" value="<?php echo esc_attr( 'medium' ); ?>" <?php if ( 'medium' === $showcase_details['wcc_showcase_ticket_mode'] ) { echo 'checked'; } ?>>
+				<?php esc_html_e( 'Medium', 'wc-category-showcase' ); ?>
+			</label>
+			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'fast' === $showcase_details['wcc_showcase_ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
+				<input type="radio" name="wcc_showcase_ticket_mode" class="!tw-hidden" value="<?php echo esc_attr( 'fast' ); ?>" <?php if ( 'fast' === $showcase_details['wcc_showcase_ticket_mode'] ) { echo 'checked'; } ?>>
+				<?php esc_html_e( 'Fast', 'wc-category-showcase' ); ?>
+			</label>
+		</span>
+	</div>
+</div>
+
+<div class="wcc_showcase-settings-row-title">
+	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+		<path d="M21.6875 5.4022H10.6875C10.5441 4.72426 10.1608 4.11475 9.60266 3.67695C9.04453 3.23916 8.34585 3 7.625 3C6.90415 3 6.20547 3.23916 5.64734 3.67695C5.08921 4.11475 4.70595 4.72426 4.5625 5.4022H2.3125C2.22962 5.4022 2.15013 5.4338 2.09153 5.49004C2.03292 5.54629 2 5.62257 2 5.7021V6.3019C2 6.38144 2.03292 6.45772 2.09153 6.51397C2.15013 6.57021 2.22962 6.6018 2.3125 6.6018H4.5625C4.70595 7.27975 5.08921 7.88926 5.64734 8.32705C6.20547 8.76485 6.90415 9.00401 7.625 9.00401C8.34585 9.00401 9.04453 8.76485 9.60266 8.32705C10.1608 7.88926 10.5441 7.27975 10.6875 6.6018H21.6875C21.7704 6.6018 21.8499 6.57021 21.9085 6.51397C21.9671 6.45772 22 6.38144 22 6.3019V5.7021C22 5.62257 21.9671 5.54629 21.9085 5.49004C21.8499 5.4338 21.7704 5.4022 21.6875 5.4022ZM7.625 7.8014C7.25416 7.8014 6.89165 7.69587 6.58331 7.49815C6.27496 7.30043 6.03464 7.0194 5.89273 6.6906C5.75081 6.36181 5.71368 6.00001 5.78603 5.65096C5.85837 5.30191 6.03695 4.98129 6.29917 4.72964C6.5614 4.47799 6.89549 4.30661 7.25921 4.23718C7.62292 4.16775 7.99992 4.20338 8.34253 4.33958C8.68514 4.47577 8.97798 4.7064 9.18401 5.00231C9.39003 5.29822 9.5 5.64612 9.5 6.002C9.5 6.47923 9.30246 6.93692 8.95083 7.27437C8.59919 7.61182 8.12228 7.8014 7.625 7.8014ZM21.6875 17.3982H13.1875C13.0441 16.7203 12.6608 16.1107 12.1027 15.6729C11.5445 15.2352 10.8458 14.996 10.125 14.996C9.40415 14.996 8.70547 15.2352 8.14734 15.6729C7.58921 16.1107 7.20595 16.7203 7.0625 17.3982H2.3125C2.22962 17.3982 2.15013 17.4298 2.09153 17.486C2.03292 17.5423 2 17.6186 2 17.6981V18.2979C2 18.3774 2.03292 18.4537 2.09153 18.51C2.15013 18.5662 2.22962 18.5978 2.3125 18.5978H7.0625C7.20595 19.2757 7.58921 19.8853 8.14734 20.323C8.70547 20.7608 9.40415 21 10.125 21C10.8458 21 11.5445 20.7608 12.1027 20.323C12.6608 19.8853 13.0441 19.2757 13.1875 18.5978H21.6875C21.7704 18.5978 21.8499 18.5662 21.9085 18.51C21.9671 18.4537 22 18.3774 22 18.2979V17.6981C22 17.6186 21.9671 17.5423 21.9085 17.486C21.8499 17.4298 21.7704 17.3982 21.6875 17.3982ZM10.125 19.7974C9.75416 19.7974 9.39165 19.6919 9.08331 19.4941C8.77496 19.2964 8.53464 19.0154 8.39273 18.6866C8.25081 18.3578 8.21368 17.996 8.28603 17.6469C8.35837 17.2979 8.53695 16.9773 8.79917 16.7256C9.0614 16.474 9.39549 16.3026 9.75921 16.2332C10.1229 16.1637 10.4999 16.1994 10.8425 16.3356C11.1851 16.4718 11.478 16.7024 11.684 16.9983C11.89 17.2942 12 17.6421 12 17.998C12 18.4752 11.8025 18.9329 11.4508 19.2704C11.0992 19.6078 10.6223 19.7974 10.125 19.7974ZM2 11.7001V12.2999C2 12.3794 2.03292 12.4557 2.09153 12.512C2.15013 12.5682 2.22962 12.5998 2.3125 12.5998H13.3125C13.4559 13.2777 13.8392 13.8873 14.3973 14.325C14.9555 14.7628 15.6542 15.002 16.375 15.002C17.0958 15.002 17.7945 14.7628 18.3527 14.325C18.9108 13.8873 19.2941 13.2777 19.4375 12.5998H21.6875C21.7704 12.5998 21.8499 12.5682 21.9085 12.512C21.9671 12.4557 22 12.3794 22 12.2999V11.7001C22 11.6206 21.9671 11.5443 21.9085 11.488C21.8499 11.4318 21.7704 11.4002 21.6875 11.4002H19.4375C19.2941 10.7223 18.9108 10.1127 18.3527 9.67495C17.7945 9.23715 17.0958 8.998 16.375 8.998C15.6542 8.998 14.9555 9.23715 14.3973 9.67495C13.8392 10.1127 13.4559 10.7223 13.3125 11.4002H2.3125C2.22962 11.4002 2.15013 11.4318 2.09153 11.488C2.03292 11.5443 2 11.6206 2 11.7001ZM14.5 12C14.5 11.6441 14.61 11.2962 14.816 11.0003C15.022 10.7044 15.3149 10.4738 15.6575 10.3376C16.0001 10.2014 16.3771 10.1657 16.7408 10.2352C17.1045 10.3046 17.4386 10.476 17.7008 10.7276C17.963 10.9793 18.1416 11.2999 18.214 11.649C18.2863 11.998 18.2492 12.3598 18.1073 12.6886C17.9654 13.0174 17.725 13.2984 17.4167 13.4961C17.1084 13.6939 16.7458 13.7994 16.375 13.7994C15.8777 13.7994 15.4008 13.6098 15.0492 13.2724C14.6975 12.9349 14.5 12.4772 14.5 12Z" fill="#2270B1"/>
+	</svg>
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slider Settings', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">

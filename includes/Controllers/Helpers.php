@@ -196,6 +196,7 @@ class Helpers {
 			),
 			'gap_between_cards'                 => '8',
 			'content_placement'                 => 'top',
+			'overlay_content_position'          => 'top_left',
 			'content_margin'                    => 12,
 			'content_margin_is_all'             => 'no',
 			'content_margin_all'                => array(
@@ -221,6 +222,9 @@ class Helpers {
 				'hover_text_color' => '#000000',
 			),
 			// Slide tab settings data.
+			'slide_is_ticker'                   => 'no',
+			'slider_ticker_direction'           => 'left_to_right',
+			'ticket_mode'                       => 'medium',
 			'slide_slideshow'                   => 'no',
 			'slide_button_style'                => 'rounded',
 			'slide_button_background_style'     => 'filled',
