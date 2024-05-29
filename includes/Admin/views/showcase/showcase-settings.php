@@ -232,13 +232,10 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md">
 		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-content-placement">
 				<div class="<?php echo 'overlay' === $showcase_details['wcc_showcase_content_placement'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
 					<svg class="<?php echo 'overlay' === $showcase_details['wcc_showcase_content_placement'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3537)">
-							<mask id="mask0_609_3537" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="32">
-								<path d="M46 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z" fill="white"/>
-							</mask>
 							<g mask="url(#mask0_609_3537)">
 								<path d="M46 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z" fill="#D3D9DF"/>
 								<g opacity="0.5">
@@ -251,7 +248,7 @@ defined( 'ABSPATH' ) || exit;
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_placement" value="<?php echo esc_attr( 'overlay' ); ?>" <?php echo 'overlay' === $showcase_details['wcc_showcase_content_placement'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Overlay', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-content-placement">
 				<div class="<?php echo 'top' === $showcase_details['wcc_showcase_content_placement'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
 					<svg class="<?php echo 'top' === $showcase_details['wcc_showcase_content_placement'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3534)">
@@ -263,7 +260,7 @@ defined( 'ABSPATH' ) || exit;
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_placement" value="<?php echo esc_attr( 'top' ); ?>" <?php echo 'top' === $showcase_details['wcc_showcase_content_placement'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Top', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-content-placement">
 				<div class="<?php echo 'bottom' === $showcase_details['wcc_showcase_content_placement'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
 					<svg class="<?php echo 'bottom' === $showcase_details['wcc_showcase_content_placement'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3549)">
@@ -321,7 +318,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row">
+<div class="wcc_showcase-settings-row wcc-showcase-overlay-position <?php echo 'overlay' === $showcase_details['wcc_showcase_content_placement'] ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Overlay Content Position', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine where your category data will show when select overlay.', 'wc-category-showcase' ); ?></p>

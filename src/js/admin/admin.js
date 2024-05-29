@@ -68,6 +68,26 @@
 				});
 			});
 
+			$('.wcc_showcase-content-placement').on('click', function (e) {
+				var current_val = $(this).find('input:radio').val();
+				$('.wcc_showcase-content-placement').find('input:radio').each(function() {
+					if(current_val === $(this).val()){
+						$(this).attr('checked', true);
+						$(this).siblings('div').children().addClass('wcc_showcase-layout-active').removeClass('wcc_showcase-layout-primary');
+						$(this).siblings('div').addClass('wcc_showcase-layout-active-before-content-2');
+						if ( 'overlay' === $(this).val() ){
+							$('.wcc-showcase-overlay-position').removeClass('tw-hidden');
+						} else {
+							$('.wcc-showcase-overlay-position').addClass('tw-hidden');
+						}
+					} else {
+						$(this).attr('checked', false);
+						$(this).siblings('div').children().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
+						$(this).siblings('div').removeClass('wcc_showcase-layout-active-before-content-2');
+					}
+				});
+			});
+
 			// Slider Column Row Select.
 			$('.wcc-showcase-slider-column').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
