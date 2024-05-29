@@ -154,10 +154,7 @@ class Helpers {
 				'column' => '3',
 				'row'    => '1',
 			),
-			'block'                             => array(
-				'column' => '3',
-				'row'    => '2',
-			),
+			'block_column'                      => '3',
 			'number_of_grid_column'             => '3',
 			'number_of_block_column'            => '3',
 			'layout_option'                     => 'basic',
