@@ -107,27 +107,108 @@ function wc_category_showcase_test_shortcode( $atts, $content = null ) {
 	if ( 'grid' === $layout ) {
 		// Available options are:
 		// 2X: simple_1x2, simple_2x2.
-		// 3X: simple_1x3, standard_1x3, standard_2x3, cross_1x3, cross_2x3.
+		// 3X: simple_1x3, simple_2x3 standard_1x3, standard_2x3, cross_1x3, cross_2x3.
 		// 4X: crescent_1x4, crescent_2x4, zen_1x4, zen_2x4, catalog_1x4, catalog_2x4, catalog_3x4, catalog_4x4, matrix_1x4, matrix_2x4, matrix_3x4, matrix_4x4, matrix_5x4, mystic_1x4, mystic_2x4, mystic_3x4, mystic_4x4.
 		// 5X: catalog_1x5, catalog_2x5, schema_1x5, schema_2x5, modern_1x5, modern_2x5, modern_3x5.
-		// 6X: catalog_1x6, catalog_2x6, matrix_1x6, zen_1x6, zen_2x6, zen_3x6.
+		// 6X: catalog_1x6, catalog_2x6, matrix_1x6, matrix_2x6, zen_1x6, zen_2x6, zen_3x6.
 		// 7X: catalog_1x7, catalog_2x7, helix_1x7, helix_2x7.
 		$layout_option = isset( $showcase['wcc_showcase_layout_option'] ) ? 'helix_2x7' : '';
 	}
 
+	// var_dump( $showcase['wcc_showcase_card'] );
+	//
+	// 'background_color' => string '#000000' (length=7)
+	// 'text_color' => string '#000000' (length=7)
+	// 'hover_color' => string '#000000' (length=7)
+	// 'hover_text_color' => string ''
+
+	$wccs_id               = intval( $atts['id'] );
+	$card_bg_color         = $showcase['wcc_showcase_card']['background_color'] ?? '#ffffff';
+	$card_bg_hover_color   = $showcase['wcc_showcase_card']['hover_color'] ?? '#cccccc';
+	$card_text_color       = $showcase['wcc_showcase_card']['text_color'] ?? '#000000';
+	$card_text_hover_color = $showcase['wcc_showcase_card']['hover_text_color'] ?? '#cccccc';
+	$card_border_radius    = $showcase['wcc_showcase_border_radius'] ?? '8';
+	$card_gap              = $showcase['wcc_showcase_gap_between_cards'] ?? '9';
+
+	$styles = "
+		.wccs-categories__{$wccs_id}{
+			gap: {$card_gap}px!important;
+		}
+		.wccs-showcase-id__{$wccs_id}{
+			background-color: {$card_bg_color};
+			color: {$card_text_color};
+			border: 1px solid {$card_bg_hover_color};
+			border-radius: {$card_border_radius}px;
+		}
+		.wccs-showcase-id__{$wccs_id}:hover{
+			background-color: {$card_bg_hover_color};
+			color: {$card_text_hover_color};
+		}
+	";
+	wp_add_inline_style( 'wcc-showcase-showcase', $styles );
+
 	ob_start();
 	?>
 	<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
-		<div class="wccs-categories <?php echo sanitize_html_class( $layout_option ); ?>">
-			<div class="wccs-category">Showcase 1</div>
-			<div class="wccs-category">Showcase 2</div>
-			<div class="wccs-category">Showcase 3</div>
-			<div class="wccs-category">Showcase 4</div>
-			<div class="wccs-category">Showcase 5</div>
-			<div class="wccs-category">Showcase 6</div>
-			<div class="wccs-category">Showcase 7</div>
+		<?php if ( isset( $showcase['wcc_showcase_section_title'] ) || isset( $showcase['wcc_showcase_section_description'] ) ) : ?>
+		<div class="wccs-section__header text-<?php echo isset( $showcase['wcc_showcase_heading_alignment'] ) ? sanitize_html_class( $showcase['wcc_showcase_heading_alignment'] ) : 'left'; ?>">
+			<?php
+			echo isset( $showcase['wcc_showcase_section_title'] ) ? '<h2>' . esc_html( $showcase['wcc_showcase_section_title'] ) . '</h2>' : '';
+			echo isset( $showcase['wcc_showcase_section_description'] ) ? '<p>' . esc_html( $showcase['wcc_showcase_section_description'] ) . '</p>' : '';
+			?>
+		</div>
+		<?php endif; ?>
+		<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?>">
+
+			<?php
+			if ( 'slider' === $layout ) {
+				wccs_get_slider_content_html( $wccs_id, $showcase );
+			} else {
+				wccs_get_content_html( $wccs_id, $showcase );
+			}
+			?>
+
 		</div>
 	</section>
 	<?php
 	return wp_kses_post( ob_get_clean() );
+}
+
+/**
+ * Get Block/Grid content.
+ *
+ * @param int   $wccs_id Showcase ID.
+ * @param array $showcase Array of showcase data.
+ */
+function wccs_get_content_html( $wccs_id, $showcase ) {
+
+	$content_placement = $showcase['wcc_showcase_content_placement'] ?? 'top';
+	?>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>">
+		<div class="wccs-entry__head">
+			<img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) . 'assets/images/placeholder-image.png' ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+		</div>
+		<div class="wccs-entry__content">
+			<h3>The category title</h3>
+			<p>The category description</p>
+			<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+		</div>
+	</div>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 2</div>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 3</div>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 4</div>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 5</div>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 6</div>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 7</div>
+	<?php
+}
+
+/**
+ * Slider content.
+ *
+ * @param int   $wccs_id Showcase ID.
+ * @param array $showcase Array of showcase data.
+ */
+function wccs_get_slider_content_html( $wccs_id, $showcase ) {
+	echo 'slider content';
 }

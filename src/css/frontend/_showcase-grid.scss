@@ -5,7 +5,7 @@
 		gap: 1.25rem;
 		grid-template-columns: repeat(1, 1fr);
 		.wccs-category{
-			border: 1px solid red;
+			// Common style for every single category item.
 		}
 
 		// Grid layout options for 2x.
@@ -219,6 +219,7 @@
 				grid-row: span 2;
 			}
 		}
+		// Grid layout options for 5x.
 		&.catalog_1x5{
 			grid-template-columns: repeat(4, 1fr);
 			.wccs-category:nth-child(1) {
@@ -261,6 +262,7 @@
 				grid-row: span 2;
 			}
 		}
+		// Grid layout options for 6x.
 		&.catalog_1x6{
 			grid-template-columns: repeat(4, 1fr);
 			.wccs-category:nth-child(3) {
@@ -324,6 +326,7 @@
 				grid-row: span 2;
 			}
 		}
+		// Grid layout options for 7x.
 		&.catalog_1x7{
 			grid-template-columns: repeat(5, 1fr);
 			.wccs-category:nth-child(1) {
@@ -367,13 +370,10 @@
 	}
 	@media (max-width: 768px) {
 		.wccs-categories {
-			//gap: 1rem;
-			//grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
 		}
 	}
 	@media (max-width: 776px) {
-		.wccs-categories {
-			//grid-template-columns: repeat(1, 1fr);
-		}
+		.wccs-categories {}
 	}
 }
