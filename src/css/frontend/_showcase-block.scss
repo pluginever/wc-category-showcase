@@ -1,13 +1,14 @@
-//:root {
-//	--wccs--rows: repeat(4, 1fr); // TODO: The value should be dynamic & set to the css root variable to the wp_head
-//	--wccs--mobile-rows: repeat(1, 1fr);
-//}
-
 // Global section style.
 .wccs-section {
 	border: 1px solid red;
 	&.is-layout__block {
 		border: 1px solid green;
+	}
+	&.is-layout__grid {
+		border: 1px solid black;
+	}
+	&.is-layout__slide {
+		border: 1px solid blue;
 	}
 }
 

@@ -93,24 +93,39 @@ function wc_category_showcase_test_shortcode( $atts, $content = null ) {
 		return null;
 	}
 
-	$content  = $content ?? null;
-	$showcase = WooCommerceCategoryShowcase\Controllers\Helpers::get_slider_settings( $atts['id'] );
-
 	wp_enqueue_style( 'wcc-showcase-showcase' );
 	wp_enqueue_script( 'wcc-showcase-showcase' );
 
-	$layout  = isset( $showcase['wcc_showcase_layout'] ) ? 'is-layout__' . $showcase['wcc_showcase_layout'] : 'is-layout__default';
-	$rows    = isset( $showcase['wcc_showcase_block']['row'] ) ? 'row__x' . $showcase['wcc_showcase_block']['row'] : 'row__x1';
-	$columns = isset( $showcase['wcc_showcase_block']['column'] ) ? 'column__x' . $showcase['wcc_showcase_block']['column'] : 'column__x1';
+	$content       = $content ?? null;
+	$showcase      = WooCommerceCategoryShowcase\Controllers\Helpers::get_slider_settings( $atts['id'] );
+	$layout        = isset( $showcase['wcc_showcase_layout'] ) ? $showcase['wcc_showcase_layout'] : 'default';
+	$layout_option = '';
+
+	if ( 'block' === $layout ) {
+		$layout_option = isset( $showcase['wcc_showcase_block']['column'] ) ? 'column__x' . $showcase['wcc_showcase_block']['column'] : 'column__x1';
+	}
+	if ( 'grid' === $layout ) {
+		// Available options are:
+		// 2X: simple_1x2, simple_2x2.
+		// 3X: simple_1x3, standard_1x3, standard_2x3, cross_1x3, cross_2x3.
+		// 4X: crescent_1x4, crescent_2x4, zen_1x4, zen_2x4, catalog_1x4, catalog_2x4, catalog_3x4, catalog_4x4, matrix_1x4, matrix_2x4, matrix_3x4, matrix_4x4, matrix_5x4, mystic_1x4, mystic_2x4, mystic_3x4, mystic_4x4.
+		// 5X: catalog_1x5, catalog_2x5, schema_1x5, schema_2x5, modern_1x5, modern_2x5, modern_3x5.
+		// 6X: catalog_1x6, catalog_2x6, matrix_1x6, zen_1x6, zen_2x6, zen_3x6.
+		// 7X: catalog_1x7, catalog_2x7, helix_1x7, helix_2x7.
+		$layout_option = isset( $showcase['wcc_showcase_layout_option'] ) ? 'helix_2x7' : '';
+	}
 
 	ob_start();
 	?>
-	<section class="wccs-section <?php echo sanitize_html_class( $layout ); ?>">
-		<div class="wccs-categories <?php echo sanitize_html_class( $rows ); ?> <?php echo sanitize_html_class( $columns ); ?>">
+	<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
+		<div class="wccs-categories <?php echo sanitize_html_class( $layout_option ); ?>">
 			<div class="wccs-category">Showcase 1</div>
 			<div class="wccs-category">Showcase 2</div>
 			<div class="wccs-category">Showcase 3</div>
 			<div class="wccs-category">Showcase 4</div>
+			<div class="wccs-category">Showcase 5</div>
+			<div class="wccs-category">Showcase 6</div>
+			<div class="wccs-category">Showcase 7</div>
 		</div>
 	</section>
 	<?php
