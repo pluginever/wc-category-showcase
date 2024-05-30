@@ -52,7 +52,7 @@ class Shortcodes {
 		$wccs_id  = intval( $atts['id'] );
 		$showcase = Helpers::get_slider_settings( $wccs_id );
 
-		$layout        = isset( $showcase['wcc_showcase_layout'] ) ? $showcase['wcc_showcase_layout'] : 'default';
+		$layout        = isset( $showcase['wcc_showcase_layout'] ) ? $showcase['wcc_showcase_layout'] : 'slider';
 		$layout_option = '';
 
 		if ( 'block' === $layout ) {
@@ -96,15 +96,7 @@ class Shortcodes {
 
 		ob_start();
 
-		switch ( $layout ) {
-			case 'slider':
-				$slider_class_list = self::get_slider_classes( $showcase );
-				$slider_config     = self::get_slider_config( $showcase );
-				self::get_slider_content_html( $wccs_id, $layout, $showcase, $slider_class_list, $slider_config );
-				break;
-
-			default:
-				?>
+		?>
 				<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
 					<?php if ( isset( $showcase['wcc_showcase_section_title'] ) || isset( $showcase['wcc_showcase_section_description'] ) ) : ?>
 						<div class="wccs-section__header text-<?php echo isset( $showcase['wcc_showcase_heading_alignment'] ) ? sanitize_html_class( $showcase['wcc_showcase_heading_alignment'] ) : 'left'; ?>">
@@ -115,13 +107,23 @@ class Shortcodes {
 						</div>
 					<?php endif; ?>
 					<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?>">
-						<?php self::get_content_html( $wccs_id, $layout, $showcase ); ?>
+						<?php
+						switch ( $layout ) {
+							case 'slider':
+								$slider_class_list = self::get_slider_classes( $showcase );
+								$slider_config     = self::get_slider_config( $showcase );
+								self::get_slider_content_html( $wccs_id, $layout, $showcase, $slider_class_list, $slider_config );
+								break;
+							default:
+								self::get_content_html( $wccs_id, $layout, $showcase );
+								break;
+						}
+						?>
 					</div>
 				</section>
-				<?php
-		}
+								<?php
 
-		return wp_kses_post( ob_get_clean() );
+								return wp_kses_post( ob_get_clean() );
 	}
 
 	/**
@@ -272,25 +274,13 @@ class Shortcodes {
 
 		$post_id           = $wccs_id;
 		$category_showcase = $showcase;
-		$block_count       = 'block' === $layout ? $category_showcase['wcc_showcase_number_of_block_column'] : $category_showcase['wcc_showcase_number_of_grid_column'];
 		$categories        = $category_showcase['wcc_showcase_specific_category_select'];
 		$slider_class_list = $class_list;
 		$slider_config     = $config;
 
 		?>
-		<div class="wcc-showcase-slider-<?php echo esc_attr( $post_id ); ?> <?php echo sanitize_html_class( $slider_class_list ); ?> is_content_top_left">
-			<?php if ( 'yes' === $category_showcase['wcc_showcase_show_section_title'] || 'yes' === $category_showcase['wcc_showcase_show_section_description'] ) { ?>
-				<div class="wcc-showcase__slider-heading">
-					<?php if ( 'yes' === $category_showcase['wcc_showcase_show_section_title'] ) { ?>
-						<h2><?php echo esc_attr( $category_showcase['wcc_showcase_section_title'] ); ?></h2>
-					<?php } ?>
-					<?php if ( 'yes' === $category_showcase['wcc_showcase_show_section_description'] ) { ?>
-						<p><?php echo esc_attr( $category_showcase['wcc_showcase_section_description'] ); ?></p>
-					<?php } ?>
-				</div>
-			<?php } ?>
-			<div class="wcc-showcase__slider-body">
-				<section class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-grid='{"rows": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
+
+		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-grid='{"rows": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
 					<div class="splide__track">
 						<ul class="splide__list">
 							<?php
@@ -368,9 +358,7 @@ class Shortcodes {
 					<div class="wcc-showcase__pagination">
 						<ul class="splide__pagination"></ul>
 					</div>
-				</section>
-			</div>
-		</div>
+				</div>
 		<?php
 	}
 
