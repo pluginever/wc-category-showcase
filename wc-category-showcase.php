@@ -112,16 +112,10 @@ function wc_category_showcase_test_shortcode( $atts, $content = null ) {
 		// 5X: catalog_1x5, catalog_2x5, schema_1x5, schema_2x5, modern_1x5, modern_2x5, modern_3x5.
 		// 6X: catalog_1x6, catalog_2x6, matrix_1x6, matrix_2x6, zen_1x6, zen_2x6, zen_3x6.
 		// 7X: catalog_1x7, catalog_2x7, helix_1x7, helix_2x7.
-		$layout_option = isset( $showcase['wcc_showcase_layout_option'] ) ? 'helix_2x7' : '';
+		$layout_option = isset( $showcase['wcc_showcase_layout_option'] ) ? sanitize_key( $showcase['wcc_showcase_layout_option'] ) : '';
 	}
 
-	// var_dump( $showcase['wcc_showcase_card'] );
-	//
-	// 'background_color' => string '#000000' (length=7)
-	// 'text_color' => string '#000000' (length=7)
-	// 'hover_color' => string '#000000' (length=7)
-	// 'hover_text_color' => string ''
-
+	// Get the showcase individual style.
 	$wccs_id               = intval( $atts['id'] );
 	$card_bg_color         = $showcase['wcc_showcase_card']['background_color'] ?? '#ffffff';
 	$card_bg_hover_color   = $showcase['wcc_showcase_card']['hover_color'] ?? '#cccccc';
@@ -159,15 +153,13 @@ function wc_category_showcase_test_shortcode( $atts, $content = null ) {
 		</div>
 		<?php endif; ?>
 		<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?>">
-
 			<?php
 			if ( 'slider' === $layout ) {
-				wccs_get_slider_content_html( $wccs_id, $showcase );
+				wccs_get_slider_content_html( $wccs_id, $layout, $showcase );
 			} else {
-				wccs_get_content_html( $wccs_id, $showcase );
+				wccs_get_content_html( $wccs_id, $layout, $showcase );
 			}
 			?>
-
 		</div>
 	</section>
 	<?php
@@ -177,38 +169,144 @@ function wc_category_showcase_test_shortcode( $atts, $content = null ) {
 /**
  * Get Block/Grid content.
  *
- * @param int   $wccs_id Showcase ID.
- * @param array $showcase Array of showcase data.
+ * @param int    $wccs_id Showcase ID.
+ * @param string $layout Current layout.
+ * @param array  $showcase Array of showcase data.
  */
-function wccs_get_content_html( $wccs_id, $showcase ) {
+function wccs_get_content_html( $wccs_id, $layout, $showcase ) {
 
 	$content_placement = $showcase['wcc_showcase_content_placement'] ?? 'top';
+	$content_position  = $showcase['wcc_showcase_overlay_content_position'] ?? 'center_center';
+	$thumbnail_img     = plugin_dir_url( __FILE__ ) . 'assets/images/category-placeholder-img1.png';
 	?>
-	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>">
-		<div class="wccs-entry__head">
-			<img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) . 'assets/images/placeholder-image.png' ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
-		</div>
-		<div class="wccs-entry__content">
-			<h3>The category title</h3>
-			<p>The category description</p>
-			<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+		<?php if ( 'block' === $layout ) : ?>
+			<div class="wccs-entry__head">
+				<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+			</div>
+		<?php endif; ?>
+
+		<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+			<div class="wccs-entry__content-inner">
+				<h3>The category title</h3>
+				<p>The category description</p>
+				<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+			</div>
 		</div>
 	</div>
-	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 2</div>
-	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 3</div>
-	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 4</div>
-	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 5</div>
-	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 6</div>
-	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?>">Showcase 7</div>
+
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+		<?php if ( 'block' === $layout ) : ?>
+			<div class="wccs-entry__head">
+				<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+			</div>
+		<?php endif; ?>
+
+		<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+			<div class="wccs-entry__content-inner">
+				<h3>The category title</h3>
+				<p>The category description</p>
+				<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+		<?php if ( 'block' === $layout ) : ?>
+			<div class="wccs-entry__head">
+				<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+			</div>
+		<?php endif; ?>
+
+		<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+			<div class="wccs-entry__content-inner">
+				<h3>The category title</h3>
+				<p>The category description</p>
+				<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+		<?php if ( 'block' === $layout ) : ?>
+			<div class="wccs-entry__head">
+				<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+			</div>
+		<?php endif; ?>
+
+		<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+			<div class="wccs-entry__content-inner">
+				<h3>The category title</h3>
+				<p>The category description</p>
+				<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+		<?php if ( 'block' === $layout ) : ?>
+			<div class="wccs-entry__head">
+				<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+			</div>
+		<?php endif; ?>
+
+		<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+			<div class="wccs-entry__content-inner">
+				<h3>The category title</h3>
+				<p>The category description</p>
+				<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+		<?php if ( 'block' === $layout ) : ?>
+			<div class="wccs-entry__head">
+				<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+			</div>
+		<?php endif; ?>
+
+		<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+			<div class="wccs-entry__content-inner">
+				<h3>The category title</h3>
+				<p>The category description</p>
+				<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+		<?php if ( 'block' === $layout ) : ?>
+			<div class="wccs-entry__head">
+				<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+			</div>
+		<?php endif; ?>
+
+		<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+			<div class="wccs-entry__content-inner">
+				<h3>The category title</h3>
+				<p>The category description</p>
+				<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+			</div>
+		</div>
+	</div>
 	<?php
 }
 
 /**
  * Slider content.
  *
- * @param int   $wccs_id Showcase ID.
- * @param array $showcase Array of showcase data.
+ * @param int    $wccs_id Showcase ID.
+ * @param string $layout The current layout.
+ * @param array  $showcase Array of showcase data.
  */
-function wccs_get_slider_content_html( $wccs_id, $showcase ) {
+function wccs_get_slider_content_html( $wccs_id, $layout, $showcase ) {
 	echo 'slider content';
 }

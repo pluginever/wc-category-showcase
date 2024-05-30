@@ -25,8 +25,8 @@
 	}
 }
 
-// Single category/card style
-.wccs-section__body{
+// Single category/card style: Block.
+.is-layout__block{
 	.wccs-category{
 		// common style for every single card item
 		&.wccs-content__bottom{
@@ -45,8 +45,21 @@
 			display: flex;
 			flex-direction: row-reverse;
 		}
-		&.wccs-content__overly{
+		&.wccs-content__overlay{
 			position: relative;
+			.wccs-entry__content{
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				padding: 1rem;
+				background-color: rgba(0, 0, 0, 0.5);
+				color: #fff!important;
+				h3{
+					color: #fff;
+				}
+			}
 		}
 	}
 	.wccs-entry__head{
@@ -57,9 +70,6 @@
 		}
 	}
 }
-
-
-
 
 // Layout style: Block.
 .is-layout__block {
