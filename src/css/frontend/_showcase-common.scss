@@ -1,0 +1,47 @@
+// Global section style.
+.wccs-section {
+	border: 1px solid red;
+	.text-left{
+		text-align: left;
+	}
+	.text-center{
+		text-align: center;
+	}
+	.text-right{
+		text-align: right;
+	}
+	.wccs-section__header{
+		padding: 1rem;
+	}
+
+	// Layout specific style.
+	&.is-layout__block {
+		border: 1px solid green;
+	}
+	&.is-layout__grid {
+		border: 1px solid black;
+	}
+	&.is-layout__slide {
+		border: 1px solid blue;
+	}
+}
+
+// Global category card style.
+.wccs-category{
+	.wccs-entry__head{
+
+	}
+	.wccs-entry__content{
+		border: 1px solid black;
+		padding: 0.625rem;
+	}
+}
+
+// Showcase button global style.
+.wccs-showcase-btn{
+	border: 1px solid #130F31;
+	color: #020617;
+	text-decoration: none!important;
+	padding: 10px 20px;
+	display: inline-block;
+}

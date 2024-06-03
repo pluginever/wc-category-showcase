@@ -56,7 +56,7 @@ class Shortcodes {
 		$layout_option = '';
 
 		if ( 'block' === $layout ) {
-			$layout_option = isset( $showcase['wcc_showcase_block']['column'] ) ? 'column__x' . $showcase['wcc_showcase_block']['column'] : 'column__x1';
+			$layout_option = isset( $showcase['wcc_showcase_block_column'] ) ? 'column__x' . $showcase['wcc_showcase_block_column'] : 'column__x1';
 		}
 		if ( 'grid' === $layout ) {
 			// Available options are:
@@ -97,33 +97,33 @@ class Shortcodes {
 		ob_start();
 
 		?>
-				<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
-					<?php if ( isset( $showcase['wcc_showcase_section_title'] ) || isset( $showcase['wcc_showcase_section_description'] ) ) : ?>
-						<div class="wccs-section__header text-<?php echo isset( $showcase['wcc_showcase_heading_alignment'] ) ? sanitize_html_class( $showcase['wcc_showcase_heading_alignment'] ) : 'left'; ?>">
-							<?php
-							echo isset( $showcase['wcc_showcase_section_title'] ) ? '<h2>' . esc_html( $showcase['wcc_showcase_section_title'] ) . '</h2>' : '';
-							echo isset( $showcase['wcc_showcase_section_description'] ) ? '<p>' . esc_html( $showcase['wcc_showcase_section_description'] ) . '</p>' : '';
-							?>
-						</div>
-					<?php endif; ?>
-					<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?>">
-						<?php
-						switch ( $layout ) {
-							case 'slider':
-								$slider_class_list = self::get_slider_classes( $showcase );
-								$slider_config     = self::get_slider_config( $showcase );
-								self::get_slider_content_html( $wccs_id, $layout, $showcase, $slider_class_list, $slider_config );
-								break;
-							default:
-								self::get_content_html( $wccs_id, $layout, $showcase );
-								break;
-						}
-						?>
-					</div>
-				</section>
-								<?php
+		<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
+			<?php if ( isset( $showcase['wcc_showcase_section_title'] ) || isset( $showcase['wcc_showcase_section_description'] ) ) : ?>
+				<div class="wccs-section__header text-<?php echo isset( $showcase['wcc_showcase_heading_alignment'] ) ? sanitize_html_class( $showcase['wcc_showcase_heading_alignment'] ) : 'left'; ?>">
+					<?php
+					echo isset( $showcase['wcc_showcase_section_title'] ) ? '<h2>' . esc_html( $showcase['wcc_showcase_section_title'] ) . '</h2>' : '';
+					echo isset( $showcase['wcc_showcase_section_description'] ) ? '<p>' . esc_html( $showcase['wcc_showcase_section_description'] ) . '</p>' : '';
+					?>
+				</div>
+			<?php endif; ?>
+			<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?>">
+			<?php
+			switch ( $layout ) {
+				case 'slider':
+					$slider_class_list = self::get_slider_classes( $showcase );
+					$slider_config     = self::get_slider_config( $showcase );
+					self::get_slider_content_html( $wccs_id, $layout, $showcase, $slider_class_list, $slider_config );
+					break;
+				default:
+					self::get_content_html( $wccs_id, $layout, $showcase );
+					break;
+			}
+			?>
+			</div>
+		</section>
+		<?php
 
-								return wp_kses_post( ob_get_clean() );
+		return wp_kses_post( ob_get_clean() );
 	}
 
 	/**
@@ -147,11 +147,28 @@ class Shortcodes {
 				</div>
 			<?php endif; ?>
 
+			<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+				<div class="wccs-entry__content-inner">
+					<h3>The category title</h3>
+					<p>The category description</p>
+					<a class="btn wccs-showcase-btn" href="#"><span>Shop Now ⟶</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="wccs-category text-center wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+
+			<?php if ( 'block' === $layout ) : ?>
+				<div class="wccs-entry__head">
+					<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
+				</div>
+			<?php endif; ?>
+
 			<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
 				<div class="wccs-entry__content-inner">
 					<h3>The category title</h3>
 					<p>The category description</p>
-					<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+					<a class="btn wccs-showcase-btn" href="#">Shop Now ⟶</a>
 				</div>
 			</div>
 		</div>
@@ -168,7 +185,7 @@ class Shortcodes {
 				<div class="wccs-entry__content-inner">
 					<h3>The category title</h3>
 					<p>The category description</p>
-					<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+					<a class="btn wccs-showcase-btn" href="#">Shop Now ⟶</a>
 				</div>
 			</div>
 		</div>
@@ -185,7 +202,7 @@ class Shortcodes {
 				<div class="wccs-entry__content-inner">
 					<h3>The category title</h3>
 					<p>The category description</p>
-					<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+					<a class="btn wccs-showcase-btn" href="#">Shop Now ⟶</a>
 				</div>
 			</div>
 		</div>
@@ -202,7 +219,7 @@ class Shortcodes {
 				<div class="wccs-entry__content-inner">
 					<h3>The category title</h3>
 					<p>The category description</p>
-					<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+					<a class="btn wccs-showcase-btn" href="#">Shop Now ⟶</a>
 				</div>
 			</div>
 		</div>
@@ -219,7 +236,7 @@ class Shortcodes {
 				<div class="wccs-entry__content-inner">
 					<h3>The category title</h3>
 					<p>The category description</p>
-					<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+					<a class="btn wccs-showcase-btn" href="#">Shop Now ⟶</a>
 				</div>
 			</div>
 		</div>
@@ -236,24 +253,7 @@ class Shortcodes {
 				<div class="wccs-entry__content-inner">
 					<h3>The category title</h3>
 					<p>The category description</p>
-					<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
-
-			<?php if ( 'block' === $layout ) : ?>
-				<div class="wccs-entry__head">
-					<img src="<?php echo esc_url( $thumbnail_img ); ?>" alt="<?php echo esc_html( 'Image alt text/Category heading text' ); ?>">
-				</div>
-			<?php endif; ?>
-
-			<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
-				<div class="wccs-entry__content-inner">
-					<h3>The category title</h3>
-					<p>The category description</p>
-					<a class="btn wccs-showcase-btn" href="#">Shop Now</a>
+					<a class="btn wccs-showcase-btn" href="#">Shop Now ⟶</a>
 				</div>
 			</div>
 		</div>
@@ -274,7 +274,7 @@ class Shortcodes {
 
 		$post_id           = $wccs_id;
 		$category_showcase = $showcase;
-		$categories        = $category_showcase['wcc_showcase_specific_category_select'];
+		$categories        = isset( $category_showcase['wcc_showcase_specific_category_select'] ) ? $category_showcase['wcc_showcase_specific_category_select'] : array();
 		$slider_class_list = $class_list;
 		$slider_config     = $config;
 
