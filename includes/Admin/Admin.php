@@ -68,7 +68,7 @@ class Admin {
 		// Early core enqueue.
 		wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/css/admin.css' );
 		wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/js/admin.js', array(), true );
-
+		wp_enqueue_media();
 		wp_localize_script(
 			'wcc_showcase-admin',
 			'wcc_showcase_admin_js_vars',
@@ -265,7 +265,7 @@ class Admin {
 			wp_send_json_success( esc_html__( 'No, search term id provided.', 'wc-category-showcase' ) );
 			wp_die();
 		}
-		include __DIR__ . '/views/showcase/load-category-details.php';
+		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
 		wp_die();
 	}
 }

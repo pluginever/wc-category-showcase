@@ -1209,16 +1209,29 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-flex-col tw-items-center">
 		<div class="tw-min-w-[400px] tw-max-w-[400px]">
-			<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100">
-				<?php if ( ! empty( $showcase_details['wcc_showcase_specific_category_select'] ) ) : ?>
-					<?php foreach ( $showcase_details['wcc_showcase_specific_category_select'] as $category_id ) : ?>
-						<option value="<?php echo esc_attr( $category_id ); ?>" selected="selected"><?php echo esc_attr( \WooCommerceCategoryShowcase\Controllers\Helpers::get_category_title( $category_id ) ); ?></option>
-					<?php endforeach; ?>
-				<?php endif; ?>
-			</select>
+				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_selectd" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 ">
+					<?php
+					$categories          = get_terms(
+						array(
+							'taxonomy' => 'product_cat',
+						)
+					);
+					$selected_categories = isset( $showcase_details['wcc_showcase_specific_category_select'] ) ? map_deep( $showcase_details['wcc_showcase_specific_category_select'], 'absint' ) : array();
+					if ( ! empty( $categories ) ) :
+						?>
+						<?php foreach ( $categories as $category ) : ?>
+							<option value="<?php echo esc_attr( $category->term_id ); ?>" <?php echo ( in_array( $category->term_id, $selected_categories, true ) ) ? 'selected="selected"' : ''; ?>"><?php echo esc_attr( $category->name ); ?>
+						<?php endforeach; ?>
+					<?php endif; ?>
+				</select>
+
 		</div>
 		<div class="tw-mt-6 wcc_showcase-selected-category-list">
-			<div class="wcc_showcase-category-list-item"></div>
+			<?php
+			foreach ( $selected_categories as $term_id ) {
+				include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+			}
+			?>
 		</div>
 		<div class="tw-width-[56px] tw-h-[56px] wcc_showcase-loader tw-hidden">
 			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">

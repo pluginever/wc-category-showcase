@@ -38,7 +38,7 @@ class Plugin extends ByteKit\Core\Plugin {
 		define( 'WC_CATEGORY_SHOWCASE_FILE', $this->get_file() );
 		define( 'WC_CATEGORY_SHOWCASE_PATH', $this->get_dir_path() . '/' );
 		define( 'WC_CATEGORY_SHOWCASE_ASSETS_URL', $this->get_assets_url() );
-		define( 'WC_CATEGORY_SHOWCASE_TEMPLATES_URL', $this->get_assets_url() . 'templates/' );
+		define( 'WC_CATEGORY_SHOWCASE_TEMPLATES_URL', $this->get_dir_path() . 'templates/' );
 	}
 
 	/**

@@ -359,6 +359,47 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
+<div class="wcc_showcase-settings-row wcc-showcase-content-position <?php echo 'overlay' === $showcase_details['wcc_showcase_content_placement'] ? 'tw-hidden' : ''; ?>"">
+	<div class="tw-w-1/3">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Content Alignment', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md tw-justify-center">
+		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-content-alignment">
+				<div class="<?php echo 'left' === $showcase_details['wcc_showcase_content_alignment'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 'left' === $showcase_details['wcc_showcase_content_alignment'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="currentColor">
+						<path d="M3.25 1H2.75C2.61193 1 2.5 1.11193 2.5 1.25V18.75C2.5 18.8881 2.61193 19 2.75 19H3.25C3.38807 19 3.5 18.8881 3.5 18.75V1.25C3.5 1.11193 3.38807 1 3.25 1Z"/>
+						<path d="M17 11H5C4.72386 11 4.5 11.2239 4.5 11.5V15.5C4.5 15.7761 4.72386 16 5 16H17C17.2761 16 17.5 15.7761 17.5 15.5V11.5C17.5 11.2239 17.2761 11 17 11Z"/>
+						<path d="M12 4H5C4.72386 4 4.5 4.22386 4.5 4.5V8.5C4.5 8.77614 4.72386 9 5 9H12C12.2761 9 12.5 8.77614 12.5 8.5V4.5C12.5 4.22386 12.2761 4 12 4Z"/>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_alignment" value="<?php echo esc_attr( 'left' ); ?>" <?php echo 'left' === $showcase_details['wcc_showcase_content_alignment'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( 'Left', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-content-alignment">
+				<div class="<?php echo 'center' === $showcase_details['wcc_showcase_content_alignment'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 'center' === $showcase_details['wcc_showcase_content_alignment'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="currentColor">
+						<path d="M16 11H10.5V9H14C14.1326 9 14.2598 8.94732 14.3536 8.85355C14.4473 8.75979 14.5 8.63261 14.5 8.5V4.5C14.5 4.36739 14.4473 4.24021 14.3536 4.14645C14.2598 4.05268 14.1326 4 14 4H10.5V1.25C10.5 1.1837 10.4737 1.12011 10.4268 1.07322C10.3799 1.02634 10.3163 1 10.25 1H9.75C9.6837 1 9.62011 1.02634 9.57322 1.07322C9.52634 1.12011 9.5 1.1837 9.5 1.25V4H6C5.86739 4 5.74021 4.05268 5.64645 4.14645C5.55268 4.24021 5.5 4.36739 5.5 4.5V8.5C5.5 8.63261 5.55268 8.75979 5.64645 8.85355C5.74021 8.94732 5.86739 9 6 9H9.5V11H4C3.86739 11 3.74021 11.0527 3.64645 11.1464C3.55268 11.2402 3.5 11.3674 3.5 11.5V15.5C3.5 15.6326 3.55268 15.7598 3.64645 15.8536C3.74021 15.9473 3.86739 16 4 16H9.5V18.75C9.5 18.8163 9.52634 18.8799 9.57322 18.9268C9.62011 18.9737 9.6837 19 9.75 19H10.25C10.3163 19 10.3799 18.9737 10.4268 18.9268C10.4737 18.8799 10.5 18.8163 10.5 18.75V16H16C16.1326 16 16.2598 15.9473 16.3536 15.8536C16.4473 15.7598 16.5 15.6326 16.5 15.5V11.5C16.5 11.3674 16.4473 11.2402 16.3536 11.1464C16.2598 11.0527 16.1326 11 16 11Z"/>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_alignment" value="<?php echo esc_attr( 'center' ); ?>" <?php echo 'center' === $showcase_details['wcc_showcase_content_alignment'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( 'Center', 'wc-category-showcase' ); ?></span>
+			</div>
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc-showcase-content-alignment">
+				<div class="<?php echo 'right' === $showcase_details['wcc_showcase_content_alignment'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+					<svg class="<?php echo 'right' === $showcase_details['wcc_showcase_content_alignment'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 20" fill="currentColor">
+						<path d="M15.584 0H15.084C14.9459 0 14.834 0.111929 14.834 0.25V17.75C14.834 17.8881 14.9459 18 15.084 18H15.584C15.7221 18 15.834 17.8881 15.834 17.75V0.25C15.834 0.111929 15.7221 0 15.584 0Z"/>
+						<path d="M13.334 10H1.33398C1.05784 10 0.833984 10.2239 0.833984 10.5V14.5C0.833984 14.7761 1.05784 15 1.33398 15H13.334C13.6101 15 13.834 14.7761 13.834 14.5V10.5C13.834 10.2239 13.6101 10 13.334 10Z"/>
+						<path d="M13.334 3H6.33398C6.05784 3 5.83398 3.22386 5.83398 3.5V7.5C5.83398 7.77614 6.05784 8 6.33398 8H13.334C13.6101 8 13.834 7.77614 13.834 7.5V3.5C13.834 3.22386 13.6101 3 13.334 3Z"/>
+					</svg>
+				</div>
+				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_alignment" value="<?php echo esc_attr( 'right' ); ?>" <?php echo 'right' === $showcase_details['wcc_showcase_content_alignment'] ? 'checked' : ''; ?>>
+				<span><?php esc_html_e( 'Right', 'wc-category-showcase' ); ?></span>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Content Margin', 'wc-category-showcase' ); ?></h3>

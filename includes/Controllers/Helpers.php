@@ -28,11 +28,17 @@ class Helpers {
 			$category_details['slug']             = esc_attr( $category->slug );
 			$category_details['description']      = wp_kses_post( $category->description );
 			$category_details['image_url']        = esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) );
-			$category_details['icon_url']         = esc_url( esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/category-placeholder-icon.jpg' ) );
+			$category_details['icon_url']         = esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/category-placeholder-icon.jpg' );
+			$category_details['is_icon']          = esc_attr( 'no' );
 			$category_details['cat_link']         = esc_url( get_category_link( $category->term_id ) );
 			$category_details['custom_text']      = esc_attr( 'Price Range: $250 - $1100' );
+			$category_details['is_custom_text']   = esc_attr( 'no' );
+			$category_details['label_text']       = esc_attr( '25% off Today' );
+			$category_details['label_color']      = esc_attr( 'green' );
+			$category_details['is_label']         = esc_attr( 'no' );
 			$category_details['total_count']      = self::get_product_count_in_category( $category->term_id );
 			$category_details['child_categories'] = self::get_child_categories( $category->term_id );
+			$category_details['position']         = esc_attr( '0' );
 		}
 		return $category_details;
 	}
@@ -194,6 +200,7 @@ class Helpers {
 			'gap_between_cards'                 => '8',
 			'content_placement'                 => 'top',
 			'overlay_content_position'          => 'top_left',
+			'content_alignment'                 => 'left',
 			'content_margin'                    => 12,
 			'content_margin_is_all'             => 'no',
 			'content_margin_all'                => array(

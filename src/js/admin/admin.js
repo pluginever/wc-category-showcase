@@ -77,9 +77,26 @@
 						$(this).siblings('div').addClass('wcc_showcase-layout-active-before-content-2');
 						if ( 'overlay' === $(this).val() ){
 							$('.wcc-showcase-overlay-position').removeClass('tw-hidden');
+							$('.wcc-showcase-content-position').addClass('tw-hidden');
 						} else {
 							$('.wcc-showcase-overlay-position').addClass('tw-hidden');
+							$('.wcc-showcase-content-position').removeClass('tw-hidden');
 						}
+					} else {
+						$(this).attr('checked', false);
+						$(this).siblings('div').children().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
+						$(this).siblings('div').removeClass('wcc_showcase-layout-active-before-content-2');
+					}
+				});
+			});
+
+			$('.wcc-showcase-content-alignment').on('click', function (e) {
+				var current_val = $(this).find('input:radio').val();
+				$('.wcc-showcase-content-alignment').find('input:radio').each(function() {
+					if ( current_val === $(this).val() ) {
+						$(this).attr('checked', true);
+						$(this).siblings('div').children().addClass('wcc_showcase-layout-active').removeClass('wcc_showcase-layout-primary');
+						$(this).siblings('div').addClass('wcc_showcase-layout-active-before-content-2');
 					} else {
 						$(this).attr('checked', false);
 						$(this).siblings('div').children().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
@@ -305,6 +322,7 @@
 				});
 			});
 
+
 			$('.wcc_showcase-ticker-mode').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
 				$('.wcc_showcase-ticker-mode').find('input:radio').each(function() {
@@ -351,6 +369,8 @@
 			}).blur(function() {
 				$(this).siblings('span').removeClass('tw-text-fade-blue-600').addClass('tw-text-text-grey-500');
 			});
+
+
 		}
 	};
 
@@ -363,6 +383,42 @@
 
 // Category Sorting.
 jQuery(document).ready(function($) {
+
+	var mediaUploader;
+	$('.wcc_showcase-upload-button').on( 'click', function(e){
+		e.preventDefault();
+		var img_set = $(this).siblings('.img-upload');
+		var img_url = $(this).siblings('.image_url');
+		console.log(img_set);
+		// If the uploader object has already been created, reopen the dialog
+		if (mediaUploader) {
+			mediaUploader.open();
+			return;
+		}
+
+		// Extend the wp.media object
+		mediaUploader = wp.media.frames.file_frame = wp.media({
+			title: 'Choose Image',
+			button: {
+				text: 'Choose Image'
+			},
+			multiple: false
+		});
+
+		// When a file is selected, grab the URL and set it as the value of the hidden input field
+		mediaUploader.on('select', function() {
+			var attachment = mediaUploader.state().get('selection').first().toJSON();
+			img_set.val(attachment.url);
+			img_url.attr('src', attachment.url).show();
+		});
+
+		// Open the uploader dialog
+		mediaUploader.open();
+
+	});
+
+
+
 	// Attribute ordering drag
 	var tabs = $( '.wcc_showcase-selected-category-list' );
 	if ( tabs.length ) {
@@ -391,36 +447,90 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	$(document).on('change', '.select2-selection__rendered', function() {
-		var catIdArrayList = [];
-		var myInterval = setInterval(function () {
-			$('#wcc_showcase_specific_category_select option').each(function() {
-				catIdArrayList.push($(this).val());
+	$('#wcc_showcase_specific_category_selectd').select2();
+	let selectedValues = new Set();
+	$('#wcc_showcase_specific_category_selectd').on('change', function(e) {
+		let newSelected = $(this).val().filter(value => !selectedValues.has(value));
+		newSelected.forEach(value => selectedValues.add(value));
+
+		if (newSelected.length > 0) {
+			$.ajax({
+				type: 'post',
+				url: wcc_showcase_admin_js_vars.ajax_url,
+				data: {
+					action: 'wc_category_showcase_get_category_details',
+					nonce: wcc_showcase_admin_js_vars.search_nonce,
+					term_id: newSelected[0],
+				},
+				beforeSend: function(){
+					$('.wcc_showcase-loader').removeClass('tw-hidden');
+				},
+				success: function(result) {
+					$('.wcc_showcase-loader').addClass('tw-hidden');
+					$('.wcc_showcase-selected-category-list').append(result);
+				},
+				error: function(result) {
+					console.warn(result);
+				}
 			});
-			if( catIdArrayList.length > $('.wcc_showcase-selected-category-list').length ){
-				$.ajax({
-					type: 'post',
-					url: wcc_showcase_admin_js_vars.ajax_url,
-					data: {
-						action: 'wc_category_showcase_get_category_details',
-						nonce: wcc_showcase_admin_js_vars.search_nonce,
-						term_id: catIdArrayList.pop(),
-					},
-					beforeSend: function(){
-						$('.wcc_showcase-loader').removeClass('tw-hidden');
-					},
-					success: function(result) {
-						$('.wcc_showcase-loader').addClass('tw-hidden');
-						$('.wcc_showcase-selected-category-list').append(result);
-						clearInterval(myInterval);
-					},
-					error: function(result) {
-						console.warn(result);
-					}
-				});
-			}
-		},1000);
+		}
 	});
 });
+
+jQuery( function ( $ ) {
+	jQuery.fn.ea_color_picker = function () {
+		return this.each( function () {
+			const el = this;
+			$( el )
+				.iris( {
+					change( event, ui ) {
+						$( el ).parent().find( '.colorpickpreview' ).css( {
+							backgroundColor: ui.color.toString(),
+						} );
+					},
+					hide: true,
+					border: true,
+				} )
+				.on( 'click focus', function ( event ) {
+					event.stopPropagation();
+					$( '.iris-picker' ).hide();
+					$( el ).closest( 'div' ).find( '.iris-picker' ).show();
+					$( el ).data( 'original-value', $( el ).val() );
+				} )
+				.on( 'change', function () {
+					if ( $( el ).is( '.iris-error' ) ) {
+						const original_value = $( this ).data(
+							'original-value'
+						);
+
+						if (
+							original_value.match(
+								/^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
+							)
+						) {
+							$( el )
+								.val( $( el ).data( 'original-value' ) )
+								.change();
+						} else {
+							$( el ).val( '' ).change();
+						}
+					}
+				} );
+
+			$( 'body' ).on( 'click', function () {
+				$( '.iris-picker' ).hide();
+			} );
+		} );
+	};
+
+	$( '.ea-input-color' ).ea_color_picker();
+	$( 'body' ).on(
+		'click',
+		'.ea-modal__body .ea-input-color',
+		function () {
+			$( '.ea-modal__body .ea-input-color' ).ea_color_picker();
+		}
+	);
+} );
 import './_common';
 import './_tabsControl';

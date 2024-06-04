@@ -128,5 +128,14 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.classList.add('tw-hidden');
 		}
 	}
+
+	for (const option of document.querySelectorAll(".wcc-showcase-category-label")) {
+		if (option.classList.contains('selected')) {
+			option.parentNode.querySelector('.wcc-showcase-category-label.selected').classList.remove('selected');
+			option.classList.add('selected');
+			document.getElementsByClassName("wcc-showcase-label-color").value = option.dataset.value;
+			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+		}
+	}
 }, false);
 
