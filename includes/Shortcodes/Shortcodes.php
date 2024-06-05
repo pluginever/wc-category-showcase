@@ -278,16 +278,19 @@ class Shortcodes {
 		$slider_class_list = $class_list;
 		$slider_config     = $config;
 
+		// Added latter.
+		$content_placement = 'overlay';// $showcase['wcc_showcase_content_placement'] ?? 'bottom';
+		$content_position  = 'bottom_center'; //$category_showcase['wccs_content_position'] ?? 'center_center';
 		?>
 
 		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-grid='{"rows": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
 					<div class="splide__track">
-						<ul class="splide__list">
+						<ul class="splide__list ajsFCDwhesvcusds">
 							<?php
 							foreach ( $categories as $category_id ) {
 								$category_details = Helpers::get_category_details( $category_id )
 								?>
-								<li class="splide__slide wcc-showcase-slide-item" data-splide-interval="<?php echo esc_attr( $category_showcase['wcc_showcase_slide_speed'] ); ?>">
+								<li class="splide__slide wcc-showcase-slide-item wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" data-splide-interval="<?php echo esc_attr( $category_showcase['wcc_showcase_slide_speed'] ); ?>">
 									<div class="wcc-showcase-slide-item__cat-thumbnails">
 										<div class="wcc-showcase-slide-item__cat-thumbnails__image">
 											<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
@@ -295,57 +298,59 @@ class Shortcodes {
 											</a>
 										</div>
 									</div>
-									<div class="wcc-showcase-slide-item__cat-details">
-										<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_icon'] ) { ?>
-											<div class="wcc-showcase-slide-item__cat-thumbnails__icon">
-												<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
-													<img  src="<?php echo esc_url( $category_details['icon_url'] ); ?>" alt="<?php echo esc_attr( $category_details['slug'] ); ?>">
-												</a>
-											</div>
-										<?php } ?>
-										<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_title'] ) { ?>
-											<div class="wcc-showcase-slide-item__cat-title">
-												<h3><a href="<?php echo esc_url( $category_details['cat_link'] ); ?>"><?php echo esc_attr( $category_details['name'] ); ?></a></h3>
-											</div>
-										<?php } ?>
-										<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_description'] ) { ?>
-											<div class="wcc-showcase-slide-item__cat-description">
-												<p><?php echo esc_attr( $category_details['description'] ); ?></p>
-											</div>
-										<?php } ?>
-										<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_product_quantity'] ) { ?>
-											<div class="wcc-showcase-slide-item__cat-products">
-												<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>"><?php printf( '%s Products', esc_attr( $category_details['total_count'] ) ); ?></a>
-											</div>
-										<?php } ?>
-										<?php if ( ! empty( $category_details['child_categories'] && 'yes' === $category_showcase['wcc_showcase_show_subcategory_product_quantity'] ) ) { ?>
-											<div class="wcc-showcase-slide-item__sub-cat">
-												<ul class="wcc-showcase-slide-item__sub-cat__sub-cat-list">
-													<?php foreach ( $category_details['child_categories'] as $child_category ) { ?>
-														<li class="wcc-showcase-slide-item__sub-cat__sub-cat-list__item"><a href="<?php echo esc_url( $child_category['cat_link'] ); ?>"><?php printf( '%s (%s)', esc_attr( $child_category['name'] ), esc_attr( $child_category['total_product'] ) ); ?></a></li>
-													<?php } ?>
-												</ul>
-											</div>
-										<?php } ?>
-										<?php if ( 'yes' === $category_showcase['wcc_showcase_show_custom_text'] ) { ?>
-											<div class="wcc-showcase-slide-item__cat-custom-text">
-												<p><?php echo esc_attr( $category_details['custom_text'] ); ?></p>
-											</div>
-										<?php } ?>
-										<?php if ( 'yes' === $category_showcase['wcc_showcase_show_button'] ) { ?>
-											<div class="wcc-showcase-slide-item__cat-button">
-												<a href="<?php echo esc_attr( $category_details['cat_link'] ); ?>">
-													<?php
-													echo esc_attr( $category_showcase['wcc_showcase_button_text'] );
-													if ( 'yes' === $category_showcase['wcc_showcase_show_button_icon'] ) {
-														?>
-														<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-															<path d="M14.4192 6.35859C14.1263 6.06569 13.6515 6.06569 13.3586 6.35859C13.0657 6.65148 13.0657 7.12635 13.3586 7.41925L14.4192 6.35859ZM17 10L17.5303 10.5304C17.8232 10.2375 17.8232 9.76259 17.5303 9.4697L17 10ZM13.3586 12.5808C13.0657 12.8737 13.0657 13.3486 13.3586 13.6415C13.6515 13.9344 14.1263 13.9344 14.4192 13.6415L13.3586 12.5808ZM3 9.25003C2.58579 9.25003 2.25 9.58581 2.25 10C2.25 10.4142 2.58579 10.75 3 10.75L3 9.25003ZM13.3586 7.41925L16.4697 10.5304L17.5303 9.4697L14.4192 6.35859L13.3586 7.41925ZM16.4697 9.4697L13.3586 12.5808L14.4192 13.6415L17.5303 10.5304L16.4697 9.4697ZM17 9.25003L3 9.25003L3 10.75L17 10.75V9.25003Z"/>
-														</svg>
-													<?php } ?>
-												</a>
-											</div>
-										<?php } ?>
+									<div class="wcc-showcase-slide-item__cat-details wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+										<div class="wccs-entry__content-inner">
+											<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_icon'] ) { ?>
+												<div class="wcc-showcase-slide-item__cat-thumbnails__icon">
+													<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
+														<img  src="<?php echo esc_url( $category_details['icon_url'] ); ?>" alt="<?php echo esc_attr( $category_details['slug'] ); ?>">
+													</a>
+												</div>
+											<?php } ?>
+											<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_title'] ) { ?>
+												<div class="wcc-showcase-slide-item__cat-title">
+													<h3><a href="<?php echo esc_url( $category_details['cat_link'] ); ?>"><?php echo esc_attr( $category_details['name'] ); ?></a></h3>
+												</div>
+											<?php } ?>
+											<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_description'] ) { ?>
+												<div class="wcc-showcase-slide-item__cat-description">
+													<p><?php echo esc_attr( $category_details['description'] ); ?></p>
+												</div>
+											<?php } ?>
+											<?php if ( 'yes' === $category_showcase['wcc_showcase_show_category_product_quantity'] ) { ?>
+												<div class="wcc-showcase-slide-item__cat-products">
+													<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>"><?php printf( '%s Products', esc_attr( $category_details['total_count'] ) ); ?></a>
+												</div>
+											<?php } ?>
+											<?php if ( ! empty( $category_details['child_categories'] && 'yes' === $category_showcase['wcc_showcase_show_subcategory_product_quantity'] ) ) { ?>
+												<div class="wcc-showcase-slide-item__sub-cat">
+													<ul class="wcc-showcase-slide-item__sub-cat__sub-cat-list">
+														<?php foreach ( $category_details['child_categories'] as $child_category ) { ?>
+															<li class="wcc-showcase-slide-item__sub-cat__sub-cat-list__item"><a href="<?php echo esc_url( $child_category['cat_link'] ); ?>"><?php printf( '%s (%s)', esc_attr( $child_category['name'] ), esc_attr( $child_category['total_product'] ) ); ?></a></li>
+														<?php } ?>
+													</ul>
+												</div>
+											<?php } ?>
+											<?php if ( 'yes' === $category_showcase['wcc_showcase_show_custom_text'] ) { ?>
+												<div class="wcc-showcase-slide-item__cat-custom-text">
+													<p><?php echo esc_attr( $category_details['custom_text'] ); ?></p>
+												</div>
+											<?php } ?>
+											<?php if ( 'yes' === $category_showcase['wcc_showcase_show_button'] ) { ?>
+												<div class="wcc-showcase-slide-item__cat-button">
+													<a href="<?php echo esc_attr( $category_details['cat_link'] ); ?>" class="btn wccs-showcase-btn">
+														<?php
+														echo esc_attr( $category_showcase['wcc_showcase_button_text'] );
+														if ( 'yes' === $category_showcase['wcc_showcase_show_button_icon'] ) {
+															?>
+															<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+																<path d="M14.4192 6.35859C14.1263 6.06569 13.6515 6.06569 13.3586 6.35859C13.0657 6.65148 13.0657 7.12635 13.3586 7.41925L14.4192 6.35859ZM17 10L17.5303 10.5304C17.8232 10.2375 17.8232 9.76259 17.5303 9.4697L17 10ZM13.3586 12.5808C13.0657 12.8737 13.0657 13.3486 13.3586 13.6415C13.6515 13.9344 14.1263 13.9344 14.4192 13.6415L13.3586 12.5808ZM3 9.25003C2.58579 9.25003 2.25 9.58581 2.25 10C2.25 10.4142 2.58579 10.75 3 10.75L3 9.25003ZM13.3586 7.41925L16.4697 10.5304L17.5303 9.4697L14.4192 6.35859L13.3586 7.41925ZM16.4697 9.4697L13.3586 12.5808L14.4192 13.6415L17.5303 10.5304L16.4697 9.4697ZM17 9.25003L3 9.25003L3 10.75L17 10.75V9.25003Z"/>
+															</svg>
+														<?php } ?>
+													</a>
+												</div>
+											<?php } ?>
+										</div>
 									</div>
 								</li>
 							<?php } ?>

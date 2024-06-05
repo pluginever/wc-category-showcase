@@ -1,6 +1,5 @@
 // Global section style.
 .wccs-section {
-	border: 1px solid red;
 	.text-left{
 		text-align: left;
 	}
@@ -16,13 +15,13 @@
 
 	// Layout specific style.
 	&.is-layout__block {
-		border: 1px solid green;
+		// do something for block
 	}
 	&.is-layout__grid {
-		border: 1px solid black;
+		// do something for grid
 	}
 	&.is-layout__slide {
-		border: 1px solid blue;
+		// do something for slide
 	}
 }
 
@@ -32,12 +31,11 @@
 
 	}
 	.wccs-entry__content{
-		border: 1px solid black;
 		padding: 0.625rem;
 	}
 }
 
-// Content position overly card style.
+// Content position overly, card style.
 .wccs-content__overlay{
 	.wccs-entry__content {
 		&.wccs-content-position__top_left{

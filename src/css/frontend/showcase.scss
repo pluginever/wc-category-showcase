@@ -2,6 +2,7 @@
 @import "showcase-common";
 @import "showcase-block";
 @import "showcase-grid";
+@import "showcase-slide";
 
 .wcc-showcase-slider{
 	margin-bottom: 1.5rem;
@@ -27,7 +28,7 @@
 	border: 1px solid #D3D9DF;
 	border-radius: 8px;
 	//padding: 24px;
-	position: relative;
+	//position: relative;
 	.wcc-showcase-slide-item__cat-thumbnails{
 		display: flex;
 		flex-direction: column;
@@ -48,12 +49,12 @@
 		}
 	}
 	.wcc-showcase-slide-item__cat-details {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		align-items: center;
-		row-gap: .5em;
-		margin-top: 10px;
+		//display: flex;
+		//flex-direction: column;
+		//text-align: center;
+		//align-items: center;
+		//row-gap: .5em;
+		//margin-top: 10px;
 		p{
 			margin: 0;
 		}
@@ -99,17 +100,17 @@
 			color:#000;
 		}
 		.wcc-showcase-slide-item__cat-button {
-			display: flex;
-			flex-direction: column;
-			text-align: center;
-			align-items: center;
-			margin-bottom: .5rem;
+			//display: flex;
+			//flex-direction: column;
+			//text-align: center;
+			//align-items: center;
+			//margin-bottom: .5rem;
 			a {
-				display: flex;
-				align-items: center;
-				text-align: center;
-				justify-content: center;
-				gap: 4px;
+				//display: flex;
+				//align-items: center;
+				//text-align: center;
+				//justify-content: center;
+				//gap: 4px;
 				color: #130F31;
 				font-size: 16px;
 				font-style: normal;
