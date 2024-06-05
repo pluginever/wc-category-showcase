@@ -7,6 +7,7 @@ module.exports = {
 	},
 	content: [
 		join(__dirname, 'includes/Admin/views/**/*.php'),
+		join(__dirname, 'templates/**/*.php'),
 	],
 	media: false,
 	darkMode: 'class',

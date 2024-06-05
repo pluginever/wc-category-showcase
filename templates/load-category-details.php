@@ -11,7 +11,7 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 
 $category_details = Helpers::get_category_details( $term_id );
 ?>
-<div class="wcc_showcase-category-list-item" data-id="<?php echo esc_attr( $term_id ); ?>">
+<div class="wcc_showcase-category-list-item" data-id="<?php echo esc_attr( $term_id ); ?>" data-title="<?php echo esc_attr( $category_details['name'] ); ?>">
 	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcc_showcase-custom-border wcc_showcase-move">
 		<div class="tw-flex tw-gap-1">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -25,7 +25,7 @@ $category_details = Helpers::get_category_details( $term_id );
 			<span><?php echo esc_attr( $category_details['name'] ); ?></span>
 		</div>
 		<div class="tw-flex tw-align-center tw-gap-2">
-			<a href="#" class="wcc-showcase-remove-category "><?php esc_html_e( 'Remove', 'wc-category-showcase' ); ?></a>
+			<a href="#" class="wcc-showcase-remove-category"><?php esc_html_e( 'Remove', 'wc-category-showcase' ); ?></a>
 			<svg class="wcc_showcase-category-details-show tw-text-text-grey-500 hover:tw-text-fade-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 				<path d="M8.19788 14.2882L9.1139 13.373H3.94387V3.943H17.158V6.76351C17.3385 6.83924 17.5025 6.94943 17.6408 7.0879L18.1019 7.54856V3.4715C18.1019 3.34645 18.0522 3.22652 17.9637 3.1381C17.8752 3.04968 17.7551 3 17.63 3H3.47193C3.34677 3 3.22673 3.04968 3.13823 3.1381C3.04972 3.22652 3 3.34645 3 3.4715V13.8445C3 13.9695 3.04972 14.0895 3.13823 14.1779C3.22673 14.2663 3.34677 14.316 3.47193 14.316H8.17617C8.1842 14.3075 8.19127 14.2967 8.19788 14.2882Z"/>
 				<path d="M18.8782 9.92397L16.838 7.88568C16.7977 7.84562 16.7499 7.81395 16.6972 7.7925C16.6445 7.77105 16.5882 7.76025 16.5313 7.76073H16.5176C16.3934 7.76389 16.2752 7.81451 16.1873 7.90218L8.99875 15.0888C8.95723 15.1303 8.92673 15.1815 8.91003 15.2378L7.75709 18.6986C7.71698 18.8315 7.91944 18.9994 8.03412 18.9994C8.04133 19.0002 8.04861 19.0002 8.05583 18.9994C8.15352 18.9768 11.0101 18.0008 11.5217 17.847C11.5772 17.8304 11.6277 17.8001 11.6685 17.7589L18.857 10.5718C18.9405 10.4884 18.9909 10.3774 18.9986 10.2597C19.0036 10.1984 18.9954 10.1367 18.9747 10.0788C18.9539 10.0209 18.921 9.96814 18.8782 9.92397ZM8.68161 18.0753L9.6151 15.473L11.2857 17.1379C10.5207 17.3675 9.34232 17.8782 8.68161 18.0753Z"/>
@@ -56,6 +56,7 @@ $category_details = Helpers::get_category_details( $term_id );
 			<div>
 				<h4 class="tw-text-xs tw-my-0"><?php esc_html_e( 'CATEGORY IMAGE', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-mt-2">
+					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][image_url]" value="<?php echo esc_url( $category_details['image_url'] ); ?>">
 					<a href="#" class="wcc_showcase-upload-button">
 						<?php esc_html_e( 'Add Image', 'wc-category-showcase' ); ?>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -63,7 +64,6 @@ $category_details = Helpers::get_category_details( $term_id );
 						</svg>
 					</a>
 					<img class="tw-h-32 tw-w-40 img-upload" src="<?php echo esc_url( $category_details['image_url'] ); ?>" alt="<?php echo esc_url( $category_details['slug'] ); ?>">
-					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][image_url]" value="<?php echo esc_url( $category_details['image_url'] ); ?>">
 				</div>
 			</div>
 			<div>

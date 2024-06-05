@@ -1209,7 +1209,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-flex-col tw-items-center">
 		<div class="tw-min-w-[400px] tw-max-w-[400px]">
-				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_selectd" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 ">
+				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 ">
 					<?php
 					$categories          = get_terms(
 						array(
@@ -1226,10 +1226,11 @@ defined( 'ABSPATH' ) || exit;
 				</select>
 
 		</div>
-		<div class="tw-mt-6 wcc_showcase-selected-category-list">
-			<?php
+		<div class="tw-mt-6 wcc_showcase-selected-category-list tw-min-w-[400px] tw-max-w-[400px]">
+			<?php $count = 0;
 			foreach ( $selected_categories as $term_id ) {
 				include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+				$count++;
 			}
 			?>
 		</div>

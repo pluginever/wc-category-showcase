@@ -105,3 +105,10 @@
 .select2-selection__choice__remove{
 	display: none !important;
 }
+
+.iris-picker{
+	position: absolute !important;
+	z-index: 2 !important;
+	right: 0 !important;
+	top: 33px !important;
+}
