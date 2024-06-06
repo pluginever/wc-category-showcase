@@ -10,7 +10,22 @@ jQuery(document).ready(function ($) {
 	$('.splide').each(function() {
 		var sliderId = $(this).attr('id');
 		var grid_value = $('#'+sliderId).data( 'grid' );
+		var grid_ticker = $('#'+sliderId).data( 'ticker' );
+		var tickerSpeed;
+		var autoScroll = false;
+		if( false === grid_ticker.tickerDirection ){
+			tickerSpeed = grid_ticker.tickerSpeed * -1;
+		}else{
+			tickerSpeed = grid_ticker.tickerSpeed;
+		}
+		if( true === grid_ticker.isTicker ) {
+			autoScroll = {
+				speed: tickerSpeed,
+			}
+		}
+
 		var splide = new Splide( '#'+sliderId, {
+			autoScroll: autoScroll,
 			grid: {
 				dimensions: [ [grid_value.rows, grid_value.columns] ],
 				gap : {
@@ -48,6 +63,7 @@ jQuery(document).ready(function ($) {
 				}
 			}
 		});
+
 		splide.mount( window.splide.Extensions );
 	});
 });

@@ -277,13 +277,16 @@ class Shortcodes {
 		$categories        = isset( $category_showcase['wcc_showcase_specific_category_select'] ) ? $category_showcase['wcc_showcase_specific_category_select'] : array();
 		$slider_class_list = $class_list;
 		$slider_config     = $config;
+		$is_ticker         = 'yes' === $category_showcase['wcc_showcase_slide_is_ticker'] ? 'true' : 'false';
+		$ticker_direction  = 'right_to_left' === $category_showcase['wcc_showcase_slider_ticker_direction'] ? 'true' : 'false';
+		$ticker_mode       = 'medium' === $category_showcase['wcc_showcase_ticket_mode'] ? 1 : ( 'slow' === $category_showcase['wcc_showcase_ticket_mode'] ? .5 : 2 );
 
 		// Added latter.
-		$content_placement = 'overlay';// $showcase['wcc_showcase_content_placement'] ?? 'bottom';
-		$content_position  = 'bottom_center'; //$category_showcase['wccs_content_position'] ?? 'center_center';
+		$content_placement = $showcase['wcc_showcase_content_placement'] ?? 'bottom';
+		$content_position  = $category_showcase['wccs_content_position'] ?? 'center_center';
 		?>
 
-		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-grid='{"rows": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
+		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
 					<div class="splide__track">
 						<ul class="splide__list ajsFCDwhesvcusds">
 							<?php
@@ -391,8 +394,7 @@ class Shortcodes {
 		"pauseOnHover":' . ( 'yes' === $category_showcase['wcc_showcase_slide_stop_on_hover'] ? 'true' : 'false' ) . ',
 		"releaseWheel":' . ( 'yes' === $category_showcase['wcc_showcase_slide_scroll_interaction'] ? 'true' : 'false' ) . ',
 		"direction": "ltr",
-		"wheel":false,
-		"autoScroll":false
+		"wheel":false
 		}';
 		return $slider_config;
 	}
