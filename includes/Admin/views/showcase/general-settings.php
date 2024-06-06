@@ -5,6 +5,8 @@
  * @package WooCommerceCategoryShowcase
  */
 
+use WooCommerceCategoryShowcase\Controllers\Helpers;
+
 defined( 'ABSPATH' ) || exit;
 
 ?>
@@ -1227,10 +1229,11 @@ defined( 'ABSPATH' ) || exit;
 
 		</div>
 		<div class="tw-mt-6 wcc_showcase-selected-category-list tw-min-w-[400px] tw-max-w-[400px]">
-			<?php $count = 0;
-			foreach ( $selected_categories as $term_id ) {
+			<?php
+			$count = 0;
+			foreach ( $showcase_details['wcc_showcase_category_list_item'] as $category_details ) {
 				include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
-				$count++;
+				++$count;
 			}
 			?>
 		</div>

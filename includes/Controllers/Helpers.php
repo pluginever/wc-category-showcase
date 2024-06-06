@@ -14,16 +14,17 @@ class Helpers {
 	/**
 	 * Get category details.
 	 *
-	 * @param \WP_Term| int $category Category ID.
+	 * @param \WP_Term| int $category_id Category ID.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	public static function get_category_details( $category ) {
+	public static function get_category_details( $category_id ) {
 		$category_details = array();
-		$category         = get_term( $category );
+		$category         = get_term( $category_id );
 		if ( $category && ! is_wp_error( $category ) ) {
+			$category_details['cat_id']           = esc_attr( $category->term_id );
 			$category_details['name']             = esc_attr( $category->name );
 			$category_details['slug']             = esc_attr( $category->slug );
 			$category_details['description']      = wp_kses_post( $category->description );
@@ -145,6 +146,22 @@ class Helpers {
 	}
 
 	/**
+	 * sorting categories array.
+	 *
+	 * @param int $a Array values.
+	 * @param int $b Array values.
+	 *
+	 * @since  1.0.0
+	 * @return int
+	 */
+	public static function sort_categories_according_to_position( $a, $b ) {
+		if ( $a['position'] === $b['position'] ) {
+			return 0;
+		}
+		return $a['position'] < $b['position'] ? -1 : 1;
+	}
+
+	/**
 	 * Get slider settings.
 	 *
 	 * @param int $id ID of the slider post.
@@ -171,6 +188,7 @@ class Helpers {
 			),
 			'category_filter'                   => 'all',
 			'specific_category_select'          => array(),
+			'category_list_item'                => array(),
 			'category_sort_order'               => 'default',
 			'category_sort_order_by'            => 'asc',
 			'category_display_limit'            => '12',

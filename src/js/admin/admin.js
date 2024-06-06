@@ -431,7 +431,8 @@ jQuery(document).ready(function($) {
 	$('#wcc_showcase_specific_category_select').on('change', function(e) {
 		let newSelected = $(this).val().filter(value => !selectedValues.has(value));
 		newSelected.forEach(value => selectedValues.add(value));
-		console.log(newSelected);
+		var current_position = $('.wcc_showcase-selected-category-list .wcc_showcase-category-list-item').length;
+		console.log(current_position);
 		if (newSelected.length > 0) {
 			$.ajax({
 				type: 'post',
@@ -440,6 +441,7 @@ jQuery(document).ready(function($) {
 					action: 'wc_category_showcase_get_category_details',
 					nonce: wcc_showcase_admin_js_vars.search_nonce,
 					term_id: newSelected[0],
+					position: current_position,
 				},
 				beforeSend: function(){
 					$('.wcc_showcase-loader').removeClass('tw-hidden');
@@ -455,76 +457,24 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	// let mediaUploader;
-	// $(document).on('click', '.wcc_showcase-upload-button', function(e){
-	// 	e.preventDefault();
-	// 	var img_url = $(this).siblings('img');
-	// 	var img_set = $(this).siblings('input');
-	// 	// If the uploader object has already been created, reopen the dialog
-	// 	if (mediaUploader) {
-	// 		mediaUploader.open();
-	// 		return;
-	// 	}
-	//
-	// 	console.log(mediaUploader);
-	//
-	// 	// Extend the wp.media object
-	// 	mediaUploader = wp.media.frames.file_frame = wp.media({
-	// 		title: 'Choose Image',
-	// 		button: {
-	// 			text: 'Choose Image'
-	// 		},
-	// 		multiple: false
-	// 	});
-	//
-	// 	// When a file is selected, grab the URL and set it as the value of the hidden input field
-	// 	mediaUploader.on('select', function() {
-	// 		var attachment = mediaUploader.state().get('selection').first().toJSON();
-	// 		img_set.val(attachment.url);
-	// 		img_url.attr('src', attachment.url).show();
-	// 	});
-	//
-	// 	// Open the uploader dialog
-	// 	mediaUploader.open();
-	// });
-
-
-
-	let frame;
-	function openMediaBox(button) {
-		console.log(frame);
-		// If the media frame already exists, reopen it.
-		if (frame) {
-			frame.open();
-			return;
-		}
-
-		// Create a new media frame
-		frame = wp.media.frames.file_frame = wp.media({
-			title: 'Select or Upload Media',
-			button: {
-				text: 'Use this media'
-			},
-			multiple: false
-		});
-
-		// When an image is selected in the media frame...
-		frame.on('select', function() {
-			// Get media attachment details from the frame state
-			const attachment = frame.state().get('selection').first().toJSON();
-			// Do something with the selected image URL
-			button.prev('input.image_url').val(attachment.url);
-			button.next('img.img-upload').attr('src', attachment.url).show();
-		});
-
-		// Finally, open the media frame
-		frame.open();
-	}
-
-	$(document).on('click', '.wcc_showcase-upload-button', function(e) {
+	$(document).on('click', '.wcc_showcase-upload-button', function(e)
+	{
 		e.preventDefault();
-		console.log(frame);
-		openMediaBox($(this));
+		var btnClicked = $( this );
+		var custom_uploader = wp.media({
+			title: 'Select Image',
+			button: {
+				text: 'Select'
+			},
+			multiple: false  // Set this to true to allow multiple files to be selected
+		})
+		.on('select', function() {
+			var attachment = custom_uploader.state().get('selection').first().toJSON();
+			$( btnClicked ).parent().children('input.image_url').val(attachment.url);
+			$( btnClicked ).parent().children('img.img-upload').attr('src', attachment.url).show();
+		})
+		.open();
+
 	});
 });
 import './_common';

@@ -142,7 +142,6 @@ class Admin {
 
 		// Post title.
 		$wcc_showcase_title = isset( $_POST['wcc_showcase_title'] ) ? sanitize_text_field( wp_unslash( $_POST['wcc_showcase_title'] ) ) : '';
-
 		if ( empty( $post_id ) ) {
 			// Add category showcase.
 			$args = array(
@@ -152,12 +151,14 @@ class Admin {
 			);
 
 			$post_id = wp_insert_post( $args );
-
 			foreach ( $data as $key => $defaults ) {
 				if ( is_array( wp_unslash( $_POST[ $key ] ) ) ) {
 					$value = ! empty( $_POST[ $key ] ) ? map_deep( wp_unslash( $_POST[ $key ] ), 'sanitize_text_field' ) : $defaults;
 				} else {
 					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : $defaults;
+				}
+				if ( 'wcc_showcase_category_list_item' === $key ) {
+					uasort( $value, array( Helpers::class, 'sort_categories_according_to_position' ) );
 				}
 
 				if ( empty( $value ) ) {
@@ -186,6 +187,20 @@ class Admin {
 					$value = ! empty( $_POST[ $key ] ) ? map_deep( wp_unslash( $_POST[ $key ] ), 'sanitize_text_field' ) : $defaults;
 				} else {
 					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : $defaults;
+				}
+				if ( 'wcc_showcase_category_list_item' === $key ) {
+					uasort( $value, array( Helpers::class, 'sort_categories_according_to_position' ) );
+					foreach ( $value as $keys => $category_details ) {
+						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
+							$value[ $keys ]['is_icon'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_custom_text', $category_details ) ) {
+							$value[ $keys ]['is_custom_text'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_label', $category_details ) ) {
+							$value[ $keys ]['is_label'] = 'no';
+						}
+					}
 				}
 
 				if ( empty( $value ) ) {
@@ -259,12 +274,15 @@ class Admin {
 	 */
 	public static function get_category_details() {
 		check_admin_referer( 'wcc_showcase_search_category_action', 'nonce' );
-		$term_id = isset( $_POST['term_id'] ) ? sanitize_text_field( wp_unslash( $_POST['term_id'] ) ) : '';
+		$term_id          = isset( $_POST['term_id'] ) ? sanitize_text_field( wp_unslash( $_POST['term_id'] ) ) : '';
+		$current_position = isset( $_POST['position'] ) ? sanitize_text_field( wp_unslash( $_POST['position'] ) ) : '';
 
 		if ( empty( $term_id ) ) {
 			wp_send_json_success( esc_html__( 'No, search term id provided.', 'wc-category-showcase' ) );
 			wp_die();
 		}
+		$category_details             = Helpers::get_category_details( $term_id );
+		$category_details['position'] = $current_position;
 		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
 		wp_die();
 	}
