@@ -274,10 +274,14 @@ class Shortcodes {
 
 		$post_id           = $wccs_id;
 		$category_showcase = $showcase;
-		$categories        = isset( $category_showcase['wcc_showcase_specific_category_select'] ) ? $category_showcase['wcc_showcase_specific_category_select'] : array();
+		if ( 'all' === $category_showcase['wcc_showcase_category_filter'] ) {
+			$categories = Helpers::get_all_categories();
+		} else {
+			$categories = isset( $category_showcase['wcc_showcase_specific_category_select'] ) ? $category_showcase['wcc_showcase_specific_category_select'] : array();
+		}
 		$slider_class_list = $class_list;
 		$slider_config     = $config;
-		$is_ticker         = 'yes' === $category_showcase['wcc_showcase_slide_is_ticker'] ? 'true' : 'false';
+		$is_ticker         = array_key_exists( 'wcc_showcase_slide_is_ticker', $category_showcase ) && 'yes' === $category_showcase['wcc_showcase_slide_is_ticker'] ? 'true' : 'false';
 		$ticker_direction  = 'right_to_left' === $category_showcase['wcc_showcase_slider_ticker_direction'] ? 'true' : 'false';
 		$ticker_mode       = 'medium' === $category_showcase['wcc_showcase_ticket_mode'] ? 1 : ( 'slow' === $category_showcase['wcc_showcase_ticket_mode'] ? .5 : 2 );
 

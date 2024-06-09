@@ -47,6 +47,26 @@ class Helpers {
 	/**
 	 * Category Product Counts.
 	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	public static function get_all_categories() {
+		$args           = array(
+			'taxonomy' => 'product_cat',
+		);
+		$all_categories = get_terms( $args );
+
+		$all_cat_ids = array();
+		foreach ( $all_categories as $category ) {
+			$all_cat_ids[] = $category->term_id;
+		}
+		return $all_cat_ids;
+	}
+
+	/**
+	 * Category Product Counts.
+	 *
 	 * @param \WP_Term| int $parent_category_id Parent Category id.
 	 *
 	 * @since 1.0.0
