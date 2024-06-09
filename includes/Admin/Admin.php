@@ -137,9 +137,6 @@ class Admin {
 		$post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : '';
 		$referer = wp_get_referer();
 
-		$data = Helpers::get_slider_settings();
-		unset( $data['wcc_showcase_post_title'] );
-
 		// Post title.
 		$wcc_showcase_title = isset( $_POST['wcc_showcase_title'] ) ? sanitize_text_field( wp_unslash( $_POST['wcc_showcase_title'] ) ) : '';
 		if ( empty( $post_id ) ) {
@@ -149,16 +146,32 @@ class Admin {
 				'post_type'   => 'wccs_showcase',
 				'post_status' => 'publish',
 			);
-
+			$data = Helpers::get_slider_settings();
+			unset( $data['wcc_showcase_post_title'] );
 			$post_id = wp_insert_post( $args );
+
 			foreach ( $data as $key => $defaults ) {
-				if ( is_array( wp_unslash( $_POST[ $key ] ) ) ) {
+				if ( ! empty( $_POST[ $key ] ) && is_array( wp_unslash( $_POST[ $key ] ) ) ) { //phpcs:ignore
 					$value = ! empty( $_POST[ $key ] ) ? map_deep( wp_unslash( $_POST[ $key ] ), 'sanitize_text_field' ) : $defaults;
 				} else {
-					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : $defaults;
+					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : ( 'yes' === $defaults ? 'no' : '' );
 				}
 				if ( 'wcc_showcase_category_list_item' === $key ) {
+					if ( empty( $value ) ) {
+						continue;
+					}
 					uasort( $value, array( Helpers::class, 'sort_categories_according_to_position' ) );
+					foreach ( $value as $keys => $category_details ) {
+						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
+							$value[ $keys ]['is_icon'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_custom_text', $category_details ) ) {
+							$value[ $keys ]['is_custom_text'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_label', $category_details ) ) {
+							$value[ $keys ]['is_label'] = 'no';
+						}
+					}
 				}
 
 				if ( empty( $value ) ) {
@@ -181,14 +194,19 @@ class Admin {
 			);
 
 			$post_id = wp_update_post( $args );
+			$data    = Helpers::get_slider_settings();
+			unset( $data['wcc_showcase_post_title'] );
 
 			foreach ( $data as $key => $defaults ) {
-				if ( is_array( wp_unslash( $_POST[ $key ] ) ) ) {
+				if ( ! empty( $_POST[ $key ] ) && is_array( $_POST[ $key ] ) ) { //phpcs:ignore
 					$value = ! empty( $_POST[ $key ] ) ? map_deep( wp_unslash( $_POST[ $key ] ), 'sanitize_text_field' ) : $defaults;
 				} else {
-					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : $defaults;
+					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : ( 'yes' === $defaults ? 'no' : '' );
 				}
 				if ( 'wcc_showcase_category_list_item' === $key ) {
+					if ( empty( $value ) ) {
+						continue;
+					}
 					uasort( $value, array( Helpers::class, 'sort_categories_according_to_position' ) );
 					foreach ( $value as $keys => $category_details ) {
 						if ( ! array_key_exists( 'is_icon', $category_details ) ) {

@@ -1231,9 +1231,11 @@ defined( 'ABSPATH' ) || exit;
 		<div class="tw-mt-6 wcc_showcase-selected-category-list tw-min-w-[400px] tw-max-w-[400px]">
 			<?php
 			$count = 0;
-			foreach ( $showcase_details['wcc_showcase_category_list_item'] as $category_details ) {
-				include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
-				++$count;
+			if ( ! empty( $showcase_details['wcc_showcase_category_list_item'] ) ) {
+				foreach ( $showcase_details['wcc_showcase_category_list_item'] as $category_details ) {
+					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+					++$count;
+				}
 			}
 			?>
 		</div>
