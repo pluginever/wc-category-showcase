@@ -54,7 +54,6 @@ class Helpers {
 	 * @return array
 	 */
 	public static function get_all_categories( $limit = null ) {
-
 		$args           = array(
 			'taxonomy' => 'product_cat',
 			'number'   => null,
@@ -97,7 +96,7 @@ class Helpers {
 		$args = array(
 			'post_type'      => 'product',
 			'posts_per_page' => - 1, // No limit.
-			'tax_query'      => array(
+			'tax_query'      => array( //phpcs:ignore
 				array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'term_id',
@@ -348,28 +347,6 @@ class Helpers {
 		if ( 'yes' === $settings['show_section_title'] && empty( $settings['section_title'] ) ) {
 			$settings['show_section_title'] = 'no';
 		}
-
-
-		// if ( ! empty( $id ) ) {
-		// $metadata                            = get_post_meta( $id );
-		// $settings                            = array();
-		// $settings['wcc_showcase_post_title'] = get_the_title( $id );
-		// foreach ( $metadata as $key => $value ) {
-		// if ( str_starts_with( $key, 'wcc_showcase_' ) ) {
-		// $value = maybe_unserialize( is_array( $value ) ? $value[0] : $value );
-		// if ( ! empty( $value ) ) {
-		// $settings[ $key ] = $value;
-		// }
-		// }
-		// }
-		// } else {
-		// $settings = array();
-		// foreach ( $defaults as $key => $value ) {
-		// $settings[ 'wcc_showcase_' . $key ] = $value;
-		// }
-		// }
-
-		// Adjust other properties based on the dependent fields.
 
 		return $settings;
 	}

@@ -52,11 +52,11 @@ class Shortcodes {
 		$wccs_id  = intval( $atts['id'] );
 		$showcase = Helpers::get_slider_settings( $wccs_id );
 
-		$layout        = isset( $showcase['layout'] ) ? $showcase['layout'] : 'slider';
+		$layout        = isset( $showcase['wcc_showcase_layout'] ) ? $showcase['wcc_showcase_layout'] : 'slider';
 		$layout_option = '';
 
 		if ( 'block' === $layout ) {
-			$layout_option = isset( $showcase['block_column'] ) ? 'column__x' . $showcase['block_column'] : 'column__x1';
+			$layout_option = isset( $showcase['wcc_showcase_block_column'] ) ? 'column__x' . $showcase['wcc_showcase_block_column'] : 'column__x1';
 		}
 		if ( 'grid' === $layout ) {
 			// Available options are:
@@ -66,16 +66,16 @@ class Shortcodes {
 			// 5X: catalog_1x5, catalog_2x5, schema_1x5, schema_2x5, modern_1x5, modern_2x5, modern_3x5.
 			// 6X: catalog_1x6, catalog_2x6, matrix_1x6, matrix_2x6, zen_1x6, zen_2x6, zen_3x6.
 			// 7X: catalog_1x7, catalog_2x7, helix_1x7, helix_2x7.
-			$layout_option = isset( $showcase['layout_option'] ) ? sanitize_key( $showcase['layout_option'] ) : '';
+			$layout_option = isset( $showcase['wcc_showcase_layout_option'] ) ? sanitize_key( $showcase['wcc_showcase_layout_option'] ) : '';
 		}
 
 		// Get the showcase individual style.
-		$card_bg_color         = $showcase['card']['background_color'] ?? '#ffffff';
-		$card_bg_hover_color   = $showcase['card']['hover_color'] ?? '#cccccc';
-		$card_text_color       = $showcase['card']['text_color'] ?? '#000000';
-		$card_text_hover_color = $showcase['card']['hover_text_color'] ?? '#cccccc';
-		$card_border_radius    = $showcase['border_radius'] ?? '8';
-		$card_gap              = $showcase['gap_between_cards'] ?? '9';
+		$card_bg_color         = $showcase['wcc_showcase_card']['background_color'] ?? '#ffffff';
+		$card_bg_hover_color   = $showcase['wcc_showcase_card']['hover_color'] ?? '#cccccc';
+		$card_text_color       = $showcase['wcc_showcase_card']['text_color'] ?? '#000000';
+		$card_text_hover_color = $showcase['wcc_showcase_card']['hover_text_color'] ?? '#cccccc';
+		$card_border_radius    = $showcase['wcc_showcase_border_radius'] ?? '8';
+		$card_gap              = $showcase['wcc_showcase_gap_between_cards'] ?? '9';
 
 		$styles = "
 			.wccs-categories__{$wccs_id}{
@@ -98,11 +98,11 @@ class Shortcodes {
 
 		?>
 		<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
-			<?php if ( isset( $showcase['section_title'] ) || isset( $showcase['section_description'] ) ) : ?>
-				<div class="wccs-section__header text-<?php echo isset( $showcase['heading_alignment'] ) ? sanitize_html_class( $showcase['heading_alignment'] ) : 'left'; ?>">
+			<?php if ( isset( $showcase['wcc_showcase_section_title'] ) || isset( $showcase['wcc_showcase_section_description'] ) ) : ?>
+				<div class="wccs-section__header text-<?php echo isset( $showcase['wcc_showcase_heading_alignment'] ) ? sanitize_html_class( $showcase['wcc_showcase_heading_alignment'] ) : 'left'; ?>">
 					<?php
-					echo isset( $showcase['section_title'] ) ? '<h2>' . esc_html( $showcase['section_title'] ) . '</h2>' : '';
-					echo isset( $showcase['section_description'] ) ? '<p>' . esc_html( $showcase['section_description'] ) . '</p>' : '';
+					echo isset( $showcase['wcc_showcase_section_title'] ) ? '<h2>' . esc_html( $showcase['wcc_showcase_section_title'] ) . '</h2>' : '';
+					echo isset( $showcase['wcc_showcase_section_description'] ) ? '<p>' . esc_html( $showcase['wcc_showcase_section_description'] ) . '</p>' : '';
 					?>
 				</div>
 			<?php endif; ?>
@@ -135,13 +135,13 @@ class Shortcodes {
 	 */
 	public static function get_content_html( $wccs_id, $layout, $showcase ) {
 
-		$content_placement = $showcase['content_placement'] ?? 'top';
-		$content_position  = $showcase['overlay_content_position'] ?? 'center_center';
+		$content_placement = $showcase['wcc_showcase_content_placement'] ?? 'top';
+		$content_position  = $showcase['wcc_showcase_overlay_content_position'] ?? 'center_center';
 		$thumbnail_img     = WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/category-placeholder-img1.png';
 
-		$count = isset( $showcase['block_column'] ) ? absint( $showcase['block_column'] ) : null;
+		$count = isset( $showcase['wcc_showcase_block_column'] ) ? absint( $showcase['wcc_showcase_block_column'] ) : null;
 
-		if ( 'all' === $showcase['category_filter'] ) {
+		if ( 'all' === $showcase['wcc_showcase_category_filter'] ) {
 			$categories = Helpers::get_all_categories( $count );
 		} else {
 			$categories = isset( $category_showcase['wcc_showcase_specific_category_select'] ) ? $category_showcase['wcc_showcase_specific_category_select'] : array();
@@ -200,7 +200,7 @@ class Shortcodes {
 
 		// Added latter.
 		$content_placement = $showcase['content_placement'] ?? 'bottom';
-		$content_position  = $category_showcase['wccs_content_position'] ?? 'center_center';
+		$content_position  = $category_showcase['slide_content_position'] ?? 'center_center';
 		?>
 
 		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['wcc_showcase_slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['wcc_showcase_column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">

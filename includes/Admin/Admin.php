@@ -139,99 +139,51 @@ class Admin {
 
 		// Post title.
 		$wcc_showcase_title = isset( $_POST['wcc_showcase_title'] ) ? sanitize_text_field( wp_unslash( $_POST['wcc_showcase_title'] ) ) : '';
-		if ( empty( $post_id ) ) {
-			// Add category showcase.
-			$args = array(
-				'post_title'  => $wcc_showcase_title,
-				'post_type'   => 'wccs_showcase',
-				'post_status' => 'publish',
-			);
-			$data = Helpers::get_slider_settings();
-			unset( $data['wcc_showcase_post_title'] );
-			$post_id = wp_insert_post( $args );
-
-			foreach ( $data as $key => $defaults ) {
-				if ( ! empty( $_POST[ $key ] ) && is_array( wp_unslash( $_POST[ $key ] ) ) ) { //phpcs:ignore
-					$value = ! empty( $_POST[ $key ] ) ? map_deep( wp_unslash( $_POST[ $key ] ), 'sanitize_text_field' ) : $defaults;
-				} else {
-					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : ( 'yes' === $defaults ? 'no' : '' );
-				}
-				if ( 'wcc_showcase_category_list_item' === $key ) {
-					if ( empty( $value ) ) {
-						continue;
-					}
-					uasort( $value, array( Helpers::class, 'sort_categories_according_to_position' ) );
-					foreach ( $value as $keys => $category_details ) {
-						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
-							$value[ $keys ]['is_icon'] = 'no';
-						}
-						if ( ! array_key_exists( 'is_custom_text', $category_details ) ) {
-							$value[ $keys ]['is_custom_text'] = 'no';
-						}
-						if ( ! array_key_exists( 'is_label', $category_details ) ) {
-							$value[ $keys ]['is_label'] = 'no';
-						}
-					}
-				}
-
-				if ( empty( $value ) ) {
-					delete_post_meta( $post_id, $key );
-				} else {
-					update_post_meta( $post_id, $key, $value );
-				}
-			}
-
-			$redirect_to = admin_url( 'admin.php?page=wc-category-showcase&edit=' . $post_id );
-			wp_safe_redirect( $redirect_to );
-			exit;
-		} else {
-			// Update category showcase.
-			$args = array(
-				'ID'          => $post_id,
-				'post_title'  => $wcc_showcase_title,
-				'post_type'   => 'wccs_showcase',
-				'post_status' => 'publish',
-			);
-
-			$post_id = wp_update_post( $args );
-			$data    = Helpers::get_slider_settings();
-			unset( $data['wcc_showcase_post_title'] );
-
-			foreach ( $data as $key => $defaults ) {
-				if ( ! empty( $_POST[ $key ] ) && is_array( $_POST[ $key ] ) ) { //phpcs:ignore
-					$value = ! empty( $_POST[ $key ] ) ? map_deep( wp_unslash( $_POST[ $key ] ), 'sanitize_text_field' ) : $defaults;
-				} else {
-					$value = ! empty( $_POST[ $key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) : ( 'yes' === $defaults ? 'no' : '' );
-				}
-				if ( 'wcc_showcase_category_list_item' === $key ) {
-					if ( empty( $value ) ) {
-						continue;
-					}
-					uasort( $value, array( Helpers::class, 'sort_categories_according_to_position' ) );
-					foreach ( $value as $keys => $category_details ) {
-						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
-							$value[ $keys ]['is_icon'] = 'no';
-						}
-						if ( ! array_key_exists( 'is_custom_text', $category_details ) ) {
-							$value[ $keys ]['is_custom_text'] = 'no';
-						}
-						if ( ! array_key_exists( 'is_label', $category_details ) ) {
-							$value[ $keys ]['is_label'] = 'no';
-						}
-					}
-				}
-
-				if ( empty( $value ) ) {
-					delete_post_meta( $post_id, $key );
-				} else {
-					update_post_meta( $post_id, $key, $value );
-				}
-			}
-
-			$redirect_to = admin_url( 'admin.php?page=wc-category-showcase&edit=' . $post_id );
-			wp_safe_redirect( $redirect_to );
-			exit;
+		// Add category showcase.
+		$args     = array(
+			'ID'          => $post_id,
+			'post_title'  => $wcc_showcase_title,
+			'post_type'   => 'wccs_showcase',
+			'post_status' => 'publish',
+		);
+		$settings = Helpers::get_slider_settings();
+		$post_id  = wp_insert_post( $args );
+		if ( is_wp_error( $post_id ) ) {
+			wc_category_showcase()->flash->error( 'Failed to Add Slider: Please Try Again!' );
+			wp_safe_redirect( $referer );
+			exit();
 		}
+
+		foreach ( $settings as $key => $default_value ) {
+			$post_key = 'wcc_showcase_' . $key;
+			if ( isset( $_POST[ $post_key ] ) && wp_unslash( $_POST[ $post_key ] ) !== $default_value ) { //phpcs:ignore
+				$meta_value = wp_unslash( $_POST[ $post_key ] ); //phpcs:ignore
+				$meta_value = is_scalar( $meta_value ) ? sanitize_text_field( $meta_value ) : map_deep( $meta_value, 'sanitize_text_field' );
+				if ( 'wcc_showcase_category_list_item' === $post_key ) {
+					if ( empty( $meta_value ) ) {
+						continue;
+					}
+					uasort( $meta_value, array( Helpers::class, 'sort_categories_according_to_position' ) );
+					foreach ( $meta_value as $keys => $category_details ) {
+						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
+							$meta_value[ $keys ]['is_icon'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_custom_text', $category_details ) ) {
+							$meta_value[ $keys ]['is_custom_text'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_label', $category_details ) ) {
+							$meta_value[ $keys ]['is_label'] = 'no';
+						}
+					}
+				}
+				update_post_meta( $post_id, $post_key, $meta_value );
+			}
+		}
+
+		wc_category_showcase()->flash->success( 'Congratulations! The slider has been successfully added!' );
+		$redirect_to = admin_url( 'admin.php?page=wc-category-showcase&edit=' . $post_id );
+		wp_safe_redirect( $redirect_to );
+		exit;
 	}
 
 	/**
