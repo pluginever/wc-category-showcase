@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_font_google_support" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_font_google_support', $showcase_details ) && 'yes' === $showcase_details['wcc_showcase_font_google_support'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_font_google_support" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_font_google_support', $showcase_details ) && 'yes' === $showcase_details['font_google_support'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -39,27 +39,27 @@ defined( 'ABSPATH' ) || exit;
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'DEFAULT TEXT TAG', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-flex tw-justify-around">
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'p' === $showcase_details['wcc_showcase_font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'p' ); ?>"><?php echo esc_attr( 'P' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'p' === $showcase_details['font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'p' ); ?>"><?php echo esc_attr( 'P' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h1' === $showcase_details['wcc_showcase_font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h1' ); ?>"><?php echo esc_attr( 'H1' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h1' === $showcase_details['font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h1' ); ?>"><?php echo esc_attr( 'H1' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h2' === $showcase_details['wcc_showcase_font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h2' ); ?>"><?php echo esc_attr( 'H2' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h2' === $showcase_details['font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h2' ); ?>"><?php echo esc_attr( 'H2' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h3' === $showcase_details['wcc_showcase_font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h3' ); ?>"><?php echo esc_attr( 'H3' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h3' === $showcase_details['font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h3' ); ?>"><?php echo esc_attr( 'H3' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h4' === $showcase_details['wcc_showcase_font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h4' ); ?>"><?php echo esc_attr( 'H4' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h4' === $showcase_details['font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h4' ); ?>"><?php echo esc_attr( 'H4' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h5' === $showcase_details['wcc_showcase_font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h5' ); ?>"><?php echo esc_attr( 'H5' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h5' === $showcase_details['font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h5' ); ?>"><?php echo esc_attr( 'H5' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h6' === $showcase_details['wcc_showcase_font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h6' ); ?>"><?php echo esc_attr( 'H6' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h6' === $showcase_details['font_main_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h6' ); ?>"><?php echo esc_attr( 'H6' ); ?></p>
 					</div>
-					<input type="hidden" name="wcc_showcase_font_main_title[text_tag]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['text_tag'] ); ?>">
+					<input type="hidden" name="wcc_showcase_font_main_title[text_tag]" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_tag'] ); ?>">
 				</div>
 			</div>
 			<div class="wcc_showcase-settings-row-title tw-mt-3"></div>
@@ -80,18 +80,18 @@ defined( 'ABSPATH' ) || exit;
 								</div>
 							</div>
 							<div class="custom-options tw-w-[336px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden">
-								<span class="custom-option <?php echo 'Roboto' === $showcase_details['wcc_showcase_font_main_title']['font_family'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-family" data-value="<?php echo esc_attr( 'Roboto' ); ?>">
+								<span class="custom-option <?php echo 'Roboto' === $showcase_details['font_main_title']['font_family'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-family" data-value="<?php echo esc_attr( 'Roboto' ); ?>">
 									<?php esc_html_e( 'Roboto', 'wc-category-showcase' ); ?>
 								</span>
-								<span class="custom-option <?php echo 'Italic' === $showcase_details['wcc_showcase_font_main_title']['font_family'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-family" data-value="<?php echo esc_attr( 'Italic' ); ?>">
+								<span class="custom-option <?php echo 'Italic' === $showcase_details['font_main_title']['font_family'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-family" data-value="<?php echo esc_attr( 'Italic' ); ?>">
 									<?php esc_html_e( 'Italic', 'wc-category-showcase' ); ?>
 								</span>
-								<span class="custom-option <?php echo 'Bengali' === $showcase_details['wcc_showcase_font_main_title']['font_family'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-family" data-value="<?php echo esc_attr( 'Bengali' ); ?>">
+								<span class="custom-option <?php echo 'Bengali' === $showcase_details['font_main_title']['font_family'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-family" data-value="<?php echo esc_attr( 'Bengali' ); ?>">
 									<?php esc_html_e( 'Bengali', 'wc-category-showcase' ); ?>
 								</span>
 							</div>
 						</div>
-						<input type="hidden" name="wcc_showcase_font_main_title[font_family]" id="wcc_showcase_font_main_title_font_family" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['font_family'] ); ?>">
+						<input type="hidden" name="wcc_showcase_font_main_title[font_family]" id="wcc_showcase_font_main_title_font_family" value="<?php echo esc_attr( $showcase_details['font_main_title']['font_family'] ); ?>">
 					</div>
 				</div>
 			</div>
@@ -113,39 +113,39 @@ defined( 'ABSPATH' ) || exit;
 									</div>
 								</div>
 								<div class="custom-options tw-w-[158px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden">
-									<span class="custom-option <?php echo 'default' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( 'default' ); ?>">
+									<span class="custom-option <?php echo 'default' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( 'default' ); ?>">
 										<?php esc_html_e( 'Default', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '100' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '100' ); ?>">
+									<span class="custom-option <?php echo '100' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '100' ); ?>">
 										<?php esc_html_e( '100', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '200' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '200' ); ?>">
+									<span class="custom-option <?php echo '200' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '200' ); ?>">
 										<?php esc_html_e( '200', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '300' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '300' ); ?>">
+									<span class="custom-option <?php echo '300' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '300' ); ?>">
 										<?php esc_html_e( '300', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '400' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '400' ); ?>">
+									<span class="custom-option <?php echo '400' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '400' ); ?>">
 										<?php esc_html_e( '400', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '500' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '500' ); ?>">
+									<span class="custom-option <?php echo '500' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '500' ); ?>">
 										<?php esc_html_e( '500', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '600' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '600' ); ?>">
+									<span class="custom-option <?php echo '600' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '600' ); ?>">
 										<?php esc_html_e( '600', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '700' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '700' ); ?>">
+									<span class="custom-option <?php echo '700' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '700' ); ?>">
 										<?php esc_html_e( '700', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '800' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '800' ); ?>">
+									<span class="custom-option <?php echo '800' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '800' ); ?>">
 										<?php esc_html_e( '800', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '900' === $showcase_details['wcc_showcase_font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '900' ); ?>">
+									<span class="custom-option <?php echo '900' === $showcase_details['font_main_title']['text_weight'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-weight" data-value="<?php echo esc_attr( '900' ); ?>">
 										<?php esc_html_e( '900	', 'wc-category-showcase' ); ?>
 									</span>
 								</div>
 							</div>
-							<input type="hidden" name="wcc_showcase_font_main_title[text_weight]" id="wcc_showcase_font_main_title_text_weight" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['text_weight'] ); ?>">
+							<input type="hidden" name="wcc_showcase_font_main_title[text_weight]" id="wcc_showcase_font_main_title_text_weight" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_weight'] ); ?>">
 						</div>
 					</div>
 				</div>
@@ -159,7 +159,7 @@ defined( 'ABSPATH' ) || exit;
 							</svg>
 						</span>
 						<label>
-							<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_main_title[text_size]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['text_size'] ); ?>">
+							<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_main_title[text_size]" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_size'] ); ?>">
 						</label>
 						<span class="tw-absolute tw-bg-input-grey-50 tw-py-[10px] tw-px-4 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'px' ); ?></span>
 					</div>
@@ -178,7 +178,7 @@ defined( 'ABSPATH' ) || exit;
 									<path d="M5.5 16H4.497L4.5 4.99996H5.503C5.5693 4.99996 5.63289 4.97362 5.67978 4.92674C5.72666 4.87985 5.753 4.81627 5.753 4.74996C5.753 4.71737 5.74651 4.6851 5.73389 4.65506C5.72127 4.62501 5.70278 4.59778 5.6795 4.57496L3.912 2.55646C3.86734 2.51995 3.81143 2.5 3.75375 2.5C3.69607 2.5 3.64016 2.51995 3.5955 2.55646L1.8275 4.57296C1.80416 4.59575 1.78559 4.62297 1.77288 4.65301C1.76018 4.68306 1.75359 4.71534 1.7535 4.74796C1.7535 4.81427 1.77984 4.87785 1.82672 4.92474C1.87361 4.97162 1.9372 4.99796 2.0035 4.99796H3.0075L3.0045 16H2C1.9337 16 1.87011 16.0263 1.82322 16.0732C1.77634 16.1201 1.75 16.1837 1.75 16.25C1.75 16.2826 1.75649 16.3148 1.76911 16.3449C1.78174 16.3749 1.80022 16.4021 1.8235 16.425L3.592 18.4415C3.63662 18.4778 3.69243 18.4977 3.75 18.4977C3.80757 18.4977 3.86338 18.4778 3.908 18.4415L5.676 16.425C5.69934 16.4022 5.71791 16.375 5.73062 16.3449C5.74332 16.3149 5.74991 16.2826 5.75 16.25C5.75 16.1837 5.72366 16.1201 5.67678 16.0732C5.62989 16.0263 5.5663 16 5.5 16Z"/>
 								</svg>
 							</span>
-							<input class="wcc_showcase-focus-color wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="text" name="wcc_showcase_font_main_title[line_height]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['line_height'] ); ?>">
+							<input class="wcc_showcase-focus-color wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="text" name="wcc_showcase_font_main_title[line_height]" value="<?php echo esc_attr( $showcase_details['font_main_title']['line_height'] ); ?>">
 							<span class="tw-absolute tw-bg-input-grey-50 tw-py-[10px] tw-px-4 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'px' ); ?></span>
 						</div>
 					</div>
@@ -193,7 +193,7 @@ defined( 'ABSPATH' ) || exit;
 								<path d="M17.417 16.064L15.417 14.064C15.3714 14.0224 15.3117 13.9995 15.25 14C15.1837 14 15.1201 14.0263 15.0732 14.0732C15.0263 14.1201 15 14.1837 15 14.25V15.5H5V14.25C5 14.1837 4.97366 14.1201 4.92678 14.0732C4.87989 14.0263 4.8163 14 4.75 14C4.68871 14 4.62966 14.0231 4.5845 14.0645L2.5845 16.0645C2.55839 16.0879 2.53752 16.1166 2.52322 16.1487C2.50893 16.1807 2.50154 16.2154 2.50154 16.2505C2.50154 16.2856 2.50893 16.3203 2.52322 16.3523C2.53752 16.3844 2.55839 16.4131 2.5845 16.4365L4.5845 18.4365C4.62981 18.4776 4.68884 18.5002 4.75 18.5C4.8163 18.5 4.87989 18.4737 4.92678 18.4268C4.97366 18.3799 5 18.3163 5 18.25V17H15V18.25C15 18.3163 15.0263 18.3799 15.0732 18.4268C15.1201 18.4737 15.1837 18.5 15.25 18.5C15.3113 18.5 15.3703 18.4769 15.4155 18.4355L17.4155 16.4355C17.4416 16.4121 17.4625 16.3834 17.4768 16.3513C17.4911 16.3193 17.4985 16.2846 17.4985 16.2495C17.4985 16.2144 17.4911 16.1797 17.4768 16.1477C17.4625 16.1156 17.4416 16.0869 17.4155 16.0635L17.417 16.064Z"/>
 							</svg>
 						</span>
-						<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="text" name="wcc_showcase_font_main_title[letter_spacing]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['letter_spacing'] ); ?>">
+						<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="text" name="wcc_showcase_font_main_title[letter_spacing]" value="<?php echo esc_attr( $showcase_details['font_main_title']['letter_spacing'] ); ?>">
 						<span class="tw-absolute tw-bg-input-grey-50 tw-py-[10px] tw-px-4 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'px' ); ?></span>
 					</div>
 				</div>
@@ -203,7 +203,7 @@ defined( 'ABSPATH' ) || exit;
 					<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'ALIGNMENT', 'wc-category-showcase' ); ?></h4>
 					<div class="tw-flex tw-justify-between tw-mt-2">
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'left' === $showcase_details['wcc_showcase_font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'left' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'left' === $showcase_details['font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'left' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M15.167 15H4.16699C3.89085 15 3.66699 15.2239 3.66699 15.5V16.5C3.66699 16.7761 3.89085 17 4.16699 17H15.167C15.4431 17 15.667 16.7761 15.667 16.5V15.5C15.667 15.2239 15.4431 15 15.167 15Z"/>
 									<path d="M18.167 3H4.16699C3.89085 3 3.66699 3.22386 3.66699 3.5V4.5C3.66699 4.77614 3.89085 5 4.16699 5H18.167C18.4431 5 18.667 4.77614 18.667 4.5V3.5C18.667 3.22386 18.4431 3 18.167 3Z"/>
@@ -213,7 +213,7 @@ defined( 'ABSPATH' ) || exit;
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'middle' === $showcase_details['wcc_showcase_font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'middle' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'middle' === $showcase_details['font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'middle' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 									<path d="M14.5 15H5.5C5.22386 15 5 15.2239 5 15.5V16.5C5 16.7761 5.22386 17 5.5 17H14.5C14.7761 17 15 16.7761 15 16.5V15.5C15 15.2239 14.7761 15 14.5 15Z"/>
 									<path d="M17.5 11H2.5C2.22386 11 2 11.2239 2 11.5V12.5C2 12.7761 2.22386 13 2.5 13H17.5C17.7761 13 18 12.7761 18 12.5V11.5C18 11.2239 17.7761 11 17.5 11Z"/>
@@ -223,7 +223,7 @@ defined( 'ABSPATH' ) || exit;
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'right' === $showcase_details['wcc_showcase_font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'right' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'right' === $showcase_details['font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'right' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M16.834 15H5.83398C5.55784 15 5.33398 15.2239 5.33398 15.5V16.5C5.33398 16.7761 5.55784 17 5.83398 17H16.834C17.1101 17 17.334 16.7761 17.334 16.5V15.5C17.334 15.2239 17.1101 15 16.834 15Z"/>
 									<path d="M16.834 3H2.83398C2.55784 3 2.33398 3.22386 2.33398 3.5V4.5C2.33398 4.77614 2.55784 5 2.83398 5H16.834C17.1101 5 17.334 4.77614 17.334 4.5V3.5C17.334 3.22386 17.1101 3 16.834 3Z"/>
@@ -232,35 +232,35 @@ defined( 'ABSPATH' ) || exit;
 								</svg>
 							</p>
 						</div>
-						<input type="hidden" name="wcc_showcase_font_main_title[text_align]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['text_align'] ); ?>">
+						<input type="hidden" name="wcc_showcase_font_main_title[text_align]" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_align'] ); ?>">
 					</div>
 				</div>
 				<div class="tw-w-1/2">
 					<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'DECORATION', 'wc-category-showcase' ); ?></h4>
 					<div class="tw-flex tw-justify-between tw-mt-2">
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'bold' === $showcase_details['wcc_showcase_font_main_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'bold' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'bold' === $showcase_details['font_main_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'bold' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M4.66699 3.254C4.66699 3.148 4.68949 3.0845 4.80649 3.0635C5.64149 3.0425 7.75299 3 9.30899 3C14.159 3 14.901 5.3295 14.901 6.685C14.9094 7.22998 14.7798 7.76823 14.5243 8.24967C14.2687 8.7311 13.8956 9.14006 13.4395 9.4385C14.0949 9.70259 14.6567 10.1559 15.0535 10.7406C15.4502 11.3253 15.6638 12.0149 15.667 12.7215C15.667 15.39 13.138 17 9.30899 17C7.28999 17 5.71149 16.979 4.82899 16.9575C4.71349 16.9365 4.66699 16.873 4.66699 16.788V3.254ZM7.65599 8.991H9.33549C10.0087 8.98517 10.6811 9.03534 11.346 9.141C11.6244 8.89954 11.8445 8.59828 11.9901 8.25974C12.1356 7.9212 12.2028 7.55414 12.1865 7.186C12.1865 5.725 11.2135 5.007 9.40249 5.007C8.69499 5.007 8.12099 5.032 7.65599 5.032V8.991ZM7.65599 14.9765C8.14549 14.9975 8.70099 15.0185 9.36799 15.0185C11.456 15.0395 12.7895 14.365 12.7895 12.952C12.7895 12.087 12.3455 11.391 11.1895 11.1175C10.6938 11.005 10.1861 10.9546 9.67799 10.9675H7.65599V14.9765Z"/>
 								</svg>
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'italic' === $showcase_details['wcc_showcase_font_main_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'italic' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'italic' === $showcase_details['font_main_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'italic' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 									<path d="M9.84098 16.8315C9.82048 16.938 9.80098 16.9815 9.69998 16.9815H7.65998C7.55998 16.9815 7.52048 16.96 7.53998 16.811L9.78048 3.1275C9.80098 3.021 9.86048 3 9.92098 3H11.9815C12.1015 3 12.121 3.0635 12.121 3.17L9.84098 16.8315Z"/>
 								</svg>
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'underline' === $showcase_details['wcc_showcase_font_main_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'underline' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'underline' === $showcase_details['font_main_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'underline' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M15.584 15.9999H5.08398C4.94591 15.9999 4.83398 16.1118 4.83398 16.2499V16.7499C4.83398 16.8879 4.94591 16.9999 5.08398 16.9999H15.584C15.7221 16.9999 15.834 16.8879 15.834 16.7499V16.2499C15.834 16.1118 15.7221 15.9999 15.584 15.9999Z"/>
 									<path d="M12.584 3.00586C12.5177 3.00586 12.4541 3.0322 12.4072 3.07908C12.3603 3.12597 12.334 3.18956 12.334 3.25586V10.0059C12.334 10.0059 12.575 13.1059 9.83398 13.1059C7.10448 13.1059 7.33398 10.0059 7.33398 10.0059V3.25586C7.33398 3.18956 7.30765 3.12597 7.26076 3.07908C7.21388 3.0322 7.15029 3.00586 7.08398 3.00586H5.58398C5.51768 3.00586 5.45409 3.0322 5.40721 3.07908C5.36032 3.12597 5.33398 3.18956 5.33398 3.25586V10.0059C5.33398 10.7119 5.26348 15.0059 9.83398 15.0059C14.4045 15.0059 14.334 10.4999 14.334 9.99386V3.25586C14.334 3.18956 14.3076 3.12597 14.2608 3.07908C14.2139 3.0322 14.1503 3.00586 14.084 3.00586H12.584Z"/>
 								</svg>
 							</p>
 						</div>
-						<input type="hidden" name="wcc_showcase_font_main_title[text_decoration]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['text_decoration'] ); ?>">
+						<input type="hidden" name="wcc_showcase_font_main_title[text_decoration]" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_decoration'] ); ?>">
 					</div>
 				</div>
 			</div>
@@ -268,8 +268,8 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-mt-2">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'COLOR', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex tw-mt-2">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-font-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_font_main_title']['text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_font_main_title[text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_main_title']['text_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-font-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['font_main_title']['text_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_font_main_title[text_color]" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
@@ -288,27 +288,27 @@ defined( 'ABSPATH' ) || exit;
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'DEFAULT TEXT TAG', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-flex tw-justify-around">
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'p' === $showcase_details['wcc_showcase_font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'p' ); ?>"><?php echo esc_attr( 'P' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'p' === $showcase_details['font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'p' ); ?>"><?php echo esc_attr( 'P' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h1' === $showcase_details['wcc_showcase_font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h1' ); ?>"><?php echo esc_attr( 'H1' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h1' === $showcase_details['font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h1' ); ?>"><?php echo esc_attr( 'H1' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h2' === $showcase_details['wcc_showcase_font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h2' ); ?>"><?php echo esc_attr( 'H2' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h2' === $showcase_details['font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h2' ); ?>"><?php echo esc_attr( 'H2' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h3' === $showcase_details['wcc_showcase_font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h3' ); ?>"><?php echo esc_attr( 'H3' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h3' === $showcase_details['font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h3' ); ?>"><?php echo esc_attr( 'H3' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h4' === $showcase_details['wcc_showcase_font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h4' ); ?>"><?php echo esc_attr( 'H4' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h4' === $showcase_details['font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h4' ); ?>"><?php echo esc_attr( 'H4' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h5' === $showcase_details['wcc_showcase_font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h5' ); ?>"><?php echo esc_attr( 'H5' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h5' === $showcase_details['font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h5' ); ?>"><?php echo esc_attr( 'H5' ); ?></p>
 					</div>
 					<div class="wcc_showcase-choose-style-tag">
-						<p class="wcc_showcase-font-tag-select <?php echo 'h6' === $showcase_details['wcc_showcase_font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h6' ); ?>"><?php echo esc_attr( 'H6' ); ?></p>
+						<p class="wcc_showcase-font-tag-select <?php echo 'h6' === $showcase_details['font_category_title']['text_tag'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'h6' ); ?>"><?php echo esc_attr( 'H6' ); ?></p>
 					</div>
-					<input type="hidden" name="wcc_showcase_font_category_title[text_tag]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['text_tag'] ); ?>">
+					<input type="hidden" name="wcc_showcase_font_category_title[text_tag]" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_tag'] ); ?>">
 				</div>
 			</div>
 			<div class="wcc_showcase-settings-row-title tw-mt-3"></div>
@@ -329,18 +329,18 @@ defined( 'ABSPATH' ) || exit;
 								</div>
 							</div>
 							<div class="custom-options tw-w-[336px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden wccs-font_category_title-font-family">
-								<span class="custom-option <?php echo 'Roboto' === $showcase_details['wcc_showcase_font_category_title']['font_family'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'Roboto' ); ?>">
+								<span class="custom-option <?php echo 'Roboto' === $showcase_details['font_category_title']['font_family'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'Roboto' ); ?>">
 									<?php esc_html_e( 'Roboto', 'wc-category-showcase' ); ?>
 								</span>
-								<span class="custom-option <?php echo 'Italic' === $showcase_details['wcc_showcase_font_category_title']['font_family'] ? 'selected' : ''; ?> wccs-font_category_title-font-family" data-value="<?php echo esc_attr( 'Italic' ); ?>">
+								<span class="custom-option <?php echo 'Italic' === $showcase_details['font_category_title']['font_family'] ? 'selected' : ''; ?> wccs-font_category_title-font-family" data-value="<?php echo esc_attr( 'Italic' ); ?>">
 									<?php esc_html_e( 'Italic', 'wc-category-showcase' ); ?>
 								</span>
-								<span class="custom-option <?php echo 'Bengali' === $showcase_details['wcc_showcase_font_category_title']['font_family'] ? 'selected' : ''; ?> wccs-font_category_title-font-family" data-value="<?php echo esc_attr( 'Bengali' ); ?>">
+								<span class="custom-option <?php echo 'Bengali' === $showcase_details['font_category_title']['font_family'] ? 'selected' : ''; ?> wccs-font_category_title-font-family" data-value="<?php echo esc_attr( 'Bengali' ); ?>">
 									<?php esc_html_e( 'Bengali', 'wc-category-showcase' ); ?>
 								</span>
 							</div>
 						</div>
-						<input type="hidden" name="wcc_showcase_font_category_title[font_family]" id="wcc_showcase_font_category_title_font_family" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['font_family'] ); ?>">
+						<input type="hidden" name="wcc_showcase_font_category_title[font_family]" id="wcc_showcase_font_category_title_font_family" value="<?php echo esc_attr( $showcase_details['font_category_title']['font_family'] ); ?>">
 					</div>
 				</div>
 			</div>
@@ -362,39 +362,39 @@ defined( 'ABSPATH' ) || exit;
 									</div>
 								</div>
 								<div class="custom-options tw-w-[158px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden">
-									<span class="custom-option <?php echo 'default' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( 'default' ); ?>">
+									<span class="custom-option <?php echo 'default' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( 'default' ); ?>">
 										<?php esc_html_e( 'Default', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '100' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '100' ); ?>">
+									<span class="custom-option <?php echo '100' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '100' ); ?>">
 										<?php esc_html_e( '100', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '200' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '200' ); ?>">
+									<span class="custom-option <?php echo '200' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '200' ); ?>">
 										<?php esc_html_e( '200', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '300' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '300' ); ?>">
+									<span class="custom-option <?php echo '300' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '300' ); ?>">
 										<?php esc_html_e( '300', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '400' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '400' ); ?>">
+									<span class="custom-option <?php echo '400' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '400' ); ?>">
 										<?php esc_html_e( '400', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '500' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '500' ); ?>">
+									<span class="custom-option <?php echo '500' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '500' ); ?>">
 										<?php esc_html_e( '500', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '600' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '600' ); ?>">
+									<span class="custom-option <?php echo '600' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '600' ); ?>">
 										<?php esc_html_e( '600', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '700' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '700' ); ?>">
+									<span class="custom-option <?php echo '700' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '700' ); ?>">
 										<?php esc_html_e( '700', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '800' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '800' ); ?>">
+									<span class="custom-option <?php echo '800' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '800' ); ?>">
 										<?php esc_html_e( '800', 'wc-category-showcase' ); ?>
 									</span>
-									<span class="custom-option <?php echo '900' === $showcase_details['wcc_showcase_font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '900' ); ?>">
+									<span class="custom-option <?php echo '900' === $showcase_details['font_category_title']['text_weight'] ? 'selected' : ''; ?> wccs-font_category_title-font-weight" data-value="<?php echo esc_attr( '900' ); ?>">
 										<?php esc_html_e( '900	', 'wc-category-showcase' ); ?>
 									</span>
 								</div>
 							</div>
-							<input type="hidden" name="wcc_showcase_font_category_title[text_weight]" id="wcc_showcase_font_category_title_text_weight" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['text_weight'] ); ?>">
+							<input type="hidden" name="wcc_showcase_font_category_title[text_weight]" id="wcc_showcase_font_category_title_text_weight" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_weight'] ); ?>">
 						</div>
 					</div>
 				</div>
@@ -407,7 +407,7 @@ defined( 'ABSPATH' ) || exit;
 								<path d="M5.5 3C5.36739 3 5.24021 3.05268 5.14645 3.14645C5.05268 3.24021 5 3.36739 5 3.5V6.5C5 6.63261 5.05268 6.75979 5.14645 6.85355C5.24021 6.94732 5.36739 7 5.5 7H6.5C6.63261 7 6.75979 6.94732 6.85355 6.85355C6.94732 6.75979 7 6.63261 7 6.5V5H11V15H9.5C9.36739 15 9.24021 15.0527 9.14645 15.1464C9.05268 15.2402 9 15.3674 9 15.5V16.5C9 16.6326 9.05268 16.7598 9.14645 16.8536C9.24021 16.9473 9.36739 17 9.5 17H14.5C14.6326 17 14.7598 16.9473 14.8536 16.8536C14.9473 16.7598 15 16.6326 15 16.5V15.5C15 15.3674 14.9473 15.2402 14.8536 15.1464C14.7598 15.0527 14.6326 15 14.5 15H13V5H17V6.5C17 6.63261 17.0527 6.75979 17.1464 6.85355C17.2402 6.94732 17.3674 7 17.5 7H18.5C18.6326 7 18.7598 6.94732 18.8536 6.85355C18.9473 6.75979 19 6.63261 19 6.5V3.5C19 3.36739 18.9473 3.24021 18.8536 3.14645C18.7598 3.05268 18.6326 3 18.5 3H5.5Z"/>
 							</svg>
 						</span>
-						<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_category_title[text_size]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['text_size'] ); ?>">
+						<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_category_title[text_size]" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_size'] ); ?>">
 						<span class="tw-absolute tw-bg-input-grey-50 tw-py-[10px] tw-px-4 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'px' ); ?></span>
 					</div>
 				</div>
@@ -425,7 +425,7 @@ defined( 'ABSPATH' ) || exit;
 									<path d="M5.5 16H4.497L4.5 4.99996H5.503C5.5693 4.99996 5.63289 4.97362 5.67978 4.92674C5.72666 4.87985 5.753 4.81627 5.753 4.74996C5.753 4.71737 5.74651 4.6851 5.73389 4.65506C5.72127 4.62501 5.70278 4.59778 5.6795 4.57496L3.912 2.55646C3.86734 2.51995 3.81143 2.5 3.75375 2.5C3.69607 2.5 3.64016 2.51995 3.5955 2.55646L1.8275 4.57296C1.80416 4.59575 1.78559 4.62297 1.77288 4.65301C1.76018 4.68306 1.75359 4.71534 1.7535 4.74796C1.7535 4.81427 1.77984 4.87785 1.82672 4.92474C1.87361 4.97162 1.9372 4.99796 2.0035 4.99796H3.0075L3.0045 16H2C1.9337 16 1.87011 16.0263 1.82322 16.0732C1.77634 16.1201 1.75 16.1837 1.75 16.25C1.75 16.2826 1.75649 16.3148 1.76911 16.3449C1.78174 16.3749 1.80022 16.4021 1.8235 16.425L3.592 18.4415C3.63662 18.4778 3.69243 18.4977 3.75 18.4977C3.80757 18.4977 3.86338 18.4778 3.908 18.4415L5.676 16.425C5.69934 16.4022 5.71791 16.375 5.73062 16.3449C5.74332 16.3149 5.74991 16.2826 5.75 16.25C5.75 16.1837 5.72366 16.1201 5.67678 16.0732C5.62989 16.0263 5.5663 16 5.5 16Z"/>
 								</svg>
 							</span>
-							<input class="wcc_showcase-focus-color wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_category_title[line_height]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['line_height'] ); ?>">
+							<input class="wcc_showcase-focus-color wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_category_title[line_height]" value="<?php echo esc_attr( $showcase_details['font_category_title']['line_height'] ); ?>">
 							<span class="tw-absolute tw-bg-input-grey-50 tw-py-[10px] tw-px-4 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'px' ); ?></span>
 						</div>
 					</div>
@@ -440,7 +440,7 @@ defined( 'ABSPATH' ) || exit;
 								<path d="M17.417 16.064L15.417 14.064C15.3714 14.0224 15.3117 13.9995 15.25 14C15.1837 14 15.1201 14.0263 15.0732 14.0732C15.0263 14.1201 15 14.1837 15 14.25V15.5H5V14.25C5 14.1837 4.97366 14.1201 4.92678 14.0732C4.87989 14.0263 4.8163 14 4.75 14C4.68871 14 4.62966 14.0231 4.5845 14.0645L2.5845 16.0645C2.55839 16.0879 2.53752 16.1166 2.52322 16.1487C2.50893 16.1807 2.50154 16.2154 2.50154 16.2505C2.50154 16.2856 2.50893 16.3203 2.52322 16.3523C2.53752 16.3844 2.55839 16.4131 2.5845 16.4365L4.5845 18.4365C4.62981 18.4776 4.68884 18.5002 4.75 18.5C4.8163 18.5 4.87989 18.4737 4.92678 18.4268C4.97366 18.3799 5 18.3163 5 18.25V17H15V18.25C15 18.3163 15.0263 18.3799 15.0732 18.4268C15.1201 18.4737 15.1837 18.5 15.25 18.5C15.3113 18.5 15.3703 18.4769 15.4155 18.4355L17.4155 16.4355C17.4416 16.4121 17.4625 16.3834 17.4768 16.3513C17.4911 16.3193 17.4985 16.2846 17.4985 16.2495C17.4985 16.2144 17.4911 16.1797 17.4768 16.1477C17.4625 16.1156 17.4416 16.0869 17.4155 16.0635L17.417 16.064Z"/>
 							</svg>
 						</span>
-						<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_category_title[letter_spacing]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['letter_spacing'] ); ?>">
+						<input class="wcc_showcase-focus-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[40px] tw-p-2" type="number" name="wcc_showcase_font_category_title[letter_spacing]" value="<?php echo esc_attr( $showcase_details['font_category_title']['letter_spacing'] ); ?>">
 						<span class="tw-absolute tw-bg-input-grey-50 tw-py-[10px] tw-px-4 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'px' ); ?></span>
 					</div>
 				</div>
@@ -450,7 +450,7 @@ defined( 'ABSPATH' ) || exit;
 					<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'ALIGNMENT', 'wc-category-showcase' ); ?></h4>
 					<div class="tw-flex tw-justify-between tw-mt-2">
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'left' === $showcase_details['wcc_showcase_font_category_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'left' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'left' === $showcase_details['font_category_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'left' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M15.167 15H4.16699C3.89085 15 3.66699 15.2239 3.66699 15.5V16.5C3.66699 16.7761 3.89085 17 4.16699 17H15.167C15.4431 17 15.667 16.7761 15.667 16.5V15.5C15.667 15.2239 15.4431 15 15.167 15Z"/>
 									<path d="M18.167 3H4.16699C3.89085 3 3.66699 3.22386 3.66699 3.5V4.5C3.66699 4.77614 3.89085 5 4.16699 5H18.167C18.4431 5 18.667 4.77614 18.667 4.5V3.5C18.667 3.22386 18.4431 3 18.167 3Z"/>
@@ -460,7 +460,7 @@ defined( 'ABSPATH' ) || exit;
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'middle' === $showcase_details['wcc_showcase_font_category_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'middle' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'middle' === $showcase_details['font_category_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'middle' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 									<path d="M14.5 15H5.5C5.22386 15 5 15.2239 5 15.5V16.5C5 16.7761 5.22386 17 5.5 17H14.5C14.7761 17 15 16.7761 15 16.5V15.5C15 15.2239 14.7761 15 14.5 15Z"/>
 									<path d="M17.5 11H2.5C2.22386 11 2 11.2239 2 11.5V12.5C2 12.7761 2.22386 13 2.5 13H17.5C17.7761 13 18 12.7761 18 12.5V11.5C18 11.2239 17.7761 11 17.5 11Z"/>
@@ -470,7 +470,7 @@ defined( 'ABSPATH' ) || exit;
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'right' === $showcase_details['wcc_showcase_font_category_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'right' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'right' === $showcase_details['font_category_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'right' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M16.834 15H5.83398C5.55784 15 5.33398 15.2239 5.33398 15.5V16.5C5.33398 16.7761 5.55784 17 5.83398 17H16.834C17.1101 17 17.334 16.7761 17.334 16.5V15.5C17.334 15.2239 17.1101 15 16.834 15Z"/>
 									<path d="M16.834 3H2.83398C2.55784 3 2.33398 3.22386 2.33398 3.5V4.5C2.33398 4.77614 2.55784 5 2.83398 5H16.834C17.1101 5 17.334 4.77614 17.334 4.5V3.5C17.334 3.22386 17.1101 3 16.834 3Z"/>
@@ -479,35 +479,35 @@ defined( 'ABSPATH' ) || exit;
 								</svg>
 							</p>
 						</div>
-						<input type="hidden" name="wcc_showcase_font_category_title[text_align]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['text_align'] ); ?>">
+						<input type="hidden" name="wcc_showcase_font_category_title[text_align]" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_align'] ); ?>">
 					</div>
 				</div>
 				<div class="tw-w-1/2">
 					<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'DECORATION', 'wc-category-showcase' ); ?></h4>
 					<div class="tw-flex tw-justify-between tw-mt-2">
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'bold' === $showcase_details['wcc_showcase_font_category_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'bold' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'bold' === $showcase_details['font_category_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'bold' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M4.66699 3.254C4.66699 3.148 4.68949 3.0845 4.80649 3.0635C5.64149 3.0425 7.75299 3 9.30899 3C14.159 3 14.901 5.3295 14.901 6.685C14.9094 7.22998 14.7798 7.76823 14.5243 8.24967C14.2687 8.7311 13.8956 9.14006 13.4395 9.4385C14.0949 9.70259 14.6567 10.1559 15.0535 10.7406C15.4502 11.3253 15.6638 12.0149 15.667 12.7215C15.667 15.39 13.138 17 9.30899 17C7.28999 17 5.71149 16.979 4.82899 16.9575C4.71349 16.9365 4.66699 16.873 4.66699 16.788V3.254ZM7.65599 8.991H9.33549C10.0087 8.98517 10.6811 9.03534 11.346 9.141C11.6244 8.89954 11.8445 8.59828 11.9901 8.25974C12.1356 7.9212 12.2028 7.55414 12.1865 7.186C12.1865 5.725 11.2135 5.007 9.40249 5.007C8.69499 5.007 8.12099 5.032 7.65599 5.032V8.991ZM7.65599 14.9765C8.14549 14.9975 8.70099 15.0185 9.36799 15.0185C11.456 15.0395 12.7895 14.365 12.7895 12.952C12.7895 12.087 12.3455 11.391 11.1895 11.1175C10.6938 11.005 10.1861 10.9546 9.67799 10.9675H7.65599V14.9765Z"/>
 								</svg>
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'italic' === $showcase_details['wcc_showcase_font_category_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'italic' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'italic' === $showcase_details['font_category_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'italic' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 									<path d="M9.84098 16.8315C9.82048 16.938 9.80098 16.9815 9.69998 16.9815H7.65998C7.55998 16.9815 7.52048 16.96 7.53998 16.811L9.78048 3.1275C9.80098 3.021 9.86048 3 9.92098 3H11.9815C12.1015 3 12.121 3.0635 12.121 3.17L9.84098 16.8315Z"/>
 								</svg>
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'underline' === $showcase_details['wcc_showcase_font_category_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'underline' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'underline' === $showcase_details['font_category_title']['text_decoration'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'underline' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 									<path d="M15.584 15.9999H5.08398C4.94591 15.9999 4.83398 16.1118 4.83398 16.2499V16.7499C4.83398 16.8879 4.94591 16.9999 5.08398 16.9999H15.584C15.7221 16.9999 15.834 16.8879 15.834 16.7499V16.2499C15.834 16.1118 15.7221 15.9999 15.584 15.9999Z"/>
 									<path d="M12.584 3.00586C12.5177 3.00586 12.4541 3.0322 12.4072 3.07908C12.3603 3.12597 12.334 3.18956 12.334 3.25586V10.0059C12.334 10.0059 12.575 13.1059 9.83398 13.1059C7.10448 13.1059 7.33398 10.0059 7.33398 10.0059V3.25586C7.33398 3.18956 7.30765 3.12597 7.26076 3.07908C7.21388 3.0322 7.15029 3.00586 7.08398 3.00586H5.58398C5.51768 3.00586 5.45409 3.0322 5.40721 3.07908C5.36032 3.12597 5.33398 3.18956 5.33398 3.25586V10.0059C5.33398 10.7119 5.26348 15.0059 9.83398 15.0059C14.4045 15.0059 14.334 10.4999 14.334 9.99386V3.25586C14.334 3.18956 14.3076 3.12597 14.2608 3.07908C14.2139 3.0322 14.1503 3.00586 14.084 3.00586H12.584Z"/>
 								</svg>
 							</p>
 						</div>
-						<input type="hidden" name="wcc_showcase_font_category_title[text_decoration]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['text_decoration'] ); ?>">
+						<input type="hidden" name="wcc_showcase_font_category_title[text_decoration]" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_decoration'] ); ?>">
 					</div>
 				</div>
 			</div>
@@ -515,8 +515,8 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-mt-2">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'COLOR', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex tw-mt-2">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-font-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_font_category_title']['text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_font_category_title[text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_font_category_title']['text_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-font-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['font_category_title']['text_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_font_category_title[text_color]" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>

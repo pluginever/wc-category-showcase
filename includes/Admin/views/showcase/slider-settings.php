@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_is_ticker" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_slide_is_ticker', $showcase_details ) && 'yes' === $showcase_details['wcc_showcase_slide_is_ticker'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_is_ticker" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_slide_is_ticker', $showcase_details ) && 'yes' === $showcase_details['slide_is_ticker'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -49,13 +49,13 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 				<div class="custom-options tw-w-[224px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden">
-					<span class="custom-option wccs-ticker-direction <?php echo 'left_to_right' === $showcase_details['wcc_showcase_slider_ticker_direction'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'left_to_right' ); ?>">
+					<span class="custom-option wccs-ticker-direction <?php echo 'left_to_right' === $showcase_details['slider_ticker_direction'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'left_to_right' ); ?>">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 							<path d="M13.5 17L14.375 17C15.8247 17 17 15.8247 17 14.375L17 5.625C17 4.17525 15.8247 3 14.375 3L13.5 3M10 6.5L13.5 10M13.5 10L10 13.5M13.5 10L3 10" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 						<?php esc_html_e( 'Left to Right', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option wccs-ticker-direction <?php echo 'right_to_left' === $showcase_details['wcc_showcase_slider_ticker_direction'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'right_to_left' ); ?>">
+					<span class="custom-option wccs-ticker-direction <?php echo 'right_to_left' === $showcase_details['slider_ticker_direction'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'right_to_left' ); ?>">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 							<path d="M6.5 17L5.625 17C4.17525 17 3 15.8247 3 14.375L3 5.625C3 4.17525 4.17525 3 5.625 3L6.5 3M10 6.5L6.5 10M6.5 10L10 13.5M6.5 10L17 10" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
@@ -63,7 +63,7 @@ defined( 'ABSPATH' ) || exit;
 					</span>
 				</div>
 			</div>
-			<input type="hidden" name="wcc_showcase_slider_ticker_direction" id="wcc_showcase_slider_ticker_direction" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slider_ticker_direction'] ); ?>">
+			<input type="hidden" name="wcc_showcase_slider_ticker_direction" id="wcc_showcase_slider_ticker_direction" value="<?php echo esc_attr( $showcase_details['slider_ticker_direction'] ); ?>">
 		</div>
 	</div>
 </div>
@@ -74,16 +74,16 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center tw-gap-2 tw-rounded-md tw-max-w-[385px]">
 		<span class="tw-isolate tw-flex tw-flex-row tw-items-center tw-bg-input-grey-50 tw-p-1 tw-rounded-md tw-shadow-sm tw-min-w-[385px]">
-			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'slow' === $showcase_details['wcc_showcase_ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
-				<input type="radio" name="wcc_showcase_ticket_mode" checked class="!tw-hidden" value="<?php echo esc_attr( 'slow' ); ?>" <?php if ( 'slow' === $showcase_details['wcc_showcase_ticket_mode'] ) { echo 'checked'; } ?>>
+			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'slow' === $showcase_details['ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
+				<input type="radio" name="wcc_showcase_ticket_mode" checked class="!tw-hidden" value="<?php echo esc_attr( 'slow' ); ?>" <?php if ( 'slow' === $showcase_details['ticket_mode'] ) { echo 'checked'; } ?>>
 				<?php esc_html_e( 'Slow', 'wc-category-showcase' ); ?>
 			</label>
-			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'medium' === $showcase_details['wcc_showcase_ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
-				<input type="radio" name="wcc_showcase_ticket_mode" class="!tw-hidden" value="<?php echo esc_attr( 'medium' ); ?>" <?php if ( 'medium' === $showcase_details['wcc_showcase_ticket_mode'] ) { echo 'checked'; } ?>>
+			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'medium' === $showcase_details['ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
+				<input type="radio" name="wcc_showcase_ticket_mode" class="!tw-hidden" value="<?php echo esc_attr( 'medium' ); ?>" <?php if ( 'medium' === $showcase_details['ticket_mode'] ) { echo 'checked'; } ?>>
 				<?php esc_html_e( 'Medium', 'wc-category-showcase' ); ?>
 			</label>
-			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'fast' === $showcase_details['wcc_showcase_ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
-				<input type="radio" name="wcc_showcase_ticket_mode" class="!tw-hidden" value="<?php echo esc_attr( 'fast' ); ?>" <?php if ( 'fast' === $showcase_details['wcc_showcase_ticket_mode'] ) { echo 'checked'; } ?>>
+			<label class="tw-w-1/3 wcc_showcase-ticker-mode <?php echo 'fast' === $showcase_details['ticket_mode'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
+				<input type="radio" name="wcc_showcase_ticket_mode" class="!tw-hidden" value="<?php echo esc_attr( 'fast' ); ?>" <?php if ( 'fast' === $showcase_details['ticket_mode'] ) { echo 'checked'; } ?>>
 				<?php esc_html_e( 'Fast', 'wc-category-showcase' ); ?>
 			</label>
 		</span>
@@ -103,7 +103,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_slideshow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_slideshow'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_slideshow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_slideshow'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -118,7 +118,7 @@ defined( 'ABSPATH' ) || exit;
 			<path d="M15.9833 4.14095L14.9583 5.68262C15.4526 6.66852 15.6946 7.76165 15.6626 8.86406C15.6306 9.96647 15.3256 11.0437 14.775 11.9993H3.22498C2.50929 10.7577 2.21273 9.31855 2.37926 7.89518C2.5458 6.4718 3.16657 5.13998 4.14955 4.09714C5.13252 3.05431 6.42537 2.35599 7.83643 2.1057C9.24749 1.85541 10.7016 2.06648 11.9833 2.70762L13.525 1.68262C11.9554 0.676134 10.0936 0.225125 8.23739 0.401734C6.38119 0.578344 4.63785 1.37237 3.28622 2.6568C1.9346 3.94123 1.05278 5.64185 0.781829 7.48663C0.510875 9.33142 0.86644 11.2138 1.79165 12.8326C1.93707 13.0845 2.14589 13.294 2.39734 13.4402C2.64879 13.5864 2.93412 13.6642 3.22498 13.666H14.7666C15.0603 13.6671 15.3491 13.5907 15.6037 13.4443C15.8584 13.298 16.0698 13.087 16.2166 12.8326C16.9845 11.5026 17.3698 9.98618 17.3301 8.45092C17.2904 6.91565 16.8272 5.42122 15.9916 4.13262L15.9833 4.14095ZM7.82498 9.84095C7.97966 9.99611 8.16344 10.1192 8.36578 10.2032C8.56813 10.2872 8.78506 10.3305 9.00415 10.3305C9.22324 10.3305 9.44017 10.2872 9.64251 10.2032C9.84486 10.1192 10.0286 9.99611 10.1833 9.84095L14.9 2.76595L7.82498 7.48262C7.67002 7.63741 7.54709 7.82122 7.46321 8.02355C7.37934 8.22588 7.33617 8.44276 7.33617 8.66179C7.33617 8.88081 7.37934 9.09769 7.46321 9.30002C7.54709 9.50235 7.67002 9.68617 7.82498 9.84095Z" fill="#2270B1"/>
 		</svg>
 		<label class="tw-inline-flex tw-cursor-pointer tw-relative tw-pl-[4px]">
-			<input type="number" name="wcc_showcase_slide_speed" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_speed'] ); ?>" class="wcc_showcase-settings-field-border">
+			<input type="number" name="wcc_showcase_slide_speed" value="<?php echo esc_attr( $showcase_details['slide_speed'] ); ?>" class="wcc_showcase-settings-field-border">
 			<span class="tw-absolute tw-bg-input-grey-50 tw-py-[6px] tw-px-4 tw-items-center tw-top-[2px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'ms' ); ?></span>
 		</label>
 	</div>
@@ -130,7 +130,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_stop_on_hover" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_stop_on_hover'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_stop_on_hover" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_stop_on_hover'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -142,7 +142,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_unlimited_loop" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_unlimited_loop'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_unlimited_loop" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_unlimited_loop'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -160,7 +160,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_navigation_arrow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_navigation_arrow'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_navigation_arrow" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_navigation_arrow'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -185,27 +185,27 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 				<div class="custom-options tw-bg-white tw-w-[224px] tw-border-divider-grey-100 tw-rounded-md tw-hidden">
-					<span class="custom-option wccs-navigation-position-option <?php echo 'default' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'default' ); ?>">
+					<span class="custom-option wccs-navigation-position-option <?php echo 'default' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'default' ); ?>">
 						<?php esc_html_e( 'Default', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option wccs-navigation-position-option <?php echo 'top-right' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-right' ); ?>">
+					<span class="custom-option wccs-navigation-position-option <?php echo 'top-right' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-right' ); ?>">
 						<?php esc_html_e( 'Top Right', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option wccs-navigation-position-option <?php echo 'top-left' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-left' ); ?>">
+					<span class="custom-option wccs-navigation-position-option <?php echo 'top-left' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-left' ); ?>">
 						<?php esc_html_e( 'Top Left', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-right' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-right' ); ?>">
+					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-right' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-right' ); ?>">
 						<?php esc_html_e( 'Bottom Right', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-left' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-left' ); ?>">
+					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-left' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-left' ); ?>">
 						<?php esc_html_e( 'Bottom Left', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-center' === $showcase_details['wcc_showcase_slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-center' ); ?>">
+					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-center' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-center' ); ?>">
 						<?php esc_html_e( 'Bottom Center', 'wc-category-showcase' ); ?>
 					</span>
 				</div>
 			</div>
-			<input type="hidden" name="wcc_showcase_slider_navigation_position" id="wcc_showcase_slider_navigation_position" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slider_navigation_position'] ); ?>">
+			<input type="hidden" name="wcc_showcase_slider_navigation_position" id="wcc_showcase_slider_navigation_position" value="<?php echo esc_attr( $showcase_details['slider_navigation_position'] ); ?>">
 		</div>
 	</div>
 </div>
@@ -225,7 +225,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_arrow_style" value="<?php echo esc_attr( 'chevron' ); ?>" <?php echo 'chevron' === $showcase_details['wcc_showcase_slide_arrow_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Chevron', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_arrow_style" value="<?php echo esc_attr( 'chevron' ); ?>" <?php echo 'chevron' === $showcase_details['slide_arrow_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Chevron', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -238,7 +238,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_arrow_style" value="<?php echo esc_attr( 'arrow' ); ?>" <?php echo 'arrow' === $showcase_details['wcc_showcase_slide_arrow_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Arrow', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_arrow_style" value="<?php echo esc_attr( 'arrow' ); ?>" <?php echo 'arrow' === $showcase_details['slide_arrow_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Arrow', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -265,7 +265,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'sharp' ); ?>" <?php echo 'sharp' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Sharp', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'sharp' ); ?>" <?php echo 'sharp' === $showcase_details['slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Sharp', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -282,7 +282,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'rounded' ); ?>" <?php echo 'rounded' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Rounded', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'rounded' ); ?>" <?php echo 'rounded' === $showcase_details['slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Rounded', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -299,7 +299,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'circle' ); ?>" <?php echo 'circle' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Circle', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'circle' ); ?>" <?php echo 'circle' === $showcase_details['slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Circle', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -312,7 +312,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'only_icons' ); ?>" <?php echo 'only_icons' === $showcase_details['wcc_showcase_slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Only Icons', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_style" value="<?php echo esc_attr( 'only_icons' ); ?>" <?php echo 'only_icons' === $showcase_details['slide_button_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Only Icons', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -339,7 +339,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'filled' ); ?>" <?php echo 'filled' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Filled', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'filled' ); ?>" <?php echo 'filled' === $showcase_details['slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Filled', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -358,7 +358,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'outline' ); ?>" <?php echo 'outline' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Outline', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'outline' ); ?>" <?php echo 'outline' === $showcase_details['slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Outline', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -375,7 +375,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'transparent' ); ?>" <?php echo 'transparent' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Transparent', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'transparent' ); ?>" <?php echo 'transparent' === $showcase_details['slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Transparent', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -394,7 +394,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'shadow' ); ?>" <?php echo 'shadow' === $showcase_details['wcc_showcase_slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Shadow', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_button_background_style" value="<?php echo esc_attr( 'shadow' ); ?>" <?php echo 'shadow' === $showcase_details['slide_button_background_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Shadow', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -411,32 +411,32 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_button']['background_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[background_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_button']['background_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_button']['background_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[background_color]" value="<?php echo esc_attr( $showcase_details['slide_button']['background_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_button']['text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_button']['text_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_button']['text_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[text_color]" value="<?php echo esc_attr( $showcase_details['slide_button']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_button']['hover_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[hover_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_button']['hover_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_button']['hover_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[hover_color]" value="<?php echo esc_attr( $showcase_details['slide_button']['hover_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Text Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_button']['hover_text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[hover_text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_button']['hover_text_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_button']['hover_text_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[hover_text_color]" value="<?php echo esc_attr( $showcase_details['slide_button']['hover_text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
@@ -451,7 +451,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_show_counter" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_show_counter'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_show_counter" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_show_counter'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -477,7 +477,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dashes' ); ?>" <?php echo 'dashes' === $showcase_details['wcc_showcase_slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dashes', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dashes' ); ?>" <?php echo 'dashes' === $showcase_details['slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dashes', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -495,7 +495,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dots' ); ?>" <?php echo 'dots' === $showcase_details['wcc_showcase_slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dots', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dots' ); ?>" <?php echo 'dots' === $showcase_details['slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dots', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -513,7 +513,7 @@ defined( 'ABSPATH' ) || exit;
 						</svg>
 					</div>
 					<label class="tw-mt-2">
-						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dash_with_dots' ); ?>" <?php echo 'dash_with_dots' === $showcase_details['wcc_showcase_slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dash with Dots', 'wc-category-showcase' ); ?>
+						<input type="radio" name="wcc_showcase_slide_counter_style" value="<?php echo esc_attr( 'dash_with_dots' ); ?>" <?php echo 'dash_with_dots' === $showcase_details['slide_counter_style'] ? 'checked' : ''; ?>><?php esc_html_e( 'Dash with Dots', 'wc-category-showcase' ); ?>
 					</label>
 				</div>
 			</div>
@@ -530,32 +530,32 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_counter']['background_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[background_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_counter']['background_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_counter']['background_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[background_color]" value="<?php echo esc_attr( $showcase_details['slide_counter']['background_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500 "><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_counter']['text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_counter']['text_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_counter']['text_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[text_color]" value="<?php echo esc_attr( $showcase_details['slide_counter']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="color-display tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_counter']['hover_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[hover_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_counter']['hover_color'] ); ?>">
+					<span class="color-display tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_counter']['hover_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[hover_color]" value="<?php echo esc_attr( $showcase_details['slide_counter']['hover_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
 			<div class="tw-mt-3">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Text Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['wcc_showcase_slide_counter']['hover_text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[hover_text_color]" value="<?php echo esc_attr( $showcase_details['wcc_showcase_slide_counter']['hover_text_color'] ); ?>">
+					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_counter']['hover_text_color'] ) . '"'; ?>></span>
+					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[hover_text_color]" value="<?php echo esc_attr( $showcase_details['slide_counter']['hover_text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
@@ -575,7 +575,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_touch_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_touch_interaction'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_touch_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_touch_interaction'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -587,7 +587,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_scroll_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_scroll_interaction'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_scroll_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_scroll_interaction'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -599,7 +599,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_draggable_slide" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_draggable_slide'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_draggable_slide" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_draggable_slide'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -611,7 +611,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_free_mode" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['wcc_showcase_slide_free_mode'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_free_mode" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_free_mode'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>

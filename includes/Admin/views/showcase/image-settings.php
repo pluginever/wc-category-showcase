@@ -22,9 +22,9 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center tw-gap-x-4">
 		<div class="tw-relative">
-			<div class="wcc_showcase_image_layout_select <?php echo 'rectangle' === $showcase_details['wcc_showcase_image_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-				<input type="radio" name="wcc_showcase_image_layout" class="!tw-hidden" value="<?php echo esc_attr( 'rectangle' ); ?>" <?php if ( 'rectangle' === $showcase_details['wcc_showcase_image_layout'] ) { echo 'checked'; } ?>>
-				<svg class="<?php echo 'rectangle' === $showcase_details['wcc_showcase_image_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+			<div class="wcc_showcase_image_layout_select <?php echo 'rectangle' === $showcase_details['image_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcc_showcase_image_layout" class="!tw-hidden" value="<?php echo esc_attr( 'rectangle' ); ?>" <?php if ( 'rectangle' === $showcase_details['image_layout'] ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'rectangle' === $showcase_details['image_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
 					<g clip-path="url(#clip0_940_3509)">
 						<path d="M32 0H0V32H32V0Z"/>
 					</g>
@@ -33,9 +33,9 @@ defined( 'ABSPATH' ) || exit;
 			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Rectangle', 'wc-category-showcase' ); ?></p>
 		</div>
 		<div class="tw-relative">
-			<div class="wcc_showcase_image_layout_select <?php echo 'rounded' === $showcase_details['wcc_showcase_image_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-				<input type="radio" name="wcc_showcase_image_layout" class="!tw-hidden" value="<?php echo esc_attr( 'rounded' ); ?>" <?php if ( 'rounded' === $showcase_details['wcc_showcase_image_layout'] ) { echo 'checked'; } ?>>
-				<svg class="<?php echo 'rounded' === $showcase_details['wcc_showcase_image_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+			<div class="wcc_showcase_image_layout_select <?php echo 'rounded' === $showcase_details['image_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcc_showcase_image_layout" class="!tw-hidden" value="<?php echo esc_attr( 'rounded' ); ?>" <?php if ( 'rounded' === $showcase_details['image_layout'] ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'rounded' === $showcase_details['image_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
 					<g clip-path="url(#clip0_940_3507)">
 						<path d="M26 0H6C2.68629 0 0 2.68629 0 6V26C0 29.3137 2.68629 32 6 32H26C29.3137 32 32 29.3137 32 26V6C32 2.68629 29.3137 0 26 0Z"/>
 					</g>
@@ -44,9 +44,9 @@ defined( 'ABSPATH' ) || exit;
 			<p class="tw-text-center tw-text-text-black-950"><?php esc_html_e( 'Rounded', 'wc-category-showcase' ); ?></p>
 		</div>
 		<div class="tw-relative">
-			<div class="wcc_showcase_image_layout_select <?php echo 'circle' === $showcase_details['wcc_showcase_image_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
-				<input type="radio" name="wcc_showcase_image_layout" class="!tw-hidden" value="<?php echo esc_attr( 'circle' ); ?>" <?php if ( 'circle' === $showcase_details['wcc_showcase_image_layout'] ) { echo 'checked'; } ?>>
-				<svg class="<?php echo 'circle' === $showcase_details['wcc_showcase_image_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
+			<div class="wcc_showcase_image_layout_select <?php echo 'circle' === $showcase_details['image_layout'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
+				<input type="radio" name="wcc_showcase_image_layout" class="!tw-hidden" value="<?php echo esc_attr( 'circle' ); ?>" <?php if ( 'circle' === $showcase_details['image_layout'] ) { echo 'checked'; } ?>>
+				<svg class="<?php echo 'circle' === $showcase_details['image_layout'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 32 32" fill="currentColor">
 					<g clip-path="url(#clip0_940_3505)">
 						<path d="M32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16Z"/>
 					</g>
@@ -63,7 +63,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_image_lazy_load" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_image_lazy_load', $showcase_details ) && 'yes' === $showcase_details['wcc_showcase_image_lazy_load'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_image_lazy_load" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_image_lazy_load', $showcase_details ) && 'yes' === $showcase_details['image_lazy_load'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -75,7 +75,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_image_zoom_on_hover" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_image_zoom_on_hover', $showcase_details ) && 'yes' === $showcase_details['wcc_showcase_image_zoom_on_hover'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_image_zoom_on_hover" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_image_zoom_on_hover', $showcase_details ) && 'yes' === $showcase_details['image_zoom_on_hover'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -100,18 +100,18 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 				<div class="custom-options tw-w-[224px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden wccs-interactive-hover-style">
-					<span class="custom-option <?php echo 'normal_gray' === $showcase_details['wcc_showcase_interactive_hover_style'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'normal_gray' ); ?>">
+					<span class="custom-option <?php echo 'normal_gray' === $showcase_details['interactive_hover_style'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'normal_gray' ); ?>">
 						<?php esc_html_e( 'Grayscale & Normal on Hover', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option <?php echo 'only_gray' === $showcase_details['wcc_showcase_interactive_hover_style'] ? 'selected' : ''; ?> wccs-interactive-hover-style" data-value="<?php echo esc_attr( 'only_gray' ); ?>">
+					<span class="custom-option <?php echo 'only_gray' === $showcase_details['interactive_hover_style'] ? 'selected' : ''; ?> wccs-interactive-hover-style" data-value="<?php echo esc_attr( 'only_gray' ); ?>">
 						<?php esc_html_e( 'Grayscale Hover', 'wc-category-showcase' ); ?>
 					</span>
-					<span class="custom-option <?php echo 'always_gray' === $showcase_details['wcc_showcase_interactive_hover_style'] ? 'selected' : ''; ?> wccs-interactive-hover-style" data-value="<?php echo esc_attr( 'always_gray' ); ?>">
+					<span class="custom-option <?php echo 'always_gray' === $showcase_details['interactive_hover_style'] ? 'selected' : ''; ?> wccs-interactive-hover-style" data-value="<?php echo esc_attr( 'always_gray' ); ?>">
 						<?php esc_html_e( 'Always Gray Scale', 'wc-category-showcase' ); ?>
 					</span>
 				</div>
 			</div>
-			<input type="hidden" name="wcc_showcase_interactive_hover_style" id="wcc_showcase_interactive_hover_style" value="<?php echo esc_attr( $showcase_details['wcc_showcase_interactive_hover_style'] ); ?>">
+			<input type="hidden" name="wcc_showcase_interactive_hover_style" id="wcc_showcase_interactive_hover_style" value="<?php echo esc_attr( $showcase_details['interactive_hover_style'] ); ?>">
 		</div>
 	</div>
 </div>

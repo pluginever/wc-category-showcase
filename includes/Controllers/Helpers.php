@@ -41,19 +41,23 @@ class Helpers {
 			$category_details['child_categories'] = self::get_child_categories( $category->term_id );
 			$category_details['position']         = esc_attr( '0' );
 		}
+
 		return $category_details;
 	}
 
 	/**
 	 * Category Product Counts.
 	 *
-	 * @since 1.0.0
+	 * @param int $limit The limit.
 	 *
+	 * @since 1.0.0
 	 * @return array
 	 */
-	public static function get_all_categories() {
+	public static function get_all_categories( $limit = null ) {
+
 		$args           = array(
 			'taxonomy' => 'product_cat',
+			'number'   => null,
 		);
 		$all_categories = get_terms( $args );
 
@@ -61,6 +65,7 @@ class Helpers {
 		foreach ( $all_categories as $category ) {
 			$all_cat_ids[] = $category->term_id;
 		}
+
 		return $all_cat_ids;
 	}
 
@@ -91,7 +96,7 @@ class Helpers {
 		// Set up the query arguments to get products in these categories.
 		$args = array(
 			'post_type'      => 'product',
-			'posts_per_page' => -1, // No limit.
+			'posts_per_page' => - 1, // No limit.
 			'tax_query'      => array(
 				array(
 					'taxonomy' => 'product_cat',
@@ -111,6 +116,7 @@ class Helpers {
 
 		// Reset the post data.
 		wp_reset_postdata();
+
 		return $product_count;
 	}
 
@@ -124,11 +130,12 @@ class Helpers {
 	 * @return array
 	 */
 	public static function get_child_categories( $parent_category_id ) {
+
 		// Define the arguments for get_terms.
 		$args = array(
 			'taxonomy'   => 'product_cat', // WooCommerce product category taxonomy.
 			'child_of'   => $parent_category_id, // Parent category ID.
-			'hide_empty' => true, // Show all categories, including those without products.
+			'hide_empty' => false, // Show all categories, including those without products.
 		);
 
 		// Get the child categories.
@@ -162,14 +169,15 @@ class Helpers {
 				html_entity_decode( $category->name )
 			);
 		}
+
 		return null;
 	}
 
 	/**
 	 * sorting categories array.
 	 *
-	 * @param int $a Array values.
-	 * @param int $b Array values.
+	 * @param array $a Array values.
+	 * @param array $b Array values.
 	 *
 	 * @since  1.0.0
 	 * @return int
@@ -178,7 +186,8 @@ class Helpers {
 		if ( $a['position'] === $b['position'] ) {
 			return 0;
 		}
-		return $a['position'] < $b['position'] ? -1 : 1;
+
+		return $a['position'] < $b['position'] ? - 1 : 1;
 	}
 
 	/**
@@ -189,7 +198,7 @@ class Helpers {
 	 * @return array Returns the slider settings.
 	 */
 	public static function get_slider_settings( $id = null ) {
-		$defaults = array(
+		$settings = array(
 			// General tab settings data.
 			'post_title'                        => '',
 			'layout'                            => 'block',
@@ -215,10 +224,10 @@ class Helpers {
 			'hide_empty_categories'             => 'yes',
 			'pre_loader'                        => 'yes',
 			// Showcase tab settings data.
-			'show_section_title'                => 'yes',
-			'section_title'                     => __( 'Browse Categories', 'wc-category-showcase' ),
-			'show_section_description'          => 'yes',
-			'section_description'               => __( 'Explore Through a World of Digital Goods to Find Your Perfect Product', 'wc-category-showcase' ),
+			'show_section_title'                => 'no',
+			'section_title'                     => '',
+			'show_section_description'          => 'no',
+			'section_description'               => '',
 			'heading_alignment'                 => 'left',
 			'card'                              => array(
 				'background_color' => '#F5F5F5',
@@ -324,24 +333,41 @@ class Helpers {
 			),
 		);
 
+		// When we have post_id.
 		if ( ! empty( $id ) ) {
-			$metadata                            = get_post_meta( $id );
-			$settings                            = array();
-			$settings['wcc_showcase_post_title'] = get_the_title( $id );
-			foreach ( $metadata as $key => $value ) {
-				if ( str_starts_with( $key, 'wcc_showcase_' ) ) {
-					$value = maybe_unserialize( is_array( $value ) ? $value[0] : $value );
-					if ( ! empty( $value ) ) {
-						$settings[ $key ] = $value;
-					}
+			foreach ( $settings as $key => $value ) {
+				$meta_value = get_post_meta( $id, "wcc_showcase_{$key}", true );
+				if ( ! empty( $meta_value ) ) {
+					$settings[ $key ] = $meta_value;
 				}
 			}
-		} else {
-			$settings = array();
-			foreach ( $defaults as $key => $value ) {
-				$settings[ 'wcc_showcase_' . $key ] = $value;
-			}
+			$settings['post_title'] = get_the_title( $id );
+
 		}
+
+		if ( 'yes' === $settings['show_section_title'] && empty( $settings['section_title'] ) ) {
+			$settings['show_section_title'] = 'no';
+		}
+
+
+		// if ( ! empty( $id ) ) {
+		// $metadata                            = get_post_meta( $id );
+		// $settings                            = array();
+		// $settings['wcc_showcase_post_title'] = get_the_title( $id );
+		// foreach ( $metadata as $key => $value ) {
+		// if ( str_starts_with( $key, 'wcc_showcase_' ) ) {
+		// $value = maybe_unserialize( is_array( $value ) ? $value[0] : $value );
+		// if ( ! empty( $value ) ) {
+		// $settings[ $key ] = $value;
+		// }
+		// }
+		// }
+		// } else {
+		// $settings = array();
+		// foreach ( $defaults as $key => $value ) {
+		// $settings[ 'wcc_showcase_' . $key ] = $value;
+		// }
+		// }
 
 		// Adjust other properties based on the dependent fields.
 
