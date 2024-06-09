@@ -172,7 +172,7 @@ class Helpers {
 		$defaults = array(
 			// General tab settings data.
 			'post_title'                        => '',
-			'layout'                            => 'grid',
+			'layout'                            => 'block',
 			'slider'                            => array(
 				'column' => '3',
 				'row'    => '1',
