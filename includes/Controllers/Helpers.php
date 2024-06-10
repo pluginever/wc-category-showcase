@@ -53,24 +53,21 @@ class Helpers {
 	/**
 	 * Category Product Counts.
 	 *
-	 * @param int $limit The limit.
+	 * @param array $args Array of query arguments.
 	 *
 	 * @since 1.0.0
 	 * @return array
 	 */
-	public static function get_all_categories( $limit = null ) {
-		$args           = array(
-			'taxonomy' => 'product_cat',
-			'number'   => null,
+	public static function get_all_categories( $args = array() ) {
+
+		$defaults = array(
+			'taxonomy'   => 'product_cat',
+			'number'     => null,
+			'hide_empty' => true,
 		);
-		$all_categories = get_terms( $args );
+		$args     = wp_parse_args( $args, $defaults );
 
-		$all_cat_ids = array();
-		foreach ( $all_categories as $category ) {
-			$all_cat_ids[] = $category->term_id;
-		}
-
-		return $all_cat_ids;
+		return get_terms( $args );
 	}
 
 	/**

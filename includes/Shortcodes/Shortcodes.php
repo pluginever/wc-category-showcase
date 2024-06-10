@@ -139,18 +139,31 @@ class Shortcodes {
 		$content_position  = $showcase['overlay_content_position'] ?? 'center_center';
 		$thumbnail_img     = WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/category-placeholder-img1.png';
 
-		$count = isset( $showcase['block_column'] ) ? absint( $showcase['block_column'] ) : null;
+		// Get category query args values.
+		$hide_empty = isset( $showcase['hide_empty_categories'] ) && 'yes' === $showcase['hide_empty_categories'] ? true : false;
+		if ( 'block' === $layout ) {
+			$limit = isset( $showcase['category_display_limit'] ) ? absint( $showcase['category_display_limit'] ) : null;
+		} else {
+			$limit = isset( $showcase['block_column'] ) ? absint( $showcase['block_column'] ) : null;
+		}
 
 		if ( 'all' === $showcase['category_filter'] ) {
-			$categories = Helpers::get_all_categories( $count );
+			$args       = array(
+				'number'     => $limit,
+				'hide_empty' => $hide_empty,
+			);
+			$categories = Helpers::get_all_categories( $args );
 		} else {
+			// TODO: Need to check the custom category query options.
 			$categories = isset( $category_showcase['specific_category_select'] ) ? $category_showcase['specific_category_select'] : array();
 		}
 
-		foreach ( $categories as $category ) {
-			$category         = Helpers::get_category_details( $category );
-			$child_categories = $category['child_categories'];
-			?>
+		if ( ! empty( $categories ) ) {
+			foreach ( $categories as $category ) {
+				$category = Helpers::get_category_details( $category->term_id );
+
+				$child_categories = $category['child_categories'];
+				?>
 			<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
 
 				<?php if ( 'block' === $layout ) : ?>
@@ -164,13 +177,30 @@ class Shortcodes {
 						<h3><?php echo esc_html( $category['name'] ); ?></h3>
 						<p><?php echo esc_html( $category['description'] ); ?></p>
 						<p><a href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( $category['total_count'] . ' products' ); ?></a></p>
+
+						<?php if ( 'yes' === $showcase['includes_sub_categories'] && ! empty( $child_categories ) ) : ?>
+						<ul class="wccs-subcategory__items">
+							<?php
+							foreach ( $child_categories as $child_category ) :
+								printf(
+									'<li class="wccs-subcategory__item"><a href="%1$s">%2$s <span>(%3$s)<span></a></li>',
+									esc_url( $child_category['cat_link'] ),
+									esc_html( $child_category['name'] ),
+									esc_html( $child_category['total_product'] ),
+								);
+							endforeach;
+							?>
+						</ul>
+						<?php endif; ?>
+
 						<div class="wccs-card-button">
 							<a class="btn wccs-showcase-btn" href="<?php echo esc_url( $category['cat_link'] ); ?>"><span>Shop Now ⟶</span></a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<?php
+				<?php
+			}
 		}
 	}
 

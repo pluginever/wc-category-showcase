@@ -10,7 +10,7 @@
 		text-align: right;
 	}
 	.wccs-section__header{
-		padding: 1rem;
+		padding: 1rem 0;
 	}
 
 	// Layout specific style.
@@ -32,6 +32,15 @@
 	}
 	.wccs-entry__content{
 		padding: 0.625rem;
+	}
+	.wccs-subcategory__items{
+		margin: 0 0 1.41575rem;
+		.wccs-subcategory__item{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
 	}
 }
 
