@@ -37,6 +37,13 @@ module.exports = {
 				'pro-badge': 'url("/assets/images/pro-badge.svg")',
 			},
 		},
+		screens: {
+			'2xl': {'max': '1920px'},
+			'xl': {'max': '1440px'},
+			'lg': {'max': '1023px'},
+			'md': {'max': '767px'},
+			'sm': {'max': '576px'},
+		},
 	},
 	plugins: [
 		require('@tailwindcss/forms'),

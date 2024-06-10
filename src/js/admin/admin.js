@@ -285,12 +285,27 @@
 			});
 
 			// custom select option start
-			$(document).on('click', '#wcc_showcase-ticker-direction,#wcc_showcase-select-sort-by, #wcc_showcase-select-sort, .wcc_showcase-select-category-list-update, #wcc_showcase-select-interactive-hover-style, .wcc_showcase-select-font-family, #wcc-showcase-navigation-position, #wcc_showcase-overlay-content', function (e) {
+			$(document).on('click', '#wcc_showcase-tab-select, #wcc_showcase-ticker-direction,#wcc_showcase-select-sort-by, #wcc_showcase-select-sort, .wcc_showcase-select-category-list-update, #wcc_showcase-select-interactive-hover-style, .wcc_showcase-select-font-family, #wcc-showcase-navigation-position, #wcc_showcase-overlay-content', function (e) {
 				$(this).children().children('.custom-options').toggleClass('tw-hidden');
 			});
 
 			$(document).on('click', '#wcc_showcase-ticker-direction .custom-options .custom-option, #wcc_showcase-select-sort-by .custom-options .custom-option, #wcc_showcase-select-sort .custom-options .custom-option, .wcc_showcase-select-category-list-update .custom-options .custom-option, #wcc_showcase-select-interactive-hover-style .custom-options .custom-option, .wcc_showcase-select-font-family .custom-options .custom-option, #wcc-showcase-navigation-position .custom-options .custom-option, #wcc_showcase-overlay-content .custom-options .custom-option', function (e) {
 				var currentOption = $(this).data('value');
+				$($(this).parent()).find('.custom-option').each(function() {
+					$(this).removeClass('selected');
+					if( currentOption === $(this).data('value') ){
+						$(this).addClass('selected');
+						$(this).parent().siblings('.select__trigger').children('span').html($(this).html());
+						$(this).parent().parent().siblings('input').val( $(this).data('value') );
+					}
+				});
+			});
+
+			$(document).on('click', '#wcc_showcase-tab-select .custom-options .custom-option', function (e) {
+				var currentOption = $(this).data('value');
+				var content = $("#tab-contents");
+				content.children().addClass("tw-hidden");
+				content.children(currentOption).removeClass("tw-hidden");
 				$($(this).parent()).find('.custom-option').each(function() {
 					$(this).removeClass('selected');
 					if( currentOption === $(this).data('value') ){

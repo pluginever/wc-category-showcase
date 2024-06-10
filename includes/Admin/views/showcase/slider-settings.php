@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_is_ticker" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'wcc_showcase_slide_is_ticker', $showcase_details ) && 'yes' === $showcase_details['slide_is_ticker'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_is_ticker" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'slide_is_ticker', $showcase_details ) && 'yes' === $showcase_details['slide_is_ticker'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>

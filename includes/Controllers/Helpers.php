@@ -334,7 +334,7 @@ class Helpers {
 			),
 		);
 
-		// When we have post_id.  wcc_showcase_layout
+		// Get all settings post meta.
 		if ( ! empty( $id ) ) {
 			foreach ( $settings as $key => $value ) {
 				$meta_value = get_post_meta( $id, "wcc_showcase_{$key}", true );

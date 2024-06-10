@@ -177,7 +177,6 @@ class Admin {
 							$meta_value[ $keys ]['is_label'] = 'no';
 						}
 					}
-
 				}
 				update_post_meta( $post_id, $post_key, $meta_value );
 			} else {
