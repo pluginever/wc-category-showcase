@@ -1230,8 +1230,9 @@ defined( 'ABSPATH' ) || exit;
 		<div class="tw-mt-6 wcc_showcase-selected-category-list tw-min-w-[400px] tw-max-w-[400px]">
 			<?php
 			$count = 0;
-			if ( ! empty( $showcase_details['category_list_item'] ) ) {
-				foreach ( $showcase_details['category_list_item'] as $category_details ) {
+			if ( ! empty( $selected_categories ) ) {
+				foreach ( $selected_categories as $category ) {
+					$category_details = Helpers::get_category_details( $category, $post_id );
 					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
 					++$count;
 				}

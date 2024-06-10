@@ -15,31 +15,36 @@ class Helpers {
 	 * Get category details.
 	 *
 	 * @param \WP_Term| int $category_id Category ID.
+	 * @param int           $post_id Post ID.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	public static function get_category_details( $category_id ) {
-		$category_details = array();
-		$category         = get_term( $category_id );
+	public static function get_category_details( $category_id, $post_id = null ) {
+		$category_details        = array();
+		$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_category_list_item', true );
+		$category_custom_details = isset( $category_custom_details ) ? $category_custom_details : array();
+		$category                = get_term( $category_id );
+
 		if ( $category && ! is_wp_error( $category ) ) {
 			$category_details['cat_id']           = esc_attr( $category->term_id );
 			$category_details['name']             = esc_attr( $category->name );
+			$category_details['custom_name']      = ! empty( $category_custom_details['name'] ) ? esc_attr( $category_custom_details['name'] ) : esc_attr( $category->name );
 			$category_details['slug']             = esc_attr( $category->slug );
-			$category_details['description']      = wp_kses_post( $category->description );
-			$category_details['image_url']        = esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) );
-			$category_details['icon_url']         = esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/category-placeholder-icon.jpg' );
-			$category_details['is_icon']          = esc_attr( 'no' );
+			$category_details['description']      = ! empty( $category_custom_details['description'] ) ? wp_kses_post( $category_custom_details['description'] ) : wp_kses_post( $category->description );
+			$category_details['image_url']        = ! empty( $category_custom_details['image_url'] ) ? esc_url( $category_custom_details['image_url'] ) : esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) );
+			$category_details['icon_url']         = ! empty( $category_custom_details['icon_url'] ) ? esc_url( $category_custom_details['icon_url'] ) : esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/placeholder-icon.png' );
+			$category_details['is_icon']          = ! empty( $category_custom_details['is_icon'] ) ? esc_attr( $category_custom_details['is_icon'] ) : esc_attr( 'no' );
 			$category_details['cat_link']         = esc_url( get_category_link( $category->term_id ) );
-			$category_details['custom_text']      = esc_attr( 'Price Range: $250 - $1100' );
-			$category_details['is_custom_text']   = esc_attr( 'no' );
-			$category_details['label_text']       = esc_attr( '25% off Today' );
-			$category_details['label_color']      = esc_attr( 'green' );
-			$category_details['is_label']         = esc_attr( 'no' );
+			$category_details['custom_text']      = ! empty( $category_custom_details['custom_text'] ) ? esc_attr( $category_custom_details['custom_text'] ) : '';
+			$category_details['is_custom_text']   = ! empty( $category_custom_details['is_custom_text'] ) ? esc_attr( $category_custom_details['is_custom_text'] ) : esc_attr( 'no' );
+			$category_details['label_text']       = ! empty( $category_custom_details['label_text'] ) ? esc_attr( $category_custom_details['label_text'] ) : esc_attr( '' );
+			$category_details['label_color']      = ! empty( $category_custom_details['label_color'] ) ? esc_attr( $category_custom_details['label_color'] ) : esc_attr( 'green' );
+			$category_details['is_label']         = ! empty( $category_custom_details['is_label'] ) ? esc_attr( $category_custom_details['is_label'] ) : esc_attr( 'no' );
 			$category_details['total_count']      = self::get_product_count_in_category( $category->term_id );
 			$category_details['child_categories'] = self::get_child_categories( $category->term_id );
-			$category_details['position']         = esc_attr( '0' );
+			$category_details['position']         = ! empty( $category_custom_details['position'] ) ? esc_attr( $category_custom_details['position'] ) : esc_attr( '0' );
 		}
 
 		return $category_details;

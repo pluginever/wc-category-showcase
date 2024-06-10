@@ -156,7 +156,6 @@ class Admin {
 
 		foreach ( $settings as $key => $default_value ) {
 			$post_key = 'wcc_showcase_' . $key;
-			// if ( isset( $_POST[ $post_key ] ) && wp_unslash( $_POST[ $post_key ] ) !== $default_value ) { //phpcs:ignore
 			if ( isset( $_POST[ $post_key ] ) ) { //phpcs:ignore
 				$meta_value = wp_unslash( $_POST[ $post_key ] ); //phpcs:ignore
 				$meta_value = is_scalar( $meta_value ) ? sanitize_text_field( $meta_value ) : map_deep( $meta_value, 'sanitize_text_field' );
@@ -165,6 +164,7 @@ class Admin {
 					if ( empty( $meta_value ) ) {
 						continue;
 					}
+
 					uasort( $meta_value, array( Helpers::class, 'sort_categories_according_to_position' ) );
 					foreach ( $meta_value as $keys => $category_details ) {
 						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
@@ -177,6 +177,7 @@ class Admin {
 							$meta_value[ $keys ]['is_label'] = 'no';
 						}
 					}
+
 				}
 				update_post_meta( $post_id, $post_key, $meta_value );
 			} else {

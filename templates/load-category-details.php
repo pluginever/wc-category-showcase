@@ -33,27 +33,27 @@
 	<div class="tw-p-2 wcc_showcase-category-custom-details tw-hidden">
 		<div>
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'NAME', 'wc-category-showcase' ); ?></h4>
-			<input class="tw-text-sm tw-w-full wcc_showcase-settings-field-border tw-mt-1" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][name]" type="text" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $category_details['name'] ); ?>">
+			<input class="tw-text-sm tw-w-full wcc_showcase-settings-field-border tw-mt-1" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][name]" type="text" placeholder="<?php esc_html_e( 'Type title here...', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $category_details['custom_name'] ); ?>">
 		</div>
 		<div class="tw-mt-3">
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'DESCRIPTION', 'wc-category-showcase' ); ?></h4>
-			<textarea class="tw-text-sm tw-w-full wcc_showcase-settings-field-border tw-mt-1" rows="4" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][description]" id="wcc_showcase_overwrite_description" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $category_details['description'] ); ?></textarea>
+			<textarea class="tw-text-sm tw-w-full wcc_showcase-settings-field-border tw-mt-1" rows="4" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][description]" id="wcc_showcase_overwrite_description" placeholder="<?php esc_html_e( 'Type description here...', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $category_details['description'] ); ?></textarea>
 		</div>
 		<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 			<div class="tw-flex tw-justify-between tw-items-center">
-				<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'ADD CUSTOM TEXT', 'wc-category-showcase' ); ?></h4>
+				<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'ADD ADDITIONAL TEXT', 'wc-category-showcase' ); ?></h4>
 				<label class="tw-inline-flex tw-cursor-pointer">
-					<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="text-sm tw-sr-only tw-peer wcc_showcase-custom-des-show-hide" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][is_custom_text]" <?php echo 'yes' === $category_details['is_custom_text'] ? 'checked' : ''; ?>>
+					<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="text-sm tw-sr-only tw-peer wcc_showcase-custom-des-show-hide" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][is_custom_text]" <?php echo 'yes' === $category_details['is_custom_text'] ? 'checked' : ''; ?>>
 					<div class="wcc_showcase-toggle-small"></div>
 				</label>
 			</div>
-			<textarea class="tw-text-sm tw-w-full wcc_showcase-settings-field-border tw-mt-2 <?php echo 'yes' === $category_details['is_custom_text'] ? '' : 'tw-hidden'; ?>" rows="4" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][custom_text]" id="wcc_showcase_custom_text" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $category_details['custom_text'] ); ?></textarea>
+			<textarea class="tw-text-sm tw-w-full wcc_showcase-settings-field-border tw-mt-2 <?php echo 'yes' === $category_details['is_custom_text'] ? '' : 'tw-hidden'; ?>" rows="4" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][custom_text]" id="wcc_showcase_custom_text" placeholder="<?php esc_html_e( 'Price Range: $250 - $1100', 'wc-category-showcase' ); ?>"><?php echo esc_attr( $category_details['custom_text'] ); ?></textarea>
 		</div>
 		<div class="tw-mt-3 tw-flex tw-justify-around wcc_showcase-custom-border tw-pb-4">
 			<div>
 				<h4 class="tw-text-xs tw-my-0"><?php esc_html_e( 'CATEGORY IMAGE', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-mt-2">
-					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][image_url]" value="<?php echo esc_url( $category_details['image_url'] ); ?>">
+					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][image_url]" value="<?php echo esc_url( $category_details['image_url'] ); ?>">
 					<a href="#" class="wcc_showcase-upload-button">
 						<?php esc_html_e( 'Add Image', 'wc-category-showcase' ); ?>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -67,7 +67,7 @@
 				<div class="tw-flex tw-justify-between tw-items-center">
 					<h4 class="tw-text-xs tw-my-0"><?php esc_html_e( 'CATEGORY ICON', 'wc-category-showcase' ); ?></h4>
 					<label class="tw-inline-flex tw-cursor-pointer">
-						<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wcc_showcase-icon-show-hide" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][is_icon]" <?php echo 'yes' === $category_details['is_icon'] ? 'checked' : ''; ?>>
+						<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wcc_showcase-icon-show-hide" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][is_icon]" <?php echo 'yes' === $category_details['is_icon'] ? 'checked' : ''; ?>>
 						<div class="wcc_showcase-toggle-small"></div>
 					</label>
 				</div>
@@ -79,7 +79,7 @@
 						</svg>
 					</a>
 					<img class="tw-h-32 tw-w-40 img-upload" src="<?php echo esc_attr( $category_details['icon_url'] ); ?>" alt="<?php echo esc_url( $category_details['name'] ); ?>">
-					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][icon_url]" value="<?php echo esc_url( $category_details['icon_url'] ); ?>">
+					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][icon_url]" value="<?php echo esc_url( $category_details['icon_url'] ); ?>">
 				</div>
 			</div>
 		</div>
@@ -87,11 +87,11 @@
 			<div class="tw-flex tw-justify-between tw-items-center">
 				<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'ADD LABEL', 'wc-category-showcase' ); ?></h4>
 				<label class="tw-inline-flex tw-cursor-pointer">
-					<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wcc_showcase-label-show-hide" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][is_label]" <?php echo 'yes' === $category_details['is_label'] ? 'checked' : ''; ?>>
+					<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wcc_showcase-label-show-hide" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][is_label]" <?php echo 'yes' === $category_details['is_label'] ? 'checked' : ''; ?>>
 					<div class="wcc_showcase-toggle-small"></div>
 				</label>
 			</div>
-			<input type="text" class="wcc_showcase-label-selection tw-w-full tw-text-sm wcc_showcase-settings-field-border tw-mt-2 wcc_showcase-label-text <?php echo 'yes' === $category_details['is_label'] ? '' : 'tw-hidden'; ?>" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][label_text]" value="<?php echo esc_attr( $category_details['label_text'] ); ?>" placeholder="<?php esc_html_e( 'Type here...', 'wc-category-showcase' ); ?>">
+			<input type="text" class="wcc_showcase-label-selection tw-w-full tw-text-sm wcc_showcase-settings-field-border tw-mt-2 wcc_showcase-label-text <?php echo 'yes' === $category_details['is_label'] ? '' : 'tw-hidden'; ?>" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][label_text]" value="<?php echo esc_attr( $category_details['label_text'] ); ?>" placeholder="<?php esc_html_e( '25% off Today', 'wc-category-showcase' ); ?>">
 		</div>
 		<div class="tw-mt-3 wcc_showcase-label-selection <?php echo 'yes' === $category_details['is_label'] ? '' : 'tw-hidden'; ?>">
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'LABEL COLOR', 'wc-category-showcase' ); ?></h4>
@@ -178,10 +178,10 @@
 						</span>
 					</div>
 				</div>
-				<input type="hidden" class="wcc-showcase-label-color" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][label_color]" value="<?php echo esc_attr( $category_details['label_color'] ); ?>">
+				<input type="hidden" class="wcc-showcase-label-color" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][label_color]" value="<?php echo esc_attr( $category_details['label_color'] ); ?>">
 			</div>
 		</div>
-		<input type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][position]" class="wcc_showcase_category_position" value="<?php echo esc_attr( $category_details['position'] ); ?>">
-		<input type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['position'] ); ?>][cat_id]" value="<?php echo esc_attr( $category_details['cat_id'] ); ?>">
+		<input type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][position]" class="wcc_showcase_category_position" value="<?php echo esc_attr( $category_details['cat_id'] ); ?>">
+		<input type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][cat_id]" value="<?php echo esc_attr( $category_details['cat_id'] ); ?>">
 	</div>
 </div>
