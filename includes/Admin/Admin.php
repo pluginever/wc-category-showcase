@@ -180,6 +180,7 @@ class Admin {
 				}
 				update_post_meta( $post_id, $post_key, $meta_value );
 			} else {
+				$meta_value = '';
 				if ( 'yes' === $default_value ) {
 					$meta_value = 'no';
 				}
