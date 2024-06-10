@@ -149,16 +149,18 @@ class Admin {
 		$settings = Helpers::get_slider_settings();
 		$post_id  = wp_insert_post( $args );
 		if ( is_wp_error( $post_id ) ) {
-			wc_category_showcase()->flash->error( 'Failed to Add Slider: Please Try Again!' );
+			wc_category_showcase()->flash->error( __( 'Failed to Add Category Showcase: Please Try Again!', 'wc-category-showcase' ) );
 			wp_safe_redirect( $referer );
 			exit();
 		}
 
 		foreach ( $settings as $key => $default_value ) {
 			$post_key = 'wcc_showcase_' . $key;
-			if ( isset( $_POST[ $post_key ] ) && wp_unslash( $_POST[ $post_key ] ) !== $default_value ) { //phpcs:ignore
+			// if ( isset( $_POST[ $post_key ] ) && wp_unslash( $_POST[ $post_key ] ) !== $default_value ) { //phpcs:ignore
+			if ( isset( $_POST[ $post_key ] ) ) { //phpcs:ignore
 				$meta_value = wp_unslash( $_POST[ $post_key ] ); //phpcs:ignore
 				$meta_value = is_scalar( $meta_value ) ? sanitize_text_field( $meta_value ) : map_deep( $meta_value, 'sanitize_text_field' );
+
 				if ( 'wcc_showcase_category_list_item' === $post_key ) {
 					if ( empty( $meta_value ) ) {
 						continue;
@@ -177,10 +179,14 @@ class Admin {
 					}
 				}
 				update_post_meta( $post_id, $post_key, $meta_value );
+			} else {
+				if ( 'yes' === $default_value ) {
+					$meta_value = 'no';
+				}
+				update_post_meta( $post_id, $post_key, $meta_value );
 			}
 		}
-
-		wc_category_showcase()->flash->success( 'Congratulations! The slider has been successfully added!' );
+		wc_category_showcase()->flash->success( __( 'The category showcase has been successfully updated!', 'wc-category-showcase' ) );
 		$redirect_to = admin_url( 'admin.php?page=wc-category-showcase&edit=' . $post_id );
 		wp_safe_redirect( $redirect_to );
 		exit;

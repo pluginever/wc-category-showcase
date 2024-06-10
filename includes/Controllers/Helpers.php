@@ -332,7 +332,7 @@ class Helpers {
 			),
 		);
 
-		// When we have post_id.
+		// When we have post_id.  wcc_showcase_layout
 		if ( ! empty( $id ) ) {
 			foreach ( $settings as $key => $value ) {
 				$meta_value = get_post_meta( $id, "wcc_showcase_{$key}", true );
@@ -341,11 +341,14 @@ class Helpers {
 				}
 			}
 			$settings['post_title'] = get_the_title( $id );
-
 		}
 
 		if ( 'yes' === $settings['show_section_title'] && empty( $settings['section_title'] ) ) {
 			$settings['show_section_title'] = 'no';
+		}
+
+		if ( 'yes' === $settings['show_section_description'] && empty( $settings['section_description'] ) ) {
+			$settings['show_section_description'] = 'no';
 		}
 
 		return $settings;
