@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Ticker Settings', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Ticker Carousel', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Showcase your product categories in a continuous, scrolling format. Ideal for grabbing visitor\'s attention with a steady stream of category highlights.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Ticker Slider Direction', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Set the direction in which the ticker scrolls. Choose between left-to-right or right-to-left scrolling.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -68,7 +68,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Ticker Speed', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Adjust the speed at which the categories scroll. A higher value will make the ticker move faster, while a lower value will slow it down.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -97,7 +97,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slider Settings', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Automatic Slideshow', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable automatic transitioning between slides in the slider without user input.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -109,7 +109,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slide Speed', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Set the duration of the animation effect when transitioning between slides within the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -124,7 +124,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Stop on Hover', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Control whether the slider pauses when the user hovers over it with their cursor.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -136,7 +136,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Unlimited Loop', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine if the slider should cycle endlessly or stop after reaching the last slide.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -154,7 +154,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Slide Controls', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Navigation Arrows', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable navigation elements such as arrows or dots for users to control the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -166,7 +166,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Navigation Position', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the navigation position to show in your slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -210,7 +210,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Arrow Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the style or design of the navigation arrows in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -246,7 +246,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -320,7 +320,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Background Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the button background style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -402,7 +402,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Color', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the color or tint of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -445,7 +445,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row-title"></div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slide Counters', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable pagination elements such as dots to indicate slide position.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -457,7 +457,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Counters Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the style or design of the pagination indicators in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -521,7 +521,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Counters Color', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the color or tint of the pagination indicators in the slider.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -569,7 +569,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Others', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Touch Interaction', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable the ability for users to navigate slides by swiping on touch-enabled devices.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -581,7 +581,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Scroll Interaction', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Control whether users can navigate slides using the mousewheel.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -593,7 +593,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Draggable Slides', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable the ability for users to drag slides using the mouse.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -605,7 +605,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Free Mode', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine if slides should move freely without alignment constraints.', 'wc-category-showcase' ); ?></p>
 	</div>

@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Display Settings', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Select Layout', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose how you want your product categories to be visually presented on your store page.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -73,7 +73,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Layout Settings', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row wcc_showcase-slider-selection <?php echo 'slider' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slider Column Count', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -182,7 +182,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row wcc_showcase-slider-selection <?php echo 'slider' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Slider Row Count', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of rows you want your category showcase to have..', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -233,7 +233,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <div class="wcc_showcase-settings-row wcc_showcase-block-selection <?php echo 'block' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Block Column Count', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -343,7 +343,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <div class="wcc_showcase-settings-row wcc_showcase-grid-selection <?php echo 'grid' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Number of Categories to show', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine the number of columns you want your category showcase to have.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -457,7 +457,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row wcc_showcase-grid-selection <?php echo 'grid' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Choose Layout Options', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the template that best fits your store\'s aesthetic and presentation preferences.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1133,7 +1133,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row wcc_showcase-breakpoint <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Column Breakpoints', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Configure how many columns your category showcase should display based on the users device screen size.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1175,7 +1175,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Category Selection', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Category Filter', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Decide whether to display all product categories or selectively choose specific ones to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1204,7 +1204,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row wcc_showcase-category-selection <?php echo 'specific' === $showcase_details['category_filter'] ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><label for="wcc_showcase_specific_category_select"><?php esc_html_e( 'Category Selection', 'wc-category-showcase' ); ?></label></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'If selecting specific categories, use multi-select mode to easily pick the ones you want to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1246,7 +1246,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Sort By', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Specify the criteria by which you want your categories to be ordered within the showcase display.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1308,7 +1308,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Sort Order', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine whether your categories should be arranged in ascending or descending order according to the selected criteria.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1369,7 +1369,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title">
 			<label for="wcc_showcase_category_display_limit"><?php esc_html_e( 'Categories Display Limit', 'wc-category-showcase' ); ?></label>
 		</h3>
@@ -1380,7 +1380,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Include Sub-categories', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose whether to include child categories along with parent categories in your showcase display.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1392,7 +1392,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Hide Empty Categories', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Hide empty categories if categories has no products to show.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -1404,7 +1404,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Pre-loader', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Slider will be hidden until the page has fully loaded.', 'wc-category-showcase' ); ?></p>
 	</div>

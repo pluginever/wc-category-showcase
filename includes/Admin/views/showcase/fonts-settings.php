@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Fonts Settings', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Google Fonts Support', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable or disable the integration of Google Fonts for customizing text styles and typography.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -29,11 +29,11 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row-title"></div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Main Title', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Custom font styling for specific text elements within the plugin.', 'wc-category-showcase' ); ?></p>
 	</div>
-	<div class="tw-flex tw-items-center">
+	<div class="tw-flex tw-items-center sm:tw-ml-[-14px]">
 		<div class="tw-w-[348px] tw-h-[450px] tw-bg-input-grey-50 tw-rounded-md tw-p-4 wcc_showcase-category-list-item">
 			<div class="">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'DEFAULT TEXT TAG', 'wc-category-showcase' ); ?></h4>
@@ -278,11 +278,11 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row-title"></div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Category Title', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Custom font styling for specific text elements within the plugin.', 'wc-category-showcase' ); ?></p>
 	</div>
-	<div class="tw-flex tw-items-center">
+	<div class="tw-flex tw-items-center sm:tw-ml-[-14px]">
 		<div class="tw-w-[348px] tw-h-[450px] tw-bg-input-grey-50 tw-rounded-md tw-p-4 wcc_showcase-category-list-item">
 			<div class="">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'DEFAULT TEXT TAG', 'wc-category-showcase' ); ?></h4>

@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Essentials', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Section Heading', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Section Description', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Customize the description or subtext for each section of your category showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -47,7 +47,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Alignment', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -94,7 +94,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Showcase Styling', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Choose Card Color', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Customize the color or tint of the category showcase cards to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -136,7 +136,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Border Radius', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Adjust the degree of curvature for the corners of the category showcase cards.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -208,7 +208,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Gap Between Cards', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Control the amount of space between category cards in your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -226,7 +226,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row-title"></div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Content Placement', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the alignment or position of the contents.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -319,7 +319,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row wcc-showcase-overlay-position <?php echo 'overlay' === $showcase_details['content_placement'] ? '' : 'tw-hidden'; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Overlay Content Position', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Determine where your category data will show when select overlay.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -360,7 +360,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row wcc-showcase-content-position <?php echo 'overlay' === $showcase_details['content_placement'] ? 'tw-hidden' : ''; ?>">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Content Alignment', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -401,7 +401,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Content Padding', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Adjust the amount of space between the content and the edges of each category card.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -485,7 +485,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Category Showcase', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Categories Icon', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose to Show/Hide icons to visually represent each category in your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -497,7 +497,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Category Title', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Show/Hide category title to be displayed in the showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -509,7 +509,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Category Description', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Show/Hide description or summary for each category to provide additional context or information.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -521,7 +521,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Product Quantity', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Display the total number of products within each category.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -533,7 +533,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Sub-categories Product Quantity', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Show/Hide the total number of products within each subcategory.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -545,7 +545,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Custom Text', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Add custom text or message like Price Range, Category Details to further enhance the description or information for each category.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -564,7 +564,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Button Style', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Show/Hide the button to prompt user action, such as exploring the category or making a purchase.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -576,7 +576,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Text', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enter the text or label to be displayed on the call-to-action button.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -585,7 +585,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Style', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose the visual style or design for the call-to-action button.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -645,7 +645,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Color', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the color for the call-to-action button to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>

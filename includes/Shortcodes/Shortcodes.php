@@ -77,6 +77,16 @@ class Shortcodes {
 		$card_border_radius    = $showcase['border_radius'] ?? '8';
 		$card_gap              = $showcase['gap_between_cards'] ?? '9';
 
+		$navigation_bg               = $showcase['slide_button']['background_color'] ?? $showcase['slide_button']['background_color'];
+		$navigation_text_color       = $showcase['slide_button']['text_color'] ?? $showcase['slide_button']['text_color'];
+		$navigation_hover_bg         = $showcase['slide_button']['hover_color'] ?? $showcase['slide_button']['hover_color'];
+		$navigation_hover_text_color = $showcase['slide_button']['hover_text_color'] ?? $showcase['slide_button']['hover_text_color'];
+
+		$counter_bg         = $showcase['slide_counter']['background_color'] ?? $showcase['slide_counter']['background_color'];
+		$counter_text       = $showcase['slide_counter']['text_color'] ?? $showcase['slide_counter']['text_color'];
+		$counter_hover_bg   = $showcase['slide_counter']['hover_color'] ?? $showcase['slide_counter']['hover_color'];
+		$counter_hover_text = $showcase['slide_counter']['hover_text_color'] ?? $showcase['slide_counter']['hover_text_color'];
+
 		$styles = "
 			.wccs-categories__{$wccs_id}{
 				gap: {$card_gap}px!important;
@@ -91,6 +101,29 @@ class Shortcodes {
 				background-color: {$card_bg_hover_color};
 				color: {$card_text_hover_color};
 			}
+			.wcc-showcase-{$wccs_id} .splide__pagination__page{
+				background-color: {$counter_bg};
+				color: {$counter_text};
+			}
+			.wcc-showcase-{$wccs_id} .splide__pagination__page:hover{
+				background-color: {$counter_hover_bg};
+				color: {$counter_hover_text};
+			}
+			.wcc-showcase-{$wccs_id} .splide__arrow--prev, .wcc-showcase-{$wccs_id} .splide__arrow--next {
+				background-color: {$navigation_bg};
+				color: {$navigation_text_color};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--prev::before, .wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--next::before {
+				color: {$navigation_text_color} !important;
+			}
+			.wcc-showcase-{$wccs_id} .splide__arrow--prev:hover, .wcc-showcase-{$wccs_id} .splide__arrow--next:hover{
+				background-color: {$navigation_hover_bg};
+				color: {$navigation_hover_text_color};
+			}
+
+			.wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--prev:hover::before, .wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--next:hover::before{
+				color: {$navigation_hover_text_color} !important;
+			}
 		";
 		wp_add_inline_style( 'wcc-showcase-showcase', $styles );
 
@@ -101,8 +134,8 @@ class Shortcodes {
 			<?php if ( isset( $showcase['section_title'] ) || isset( $showcase['section_description'] ) ) : ?>
 				<div class="wccs-section__header text-<?php echo isset( $showcase['heading_alignment'] ) ? sanitize_html_class( $showcase['heading_alignment'] ) : 'left'; ?>">
 					<?php
-					echo isset( $showcase['section_title'] ) ? '<h2>' . esc_html( $showcase['section_title'] ) . '</h2>' : '';
-					echo isset( $showcase['section_description'] ) ? '<p>' . esc_html( $showcase['section_description'] ) . '</p>' : '';
+					echo isset( $showcase['section_title'] ) && 'yes' === $showcase['show_section_title'] ? sprintf( '<%s>%s</%s>', esc_attr( $showcase['font_main_title']['text_tag'] ), esc_attr( $showcase['section_title'] ), esc_attr( $showcase['font_main_title']['text_tag'] ) ) : '';
+					echo isset( $showcase['section_description'] ) && 'yes' === $showcase['show_section_description'] ? '<p>' . esc_html( $showcase['section_description'] ) . '</p>' : '';
 					?>
 				</div>
 			<?php endif; ?>
@@ -250,16 +283,16 @@ class Shortcodes {
 									</div>
 									<div class="wcc-showcase-slide-item__cat-details wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
 										<div class="wccs-entry__content-inner">
-											<?php if ( 'yes' === $category_showcase['show_category_icon'] ) { ?>
+											<?php if ( 'yes' === $category_showcase['show_category_icon'] && 'yes' === $category_details['is_icon'] ) { ?>
 												<div class="wcc-showcase-slide-item__cat-thumbnails__icon">
 													<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
-														<img  src="<?php echo esc_url( $category_details['icon_url'] ); ?>" alt="<?php echo esc_attr( $category_details['slug'] ); ?>">
+														<img src="<?php echo esc_url( $category_details['icon_url'] ); ?>" alt="<?php echo esc_attr( $category_details['slug'] ); ?>">
 													</a>
 												</div>
 											<?php } ?>
 											<?php if ( 'yes' === $category_showcase['show_category_title'] ) { ?>
 												<div class="wcc-showcase-slide-item__cat-title">
-													<h3><a href="<?php echo esc_url( $category_details['cat_link'] ); ?>"><?php echo esc_attr( $category_details['name'] ); ?></a></h3>
+													<?php printf( '<%s><a href="%s">%s</a></%s>', esc_attr( $showcase['font_category_title']['text_tag'] ), esc_url( $category_details['cat_link'] ), esc_attr( $category_details['custom_name'] ), esc_attr( $showcase['font_category_title']['text_tag'] ) ); ?>
 												</div>
 											<?php } ?>
 											<?php if ( 'yes' === $category_showcase['show_category_description'] ) { ?>

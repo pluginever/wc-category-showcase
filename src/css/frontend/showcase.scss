@@ -3,6 +3,7 @@
 @import "showcase-block";
 @import "showcase-grid";
 @import "showcase-slide";
+@import "../../assets/fonts/all.css";
 
 .wcc-showcase-slider{
 	margin-bottom: 1.5rem;
@@ -211,9 +212,6 @@
 			}
 		}
 		.slider-cat-image{
-			//position: absolute;
-			//top: 0;
-			//left: 0;
 			width: 100%;
 			height: auto;
 		}
@@ -229,29 +227,36 @@
 	gap: 16px;
 	.splide__arrow--prev::before {
 		position: absolute;
-		top: 5px;
-		right: 4px;
-		content: url("../../images/right-arrow.svg");
+		top: -3px;
+		right: 5px;
+		content: "\2192";
 		transform: scaleX(-1);
 		color: #fff;
+		font-size: 22px;
 	}
 	.splide__arrow--next::before {
 		position: absolute;
-		top: 5px;
-		left: 4px;
-		content: url("../../images/right-arrow.svg");
+		top: -3px;
+		left: 5px;
+		content: "\2192";
 		color: #fff;
+		font-size: 22px;
 	}
 
 	// Navigation icon chevron style.
 	.is--navigation-chevron &{
 		.splide__arrow--prev::before {
-			right: 5px;
-			content: url("../../images/right-arrow-chevron.svg");
+			top:-14px;
+			right: 11px;
+			content: "\2039";
+			font-size: 34px;
 		}
 		.splide__arrow--next::before {
-			left: 5px;
-			content: url("../../images/right-arrow-chevron.svg");
+			top:-14px;
+			left: 11px;
+			content: "\2039";
+			transform: scaleX(-1);
+			font-size: 34px;
 		}
 	}
 
@@ -306,12 +311,6 @@
 		.splide__arrow{
 			position: static;
 		}
-	}
-
-	// Navigation Styles
-	button {
-		background-color: #130F31;
-		color: #fff;
 	}
 }
 

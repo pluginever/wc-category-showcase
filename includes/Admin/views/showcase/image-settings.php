@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 class="tw-text-fade-blue-600"><?php esc_html_e( 'Images Settings', 'wc-category-showcase' ); ?></h2>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Image Layout', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Delays the loading of non-essential resources, such as images or scripts, until they are required, improving webpage performance and speed.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -57,7 +57,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Lazy Load', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Delays the loading of non-essential resources, such as images or scripts, until they are required, improving webpage performance and speed.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -69,7 +69,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Zoom on Hover', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable the zoom effect to occur when hovering over the images associated with each category.', 'wc-category-showcase' ); ?></p>
 	</div>
@@ -81,7 +81,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Interactive Hover Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose from a variety of effects that occur when hovering over the images, adding interactivity and visual appeal.', 'wc-category-showcase' ); ?></p>
 	</div>
