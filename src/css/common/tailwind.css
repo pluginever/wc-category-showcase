@@ -49,7 +49,7 @@
 		@apply tw-border-accent-green-500 tw-border-2 tw-rounded-lg;
 	}
 	.wcc_showcase-settings-row{
-		@apply tw-pb-4 tw-flex tw-justify-start tw-gap-32 tw-mt-3;
+		@apply tw-pb-4 tw-flex tw-justify-start tw-gap-32 tw-mt-3 sm:tw-flex-col sm:tw-gap-1;
 	}
 	.wcc_showcase-settings-row-title {
 		@apply tw-flex tw-items-center tw-gap-1 tw-border-b !tw-border-divider-grey-100;

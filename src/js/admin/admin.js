@@ -5,6 +5,12 @@
  * Copyright (c) 2018 pluginever
  * Licensed under the GPLv2+ license.
  */
+import '../../assets/icons/happy-icons';
+import '../../assets/icons/brands';
+import '../../assets/icons/solid';
+import '../../assets/icons/regular';
+import '../../assets/icons/font-awesome';
+import '../../assets/js/aesthetic-icon-picker';
 
 (function ($, window, document, wp, undefined) {
 	window.wcc_showcase_admin = {
@@ -472,8 +478,7 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$(document).on('click', '.wcc_showcase-upload-button', function(e)
-	{
+	$(document).on('click', '.wcc_showcase-upload-button', function(e) {
 		e.preventDefault();
 		var btnClicked = $( this );
 		var custom_uploader = wp.media({
@@ -489,10 +494,24 @@ jQuery(document).ready(function($) {
 			$( btnClicked ).parent().children('img.img-upload').attr('src', attachment.url).show();
 		})
 		.open();
+	});
 
+	var newIcon = {
+		"material":{
+			"regular":{
+				"list-icon":"",
+				"icon-style":"mt-regular",
+				"icons":["some","some2"],
+			}
+		}
+	}
+
+	AestheticIconPicker({
+		'selector': '#icon-picker-wrap', // must be an ID
+		'onClick': '#select-icon',  // must be an ID
+		"iconLibrary": newIcon
 	});
 });
 import './_common';
 import './_tabsControl';
 import './_colorPicker';
-

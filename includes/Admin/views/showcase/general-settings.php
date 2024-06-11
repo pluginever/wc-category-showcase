@@ -1415,3 +1415,13 @@ defined( 'ABSPATH' ) || exit;
 		</label>
 	</div>
 </div>
+
+<div class="icon-picker-wrap" id="icon-picker-wrap">
+	<ul class="icon-picker">
+		<li class="icon-none" title="None"><i class="fas fa-ban"></i></li>
+		<li id='select-icon' class="select-icon" title="Icon Library"><i class="fas fa-circle"></i></li>
+		<input type="hidden" name="icon_value" id="icon_value" value="">
+		<div class="aim-indicator"><i class="fas fa-arrow-down"></i></div>
+	</ul>
+</div>
+
