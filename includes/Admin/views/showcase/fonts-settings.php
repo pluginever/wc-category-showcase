@@ -213,7 +213,7 @@ defined( 'ABSPATH' ) || exit;
 							</p>
 						</div>
 						<div class="wcc_showcase-choose-style-tag tw-w-1/3">
-							<p class="wcc_showcase-font-design-select <?php echo 'middle' === $showcase_details['font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'middle' ); ?>">
+							<p class="wcc_showcase-font-design-select <?php echo 'center' === $showcase_details['font_main_title']['text_align'] ? 'active' : ''; ?>" data-value="<?php echo esc_attr( 'center' ); ?>">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 									<path d="M14.5 15H5.5C5.22386 15 5 15.2239 5 15.5V16.5C5 16.7761 5.22386 17 5.5 17H14.5C14.7761 17 15 16.7761 15 16.5V15.5C15 15.2239 14.7761 15 14.5 15Z"/>
 									<path d="M17.5 11H2.5C2.22386 11 2 11.2239 2 11.5V12.5C2 12.7761 2.22386 13 2.5 13H17.5C17.7761 13 18 12.7761 18 12.5V11.5C18 11.2239 17.7761 11 17.5 11Z"/>

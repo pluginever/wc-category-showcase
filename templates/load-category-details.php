@@ -71,17 +71,17 @@
 						<div class="wcc_showcase-toggle-small"></div>
 					</label>
 				</div>
-				<div class="tw-relative tw-mt-2 icon-picker-wrap" id="icon-picker-wrap">
-					<a href="#" class="select-icon wcc_showcase-upload-button wcc_showcase-icon-selection <?php echo 'yes' === $category_details['is_icon'] ? '' : 'tw-hidden'; ?>">
+				<div class="tw-relative tw-mt-2 wcc-showcase-icon-picker-wrap" id="icon-picker-wrap-<?php echo esc_attr( $category_details['cat_id'] ); ?>">
+					<a href="#" class="wcc-showcase-select-icon wcc_showcase-upload-button wcc_showcase-icon-selection <?php echo 'yes' === $category_details['is_icon'] ? '' : 'tw-hidden'; ?>" id="select-icon-<?php echo esc_attr( $category_details['cat_id'] ); ?>">
 						<?php esc_html_e( 'Add Icon', 'wc-category-showcase' ); ?>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 							<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 					</a>
 					<div class="tw-h-32 tw-w-40 img-upload select-icon2">
-						<i class="<?php echo esc_attr( $category_details['icon_url'] ); ?>"></i>
+						<i class="<?php echo esc_attr( $category_details['icon_name'] ); ?>"></i>
 					</div>
-					<input class="image_url" id="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][icon_url]" value="<?php echo esc_url( $category_details['icon_url'] ); ?>">
+					<input class="image_url" id="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][icon_name]" value="<?php echo esc_url( $category_details['icon_name'] ); ?>">
 				</div>
 
 			</div>

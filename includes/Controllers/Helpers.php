@@ -39,7 +39,7 @@ class Helpers {
 			$category_details['slug']             = esc_attr( $category->slug );
 			$category_details['description']      = ! empty( $category_custom_details['description'] ) ? wp_kses_post( $category_custom_details['description'] ) : wp_kses_post( $category->description );
 			$category_details['image_url']        = ! empty( $category_custom_details['image_url'] ) ? esc_url( $category_custom_details['image_url'] ) : esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) );
-			$category_details['icon_url']         = ! empty( $category_custom_details['icon_url'] ) ? esc_attr( $category_custom_details['icon_url'] ) : '';
+			$category_details['icon_name']        = ! empty( $category_custom_details['icon_name'] ) ? esc_attr( $category_custom_details['icon_name'] ) : '';
 			$category_details['is_icon']          = ! empty( $category_custom_details['is_icon'] ) ? esc_attr( $category_custom_details['is_icon'] ) : esc_attr( 'no' );
 			$category_details['cat_link']         = esc_url( get_category_link( $category->term_id ) );
 			$category_details['custom_text']      = ! empty( $category_custom_details['custom_text'] ) ? esc_attr( $category_custom_details['custom_text'] ) : '';

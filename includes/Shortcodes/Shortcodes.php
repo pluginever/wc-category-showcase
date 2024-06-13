@@ -85,6 +85,24 @@ class Shortcodes {
 		$counter_hover_bg   = $showcase['slide_counter']['hover_color'] ?? $showcase['slide_counter']['hover_color'];
 		$counter_hover_text = $showcase['slide_counter']['hover_text_color'] ?? $showcase['slide_counter']['hover_text_color'];
 
+		$section_title_font_family     = $showcase['font_main_title']['font_family'];
+		$section_title_text_size       = $showcase['font_main_title']['text_size'];
+		$section_title_text_weight     = 'default' === $showcase['font_main_title']['text_weight'] ? '700' : $showcase['font_main_title']['text_weight'];
+		$section_title_line_height     = $showcase['font_main_title']['line_height'];
+		$section_title_letter_spacing  = $showcase['font_main_title']['letter_spacing'];
+		$section_title_text_align      = $showcase['font_main_title']['text_align'];
+		$section_title_text_decoration = $showcase['font_main_title']['text_decoration'];
+		$section_title_text_color      = $showcase['font_main_title']['text_color'];
+
+		$category_title_font_family     = $showcase['font_category_title']['font_family'];
+		$category_title_text_size       = $showcase['font_category_title']['text_size'];
+		$category_title_text_weight     = $showcase['font_category_title']['text_weight'];
+		$category_title_line_height     = $showcase['font_category_title']['line_height'];
+		$category_title_letter_spacing  = $showcase['font_category_title']['letter_spacing'];
+		$category_title_text_align      = $showcase['font_category_title']['text_align'];
+		$category_title_text_decoration = $showcase['font_category_title']['text_decoration'];
+		$category_title_text_color      = $showcase['font_category_title']['text_color'];
+
 		$styles = "
 			.wccs-categories__{$wccs_id}{
 				gap: {$card_gap}px!important;
@@ -133,6 +151,23 @@ class Shortcodes {
 				border: 1px solid {$shop_now_btn_hover_bg} !important;
 				color: {$shop_now_btn_hover_text_color};
 			}
+			.wccs-categories-heading__{$wccs_id} .section-title {
+				font-size: {$section_title_text_size}px;
+				font-weight: {$section_title_text_weight};
+				letter-spacing: {$section_title_letter_spacing}px;
+				line-height: {$section_title_line_height}px;
+				color: {$section_title_text_color};
+				text-align: {$section_title_text_align};
+			}
+
+			.wccs-categories__{$wccs_id} .category-name a {
+				font-size: {$category_title_text_size}px;
+				font-weight: {$category_title_text_weight};
+				letter-spacing: {$category_title_letter_spacing}px;
+				line-height: {$category_title_line_height}px;
+				color: {$category_title_text_color};
+				text-align: {$category_title_text_align};
+			}
 		";
 		if ( 'yes' !== $showcase['show_button_icon'] ) {
 			$styles .= "
@@ -148,9 +183,9 @@ class Shortcodes {
 		?>
 		<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
 			<?php if ( isset( $showcase['section_title'] ) || isset( $showcase['section_description'] ) ) : ?>
-				<div class="wccs-section__header text-<?php echo isset( $showcase['heading_alignment'] ) ? sanitize_html_class( $showcase['heading_alignment'] ) : 'left'; ?>">
+				<div class="wccs-section__header wccs-categories-heading__<?php echo sanitize_html_class( $wccs_id ); ?> text-<?php echo isset( $showcase['heading_alignment'] ) ? sanitize_html_class( $showcase['heading_alignment'] ) : 'left'; ?>">
 					<?php
-					echo isset( $showcase['section_title'] ) && 'yes' === $showcase['show_section_title'] ? sprintf( '<%s>%s</%s>', esc_attr( $showcase['font_main_title']['text_tag'] ), esc_attr( $showcase['section_title'] ), esc_attr( $showcase['font_main_title']['text_tag'] ) ) : '';
+					echo isset( $showcase['section_title'] ) && 'yes' === $showcase['show_section_title'] ? sprintf( '<%s class="section-title">%s</%s>', esc_attr( $showcase['font_main_title']['text_tag'] ), esc_attr( $showcase['section_title'] ), esc_attr( $showcase['font_main_title']['text_tag'] ) ) : '';
 					echo isset( $showcase['section_description'] ) && 'yes' === $showcase['show_section_description'] ? '<p>' . esc_html( $showcase['section_description'] ) . '</p>' : '';
 					?>
 				</div>
@@ -213,7 +248,7 @@ class Shortcodes {
 				if ( 'all' === $showcase['category_filter'] ) {
 					$category = Helpers::get_category_details( $category->term_id );
 				} else {
-					$category = Helpers::get_category_details( $category );
+					$category = Helpers::get_category_details( $category, $wccs_id );
 				}
 
 				$child_categories = $category['child_categories'];
@@ -228,7 +263,7 @@ class Shortcodes {
 
 				<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
 					<div class="wccs-entry__content-inner">
-						<h3><?php echo esc_html( $category['name'] ); ?></h3>
+						<?php printf( '<%s class="category-name"><a href="%s">%s</a></%s>', esc_attr( $category['font_category_title']['text_tag'] ), esc_url( $category['cat_link'] ), esc_attr( $category['custom_name'] ), esc_attr( $category['font_category_title']['text_tag'] ) ); ?>
 						<p><?php echo esc_html( $category['description'] ); ?></p>
 						<p><a href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( $category['total_count'] . ' products' ); ?></a></p>
 
@@ -300,7 +335,7 @@ class Shortcodes {
 								if ( 'all' === $category_showcase['category_filter'] ) {
 									$category_details = Helpers::get_category_details( $category->term_id );
 								} else {
-									$category_details = Helpers::get_category_details( $category );
+									$category_details = Helpers::get_category_details( $category, $post_id );
 								}
 								?>
 								<li class="splide__slide wcc-showcase-slide-item wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>" data-splide-interval="<?php echo esc_attr( $category_showcase['slide_speed'] ); ?>">
@@ -316,13 +351,13 @@ class Shortcodes {
 											<?php if ( 'yes' === $category_showcase['show_category_icon'] && 'yes' === $category_details['is_icon'] ) { ?>
 												<div class="wcc-showcase-slide-item__cat-thumbnails__icon">
 													<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
-														<img src="<?php echo esc_url( $category_details['icon_url'] ); ?>" alt="<?php echo esc_attr( $category_details['slug'] ); ?>">
+														<i class="<?php echo esc_url( $category_details['icon_name'] ); ?>"></i>
 													</a>
 												</div>
 											<?php } ?>
 											<?php if ( 'yes' === $category_showcase['show_category_title'] ) { ?>
 												<div class="wcc-showcase-slide-item__cat-title">
-													<?php printf( '<%s><a href="%s">%s</a></%s>', esc_attr( $category_showcase['font_category_title']['text_tag'] ), esc_url( $category_details['cat_link'] ), esc_attr( $category_details['custom_name'] ), esc_attr( $category_showcase['font_category_title']['text_tag'] ) ); ?>
+													<?php printf( '<%s class="category-name"><a href="%s">%s</a></%s>', esc_attr( $category_showcase['font_category_title']['text_tag'] ), esc_url( $category_details['cat_link'] ), esc_attr( $category_details['custom_name'] ), esc_attr( $category_showcase['font_category_title']['text_tag'] ) ); ?>
 												</div>
 											<?php } ?>
 											<?php if ( 'yes' === $category_showcase['show_category_description'] ) { ?>
