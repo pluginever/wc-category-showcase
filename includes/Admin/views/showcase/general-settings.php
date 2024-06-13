@@ -1208,7 +1208,7 @@ defined( 'ABSPATH' ) || exit;
 		<h3 class="wcc_showcase-settings-title"><label for="wcc_showcase_specific_category_select"><?php esc_html_e( 'Category Selection', 'wc-category-showcase' ); ?></label></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'If selecting specific categories, use multi-select mode to easily pick the ones you want to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
-	<div class="tw-flex tw-flex-col tw-items-center">
+	<div class="tw-flex tw-flex-col tw-items-center tw-relative">
 		<div class="tw-min-w-[400px] tw-max-w-[400px]">
 				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 ">
 					<?php
@@ -1239,7 +1239,7 @@ defined( 'ABSPATH' ) || exit;
 			}
 			?>
 		</div>
-		<div class="tw-width-[56px] tw-h-[56px] wcc_showcase-loader tw-hidden">
+		<div class="tw-width-[56px] tw-h-[56px] wcc_showcase-loader tw-hidden tw-absolute tw-top-[8px] tw-right-[10px]">
 			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
 		</div>
 	</div>
@@ -1416,12 +1416,5 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 
-<div class="icon-picker-wrap" id="icon-picker-wrap">
-	<ul class="icon-picker">
-		<li class="icon-none" title="None"><i class="fas fa-ban"></i></li>
-		<li id='select-icon' class="select-icon" title="Icon Library"><i class="fas fa-circle"></i></li>
-		<input type="hidden" name="icon_value" id="icon_value" value="">
-		<div class="aim-indicator"><i class="fas fa-arrow-down"></i></div>
-	</ul>
-</div>
+
 

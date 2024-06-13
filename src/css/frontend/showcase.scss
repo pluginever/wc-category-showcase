@@ -50,12 +50,6 @@
 		}
 	}
 	.wcc-showcase-slide-item__cat-details {
-		//display: flex;
-		//flex-direction: column;
-		//text-align: center;
-		//align-items: center;
-		//row-gap: .5em;
-		//margin-top: 10px;
 		p{
 			margin: 0;
 		}
@@ -101,25 +95,11 @@
 			color:#000;
 		}
 		.wcc-showcase-slide-item__cat-button {
-			//display: flex;
-			//flex-direction: column;
-			//text-align: center;
-			//align-items: center;
-			//margin-bottom: .5rem;
 			a {
-				//display: flex;
-				//align-items: center;
-				//text-align: center;
-				//justify-content: center;
-				//gap: 4px;
-				color: #130F31;
 				font-size: 16px;
 				font-style: normal;
 				font-weight: 600;
 				line-height: 24px;
-			}
-			a:hover{
-				color: gray;
 			}
 		}
 	}
@@ -129,14 +109,8 @@
 		.wcc-showcase-slide-item__cat-button {
 			a {
 				padding: 8px 16px;
-				border: 1px solid #130F31;
 				text-decoration: none;
-				background-color: #130F31;
-				color: #fff;
-			}
-			a:hover{
-				background-color: #fff;
-				color: #130F31;
+				border-radius: 0;
 			}
 		}
 	}
@@ -144,15 +118,8 @@
 		.wcc-showcase-slide-item__cat-button {
 			a {
 				padding: 8px 16px;
-				border: 1px solid #130F31;
 				border-radius: 8px;
 				text-decoration: none;
-				background-color: #130F31;
-				color: #fff;
-			}
-			a:hover{
-				background-color: #fff;
-				color: #130F31;
 			}
 		}
 	}
@@ -160,15 +127,8 @@
 		.wcc-showcase-slide-item__cat-button {
 			a {
 				padding: 8px 16px;
-				border: 1px solid #130F31;
 				border-radius: 24px;
 				text-decoration: none;
-				background-color: #130F31;
-				color: #fff;
-			}
-			a:hover{
-				background-color: #fff;
-				color: #130F31;
 			}
 		}
 	}
@@ -243,12 +203,33 @@
 		font-size: 22px;
 	}
 
+	.is--rounded &{
+		.splide__arrow--prev, .splide__arrow--next {
+			border-radius: 8px;
+		}
+	}
+
+	.is--only_icons &{
+		.splide__arrow--prev, .splide__arrow--next {
+			background: transparent;
+		}
+		.splide__arrow--prev:hover, .splide__arrow--next:hover {
+			background: transparent;
+		}
+	}
+	.is--sharp &{
+		.splide__arrow--prev, .splide__arrow--next {
+			border-radius: 0;
+		}
+	}
+
 	// Navigation icon chevron style.
 	.is--navigation-chevron &{
 		.splide__arrow--prev::before {
 			top:-14px;
 			right: 11px;
 			content: "\2039";
+			transform: scaleX(1);
 			font-size: 34px;
 		}
 		.splide__arrow--next::before {
@@ -356,5 +337,8 @@
 	}
 }
 
+.wccs-showcase-btn::after{
+	content: "\2192";
+}
 
 

@@ -7,6 +7,7 @@
  * @package WooCommerceCategoryShowcase
  */
 
+var_dump($category_details);
 ?>
 <div class="wcc_showcase-category-list-item" data-id="<?php echo esc_attr( $category_details['cat_id'] ); ?>" data-title="<?php echo esc_attr( $category_details['name'] ); ?>">
 	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcc_showcase-custom-border wcc_showcase-move">
@@ -54,7 +55,7 @@
 				<h4 class="tw-text-xs tw-my-0"><?php esc_html_e( 'CATEGORY IMAGE', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-mt-2">
 					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][image_url]" value="<?php echo esc_url( $category_details['image_url'] ); ?>">
-					<a href="#" class="wcc_showcase-upload-button">
+					<a href="#" class="wcc_showcase-upload-button wcc_showcase-upload-image-button">
 						<?php esc_html_e( 'Add Image', 'wc-category-showcase' ); ?>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 							<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -71,16 +72,19 @@
 						<div class="wcc_showcase-toggle-small"></div>
 					</label>
 				</div>
-				<div class="tw-relative tw-mt-2">
-					<a href="#" class="wcc_showcase-upload-button wcc_showcase-icon-selection <?php echo 'yes' === $category_details['is_icon'] ? '' : 'tw-hidden'; ?>">
+				<div class="tw-relative tw-mt-2 icon-picker-wrap" id="icon-picker-wrap">
+					<a href="#" class="select-icon wcc_showcase-upload-button wcc_showcase-icon-selection <?php echo 'yes' === $category_details['is_icon'] ? '' : 'tw-hidden'; ?>">
 						<?php esc_html_e( 'Add Icon', 'wc-category-showcase' ); ?>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 							<path d="M8.0001 11.0761L8.0001 6.64537M8.0001 6.64537L9.96933 8.6146M8.0001 6.64537L6.03087 8.6146M4.55394 13.0454C2.92258 13.0454 1.6001 11.7229 1.6001 10.0915C1.6001 8.78334 2.45051 7.67377 3.62867 7.2855C3.58971 7.07808 3.56933 6.86411 3.56933 6.64537C3.56933 4.74211 5.11222 3.19922 7.01548 3.19922C8.61137 3.19922 9.95388 4.284 10.3459 5.75643C10.5374 5.69432 10.7417 5.66076 10.9539 5.66076C12.0415 5.66076 12.9232 6.54241 12.9232 7.62999C12.9232 7.85851 12.8842 8.07794 12.8127 8.28201C13.7406 8.6346 14.4001 9.5322 14.4001 10.5838C14.4001 11.9433 13.298 13.0454 11.9386 13.0454H4.55394Z" stroke="#2270B1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 					</a>
-					<img class="tw-h-32 tw-w-40 img-upload" src="<?php echo ! empty( $category_details['icon_url'] ) ? esc_attr( $category_details['icon_url'] ) : esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/placeholder-icon.png' ); ?>" alt="<?php echo esc_attr( $category_details['name'] ); ?>">
-					<input class="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][icon_url]" value="<?php echo esc_url( $category_details['icon_url'] ); ?>">
+					<div class="tw-h-32 tw-w-40 img-upload select-icon2">
+						<i class="<?php echo esc_attr( $category_details['icon_url'] ); ?>"></i>
+					</div>
+					<input class="image_url" id="image_url" type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][icon_url]" value="<?php echo esc_url( $category_details['icon_url'] ); ?>">
 				</div>
+
 			</div>
 		</div>
 		<div class="tw-mt-3">

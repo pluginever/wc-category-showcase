@@ -11,6 +11,7 @@ module.exports = [
 			'css/showcase': './src/css/frontend/showcase.scss',
 			'js/admin': './src/js/admin/admin.js',
 			'js/showcase': './src/js/frontend/showcase.js',
+			'js/admin-aesthetic': './src/assets/js/aesthetic-icon-picker.js',
 		},
 		output: {
 			...defaultConfig.output,

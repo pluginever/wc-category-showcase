@@ -59,13 +59,6 @@ class Shortcodes {
 			$layout_option = isset( $showcase['block_column'] ) ? 'column__x' . $showcase['block_column'] : 'column__x1';
 		}
 		if ( 'grid' === $layout ) {
-			// Available options are:
-			// 2X: simple_1x2, simple_2x2.
-			// 3X: simple_1x3, simple_2x3 standard_1x3, standard_2x3, cross_1x3, cross_2x3.
-			// 4X: crescent_1x4, crescent_2x4, zen_1x4, zen_2x4, catalog_1x4, catalog_2x4, catalog_3x4, catalog_4x4, matrix_1x4, matrix_2x4, matrix_3x4, matrix_4x4, matrix_5x4, mystic_1x4, mystic_2x4, mystic_3x4, mystic_4x4.
-			// 5X: catalog_1x5, catalog_2x5, schema_1x5, schema_2x5, modern_1x5, modern_2x5, modern_3x5.
-			// 6X: catalog_1x6, catalog_2x6, matrix_1x6, matrix_2x6, zen_1x6, zen_2x6, zen_3x6.
-			// 7X: catalog_1x7, catalog_2x7, helix_1x7, helix_2x7.
 			$layout_option = isset( $showcase['layout_option'] ) ? sanitize_key( $showcase['layout_option'] ) : '';
 		}
 
@@ -76,6 +69,11 @@ class Shortcodes {
 		$card_text_hover_color = $showcase['card']['hover_text_color'] ?? '#cccccc';
 		$card_border_radius    = $showcase['border_radius'] ?? '8';
 		$card_gap              = $showcase['gap_between_cards'] ?? '9';
+
+		$shop_now_btn_bg               = $showcase['button']['background_color'] ?? $showcase['button']['background_color'];
+		$shop_now_btn_text_color       = $showcase['button']['text_color'] ?? $showcase['button']['text_color'];
+		$shop_now_btn_hover_bg         = $showcase['button']['hover_color'] ?? $showcase['button']['hover_color'];
+		$shop_now_btn_hover_text_color = $showcase['button']['hover_text_color'] ?? $showcase['button']['hover_text_color'];
 
 		$navigation_bg               = $showcase['slide_button']['background_color'] ?? $showcase['slide_button']['background_color'];
 		$navigation_text_color       = $showcase['slide_button']['text_color'] ?? $showcase['slide_button']['text_color'];
@@ -91,13 +89,13 @@ class Shortcodes {
 			.wccs-categories__{$wccs_id}{
 				gap: {$card_gap}px!important;
 			}
-			.wccs-showcase-id__{$wccs_id}{
+			.wccs-showcase-id__{$wccs_id}, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item{
 				background-color: {$card_bg_color};
 				color: {$card_text_color};
 				border: 1px solid {$card_bg_hover_color};
 				border-radius: {$card_border_radius}px;
 			}
-			.wccs-showcase-id__{$wccs_id}:hover{
+			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
 				background-color: {$card_bg_hover_color};
 				color: {$card_text_hover_color};
 			}
@@ -124,7 +122,25 @@ class Shortcodes {
 			.wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--prev:hover::before, .wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--next:hover::before{
 				color: {$navigation_hover_text_color} !important;
 			}
+
+			.wcc-showcase-{$wccs_id} .wccs-showcase-btn, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn{
+				background-color: {$shop_now_btn_bg};
+				border: 1px solid {$shop_now_btn_bg} !important;
+				color: {$shop_now_btn_text_color};
+			}
+			.wcc-showcase-{$wccs_id} .wccs-showcase-btn:hover, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn:hover{
+				background-color: {$shop_now_btn_hover_bg};
+				border: 1px solid {$shop_now_btn_hover_bg} !important;
+				color: {$shop_now_btn_hover_text_color};
+			}
 		";
+		if ( 'yes' !== $showcase['show_button_icon'] ) {
+			$styles .= "
+				.wcc-showcase-{$wccs_id} .wccs-showcase-btn::after, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn::after{
+					content: '' !important;
+				}
+			";
+		}
 		wp_add_inline_style( 'wcc-showcase-showcase', $styles );
 
 		ob_start();
@@ -187,17 +203,22 @@ class Shortcodes {
 			);
 			$categories = Helpers::get_all_categories( $args );
 		} else {
-			// TODO: Need to check the custom category query options.
-			$categories = isset( $category_showcase['specific_category_select'] ) ? $category_showcase['specific_category_select'] : array();
+			$categories = isset( $showcase['specific_category_select'] ) ? $showcase['specific_category_select'] : array();
 		}
+
+		$categories = array_slice( $categories, 0, $showcase['category_display_limit'], true );
 
 		if ( ! empty( $categories ) ) {
 			foreach ( $categories as $category ) {
-				$category = Helpers::get_category_details( $category->term_id );
+				if ( 'all' === $showcase['category_filter'] ) {
+					$category = Helpers::get_category_details( $category->term_id );
+				} else {
+					$category = Helpers::get_category_details( $category );
+				}
 
 				$child_categories = $category['child_categories'];
 				?>
-			<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?>style="background: url('<?php echo esc_url( $thumbnail_img ); ?>')" <?php endif; ?>>
+			<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?> <?php printf( 'style="background: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
 
 				<?php if ( 'block' === $layout ) : ?>
 					<div class="wccs-entry__head">
@@ -227,7 +248,11 @@ class Shortcodes {
 						<?php endif; ?>
 
 						<div class="wccs-card-button">
-							<a class="btn wccs-showcase-btn" href="<?php echo esc_url( $category['cat_link'] ); ?>"><span>Shop Now ⟶</span></a>
+							<a class="btn wccs-showcase-btn" href="<?php echo esc_url( $category['cat_link'] ); ?>">
+								<?php
+								echo esc_attr( $showcase['button_text'] );
+								?>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -242,19 +267,20 @@ class Shortcodes {
 	 *
 	 * @param int    $wccs_id Showcase ID.
 	 * @param string $layout Current layout.
-	 * @param array  $showcase Array of showcase data.
+	 * @param array  $category_showcase Array of showcase data.
 	 * @param string $class_list Slider class list.
 	 * @param string $config Slider config.
 	 */
-	public static function get_slider_content_html( $wccs_id, $layout, $showcase, $class_list, $config ) {
+	public static function get_slider_content_html( $wccs_id, $layout, $category_showcase, $class_list, $config ) {
 
-		$post_id           = $wccs_id;
-		$category_showcase = $showcase;
+		$post_id = $wccs_id;
 		if ( 'all' === $category_showcase['category_filter'] ) {
 			$categories = Helpers::get_all_categories();
 		} else {
 			$categories = isset( $category_showcase['specific_category_select'] ) ? $category_showcase['specific_category_select'] : array();
 		}
+		$categories = array_slice( $categories, 0, $category_showcase['category_display_limit'], true );
+
 		$slider_class_list = $class_list;
 		$slider_config     = $config;
 		$is_ticker         = array_key_exists( 'slide_is_ticker', $category_showcase ) && 'yes' === $category_showcase['slide_is_ticker'] ? 'true' : 'false';
@@ -262,18 +288,22 @@ class Shortcodes {
 		$ticker_mode       = 'medium' === $category_showcase['ticket_mode'] ? 1 : ( 'slow' === $category_showcase['ticket_mode'] ? .5 : 2 );
 
 		// Added latter.
-		$content_placement = $showcase['content_placement'] ?? 'bottom';
+		$content_placement = $category_showcase['content_placement'] ?? 'bottom';
 		$content_position  = $category_showcase['slide_content_position'] ?? 'center_center';
 		?>
 
 		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $category_showcase['slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
 					<div class="splide__track">
-						<ul class="splide__list ajsFCDwhesvcusds">
+						<ul class="splide__list">
 							<?php
-							foreach ( $categories as $category_id ) {
-								$category_details = Helpers::get_category_details( $category_id )
+							foreach ( $categories as $category ) {
+								if ( 'all' === $category_showcase['category_filter'] ) {
+									$category_details = Helpers::get_category_details( $category->term_id );
+								} else {
+									$category_details = Helpers::get_category_details( $category );
+								}
 								?>
-								<li class="splide__slide wcc-showcase-slide-item wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" data-splide-interval="<?php echo esc_attr( $category_showcase['slide_speed'] ); ?>">
+								<li class="splide__slide wcc-showcase-slide-item wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>" data-splide-interval="<?php echo esc_attr( $category_showcase['slide_speed'] ); ?>">
 									<div class="wcc-showcase-slide-item__cat-thumbnails">
 										<div class="wcc-showcase-slide-item__cat-thumbnails__image">
 											<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
@@ -292,7 +322,7 @@ class Shortcodes {
 											<?php } ?>
 											<?php if ( 'yes' === $category_showcase['show_category_title'] ) { ?>
 												<div class="wcc-showcase-slide-item__cat-title">
-													<?php printf( '<%s><a href="%s">%s</a></%s>', esc_attr( $showcase['font_category_title']['text_tag'] ), esc_url( $category_details['cat_link'] ), esc_attr( $category_details['custom_name'] ), esc_attr( $showcase['font_category_title']['text_tag'] ) ); ?>
+													<?php printf( '<%s><a href="%s">%s</a></%s>', esc_attr( $category_showcase['font_category_title']['text_tag'] ), esc_url( $category_details['cat_link'] ), esc_attr( $category_details['custom_name'] ), esc_attr( $category_showcase['font_category_title']['text_tag'] ) ); ?>
 												</div>
 											<?php } ?>
 											<?php if ( 'yes' === $category_showcase['show_category_description'] ) { ?>
@@ -314,6 +344,7 @@ class Shortcodes {
 													</ul>
 												</div>
 											<?php } ?>
+
 											<?php if ( 'yes' === $category_showcase['show_custom_text'] ) { ?>
 												<div class="wcc-showcase-slide-item__cat-custom-text">
 													<p><?php echo esc_attr( $category_details['custom_text'] ); ?></p>
@@ -324,12 +355,7 @@ class Shortcodes {
 													<a href="<?php echo esc_attr( $category_details['cat_link'] ); ?>" class="btn wccs-showcase-btn">
 														<?php
 														echo esc_attr( $category_showcase['button_text'] );
-														if ( 'yes' === $category_showcase['show_button_icon'] ) {
-															?>
-															<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-																<path d="M14.4192 6.35859C14.1263 6.06569 13.6515 6.06569 13.3586 6.35859C13.0657 6.65148 13.0657 7.12635 13.3586 7.41925L14.4192 6.35859ZM17 10L17.5303 10.5304C17.8232 10.2375 17.8232 9.76259 17.5303 9.4697L17 10ZM13.3586 12.5808C13.0657 12.8737 13.0657 13.3486 13.3586 13.6415C13.6515 13.9344 14.1263 13.9344 14.4192 13.6415L13.3586 12.5808ZM3 9.25003C2.58579 9.25003 2.25 9.58581 2.25 10C2.25 10.4142 2.58579 10.75 3 10.75L3 9.25003ZM13.3586 7.41925L16.4697 10.5304L17.5303 9.4697L14.4192 6.35859L13.3586 7.41925ZM16.4697 9.4697L13.3586 12.5808L14.4192 13.6415L17.5303 10.5304L16.4697 9.4697ZM17 9.25003L3 9.25003L3 10.75L17 10.75V9.25003Z"/>
-															</svg>
-														<?php } ?>
+														?>
 													</a>
 												</div>
 											<?php } ?>
@@ -363,7 +389,7 @@ class Shortcodes {
 		"perMove": 1,
 		"type":"' . ( 'yes' === $category_showcase['slide_unlimited_loop'] ? 'loop' : 'slide' ) . '",
 		"gap":"20px",
-		"autoplay": ' . ( 'yes' === $category_showcase['slide_slideshow'] ? 'true' : 'false' ) . ',
+		"autoplay": ' . ( 'yes' !== $category_showcase['slide_is_ticker'] ? ( 'yes' === $category_showcase['slide_slideshow'] ? 'true' : 'false' ) : 'false' ) . ',
 		"arrows": ' . ( 'yes' === $category_showcase['slide_navigation_arrow'] ? 'true' : 'false' ) . ',
 		"pagination": ' . ( 'yes' === $category_showcase['slide_show_counter'] ? 'true' : 'false' ) . ',
 		"rewind": true,
@@ -392,6 +418,7 @@ class Shortcodes {
 			$slider_classes .= 'is--arrow';
 			$slider_classes .= 'arrow' === $category_showcase['slide_arrow_style'] ? '' : ' is--navigation-chevron';
 			$slider_classes .= 'default' === $category_showcase['slider_navigation_position'] ? '' : ' is--navigation-' . $category_showcase['slider_navigation_position'];
+			$slider_classes .= $category_showcase['slide_button_style'] ? ' is--' . $category_showcase['slide_button_style'] : '';
 		}
 
 		if ( 'yes' === $category_showcase['slide_show_counter'] ) {

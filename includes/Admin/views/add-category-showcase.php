@@ -16,7 +16,6 @@ defined( 'ABSPATH' ) || exit;
 			<span class="dashicons dashicons-undo"></span>
 		</a>
 	</h1>
-
 	<form method="post" action="<?php echo esc_html( admin_url( 'admin-post.php' ) ); ?>">
 		<span data-wp-text="name"></span>
 		<div class="bkit-poststuff">
