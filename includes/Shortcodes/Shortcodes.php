@@ -167,6 +167,8 @@ class Shortcodes {
 				line-height: {$category_title_line_height}px;
 				color: {$category_title_text_color};
 				text-align: {$category_title_text_align};
+				text-decoration: none;
+			}
 			}
 		";
 		if ( 'yes' !== $showcase['show_button_icon'] ) {
@@ -221,7 +223,6 @@ class Shortcodes {
 
 		$content_placement = $showcase['content_placement'] ?? 'top';
 		$content_position  = $showcase['overlay_content_position'] ?? 'center_center';
-		$thumbnail_img     = WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/category-placeholder-img1.png';
 
 		// Get category query args values.
 		$hide_empty = isset( $showcase['hide_empty_categories'] ) && 'yes' === $showcase['hide_empty_categories'] ? true : false;
@@ -235,6 +236,8 @@ class Shortcodes {
 			$args       = array(
 				'number'     => $limit,
 				'hide_empty' => $hide_empty,
+				'orderby'    => 'default' === $showcase['category_sort_order_by'] ? 'date' : $showcase['category_sort_order_by'],
+				'order'      => $showcase['category_sort_order'],
 			);
 			$categories = Helpers::get_all_categories( $args );
 		} else {
@@ -252,9 +255,14 @@ class Shortcodes {
 				}
 
 				$child_categories = $category['child_categories'];
+				$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 				?>
 			<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout ) : ?> <?php printf( 'style="background: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
-
+				<?php if ( 'yes' === $category['is_label'] && ! empty( $category['label_text'] ) ) { ?>
+					<div class="wcc-showcase-ribbon-<?php echo esc_attr( $ribbon_placement ); ?>">
+						<?php echo esc_attr( $category['label_text'] ); ?>
+					</div>
+				<?php } ?>
 				<?php if ( 'block' === $layout ) : ?>
 					<div class="wccs-entry__head">
 						<a href="<?php echo esc_url( $category['cat_link'] ); ?>"><img src="<?php echo esc_url( $category['image_url'] ); ?>" alt="<?php echo esc_html( $category['name'] ); ?>"></a>
@@ -263,7 +271,7 @@ class Shortcodes {
 
 				<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
 					<div class="wccs-entry__content-inner">
-						<?php printf( '<%s class="category-name"><a href="%s">%s</a></%s>', esc_attr( $category['font_category_title']['text_tag'] ), esc_url( $category['cat_link'] ), esc_attr( $category['custom_name'] ), esc_attr( $category['font_category_title']['text_tag'] ) ); ?>
+						<?php printf( '<%s class="category-name"><a href="%s">%s</a></%s>', esc_attr( $showcase['font_category_title']['text_tag'] ), esc_url( $category['cat_link'] ), esc_attr( $category['custom_name'] ), esc_attr( $showcase['font_category_title']['text_tag'] ) ); ?>
 						<p><?php echo esc_html( $category['description'] ); ?></p>
 						<p><a href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( $category['total_count'] . ' products' ); ?></a></p>
 
@@ -310,7 +318,13 @@ class Shortcodes {
 
 		$post_id = $wccs_id;
 		if ( 'all' === $category_showcase['category_filter'] ) {
-			$categories = Helpers::get_all_categories();
+			$hide_empty = isset( $category_showcase['hide_empty_categories'] ) && 'yes' === $category_showcase['hide_empty_categories'] ? true : false;
+			$args       = array(
+				'hide_empty' => $hide_empty,
+				'orderby'    => 'default' === $category_showcase['category_sort_order_by'] ? 'date' : $category_showcase['category_sort_order_by'],
+				'order'      => $category_showcase['category_sort_order'],
+			);
+			$categories = Helpers::get_all_categories( $args );
 		} else {
 			$categories = isset( $category_showcase['specific_category_select'] ) ? $category_showcase['specific_category_select'] : array();
 		}
@@ -324,7 +338,7 @@ class Shortcodes {
 
 		// Added latter.
 		$content_placement = $category_showcase['content_placement'] ?? 'bottom';
-		$content_position  = $category_showcase['slide_content_position'] ?? 'center_center';
+		$content_position  = $category_showcase['overlay_content_position'] ?? 'center_center';
 		?>
 
 		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $category_showcase['slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
@@ -337,8 +351,14 @@ class Shortcodes {
 								} else {
 									$category_details = Helpers::get_category_details( $category, $post_id );
 								}
+								$ribbon_placement = ( 'left' === $category_showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 								?>
-								<li class="splide__slide wcc-showcase-slide-item wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>" data-splide-interval="<?php echo esc_attr( $category_showcase['slide_speed'] ); ?>">
+								<li class="splide__slide wcc-showcase-slide-item text-<?php echo sanitize_html_class( $category_showcase['content_alignment'] ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>" data-splide-interval="<?php echo esc_attr( $category_showcase['slide_speed'] ); ?>">
+									<?php if ( 'yes' === $category_details['is_label'] && ! empty( $category_details['label_text'] ) ) { ?>
+										<div class="wcc-showcase-ribbon-<?php echo esc_attr( $ribbon_placement ); ?>">
+											<?php echo esc_attr( $category_details['label_text'] ); ?>
+										</div>
+									<?php } ?>
 									<div class="wcc-showcase-slide-item__cat-thumbnails">
 										<div class="wcc-showcase-slide-item__cat-thumbnails__image">
 											<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
@@ -435,7 +455,7 @@ class Shortcodes {
 		"pauseOnHover":' . ( 'yes' === $category_showcase['slide_stop_on_hover'] ? 'true' : 'false' ) . ',
 		"releaseWheel":' . ( 'yes' === $category_showcase['slide_scroll_interaction'] ? 'true' : 'false' ) . ',
 		"direction": "ltr",
-		"wheel":false
+		"wheel":' . ( 'yes' === $category_showcase['slide_scroll_interaction'] ? 'true' : 'false' ) . '
 		}';
 		return $slider_config;
 	}

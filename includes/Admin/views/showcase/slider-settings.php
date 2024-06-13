@@ -417,7 +417,7 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 			</div>
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
-				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
+				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Text Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
 					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_button']['text_color'] ) . '"'; ?>></span>
 					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_button[text_color]" value="<?php echo esc_attr( $showcase_details['slide_button']['text_color'] ); ?>">
@@ -536,7 +536,7 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 			</div>
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
-				<h4 class="tw-my-0 !tw-text-text-grey-500 "><?php esc_html_e( 'TEXT Color', 'wc-category-showcase' ); ?></h4>
+				<h4 class="tw-my-0 !tw-text-text-grey-500 "><?php esc_html_e( 'Text Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
 					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-card-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['slide_counter']['text_color'] ) . '"'; ?>></span>
 					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_slide_counter[text_color]" value="<?php echo esc_attr( $showcase_details['slide_counter']['text_color'] ); ?>">
