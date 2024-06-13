@@ -22,10 +22,15 @@ class Helpers {
 	 * @return array
 	 */
 	public static function get_category_details( $category_id, $post_id = null ) {
-		$category_details        = array();
-		$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_category_list_item', true );
-		$category_custom_details = isset( $category_custom_details ) ? $category_custom_details[ $post_id ] : array();
-		$category                = get_term( $category_id );
+		$category_details = array();
+		if ( ! empty( $post_id ) ) {
+			$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_category_list_item', true );
+			$category_custom_details = isset( $category_custom_details ) ? $category_custom_details[ $category_id ] : array();
+		} else {
+			$category_custom_details = array();
+		}
+
+		$category = get_term( $category_id );
 
 		if ( $category && ! is_wp_error( $category ) ) {
 			$category_details['cat_id']           = esc_attr( $category->term_id );
