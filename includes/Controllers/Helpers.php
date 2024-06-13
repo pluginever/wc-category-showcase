@@ -24,7 +24,7 @@ class Helpers {
 	public static function get_category_details( $category_id, $post_id = null ) {
 		$category_details        = array();
 		$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_category_list_item', true );
-		$category_custom_details = isset( $category_custom_details ) ? $category_custom_details : array();
+		$category_custom_details = isset( $category_custom_details ) ? $category_custom_details[ $post_id ] : array();
 		$category                = get_term( $category_id );
 
 		if ( $category && ! is_wp_error( $category ) ) {

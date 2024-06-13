@@ -7,7 +7,6 @@
  * @package WooCommerceCategoryShowcase
  */
 
-var_dump($category_details);
 ?>
 <div class="wcc_showcase-category-list-item" data-id="<?php echo esc_attr( $category_details['cat_id'] ); ?>" data-title="<?php echo esc_attr( $category_details['name'] ); ?>">
 	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcc_showcase-custom-border wcc_showcase-move">
