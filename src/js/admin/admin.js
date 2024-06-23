@@ -146,37 +146,22 @@ var AestheticIconPicker = function(option) {
 		aestheticDomEle.querySelector('.aim-insert-icon-button').addEventListener('click', function (e) {
 			e.preventDefault();
 			var selected = document.querySelector('.aesthetic-selected');
-
 			if (null !== selected) {
 
-				var sellectedClass = selected.querySelector('i').classList.value;
+				var selectedClass = selected.querySelector('i').classList.value;
 
-				document.querySelector('#image_url').value = sellectedClass;
+				// console.log(selectedClass);
+				// document.querySelector(input id).value = sellectedClass;
+				document.querySelector( option.selector + ' .icon_name').value = selectedClass;
 
-				var wrap = document.querySelector('.select-icon2');
-				wrap.querySelector('i').classList.value = sellectedClass;
+				var wrap = document.querySelector(option.selector);
+				wrap.querySelector('i').classList.value = selectedClass;
 
 			}
 			aestheticDomEle.classList.add('aim-close');
 			aestheticDomEle.classList.remove('aim-open');
 		});
-
-
-
-
 	});
-
-
-
-	//Remove selected icon
-	document.querySelector('.icon-none').addEventListener('click', function (e) {
-		var selected = document.querySelector('.aesthetic-selected');
-		document.querySelector('.select-icon i').classList.value = 'fas fa-circle';
-
-		document.querySelector('#icon_value').value = '';
-	});
-
-
 
 	function debounce(func, wait, immediate) {
 		var timeout;
@@ -814,19 +799,9 @@ var AestheticIconPicker = function(option) {
 // Category icon picker.
 jQuery(document).ready(function($) {
 
-	var newIcon = {
-		material: {
-			regular: {
-				"list-icon": "",
-				"icon-style": "mt-regular",
-				icons: ["some", "some2"],
-			},
-		},
-	};
-
 	$('.icon-picker-wrap').each(function (){
 		var id = $(this).attr('id');
-		var trigger = $('.select-icon', $(this)).attr('id');
+		var trigger = $(this).children('a' ).attr('id');
 		AestheticIconPicker({
 			selector: '#'+id,
 			onClick: '#'+trigger,

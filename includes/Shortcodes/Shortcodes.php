@@ -400,7 +400,7 @@ class Shortcodes {
 											<?php if ( 'yes' === $category_showcase['show_category_icon'] && 'yes' === $category_details['is_icon'] ) { ?>
 												<div class="wcc-showcase-slide-item__cat-thumbnails__icon">
 													<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
-														<i class="<?php echo esc_url( $category_details['icon_name'] ); ?>"></i>
+														<i class="<?php echo esc_attr( $category_details['icon_name'] ); ?>"></i>
 													</a>
 												</div>
 											<?php } ?>
