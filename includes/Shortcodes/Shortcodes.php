@@ -127,6 +127,12 @@ class Shortcodes {
 				border: 1px solid {$card_bg_hover_color};
 				border-radius: {$card_border_radius}px;
 			}
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner p, .wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
+				color: {$card_text_color};
+			}
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a:hover {
+				color: {$card_text_hover_color};
+			}
 			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
 				background-color: {$card_bg_hover_color};
 				color: {$card_text_hover_color};
@@ -158,12 +164,12 @@ class Shortcodes {
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn{
 				background-color: {$shop_now_btn_bg};
 				border: 1px solid {$shop_now_btn_bg} !important;
-				color: {$shop_now_btn_text_color};
+				color: {$shop_now_btn_text_color} !important;
 			}
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn:hover, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn:hover{
 				background-color: {$shop_now_btn_hover_bg};
 				border: 1px solid {$shop_now_btn_hover_bg} !important;
-				color: {$shop_now_btn_hover_text_color};
+				color: {$shop_now_btn_hover_text_color} !important;
 			}
 			.wccs-categories-heading__{$wccs_id} .section-title {
 				font-size: {$section_title_text_size}px;
@@ -245,7 +251,7 @@ class Shortcodes {
 		if ( 'block' === $layout ) {
 			$limit = isset( $showcase['category_display_limit'] ) ? absint( $showcase['category_display_limit'] ) : null;
 		} else {
-			$limit = isset( $showcase['block_column'] ) ? absint( $showcase['block_column'] ) : null;
+			$limit = isset( $showcase['number_of_grid_column'] ) ? absint( $showcase['number_of_grid_column'] ) : null;
 		}
 
 		if ( 'all' === $showcase['category_filter'] ) {
@@ -260,7 +266,7 @@ class Shortcodes {
 			$categories = isset( $showcase['specific_category_select'] ) ? $showcase['specific_category_select'] : array();
 		}
 
-		$categories = array_slice( $categories, 0, $showcase['category_display_limit'], true );
+		$categories = array_slice( $categories, 0, $limit, true );
 
 		if ( ! empty( $categories ) ) {
 			foreach ( $categories as $category ) {
@@ -287,32 +293,39 @@ class Shortcodes {
 
 				<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
 					<div class="wccs-entry__content-inner">
-						<?php printf( '<%s class="category-name"><a href="%s">%s</a></%s>', esc_attr( $showcase['font_category_title']['text_tag'] ), esc_url( $category['cat_link'] ), esc_attr( $category['custom_name'] ), esc_attr( $showcase['font_category_title']['text_tag'] ) ); ?>
-						<p><?php echo esc_html( $category['description'] ); ?></p>
-						<p><a href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( $category['total_count'] . ' products' ); ?></a></p>
-
-						<?php if ( 'yes' === $showcase['includes_sub_categories'] && ! empty( $child_categories ) ) : ?>
-						<ul class="wccs-subcategory__items">
-							<?php
-							foreach ( $child_categories as $child_category ) :
-								printf(
-									'<li class="wccs-subcategory__item"><a href="%1$s">%2$s <span>(%3$s)<span></a></li>',
-									esc_url( $child_category['cat_link'] ),
-									esc_html( $child_category['name'] ),
-									esc_html( $child_category['total_product'] ),
-								);
-							endforeach;
-							?>
-						</ul>
+						<?php if ( 'yes' === $showcase['show_category_title'] ) { ?>
+							<?php printf( '<%s class="category-name"><a href="%s">%s</a></%s>', esc_attr( $showcase['font_category_title']['text_tag'] ), esc_url( $category['cat_link'] ), esc_attr( $category['custom_name'] ), esc_attr( $showcase['font_category_title']['text_tag'] ) ); ?>
+						<?php } ?>
+						<?php if ( 'yes' === $showcase['show_category_description'] ) { ?>
+							<p><?php echo esc_html( $category['description'] ); ?></p>
+						<?php } ?>
+						<?php if ( 'yes' === $showcase['show_category_product_quantity'] ) { ?>
+							<p><a href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( $category['total_count'] . ' products' ); ?></a></p>
+						<?php } ?>
+						<?php if ( 'yes' === $showcase['show_subcategory_product_quantity'] && ! empty( $child_categories ) ) : ?>
+							<ul class="wccs-subcategory__items">
+								<?php
+								foreach ( $child_categories as $child_category ) :
+									printf(
+										'<li class="wccs-subcategory__item"><a href="%1$s">%2$s <span>(%3$s)<span></a></li>',
+										esc_url( $child_category['cat_link'] ),
+										esc_html( $child_category['name'] ),
+										esc_html( $child_category['total_product'] ),
+									);
+								endforeach;
+								?>
+							</ul>
 						<?php endif; ?>
 
-						<div class="wccs-card-button">
-							<a class="btn wccs-showcase-btn" href="<?php echo esc_url( $category['cat_link'] ); ?>">
-								<?php
-								echo esc_attr( $showcase['button_text'] );
-								?>
-							</a>
-						</div>
+						<?php if ( 'yes' === $showcase['show_button'] ) { ?>
+							<div class="wccs-card-button <?php echo 'yes' === $showcase['show_button_icon'] ? 'is-shop-now-icon' : ''; ?>">
+								<a class="btn wccs-showcase-btn" href="<?php echo esc_url( $category['cat_link'] ); ?>">
+									<?php
+									echo esc_attr( $showcase['button_text'] );
+									?>
+								</a>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -491,18 +504,19 @@ class Shortcodes {
 			$slider_classes .= 'default' === $category_showcase['slider_navigation_position'] ? '' : ' is--navigation-' . $category_showcase['slider_navigation_position'];
 			$slider_classes .= $category_showcase['slide_button_style'] ? ' is--' . $category_showcase['slide_button_style'] : '';
 		}
-
 		if ( 'yes' === $category_showcase['slide_show_counter'] ) {
 			$slider_classes .= ' is-pagination';
 			$slider_classes .= 'dots' === $category_showcase['slide_counter_style'] ? ' ' : ( 'dashes' === $category_showcase['slide_counter_style'] ? ' is--pagination-only-dashes' : ' is--pagination-dash-with-dots' );
 		}
-
 		if ( 'yes' === $category_showcase['show_button'] ) {
 			$slider_classes .= ' is-button-' . $category_showcase['button_style'];
 		}
 
 		$slider_classes .= ' is-image-' . $category_showcase['image_layout'];
 
+		if ( 'yes' === $category_showcase['show_button_icon'] ) {
+			$slider_classes .= ' is-shop-now-icon';
+		}
 		if ( 'yes' === $category_showcase['image_zoom_on_hover'] ) {
 			$slider_classes .= ' is-image-zoom-on-hover';
 		}

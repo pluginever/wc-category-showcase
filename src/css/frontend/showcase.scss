@@ -59,16 +59,13 @@
 		}
 	}
 	.wcc-showcase-slide-item__cat-details {
+		.wccs-entry__content-inner{
+			width: 100%;
+		}
 		p{
 			margin: 0;
 		}
 		.wcc-showcase-slide-item__cat-title a {
-			//color: #130F31;
-			//text-align: center;
-			//font-size: 1.5rem;
-			//font-style: normal;
-			//font-weight: 600;
-			//line-height: 2rem;
 			text-decoration: none;
 		}
 		.wcc-showcase-slide-item__sub-cat__sub-cat-list {
@@ -186,6 +183,12 @@
 		}
 		.splide__slide{
 			height:550px !important;
+		}
+	}
+
+	.is-shop-now-icon &{
+		.wccs-showcase-btn::after{
+			content: "\2192";
 		}
 	}
 }
@@ -344,10 +347,6 @@
 			width: 24px;
 		}
 	}
-}
-
-.wccs-showcase-btn::after{
-	content: "\2192";
 }
 
 

@@ -106,26 +106,6 @@
 	display: inline-block;
 }
 
-/* HTML: <div class="ribbon">Your text content</div> */
-.wcc-showcase-ribbon-left {
-	font-size: 12px;
-	font-weight: bold;
-	color: #fff;
-	--f: .5em; /* control the folded part */
-
-	position: absolute;
-	top: 0;
-	left: 0;
-	line-height: 1.8;
-	padding-inline: 1lh;
-	padding-bottom: var(--f);
-	border-image: conic-gradient(#0008 0 0) 51%/var(--f);
-	clip-path: polygon(
-			100% calc(100% - var(--f)),100% 100%,calc(100% - var(--f)) calc(100% - var(--f)),var(--f) calc(100% - var(--f)), 0 100%,0 calc(100% - var(--f)),999px calc(100% - var(--f) - 999px),calc(100% - 999px) calc(100% - var(--f) - 999px));
-	transform: translate(calc((cos(45deg) - 1)*100%), -100%) rotate(-45deg);
-	transform-origin: 100% 100%;
-	background-color: #F07818; /* the main color  */
-}
 .splide__slide__row {
 	margin: 0 4px !important;
 }
@@ -190,9 +170,10 @@
 	background-color: #950E40;
 }
 
-
-
 .is-image-zoom-on-hover .wcc-showcase-slide-item:hover img{
 	transform: scale(1.03);
 	transition: transform 0.3s ease-in-out;
+}
+.is-shop-now-icon .wccs-showcase-btn::after{
+	content: "\2192";
 }
