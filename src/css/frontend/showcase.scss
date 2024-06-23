@@ -26,10 +26,7 @@
 }
 
 .wcc-showcase-slide-item{
-	border: 1px solid #D3D9DF;
-	border-radius: 8px;
-	//padding: 24px;
-	//position: relative;
+	position: relative;
 	.wcc-showcase-slide-item__cat-thumbnails{
 		display: flex;
 		flex-direction: column;
@@ -41,6 +38,18 @@
 			height: auto;
 			.slider-cat-image{
 				height: auto;
+				border-radius: 0;
+			}
+			.is-image-rounded &{
+				.slider-cat-image{
+					border-radius: 8px;
+				}
+			}
+
+			.is-image-circle &{
+				.slider-cat-image{
+					border-radius: 50%;
+				}
 			}
 		}
 		.wcc-showcase-slide-item__cat-thumbnails__icon{

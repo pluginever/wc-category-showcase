@@ -1229,10 +1229,12 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 		<div class="tw-mt-6 wcc_showcase-selected-category-list tw-min-w-[400px] tw-max-w-[400px]">
 			<?php
+			$selected_categories = isset( $showcase_details['category_list_item'] ) ? map_deep( $showcase_details['category_list_item'], 'sanitize_text_field' ) : array();
+
 			$count = 0;
 			if ( ! empty( $selected_categories ) ) {
 				foreach ( $selected_categories as $category ) {
-					$category_details = Helpers::get_category_details( $category, $post_id );
+					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id );
 					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
 					++$count;
 				}

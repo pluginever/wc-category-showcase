@@ -343,7 +343,8 @@ class Helpers {
 		if ( ! empty( $id ) ) {
 			foreach ( $settings as $key => $value ) {
 				$meta_value = get_post_meta( $id, "wcc_showcase_{$key}", true );
-				if ( ! empty( $meta_value ) ) {
+
+				if ( ! empty( $meta_value ) || '0' === $meta_value ) {
 					$settings[ $key ] = $meta_value;
 				}
 			}

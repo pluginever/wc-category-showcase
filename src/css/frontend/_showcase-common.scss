@@ -127,7 +127,7 @@
 	background-color: #F07818; /* the main color  */
 }
 .splide__slide__row {
-	margin:4px !important;
+	margin: 0 4px !important;
 }
 
 .wccs-category {
@@ -135,22 +135,64 @@
 }
 
 /* HTML: <div class="ribbon">Your text content</div> */
-.wcc-showcase-ribbon-right {
+.wcc-showcase-ribbon {
 	font-size: 12px;
 	font-weight: bold;
 	color: #fff;
-	--f: .5em; /* control the folded part */
-
+	--f: .5em;
 	position: absolute;
 	top: 0;
-	right: 0;
 	line-height: 1.8;
 	padding-inline: 1lh;
 	padding-bottom: var(--f);
+	background-color: #BD1550;
 	border-image: conic-gradient(#0008 0 0) 51%/var(--f);
+	z-index: 2;
+}
+
+.wcc-showcase-ribbon-right{
+	right: 0;
 	clip-path: polygon(
-			100% calc(100% - var(--f)),100% 100%,calc(100% - var(--f)) calc(100% - var(--f)),var(--f) calc(100% - var(--f)), 0 100%,0 calc(100% - var(--f)),999px calc(100% - var(--f) - 999px),calc(100% - 999px) calc(100% - var(--f) - 999px));
-	transform: translate(calc((1 - cos(45deg))*100%), -100%) rotate(45deg);
+			100% calc(100% - var(--f)), 100% 100%, calc(100% - var(--f)) calc(100% - var(--f)), var(--f) calc(100% - var(--f)), 0 100%, 0 calc(100% - var(--f)), 999px calc(100% - var(--f) - 999px), calc(100% - 999px) calc(100% - var(--f) - 999px));
+	transform: translate(calc((1 - cos(45deg)) * 100%), -100%) rotate(45deg);
 	transform-origin: 0% 100%;
-	background-color: #BD1550; /* the main color  */
+}
+
+.wcc-showcase-ribbon-left {
+	left: 0;
+	clip-path: polygon(
+			100% calc(100% - var(--f)), 100% 100%, calc(100% - var(--f)) calc(100% - var(--f)), var(--f) calc(100% - var(--f)), 0 100%, 0 calc(100% - var(--f)), 999px calc(100% - var(--f) - 999px), calc(100% - 999px) calc(100% - var(--f) - 999px));
+	transform: translate(calc((cos(45deg) - 1) * 100%), -100%) rotate(-45deg);
+	transform-origin: 100% 100%;
+}
+
+.wcc-showcase-ribbon-green {
+	background-color: #0E9552;
+}
+
+.wcc-showcase-ribbon-yellow {
+	background-color: #A36200;
+}
+
+.wcc-showcase-ribbon-red {
+	background-color: #911212;
+}
+
+.wcc-showcase-ribbon-blue {
+	background-color: #0E5295;
+}
+
+.wcc-showcase-ribbon-purple {
+	background-color: #5B0E95;
+}
+
+.wcc-showcase-ribbon-magento {
+	background-color: #950E40;
+}
+
+
+
+.is-image-zoom-on-hover .wcc-showcase-slide-item:hover img{
+	transform: scale(1.03);
+	transition: transform 0.3s ease-in-out;
 }
