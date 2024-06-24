@@ -419,11 +419,11 @@ class Shortcodes {
 													<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>"><?php printf( '%s Products', esc_attr( $category_details['total_count'] ) ); ?></a>
 												</div>
 											<?php } ?>
-											<?php if ( ! empty( $category_details['child_categories'] && 'yes' === $category_showcase['show_subcategory_product_quantity'] ) ) { ?>
+											<?php if ( ! empty( $category_details['child_categories'] && 'yes' === $category_showcase['includes_sub_categories'] ) ) { ?>
 												<div class="wcc-showcase-slide-item__sub-cat">
 													<ul class="wcc-showcase-slide-item__sub-cat__sub-cat-list">
 														<?php foreach ( $category_details['child_categories'] as $child_category ) { ?>
-															<li class="wcc-showcase-slide-item__sub-cat__sub-cat-list__item"><a href="<?php echo esc_url( $child_category['cat_link'] ); ?>"><?php printf( '%s (%s)', esc_attr( $child_category['name'] ), esc_attr( $child_category['total_product'] ) ); ?></a></li>
+															<li class="wcc-showcase-slide-item__sub-cat__sub-cat-list__item"><a href="<?php echo esc_url( $child_category['cat_link'] ); ?>"><?php printf( '%s %s', esc_attr( $child_category['name'] ), 'yes' === $category_showcase['show_subcategory_product_quantity'] ? '(' . esc_attr( $child_category['total_product'] ) . ')' : '' ); ?></a></li>
 														<?php } ?>
 													</ul>
 												</div>

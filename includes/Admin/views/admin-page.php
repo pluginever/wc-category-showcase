@@ -20,12 +20,20 @@ $current_tab  = ! empty( $current_tab ) && array_key_exists( $current_tab, $tabs
 			<nav class="nav-tab-wrapper bkit-navbar">
 				<?php
 				foreach ( $tabs as $name => $label ) {
-					printf(
-						'<a href="%s" class="nav-tab %s">%s</a>',
-						esc_url( admin_url( 'admin.php?page=' . $current_page . '&tab=' . $name ) ),
-						esc_attr( $current_tab === $name ? 'nav-tab-active' : '' ),
-						esc_html( $label )
-					);
+					if ( 'documentation' === $name ) {
+						printf(
+							'<a href="%s" class="nav-tab" target="_blank">%s</a>',
+							esc_url( 'https://pluginever.com/docs/wc-category-showcase/' ),
+							esc_html( $label )
+						);
+					} else {
+						printf(
+							'<a href="%s" class="nav-tab %s">%s</a>',
+							esc_url( admin_url( 'admin.php?page=' . $current_page . '&tab=' . $name ) ),
+							esc_attr( $current_tab === $name ? 'nav-tab-active' : '' ),
+							esc_html( $label )
+						);
+					}
 				}
 				?>
 				<?php

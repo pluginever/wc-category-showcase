@@ -531,3 +531,18 @@ button.select-icon {
 	50%  {top: -70px}
 	100% {top: -100px}
 }
+
+.wcc-showcase-upcoming{
+	position: relative;
+	.wcc-showcase-upcoming-features{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		background: #41424536;
+		h3{
+
+		}
+	}
+}
+

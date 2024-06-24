@@ -71,6 +71,7 @@ class Plugin extends ByteKit\Core\Plugin {
 		if ( $this->is_request( 'admin' ) ) {
 			new Admin\Admin();
 			new Admin\Menus();
+			new Admin\Actions();
 		}
 
 		if ( $this->is_request( 'frontend' ) ) {
