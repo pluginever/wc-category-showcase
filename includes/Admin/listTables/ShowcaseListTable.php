@@ -220,7 +220,7 @@ class ShowcaseListTable extends AbstractListTable {
 		$id_url    = add_query_arg( 'id', $item->ID, $admin_url );
 		$actions   = array(
 			'edit'   => sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( 'edit', $item->ID, $admin_url ) ), __( 'Edit', 'wc-category-showcase' ) ),
-			'delete' => sprintf( '<a href="%s">%s</a>', wp_nonce_url( add_query_arg( 'action', 'delete', $id_url ), 'bulk-showcase' ), __( 'Delete', 'wc-category-showcase' ) ),
+			'delete' => sprintf( '<a href="%s">%s</a>', wp_nonce_url( add_query_arg( 'action', 'delete', $id_url ), 'bulk-showcases' ), __( 'Delete', 'wc-category-showcase' ) ),
 		);
 
 		return sprintf( '<a href="%s">%s</a> %s', esc_url( add_query_arg( 'edit', $item->ID, $admin_url ) ), esc_html( $item->post_title ), $this->row_actions( $actions ) );

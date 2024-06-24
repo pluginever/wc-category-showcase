@@ -2,7 +2,11 @@
 @import "../common/tailwind.css";
 @import "common";
 @import "../../assets/fonts/all.css";
-
+.wp-heading-inline{
+	.dashicons{
+		margin-top: 4px;
+	}
+}
 .select2.select2-container.select2-container--default{
 	width: 100% !important;
 }

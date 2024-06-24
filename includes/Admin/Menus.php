@@ -29,7 +29,7 @@ class Menus {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-		add_action( 'admin_menu', array( $this, 'add_submenu' ) );
+		add_action( 'wc_category_showcase_settings_export-import', array( $this, 'export_import_tab_render' ) );
 	}
 
 	/**
@@ -41,67 +41,22 @@ class Menus {
 	public function admin_menu() {
 		add_menu_page(
 			__( 'Category Showcase', 'wc-category-showcase' ),
-			__( 'WC Showcase', 'wc-category-showcase' ),
+			__( 'All Showcases', 'wc-category-showcase' ),
 			'manage_options',
 			self::PARENT_SLUG,
 			array( $this, 'render_menu' ),
 			'dashicons-admin-generic',
 			56
 		);
-	}
 
-	/**
-	 * Add sub-menu.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	public function add_submenu() {
-		$menus = Utilities::get_menus();
-		usort(
-			$menus,
-			function ( $a, $b ) {
-				$a = isset( $a['position'] ) ? $a['position'] : PHP_INT_MAX;
-				$b = isset( $b['position'] ) ? $b['position'] : PHP_INT_MAX;
-
-				return $a - $b;
-			}
+		add_submenu_page(
+			self::PARENT_SLUG,
+			esc_html__( 'Settings', 'wc-category-showcase' ),
+			esc_html__( 'Settings', 'wc-category-showcase' ),
+			'manage_options',
+			'wc-category-showcase-settings',
+			array( $this, 'output_tab_settings_page' )
 		);
-		foreach ( $menus as $menu ) {
-			$menu = wp_parse_args(
-				$menu,
-				array(
-					'page_title' => '',
-					'menu_title' => '',
-					'capability' => 'manage_options',
-					'menu_slug'  => '',
-					'callback'   => null,
-					'position'   => '10',
-					'page_hook'  => null,
-					'tabs'       => array(),
-					'load_hook'  => null,
-				)
-			);
-			if ( ! is_callable( $menu['callback'] ) && ! empty( $menu['page_hook'] ) ) {
-				$menu['callback'] = function () use ( $menu ) {
-					$page_hook = $menu['page_hook'];
-					$tabs      = $menu['tabs'];
-					include_once __DIR__ . '/views/admin-page.php';
-				};
-			}
-			$load = add_submenu_page(
-				self::PARENT_SLUG,
-				$menu['page_title'],
-				$menu['menu_title'],
-				$menu['capability'],
-				$menu['menu_slug'],
-				$menu['callback'],
-				$menu['position']
-			);
-			if ( ! empty( $menu['load_hook'] ) && is_callable( $menu['load_hook'] ) ) {
-				add_action( 'load-' . $load, $menu['load_hook'] );
-			}
-		}
 	}
 
 	/**
@@ -122,5 +77,28 @@ class Menus {
 		} else {
 			include __DIR__ . '/views/list-category-showcase.php';
 		}
+	}
+
+	/**
+	 * Output settings page.
+	 *
+	 * @since 1.0.0
+	 */
+	public function output_tab_settings_page() {
+		$page_hook = 'settings';
+		$tabs      = array(
+			'export-import' => __( 'Export / Import', 'wc-category-showcase' ),
+			'documentation' => __( 'Documentation', 'wc-category-showcase' ),
+		);
+		include __DIR__ . '/views/admin-page.php';
+	}
+
+	/**
+	 * Output export/import tab page.
+	 *
+	 * @since 1.0.0
+	 */
+	public function export_import_tab_render() {
+		include __DIR__ . '/views/settings/export-import.php';
 	}
 }

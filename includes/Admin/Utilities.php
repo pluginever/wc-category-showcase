@@ -12,26 +12,6 @@ defined( 'ABSPATH' ) || exit;
  */
 class Utilities {
 	/**
-	 * Get admin menus.
-	 *
-	 * @since 1.0.0
-	 * @return array
-	 */
-	public static function get_menus() {
-		$menus = array(
-			array(
-				'page_title' => __( 'Settings', 'wc-category-showcase' ),
-				'menu_title' => __( 'Settings', 'wc-category-showcase' ),
-				'capability' => 'manage_options',
-				'menu_slug'  => 'wcc_showcase-items',
-				'page_hook'  => 'settings',
-			),
-		);
-
-		return apply_filters( 'wc_category_showcase_admin_menus', $menus );
-	}
-
-	/**
 	 * Get page ids.
 	 *
 	 * @since 1.0.0
@@ -40,11 +20,8 @@ class Utilities {
 	public static function get_screen_ids() {
 		$screen_ids = array(
 			'toplevel_page_wc-category-showcase',
+			'all-showcases_page_wc-category-showcase-settings',
 		);
-
-		foreach ( self::get_menus() as $page ) {
-			$screen_ids[] = Menus::PARENT_SLUG . '_page_' . $page['menu_slug'];
-		}
 
 		return $screen_ids;
 	}
