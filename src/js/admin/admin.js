@@ -327,7 +327,7 @@ var AestheticIconPicker = function(option) {
 							$('.wcc_showcase-block-selection').removeClass('tw-hidden');
 							$('.wcc_showcase-grid-selection').addClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').addClass('tw-hidden');
-							$('.wcc_showcase-breakpoint').removeClass('tw-hidden');
+							$('.wcc_showcase-breakpoint').addClass('tw-hidden');
 						}
 						if ( 'slider' === $(this).val() ){
 							$('.is-wcc-slider').removeClass('tw-hidden');
@@ -739,7 +739,7 @@ var AestheticIconPicker = function(option) {
 						success: function(result) {
 							$('.wcc_showcase-loader').addClass('tw-hidden');
 							$('.wcc_showcase-selected-category-list').append(result);
-							console.log(selectedValues);
+							load_icon_picker();
 						},
 						error: function(result) {
 							console.warn(result);
@@ -786,6 +786,31 @@ var AestheticIconPicker = function(option) {
 					.open();
 			});
 			// Image upload end.
+
+
+			//Icon picker start.
+			function load_icon_picker(){
+				$('.icon-picker-wrap').each(function (){
+					var id = $(this).attr('id');
+					var trigger = $(this).children('a' ).attr('id');
+					console.log(trigger);
+					AestheticIconPicker({
+						selector: '#'+id,
+						onClick: '#'+trigger,
+						iconLibrary: {
+							material: {
+								regular: {
+									"list-icon": "",
+									"icon-style": "mt-regular",
+									icons: ["some", "some2"],
+								},
+							},
+						}
+					});
+				})
+			}
+			load_icon_picker();
+			//Icon picker end.
 		}
 	};
 
@@ -794,30 +819,6 @@ var AestheticIconPicker = function(option) {
 	});
 
 })(jQuery, window, document, wp);
-
-
-// Category icon picker.
-jQuery(document).ready(function($) {
-
-	$('.icon-picker-wrap').each(function (){
-		var id = $(this).attr('id');
-		var trigger = $(this).children('a' ).attr('id');
-		AestheticIconPicker({
-			selector: '#'+id,
-			onClick: '#'+trigger,
-			iconLibrary: {
-				material: {
-					regular: {
-						"list-icon": "",
-						"icon-style": "mt-regular",
-						icons: ["some", "some2"],
-					},
-				},
-			}
-		});
-	})
-
-});
 import './_common';
 import './_tabsControl';
 import './_colorPicker';

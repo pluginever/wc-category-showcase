@@ -30,6 +30,7 @@ class Menus {
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'wc_category_showcase_settings_export-import', array( $this, 'export_import_tab_render' ) );
+		add_action( 'wc_category_showcase_list-table', array( $this, 'showcase_list_render' ) );
 	}
 
 	/**
@@ -40,13 +41,22 @@ class Menus {
 	 */
 	public function admin_menu() {
 		add_menu_page(
-			__( 'Category Showcase', 'wc-category-showcase' ),
-			__( 'All Showcases', 'wc-category-showcase' ),
+			__( 'WC Showcase', 'wc-category-showcase' ),
+			__( 'WC Showcases', 'wc-category-showcase' ),
 			'manage_options',
 			self::PARENT_SLUG,
-			array( $this, 'render_menu' ),
+			null,
 			'dashicons-admin-generic',
 			56
+		);
+
+		add_submenu_page(
+			self::PARENT_SLUG,
+			esc_html__( 'All Showcases', 'product-tabs-manager' ),
+			esc_html__( 'All Showcases', 'product-tabs-manager' ),
+			'manage_options',
+			self::PARENT_SLUG,
+			array( $this, 'render_menu' )
 		);
 
 		add_submenu_page(
@@ -66,10 +76,19 @@ class Menus {
 	 * @return void
 	 */
 	public function render_menu() {
+		$page_hook = 'list-table';
+		include __DIR__ . '/views/admin-page.php';
+	}
+
+	/**
+	 * Output list table page.
+	 *
+	 * @since 1.0.0
+	 */
+	public function showcase_list_render() {
 		$add              = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$post_id          = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$showcase_details = Helpers::get_slider_settings( $post_id );
-
 		if ( $add ) {
 			include __DIR__ . '/views/add-category-showcase.php';
 		} elseif ( $post_id ) {

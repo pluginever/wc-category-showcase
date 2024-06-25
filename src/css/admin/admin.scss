@@ -1,11 +1,15 @@
 @import "../../../lib/ByteKit/Core/assets/css/bytekit-core.css";
 @import "../common/tailwind.css";
 @import "common";
-@import "../../assets/fonts/all.css";
+@import "../fonts/all.css";
+
 .wp-heading-inline{
 	.dashicons{
 		margin-top: 4px;
 	}
+}
+.search-box input[name="s"]{
+	height: 30px;
 }
 .select2.select2-container.select2-container--default{
 	width: 100% !important;

@@ -33,12 +33,13 @@ class Helpers {
 		$category = get_term( $category_id );
 
 		if ( $category && ! is_wp_error( $category ) ) {
+			$category_image                       = ! empty( esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) ) ? esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) : esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/frontend-placeholder.png' );
 			$category_details['cat_id']           = esc_attr( $category->term_id );
 			$category_details['name']             = esc_attr( $category->name );
 			$category_details['custom_name']      = ! empty( $category_custom_details['name'] ) ? esc_attr( $category_custom_details['name'] ) : esc_attr( $category->name );
 			$category_details['slug']             = esc_attr( $category->slug );
 			$category_details['description']      = ! empty( $category_custom_details['description'] ) ? wp_kses_post( $category_custom_details['description'] ) : wp_kses_post( $category->description );
-			$category_details['image_url']        = ! empty( $category_custom_details['image_url'] ) ? esc_url( $category_custom_details['image_url'] ) : esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) );
+			$category_details['image_url']        = ! empty( $category_custom_details['image_url'] ) ? esc_url( $category_custom_details['image_url'] ) : $category_image;
 			$category_details['icon_name']        = ! empty( $category_custom_details['icon_name'] ) ? esc_attr( $category_custom_details['icon_name'] ) : '';
 			$category_details['is_icon']          = ! empty( $category_custom_details['is_icon'] ) ? esc_attr( $category_custom_details['is_icon'] ) : esc_attr( 'no' );
 			$category_details['cat_link']         = esc_url( get_category_link( $category->term_id ) );
@@ -192,7 +193,6 @@ class Helpers {
 		if ( $a['position'] === $b['position'] ) {
 			return 0;
 		}
-
 		return $a['position'] < $b['position'] ? - 1 : 1;
 	}
 
@@ -297,7 +297,7 @@ class Helpers {
 				'hover_text_color' => '#D4D4D4',
 			),
 			'slide_show_counter'                => 'yes',
-			'slide_counter_style'               => 'dashes',
+			'slide_counter_style'               => 'dots',
 			'slide_counter'                     => array(
 				'background_color' => '#130F31',
 				'text_color'       => '#130F31',
@@ -312,7 +312,7 @@ class Helpers {
 			'image_layout'                      => 'rounded',
 			'image_lazy_load'                   => 'no',
 			'image_zoom_on_hover'               => 'no',
-			'interactive_hover_style'           => 'always_gray',
+			'interactive_hover_style'           => 'normal_gray',
 			// Fonts tab settings data.
 			'font_google_support'               => 'no',
 			'font_main_title'                   => array(
@@ -321,7 +321,7 @@ class Helpers {
 				'text_weight'     => '600',
 				'text_size'       => '36',
 				'line_height'     => '44',
-				'letter_spacing'  => '2',
+				'letter_spacing'  => '1',
 				'text_align'      => 'left',
 				'text_decoration' => 'bold',
 				'text_color'      => '#130F31',
@@ -332,7 +332,7 @@ class Helpers {
 				'text_weight'     => '600',
 				'text_size'       => '24',
 				'line_height'     => '32',
-				'letter_spacing'  => '2',
+				'letter_spacing'  => '1',
 				'text_align'      => 'left',
 				'text_decoration' => 'bold',
 				'text_color'      => '#130F31',

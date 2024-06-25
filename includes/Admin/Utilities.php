@@ -20,7 +20,7 @@ class Utilities {
 	public static function get_screen_ids() {
 		$screen_ids = array(
 			'toplevel_page_wc-category-showcase',
-			'all-showcases_page_wc-category-showcase-settings',
+			'wc-showcases_page_wc-category-showcase-settings',
 		);
 
 		return $screen_ids;

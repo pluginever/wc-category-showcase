@@ -1132,7 +1132,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row wcc_showcase-breakpoint <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
+<div class="wcc_showcase-settings-row wcc_showcase-breakpoint <?php echo 'grid' === $showcase_details['layout'] || 'block' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Column Breakpoints', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Configure how many columns your category showcase should display based on the users device screen size.', 'wc-category-showcase' ); ?></p>

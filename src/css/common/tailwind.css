@@ -17,6 +17,20 @@
 		@apply after:tw-w-5 after:tw-transition-all dark:tw-border-gray-600 peer-checked:tw-bg-accent-green-500;
 	}
 
+	.wcc_showcase-toggle-pro{
+		@apply tw-relative tw-w-11 tw-h-6 tw-bg-pro-toggle-bg;
+		@apply hover:tw-bg-pro-toggle-bg;
+		@apply peer-focus:tw-outline-none ;
+		/*@apply peer-focus:tw-ring-4;*/
+		@apply peer-focus:tw-accent-green-500 dark:peer-focus:tw-accent-green-500;
+		@apply tw-rounded-full;
+		@apply dark:tw-bg-gray-700 peer-checked:after:tw-translate-x-full;
+		@apply rtl:peer-checked:after:tw--translate-x-full peer-checked:after:tw-border-accent-green-500;
+		@apply after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-start-[2px] after:tw-text-white after:tw-bg-accent-orange-500 ;
+		@apply after:tw-border-accent-green-500 after:tw-border after:tw-rounded-full after:tw-h-5;
+		@apply after:tw-w-5 after:tw-transition-all dark:tw-border-gray-600 peer-checked:tw-bg-accent-green-500;
+	}
+
 	.wcc_showcase-toggle-small{
 		@apply tw-relative tw-w-[28px] tw-h-4 tw-bg-divider-grey-100;
 		@apply hover:tw-bg-accent-grey-200;

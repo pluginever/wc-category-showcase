@@ -31,6 +31,7 @@ module.exports = {
 				'green-500':'#37C372',
 				'orange-600':'#F57300',
 				'button-bg-color': '#130F31',
+				'pro-toggle-bg': '#F0E9E2',
 			},
 			content: {
 				'check-circle': 'url("/assets/images/check-circle.svg")',

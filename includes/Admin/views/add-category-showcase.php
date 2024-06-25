@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="wrap bkit-wrap">
 	<h1 class="wp-heading-inline text-center">
 		<?php esc_html_e( 'Add Category Showcase', 'wc-category-showcase' ); ?>
-		<a href="<?php echo esc_attr( remove_query_arg( 'add' ) ); ?>" class="page-title-action"
+		<a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-category-showcase' ) ); ?>" class="page-title-action"
 			title="<?php esc_attr_e( 'Go back', 'wc-category-showcase' ); ?>">
 			<span class="dashicons dashicons-undo"></span>
 		</a>

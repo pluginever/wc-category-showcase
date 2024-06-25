@@ -18,13 +18,13 @@
   ],
   "repositories": [
     {
-      "url": "git@github.com:byteever/bytekit-core.git",
+      "url": "git@github.com:byteever/bytekit-plugin.git",
       "type": "github"
     }
   ],
   "require": {
     "php": ">=7.0",
-    "byteever/bytekit-core": "dev-master",
+    "byteever/bytekit-plugin": "dev-master",
     "coenjacobs/mozart": "^0.7.1"
   },
   "autoload": {
@@ -65,7 +65,7 @@
       "classmap_prefix": "WooCommerceCategoryShowcase_",
       "delete_vendor_directories": true,
       "packages": [
-        "byteever/bytekit-core"
+        "byteever/bytekit-plugin"
       ]
     }
   }

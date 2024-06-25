@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
  * @since 1.2.1
  * @package WooCommerceCategoryShowcase
  */
-class Plugin extends ByteKit\Core\Plugin {
+class Plugin extends ByteKit\Plugin {
 	/**
 	 * Plugin constructor.
 	 *
@@ -67,16 +67,11 @@ class Plugin extends ByteKit\Core\Plugin {
 	 * @return void
 	 */
 	public function on_init() {
+		new Admin\Admin();
+		new Admin\Menus();
 
-		if ( $this->is_request( 'admin' ) ) {
-			new Admin\Admin();
-			new Admin\Menus();
-			new Admin\Actions();
-		}
+		new Shortcodes\Shortcodes();
 
-		if ( $this->is_request( 'frontend' ) ) {
-			new Shortcodes\Shortcodes();
-		}
 		/**
 		 * Fires when the plugin is initialized.
 		 *
