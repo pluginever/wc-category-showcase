@@ -25,6 +25,7 @@
 	}
 }
 
+
 .wcc-showcase-slide-item{
 	position: relative;
 	.wcc-showcase-slide-item__cat-thumbnails{
@@ -70,7 +71,7 @@
 			list-style: none;
 			margin: 0;
 			.wcc-showcase-slide-item__sub-cat__sub-cat-list__item a{
-				color: #130F31;
+				//color: #130F31;
 				text-align: center;
 				font-size: 1rem;
 				font-style: normal;
@@ -78,13 +79,9 @@
 				line-height: 24px;
 				text-decoration: none;
 			}
-
-			.wcc-showcase-slide-item__sub-cat__sub-cat-list__item a:hover{
-				color: #D4D4D4;
-			}
 		}
 		.wcc-showcase-slide-item__cat-products a {
-			color: #130F31;
+			//color: #130F31;
 			text-align: center;
 			font-size: 16px;
 			font-style: normal;
@@ -92,13 +89,11 @@
 			line-height: 24px;
 			text-decoration: underline;
 		}
-		.wcc-showcase-slide-item__cat-products a:hover {
-			color: #D4D4D4;
-		}
 		.wcc-showcase-slide-item__cat-custom-text{
 			color:#000;
 		}
 		.wcc-showcase-slide-item__cat-button {
+			margin-top: 10px;
 			a {
 				font-size: 16px;
 				font-style: normal;
@@ -197,7 +192,7 @@
 	gap: 16px;
 	.splide__arrow--prev::before {
 		position: absolute;
-		top: -3px;
+		top: 8px;
 		right: 5px;
 		content: "\2192";
 		transform: scaleX(-1);
@@ -206,7 +201,7 @@
 	}
 	.splide__arrow--next::before {
 		position: absolute;
-		top: -3px;
+		top: 8px;
 		left: 5px;
 		content: "\2192";
 		color: #fff;
@@ -236,15 +231,15 @@
 	// Navigation icon chevron style.
 	.is--navigation-chevron &{
 		.splide__arrow--prev::before {
-			top:-14px;
-			right: 11px;
+			top:5px;
+			right: 10px;
 			content: "\2039";
 			transform: scaleX(1);
 			font-size: 34px;
 		}
 		.splide__arrow--next::before {
-			top:-14px;
-			left: 11px;
+			top:5px;
+			left: 10px;
 			content: "\2039";
 			transform: scaleX(-1);
 			font-size: 34px;

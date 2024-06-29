@@ -12,6 +12,7 @@ jQuery(document).ready(function ($) {
 		var grid_value = $('#'+sliderId).data( 'grid' );
 		var grid_ticker = $('#'+sliderId).data( 'ticker' );
 		var tickerSpeed;
+		var gap;
 		var autoScroll = false;
 		if( false === grid_ticker.tickerDirection ){
 			tickerSpeed = grid_ticker.tickerSpeed * -1;
@@ -23,14 +24,14 @@ jQuery(document).ready(function ($) {
 				speed: tickerSpeed,
 			}
 		}
-
+		gap = grid_value.gap / 16;
 		var splide = new Splide( '#'+sliderId, {
 			autoScroll: autoScroll,
 			grid: {
 				dimensions: [ [grid_value.rows, grid_value.columns] ],
 				gap : {
 					row: '1rem',
-					col: '1rem',
+					col: gap+'rem',
 				},
 			},
 			breakpoints: {

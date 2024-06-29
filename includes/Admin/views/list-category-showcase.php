@@ -14,7 +14,7 @@ $list_table->process_bulk_action( $action );
 $list_table->prepare_items();
 
 ?>
-<div class="wrap bkit-wrap">
+<div class="wrap bk-wrap">
 	<h1 class="wp-heading-inline">
 		<?php esc_html_e( 'Category Showcase', 'wc-category-showcase' ); ?>
 		<a href="<?php echo esc_attr( admin_url( 'admin.php?page=wc-category-showcase&add' ) ); ?>" class="page-title-action">

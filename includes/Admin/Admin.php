@@ -66,8 +66,9 @@ class Admin {
 			return;
 		}
 		// Early core enqueue.
+		wp_enqueue_style( 'wp-color-picker' );
 		wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/css/admin.css' );
-		wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/js/admin.js', array(), true );
+		wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/js/admin.js', array( 'wp-color-picker' ), true );
 		wp_enqueue_media();
 		wp_localize_script(
 			'wcc_showcase-admin',
@@ -155,6 +156,10 @@ class Admin {
 		}
 
 		foreach ( $settings as $key => $default_value ) {
+			if( 'border_color' === $key ){
+				wp_die();
+			}
+
 			$post_key = 'wcc_showcase_' . $key;
 			if ( isset( $_POST[ $post_key ] ) ) { //phpcs:ignore
 				$meta_value = wp_unslash( $_POST[ $post_key ] ); //phpcs:ignore

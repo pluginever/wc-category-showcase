@@ -41,7 +41,7 @@ class Shortcodes {
 			'wc_category_showcase_test'
 		);
 
-		if ( null === $atts['id'] ) {
+		if ( empty( $atts['id'] ) || false === get_post_status( $atts['id'] ) ) {
 			return null;
 		}
 
@@ -69,6 +69,7 @@ class Shortcodes {
 		$card_text_hover_color = $showcase['card']['hover_text_color'] ?? $showcase['card']['hover_text_color'];
 		$card_border_radius    = $showcase['border_radius'] ?? $showcase['border_radius'];
 		$card_gap              = $showcase['gap_between_cards'] ?? $showcase['gap_between_cards'];
+		$card_gap              = $card_gap / 16;
 
 		$card_content_padding        = $showcase['content_padding'] ?? $showcase['content_padding'];
 		$card_content_padding_is_all = 'yes' === $showcase['content_padding_is_all'] ? $showcase['content_padding_is_all'] : 'no';
@@ -84,10 +85,12 @@ class Shortcodes {
 			$content_padding_left   = $card_content_padding;
 		}
 
-		$shop_now_btn_bg               = $showcase['button']['background_color'] ?? $showcase['button']['background_color'];
-		$shop_now_btn_text_color       = $showcase['button']['text_color'] ?? $showcase['button']['text_color'];
-		$shop_now_btn_hover_bg         = $showcase['button']['hover_color'] ?? $showcase['button']['hover_color'];
-		$shop_now_btn_hover_text_color = $showcase['button']['hover_text_color'] ?? $showcase['button']['hover_text_color'];
+		$shop_now_btn_bg                 = $showcase['button']['background_color'] ?? $showcase['button']['background_color'];
+		$shop_now_btn_text_color         = $showcase['button']['text_color'] ?? $showcase['button']['text_color'];
+		$shop_now_btn_hover_bg           = $showcase['button']['hover_color'] ?? $showcase['button']['hover_color'];
+		$shop_now_btn_hover_text_color   = $showcase['button']['hover_text_color'] ?? $showcase['button']['hover_text_color'];
+		$shop_now_btn_border_color       = $showcase['button']['border_color'] ?? $showcase['button']['border_color'];
+		$shop_now_btn_border_hover_color = $showcase['button']['border_hover_color'] ?? $showcase['button']['border_hover_color'];
 
 		$navigation_bg               = $showcase['slide_button']['background_color'] ?? $showcase['slide_button']['background_color'];
 		$navigation_text_color       = $showcase['slide_button']['text_color'] ?? $showcase['slide_button']['text_color'];
@@ -99,40 +102,41 @@ class Shortcodes {
 		$counter_hover_bg   = $showcase['slide_counter']['hover_color'] ?? $showcase['slide_counter']['hover_color'];
 		$counter_hover_text = $showcase['slide_counter']['hover_text_color'] ?? $showcase['slide_counter']['hover_text_color'];
 
-		$section_title_font_family     = $showcase['font_main_title']['font_family'];
-		$section_title_text_size       = $showcase['font_main_title']['text_size'];
-		$section_title_text_weight     = 'default' === $showcase['font_main_title']['text_weight'] ? '700' : $showcase['font_main_title']['text_weight'];
-		$section_title_line_height     = $showcase['font_main_title']['line_height'];
-		$section_title_letter_spacing  = $showcase['font_main_title']['letter_spacing'];
-		$section_title_text_align      = $showcase['font_main_title']['text_align'];
-		$section_title_text_decoration = $showcase['font_main_title']['text_decoration'];
-		$section_title_text_color      = $showcase['font_main_title']['text_color'];
-
-		$category_title_font_family     = $showcase['font_category_title']['font_family'];
-		$category_title_text_size       = $showcase['font_category_title']['text_size'];
-		$category_title_text_weight     = 'default' === $showcase['font_category_title']['text_weight'] ? '700' : $showcase['font_category_title']['text_weight'];
-		$category_title_line_height     = $showcase['font_category_title']['line_height'];
-		$category_title_letter_spacing  = $showcase['font_category_title']['letter_spacing'];
-		$category_title_text_align      = $showcase['font_category_title']['text_align'];
-		$category_title_text_decoration = $showcase['font_category_title']['text_decoration'];
-		$category_title_text_color      = $showcase['font_category_title']['text_color'];
-
 		$styles = "
 			.wccs-categories__{$wccs_id}{
-				gap: {$card_gap}px!important;
+				gap: {$card_gap}rem !important;
 			}
 			.wccs-showcase-id__{$wccs_id}, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item{
 				background-color: {$card_bg_color};
 				color: {$card_text_color};
-				border: 1px solid {$card_bg_hover_color};
+				border-radius: {$card_border_radius}px;
+				transition: 0.3s;
+			}
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content {
 				border-radius: {$card_border_radius}px;
 			}
+
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner p, .wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
+				color: {$card_text_hover_color};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item p{
+				color: {$card_text_color};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover p{
+				color: {$card_text_hover_color};
+			}
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
 				color: {$card_text_color};
 			}
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a:hover {
 				color: {$card_text_hover_color};
 			}
+
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item__cat-products a:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item__sub-cat__sub-cat-list__item a:hover{
+				color: {$card_text_hover_color} !important;
+				opacity: .6 !important;
+			}
+
 			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
 				background-color: {$card_bg_hover_color};
 				color: {$card_text_hover_color};
@@ -140,6 +144,10 @@ class Shortcodes {
 			.wcc-showcase-{$wccs_id} .splide__pagination__page{
 				background-color: {$counter_bg};
 				color: {$counter_text};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item .slider-cat-image{
+				border-top-left-radius: {$card_border_radius}px !important;
+				border-top-right-radius: {$card_border_radius}px !important;
 			}
 			.wcc-showcase-{$wccs_id} .splide__pagination__page:hover{
 				background-color: {$counter_hover_bg};
@@ -163,36 +171,20 @@ class Shortcodes {
 
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn{
 				background-color: {$shop_now_btn_bg};
-				border: 1px solid {$shop_now_btn_bg} !important;
-				color: {$shop_now_btn_text_color} !important;
+				border: 1px solid {$shop_now_btn_border_color};
+				color: {$shop_now_btn_text_color};
 			}
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn:hover, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn:hover{
-				background-color: {$shop_now_btn_hover_bg};
-				border: 1px solid {$shop_now_btn_hover_bg} !important;
+				background-color: {$shop_now_btn_hover_bg} !important;
+				border: 1px solid {$shop_now_btn_border_hover_color} !important;
 				color: {$shop_now_btn_hover_text_color} !important;
 			}
-			.wccs-categories-heading__{$wccs_id} .section-title {
-				font-size: {$section_title_text_size}px;
-				font-weight: {$section_title_text_weight};
-				letter-spacing: {$section_title_letter_spacing}px;
-				line-height: {$section_title_line_height}px;
-				color: {$section_title_text_color};
-				text-align: {$section_title_text_align};
-			}
 
-			.wccs-categories__{$wccs_id} .category-name a {
-				font-size: {$category_title_text_size}px;
-				font-weight: {$category_title_text_weight};
-				letter-spacing: {$category_title_letter_spacing}px;
-				line-height: {$category_title_line_height}px;
-				color: {$category_title_text_color};
-				text-align: {$category_title_text_align};
-				text-decoration: none;
-			}
 			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details {
 				padding: {$content_padding_top}px {$content_padding_right}px {$content_padding_bottom}px {$content_padding_left}px;
 			}
-		}";
+		";
+
 		if ( 'yes' !== $showcase['show_button_icon'] ) {
 			$styles .= "
 				.wcc-showcase-{$wccs_id} .wccs-showcase-btn::after, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn::after{
@@ -200,6 +192,8 @@ class Shortcodes {
 				}
 			";
 		}
+
+		$styles = apply_filters( 'wccs_showcase_styles', $styles, $wccs_id, $showcase );
 		wp_add_inline_style( 'wcc-showcase-showcase', $styles );
 
 		ob_start();
@@ -370,7 +364,7 @@ class Shortcodes {
 		$content_position  = $category_showcase['overlay_content_position'] ?? 'center_center';
 		?>
 
-		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $category_showcase['slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['column_breakpoint']['mobile'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
+		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $category_showcase['slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['column_breakpoint']['mobile'] ); ?>, "gap":<?php echo esc_attr( $category_showcase['gap_between_cards'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
 					<div class="splide__track">
 						<ul class="splide__list">
 							<?php
@@ -472,7 +466,6 @@ class Shortcodes {
 		"perPage": 1,
 		"perMove": 1,
 		"type":"' . ( 'yes' === $category_showcase['slide_unlimited_loop'] ? 'loop' : 'slide' ) . '",
-		"gap":"20px",
 		"autoplay": ' . ( 'yes' !== $category_showcase['slide_is_ticker'] ? ( 'yes' === $category_showcase['slide_slideshow'] ? 'true' : 'false' ) : 'false' ) . ',
 		"arrows": ' . ( 'yes' === $category_showcase['slide_navigation_arrow'] ? 'true' : 'false' ) . ',
 		"pagination": ' . ( 'yes' === $category_showcase['slide_show_counter'] ? 'true' : 'false' ) . ',

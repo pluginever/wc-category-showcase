@@ -15,9 +15,9 @@ $tabs         = isset( $tabs ) ? $tabs : array();
 $tabs         = apply_filters( 'wc_category_showcase_' . $page_hook . '_tabs', $tabs );
 $current_tab  = ! empty( $current_tab ) && array_key_exists( $current_tab, $tabs ) ? $current_tab : key( $tabs );
 ?>
-	<div class="wrap bkit-wrap">
+	<div class="wrap bk-wrap">
 		<?php if ( ! empty( $tabs ) && count( $tabs ) > 1 ) : ?>
-			<nav class="nav-tab-wrapper bkit-navbar">
+			<nav class="nav-tab-wrapper bk-navbar">
 				<?php
 				foreach ( $tabs as $name => $label ) {
 					if ( 'documentation' === $name ) {

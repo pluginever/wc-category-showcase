@@ -498,9 +498,9 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
 				<div class="<?php echo 'simple_2x3' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
 					<svg class="<?php echo 'simple_2x3' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
-						<path d="M8.5 8.75H2C0.89543 8.75 0 9.64543 0 10.75V21.25C0 22.3546 0.89543 23.25 2 23.25H8.5C9.60457 23.25 10.5 22.3546 10.5 21.25V10.75C10.5 9.64543 9.60457 8.75 8.5 8.75Z" fill="#D3D9DF"/>
-						<path d="M21 8.75H14.5C13.3954 8.75 12.5 9.64543 12.5 10.75V21.25C12.5 22.3546 13.3954 23.25 14.5 23.25H21C22.1046 23.25 23 22.3546 23 21.25V10.75C23 9.64543 22.1046 8.75 21 8.75Z" fill="#D3D9DF"/>
-						<path d="M46 8.75H27C25.8954 8.75 25 9.64543 25 10.75V21.25C25 22.3546 25.8954 23.25 27 23.25H46C47.1046 23.25 48 22.3546 48 21.25V10.75C48 9.64543 47.1046 8.75 46 8.75Z" fill="#D3D9DF"/>
+						<path d="M8.5 8.75H2C0.89543 8.75 0 9.64543 0 10.75V21.25C0 22.3546 0.89543 23.25 2 23.25H8.5C9.60457 23.25 10.5 22.3546 10.5 21.25V10.75C10.5 9.64543 9.60457 8.75 8.5 8.75Z"/>
+						<path d="M21 8.75H14.5C13.3954 8.75 12.5 9.64543 12.5 10.75V21.25C12.5 22.3546 13.3954 23.25 14.5 23.25H21C22.1046 23.25 23 22.3546 23 21.25V10.75C23 9.64543 22.1046 8.75 21 8.75Z"/>
+						<path d="M46 8.75H27C25.8954 8.75 25 9.64543 25 10.75V21.25C25 22.3546 25.8954 23.25 27 23.25H46C47.1046 23.25 48 22.3546 48 21.25V10.75C48 9.64543 47.1046 8.75 46 8.75Z"/>
 					</svg>
 				</div>
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'simple_2x3' ); ?>" <?php echo 'simple_2x3' === $showcase_details['layout_option'] ? 'checked' : ''; ?>>
@@ -520,9 +520,9 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-3x">
 				<div class="<?php echo 'standard_2x3' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
 					<svg class="<?php echo 'standard_2x3' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
-						<path d="M21 6H2C0.89543 6 0 6.89543 0 8V13C0 14.1046 0.89543 15 2 15H21C22.1046 15 23 14.1046 23 13V8C23 6.89543 22.1046 6 21 6Z" fill="#D3D9DF"/>
-						<path d="M21 17H2C0.89543 17 0 17.8954 0 19V24C0 25.1046 0.89543 26 2 26H21C22.1046 26 23 25.1046 23 24V19C23 17.8954 22.1046 17 21 17Z" fill="#D3D9DF"/>
-						<path d="M46 6H27C25.8954 6 25 6.89543 25 8V24C25 25.1046 25.8954 26 27 26H46C47.1046 26 48 25.1046 48 24V8C48 6.89543 47.1046 6 46 6Z" fill="#D3D9DF"/>
+						<path d="M21 6H2C0.89543 6 0 6.89543 0 8V13C0 14.1046 0.89543 15 2 15H21C22.1046 15 23 14.1046 23 13V8C23 6.89543 22.1046 6 21 6Z"/>
+						<path d="M21 17H2C0.89543 17 0 17.8954 0 19V24C0 25.1046 0.89543 26 2 26H21C22.1046 26 23 25.1046 23 24V19C23 17.8954 22.1046 17 21 17Z"/>
+						<path d="M46 6H27C25.8954 6 25 6.89543 25 8V24C25 25.1046 25.8954 26 27 26H46C47.1046 26 48 25.1046 48 24V8C48 6.89543 47.1046 6 46 6Z"/>
 					</svg>
 				</div>
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_layout_option" value="<?php echo esc_attr( 'standard_2x3' ); ?>" <?php echo 'standard_2x3' === $showcase_details['layout_option'] ? 'checked' : ''; ?>>
@@ -627,11 +627,11 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
 				<div class="<?php echo 'catalog_2x4' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
 					<svg class="<?php echo 'catalog_2x4' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
-						<g clip-path="url(#clip0_908_13751)">
-							<path d="M28 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H28C29.1046 32 30 31.1046 30 30V2C30 0.89543 29.1046 0 28 0Z"/>
-							<path d="M46 0H34C32.8954 0 32 0.89543 32 2V7.33333C32 8.4379 32.8954 9.33333 34 9.33333H46C47.1046 9.33333 48 8.4379 48 7.33333V2C48 0.89543 47.1046 0 46 0Z"/>
-							<path d="M46 11.334H34C32.8954 11.334 32 12.2294 32 13.334V18.6673C32 19.7719 32.8954 20.6673 34 20.6673H46C47.1046 20.6673 48 19.7719 48 18.6673V13.334C48 12.2294 47.1046 11.334 46 11.334Z"/>
-							<path d="M46 22.666H34C32.8954 22.666 32 23.5614 32 24.666V29.9993C32 31.1039 32.8954 31.9993 34 31.9993H46C47.1046 31.9993 48 31.1039 48 29.9993V24.666C48 23.5614 47.1046 22.666 46 22.666Z"/>
+						<g clip-path="url(#clip0_908_13746)">
+							<path d="M14 0H2C0.89543 0 0 0.89543 0 2V7.33333C0 8.4379 0.89543 9.33333 2 9.33333H14C15.1046 9.33333 16 8.4379 16 7.33333V2C16 0.89543 15.1046 0 14 0Z"/>
+							<path d="M14 11.334H2C0.89543 11.334 0 12.2294 0 13.334V18.6673C0 19.7719 0.89543 20.6673 2 20.6673H14C15.1046 20.6673 16 19.7719 16 18.6673V13.334C16 12.2294 15.1046 11.334 14 11.334Z"/>
+							<path d="M14 22.666H2C0.89543 22.666 0 23.5614 0 24.666V29.9993C0 31.1039 0.89543 31.9993 2 31.9993H14C15.1046 31.9993 16 31.1039 16 29.9993V24.666C16 23.5614 15.1046 22.666 14 22.666Z"/>
+							<path d="M46 0H20C18.8954 0 18 0.89543 18 2V30C18 31.1046 18.8954 32 20 32H46C47.1046 32 48 31.1046 48 30V2C48 0.89543 47.1046 0 46 0Z"/>
 						</g>
 					</svg>
 				</div>
@@ -641,11 +641,11 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
 				<div class="<?php echo 'catalog_3x4' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
 					<svg class="<?php echo 'catalog_3x4' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
-						<g clip-path="url(#clip0_908_13736)">
-							<path d="M12.6667 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H12.6667C13.7713 15 14.6667 14.1046 14.6667 13V2C14.6667 0.89543 13.7713 0 12.6667 0Z"/>
-							<path d="M29.3327 0H18.666C17.5614 0 16.666 0.89543 16.666 2V13C16.666 14.1046 17.5614 15 18.666 15H29.3327C30.4373 15 31.3327 14.1046 31.3327 13V2C31.3327 0.89543 30.4373 0 29.3327 0Z"/>
-							<path d="M46.0007 0H35.334C34.2294 0 33.334 0.89543 33.334 2V13C33.334 14.1046 34.2294 15 35.334 15H46.0007C47.1053 15 48.0007 14.1046 48.0007 13V2C48.0007 0.89543 47.1053 0 46.0007 0Z"/>
-							<path d="M46 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H46C47.1046 32 48 31.1046 48 30V19C48 17.8954 47.1046 17 46 17Z"/>
+						<g clip-path="url(#clip0_908_13741)">
+							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H46C47.1046 15 48 14.1046 48 13V2C48 0.89543 47.1046 0 46 0Z"/>
+							<path d="M12.6667 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H12.6667C13.7713 32 14.6667 31.1046 14.6667 30V19C14.6667 17.8954 13.7713 17 12.6667 17Z"/>
+							<path d="M29.3327 17H18.666C17.5614 17 16.666 17.8954 16.666 19V30C16.666 31.1046 17.5614 32 18.666 32H29.3327C30.4373 32 31.3327 31.1046 31.3327 30V19C31.3327 17.8954 30.4373 17 29.3327 17Z"/>
+							<path d="M46.0007 17H35.334C34.2294 17 33.334 17.8954 33.334 19V30C33.334 31.1046 34.2294 32 35.334 32H46.0007C47.1053 32 48.0007 31.1046 48.0007 30V19C48.0007 17.8954 47.1053 17 46.0007 17Z"/>
 						</g>
 					</svg>
 				</div>
@@ -655,11 +655,11 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-choose-layout-option layout-4x">
 				<div class="<?php echo 'catalog_4x4' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active-before-content' : ''; ?>">
 					<svg class="<?php echo 'catalog_4x4' === $showcase_details['layout_option'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
-						<g clip-path="url(#clip0_908_13741)">
-							<path d="M46 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H46C47.1046 15 48 14.1046 48 13V2C48 0.89543 47.1046 0 46 0Z"/>
-							<path d="M12.6667 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H12.6667C13.7713 32 14.6667 31.1046 14.6667 30V19C14.6667 17.8954 13.7713 17 12.6667 17Z"/>
-							<path d="M29.3327 17H18.666C17.5614 17 16.666 17.8954 16.666 19V30C16.666 31.1046 17.5614 32 18.666 32H29.3327C30.4373 32 31.3327 31.1046 31.3327 30V19C31.3327 17.8954 30.4373 17 29.3327 17Z"/>
-							<path d="M46.0007 17H35.334C34.2294 17 33.334 17.8954 33.334 19V30C33.334 31.1046 34.2294 32 35.334 32H46.0007C47.1053 32 48.0007 31.1046 48.0007 30V19C48.0007 17.8954 47.1053 17 46.0007 17Z"/>
+						<g clip-path="url(#clip0_908_13736)">
+							<path d="M12.6667 0H2C0.89543 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H12.6667C13.7713 15 14.6667 14.1046 14.6667 13V2C14.6667 0.89543 13.7713 0 12.6667 0Z"/>
+							<path d="M29.3327 0H18.666C17.5614 0 16.666 0.89543 16.666 2V13C16.666 14.1046 17.5614 15 18.666 15H29.3327C30.4373 15 31.3327 14.1046 31.3327 13V2C31.3327 0.89543 30.4373 0 29.3327 0Z"/>
+							<path d="M46.0007 0H35.334C34.2294 0 33.334 0.89543 33.334 2V13C33.334 14.1046 34.2294 15 35.334 15H46.0007C47.1053 15 48.0007 14.1046 48.0007 13V2C48.0007 0.89543 47.1053 0 46.0007 0Z"/>
+							<path d="M46 17H2C0.89543 17 0 17.8954 0 19V30C0 31.1046 0.89543 32 2 32H46C47.1046 32 48 31.1046 48 30V19C48 17.8954 47.1046 17 46 17Z"/>
 						</g>
 					</svg>
 				</div>

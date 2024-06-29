@@ -178,6 +178,7 @@ class ShowcaseListTable extends AbstractListTable {
 					break;
 			}
 			// translators: %d: number of things deleted.
+			wc_category_showcase()->flash->success( __( 'Showcases successfully deleted.', 'wc-category-showcase' ) );
 			wp_safe_redirect( admin_url( 'admin.php?page=wc-category-showcase' ) );
 			exit();
 		}

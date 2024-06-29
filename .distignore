@@ -76,4 +76,4 @@ Thumbs.db
 *.*.map
 
 # Build related files
-/assets/css/sass
+/src

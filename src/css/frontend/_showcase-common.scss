@@ -25,6 +25,31 @@
 	}
 }
 
+// Category body class.
+.wccs-categories{
+	h1{
+		margin-bottom: 0;
+	}
+	h2{
+		margin-bottom: 0;
+	}
+	h3{
+		margin-bottom: 0;
+	}
+	h4{
+		margin-bottom: 0;
+	}
+	h5{
+		margin-bottom: 0;
+	}
+	h6{
+		margin-bottom: 0;
+	}
+	p{
+		margin-bottom: 0;
+	}
+}
+
 // Global category card style.
 .wccs-category{
 	.wccs-entry__head{
@@ -107,7 +132,7 @@
 }
 
 .splide__slide__row {
-	margin: 0 4px !important;
+	height: auto !important;
 }
 
 .wccs-category {

@@ -287,8 +287,7 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-mt-2">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'COLOR', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex tw-mt-2">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-font-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['font_main_title']['text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_font_main_title[text_color]" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_color'] ); ?>">
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" data-jscolor="{ value: '<?php echo esc_attr( $showcase_details['font_main_title']['text_color'] ); ?>', backgroundColor: '#333', shadowColor: '#FFFFFF80', width: 121, height: 121 }" name="wcc_showcase_font_main_title[text_color]" value="<?php echo esc_attr( $showcase_details['font_main_title']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
@@ -554,8 +553,7 @@ defined( 'ABSPATH' ) || exit;
 			<div class="tw-mt-2">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'COLOR', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex tw-mt-2">
-					<span class="tw-p-3 tw-absolute tw-top-[6px] tw-left-[8px] tw-rounded-[50%] wcc_showcase-change-font-style colorpickpreview" <?php echo 'style="background-color:' . esc_attr( $showcase_details['font_category_title']['text_color'] ) . '"'; ?>></span>
-					<input class="wcc-showcase-input-color wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" name="wcc_showcase_font_category_title[text_color]" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_color'] ); ?>">
+					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" data-jscolor="{ value: '<?php echo esc_attr( $showcase_details['font_category_title']['text_color'] ); ?>', backgroundColor: '#333', shadowColor: '#FFFFFF80', width: 121, height: 121 }" name="wcc_showcase_font_category_title[text_color]" value="<?php echo esc_attr( $showcase_details['font_category_title']['text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>
