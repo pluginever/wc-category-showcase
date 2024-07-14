@@ -2,8 +2,6 @@
 
 namespace WooCommerceCategoryShowcase;
 
-use Codeception\Step\Condition;
-
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -12,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
  * @since 1.2.1
  * @package WooCommerceCategoryShowcase
  */
-class Plugin extends ByteKit\Plugin {
+final class Plugin extends ByteKit\Plugin {
 	/**
 	 * Plugin constructor.
 	 *
@@ -47,7 +45,9 @@ class Plugin extends ByteKit\Plugin {
 	 * @since 1.0.0
 	 * @return void
 	 */
-	public function includes() {}
+	public function includes() {
+		require_once __DIR__ . '/functions.php';
+	}
 
 	/**
 	 * Hook into actions and filters.
@@ -57,7 +57,20 @@ class Plugin extends ByteKit\Plugin {
 	 */
 	public function init_hooks() {
 		add_action( 'plugins_loaded', array( $this, 'on_init' ), 0 );
+		add_action( 'before_woocommerce_init', array( $this, 'on_before_woocommerce_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
+	}
+
+	/**
+	 * Run on before WooCommerce init.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public function on_before_woocommerce_init() {
+		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $this->get_file(), true );
+		}
 	}
 
 	/**
@@ -67,10 +80,17 @@ class Plugin extends ByteKit\Plugin {
 	 * @return void
 	 */
 	public function on_init() {
-		new Admin\Admin();
-		new Admin\Menus();
-
 		new Shortcodes\Shortcodes();
+
+		// Admin classes.
+		if ( is_admin() ) {
+			$this->set(
+				array(
+					Admin\Admin::class,
+					Admin\Menus::class,
+				)
+			);
+		}
 
 		/**
 		 * Fires when the plugin is initialized.

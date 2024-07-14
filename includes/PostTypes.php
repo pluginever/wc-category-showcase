@@ -19,7 +19,7 @@ class PostTypes {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'init', array( __CLASS__, 'register_tabs' ) );
+		add_action( 'init', array( __CLASS__, 'register_post_type' ) );
 	}
 
 	/**
@@ -28,7 +28,7 @@ class PostTypes {
 	 * @since 1.0.0
 	 * @return void
 	 */
-	public static function register_tabs() {
+	public static function register_post_type() {
 		$labels = array(
 			'name'               => _x( 'Category Showcase', 'post type general name', 'wc-category-showcase' ),
 			'singular_name'      => _x( 'WC Category Showcase', 'post type singular name', 'wc-category-showcase' ),

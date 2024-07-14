@@ -2,9 +2,6 @@
 
 namespace WooCommerceCategoryShowcase\Admin\listTables;
 
-use WooCommerceCategoryShowcase\Admin\listTables\AbstractListTable;
-use WooCommerceCategoryShowcase\Controllers\Helpers;
-
 defined( 'ABSPATH' ) || exit;
 
 /**

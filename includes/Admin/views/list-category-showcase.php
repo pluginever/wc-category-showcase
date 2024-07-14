@@ -21,7 +21,7 @@ $list_table->prepare_items();
 			<?php esc_html_e( 'Add New', 'wc-category-showcase' ); ?>
 		</a>
 	</h1>
-	<p>Bellow are the all category showcases.</p>
+	<p><?php esc_html_e( 'Bellow are the all category showcases.', 'wc-category-showcase' ); ?></p>
 	<hr class="wp-header-end">
 
 	<form id="wc-category-showcase-table" method="get">

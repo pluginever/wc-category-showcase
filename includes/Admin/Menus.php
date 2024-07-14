@@ -52,8 +52,8 @@ class Menus {
 
 		add_submenu_page(
 			self::PARENT_SLUG,
-			esc_html__( 'All Showcases', 'product-tabs-manager' ),
-			esc_html__( 'All Showcases', 'product-tabs-manager' ),
+			esc_html__( 'All Showcases', 'wc-category-showcase' ),
+			esc_html__( 'All Showcases', 'wc-category-showcase' ),
 			'manage_options',
 			self::PARENT_SLUG,
 			array( $this, 'render_menu' )

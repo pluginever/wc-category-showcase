@@ -38,7 +38,7 @@ class Shortcodes {
 				'id' => null,
 			),
 			$atts,
-			'wc_category_showcase_test'
+			'wc_category_showcase'
 		);
 
 		if ( empty( $atts['id'] ) || false === get_post_status( $atts['id'] ) ) {
@@ -48,7 +48,7 @@ class Shortcodes {
 		wp_enqueue_style( 'wcc-showcase-showcase' );
 		wp_enqueue_script( 'wcc-showcase-showcase' );
 
-		$content  = $content ?? null;
+		$content  = $content ? $content : null;
 		$wccs_id  = intval( $atts['id'] );
 		$showcase = Helpers::get_slider_settings( $wccs_id );
 
@@ -63,21 +63,21 @@ class Shortcodes {
 		}
 
 		// Get the showcase individual style.
-		$card_bg_color         = $showcase['card']['background_color'] ?? $showcase['card']['background_color'];
-		$card_bg_hover_color   = $showcase['card']['hover_color'] ?? $showcase['card']['hover_color'];
-		$card_text_color       = $showcase['card']['text_color'] ?? $showcase['card']['text_color'];
-		$card_text_hover_color = $showcase['card']['hover_text_color'] ?? $showcase['card']['hover_text_color'];
-		$card_border_radius    = $showcase['border_radius'] ?? $showcase['border_radius'];
-		$card_gap              = $showcase['gap_between_cards'] ?? $showcase['gap_between_cards'];
+		$card_bg_color         = $showcase['card']['background_color'] ? $showcase['card']['background_color'] : '';
+		$card_bg_hover_color   = $showcase['card']['hover_color'] ? $showcase['card']['hover_color'] : '';
+		$card_text_color       = $showcase['card']['text_color'] ? $showcase['card']['text_color'] : '';
+		$card_text_hover_color = $showcase['card']['hover_text_color'] ? $showcase['card']['hover_text_color'] : '';
+		$card_border_radius    = $showcase['border_radius'] ? $showcase['border_radius'] : '';
+		$card_gap              = $showcase['gap_between_cards'] ? $showcase['gap_between_cards'] : '';
 		$card_gap              = $card_gap / 16;
 
-		$card_content_padding        = $showcase['content_padding'] ?? $showcase['content_padding'];
+		$card_content_padding        = $showcase['content_padding'] ? $showcase['content_padding'] : '';
 		$card_content_padding_is_all = 'yes' === $showcase['content_padding_is_all'] ? $showcase['content_padding_is_all'] : 'no';
 		if ( 'yes' === $card_content_padding_is_all ) {
-			$content_padding_top    = $showcase['content_padding_all']['top'] ?? $showcase['content_padding_all']['top'];
-			$content_padding_right  = $showcase['content_padding_all']['right'] ?? $showcase['content_padding_all']['right'];
-			$content_padding_bottom = $showcase['content_padding_all']['bottom'] ?? $showcase['content_padding_all']['bottom'];
-			$content_padding_left   = $showcase['content_padding_all']['left'] ?? $showcase['content_padding_all']['left'];
+			$content_padding_top    = $showcase['content_padding_all']['top'] ? $showcase['content_padding_all']['top'] : '';
+			$content_padding_right  = $showcase['content_padding_all']['right'] ? $showcase['content_padding_all']['right'] : '';
+			$content_padding_bottom = $showcase['content_padding_all']['bottom'] ? $showcase['content_padding_all']['bottom'] : '';
+			$content_padding_left   = $showcase['content_padding_all']['left'] ? $showcase['content_padding_all']['left'] : '';
 		} else {
 			$content_padding_top    = $card_content_padding;
 			$content_padding_right  = $card_content_padding;
@@ -85,22 +85,22 @@ class Shortcodes {
 			$content_padding_left   = $card_content_padding;
 		}
 
-		$shop_now_btn_bg                 = $showcase['button']['background_color'] ?? $showcase['button']['background_color'];
-		$shop_now_btn_text_color         = $showcase['button']['text_color'] ?? $showcase['button']['text_color'];
-		$shop_now_btn_hover_bg           = $showcase['button']['hover_color'] ?? $showcase['button']['hover_color'];
-		$shop_now_btn_hover_text_color   = $showcase['button']['hover_text_color'] ?? $showcase['button']['hover_text_color'];
-		$shop_now_btn_border_color       = $showcase['button']['border_color'] ?? $showcase['button']['border_color'];
-		$shop_now_btn_border_hover_color = $showcase['button']['border_hover_color'] ?? $showcase['button']['border_hover_color'];
+		$shop_now_btn_bg                 = $showcase['button']['background_color'] ? $showcase['button']['background_color'] : '';
+		$shop_now_btn_text_color         = $showcase['button']['text_color'] ? $showcase['button']['text_color'] : '';
+		$shop_now_btn_hover_bg           = $showcase['button']['hover_color'] ? $showcase['button']['hover_color'] : '';
+		$shop_now_btn_hover_text_color   = $showcase['button']['hover_text_color'] ? $showcase['button']['hover_text_color'] : '';
+		$shop_now_btn_border_color       = $showcase['button']['border_color'] ? $showcase['button']['border_color'] : '';
+		$shop_now_btn_border_hover_color = $showcase['button']['border_hover_color'] ? $showcase['button']['border_hover_color'] : '';
 
-		$navigation_bg               = $showcase['slide_button']['background_color'] ?? $showcase['slide_button']['background_color'];
-		$navigation_text_color       = $showcase['slide_button']['text_color'] ?? $showcase['slide_button']['text_color'];
-		$navigation_hover_bg         = $showcase['slide_button']['hover_color'] ?? $showcase['slide_button']['hover_color'];
-		$navigation_hover_text_color = $showcase['slide_button']['hover_text_color'] ?? $showcase['slide_button']['hover_text_color'];
+		$navigation_bg               = $showcase['slide_button']['background_color'] ? $showcase['slide_button']['background_color'] : '';
+		$navigation_text_color       = $showcase['slide_button']['text_color'] ? $showcase['slide_button']['text_color'] : '';
+		$navigation_hover_bg         = $showcase['slide_button']['hover_color'] ? $showcase['slide_button']['hover_color'] : '';
+		$navigation_hover_text_color = $showcase['slide_button']['hover_text_color'] ? $showcase['slide_button']['hover_text_color'] : '';
 
-		$counter_bg         = $showcase['slide_counter']['background_color'] ?? $showcase['slide_counter']['background_color'];
-		$counter_text       = $showcase['slide_counter']['text_color'] ?? $showcase['slide_counter']['text_color'];
-		$counter_hover_bg   = $showcase['slide_counter']['hover_color'] ?? $showcase['slide_counter']['hover_color'];
-		$counter_hover_text = $showcase['slide_counter']['hover_text_color'] ?? $showcase['slide_counter']['hover_text_color'];
+		$counter_bg         = $showcase['slide_counter']['background_color'] ? $showcase['slide_counter']['background_color'] : '';
+		$counter_text       = $showcase['slide_counter']['text_color'] ? $showcase['slide_counter']['text_color'] : '';
+		$counter_hover_bg   = $showcase['slide_counter']['hover_color'] ? $showcase['slide_counter']['hover_color'] : '';
+		$counter_hover_text = $showcase['slide_counter']['hover_text_color'] ? $showcase['slide_counter']['hover_text_color'] : '';
 
 		$styles = "
 			.wccs-categories__{$wccs_id}{
@@ -237,8 +237,8 @@ class Shortcodes {
 	 */
 	public static function get_content_html( $wccs_id, $layout, $showcase ) {
 
-		$content_placement = $showcase['content_placement'] ?? 'top';
-		$content_position  = $showcase['overlay_content_position'] ?? 'center_center';
+		$content_placement = $showcase['content_placement'] ? $showcase['content_placement'] : 'center';
+		$content_position  = $showcase['overlay_content_position'] ? $showcase['overlay_content_position'] : 'center_center';
 
 		// Get category query args values.
 		$hide_empty = isset( $showcase['hide_empty_categories'] ) && 'yes' === $showcase['hide_empty_categories'] ? true : false;
@@ -300,12 +300,7 @@ class Shortcodes {
 							<ul class="wccs-subcategory__items">
 								<?php
 								foreach ( $child_categories as $child_category ) :
-									printf(
-										'<li class="wccs-subcategory__item"><a href="%1$s">%2$s <span>(%3$s)<span></a></li>',
-										esc_url( $child_category['cat_link'] ),
-										esc_html( $child_category['name'] ),
-										esc_html( $child_category['total_product'] ),
-									);
+									printf( '<li class="wccs-subcategory__item"><a href="%1$s">%2$s <span>(%3$s)<span></a></li>', esc_url( $child_category['cat_link'] ), esc_html( $child_category['name'] ), esc_html( $child_category['total_product'] ) );
 								endforeach;
 								?>
 							</ul>
@@ -360,8 +355,8 @@ class Shortcodes {
 		$ticker_mode       = 'medium' === $category_showcase['ticket_mode'] ? 1 : ( 'slow' === $category_showcase['ticket_mode'] ? .5 : 2 );
 
 		// Added latter.
-		$content_placement = $category_showcase['content_placement'] ?? 'bottom';
-		$content_position  = $category_showcase['overlay_content_position'] ?? 'center_center';
+		$content_placement = $category_showcase['content_placement'] ? $category_showcase['content_placement'] : 'bottom';
+		$content_position  = $category_showcase['overlay_content_position'] ? $category_showcase['overlay_content_position'] : 'center_center';
 		?>
 
 		<div class="splide wcc-showcase-<?php echo esc_attr( $post_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $post_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $category_showcase['slider']['row'] ); ?>, "columns": <?php echo esc_attr( $category_showcase['slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $category_showcase['column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $category_showcase['column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $category_showcase['column_breakpoint']['mobile'] ); ?>, "gap":<?php echo esc_attr( $category_showcase['gap_between_cards'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $post_id ) ); ?>">
@@ -479,6 +474,7 @@ class Shortcodes {
 		"direction": "ltr",
 		"wheel":' . ( 'yes' === $category_showcase['slide_scroll_interaction'] ? 'true' : 'false' ) . '
 		}';
+		$slider_config = apply_filters( 'wcc_showcase_slider_config', $slider_config, $category_showcase );
 		return $slider_config;
 	}
 
@@ -513,7 +509,7 @@ class Shortcodes {
 		if ( 'yes' === $category_showcase['image_zoom_on_hover'] ) {
 			$slider_classes .= ' is-image-zoom-on-hover';
 		}
-
+		$slider_classes = apply_filters( 'wcc_showcase_slider_classes', $slider_classes, $category_showcase );
 		return $slider_classes;
 	}
 }

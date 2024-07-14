@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 			title="<?php esc_attr_e( 'Go back', 'wc-category-showcase' ); ?>">
 			<span class="dashicons dashicons-undo"></span>
 		</a>
-		<?php if( ! empty( $post_id ) ) { ?>
+		<?php if ( ! empty( $post_id ) ) { ?>
 		<a href="<?php echo esc_attr( admin_url( 'admin.php?page=wc-category-showcase&add' ) ); ?>" class="page-title-action">
 			<?php esc_html_e( 'Add New', 'wc-category-showcase' ); ?>
 		</a>

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:byteever/bytekit-plugin.git",
-                "reference": "fc967d1155f5e93ad105f49acc94a3e4edc660aa"
+                "reference": "bf0f9bb5e70a36325fecf1cbc426824823f0452b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byteever/bytekit-plugin/zipball/fc967d1155f5e93ad105f49acc94a3e4edc660aa",
-                "reference": "fc967d1155f5e93ad105f49acc94a3e4edc660aa",
+                "url": "https://api.github.com/repos/byteever/bytekit-plugin/zipball/bf0f9bb5e70a36325fecf1cbc426824823f0452b",
+                "reference": "bf0f9bb5e70a36325fecf1cbc426824823f0452b",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
                 "source": "https://github.com/byteever/bytekit-plugin/tree/master",
                 "issues": "https://github.com/byteever/bytekit-plugin/issues"
             },
-            "time": "2024-06-25T04:05:32+00:00"
+            "time": "2024-07-13T16:31:02+00:00"
         },
         {
             "name": "coenjacobs/mozart",
@@ -356,16 +356,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.4.40",
+            "version": "v5.4.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "aa73115c0c24220b523625bfcfa655d7d73662dd"
+                "reference": "6473d441a913cb997123b59ff2dbe3d1cf9e11ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/aa73115c0c24220b523625bfcfa655d7d73662dd",
-                "reference": "aa73115c0c24220b523625bfcfa655d7d73662dd",
+                "url": "https://api.github.com/repos/symfony/console/zipball/6473d441a913cb997123b59ff2dbe3d1cf9e11ba",
+                "reference": "6473d441a913cb997123b59ff2dbe3d1cf9e11ba",
                 "shasum": ""
             },
             "require": {
@@ -435,7 +435,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.4.40"
+                "source": "https://github.com/symfony/console/tree/v5.4.41"
             },
             "funding": [
                 {
@@ -451,7 +451,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T14:33:22+00:00"
+            "time": "2024-06-28T07:48:55+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1228,22 +1228,22 @@
     "packages-dev": [
         {
             "name": "byteever/byteever-sniffs",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/byteever/byteever-sniffs.git",
-                "reference": "8c20a95245a883bcbaea42e46653f7f788bf8290"
+                "reference": "7a62a7c8aa62fcc67a0d19ed0af2df05b103042d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byteever/byteever-sniffs/zipball/8c20a95245a883bcbaea42e46653f7f788bf8290",
-                "reference": "8c20a95245a883bcbaea42e46653f7f788bf8290",
+                "url": "https://api.github.com/repos/byteever/byteever-sniffs/zipball/7a62a7c8aa62fcc67a0d19ed0af2df05b103042d",
+                "reference": "7a62a7c8aa62fcc67a0d19ed0af2df05b103042d",
                 "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
                 "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "wp-coding-standards/wpcs": "^3.0"
+                "wp-coding-standards/wpcs": "^3.1"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
@@ -1268,9 +1268,9 @@
             ],
             "support": {
                 "issues": "https://github.com/byteever/byteever-sniffs/issues",
-                "source": "https://github.com/byteever/byteever-sniffs/tree/v1.0.1"
+                "source": "https://github.com/byteever/byteever-sniffs/tree/v1.0.2"
             },
-            "time": "2023-10-25T04:55:22+00:00"
+            "time": "2024-06-28T06:59:58+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",

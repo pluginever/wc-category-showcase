@@ -1,24 +1,25 @@
 <?php
 /**
- * Plugin Name: Product Category Showcase for WooCommerce
- * Plugin URI: https://pluginever.com/plugins/woocommerce-category-showcase-pro/
- * Description: WooCommerce extension to showcase categories in interactive slider blocks.
- * Version:     2.0.4
- * Author:      PluginEver
- * Author URI:  https://pluginever.com
- * License:     GPLv2+
- * Text Domain: wc-category-showcase
- * Domain Path: /i18n/languages
- * Requires at least: 4.4
- * Tested up to: 6.5
- * WC requires at least: 3.0.0
- * WC tested up to: 8.8
+ * Plugin Name:          Product Category Showcase for WooCommerce
+ * Plugin URI:           https://pluginever.com/plugins/woocommerce-category-showcase-pro/
+ * Description:          WooCommerce extension to showcase categories in interactive slider blocks.
+ * Version:              2.0.4
+ * Author:               PluginEver
+ * Author URI:           https://pluginever.com
+ * License:              GPLv2+
+ * Text Domain:          wc-category-showcase
+ * Domain Path:          /languages
+ * Requires at least:    5.0
+ * Tested up to:         6.5
+ * Requires PHP:         7.4
+ * WC requires at least: 6.0.0
+ * WC tested up to:      9.1.2
  *
  * @package WooCommerceCategoryShowcase
  */
 
 /**
- * Copyright (c) 2017 PluginEver (email : support@pluginever.com)
+ * Copyright (c) 2024 PluginEver (email : support@pluginever.com)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2 or, at
@@ -39,31 +40,10 @@ defined( 'ABSPATH' ) || exit();
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-/**
- * Plugin compatibility with WooCommerce HPOS
- *
- * @since 1.0.0
- * @return void
- */
-add_action(
-	'before_woocommerce_init',
-	function () {
-		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
-		}
-	}
-);
-
-/**
- * Main instance of WooCommerceCategoryShowcase.
- *
- * Returns the main instance of WooCommerceCategoryShowcase to prevent the need to use globals.
- *
- * @since  1.0.0
- * @return WooCommerceCategoryShowcase\Plugin
- */
-function wc_category_showcase() {
-	return WooCommerceCategoryShowcase\Plugin::create( __FILE__ );
-}
 // Instantiate the plugin.
-wc_category_showcase();
+WooCommerceCategoryShowcase\Plugin::create(
+	array(
+		'file'         => __FILE__,
+		'settings_url' => admin_url( 'admin.php?page=wc-category-showcase' ),
+	)
+);
