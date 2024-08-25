@@ -1,11 +1,11 @@
 # Copyright (C) 2024 PluginEver
-# This file is distributed under the GPLv2+.
+# This file is distributed under the GPL v3 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Product Category Showcase for WooCommerce 2.0.4\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wc-category-showcase\n"
-"POT-Creation-Date: 2024-07-30 07:06:02+00:00\n"
+"POT-Creation-Date: 2024-08-25 09:55:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -172,19 +172,19 @@ msgstr ""
 msgid "Example Metabox"
 msgstr ""
 
-#: wc-category-showcase.php:372
+#: wc-category-showcase.php:373
 msgid "View Plugin's Documentation"
 msgstr ""
 
-#: wc-category-showcase.php:372
+#: wc-category-showcase.php:373
 msgid "Documentation"
 msgstr ""
 
-#: wc-category-showcase.php:378
+#: wc-category-showcase.php:379
 msgid "Go Pro"
 msgstr ""
 
-#: wc-category-showcase.php:398 wc-category-showcase.php:408
+#: wc-category-showcase.php:399 wc-category-showcase.php:409
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
