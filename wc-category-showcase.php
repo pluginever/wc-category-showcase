@@ -6,7 +6,8 @@
  * Version:              2.0.4
  * Author:               PluginEver
  * Author URI:           https://pluginever.com
- * License:              GPLv2+
+ * License:              GPL v3 or later
+ * License URI:          https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:          wc-category-showcase
  * Domain Path:          /i18n/languages
  * Requires Plugins:     woocommerce
@@ -14,7 +15,7 @@
  * Tested up to:         6.6
  * Requires PHP:         7.4
  * WC requires at least: 6.0
- * WC tested up to:      9.1
+ * WC tested up to:      9.2
  */
 
 /**

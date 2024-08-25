@@ -6,8 +6,8 @@ Requires at least: 5.2
 Tested up to:      6.6
 Requires PHP:      7.4
 Stable tag:        2.0.4
-License:           GPLv2 or later
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+License:           GPLv3 or later
+License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 
 Enhance your WooCommerce store with Product Category Showcase! Engage visitors with a sleek slider, making category browsing effortless.
 
@@ -137,7 +137,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 = 2.0.4 =
 * Fix - Resolved known issues.
 * Fix – Compatibility with WP v6.6.1
-* Fix – Compatibility with WC v9.1.0
+* Fix – Compatibility with WC v9.2.2
 
 = 2.0.3 =
 * Fix - Resolved metabox issues. 
