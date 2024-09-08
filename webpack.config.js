@@ -7,10 +7,10 @@ module.exports = [
 		...defaultConfig,
 		entry: {
 			...defaultConfig.entry(),
-			'css/admin': './src/css/admin/admin.scss',
-			'css/showcase': './src/css/frontend/showcase.scss',
-			'js/admin': './src/js/admin/admin.js',
-			'js/showcase': './src/js/frontend/showcase.js',
+			'css/admin': './.assets/css/admin/admin.scss',
+			'css/showcase': './.assets/css/frontend/showcase.scss',
+			'js/admin': './.assets/js/admin/admin.js',
+			'js/showcase': './.assets/js/frontend/showcase.js',
 		},
 		output: {
 			...defaultConfig.output,
@@ -36,7 +36,7 @@ module.exports = [
 			new CopyWebpackPlugin({
 				patterns: [
 					{
-						from: path.resolve(__dirname, 'src/images'),
+						from: path.resolve(__dirname, '.assets/images'),
 						to: path.resolve(__dirname, 'assets/images'),
 					},
 					{
