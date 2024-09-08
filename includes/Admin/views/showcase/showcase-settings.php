@@ -362,6 +362,9 @@ defined( 'ABSPATH' ) || exit;
 					<span class="custom-option wccs-overlay-content <?php echo 'center' === $showcase_details['overlay_content_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'center' ); ?>">
 						<?php esc_html_e( 'Center', 'wc-category-showcase' ); ?>
 					</span>
+					<span class="custom-option wccs-overlay-content <?php echo 'center_center' === $showcase_details['overlay_content_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'center_center' ); ?>">
+						<?php esc_html_e( 'Center Center', 'wc-category-showcase' ); ?>
+					</span>
 					<span class="custom-option wccs-overlay-content <?php echo 'bottom_left' === $showcase_details['overlay_content_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom_left' ); ?>">
 						<?php esc_html_e( 'Bottom Left', 'wc-category-showcase' ); ?>
 					</span>
