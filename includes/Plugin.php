@@ -80,16 +80,12 @@ final class Plugin extends ByteKit\Plugin {
 	 * @return void
 	 */
 	public function on_init() {
-		new Shortcodes\Shortcodes();
-
+		$this->set( PostTypes::class );
+		$this->set( Shortcodes\Shortcodes::class );
 		// Admin classes.
 		if ( is_admin() ) {
-			$this->set(
-				array(
-					Admin\Admin::class,
-					Admin\Menus::class,
-				)
-			);
+			$this->set( Admin\Admin::class );
+			$this->set( Admin\Menus::class );
 		}
 
 		/**
