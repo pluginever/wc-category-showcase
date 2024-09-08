@@ -27,12 +27,11 @@ class Shortcodes {
 	 * Category showcase shortcode.
 	 *
 	 * @param mixed $atts Shortcode attributes.
-	 * @param null  $content Shortcode content.
 	 *
 	 * @return string
 	 * @since 2.0.5
 	 */
-	public function render_shortcode( $atts, $content = null ) {
+	public function render_shortcode( $atts ) {
 		$atts = shortcode_atts(
 			array(
 				'id' => null,
@@ -48,7 +47,6 @@ class Shortcodes {
 		wp_enqueue_style( 'wcc-showcase-showcase' );
 		wp_enqueue_script( 'wcc-showcase-showcase' );
 
-		$content  = $content ? $content : null;
 		$wccs_id  = intval( $atts['id'] );
 		$showcase = Helpers::get_slider_settings( $wccs_id );
 
@@ -62,138 +60,9 @@ class Shortcodes {
 			$layout_option = isset( $showcase['layout_option'] ) ? sanitize_key( $showcase['layout_option'] ) : '';
 		}
 
-		// Get the showcase individual style.
-		$card_bg_color         = $showcase['card']['background_color'] ? $showcase['card']['background_color'] : '';
-		$card_bg_hover_color   = $showcase['card']['hover_color'] ? $showcase['card']['hover_color'] : '';
-		$card_text_color       = $showcase['card']['text_color'] ? $showcase['card']['text_color'] : '';
-		$card_text_hover_color = $showcase['card']['hover_text_color'] ? $showcase['card']['hover_text_color'] : '';
-		$card_border_radius    = $showcase['border_radius'] ? $showcase['border_radius'] : '';
-		$card_gap              = $showcase['gap_between_cards'] ? $showcase['gap_between_cards'] : '';
-		$card_gap              = $card_gap / 16;
-
-		$card_content_padding        = $showcase['content_padding'] ? $showcase['content_padding'] : '';
-		$card_content_padding_is_all = 'yes' === $showcase['content_padding_is_all'] ? $showcase['content_padding_is_all'] : 'no';
-		if ( 'yes' === $card_content_padding_is_all ) {
-			$content_padding_top    = $showcase['content_padding_all']['top'] ? $showcase['content_padding_all']['top'] : '';
-			$content_padding_right  = $showcase['content_padding_all']['right'] ? $showcase['content_padding_all']['right'] : '';
-			$content_padding_bottom = $showcase['content_padding_all']['bottom'] ? $showcase['content_padding_all']['bottom'] : '';
-			$content_padding_left   = $showcase['content_padding_all']['left'] ? $showcase['content_padding_all']['left'] : '';
-		} else {
-			$content_padding_top    = $card_content_padding;
-			$content_padding_right  = $card_content_padding;
-			$content_padding_bottom = $card_content_padding;
-			$content_padding_left   = $card_content_padding;
-		}
-
-		$shop_now_btn_bg                 = $showcase['button']['background_color'] ? $showcase['button']['background_color'] : '';
-		$shop_now_btn_text_color         = $showcase['button']['text_color'] ? $showcase['button']['text_color'] : '';
-		$shop_now_btn_hover_bg           = $showcase['button']['hover_color'] ? $showcase['button']['hover_color'] : '';
-		$shop_now_btn_hover_text_color   = $showcase['button']['hover_text_color'] ? $showcase['button']['hover_text_color'] : '';
-		$shop_now_btn_border_color       = $showcase['button']['border_color'] ? $showcase['button']['border_color'] : '';
-		$shop_now_btn_border_hover_color = $showcase['button']['border_hover_color'] ? $showcase['button']['border_hover_color'] : '';
-
-		$navigation_bg               = $showcase['slide_button']['background_color'] ? $showcase['slide_button']['background_color'] : '';
-		$navigation_text_color       = $showcase['slide_button']['text_color'] ? $showcase['slide_button']['text_color'] : '';
-		$navigation_hover_bg         = $showcase['slide_button']['hover_color'] ? $showcase['slide_button']['hover_color'] : '';
-		$navigation_hover_text_color = $showcase['slide_button']['hover_text_color'] ? $showcase['slide_button']['hover_text_color'] : '';
-
-		$counter_bg         = $showcase['slide_counter']['background_color'] ? $showcase['slide_counter']['background_color'] : '';
-		$counter_text       = $showcase['slide_counter']['text_color'] ? $showcase['slide_counter']['text_color'] : '';
-		$counter_hover_bg   = $showcase['slide_counter']['hover_color'] ? $showcase['slide_counter']['hover_color'] : '';
-		$counter_hover_text = $showcase['slide_counter']['hover_text_color'] ? $showcase['slide_counter']['hover_text_color'] : '';
-
-		$styles = "
-			.wccs-categories__{$wccs_id}{
-				gap: {$card_gap}rem !important;
-			}
-			.wccs-showcase-id__{$wccs_id}, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item{
-				background-color: {$card_bg_color};
-				color: {$card_text_color};
-				border-radius: {$card_border_radius}px;
-				transition: 0.3s;
-			}
-			.wccs-showcase-id__{$wccs_id} .wccs-entry__content {
-				border-radius: {$card_border_radius}px;
-			}
-
-			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner p, .wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
-				color: {$card_text_hover_color};
-			}
-			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item p{
-				color: {$card_text_color};
-			}
-			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover p{
-				color: {$card_text_hover_color};
-			}
-			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
-				color: {$card_text_color};
-			}
-			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a:hover {
-				color: {$card_text_hover_color};
-			}
-
-			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item__cat-products a:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item__sub-cat__sub-cat-list__item a:hover{
-				color: {$card_text_hover_color} !important;
-				opacity: .6 !important;
-			}
-
-			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
-				background-color: {$card_bg_hover_color};
-				color: {$card_text_hover_color};
-			}
-			.wcc-showcase-{$wccs_id} .splide__pagination__page{
-				background-color: {$counter_bg};
-				color: {$counter_text};
-			}
-			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item .slider-cat-image{
-				border-top-left-radius: {$card_border_radius}px !important;
-				border-top-right-radius: {$card_border_radius}px !important;
-			}
-			.wcc-showcase-{$wccs_id} .splide__pagination__page:hover{
-				background-color: {$counter_hover_bg};
-				color: {$counter_hover_text};
-			}
-			.wcc-showcase-{$wccs_id} .splide__arrow--prev, .wcc-showcase-{$wccs_id} .splide__arrow--next {
-				background-color: {$navigation_bg};
-				color: {$navigation_text_color};
-			}
-			.wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--prev::before, .wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--next::before {
-				color: {$navigation_text_color} !important;
-			}
-			.wcc-showcase-{$wccs_id} .splide__arrow--prev:hover, .wcc-showcase-{$wccs_id} .splide__arrow--next:hover{
-				background-color: {$navigation_hover_bg};
-				color: {$navigation_hover_text_color};
-			}
-
-			.wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--prev:hover::before, .wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--next:hover::before{
-				color: {$navigation_hover_text_color} !important;
-			}
-
-			.wcc-showcase-{$wccs_id} .wccs-showcase-btn, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn{
-				background-color: {$shop_now_btn_bg};
-				border: 1px solid {$shop_now_btn_border_color};
-				color: {$shop_now_btn_text_color};
-			}
-			.wcc-showcase-{$wccs_id} .wccs-showcase-btn:hover, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn:hover{
-				background-color: {$shop_now_btn_hover_bg} !important;
-				border: 1px solid {$shop_now_btn_border_hover_color} !important;
-				color: {$shop_now_btn_hover_text_color} !important;
-			}
-
-			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details {
-				padding: {$content_padding_top}px {$content_padding_right}px {$content_padding_bottom}px {$content_padding_left}px;
-			}
-		";
-
-		if ( 'yes' !== $showcase['show_button_icon'] ) {
-			$styles .= "
-				.wcc-showcase-{$wccs_id} .wccs-showcase-btn::after, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn::after{
-					content: '' !important;
-				}
-			";
-		}
-
-		$styles = apply_filters( 'wccs_showcase_styles', $styles, $wccs_id, $showcase );
+		// Enqueue the showcase inline styles.
+		$styles = self::get_showcase_styles( $showcase, $wccs_id );
+		$styles = apply_filters( 'wccs_showcase_styles', $styles, $showcase, $wccs_id );
 		wp_add_inline_style( 'wcc-showcase-showcase', $styles );
 
 		ob_start();
@@ -287,6 +156,9 @@ class Shortcodes {
 
 				<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
 					<div class="wccs-entry__content-inner">
+						<?php if ( 'yes' === $showcase['show_category_icon'] && 'yes' === $category['is_icon'] ) { ?>
+							<?php printf( '<i class="category-icon %s"></i>', esc_attr( $category['icon_name'] ) ); ?>
+						<?php } ?>
 						<?php if ( 'yes' === $showcase['show_category_title'] ) { ?>
 							<?php printf( '<%s class="category-name"><a href="%s">%s</a></%s>', esc_attr( $showcase['font_category_title']['text_tag'] ), esc_url( $category['cat_link'] ), esc_attr( $category['custom_name'] ), esc_attr( $showcase['font_category_title']['text_tag'] ) ); ?>
 						<?php } ?>
@@ -510,5 +382,148 @@ class Shortcodes {
 		}
 		$slider_classes = apply_filters( 'wcc_showcase_slider_classes', $slider_classes, $category_showcase );
 		return $slider_classes;
+	}
+
+	/**
+	 * Get showcase styles.
+	 *
+	 * @param array $showcase Showcase settings.
+	 * @param int   $wccs_id Showcase ID.
+	 *
+	 * @return string
+	 */
+	public static function get_showcase_styles( $showcase , $wccs_id ){
+		// Get the showcase individual style.
+		$card_bg_color         = $showcase['card']['background_color'] ? $showcase['card']['background_color'] : '';
+		$card_bg_hover_color   = $showcase['card']['hover_color'] ? $showcase['card']['hover_color'] : '';
+		$card_text_color       = $showcase['card']['text_color'] ? $showcase['card']['text_color'] : '';
+		$card_text_hover_color = $showcase['card']['hover_text_color'] ? $showcase['card']['hover_text_color'] : '';
+		$card_border_radius    = $showcase['border_radius'] ? $showcase['border_radius'] : '';
+		$card_gap              = $showcase['gap_between_cards'] ? $showcase['gap_between_cards'] : '';
+		$card_gap              = $card_gap / 16;
+
+		$card_content_padding        = $showcase['content_padding'] ? $showcase['content_padding'] : '';
+		$card_content_padding_is_all = 'yes' === $showcase['content_padding_is_all'] ? $showcase['content_padding_is_all'] : 'no';
+		if ( 'yes' === $card_content_padding_is_all ) {
+			$content_padding_top    = $showcase['content_padding_all']['top'] ? $showcase['content_padding_all']['top'] : '';
+			$content_padding_right  = $showcase['content_padding_all']['right'] ? $showcase['content_padding_all']['right'] : '';
+			$content_padding_bottom = $showcase['content_padding_all']['bottom'] ? $showcase['content_padding_all']['bottom'] : '';
+			$content_padding_left   = $showcase['content_padding_all']['left'] ? $showcase['content_padding_all']['left'] : '';
+		} else {
+			$content_padding_top    = $card_content_padding;
+			$content_padding_right  = $card_content_padding;
+			$content_padding_bottom = $card_content_padding;
+			$content_padding_left   = $card_content_padding;
+		}
+
+		$shop_now_btn_bg                 = $showcase['button']['background_color'] ? $showcase['button']['background_color'] : '';
+		$shop_now_btn_text_color         = $showcase['button']['text_color'] ? $showcase['button']['text_color'] : '';
+		$shop_now_btn_hover_bg           = $showcase['button']['hover_color'] ? $showcase['button']['hover_color'] : '';
+		$shop_now_btn_hover_text_color   = $showcase['button']['hover_text_color'] ? $showcase['button']['hover_text_color'] : '';
+		$shop_now_btn_border_color       = $showcase['button']['border_color'] ? $showcase['button']['border_color'] : '';
+		$shop_now_btn_border_hover_color = $showcase['button']['border_hover_color'] ? $showcase['button']['border_hover_color'] : '';
+
+		$navigation_bg               = $showcase['slide_button']['background_color'] ? $showcase['slide_button']['background_color'] : '';
+		$navigation_text_color       = $showcase['slide_button']['text_color'] ? $showcase['slide_button']['text_color'] : '';
+		$navigation_hover_bg         = $showcase['slide_button']['hover_color'] ? $showcase['slide_button']['hover_color'] : '';
+		$navigation_hover_text_color = $showcase['slide_button']['hover_text_color'] ? $showcase['slide_button']['hover_text_color'] : '';
+
+		$counter_bg         = $showcase['slide_counter']['background_color'] ? $showcase['slide_counter']['background_color'] : '';
+		$counter_text       = $showcase['slide_counter']['text_color'] ? $showcase['slide_counter']['text_color'] : '';
+		$counter_hover_bg   = $showcase['slide_counter']['hover_color'] ? $showcase['slide_counter']['hover_color'] : '';
+		$counter_hover_text = $showcase['slide_counter']['hover_text_color'] ? $showcase['slide_counter']['hover_text_color'] : '';
+
+		$styles = "
+			.wccs-categories__{$wccs_id}{
+				gap: {$card_gap}rem !important;
+			}
+			.wccs-showcase-id__{$wccs_id}, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item{
+				background-color: {$card_bg_color};
+				color: {$card_text_color};
+				border-radius: {$card_border_radius}px;
+				transition: 0.3s;
+			}
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content {
+				border-radius: {$card_border_radius}px;
+			}
+
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner p, .wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
+				color: {$card_text_hover_color};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item p{
+				color: {$card_text_color};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover p{
+				color: {$card_text_hover_color};
+			}
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
+				color: {$card_text_color};
+			}
+			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a:hover {
+				color: {$card_text_hover_color};
+			}
+
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item__cat-products a:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item__sub-cat__sub-cat-list__item a:hover{
+				color: {$card_text_hover_color} !important;
+				opacity: .6 !important;
+			}
+
+			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
+				background-color: {$card_bg_hover_color};
+				color: {$card_text_hover_color};
+			}
+			.wcc-showcase-{$wccs_id} .splide__pagination__page{
+				background-color: {$counter_bg};
+				color: {$counter_text};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item .slider-cat-image{
+				border-top-left-radius: {$card_border_radius}px !important;
+				border-top-right-radius: {$card_border_radius}px !important;
+			}
+			.wcc-showcase-{$wccs_id} .splide__pagination__page:hover{
+				background-color: {$counter_hover_bg};
+				color: {$counter_hover_text};
+			}
+			.wcc-showcase-{$wccs_id} .splide__arrow--prev, .wcc-showcase-{$wccs_id} .splide__arrow--next {
+				background-color: {$navigation_bg};
+				color: {$navigation_text_color};
+			}
+			.wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--prev::before, .wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--next::before {
+				color: {$navigation_text_color} !important;
+			}
+			.wcc-showcase-{$wccs_id} .splide__arrow--prev:hover, .wcc-showcase-{$wccs_id} .splide__arrow--next:hover{
+				background-color: {$navigation_hover_bg};
+				color: {$navigation_hover_text_color};
+			}
+
+			.wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--prev:hover::before, .wcc-showcase-{$wccs_id} .wcc-showcase__navigation .splide__arrow--next:hover::before{
+				color: {$navigation_hover_text_color} !important;
+			}
+
+			.wcc-showcase-{$wccs_id} .wccs-showcase-btn, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn{
+				background-color: {$shop_now_btn_bg};
+				border: 1px solid {$shop_now_btn_border_color};
+				color: {$shop_now_btn_text_color};
+			}
+			.wcc-showcase-{$wccs_id} .wccs-showcase-btn:hover, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn:hover{
+				background-color: {$shop_now_btn_hover_bg} !important;
+				border: 1px solid {$shop_now_btn_border_hover_color} !important;
+				color: {$shop_now_btn_hover_text_color} !important;
+			}
+
+			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details {
+				padding: {$content_padding_top}px {$content_padding_right}px {$content_padding_bottom}px {$content_padding_left}px;
+			}
+		";
+
+		if ( 'yes' !== $showcase['show_button_icon'] ) {
+			$styles .= "
+				.wcc-showcase-{$wccs_id} .wccs-showcase-btn::after, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn::after{
+					content: '' !important;
+				}
+			";
+		}
+
+		return $styles;
 	}
 }

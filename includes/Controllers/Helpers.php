@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
  * Helpers class.
  *
  * @since 1.0.0
- * @package WooCommerceCategoryShowcase
+ * @package WooCommerceCategoryShowcase.
  */
 class Helpers {
 	/**
