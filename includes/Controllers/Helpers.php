@@ -18,7 +18,6 @@ class Helpers {
 	 * @param int           $post_id Post ID.
 	 *
 	 * @since 1.0.0
-	 *
 	 * @return array
 	 */
 	public static function get_category_details( $category_id, $post_id = null ) {
@@ -82,7 +81,6 @@ class Helpers {
 	 * @param \WP_Term| int $parent_category_id Parent Category id.
 	 *
 	 * @since 1.0.0
-	 *
 	 * @return string
 	 */
 	public static function get_product_count_in_category( $parent_category_id ) {
@@ -104,7 +102,7 @@ class Helpers {
 		$args = array(
 			'post_type'      => 'product',
 			'posts_per_page' => - 1, // No limit.
-			'tax_query'      => array( //phpcs:ignore
+			'tax_query'      => array(
 				array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'term_id',
@@ -133,7 +131,6 @@ class Helpers {
 	 * @param \WP_Term| int $parent_category_id Parent Category ID.
 	 *
 	 * @since 1.0.0
-	 *
 	 * @return array
 	 */
 	public static function get_child_categories( $parent_category_id ) {
@@ -164,7 +161,6 @@ class Helpers {
 	 * @param \WP_Term| int $category Category title.
 	 *
 	 * @since 1.0.0
-	 *
 	 * @return string
 	 */
 	public static function get_category_title( $category ) {

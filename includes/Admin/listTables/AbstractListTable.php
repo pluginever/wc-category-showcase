@@ -46,14 +46,14 @@ abstract class AbstractListTable extends \WP_List_Table {
 	 * @since 1.0.0
 	 */
 	public function process_bulk_actions( $doaction ) {
-		if ( ! empty( $_GET['_wp_http_referer'] ) || ! empty( $_GET['_wpnonce'] ) ) { // phpcs:ignore
+		if ( ! empty( $_GET['_wp_http_referer'] ) || ! empty( $_GET['_wpnonce'] ) ) {
 			wp_safe_redirect(
 				remove_query_arg(
 					array(
 						'_wp_http_referer',
 						'_wpnonce',
 					),
-					wp_unslash( $_SERVER['REQUEST_URI'] ) // phpcs:ignore
+					wp_unslash( $_SERVER['REQUEST_URI'] )
 				)
 			);
 			exit;

@@ -155,8 +155,8 @@ class Admin {
 
 		foreach ( $settings as $key => $default_value ) {
 			$post_key = 'wcc_showcase_' . $key;
-			if ( isset( $_POST[ $post_key ] ) ) { //phpcs:ignore
-				$meta_value = wp_unslash( $_POST[ $post_key ] ); //phpcs:ignore
+			if ( isset( $_POST[ $post_key ] ) ) {
+				$meta_value = wp_unslash( $_POST[ $post_key ] );
 				$meta_value = is_scalar( $meta_value ) ? sanitize_text_field( $meta_value ) : map_deep( $meta_value, 'sanitize_text_field' );
 
 				if ( 'wcc_showcase_category_list_item' === $post_key ) {

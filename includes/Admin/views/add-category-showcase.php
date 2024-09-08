@@ -187,7 +187,7 @@ defined( 'ABSPATH' ) || exit;
 					<div class="bk-card__footer">
 						<input type="hidden" name="action" value="wcc_showcase_add_category_showcase"/>
 						<?php wp_nonce_field( 'wcc_showcase_add_category_showcase' ); ?>
-						<?php if ( ! isset( $_GET['edit'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
+						<?php if ( ! isset( $_GET['edit'] ) ) { ?>
 						<button class="button button-primary bk-w-100"><?php esc_html_e( 'Publish', 'wc-category-showcase' ); ?></button>
 						<?php } else { ?>
 							<input type="hidden" name="post_id" value="<?php echo esc_attr( $post_id ); ?>">
@@ -196,7 +196,7 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 
-				<?php if ( isset( $_GET['edit'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
+				<?php if ( isset( $_GET['edit'] ) ) { ?>
 					<div class="bk-card">
 						<div class="bk-card__header">
 							<h2 class="bk-card__title"><?php esc_html_e( 'Shortcode', 'wc-category-showcase' ); ?></h2>

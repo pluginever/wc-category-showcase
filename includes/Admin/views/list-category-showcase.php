@@ -28,7 +28,7 @@ $list_table->prepare_items();
 	</form>
 	<form id="wc-category-showcase-table" method="get">
 		<?php
-		$status = isset( $_GET['status'] ) ? sanitize_text_field( wp_unslash( $_GET['status'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$status = isset( $_GET['status'] ) ? sanitize_text_field( wp_unslash( $_GET['status'] ) ) : '';
 		$list_table->views();
 		$list_table->search_box( __( 'Search', 'wc-category-showcase' ), 'key' );
 		$list_table->display();

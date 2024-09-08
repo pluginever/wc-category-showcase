@@ -44,10 +44,10 @@ class ShowcaseListTable extends AbstractListTable {
 		$hidden                = $this->get_hidden_columns();
 		$this->_column_headers = array( $columns, $hidden, $sortable );
 		$per_page              = 20;
-		$order_by              = isset( $_GET['orderby'] ) ? sanitize_key( wp_unslash( $_GET['orderby'] ) ) : ''; // phpcs:ignore
-		$order                 = isset( $_GET['order'] ) ? sanitize_key( wp_unslash( $_GET['order'] ) ) : ''; // phpcs:ignore
-		$search                = isset( $_GET['s'] ) ? sanitize_key( wp_unslash( $_GET['s'] ) ) : ''; // phpcs:ignore
-		$current_page          = isset( $_GET['paged'] ) ? sanitize_key( wp_unslash( $_GET['paged'] ) ) : 1; // phpcs:ignore
+		$order_by              = isset( $_GET['orderby'] ) ? sanitize_key( wp_unslash( $_GET['orderby'] ) ) : '';
+		$order                 = isset( $_GET['order'] ) ? sanitize_key( wp_unslash( $_GET['order'] ) ) : '';
+		$search                = isset( $_GET['s'] ) ? sanitize_key( wp_unslash( $_GET['s'] ) ) : '';
+		$current_page          = isset( $_GET['paged'] ) ? sanitize_key( wp_unslash( $_GET['paged'] ) ) : 1;
 		if ( ! empty( $search ) ) {
 			$args = array(
 				'post_type'      => 'wccs_showcase',
@@ -157,7 +157,7 @@ class ShowcaseListTable extends AbstractListTable {
 			$ids = filter_input( INPUT_GET, 'ids', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY );
 			if ( ! empty( $id ) ) {
 				$ids      = wp_parse_id_list( $id );
-				$doaction = ( - 1 !== $_REQUEST['action'] ) ? $_REQUEST['action'] : $_REQUEST['action2']; // phpcs:ignore
+				$doaction = ( - 1 !== $_REQUEST['action'] ) ? $_REQUEST['action'] : $_REQUEST['action2'];
 			} elseif ( ! empty( $ids ) ) {
 				$ids = array_map( 'absint', $ids );
 			} elseif ( wp_get_referer() ) {

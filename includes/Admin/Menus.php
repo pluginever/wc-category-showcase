@@ -86,8 +86,8 @@ class Menus {
 	 * @since 1.0.0
 	 */
 	public function showcase_list_render() {
-		$add              = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$post_id          = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$add              = isset( $_GET['add'] ) ? true : false;
+		$post_id          = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
 		$showcase_details = Helpers::get_slider_settings( $post_id );
 		if ( $add ) {
 			include __DIR__ . '/views/add-category-showcase.php';

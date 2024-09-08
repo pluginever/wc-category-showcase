@@ -333,7 +333,6 @@ class Shortcodes {
 	 * @param string $config Slider config.
 	 */
 	public static function get_slider_content_html( $wccs_id, $layout, $category_showcase, $class_list, $config ) {
-
 		$post_id = $wccs_id;
 		if ( 'all' === $category_showcase['category_filter'] ) {
 			$hide_empty = isset( $category_showcase['hide_empty_categories'] ) && 'yes' === $category_showcase['hide_empty_categories'] ? true : false;
