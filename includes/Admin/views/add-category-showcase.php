@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="tw-mx-auto">
 					<div class="w-full">
 						<label for="wcc_showcase_title">
-							<input type="text" class="tw-w-full" placeholder="<?php esc_html_e( 'Add title...', 'wc-category-showcase' ); ?>" name="wcc_showcase_title" id="wcc_showcase_title" value="<?php echo esc_attr( $showcase_details['post_title'] ); ?>">
+							<input type="text" class="tw-w-full tw-h-10" placeholder="<?php esc_html_e( 'Add title...', 'wc-category-showcase' ); ?>" name="wcc_showcase_title" id="wcc_showcase_title" value="<?php echo esc_attr( $showcase_details['post_title'] ); ?>">
 						</label>
 					</div>
 				</div>

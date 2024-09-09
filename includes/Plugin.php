@@ -56,9 +56,21 @@ final class Plugin extends ByteKit\Plugin {
 	 * @return void
 	 */
 	public function init_hooks() {
+		register_activation_hook( $this->get_file(), array( $this, 'install' ) );
 		add_action( 'plugins_loaded', array( $this, 'on_init' ), 0 );
 		add_action( 'before_woocommerce_init', array( $this, 'on_before_woocommerce_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
+	}
+
+	/**
+	 * Run on plugin activation.
+	 *
+	 * @since 2.1.0
+	 * @return void
+	 */
+	public function install() {
+		// Add option for installed time.
+		add_option( 'wccs_installed', wp_date( 'U' ) );
 	}
 
 	/**
@@ -86,6 +98,7 @@ final class Plugin extends ByteKit\Plugin {
 		if ( is_admin() ) {
 			$this->set( Admin\Admin::class );
 			$this->set( Admin\Menus::class );
+			$this->set( Admin\Notices::class );
 		}
 
 		/**

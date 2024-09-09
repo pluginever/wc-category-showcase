@@ -306,6 +306,8 @@ var AestheticIconPicker = function(option) {
 	}
 
 };
+// Icon Picker End.
+
 
 (function ($, window, document, wp, undefined) {
 	window.wcc_showcase_admin = {
@@ -787,15 +789,11 @@ var AestheticIconPicker = function(option) {
 			});
 			// Image upload end.
 
-
-
-
 			//Icon picker start.
 			function load_icon_picker(){
 				$('.icon-picker-wrap').each(function (){
 					var id = $(this).attr('id');
 					var trigger = $(this).children('a' ).attr('id');
-					console.log(trigger);
 					AestheticIconPicker({
 						selector: '#'+id,
 						onClick: '#'+trigger,
