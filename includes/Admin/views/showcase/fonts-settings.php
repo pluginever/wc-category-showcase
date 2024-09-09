@@ -98,7 +98,7 @@ defined( 'ABSPATH' ) || exit;
 									</svg>
 								</div>
 							</div>
-							<div class="custom-options tw-w-[336px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden">
+							<div class="custom-options tw-w-[336px] tw-bg-white tw-border-divider-grey-100 tw-rounded-md tw-hidden tw-max-h-[200px] tw-overflow-scroll">
 								<span class="custom-option <?php echo 'Roboto' === $showcase_details['font_main_title']['font_family'] ? 'selected' : ''; ?> wcc_showcase_font_main_title-font-family" data-value="<?php echo esc_attr( 'Roboto' ); ?>">
 									<?php esc_html_e( 'Roboto', 'wc-category-showcase' ); ?>
 								</span>

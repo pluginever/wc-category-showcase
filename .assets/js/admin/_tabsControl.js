@@ -49,6 +49,26 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
+	const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-family');
+	for (const option of document.querySelectorAll(".wcc_showcase_font_main_title-font-family")) {
+		if (option.classList.contains('selected')) {
+			option.parentNode.querySelector('.wcc_showcase_font_main_title-font-family.selected').classList.remove('selected');
+			option.classList.add('selected');
+			document.getElementById("wcc_showcase_font_main_title_font_family").value = option.dataset.value;
+			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+		}
+	}
+
+	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-weight');
+	for (const option of document.querySelectorAll(".wcc_showcase_font_main_title-font-weight")) {
+		if (option.classList.contains('selected')) {
+			option.parentNode.querySelector('.wcc_showcase_font_main_title-font-weight.selected').classList.remove('selected');
+			option.classList.add('selected');
+			document.getElementById("wcc_showcase_font_main_title_text_weight").value = option.dataset.value;
+			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
+		}
+	}
+
 	// const select = document.querySelectorAll('.wccs-font_category_title-font-family');
 	for (const option of document.querySelectorAll(".wccs-font_category_title-font-family")) {
 		if (option.classList.contains('selected')) {
@@ -65,26 +85,6 @@ window.addEventListener("DOMContentLoaded", function() {
 			option.parentNode.querySelector('.wccs-font_category_title-font-weight.selected').classList.remove('selected');
 			option.classList.add('selected');
 			document.getElementById("wcc_showcase_font_category_title_text_weight").value = option.dataset.value;
-			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
-		}
-	}
-
-	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-family');
-	for (const option of document.querySelectorAll(".wcc_showcase_font_main_title-font-family")) {
-		if (option.classList.contains('selected')) {
-			option.parentNode.querySelector('.wcc_showcase_font_main_title-font-family.selected').classList.remove('selected');
-			option.classList.add('selected');
-			document.getElementById("wcc_showcase_font_main_title_font_family").value = option.dataset.value;
-			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
-		}
-	}
-
-	// const select = document.querySelectorAll('.wcc_showcase_font_main_title-font-weight');
-	for (const option of document.querySelectorAll(".wcc_showcase_font_main_title-font-weight")) {
-		if (option.classList.contains('selected')) {
-			option.parentNode.querySelector('.wcc_showcase_font_main_title-font-weight.selected').classList.remove('selected');
-			option.classList.add('selected');
-			document.getElementById("wcc_showcase_font_main_title_text_weight").value = option.dataset.value;
 			option.closest('.select').querySelector('.select__trigger span').innerHTML = option.innerHTML;
 		}
 	}

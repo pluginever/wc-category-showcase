@@ -585,11 +585,11 @@ var AestheticIconPicker = function(option) {
 			});
 
 			// custom select option start
-			$(document).on('click', '#wcc_showcase-tab-select, #wcc_showcase-ticker-direction,#wcc_showcase-select-sort-by, #wcc_showcase-select-sort, .wcc_showcase-select-category-list-update, #wcc_showcase-select-interactive-hover-style, .wcc_showcase-select-font-family, #wcc-showcase-navigation-position, #wcc_showcase-overlay-content', function (e) {
+			$(document).on('click', '#wcc_showcase-tab-select, #wcc_showcase-ticker-direction,#wcc_showcase-select-sort-by, #wcc_showcase-select-sort, .wcc_showcase-select-category-list-update, .wcc_showcase-select-font-family, #wcc_showcase-select-interactive-hover-style, .wcc_showcase-main-title-font-family, .wcc_showcase-category-title-font-family, #wcc-showcase-navigation-position, #wcc_showcase-overlay-content', function (e) {
 				$(this).children().children('.custom-options').toggleClass('tw-hidden');
 			});
 
-			$(document).on('click', '#wcc_showcase-ticker-direction .custom-options .custom-option, #wcc_showcase-select-sort-by .custom-options .custom-option, #wcc_showcase-select-sort .custom-options .custom-option, .wcc_showcase-select-category-list-update .custom-options .custom-option, #wcc_showcase-select-interactive-hover-style .custom-options .custom-option, .wcc_showcase-select-font-family .custom-options .custom-option, #wcc-showcase-navigation-position .custom-options .custom-option, #wcc_showcase-overlay-content .custom-options .custom-option', function (e) {
+			$(document).on('click', '.wcc_showcase-category-title-font-family .custom-options .custom-option, #wcc_showcase-ticker-direction .custom-options .custom-option, #wcc_showcase-select-sort-by .custom-options .custom-option, #wcc_showcase-select-sort .custom-options .custom-option, .wcc_showcase-select-category-list-update .custom-options .custom-option, #wcc_showcase-select-interactive-hover-style .custom-options .custom-option, .wcc_showcase-main-title-font-family .custom-options .custom-option, .wcc_showcase-select-font-family .custom-options .custom-option, #wcc-showcase-navigation-position .custom-options .custom-option, #wcc_showcase-overlay-content .custom-options .custom-option', function (e) {
 				var currentOption = $(this).data('value');
 				$($(this).parent()).find('.custom-option').each(function() {
 					$(this).removeClass('selected');
@@ -786,6 +786,8 @@ var AestheticIconPicker = function(option) {
 					.open();
 			});
 			// Image upload end.
+
+
 
 
 			//Icon picker start.
