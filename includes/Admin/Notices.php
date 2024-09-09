@@ -29,7 +29,7 @@ class Notices {
 		$installed_time = get_option( 'wccs_installed' );
 		$current_time   = wp_date( 'U' );
 
-		if ( ! defined( 'WCKM_PRO_VERSION' ) ) {
+		if ( ! defined( 'WC_CATEGORY_SHOWCASE_PRO_VERSION' ) ) {
 			wc_category_showcase()->notices->add(
 				array(
 					'message'     => __DIR__ . '/views/notices/upgrade.php',
