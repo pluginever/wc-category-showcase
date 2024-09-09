@@ -215,7 +215,7 @@ class Shortcodes {
 			);
 			$categories = Helpers::get_all_categories( $args );
 		} else {
-			$categories = isset( $category_showcase['specific_category_select'] ) ? $category_showcase['specific_category_select'] : array();
+			$categories = isset( $category_showcase['category_list_item'] ) ? $category_showcase['category_list_item'] : array();
 		}
 		$categories = array_slice( $categories, 0, $category_showcase['category_display_limit'], true );
 
@@ -238,7 +238,7 @@ class Shortcodes {
 								if ( 'all' === $category_showcase['category_filter'] ) {
 									$category_details = Helpers::get_category_details( $category->term_id );
 								} else {
-									$category_details = Helpers::get_category_details( $category, $post_id );
+									$category_details = Helpers::get_category_details( $category['cat_id'], $post_id );
 								}
 								$ribbon_placement = ( 'left' === $category_showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 								?>

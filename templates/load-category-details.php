@@ -184,7 +184,7 @@
 				<input type="hidden" class="wcc-showcase-label-color" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][label_color]" value="<?php echo esc_attr( $category_details['label_color'] ); ?>">
 			</div>
 		</div>
-		<input type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][position]" class="wcc_showcase_category_position" value="<?php echo esc_attr( $category_details['cat_id'] ); ?>">
+		<input type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][position]" class="wcc_showcase_category_position" value="<?php echo esc_attr( $category_details['position'] ); ?>">
 		<input type="hidden" name="wcc_showcase_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][cat_id]" value="<?php echo esc_attr( $category_details['cat_id'] ); ?>">
 	</div>
 </div>

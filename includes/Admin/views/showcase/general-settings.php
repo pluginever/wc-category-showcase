@@ -1214,7 +1214,8 @@ defined( 'ABSPATH' ) || exit;
 					<?php
 					$categories          = get_terms(
 						array(
-							'taxonomy' => 'product_cat',
+							'taxonomy'   => 'product_cat',
+							'hide_empty' => false,
 						)
 					);
 					$selected_categories = isset( $showcase_details['specific_category_select'] ) ? map_deep( $showcase_details['specific_category_select'], 'absint' ) : array();
