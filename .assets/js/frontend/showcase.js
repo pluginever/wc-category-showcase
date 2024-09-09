@@ -27,6 +27,7 @@ jQuery(document).ready(function ($) {
 		gap = grid_value.gap / 16;
 		var splide = new Splide( '#'+sliderId, {
 			autoScroll: autoScroll,
+			gap: gap+'rem',
 			grid: {
 				dimensions: [ [grid_value.rows, grid_value.columns] ],
 				gap : {

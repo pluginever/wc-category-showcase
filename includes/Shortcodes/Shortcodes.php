@@ -341,7 +341,7 @@ class Shortcodes {
 		"pagination": ' . ( 'yes' === $category_showcase['slide_show_counter'] ? 'true' : 'false' ) . ',
 		"rewind": true,
 		"rewindSpeed": ' . ( ! empty( $category_showcase['slide_speed'] ) ? $category_showcase['slide_speed'] : '3000' ) . ',
-		"speed": 1000,
+		"speed": 1500,
 		"interval": ' . ( ! empty( $category_showcase['slide_speed'] ) ? $category_showcase['slide_speed'] : '3000' ) . ',
 		"drag":' . ( 'yes' === $category_showcase['slide_draggable_slide'] ? 'true' : 'false' ) . ',
 		"pauseOnHover":' . ( 'yes' === $category_showcase['slide_stop_on_hover'] ? 'true' : 'false' ) . ',
