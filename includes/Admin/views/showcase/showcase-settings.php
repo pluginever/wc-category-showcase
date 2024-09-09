@@ -504,6 +504,18 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Categories Image', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose to Show/Hide images to visually represent each category in your showcase.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<label class="tw-inline-flex tw-cursor-pointer">
+			<input type="checkbox" name="wcc_showcase_show_category_image" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['show_category_image'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
+		</label>
+	</div>
+</div>
+<div class="wcc_showcase-settings-row">
+	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Categories Icon', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Choose to Show/Hide icons to visually represent each category in your showcase.', 'wc-category-showcase' ); ?></p>
 	</div>

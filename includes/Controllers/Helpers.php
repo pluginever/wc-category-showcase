@@ -257,6 +257,7 @@ class Helpers {
 				'bottom' => '16',
 				'left'   => '16',
 			),
+			'show_category_image'               => 'yes',
 			'show_category_icon'                => 'yes',
 			'show_category_title'               => 'yes',
 			'show_category_description'         => 'yes',

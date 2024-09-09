@@ -247,14 +247,18 @@ class Shortcodes {
 										<div class="wcc-showcase-ribbon wcc-showcase-ribbon-<?php echo esc_attr( $category_details['label_color'] ); ?> wcc-showcase-ribbon-<?php echo esc_attr( $ribbon_placement ); ?>">
 											<?php echo esc_attr( $category_details['label_text'] ); ?>
 										</div>
-									<?php } ?>
-									<div class="wcc-showcase-slide-item__cat-thumbnails">
-										<div class="wcc-showcase-slide-item__cat-thumbnails__image">
-											<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
-												<img class="slider-cat-image" src="<?php echo esc_url( $category_details['image_url'] ); ?>" alt="<?php echo esc_attr( $category_details['slug'] ); ?>">
-											</a>
+										<?php
+									}
+									if ( 'yes' === $category_showcase['show_category_image'] ) {
+										?>
+										<div class="wcc-showcase-slide-item__cat-thumbnails">
+											<div class="wcc-showcase-slide-item__cat-thumbnails__image">
+												<a href="<?php echo esc_url( $category_details['cat_link'] ); ?>">
+													<img class="slider-cat-image" src="<?php echo esc_url( $category_details['image_url'] ); ?>" alt="<?php echo esc_attr( $category_details['slug'] ); ?>">
+												</a>
+											</div>
 										</div>
-									</div>
+									<?php } ?>
 									<div class="wcc-showcase-slide-item__cat-details wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
 										<div class="wccs-entry__content-inner">
 											<?php if ( 'yes' === $category_showcase['show_category_icon'] && 'yes' === $category_details['is_icon'] ) { ?>
