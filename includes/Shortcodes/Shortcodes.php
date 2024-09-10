@@ -409,10 +409,10 @@ class Shortcodes {
 		$card_content_padding        = $showcase['content_padding'] ? $showcase['content_padding'] : '';
 		$card_content_padding_is_all = 'yes' === $showcase['content_padding_is_all'] ? $showcase['content_padding_is_all'] : 'no';
 		if ( 'yes' === $card_content_padding_is_all ) {
-			$content_padding_top    = $showcase['content_padding_all']['top'] ? $showcase['content_padding_all']['top'] : '';
-			$content_padding_right  = $showcase['content_padding_all']['right'] ? $showcase['content_padding_all']['right'] : '';
-			$content_padding_bottom = $showcase['content_padding_all']['bottom'] ? $showcase['content_padding_all']['bottom'] : '';
-			$content_padding_left   = $showcase['content_padding_all']['left'] ? $showcase['content_padding_all']['left'] : '';
+			$content_padding_top    = $showcase['content_padding_all']['top'] ? $showcase['content_padding_all']['top'] : '0';
+			$content_padding_right  = $showcase['content_padding_all']['right'] ? $showcase['content_padding_all']['right'] : '0';
+			$content_padding_bottom = $showcase['content_padding_all']['bottom'] ? $showcase['content_padding_all']['bottom'] : '0';
+			$content_padding_left   = $showcase['content_padding_all']['left'] ? $showcase['content_padding_all']['left'] : '0';
 		} else {
 			$content_padding_top    = $card_content_padding;
 			$content_padding_right  = $card_content_padding;
