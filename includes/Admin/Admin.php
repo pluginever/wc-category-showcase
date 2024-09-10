@@ -145,7 +145,7 @@ class Admin {
 			'post_type'   => 'wccs_showcase',
 			'post_status' => 'publish',
 		);
-		$settings = Helpers::get_slider_settings();
+		$settings = Helpers::get_showcase_settings();
 		$post_id  = wp_insert_post( $args );
 		if ( is_wp_error( $post_id ) ) {
 			wc_category_showcase()->flash->error( __( 'Failed to Add Category Showcase: Please Try Again!', 'wc-category-showcase' ) );
@@ -156,8 +156,7 @@ class Admin {
 		foreach ( $settings as $key => $default_value ) {
 			$post_key = 'wcc_showcase_' . $key;
 			if ( isset( $_POST[ $post_key ] ) ) {
-				$meta_value = wp_unslash( $_POST[ $post_key ] );
-				$meta_value = is_scalar( $meta_value ) ? sanitize_text_field( $meta_value ) : map_deep( $meta_value, 'sanitize_text_field' );
+				$meta_value = is_scalar( $_POST[ $post_key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $post_key ] ) ) : map_deep( wp_unslash( $_POST[ $post_key ] ), 'sanitize_text_field' );
 
 				if ( 'wcc_showcase_category_list_item' === $post_key ) {
 					if ( empty( $meta_value ) ) {
@@ -177,6 +176,7 @@ class Admin {
 						}
 					}
 				}
+
 				update_post_meta( $post_id, $post_key, $meta_value );
 			} else {
 				$meta_value = '';

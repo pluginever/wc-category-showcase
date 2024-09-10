@@ -21,42 +21,44 @@ class Helpers {
 	 * @return array
 	 */
 	public static function get_category_details( $category_id, $post_id = null ) {
-		$category_details = array();
+		$category                = get_term( $category_id );
+		$category_details        = array();
+		$category_custom_details = array();
+
+		// Get the custom category details.
 		if ( ! empty( $post_id ) ) {
 			$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_category_list_item', true );
-			$category_custom_details = isset( $category_custom_details ) ? $category_custom_details[ $category_id ] : array();
-		} else {
-			$category_custom_details = array();
+			$category_custom_details = $category_custom_details[ $category_id ] ?? array();
 		}
 
-		$category = get_term( $category_id );
-
 		if ( $category && ! is_wp_error( $category ) ) {
-			$category_image                       = ! empty( esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) ) ? esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) : esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/frontend-placeholder.png' );
-			$category_details['cat_id']           = esc_attr( $category->term_id );
-			$category_details['name']             = esc_attr( $category->name );
-			$category_details['custom_name']      = ! empty( $category_custom_details['name'] ) ? esc_attr( $category_custom_details['name'] ) : esc_attr( $category->name );
-			$category_details['slug']             = esc_attr( $category->slug );
-			$category_details['description']      = ! empty( $category_custom_details['description'] ) ? wp_kses_post( $category_custom_details['description'] ) : wp_kses_post( $category->description );
-			$category_details['image_url']        = ! empty( $category_custom_details['image_url'] ) ? esc_url( $category_custom_details['image_url'] ) : $category_image;
-			$category_details['icon_name']        = ! empty( $category_custom_details['icon_name'] ) ? esc_attr( $category_custom_details['icon_name'] ) : '';
-			$category_details['is_icon']          = ! empty( $category_custom_details['is_icon'] ) ? esc_attr( $category_custom_details['is_icon'] ) : esc_attr( 'no' );
-			$category_details['cat_link']         = esc_url( get_category_link( $category->term_id ) );
-			$category_details['custom_text']      = ! empty( $category_custom_details['custom_text'] ) ? esc_attr( $category_custom_details['custom_text'] ) : '';
-			$category_details['is_custom_text']   = ! empty( $category_custom_details['is_custom_text'] ) ? esc_attr( $category_custom_details['is_custom_text'] ) : esc_attr( 'no' );
-			$category_details['label_text']       = ! empty( $category_custom_details['label_text'] ) ? esc_attr( $category_custom_details['label_text'] ) : esc_attr( '' );
-			$category_details['label_color']      = ! empty( $category_custom_details['label_color'] ) ? esc_attr( $category_custom_details['label_color'] ) : esc_attr( 'green' );
-			$category_details['is_label']         = ! empty( $category_custom_details['is_label'] ) ? esc_attr( $category_custom_details['is_label'] ) : esc_attr( 'no' );
-			$category_details['total_count']      = self::get_product_count_in_category( $category->term_id );
-			$category_details['child_categories'] = self::get_child_categories( $category->term_id );
-			$category_details['position']         = ! empty( $category_custom_details['position'] ) ? esc_attr( $category_custom_details['position'] ) : esc_attr( '0' );
+			$category_image   = wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ? esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) : esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/frontend-placeholder.png' );
+			$category_details = array(
+				'cat_id'           => esc_attr( $category->term_id ),
+				'name'             => esc_attr( $category->name ),
+				'custom_name'      => esc_attr( $category_custom_details['name'] ?? $category->name ),
+				'slug'             => esc_attr( $category->slug ),
+				'description'      => wp_kses_post( $category_custom_details['description'] ?? $category->description ),
+				'image_url'        => esc_url( $category_custom_details['image_url'] ?? $category_image ),
+				'icon_name'        => esc_attr( $category_custom_details['icon_name'] ?? '' ),
+				'is_icon'          => esc_attr( $category_custom_details['is_icon'] ?? 'no' ),
+				'cat_link'         => esc_url( get_category_link( $category->term_id ) ),
+				'custom_text'      => esc_attr( $category_custom_details['custom_text'] ?? '' ),
+				'is_custom_text'   => esc_attr( $category_custom_details['is_custom_text'] ?? 'no' ),
+				'label_text'       => esc_attr( $category_custom_details['label_text'] ?? '' ),
+				'label_color'      => esc_attr( $category_custom_details['label_color'] ?? 'green' ),
+				'is_label'         => esc_attr( $category_custom_details['is_label'] ?? 'no' ),
+				'total_count'      => self::get_product_count_in_category( $category->term_id ),
+				'child_categories' => self::get_child_categories( $category->term_id ),
+				'position'         => esc_attr( $category_custom_details['position'] ?? '0' ),
+			);
 		}
 
 		return $category_details;
 	}
 
 	/**
-	 * Category Product Counts.
+	 * Get Product Categories.
 	 *
 	 * @param array $args Array of query arguments.
 	 *
@@ -64,7 +66,6 @@ class Helpers {
 	 * @return array
 	 */
 	public static function get_all_categories( $args = array() ) {
-
 		$defaults = array(
 			'taxonomy'   => 'product_cat',
 			'number'     => null,
@@ -92,16 +93,11 @@ class Helpers {
 			)
 		);
 
-		// Add the parent category to the array of categories.
-		$category_ids = array( $parent_category_id );
-		foreach ( $categories as $category ) {
-			$category_ids[] = $category->term_id;
-		}
+		$category_ids = array_merge( array( $parent_category_id ), wp_list_pluck( $categories, 'term_id' ) );
 
-		// Set up the query arguments to get products in these categories.
 		$args = array(
 			'post_type'      => 'product',
-			'posts_per_page' => - 1, // No limit.
+			'posts_per_page' => -1,
 			'tax_query'      => array(
 				array(
 					'taxonomy' => 'product_cat',
@@ -110,19 +106,56 @@ class Helpers {
 					'operator' => 'IN',
 				),
 			),
-			'fields'         => 'ids', // Only get product IDs to count them.
+			'fields'         => 'ids',
 		);
 
-		// Execute the query.
-		$query = new \WP_Query( $args );
-
-		// Get the number of products.
+		$query         = new \WP_Query( $args );
 		$product_count = $query->found_posts;
-
-		// Reset the post data.
 		wp_reset_postdata();
 
 		return $product_count;
+	}
+
+	/**
+	 * Get selected categories.
+	 *
+	 * @param array $showcase Showcase settings.
+	 * @param int   $wccs_id Showcase ID.
+	 *
+	 * @since 2.1.0
+	 * @return array
+	 */
+	public static function get_selected_categories( $showcase, $wccs_id = null ) {
+		$hide_empty = isset( $showcase['hide_empty_categories'] ) && 'yes' === $showcase['hide_empty_categories'] ? true : false;
+		if ( 'all' === $showcase['category_filter'] ) {
+			$args       = array(
+				'hide_empty' => $hide_empty,
+				'orderby'    => 'default' === $showcase['category_sort_order_by'] ? 'date' : $showcase['category_sort_order_by'],
+				'order'      => $showcase['category_sort_order'],
+			);
+			$categories = self::get_all_categories( $args );
+		} else {
+			$categories = isset( $showcase['specific_category_select'] ) ? $showcase['specific_category_select'] : array();
+		}
+
+		// Get all categories details.
+		$all_custom_categories = array();
+		if ( 'all' === $showcase['category_filter'] ) {
+			foreach ( $categories as $category ) {
+				$all_custom_categories[] = self::get_category_details( $category->term_id );
+			}
+		} else {
+			foreach ( $categories as $category ) {
+				$all_custom_categories[] = self::get_category_details( $category, $wccs_id );
+			}
+		}
+
+		// Limit the number of categories to display as per the settings and return.
+		$limit = isset( $showcase['number_of_grid_column'] ) && 'grid' === $showcase['layout']
+			? absint( $showcase['number_of_grid_column'] )
+			: ( isset( $showcase['category_display_limit'] ) ? absint( $showcase['category_display_limit'] ) : null );
+
+		return array_slice( $all_custom_categories, 0, $limit, true );
 	}
 
 	/**
@@ -134,46 +167,25 @@ class Helpers {
 	 * @return array
 	 */
 	public static function get_child_categories( $parent_category_id ) {
-
-		// Define the arguments for get_terms.
 		$args = array(
-			'taxonomy'   => 'product_cat', // WooCommerce product category taxonomy.
-			'child_of'   => $parent_category_id, // Parent category ID.
-			'hide_empty' => false, // Show all categories, including those without products.
+			'taxonomy'   => 'product_cat',
+			'child_of'   => $parent_category_id,
+			'hide_empty' => false,
 		);
 
-		// Get the child categories.
-		$child_categories     = array();
 		$all_child_categories = get_terms( $args );
-		foreach ( $all_child_categories as $child_category ) {
-			$child_categories[ $child_category->term_id ]['name']          = $child_category->name;
-			$child_categories[ $child_category->term_id ]['cat_link']      = esc_url( get_category_link( $child_category->term_id ) );
-			$child_categories[ $child_category->term_id ]['total_product'] = esc_attr( self::get_product_count_in_category( $child_category->term_id ) );
-		}
+		$child_categories     = array_map(
+			function ( $child_category ) {
+				return array(
+					'name'          => $child_category->name,
+					'cat_link'      => esc_url( get_category_link( $child_category->term_id ) ),
+					'total_product' => esc_attr( self::get_product_count_in_category( $child_category->term_id ) ),
+				);
+			},
+			$all_child_categories
+		);
 
-		// Return the child categories.
 		return $child_categories;
-	}
-
-	/**
-	 * Get category title.
-	 *
-	 * @param \WP_Term| int $category Category title.
-	 *
-	 * @since 1.0.0
-	 * @return string
-	 */
-	public static function get_category_title( $category ) {
-		$category = get_term( $category );
-		if ( $category && ! is_wp_error( $category ) ) {
-			return sprintf(
-				'(#%1$s) %2$s',
-				$category->term_id,
-				html_entity_decode( $category->name )
-			);
-		}
-
-		return null;
 	}
 
 	/**
@@ -199,7 +211,7 @@ class Helpers {
 	 *
 	 * @return array Returns the slider settings.
 	 */
-	public static function get_slider_settings( $id = null ) {
+	public static function get_showcase_settings( $id = null ) {
 		$settings = array(
 			// General tab settings data.
 			'post_title'                        => '',

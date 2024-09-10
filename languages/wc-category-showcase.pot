@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Product Category Showcase for WooCommerce 2.0.5\n"
+"Project-Id-Version: Product Category Showcase for WooCommerce 2.1.0\n"
 "Report-Msgid-Bugs-To: https://pluginever.com/support/\n"
-"POT-Creation-Date: 2024-09-08 04:25:06+00:00\n"
+"POT-Creation-Date: 2024-09-10 17:55:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -128,15 +128,15 @@ msgstr ""
 msgid "Failed to Add Category Showcase: Please Try Again!"
 msgstr ""
 
-#: includes/Admin/Admin.php:189
+#: includes/Admin/Admin.php:188
 msgid "The category showcase has been successfully updated!"
 msgstr ""
 
-#: includes/Admin/Admin.php:206
+#: includes/Admin/Admin.php:205
 msgid "No, search term provided."
 msgstr ""
 
-#: includes/Admin/Admin.php:257
+#: includes/Admin/Admin.php:256
 msgid "No, search term id provided."
 msgstr ""
 
@@ -186,20 +186,20 @@ msgid "Date created"
 msgstr ""
 
 #: includes/Admin/listTables/ShowcaseListTable.php:143
-#: includes/Admin/listTables/ShowcaseListTable.php:221
+#: includes/Admin/listTables/ShowcaseListTable.php:223
 msgid "Delete"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:178
+#: includes/Admin/listTables/ShowcaseListTable.php:180
 #. translators: %d: number of things deleted.
 msgid "Showcases successfully deleted."
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:220
+#: includes/Admin/listTables/ShowcaseListTable.php:222
 msgid "Edit"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:243
+#: includes/Admin/listTables/ShowcaseListTable.php:245
 #: includes/Admin/views/add-category-showcase.php:207
 msgid "Copy"
 msgstr ""
@@ -319,9 +319,8 @@ msgstr ""
 #: includes/Admin/views/showcase/general-settings.php:454
 #: includes/Admin/views/showcase/general-settings.php:1130
 #: includes/Admin/views/showcase/image-settings.php:126
-#: includes/Admin/views/showcase/showcase-settings.php:148
-#: includes/Admin/views/showcase/showcase-settings.php:331
-#: includes/Admin/views/showcase/showcase-settings.php:728
+#: includes/Admin/views/showcase/showcase-settings.php:312
+#: includes/Admin/views/showcase/showcase-settings.php:840
 #: includes/Admin/views/showcase/slider-settings.php:43
 #: includes/Admin/views/showcase/slider-settings.php:125
 #: includes/Admin/views/showcase/slider-settings.php:456
@@ -347,7 +346,7 @@ msgid "Upgrade to Pro"
 msgstr ""
 
 #: includes/Admin/views/list-category-showcase.php:19
-#: includes/Admin/views/showcase/showcase-settings.php:500
+#: includes/Admin/views/showcase/showcase-settings.php:600
 msgid "Category Showcase"
 msgstr ""
 
@@ -357,6 +356,47 @@ msgstr ""
 
 #: includes/Admin/views/list-category-showcase.php:33
 msgid "Search"
+msgstr ""
+
+#: includes/Admin/views/notices/review.php:20
+msgid "Enjoying WC Category Showcase?"
+msgstr ""
+
+#: includes/Admin/views/notices/review.php:27
+#. translators: %1$s: WC Category Showcase Pro link, %2$s: Coupon code.
+msgid ""
+"We hope you had a wonderful experience using %1$s. Please take a moment to "
+"show us your support by leaving a 5-star review on <a href=\"%2$s\" "
+"target=\"_blank\"><strong>WordPress.org</strong></a>. Thank you! 😊"
+msgstr ""
+
+#: includes/Admin/views/notices/review.php:39
+msgid "Sure, I'd love to help!"
+msgstr ""
+
+#: includes/Admin/views/notices/review.php:43
+#: includes/Admin/views/notices/upgrade.php:41
+msgid "Maybe later"
+msgstr ""
+
+#: includes/Admin/views/notices/review.php:47
+msgid "I've already left a review"
+msgstr ""
+
+#: includes/Admin/views/notices/upgrade.php:19
+msgid "Flash Sale Alert!"
+msgstr ""
+
+#: includes/Admin/views/notices/upgrade.php:25
+#. translators: %1$s: WC Category Showcase Pro link, %2$s: Coupon code.
+msgid ""
+"Get access to %1$s with a <strong>20%% discount</strong> for the next "
+"<strong>72 hours</strong> only! Use coupon code %2$s at checkout. Hurry up, "
+"the offer ends soon."
+msgstr ""
+
+#: includes/Admin/views/notices/upgrade.php:37
+msgid "Upgrade now"
 msgstr ""
 
 #: includes/Admin/views/settings/export-import.php:15
@@ -425,9 +465,8 @@ msgstr ""
 #: includes/Admin/views/showcase/general-settings.php:454
 #: includes/Admin/views/showcase/general-settings.php:1130
 #: includes/Admin/views/showcase/image-settings.php:126
-#: includes/Admin/views/showcase/showcase-settings.php:148
-#: includes/Admin/views/showcase/showcase-settings.php:331
-#: includes/Admin/views/showcase/showcase-settings.php:728
+#: includes/Admin/views/showcase/showcase-settings.php:312
+#: includes/Admin/views/showcase/showcase-settings.php:840
 #: includes/Admin/views/showcase/slider-settings.php:43
 #: includes/Admin/views/showcase/slider-settings.php:125
 #: includes/Admin/views/showcase/slider-settings.php:456
@@ -526,7 +565,7 @@ msgid "COLOR"
 msgstr ""
 
 #: includes/Admin/views/showcase/fonts-settings.php:320
-#: includes/Admin/views/showcase/showcase-settings.php:516
+#: includes/Admin/views/showcase/showcase-settings.php:628
 msgid "Category Title"
 msgstr ""
 
@@ -734,7 +773,7 @@ msgid "Rectangle"
 msgstr ""
 
 #: includes/Admin/views/showcase/image-settings.php:44
-#: includes/Admin/views/showcase/showcase-settings.php:649
+#: includes/Admin/views/showcase/showcase-settings.php:761
 #: includes/Admin/views/showcase/slider-settings.php:323
 msgid "Rounded"
 msgstr ""
@@ -783,7 +822,7 @@ msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:21
 #: includes/Admin/views/showcase/showcase-settings.php:52
-#: includes/Admin/views/showcase/showcase-settings.php:380
+#: includes/Admin/views/showcase/showcase-settings.php:367
 msgid ""
 "This setting allows you to customize the title or heading for the whole "
 "section of your showcase."
@@ -808,20 +847,19 @@ msgid "Alignment"
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:65
-#: includes/Admin/views/showcase/showcase-settings.php:312
-#: includes/Admin/views/showcase/showcase-settings.php:393
+#: includes/Admin/views/showcase/showcase-settings.php:293
+#: includes/Admin/views/showcase/showcase-settings.php:380
 msgid "Left"
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:74
-#: includes/Admin/views/showcase/showcase-settings.php:363
-#: includes/Admin/views/showcase/showcase-settings.php:402
+#: includes/Admin/views/showcase/showcase-settings.php:389
 msgid "Center"
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:85
-#: includes/Admin/views/showcase/showcase-settings.php:300
-#: includes/Admin/views/showcase/showcase-settings.php:413
+#: includes/Admin/views/showcase/showcase-settings.php:281
+#: includes/Admin/views/showcase/showcase-settings.php:400
 msgid "Right"
 msgstr ""
 
@@ -840,234 +878,281 @@ msgid ""
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:104
-#: includes/Admin/views/showcase/showcase-settings.php:670
+#: includes/Admin/views/showcase/showcase-settings.php:489
+#: includes/Admin/views/showcase/showcase-settings.php:782
 #: includes/Admin/views/showcase/slider-settings.php:469
 #: includes/Admin/views/showcase/slider-settings.php:617
 msgid "BG Color"
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:111
-#: includes/Admin/views/showcase/showcase-settings.php:677
+#: includes/Admin/views/showcase/showcase-settings.php:496
+#: includes/Admin/views/showcase/showcase-settings.php:789
 #: includes/Admin/views/showcase/slider-settings.php:476
 #: includes/Admin/views/showcase/slider-settings.php:624
 msgid "Text Color"
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:118
-#: includes/Admin/views/showcase/showcase-settings.php:684
+#: includes/Admin/views/showcase/showcase-settings.php:503
+#: includes/Admin/views/showcase/showcase-settings.php:796
 msgid "Hover BG Color"
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:125
-#: includes/Admin/views/showcase/showcase-settings.php:691
+#: includes/Admin/views/showcase/showcase-settings.php:510
+#: includes/Admin/views/showcase/showcase-settings.php:803
 #: includes/Admin/views/showcase/slider-settings.php:490
 #: includes/Admin/views/showcase/slider-settings.php:638
 msgid "Hover Text Color"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:155
+#: includes/Admin/views/showcase/showcase-settings.php:136
 msgid "Border Radius"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:156
+#: includes/Admin/views/showcase/showcase-settings.php:137
 msgid ""
 "Adjust the degree of curvature for the corners of the category showcase "
 "cards."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:227
+#: includes/Admin/views/showcase/showcase-settings.php:208
 msgid "Gap Between Cards"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:228
+#: includes/Admin/views/showcase/showcase-settings.php:209
 msgid "Control the amount of space between category cards in your showcase."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:245
+#: includes/Admin/views/showcase/showcase-settings.php:226
 msgid "Content Placement"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:246
+#: includes/Admin/views/showcase/showcase-settings.php:227
 msgid "Choose the alignment or position of the contents."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:264
+#: includes/Admin/views/showcase/showcase-settings.php:245
 msgid "Overlay"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:276
+#: includes/Admin/views/showcase/showcase-settings.php:257
 msgid "Top"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:288
+#: includes/Admin/views/showcase/showcase-settings.php:269
 msgid "Bottom"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:338
+#: includes/Admin/views/showcase/showcase-settings.php:319
 msgid "Overlay Content Position"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:339
+#: includes/Admin/views/showcase/showcase-settings.php:320
 msgid "Determine where your category data will show when select overlay."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:346
-#: includes/Admin/views/showcase/showcase-settings.php:357
+#: includes/Admin/views/showcase/showcase-settings.php:327
+#: includes/Admin/views/showcase/showcase-settings.php:338
 #: includes/Admin/views/showcase/slider-settings.php:233
 msgid "Top Left"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:360
+#: includes/Admin/views/showcase/showcase-settings.php:341
+msgid "Top Center"
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:344
 #: includes/Admin/views/showcase/slider-settings.php:230
 msgid "Top Right"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:366
+#: includes/Admin/views/showcase/showcase-settings.php:347
+msgid "Center Center"
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:350
 #: includes/Admin/views/showcase/slider-settings.php:239
 msgid "Bottom Left"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:369
+#: includes/Admin/views/showcase/showcase-settings.php:353
+#: includes/Admin/views/showcase/slider-settings.php:242
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:356
 #: includes/Admin/views/showcase/slider-settings.php:236
 msgid "Bottom Right"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:379
+#: includes/Admin/views/showcase/showcase-settings.php:366
 msgid "Content Alignment"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:420
+#: includes/Admin/views/showcase/showcase-settings.php:407
 msgid "Content Padding"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:421
+#: includes/Admin/views/showcase/showcase-settings.php:408
 msgid ""
 "Adjust the amount of space between the content and the edges of each "
 "category card."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:504
+#: includes/Admin/views/showcase/showcase-settings.php:483
+msgid "Content Inner Color"
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:484
+msgid ""
+"Customize the color or tint of the category showcase cards inner content to "
+"match your store's branding or design scheme."
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:521
+msgid "Content Inner Padding"
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:522
+msgid ""
+"Adjust the amount of space between the inner content and the edges of each "
+"category card."
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:604
+msgid "Categories Image"
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:605
+msgid ""
+"Choose to Show/Hide images to visually represent each category in your "
+"showcase."
+msgstr ""
+
+#: includes/Admin/views/showcase/showcase-settings.php:616
 msgid "Categories Icon"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:505
+#: includes/Admin/views/showcase/showcase-settings.php:617
 msgid ""
 "Choose to Show/Hide icons to visually represent each category in your "
 "showcase."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:517
+#: includes/Admin/views/showcase/showcase-settings.php:629
 msgid "Show/Hide category title to be displayed in the showcase."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:528
+#: includes/Admin/views/showcase/showcase-settings.php:640
 msgid "Category Description"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:529
+#: includes/Admin/views/showcase/showcase-settings.php:641
 msgid ""
 "Show/Hide description or summary for each category to provide additional "
 "context or information."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:540
+#: includes/Admin/views/showcase/showcase-settings.php:652
 msgid "Product Quantity"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:541
+#: includes/Admin/views/showcase/showcase-settings.php:653
 msgid "Display the total number of products within each category."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:552
+#: includes/Admin/views/showcase/showcase-settings.php:664
 msgid "Sub-categories Product Quantity"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:553
+#: includes/Admin/views/showcase/showcase-settings.php:665
 msgid "Show/Hide the total number of products within each subcategory."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:564
+#: includes/Admin/views/showcase/showcase-settings.php:676
 msgid "Custom Text"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:565
+#: includes/Admin/views/showcase/showcase-settings.php:677
 msgid ""
 "Add custom text or message like Price Range, Category Details to further "
 "enhance the description or information for each category."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:579
-#: includes/Admin/views/showcase/showcase-settings.php:604
+#: includes/Admin/views/showcase/showcase-settings.php:691
+#: includes/Admin/views/showcase/showcase-settings.php:716
 msgid "Button Style"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:583
+#: includes/Admin/views/showcase/showcase-settings.php:695
 msgid "Button"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:584
+#: includes/Admin/views/showcase/showcase-settings.php:696
 msgid ""
 "Show/Hide the button to prompt user action, such as exploring the category "
 "or making a purchase."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:595
+#: includes/Admin/views/showcase/showcase-settings.php:707
 msgid "Button Text"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:596
+#: includes/Admin/views/showcase/showcase-settings.php:708
 msgid "Enter the text or label to be displayed on the call-to-action button."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:599
+#: includes/Admin/views/showcase/showcase-settings.php:711
 msgid "type button text..."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:605
+#: includes/Admin/views/showcase/showcase-settings.php:717
 msgid "Choose the visual style or design for the call-to-action button."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:611
-#: includes/Admin/views/showcase/showcase-settings.php:622
-#: includes/Admin/views/showcase/showcase-settings.php:633
-#: includes/Admin/views/showcase/showcase-settings.php:644
+#: includes/Admin/views/showcase/showcase-settings.php:723
+#: includes/Admin/views/showcase/showcase-settings.php:734
+#: includes/Admin/views/showcase/showcase-settings.php:745
+#: includes/Admin/views/showcase/showcase-settings.php:756
 msgid "Shop Now"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:616
+#: includes/Admin/views/showcase/showcase-settings.php:728
 msgid "Only Text"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:627
+#: includes/Admin/views/showcase/showcase-settings.php:739
 msgid "Sharp Corner"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:638
+#: includes/Admin/views/showcase/showcase-settings.php:750
 msgid "Slightly Rounded"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:657
+#: includes/Admin/views/showcase/showcase-settings.php:769
 msgid "Show Arrow Icon"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:664
+#: includes/Admin/views/showcase/showcase-settings.php:776
 #: includes/Admin/views/showcase/slider-settings.php:463
 msgid "Button Color"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:665
+#: includes/Admin/views/showcase/showcase-settings.php:777
 msgid ""
 "Select the color for the call-to-action button to match your store's "
 "branding or design scheme."
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:698
+#: includes/Admin/views/showcase/showcase-settings.php:810
 #: includes/Admin/views/showcase/slider-settings.php:497
 #: includes/Admin/views/showcase/slider-settings.php:645
 msgid "Border Color"
 msgstr ""
 
-#: includes/Admin/views/showcase/showcase-settings.php:705
+#: includes/Admin/views/showcase/showcase-settings.php:817
 #: includes/Admin/views/showcase/slider-settings.php:504
 #: includes/Admin/views/showcase/slider-settings.php:652
 msgid "Border Hover Color"
@@ -1193,10 +1278,6 @@ msgstr ""
 
 #: includes/Admin/views/showcase/slider-settings.php:209
 msgid "Select the navigation position to show in your slider."
-msgstr ""
-
-#: includes/Admin/views/showcase/slider-settings.php:242
-msgid "Bottom Center"
 msgstr ""
 
 #: includes/Admin/views/showcase/slider-settings.php:252
