@@ -234,7 +234,7 @@ class Helpers {
 			'card'                              => array(
 				'background_color' => '#96588AFF',
 				'text_color'       => '#FFFFFFFF',
-				'hover_color'      => '#96588ae6',
+				'hover_color'      => '#96588AE6',
 				'hover_text_color' => '#FFFFFFFF',
 			),
 			'border_radius'                     => 8,
@@ -252,6 +252,20 @@ class Helpers {
 			'content_padding'                   => 16,
 			'content_padding_is_all'            => 'no',
 			'content_padding_all'               => array(
+				'top'    => '16',
+				'right'  => '16',
+				'bottom' => '16',
+				'left'   => '16',
+			),
+			'card_content'                      => array(
+				'background_color' => '#96588A00',
+				'text_color'       => '#FFFFFFFF',
+				'hover_color'      => '#96588A00',
+				'hover_text_color' => '#FFFFFFFF',
+			),
+			'content_inner_padding_is_all'      => 'no',
+			'content_inner_padding'             => 16,
+			'content_inner_padding_all'         => array(
 				'top'    => '16',
 				'right'  => '16',
 				'bottom' => '16',
