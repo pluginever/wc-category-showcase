@@ -1180,7 +1180,7 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Decide whether to display all product categories or selectively choose specific ones to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<span class="tw-isolate tw-inline-flex tw-p-1 tw-rounded-md tw-bg-input-grey-50 tw-shadow-sm tw-min-w-[385px]">
+		<span class="tw-isolate tw-inline-flex tw-p-1 tw-rounded-md tw-bg-input-grey-50 tw-shadow-sm tw-min-w-[340px]">
 			<label class="tw-w-1/2 wcc_showcase-category-filter <?php echo 'all' === $showcase_details['category_filter'] ? 'wcc_showcase-group-button-active' : 'wcc_showcase-group-button'; ?>">
 				<svg class="<?php echo 'all' === $showcase_details['category_filter'] ? 'wcc_showcase-group-button-active-icon' : 'wcc_showcase-group-button-icon'; ?>" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 					<path d="M6.83325 18H3.33325C3.20064 18 3.07347 17.9473 2.9797 17.8536C2.88593 17.7598 2.83325 17.6326 2.83325 17.5V2.5C2.83325 2.36739 2.88593 2.24021 2.9797 2.14645C3.07347 2.05268 3.20064 2 3.33325 2H6.83325V18ZM8.83325 2H12.8333V18H8.83325V2ZM18.3333 18H14.8333V2H18.3333C18.4659 2 18.593 2.05268 18.6868 2.14645C18.7806 2.24021 18.8333 2.36739 18.8333 2.5V17.5C18.8333 17.6326 18.7806 17.7598 18.6868 17.8536C18.593 17.9473 18.4659 18 18.3333 18Z"/>
@@ -1209,7 +1209,7 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'If selecting specific categories, use multi-select mode to easily pick the ones you want to showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col tw-items-center tw-relative">
-		<div class="tw-min-w-[400px] tw-max-w-[400px]">
+		<div class="tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[340px]">
 				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 ">
 					<?php
 					$categories          = get_terms(
@@ -1228,7 +1228,7 @@ defined( 'ABSPATH' ) || exit;
 				</select>
 
 		</div>
-		<div class="tw-mt-6 wcc_showcase-selected-category-list tw-min-w-[400px] tw-max-w-[400px]">
+		<div class="tw-mt-6 wcc_showcase-selected-category-list tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[360px]">
 			<?php
 			$selected_categories = isset( $showcase_details['category_list_item'] ) ? map_deep( $showcase_details['category_list_item'], 'sanitize_text_field' ) : array();
 			$count               = 0;

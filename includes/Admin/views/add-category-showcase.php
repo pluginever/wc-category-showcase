@@ -318,10 +318,10 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 
-<div id="modelConfirm" class="tw-fixed tw-hidden tw-z-50 tw-inset-0 tw-bg-gray-900 tw-bg-opacity-60 tw-overflow-y-auto tw-h-full tw-w-full tw-px-4 tw-rounded-md">
-	<div class="tw-relative tw-top-40 tw-mx-auto tw-shadow-xl tw-rounded-md tw-bg-white tw-h-[400px] tw-w-[500px]">
+<div id="modelConfirm" class="tw-fixed tw-hidden tw-mx-auto tw-z-50 tw-inset-0 tw-bg-gray-900 tw-bg-opacity-60 tw-overflow-y-auto tw-h-full tw-w-full tw-px-4 tw-rounded-md sm:tw-pl-0">
+	<div class="tw-relative tw-top-40 tw-mx-auto tw-shadow-xl tw-rounded-md tw-bg-white tw-h-[400px] tw-w-[500px] sm:tw-w-[90%] sm:tw-mx-auto sm:tw-h-[460px]">
 		<div class="">
-			<img class="tw-w-[500px] tw-rounded-md" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/upgrade-to-pro.png' ); ?>" alt="<?php echo esc_attr( 'upgrade-to-pro' ); ?>">
+			<img class="tw-w-[500px] sm:tw-w-[100%] tw-rounded-md" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/upgrade-to-pro.png' ); ?>" alt="<?php echo esc_attr( 'upgrade-to-pro' ); ?>">
 		</div>
 		<div class="tw-p-4">
 			<h3 class="tw-text-xl tw-font-normal tw-text-gray-500 tw-text-center tw-mt-0"><?php esc_html_e( 'Unlock exclusive features with our', 'wc-category-showcase' ); ?> <span class="tw-text-accent-orange-500"><?php esc_html_e( 'Pro version!', 'wc-category-showcase' ); ?></span></h3>

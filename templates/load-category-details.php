@@ -9,7 +9,7 @@
 
 ?>
 <div class="wcc_showcase-category-list-item" data-id="<?php echo esc_attr( $category_details['cat_id'] ); ?>" data-title="<?php echo esc_attr( $category_details['name'] ); ?>">
-	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] tw-border-b wcc_showcase-custom-border wcc_showcase-move">
+	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] sm:tw-min-w-[340px] tw-border-b wcc_showcase-custom-border wcc_showcase-move">
 		<div class="tw-flex tw-gap-1">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 				<path d="M7.6 16.5C8.48366 16.5 9.2 15.7725 9.2 14.875C9.2 13.9775 8.48366 13.25 7.6 13.25C6.71634 13.25 6 13.9775 6 14.875C6 15.7725 6.71634 16.5 7.6 16.5Z" fill="#64748B"/>
