@@ -1,8 +1,8 @@
 {
   "name": "wc-category-showcase",
   "title": "WooCommerce Category Showcase",
-  "description": "The best WordPress plugin ever made!",
-  "version": "2.0.4",
+  "description": "WooCommerce extension to showcase categories in interactive slider blocks.",
+  "version": "2.0.5",
   "homepage": "http://pluginever.com",
   "author": {
     "name": "PluginEver",
