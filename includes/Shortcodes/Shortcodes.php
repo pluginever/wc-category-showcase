@@ -83,6 +83,9 @@ class Shortcodes {
 	 * @param int    $wccs_id Showcase ID.
 	 * @param string $layout Current layout.
 	 * @param array  $showcase Array of showcase data.
+	 *
+	 * @since 2.1.0
+	 * @return void
 	 */
 	public static function render_block_grid_content( $wccs_id, $layout, $showcase ) {
 		// Get the selected categories.
@@ -132,6 +135,7 @@ class Shortcodes {
 	 * @param int   $wccs_id Showcase ID.
 	 * @param array $category_showcase Category Showcase Settings Array.
 	 *
+	 * @since 2.1.0
 	 * @return string
 	 */
 	protected function get_slider_config( $wccs_id, $category_showcase ) {
@@ -164,6 +168,7 @@ class Shortcodes {
 	 * @param int   $wccs_id Showcase ID.
 	 * @param array $category_showcase Category Showcase Settings Array.
 	 *
+	 * @since 2.1.0
 	 * @return string
 	 */
 	protected function get_slider_classes( $wccs_id, $category_showcase ) {

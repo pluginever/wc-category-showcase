@@ -35,8 +35,10 @@ module.exports = {
 				'pro-btn-bg':'#F57300',
 			},
 			content: {
-				'check-circle': 'url("/assets/images/check-circle.svg")',
-				'pro-badge':'url("/assets/images/pro-badge.svg")',
+				// 'check-circle': 'url("/assets/images/check-circle.svg")',
+				'check-circle': '',
+				'pro-badge':'',
+				// 'pro-badge':'url("/assets/images/pro-badge.svg")',
 			},
 		},
 		screens: {

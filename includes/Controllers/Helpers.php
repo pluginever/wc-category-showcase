@@ -148,6 +148,8 @@ class Helpers {
 			foreach ( $categories as $category ) {
 				$all_custom_categories[] = self::get_category_details( $category, $wccs_id );
 			}
+
+			uasort( $all_custom_categories, array( self::class, 'sort_categories_according_to_position' ) );
 		}
 
 		// Limit the number of categories to display as per the settings and return.
