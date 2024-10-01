@@ -133,7 +133,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
-= 2.0.5 ( 1 October, 2024 ) =
+= 2.0.5 ( 1st October, 2024 ) =
 * Fix - Resolved known issues
 * Compatible – Compatibility with WP Latest version
 * Compatible – Compatibility with WC Latest version
