@@ -1,11 +1,10 @@
 === Product Category Showcase for WooCommerce ===
 Contributors: pluginever
-Donate link:
-Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
+Tags:              woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
 Requires at least: 5.2
 Tested up to:      6.6
 Requires PHP:      7.4
-Stable tag:        2.0.4
+Stable tag:        2.0.5
 License:           GPLv3 or later
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -81,9 +80,9 @@ WooCommerce Category Showcase has built-in shortcode builder with a nice easy in
 This may have bugs and lack of many features. If you want to contribute on this project, you are more than welcome. For reporting any bugs or feature request open issue on [Github](https://github.com/pluginever/wc-category-showcase).
 
 == Installation ==
-###Automatic Install From WordPress Dashboard
+###Automatic Installation From WordPress Dashboard
 
-1. Login to your the admin panel
+1. Login to your admin panel
 2. Navigate to Plugins -> Add New
 3. Search **WooCommerce Category Showcase**
 4. Click install and activate respectively.
@@ -134,6 +133,11 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 2.0.5 ( 1st October, 2024 ) =
+* Fix - Resolved known issues
+* Compatible – Compatibility with WP Latest version
+* Compatible – Compatibility with WC Latest version
+
 = 2.0.4 =
 * Fix - Resolved known issues.
 * Fix – Compatibility with WP v6.6.1
