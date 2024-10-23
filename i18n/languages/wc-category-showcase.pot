@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Product Category Showcase for WooCommerce 2.0.5\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wc-category-showcase\n"
-"POT-Creation-Date: 2024-10-01 04:41:47+00:00\n"
+"POT-Creation-Date: 2024-10-23 11:33:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -122,6 +122,29 @@ msgstr ""
 msgid "Upgrade To PRO Now"
 msgstr ""
 
+#: includes/class-promotion.php:52
+msgid "Limited Time Offer! PluginEver Halloween Sale: 30% OFF!!"
+msgstr ""
+
+#: includes/class-promotion.php:59
+#. translators: 1.Offer Percentage, 2. Coupon Code.
+msgid ""
+"Spectacular Halloween Deal! Get %1$s on all premium plugins with code %2$s. "
+"Don't miss out — this offer vanishes soon! 👻"
+msgstr ""
+
+#: includes/class-promotion.php:72
+msgid "Claim your discount!!"
+msgstr ""
+
+#: includes/class-promotion.php:75
+msgid "Never show this again"
+msgstr ""
+
+#: includes/class-promotion.php:78
+msgid "Valid until November 10, 2024"
+msgstr ""
+
 #: includes/custom-cp.php:16
 msgid "Add New Category Showcase"
 msgstr ""
@@ -172,19 +195,19 @@ msgstr ""
 msgid "Example Metabox"
 msgstr ""
 
-#: wc-category-showcase.php:373
+#: wc-category-showcase.php:374
 msgid "View Plugin's Documentation"
 msgstr ""
 
-#: wc-category-showcase.php:373
+#: wc-category-showcase.php:374
 msgid "Documentation"
 msgstr ""
 
-#: wc-category-showcase.php:379
+#: wc-category-showcase.php:380
 msgid "Go Pro"
 msgstr ""
 
-#: wc-category-showcase.php:399 wc-category-showcase.php:409
+#: wc-category-showcase.php:400 wc-category-showcase.php:410
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 

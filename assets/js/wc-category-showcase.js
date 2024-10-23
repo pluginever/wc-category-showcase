@@ -80,3 +80,4 @@ window.WC_Category_Showcase = (function (window, document, $, undefined) {
 	return app;
 
 })(window, document, jQuery);
+

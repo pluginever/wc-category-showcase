@@ -280,6 +280,7 @@ class WC_Category_Showcase {
 		require PLVR_WCCS_INCLUDES . '/metabox/class-metabox.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-admin.php';
 		require PLVR_WCCS_ADMIN_PATH . '/class-metabox.php';
+		require PLVR_WCCS_INCLUDES . '/class-promotion.php';
 	}
 
 	/**
