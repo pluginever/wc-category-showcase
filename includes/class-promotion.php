@@ -71,7 +71,7 @@ class WC_Category_Showcase_Promotion {
 						<span class="dashicons dashicons-cart"></span>
 						<?php esc_html_e( 'Claim Your Discount!!', 'wc-variation-images' ); ?>
 					</a>
-					<a href="<?php echo esc_attr( 'https://pluginever.com/plugins' ); ?>" class="halloween-remind-btn">
+					<a href="<?php echo esc_attr( 'https://pluginever.com/plugins' ); ?>" class="halloween-remind-btn" target="_blank">
 						<span class="dashicons dashicons-megaphone"></span>
 						<?php esc_html_e( 'View Our Plugins & Offer', 'wc-variation-images' ); ?>
 					</a>
