@@ -32,7 +32,7 @@ class WC_Category_Showcase_Promotion {
 		if ( $current_time > $halloween_time ) {
 			return;
 		}
-		wp_enqueue_style( 'plvr-halloween', PLVR_WCCS_ASSETS . '/css/halloween.css', false, time() );
+		wp_enqueue_style( 'plvr-halloween', PLVR_WCCS_ASSETS . '/css/halloween.css', false, PLVR_WCCS_VERSION );
 
 		// check if it has already been dismissed
 		$hide_notice = get_option( ''.$this->uniq_key.'_initial_upsell_promotion', 'no' );
