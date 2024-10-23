@@ -45,18 +45,18 @@ class WC_Category_Showcase_Promotion {
 		<div class="notice bk-notice notice-halloween notice-info is-dismissible" id="<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice" style="background-image: url(<?php echo esc_url( PLVR_WCCS_ASSETS . '/images/halloween-banner.svg' ); ?>);">
 			<div class="notice-body">
 				<div class="notice-icon">
-					<img src="<?php echo esc_url(PLVR_WCCS_ASSETS . '/images/halloween-icon.svg' ); ?>" alt="WC Variation images">
+					<img src="<?php echo esc_url(PLVR_WCCS_ASSETS . '/images/halloween-icon.svg' ); ?>" alt="WC Category Showcase">
 				</div>
 				<div class="notice-content">
 					<h3>
-						<?php esc_html_e( 'Limited Time Offer! PluginEver Halloween Sale: 30% OFF!!', 'wc-variation-images' ); ?>
+						<?php esc_html_e( 'Limited Time Offer! PluginEver Halloween Sale: 30% OFF!!', 'wc-category-showcase' ); ?>
 					</h3>
 					<p>
 						<?php
 						echo wp_kses_post(
 							sprintf(
 							// translators: 1.Offer Percentage, 2. Coupon Code.
-								__( 'Spectacular Halloween Deal! Get %1$s on all premium plugins with code %2$s. Don\'t miss out — this offer vanishes soon! 👻', 'wc-variation-images' ),
+								__( 'Spectacular Halloween Deal! Get %1$s on all premium plugins with code %2$s. Don\'t miss out — this offer vanishes soon! 👻', 'wc-category-showcase' ),
 								'<strong>' . esc_attr( '30% OFF' ) . '</strong>',
 								'<strong>' . esc_attr( 'BIGTREAT30' ) . '</strong>'
 							)
@@ -69,14 +69,14 @@ class WC_Category_Showcase_Promotion {
 				<div class="footer-btn">
 					<a href="<?php echo esc_url( 'https://pluginever.com/plugins/woocommerce-category-showcase-pro?utm_source=plugin&utm_medium=notice&utm_campaign=halloween-2024&discount=bigtreat30' ); ?>" class="primary halloween-upgrade-btn" target="_blank">
 						<span class="dashicons dashicons-cart"></span>
-						<?php esc_html_e( 'Claim Your Discount!!', 'wc-variation-images' ); ?>
+						<?php esc_html_e( 'Claim Your Discount!!', 'wc-category-showcase' ); ?>
 					</a>
 					<a href="<?php echo esc_attr( 'https://pluginever.com/plugins' ); ?>" class="halloween-remind-btn" target="_blank">
 						<span class="dashicons dashicons-megaphone"></span>
-						<?php esc_html_e( 'View Our Plugins & Offer', 'wc-variation-images' ); ?>
+						<?php esc_html_e( 'View Our Plugins & Offer', 'wc-category-showcase' ); ?>
 					</a>
 				</div>
-				<strong class="halloween-footer-text"><?php esc_html_e( 'Valid until November 10, 2024', 'wc-variation-images' ); ?></strong>
+				<strong class="halloween-footer-text"><?php esc_html_e( 'Valid until November 10, 2024', 'wc-category-showcase' ); ?></strong>
 			</div>
 		</div><!-- #<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice -->
 
