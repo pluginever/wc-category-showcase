@@ -32,7 +32,8 @@ class Shortcode {
 		if ( $attr['id'] == null ) {
 			return;
 		}
-		if ( false === get_post_status( $attr['id'] ) ) {
+
+		if ( 'publish' !== get_post_status( $attr['id'] ) ) {
 			return;
 		}
 
