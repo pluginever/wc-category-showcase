@@ -88,9 +88,13 @@
 			}
 		}
 		.halloween-remind-btn {
+			background-color: #dae0e5;
 			color: #000000;
+			padding: 5px 12px;
+			border-radius: 3px;
 			&:hover{
-				color: #c74a4a;
+				background-color: #8c8f94;
+				color: #FFFFFF;
 			}
 		}
 		.halloween-remove-btn {
@@ -110,7 +114,7 @@
 		}
 		.halloween-footer-text {
 			float: right;
-			color: #000000;
+			color: #8c8f94;
 		}
 	}
 	@media screen and (max-width: 500px )  {
