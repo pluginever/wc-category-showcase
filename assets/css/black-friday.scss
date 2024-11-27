@@ -1,0 +1,135 @@
+.bk-notice {
+	box-sizing: border-box;
+
+	img {
+		width: 100%;
+		height: auto;
+		max-width: 100px;
+	}
+
+	h3 {
+		margin: 0 0 5px;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.notice-body {
+		display: flex;
+		align-items: center;
+		padding: 12px 0;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.notice-icon {
+		margin-right: 20px;
+		width: 64px;
+	}
+
+	.notice-content {
+		flex: 1;
+	}
+
+	.notice-footer {
+		border-top: 1px solid #C3C4C7;
+		padding: 12px 0;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			text-decoration: none;
+
+			// select href value is only #.
+			&[href^="#"], &[href=""], &:not([href]) {
+				color: #8C8F94;
+			}
+		}
+	}
+}
+
+.notice.notice-halloween {
+	position: relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 1px solid #2271b1;
+	border-left-width: 4px;
+	.notice-content {
+		max-width: 75%;
+		h3 {
+			font-size: 1.6rem;
+			line-height: 1.3;
+		}
+		p {
+			font-size: .9rem;
+			line-height: 1.6;
+		}
+	}
+	.notice-footer {
+		justify-content: space-between;
+		border-top: 1px solid #c3c4c7;
+		.footer-btn {
+			display: flex;
+			gap: 20px;
+		}
+		.halloween-upgrade-btn {
+			background-color: #2271b1;
+			padding: 5px 12px;
+			color: #FFFFFF;
+			border-radius: 3px;
+			&:hover{
+				background-color: #135e96;
+			}
+		}
+		.halloween-remind-btn {
+			color: #000000;
+			&:hover{
+				color: #c74a4a;
+			}
+		}
+		.halloween-remove-btn {
+			color: #ffffff;
+			&:hover{
+				color: #D6CDE4;
+			}
+		}
+		.halloween-dismiss-btn{
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			color: #FFFFFF;
+			&:hover {
+				color: #D6CDE4;
+			}
+		}
+		.halloween-footer-text {
+			float: right;
+			color: #ffffff;
+		}
+	}
+	@media screen and (max-width: 500px )  {
+		background-position:right;
+		.notice-body {
+			align-items: flex-start;
+			padding-top: 36px;
+		}
+		.notice-footer {
+			flex-direction: column;
+			.footer-btn {
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+			}
+			.halloween-dismiss-btn {
+				top: 8px;
+				right: 20px;
+			}
+		}
+	}
+}
