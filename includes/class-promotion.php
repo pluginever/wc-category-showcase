@@ -27,12 +27,12 @@ class WC_Category_Showcase_Promotion {
 		}
 
 		// 2018-03-26 23:59:00
-		$current_time   = wp_date( 'U' );
-		$halloween_time = date_i18n( strtotime( '2024-11-11 00:00:00' ) );
-		if ( $current_time > $halloween_time ) {
+		$current_time      = wp_date( 'U' );
+		$black_friday_time = date_i18n( strtotime( '2024-12-07 00:00:00' ) );
+		if ( $current_time > $black_friday_time ) {
 			return;
 		}
-		wp_enqueue_style( 'plvr-halloween', PLVR_WCCS_ASSETS . '/css/halloween.css', false, PLVR_WCCS_VERSION );
+		wp_enqueue_style( 'plvr-black-friday', PLVR_WCCS_ASSETS . '/css/black-friday.css', false, PLVR_WCCS_VERSION );
 
 		// check if it has already been dismissed
 		$hide_notice = get_option( ''.$this->uniq_key.'_initial_upsell_promotion', 'no' );
@@ -42,23 +42,23 @@ class WC_Category_Showcase_Promotion {
 		}
 
 		?>
-		<div class="notice bk-notice notice-halloween notice-info is-dismissible" id="<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice" style="background-image: url(<?php echo esc_url( PLVR_WCCS_ASSETS . '/images/halloween-banner.svg' ); ?>);">
+		<div class="notice bk-notice notice-halloween notice-info is-dismissible" id="<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice">
 			<div class="notice-body">
 				<div class="notice-icon">
-					<img src="<?php echo esc_url(PLVR_WCCS_ASSETS . '/images/halloween-icon.svg' ); ?>" alt="WC Category Showcase">
+					<img src="<?php echo esc_url(PLVR_WCCS_ASSETS . '/images/black-friday-icon.svg' ); ?>" alt="WC Category Showcase">
 				</div>
 				<div class="notice-content">
 					<h3>
-						<?php esc_html_e( 'Limited Time Offer! PluginEver Halloween Sale: 30% OFF!!', 'wc-category-showcase' ); ?>
+						<?php esc_html_e( 'Black Friday & Cyber Monday: Flat 40% OFF on All Premium Plugins!', 'wc-category-showcase' ); ?>
 					</h3>
 					<p>
 						<?php
 						echo wp_kses_post(
 							sprintf(
-							// translators: 1.Offer Percentage, 2. Coupon Code.
-								__( 'Spectacular Halloween Deal! Get %1$s on all premium plugins with code %2$s. Don\'t miss out — this offer vanishes soon! 👻', 'wc-category-showcase' ),
-								'<strong>' . esc_attr( '30% OFF' ) . '</strong>',
-								'<strong>' . esc_attr( 'BIGTREAT30' ) . '</strong>'
+								// translators: 1.Offer Percentage, 2. Coupon Code.
+								__( 'Boost your WooCommerce store this Black Friday! Get %1$s on all premium plugins with code %2$s. Don’t miss this limited-time deal!', 'wc-category-showcase' ),
+								'<strong>' . esc_attr( '40% OFF' ) . '</strong>',
+								'<strong>' . esc_attr( 'FLASH40' ) . '</strong>'
 							)
 						);
 						?>
@@ -67,16 +67,16 @@ class WC_Category_Showcase_Promotion {
 			</div>
 			<div class="notice-footer">
 				<div class="footer-btn">
-					<a href="<?php echo esc_url( 'https://pluginever.com/plugins/woocommerce-category-showcase-pro?utm_source=plugin&utm_medium=notice&utm_campaign=halloween-2024&discount=bigtreat30' ); ?>" class="primary halloween-upgrade-btn" target="_blank">
+					<a href="<?php echo esc_url( 'https://pluginever.com/plugins/woocommerce-category-showcase-pro?utm_source=plugin&utm_medium=notice&utm_campaign=black-friday-2024&discount=FLASH40' ); ?>" class="primary halloween-upgrade-btn" target="_blank">
 						<span class="dashicons dashicons-cart"></span>
 						<?php esc_html_e( 'Claim Your Discount!!', 'wc-category-showcase' ); ?>
 					</a>
-					<a href="<?php echo esc_attr( 'https://pluginever.com/plugins' ); ?>" class="halloween-remind-btn" target="_blank">
+					<a href="<?php echo esc_attr( 'https://pluginever.com/plugins?utm_source=plugin&utm_medium=notice&utm_campaign=black-friday-2024&discount=FLASH40' ); ?>" class="halloween-remind-btn" target="_blank">
 						<span class="dashicons dashicons-megaphone"></span>
 						<?php esc_html_e( 'View Our Plugins & Offer', 'wc-category-showcase' ); ?>
 					</a>
 				</div>
-				<strong class="halloween-footer-text"><?php esc_html_e( 'Valid until November 10, 2024', 'wc-category-showcase' ); ?></strong>
+				<strong class="halloween-footer-text"><?php esc_html_e( 'Valid until December 07, 2024', 'wc-category-showcase' ); ?></strong>
 			</div>
 		</div><!-- #<?php echo esc_attr( $this->uniq_key );?>-promotional-offer-notice -->
 

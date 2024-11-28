@@ -2,9 +2,9 @@
 Contributors: pluginever
 Tags:              woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
 Requires at least: 5.2
-Tested up to:      6.6
+Tested up to:      6.7
 Requires PHP:      7.4
-Stable tag:        2.0.6
+Stable tag:        2.0.7
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,6 +133,11 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 2.0.7 ( 28th November, 2024 ) =
+* Fix - Resolved known issues
+* Compatible – Compatibility with WP Latest version
+* Compatible – Compatibility with WC Latest version
+
 = 2.0.6 ( 23th October, 2024 ) =
 * Fix - Resolved known issues
 * Compatible – Compatibility with WP Latest version
