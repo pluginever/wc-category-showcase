@@ -64,6 +64,8 @@ class Admin {
 		if ( ! in_array( $hook, Utilities::get_screen_ids(), true ) ) {
 			return;
 		}
+		wp_enqueue_style( 'bytekit-components' );
+		wp_enqueue_style( 'bytekit-layout' );
 		// Early core enqueue.
 		wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/css/admin.css' );
 		wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/js/admin.js', array( 'wp-color-picker' ), true );

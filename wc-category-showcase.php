@@ -38,11 +38,10 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-use WooCommerceCategoryShowcase\Plugin;
-
 defined( 'ABSPATH' ) || exit();
 
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor-prefixed/autoload.php';
 
 // Instantiate the plugin.
 WooCommerceCategoryShowcase\Plugin::create(

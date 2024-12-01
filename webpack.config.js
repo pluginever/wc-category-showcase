@@ -7,15 +7,14 @@ module.exports = [
 		...defaultConfig,
 		entry: {
 			...defaultConfig.entry(),
-			'css/admin': './.assets/css/admin/admin.scss',
-			'css/showcase': './.assets/css/frontend/showcase.scss',
-			'js/admin': './.assets/js/admin/admin.js',
-			'js/showcase': './.assets/js/frontend/showcase.js',
+			'css/admin': './assets/css/admin/admin.scss',
+			'css/showcase': './assets/css/frontend/showcase.scss',
+			'js/admin': './assets/js/admin/admin.js',
+			'js/showcase': './assets/js/frontend/showcase.js',
 		},
 		output: {
 			...defaultConfig.output,
 			filename: '[name].js',
-			path: __dirname + '/assets/',
 		},
 		module: {
 			rules: [
@@ -36,20 +35,20 @@ module.exports = [
 			new CopyWebpackPlugin({
 				patterns: [
 					{
-						from: path.resolve(__dirname, '.assets/images'),
-						to: path.resolve(__dirname, 'assets/images'),
+						from: path.resolve(__dirname, 'assets/images'),
+						to: path.resolve(__dirname, 'build/images'),
 					},
 					{
 						from: path.resolve( __dirname, './node_modules/@splidejs/splide/dist/js/splide.js'),
-						to: path.resolve(__dirname, 'assets/js'),
+						to: path.resolve(__dirname, 'build/js'),
 					},
 					{
 						from: path.resolve(__dirname, './node_modules/@splidejs/splide-extension-grid/dist/js/splide-extension-grid.js'),
-						to: path.resolve(__dirname, 'assets/js'),
+						to: path.resolve(__dirname, 'build/js'),
 					},
 					{
 						from: path.resolve(__dirname, './node_modules/@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.js'),
-						to: path.resolve(__dirname, 'assets/js'),
+						to: path.resolve(__dirname, 'build/js'),
 					}
 				]
 			}),

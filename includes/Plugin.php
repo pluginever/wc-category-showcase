@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
  * @since 1.2.1
  * @package WooCommerceCategoryShowcase
  */
-final class Plugin extends ByteKit\Plugin {
+final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	/**
 	 * Plugin constructor.
 	 *

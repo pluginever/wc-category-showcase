@@ -6,10 +6,7 @@
   "license": "GPL-3.0-or-later",
   "prefer-stable": true,
   "minimum-stability": "dev",
-  "keywords": [
-    "wordpress",
-    "plugin"
-  ],
+  "keywords": ["wordpress", "plugin"],
   "authors": [
     {
       "name": "pluginever",
@@ -23,47 +20,43 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
-    "byteever/bytekit-plugin": "dev-master",
-    "coenjacobs/mozart": "^0.7.1"
-  },
-  "autoload": {
-    "psr-4": {
-      "WooCommerceCategoryShowcase\\": [
-        "includes/",
-        "lib/"
-      ]
-    }
+    "php": ">=7.4",
+    "byteever/bytekit-plugin": "^1.0"
   },
   "require-dev": {
-    "byteever/byteever-sniffs": "^1.0"
+    "byteever/byteever-sniffs": "dev-master"
   },
   "config": {
     "optimize-autoloader": true,
     "sort-packages": true,
     "allow-plugins": {
+      "composer/*": true,
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
+  "autoload" : {
+    "psr-4" : {
+      "WooCommerceCategoryShowcase\\": ["includes/"]
+    }
+  },
   "scripts": {
+    "post-install-cmd":"@strauss",
+    "post-update-cmd": "@strauss",
     "phpcs": "@php ./vendor/bin/phpcs --standard=phpcs.xml -s -v",
     "phpcbf": "@php ./vendor/bin/phpcbf --standard=phpcs.xml -v",
-    "post-install-cmd": [
-      "\"vendor/bin/mozart\" compose",
-      "composer dump-autoload"
-    ],
-    "post-update-cmd": [
-      "\"vendor/bin/mozart\" compose",
-      "composer dump-autoload"
+    "strauss": [
+      "test -d ./bin || mkdir bin",
+      "test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar",
+      "@php bin/strauss.phar"
     ]
   },
   "extra": {
-    "mozart": {
-      "dep_namespace": "WooCommerceCategoryShowcase\\",
-      "dep_directory": "/lib/",
-      "classmap_directory": "/lib/classes/",
+    "strauss": {
+      "target_directory": "vendor-prefixed",
       "classmap_prefix": "WooCommerceCategoryShowcase_",
-      "delete_vendor_directories": true,
+      "namespace_prefix": "WooCommerceCategoryShowcase",
+      "delete_vendor_packages": true,
+      "delete_vendor_files": true,
       "packages": [
         "byteever/bytekit-plugin"
       ]
