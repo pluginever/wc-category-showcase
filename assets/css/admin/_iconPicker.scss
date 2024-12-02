@@ -1,4 +1,11 @@
 /// style of icon picker
+.icon-placeholder, .icon-placeholder{
+	text-align: center;
+	i{
+		font-size: 64px;
+	}
+}
+
 .icon-picker-wrap {
 	margin: 0 auto;
 	margin-top: 10%;
@@ -149,12 +156,12 @@ button.select-icon {
 	color: #a4afb7;
 }
 
-.aim-modal--sidebar-tab-item.aesthetic-active {
+.aim-modal--sidebar-tab-item.pluginever-active {
 	background-color: #fff;
 	-webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
-.aim-modal--sidebar-tab-item.aesthetic-active:after {
+.aim-modal--sidebar-tab-item.pluginever-active:after {
 	content: "";
 	position: absolute;
 	height: 100%;
@@ -163,7 +170,7 @@ button.select-icon {
 	left: 0;
 	background-color: #71d7f7;
 }
-.aim-modal--sidebar-tab-item.aesthetic-active i {
+.aim-modal--sidebar-tab-item.pluginever-active i {
 	color: #71d7f7;
 }
 
@@ -188,7 +195,7 @@ button.select-icon {
 	padding: 0 15px 15px;
 }
 
-#aim-modal--icon-preview {
+.aim-modal--icon-preview {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	grid-gap: 20px;
@@ -201,7 +208,7 @@ button.select-icon {
 	position: relative;
 }
 .aim-modal--icon-search input {
-	width: calc( 100% - 30px);
+	width: 100%;
 	padding: 8px 15px;
 	background-color: #fff;
 	border: none;
@@ -246,7 +253,7 @@ button.select-icon {
 	-webkit-box-shadow: 0 1px 14px rgba(0, 0, 0, 0.16);
 	box-shadow: 0 1px 14px rgba(0, 0, 0, 0.16);
 }
-.aim-icon-item.aesthetic-selected {
+.aim-icon-item.pluginever-selected {
 	-webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05), 0 0 0 3px #71d7f7;
 	box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05), 0 0 0 3px #71d7f7;
 }
@@ -307,17 +314,17 @@ button.select-icon {
 	outline: 0;
 }
 
-.aim-modal .aim-modal--footer .aesthetic-button {
+.aim-modal .aim-modal--footer .pluginever-button {
 	height: 40px;
 	margin-left: 5px;
 }
-.aim-modal .aim-modal--footer .aesthetic-button-success {
+.aim-modal .aim-modal--footer .pluginever-button-success {
 	padding: 12px 36px;
 	color: #fff;
 	width: initial;
 	font-size: 15px;
 }
-.aim-modal .aim-modal--footer .aesthetic-button-success:hover {
+.aim-modal .aim-modal--footer .pluginever-button-success:hover {
 	background-color: #39b54a;
 }
 
@@ -346,27 +353,27 @@ button.select-icon {
 	}
 }
 @media (max-width: 1439px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(6, 1fr);
 	}
 }
 @media (max-width: 1024px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(5, 1fr);
 	}
 }
 @media (max-width: 767px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 @media (max-width: 479px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 @media (max-width: 479px) {
-	#aim-modal--sidebar {
+	.aim-modal--sidebar {
 		display: none;
 	}
 }

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Product Category Showcase for WooCommerce 2.1.0\n"
 "Report-Msgid-Bugs-To: https://pluginever.com/support/\n"
-"POT-Creation-Date: 2024-12-01 11:40:04+00:00\n"
+"POT-Creation-Date: 2024-12-02 03:51:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -105,38 +105,38 @@ msgstr ""
 msgid "800"
 msgstr ""
 
-#: includes/Admin/Admin.php:78
+#: includes/Admin/Admin.php:80
 msgid "Search category..."
 msgstr ""
 
-#: includes/Admin/Admin.php:96
+#: includes/Admin/Admin.php:98
 #. translators: %s: Plugin name
 msgid "Thank you for using %s!"
 msgstr ""
 
-#: includes/Admin/Admin.php:102
+#: includes/Admin/Admin.php:104
 #. translators: %s: Plugin name
 msgid " Share your appreciation with a five-star review %s."
 msgstr ""
 
-#: includes/Admin/Admin.php:122
+#: includes/Admin/Admin.php:124
 #. translators: 1: Plugin version
 msgid "Version %s"
 msgstr ""
 
-#: includes/Admin/Admin.php:151
+#: includes/Admin/Admin.php:153
 msgid "Failed to Add Category Showcase: Please Try Again!"
 msgstr ""
 
-#: includes/Admin/Admin.php:189
+#: includes/Admin/Admin.php:191
 msgid "The category showcase has been successfully updated!"
 msgstr ""
 
-#: includes/Admin/Admin.php:206
+#: includes/Admin/Admin.php:208
 msgid "No, search term provided."
 msgstr ""
 
-#: includes/Admin/Admin.php:257
+#: includes/Admin/Admin.php:259
 msgid "No, search term id provided."
 msgstr ""
 

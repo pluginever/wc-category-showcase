@@ -1210,7 +1210,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-flex-col tw-items-center tw-relative">
 		<div class="tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[340px]">
-				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 ">
+				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 " data-placeholder="<?php esc_html_e( 'Select Categories...', 'wc-category-showcase' ); ?>">
 					<?php
 					$categories          = get_terms(
 						array(
@@ -1234,7 +1234,7 @@ defined( 'ABSPATH' ) || exit;
 			$count               = 0;
 			if ( ! empty( $selected_categories ) ) {
 				foreach ( $selected_categories as $category ) {
-					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id );
+					$category_details = Helpers::get_category_details( $category['cat_id'] );
 					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
 					++$count;
 				}
