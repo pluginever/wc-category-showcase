@@ -54,7 +54,7 @@ class Shortcodes {
 		ob_start();
 		?>
 		<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
-			<?php if ( isset( $showcase['section_title'] ) || isset( $showcase['section_description'] ) ) : ?>
+			<?php if ( ! empty( $showcase['section_title'] ) || ! empty( $showcase['section_description'] ) ) : ?>
 				<div class="wccs-section__header wccs-categories-heading__<?php echo sanitize_html_class( $wccs_id ); ?> text-<?php echo isset( $showcase['heading_alignment'] ) ? sanitize_html_class( $showcase['heading_alignment'] ) : 'left'; ?>">
 					<?php
 					echo isset( $showcase['section_title'] ) && 'yes' === $showcase['show_section_title'] ? sprintf( '<%s class="section-title">%s</%s>', esc_attr( $showcase['font_main_title']['text_tag'] ), esc_attr( $showcase['section_title'] ), esc_attr( $showcase['font_main_title']['text_tag'] ) ) : '';
