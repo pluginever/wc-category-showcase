@@ -1,0 +1,365 @@
+//@import "~@splidejs/splide/dist/css/splide.min.css";
+@import "showcase-common";
+@import "showcase-block";
+@import "showcase-grid";
+@import "showcase-slide";
+
+.wcc-showcase-slider{
+	margin-bottom: 1.5rem;
+	button:focus{
+		outline: none;
+	}
+	p{
+		margin: 0;
+	}
+}
+
+.wcc-showcase__slider-heading{
+	margin-bottom: 3rem;
+}
+
+.wcc-showcase__slider-body{
+	.splide__slide__row{
+		height: auto !important;
+	}
+}
+
+.wcc-showcase-slide-item{
+	position: relative;
+	.wcc-showcase-slide-item__cat-thumbnails{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		height: auto;
+		overflow: hidden;
+		.wcc-showcase-slide-item__cat-thumbnails__image{
+			width: 100%;
+			height: auto;
+			.slider-cat-image{
+				height: auto;
+				border-radius: 0;
+			}
+		}
+		.wcc-showcase-slide-item__cat-thumbnails__icon{
+
+		}
+		.is-image-rounded &{
+			.slider-cat-image{
+				border-radius: 8px;
+			}
+		}
+
+		.is-image-circle &{
+			.wcc-showcase-slide-item__cat-thumbnails{
+				border-radius: 50% !important;
+			}
+			.slider-cat-image{
+				border-radius: 50%;
+			}
+		}
+	}
+	.is-image-rounded &{
+		.wcc-showcase-slide-item__cat-thumbnails{
+			border-radius: 8px !important;
+		}
+		.slider-cat-image{
+			border-radius: 8px;
+		}
+	}
+
+	.is-image-circle &{
+		.wcc-showcase-slide-item__cat-thumbnails{
+			border-radius: 50% !important;
+		}
+		.slider-cat-image{
+			border-radius: 50%;
+		}
+	}
+	.wcc-showcase-slide-item__cat-details {
+		.wccs-entry__content-inner{
+			width: 100%;
+		}
+		p{
+			margin: 0;
+		}
+		.wcc-showcase-slide-item__cat-title a {
+			text-decoration: none;
+		}
+		.wcc-showcase-slide-item__sub-cat__sub-cat-list {
+			list-style: none;
+			margin: 0;
+			.wcc-showcase-slide-item__sub-cat__sub-cat-list__item a{
+				//color: #130F31;
+				text-align: center;
+				font-size: 1rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 24px;
+				text-decoration: none;
+			}
+		}
+		.wcc-showcase-slide-item__cat-products a {
+			//color: #130F31;
+			text-align: center;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px;
+			text-decoration: underline;
+		}
+		.wcc-showcase-slide-item__cat-custom-text{
+			color:#000;
+		}
+		.wcc-showcase-slide-item__cat-button {
+			margin-top: 10px;
+			a {
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 24px;
+			}
+		}
+	}
+
+	// Shop Now button style
+
+	.is-button-sharp_corner &{
+		.wcc-showcase-slide-item__cat-button {
+			a {
+				padding: 8px 16px;
+				text-decoration: none;
+				border-radius: 0;
+			}
+		}
+	}
+	.is-button-slightly_rounded &{
+		.wcc-showcase-slide-item__cat-button {
+			a {
+				padding: 8px 16px;
+				border-radius: 8px;
+				text-decoration: none;
+			}
+		}
+	}
+	.is-button-rounded &{
+		.wcc-showcase-slide-item__cat-button {
+			a {
+				padding: 8px 16px;
+				border-radius: 24px;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.is_content_top_left &{
+		.wcc-showcase-slide-item__cat-details {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			text-align: left;
+			align-items: flex-start;
+			row-gap: 0;
+			max-width: 50%;
+			margin-top:0;
+			.wcc-showcase-slide-item__cat-title {
+				position: relative;
+				h3{
+					font-size: 32px;
+				}
+				h3:after {
+					position: absolute;
+					content: ' ';
+					left: 2px;
+					bottom: 12px;
+					width: 44px;
+					background-color: #000;
+					height: 2px;
+				}
+			}
+			.wcc-showcase-slide-item__cat-description{
+				p{
+					font-size: 12px;
+					color:#000;
+				}
+			}
+			.wcc-showcase-slide-item__cat-button{
+				margin-top: .5rem;
+				a{
+					font-size: 16px;
+				}
+			}
+		}
+		.slider-cat-image{
+			width: 100%;
+			height: auto;
+		}
+		.splide__slide{
+			height:550px !important;
+		}
+	}
+
+	.is-shop-now-icon &{
+		.wccs-showcase-btn::after{
+			content: "\2192";
+		}
+	}
+}
+
+//Navigation styles.
+.wcc-showcase__navigation {
+	display: flex;
+	gap: 16px;
+	.splide__arrow--prev::before {
+		position: absolute;
+		top: 8px;
+		right: 5px;
+		content: "\2192";
+		transform: scaleX(-1);
+		color: #fff;
+		font-size: 22px;
+	}
+	.splide__arrow--next::before {
+		position: absolute;
+		top: 8px;
+		left: 5px;
+		content: "\2192";
+		color: #fff;
+		font-size: 22px;
+	}
+
+	.is--rounded &{
+		.splide__arrow--prev, .splide__arrow--next {
+			border-radius: 8px;
+		}
+	}
+
+	.is--only_icons &{
+		.splide__arrow--prev, .splide__arrow--next {
+			background: transparent;
+		}
+		.splide__arrow--prev:hover, .splide__arrow--next:hover {
+			background: transparent;
+		}
+	}
+	.is--sharp &{
+		.splide__arrow--prev, .splide__arrow--next {
+			border-radius: 0;
+		}
+	}
+
+	// Navigation icon chevron style.
+	.is--navigation-chevron &{
+		.splide__arrow--prev::before {
+			top:5px;
+			right: 10px;
+			content: "\2039";
+			transform: scaleX(1);
+			font-size: 34px;
+		}
+		.splide__arrow--next::before {
+			top:5px;
+			left: 10px;
+			content: "\2039";
+			transform: scaleX(-1);
+			font-size: 34px;
+		}
+	}
+
+	// Navigation Positions.
+	.is--navigation-top-right &{
+		position: absolute;
+		top: -26px;
+		right: 12px;
+		.splide__arrow{
+			position: static;
+		}
+		.wcc-showcase__slider-heading{
+			margin-bottom: 3rem!important;
+		}
+	}
+	.is--navigation-top-left &{
+		position: absolute;
+		top: -26px;
+		left: 12px;
+		.splide__arrow{
+			position: static;
+		}
+		.wcc-showcase__slider-heading{
+			margin-bottom: 3rem!important;
+		}
+	}
+	.is--navigation-bottom-center &{
+		position: relative;
+		top: 48px;
+		justify-content: space-between;
+		padding-left: 5%;
+		padding-right: 5%;
+		.splide__arrow{
+			position: static;
+		}
+		.wcc-showcase__pagination{
+			margin-top:.5rem;
+		}
+	}
+	.is--navigation-bottom-right &{
+		position: relative;
+		top: 54px;
+		justify-content: flex-end;
+		.splide__arrow{
+			position: static;
+		}
+	}
+	.is--navigation-bottom-left &{
+		position: relative;
+		top: 54px;
+		justify-content: flex-start;
+		.splide__arrow{
+			position: static;
+		}
+	}
+}
+
+//Pagination styles.
+.wcc-showcase__pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1.5rem;
+	min-height: 25px;
+	text-align: center;
+	.is-active{
+		background-color: grey;
+	}
+	.splide__pagination__page{
+		background-color: grey;
+	}
+
+	.is-pagination &{
+		.splide__pagination{
+			display: block;
+		}
+	}
+
+	//Pagination Styles.
+	.is--pagination-dash-with-dots &{
+		.is-active{
+			border-radius: 10px;
+			width: 36px !important;
+			transform: none;
+		}
+	}
+	.is--pagination-only-dashes &{
+		.is-active{
+			border-radius: 10px;
+			width: 60px !important;
+			transform: none;
+		}
+		.splide__pagination__page{
+			border-radius: 10px;
+			width: 24px;
+		}
+	}
+}
+
+

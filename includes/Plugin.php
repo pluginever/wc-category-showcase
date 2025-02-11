@@ -117,10 +117,10 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @retun void
 	 */
 	public function register_scripts() {
-		$this->scripts->register_style( 'wcc-showcase-showcase', 'css/showcase.css' );
-		$this->scripts->register_script( 'wcc-showcase-splide', '/js/splide.js' );
-		$this->scripts->register_script( 'wcc-showcase-splide-grid', '/js/splide-extension-grid.js' );
-		$this->scripts->register_script( 'wcc-showcase-splide-auto-scroll', '/js/splide-extension-auto-scroll.js' );
-		$this->scripts->register_script( 'wcc-showcase-showcase', '/js/showcase.js', array( 'jquery', 'wcc-showcase-splide', 'wcc-showcase-splide-grid', 'wcc-showcase-splide-auto-scroll' ), true );
+		$this->scripts->register_style( 'wcc-showcase-showcase', '/styles/showcase.css' );
+		$this->scripts->register_script( 'wcc-showcase-splide', '/scripts/splide.js' );
+		$this->scripts->register_script( 'wcc-showcase-splide-grid', '/scripts/splide-extension-grid.js' );
+		$this->scripts->register_script( 'wcc-showcase-splide-auto-scroll', '/scripts/splide-extension-auto-scroll.js' );
+		$this->scripts->register_script( 'wcc-showcase-showcase', '/scripts/frontend.js', array( 'jquery', 'wcc-showcase-splide', 'wcc-showcase-splide-grid', 'wcc-showcase-splide-auto-scroll' ), true );
 	}
 }

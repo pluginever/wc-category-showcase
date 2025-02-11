@@ -1,0 +1,134 @@
+@forward "utils";
+@import "../fonts/all.css";
+
+.wp-heading-inline{
+	.dashicons{
+		margin-top: 4px;
+	}
+}
+.search-box input[name="s"]{
+	height: 30px;
+}
+.select2.select2-container.select2-container--default{
+	width: 100% !important;
+}
+
+.select2-selection.select2-selection--multiple, .select2-results {
+	background-color: #F1F5F9 !important;
+}
+
+.select2-search__field{
+	background-color: #F1F5F9 !important;
+	border-color: #E2E8F0 !important;
+}
+
+.select2-selection__choice {
+	border-radius: 4px !important;
+	border: 1px solid var(--divider-grey-100, #E2E8F0) !important;
+	background: var(--white, #FFF) !important;
+}
+
+.select2-selection__choice span{
+	float: right;
+	margin-left: 5px;
+}
+
+//  dropdown
+.select-wrapper {
+	position: relative;
+	user-select: none;
+	width: 100%;
+}
+.select {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid;
+	padding: 4px;
+}
+.select__trigger {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: 300;
+	color: #3b3b3b;
+	height: 30px;
+	line-height: 36px;
+	cursor: pointer;
+}
+.custom-options {
+	margin-top: 6px;
+	position: absolute;
+	//display: block;
+	top: 100%;
+	left: -1px;
+	right: 0;
+	border: 1px solid;
+	transition: all 0.5s;
+	pointer-events: all;
+	z-index: 2;
+	padding: 4px;
+}
+.custom-option {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: 300;
+	color: #64748B;
+	line-height: 20px;
+	cursor: pointer;
+	transition: all 0.5s;
+	height: 36px;
+	border-radius: 4px;
+}
+.custom-option:hover {
+	cursor: pointer;
+	background-color: #F1F5F9;
+}
+.custom-option.selected {
+	color: #2270B1;
+}
+
+// arrow dropdown
+.wcc_showcase-arrow {
+	position: relative;
+}
+.wcc_showcase-arrow svg {
+	content: "";
+	position: absolute;
+	top:-10px;
+	right: 5px;
+	transition: all 0.5s;
+}
+
+.select2-selection__choice__remove{
+	display: none !important;
+}
+
+.iris-picker{
+	position: absolute !important;
+	z-index: 2 !important;
+	right: 0 !important;
+	top: 33px !important;
+}
+
+.img-upload i {
+	font-size: 7rem;
+}
+
+.wcc-showcase-upcoming{
+	position: relative;
+	.wcc-showcase-upcoming-features{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		background: #41424536;
+	}
+}
