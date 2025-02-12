@@ -4,6 +4,14 @@
  *
  * @since 2.1.0
  * @package WooCommerceCategoryShowcase
+ * @var array $category          Category data.
+ * @var array $showcase          Showcase data.
+ * @var array $child_categories  Child categories.
+ * @var string $content_placement Content placement.
+ * @var string $content_position  Content position.
+ * @var string $layout            Layout.
+ * @var string $ribbon_placement  Ribbon placement.
+ * @var string $wccs_id           Showcase ID.
  */
 
 ?>
