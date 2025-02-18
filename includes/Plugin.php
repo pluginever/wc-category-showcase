@@ -117,7 +117,8 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @retun void
 	 */
 	public function register_scripts() {
-		$this->scripts->register_style( 'wcc-showcase-showcase', '/styles/frontend.css' );
+		$this->scripts->register_style( 'wcc-showcase-splide', '/styles/splide-core.min.css' );
+		$this->scripts->register_style( 'wcc-showcase-showcase', '/styles/frontend.css', array( 'wcc-showcase-splide' ) );
 		$this->scripts->register_script( 'wcc-showcase-splide', '/scripts/splide.js' );
 		$this->scripts->register_script( 'wcc-showcase-splide-grid', '/scripts/splide-extension-grid.js' );
 		$this->scripts->register_script( 'wcc-showcase-splide-auto-scroll', '/scripts/splide-extension-auto-scroll.js' );

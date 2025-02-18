@@ -4,6 +4,16 @@
  *
  * @since 2.1.0
  * @package WooCommerceCategoryShowcase
+ * @var array $showcase The showcase data.
+ * @var array $categories The categories data.
+ * @var string $slider_class_list The slider class list.
+ * @var string $slider_config The slider config.
+ * @var int $wccs_id The showcase ID.
+ * @var int $is_ticker The ticker status.
+ * @var int $ticker_direction The ticker direction.
+ * @var int $ticker_mode The ticker mode.
+ * @var string $content_placement The content placement.
+ * @var string $content_position The content position.
  */
 
 ?>

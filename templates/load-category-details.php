@@ -3,8 +3,8 @@
  * Get category details.
  *
  * @param int $term_id Category ID.
- *
  * @package WooCommerceCategoryShowcase
+ * @var array $category_details The category details.
  */
 
 ?>
