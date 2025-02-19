@@ -47,8 +47,8 @@ module.exports = {
 				},
 				// Copy the Splide slider related css files to the scripts directory.
 				{
-					from: './@splidejs/splide/dist/css/splide-core.min.css',
-					to: 'styles/splide-core.min.css',
+					from: './@splidejs/splide/dist/css/splide.min.css',
+					to: 'styles/splide.min.css',
 					context: 'node_modules',
 					noErrorOnMissing: true,
 				},

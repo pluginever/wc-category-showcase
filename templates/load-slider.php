@@ -96,11 +96,4 @@
 			<?php } ?>
 		</ul>
 	</div>
-	<div class="splide__arrows splide__arrows--ltr wcc-showcase__navigation">
-		<button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide" aria-controls="splide01-track"></button>
-		<button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide" aria-controls="splide01-track"></button>
-	</div>
-	<div class="wcc-showcase__pagination">
-		<ul class="splide__pagination"></ul>
-	</div>
 </div>
