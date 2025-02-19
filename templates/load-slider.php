@@ -22,7 +22,7 @@
 	<div class="splide__track">
 		<ul class="splide__list">
 			<?php
-			foreach ( $categories as $category_details ) {
+			foreach ( $categories as $category_details ) :
 				$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 				?>
 				<li class="splide__slide wcc-showcase-slide-item text-<?php echo sanitize_html_class( $showcase['content_alignment'] ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>" data-splide-interval="<?php echo esc_attr( $showcase['slide_speed'] ); ?>">
@@ -93,7 +93,7 @@
 						</div>
 					</div>
 				</li>
-			<?php } ?>
+			<?php endforeach; ?>
 		</ul>
 	</div>
 </div>
