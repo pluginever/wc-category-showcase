@@ -29,6 +29,7 @@ jQuery(document).ready(function ($) {
 		new Splide( this, {
 			autoScroll: autoScroll,
 			gap: gap+'rem',
+			pagination: false,
 			grid: {
 				dimensions: [ [grid_value.rows, grid_value.columns] ],
 				gap : {

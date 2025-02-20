@@ -16,6 +16,8 @@
  * @var string $content_position The content position.
  */
 
+use WooCommerceCategoryShowcase\Controllers\Helpers;
+
 ?>
 
 <div class="splide wcc-showcase-<?php echo esc_attr( $wccs_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $wccs_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $showcase['slider']['row'] ); ?>, "columns": <?php echo esc_attr( $showcase['slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $showcase['column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $showcase['column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $showcase['column_breakpoint']['mobile'] ); ?>, "gap":<?php echo esc_attr( $showcase['gap_between_cards'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $wccs_id ) ); ?>">
@@ -97,3 +99,30 @@
 		</ul>
 	</div>
 </div>
+
+<?php
+//if ( 'yes' === $showcase['show_additional_categories'] && array_key_exists( 'show_additional_categories', $showcase ) ) { // TODO: Enable this condition to show additional categories.
+	// Get the selected categories.
+	$categories = Helpers::get_selected_categories( $showcase, $wccs_id ); // TODO: Need to query additional categories.
+
+	$layout            = 'grid'; // Overwrite the layout for additional categories to grid.
+	$content_placement = $showcase['content_placement'] ? $showcase['content_placement'] : 'center';
+	$content_position  = $showcase['overlay_content_position'] ? $showcase['overlay_content_position'] : 'center_center';
+
+	// Slice array to make it 6 categories.
+	$categories_count = count( $categories );
+	if ( $categories_count > 6 ) {
+		$categories = array_slice( $categories, 0, 6 );
+	}
+
+	echo '<div class="wccs-additional-categories wccs-categories_' . esc_attr( $categories_count ) . '">';
+	if ( ! empty( $categories ) ) {
+		foreach ( $categories as $category ) {
+			$child_categories = $category['child_categories'];
+			$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
+
+			include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-block-grid.php';
+		}
+	}
+	echo '</div>';
+//} // TODO: enable it letter.

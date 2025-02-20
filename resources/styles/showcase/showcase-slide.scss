@@ -123,3 +123,34 @@
 	}
 
 }
+
+// If slider has additional categories.
+.slider-has-additional-categories {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	.splide {
+		width:100%;
+		max-width: calc(40% - 1rem);
+	}
+	.wccs-additional-categories{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		width: 100%;
+		max-width: calc(60% - 1rem);
+		.wccs-category{
+			width: calc(33.33% - 1rem);
+		}
+	}
+	.wccs-categories_1{
+		.wccs-category{
+			width: calc(100% - 1rem) !important;
+		}
+	}
+	.wccs-categories_2{
+		.wccs-category{
+			width: calc(50% - 1rem) !important;
+		}
+	}
+}

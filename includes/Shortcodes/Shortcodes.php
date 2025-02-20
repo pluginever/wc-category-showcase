@@ -62,7 +62,7 @@ class Shortcodes {
 					?>
 				</div>
 			<?php endif; ?>
-			<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?>">
+			<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?> <?php echo sanitize_html_class( $layout . '-has-additional-categories' ); ?>">
 			<?php
 			if ( 'slider' === $layout ) {
 				$this->render_slider_content( $wccs_id, $showcase );
@@ -78,7 +78,8 @@ class Shortcodes {
 	}
 
 	/**
-	 * Get Block/Grid content.
+	 * Render Block/Grid content.
+	 * This function will render the block/grid content.
 	 *
 	 * @param int    $wccs_id Showcase ID.
 	 * @param string $layout Current layout.
