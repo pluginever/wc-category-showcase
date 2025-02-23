@@ -1246,6 +1246,60 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
+<!--Addtional Category start-->
+<div class="wcc_showcase-settings-row">
+	<div class="tw-w-1/3 sm:tw-w-full">
+		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Enable Additional Categories', 'wc-category-showcase' ); ?></h3>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable additional categories to expand your slider\'s customization options, allowing for greater flexibility and enhanced content organization.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-items-center">
+		<label class="tw-inline-flex tw-cursor-pointer">
+			<input class="tw-sr-only tw-peer wcc_showcase_additional_category_select" type="checkbox" name="wcc_showcase_additional_category_select" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $showcase_details['additional_category_select'] ) { echo 'checked'; } ?>>
+			<div class="wcc_showcase-toggle"></div>
+		</label>
+	</div>
+</div>
+<div class="wcc_showcase-settings-row wcc_showcase-additional-category-selection <?php echo 'yes' === $showcase_details['additional_category_select'] ? '' : 'tw-hidden'; ?>">
+	<div class="tw-w-1/3 sm:tw-w-full"></div>
+	<div class="tw-flex tw-flex-col tw-items-center tw-relative">
+		<div class="tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[340px]">
+			<select multiple="multiple" name="wcc_showcase_additional_category_list_item[]" id="wcc_showcase_additional_category_list_item" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 " data-placeholder="<?php esc_html_e( 'Add Additional Categories...', 'wc-category-showcase' ); ?>">
+				<?php
+				$categories          = get_terms(
+					array(
+						'taxonomy'   => 'product_cat',
+						'hide_empty' => false,
+					)
+				);
+				$selected_categories = isset( $showcase_details['additional_category_list_item'] ) ? map_deep( $showcase_details['additional_category_list_item'], 'absint' ) : array();
+				if ( ! empty( $categories ) ) :
+					?>
+					<?php foreach ( $categories as $category ) : ?>
+					<option value="<?php echo esc_attr( $category->term_id ); ?>" <?php echo ( in_array( $category->term_id, $selected_categories, true ) ) ? 'selected="selected"' : ''; ?>"><?php echo esc_attr( $category->name ); ?>
+				<?php endforeach; ?>
+				<?php endif; ?>
+			</select>
+
+		</div>
+		<div class="tw-mt-6 wcc_showcase_additional_category_list_item tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[360px]">
+			<?php
+			$selected_categories = isset( $showcase_details['additional_category_list_item'] ) ? map_deep( $showcase_details['additional_category_list_item'], 'sanitize_text_field' ) : array();
+			$count               = 0;
+			if ( ! empty( $selected_categories ) ) {
+				foreach ( $selected_categories as $category ) {
+					$category_details = Helpers::get_category_details( $category['cat_id'] );
+					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+					++$count;
+				}
+			}
+			?>
+		</div>
+		<div class="tw-width-[56px] tw-h-[56px] wcc_showcase-loader-additional tw-hidden tw-absolute tw-top-[8px] tw-right-[10px]">
+			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
+		</div>
+	</div>
+</div>
+<!--Addtional Category End-->
 
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">

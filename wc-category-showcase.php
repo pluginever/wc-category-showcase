@@ -62,7 +62,7 @@ function wccs_schedule_migration() {
 		wp_schedule_event( time(), 'every_five_minutes', 'wccs_migrate_data' );
 	}
 }
-add_action( 'admin_init', 'wccs_schedule_migration' );
+//add_action( 'admin_init', 'wccs_schedule_migration' );
 
 /**
  * Add custom interval for migration (15 minutes).
@@ -79,7 +79,7 @@ function wccs_custom_cron_schedules( $schedules ) {
 	);
 	return $schedules;
 }
-add_filter( 'cron_schedules', 'wccs_custom_cron_schedules' );
+//add_filter( 'cron_schedules', 'wccs_custom_cron_schedules' );
 
 /**
  * Migration function.
@@ -222,4 +222,4 @@ function wccs_migrate_data() {
 		delete_option( 'wccs_migrated' );
 	}
 }
-add_action( 'wccs_migrate_data', 'wccs_migrate_data' );
+//add_action( 'wccs_migrate_data', 'wccs_migrate_data' );

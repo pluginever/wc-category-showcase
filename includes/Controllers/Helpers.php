@@ -233,6 +233,8 @@ class Helpers {
 			'category_filter'                   => 'all',
 			'specific_category_select'          => array(),
 			'category_list_item'                => array(),
+			'additional_category_select'        => 'no',
+			'additional_category_list_item'     => array(),
 			'category_sort_order'               => 'default',
 			'category_sort_order_by'            => 'asc',
 			'category_display_limit'            => '12',

@@ -28,6 +28,7 @@ class Admin {
 		add_action( 'admin_post_wcc_showcase_add_category_showcase', array( __CLASS__, 'handle_add_category_showcase' ) );
 		add_action( 'wp_ajax_wc_category_showcase_search_categories', array( __CLASS__, 'search_categories' ) );
 		add_action( 'wp_ajax_wc_category_showcase_get_category_details', array( __CLASS__, 'get_category_details' ) );
+		add_action( 'wp_ajax_wc_category_showcase_get_additional_category_details', array( __CLASS__, 'get_additional_category_details' ) );
 	}
 
 	/**
@@ -266,6 +267,27 @@ class Admin {
 		$category_details             = Helpers::get_category_details( $term_id );
 		$category_details['position'] = $current_position;
 		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+		wp_die();
+	}
+
+	/**
+	 * Get category details.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public static function get_additional_category_details() {
+		check_admin_referer( 'wcc_showcase_search_category_action', 'nonce' );
+		$term_id          = isset( $_POST['term_id'] ) ? sanitize_text_field( wp_unslash( $_POST['term_id'] ) ) : '';
+		$current_position = isset( $_POST['position'] ) ? sanitize_text_field( wp_unslash( $_POST['position'] ) ) : '';
+
+		if ( empty( $term_id ) ) {
+			wp_send_json_success( esc_html__( 'No, search term id provided.', 'wc-category-showcase' ) );
+			wp_die();
+		}
+		$category_details             = Helpers::get_category_details( $term_id );
+		$category_details['position'] = $current_position;
+		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-additional-category-details.php';
 		wp_die();
 	}
 }
