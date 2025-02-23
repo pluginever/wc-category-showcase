@@ -56,7 +56,7 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @return void
 	 */
 	public function init_hooks() {
-		register_activation_hook( $this->get_file(), array( $this, 'install' ) );
+		register_activation_hook( $this->get_file(), array( Installer::class, 'install' ) );
 		add_action( 'plugins_loaded', array( $this, 'on_init' ), 0 );
 		add_action( 'before_woocommerce_init', array( $this, 'on_before_woocommerce_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
@@ -68,7 +68,7 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @since 2.1.0
 	 * @return void
 	 */
-	public function install() {
+	public function install() { // TODO: Remove it.
 		// Add option for installed time.
 		add_option( 'wccs_installed', wp_date( 'U' ) );
 	}
@@ -93,8 +93,11 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @return void
 	 */
 	public function on_init() {
+		// Common classes.
+		$this->set( Installer::class );
 		$this->set( PostTypes::class );
 		$this->set( Shortcodes\Shortcodes::class );
+
 		// Admin classes.
 		if ( is_admin() ) {
 			$this->set( Admin\Admin::class );
