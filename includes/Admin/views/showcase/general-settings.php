@@ -1218,7 +1218,8 @@ defined( 'ABSPATH' ) || exit;
 							'hide_empty' => false,
 						)
 					);
-					$selected_categories = isset( $showcase_details['specific_category_select'] ) ? map_deep( $showcase_details['specific_category_select'], 'absint' ) : array();
+
+					$selected_categories = isset( $showcase_details['specific_category_select'] ) ? map_deep( $showcase_details['category_list_item'], 'absint' ) : array();
 					if ( ! empty( $categories ) ) :
 						?>
 						<?php foreach ( $categories as $category ) : ?>
@@ -1246,7 +1247,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<!--Addtional Category start-->
+<!-- Additional Category start -->
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Enable Additional Categories', 'wc-category-showcase' ); ?></h3>
@@ -1299,7 +1300,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<!--Addtional Category End-->
+<!-- Additional Category End -->
 
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">
