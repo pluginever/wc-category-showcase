@@ -280,7 +280,7 @@ class Installer {
 
 				// Update the post meta.
 				update_post_meta( $post_id, 'wcc_showcase_category_list_item', $featured_customizer );
-				// update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
+				update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
 
 				// Updating style settings.
 				$content_color    = get_post_meta( $post_id, 'wccs_featured_content_color', true );
