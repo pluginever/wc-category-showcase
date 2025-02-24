@@ -137,6 +137,8 @@ class Installer {
 	 * @return void
 	 */
 	public function migrate_data() {
+		error_log( 'Migrating data...' );
+
 		$fields = array(
 			'wccs_featured_categories'   => 'wcc_showcase_specific_category_select',
 			'wccs_show_block_title'      => 'wcc_showcase_show_section_title',
@@ -147,7 +149,7 @@ class Installer {
 			'wccs_featured_show_desc'    => 'wcc_showcase_show_category_description',
 			'wccs_featured_show_button'  => 'wcc_showcase_show_button',
 			'wccs_featured_button_text'  => 'wcc_showcase_button_text',
-			'wccs_additional_categories' => 'wcc_showcase_additional_category_select',
+			// 'wccs_additional_categories' => 'wcc_showcase_additional_category_select',
 		);
 
 		$fields_to_delete = array(
@@ -169,7 +171,7 @@ class Installer {
 		$query = new \WP_Query(
 			array(
 				'post_type'      => 'wccs_showcase',
-				'posts_per_page' => 10,
+				'posts_per_page' => 1,
 				'offset'         => $paged,
 				'fields'         => 'ids',
 			)
@@ -177,6 +179,7 @@ class Installer {
 
 		if ( $query->have_posts() ) {
 			foreach ( $query->posts as $post_id ) {
+				error_log( 'Migrating post ID: ' . $post_id );
 				// Update the uncommon meta keys.
 				update_post_meta( $post_id, 'wcc_showcase_layout', 'slider' );
 				update_post_meta(
@@ -189,6 +192,8 @@ class Installer {
 				);
 				update_post_meta( $post_id, 'wcc_showcase_category_filter', 'specific' );
 				update_post_meta( $post_id, 'wcc_showcase_specific_category_select', 'specific' );
+
+				var_dump( get_post_meta( $post_id, 'wccs_featured_categories', true ) );
 
 				foreach ( $fields as $key => $field ) {
 					$value = get_post_meta( $post_id, $key, true );
@@ -204,44 +209,78 @@ class Installer {
 					}
 
 					// Delete old meta keys if necessary.
-					delete_post_meta( $post_id, $key );
+					// delete_post_meta( $post_id, $key );
 				}
 
 				// Update additional customizer settings.
 				$featured_customizer   = get_post_meta( $post_id, 'wccsp_featured_customizer', true );
 				$additional_customizer = get_post_meta( $post_id, 'wccsp_additional_customizer', true );
 
+				error_log( 'Featured Customizer: ' . print_r( $featured_customizer, true ) );
+
 				// Update array keys from $featured_customizer, title should be "name" and image should be "image_url".
 				if ( is_array( $featured_customizer ) ) {
 					$featured_customizer = array_map(
-						function ( $item ) {
+						function ( $item, $key ) {
+							// Update the keys.
 							$item['name']      = $item['title'];
 							$item['image_url'] = $item['image'];
+
+							// Add default values.
+							$item['description']    = '';
+							$item['custom_text']    = '';
+							$item['icon_name']      = '';
+							$item['label_text']     = '';
+							$item['label_color']    = 'green';
+							$item['position']       = '0';
+							$item['cat_id']         = (string) $key;
+							$item['is_icon']        = 'no';
+							$item['is_custom_text'] = 'no';
+							$item['is_label']       = 'no';
+
+							// Unset the old keys.
 							unset( $item['title'] );
 							unset( $item['image'] );
 							return $item;
 						},
-						$featured_customizer
+						$featured_customizer,
+						array_keys( $featured_customizer )
 					);
 				}
 
 				// Update array keys from $additional_customizer, title should be "name" and image should be "image_url".
 				if ( is_array( $additional_customizer ) ) {
 					$additional_customizer = array_map(
-						function ( $item ) {
+						function ( $item, $key ) {
+							// Update the keys.
 							$item['name']      = $item['title'];
 							$item['image_url'] = $item['image'];
+
+							// Add default values.
+							$item['description']    = '';
+							$item['custom_text']    = '';
+							$item['icon_name']      = '';
+							$item['label_text']     = '';
+							$item['label_color']    = 'green';
+							$item['position']       = '0';
+							$item['cat_id']         = (string) $key;
+							$item['is_icon']        = 'no';
+							$item['is_custom_text'] = 'no';
+							$item['is_label']       = 'no';
+
+							// Add default values.
 							unset( $item['title'] );
 							unset( $item['image'] );
 							return $item;
 						},
-						$additional_customizer
+						$additional_customizer,
+						array_keys( $additional_customizer )
 					);
 				}
 
 				// Update the post meta.
 				update_post_meta( $post_id, 'wcc_showcase_category_list_item', $featured_customizer );
-				update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
+				// update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
 
 				// Updating style settings.
 				$content_color    = get_post_meta( $post_id, 'wccs_featured_content_color', true );
@@ -259,7 +298,7 @@ class Installer {
 
 			// Delete the old meta keys.
 			foreach ( $fields_to_delete as $field ) {
-				delete_post_meta( $post_id, $field );
+				// delete_post_meta( $post_id, $field );
 			}
 
 			// Increment the offset.
