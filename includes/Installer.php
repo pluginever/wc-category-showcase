@@ -31,7 +31,7 @@ class Installer {
 		add_action( 'init', array( $this, 'check_update' ), 0 );
 
 		// Schedule the migration cron job (runs every 15 minutes).
-		add_filter( 'cron_schedules', array( $this, 'add_cron_schedules' ) );
+		// TODO: add_filter( 'cron_schedules', array( $this, 'add_cron_schedules' ) ); // Add custom interval is not worked here!
 		add_action( 'wccs_migrate_data', array( $this, 'migrate_data' ) );
 	}
 
@@ -103,7 +103,7 @@ class Installer {
 
 		// On install, Schedule the migration cron job (runs every 15 minutes).
 		if ( ! wp_next_scheduled( 'wccs_migrate_data' ) ) {
-			wp_schedule_event( time(), 'every_five_minutes', 'wccs_migrate_data' );
+			wp_schedule_event( time(), 'hourly', 'wccs_migrate_data' );
 		}
 
 		wc_category_showcase()->update_db_version( wc_category_showcase()->get_version(), false );
@@ -138,7 +138,7 @@ class Installer {
 	 */
 	public function migrate_data() {
 		error_log( 'Migrating data...' );
-
+		// Fields to update.
 		$fields = array(
 			'wccs_featured_categories'   => 'wcc_showcase_specific_category_select',
 			'wccs_show_block_title'      => 'wcc_showcase_show_section_title',
@@ -149,7 +149,7 @@ class Installer {
 			'wccs_featured_show_desc'    => 'wcc_showcase_show_category_description',
 			'wccs_featured_show_button'  => 'wcc_showcase_show_button',
 			'wccs_featured_button_text'  => 'wcc_showcase_button_text',
-			// 'wccs_additional_categories' => 'wcc_showcase_additional_category_select',
+			'wccs_additional_categories' => 'wcc_showcase_additional_category_select',
 		);
 
 		$fields_to_delete = array(
@@ -171,15 +171,14 @@ class Installer {
 		$query = new \WP_Query(
 			array(
 				'post_type'      => 'wccs_showcase',
-				'posts_per_page' => 1,
-				'offset'         => $paged,
+				'posts_per_page' => 10,
+				'paged'          => $paged,
 				'fields'         => 'ids',
 			)
 		);
 
 		if ( $query->have_posts() ) {
 			foreach ( $query->posts as $post_id ) {
-				error_log( 'Migrating post ID: ' . $post_id );
 				// Update the uncommon meta keys.
 				update_post_meta( $post_id, 'wcc_showcase_layout', 'slider' );
 				update_post_meta(
@@ -192,8 +191,6 @@ class Installer {
 				);
 				update_post_meta( $post_id, 'wcc_showcase_category_filter', 'specific' );
 				update_post_meta( $post_id, 'wcc_showcase_specific_category_select', 'specific' );
-
-				var_dump( get_post_meta( $post_id, 'wccs_featured_categories', true ) );
 
 				foreach ( $fields as $key => $field ) {
 					$value = get_post_meta( $post_id, $key, true );
@@ -215,8 +212,6 @@ class Installer {
 				// Update additional customizer settings.
 				$featured_customizer   = get_post_meta( $post_id, 'wccsp_featured_customizer', true );
 				$additional_customizer = get_post_meta( $post_id, 'wccsp_additional_customizer', true );
-
-				error_log( 'Featured Customizer: ' . print_r( $featured_customizer, true ) );
 
 				// Update array keys from $featured_customizer, title should be "name" and image should be "image_url".
 				if ( is_array( $featured_customizer ) ) {
@@ -303,10 +298,14 @@ class Installer {
 
 			// Increment the offset.
 			update_option( 'wccs_migrated', $paged + 1 );
+
+			error_log( 'Migrated post ID: ' . $post_id );
 		} else {
 			// No more posts left to migrate, remove the cron job.
 			wp_clear_scheduled_hook( 'wccs_migrate_data' );
 			delete_option( 'wccs_migrated' );
+
+			error_log( 'Migration completed and Removing cron job.' );
 		}
 	}
 
