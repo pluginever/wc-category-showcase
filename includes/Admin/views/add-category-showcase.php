@@ -2,7 +2,10 @@
 /**
  * General settings tab.
  *
- * @package WooCommerceCategoryShowcase
+ * @since 2.2.0
+ * @package WooCommerceCategoryShowcase\Admin\Views
+ * @var array $showcase_details Showcase details.
+ * @var int   $post_id        Post ID.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -33,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 				<div class="tw-mx-auto tw-mt-4">
-					<!--Tabs list-->
+					<!-- Tabs list -->
 					<div class="tw-p-2 tw-bg-white tw-rounded-md">
 						<div class="tw-w-full tw-sm:block">
 							<nav id="tabs" class="tw-flex tw-space-x-4 sm:tw-hidden" aria-label="Tabs">
@@ -46,7 +49,7 @@ defined( 'ABSPATH' ) || exit;
 									</svg>
 									<?php esc_html_e( 'General', 'wc-category-showcase' ); ?>
 								</a>
-								<a href="#second" class="wcc_showcase-tabs">
+								<a href="#second" class="wcc_showcase-tabs wcc_showcase-tabs-active">
 									<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 										<g clip-path="url(#clip0_379_1744)">
 											<path d="M19.511 8.88911H0.688743C0.619948 8.88909 0.552095 8.87311 0.490527 8.84241C0.428959 8.81172 0.375358 8.76715 0.333943 8.71222C0.292528 8.65729 0.264431 8.59349 0.251863 8.52585C0.239296 8.45821 0.242602 8.38858 0.261521 8.32244L2.20708 1.51411C2.24026 1.3981 2.3103 1.29605 2.40662 1.22338C2.50295 1.15072 2.62031 1.11138 2.74097 1.11133H17.4587C17.5794 1.11138 17.6968 1.15072 17.7931 1.22338C17.8894 1.29605 17.9595 1.3981 17.9926 1.51411L19.9387 8.32244C19.9577 8.38863 19.961 8.45831 19.9484 8.52599C19.9358 8.59367 19.9076 8.6575 19.8662 8.71244C19.8247 8.76738 19.771 8.81194 19.7094 8.8426C19.6477 8.87326 19.5798 8.88918 19.511 8.88911ZM16.7665 10.0002V13.3336H7.87763V10.0002H6.76652V17.778H3.43319V10.0002H2.32208V17.778C2.32208 18.0727 2.43914 18.3553 2.64751 18.5637C2.85589 18.772 3.1385 18.8891 3.43319 18.8891H16.7665C17.0612 18.8891 17.3438 18.772 17.5522 18.5637C17.7606 18.3553 17.8776 18.0727 17.8776 17.778V10.0002H16.7665ZM2.32208 7.778H3.43319L4.5443 2.22244H3.43319L2.32208 7.778ZM7.0443 7.778H8.15541L8.71097 2.22244H7.59985L7.0443 7.778ZM11.4887 2.22244L12.0443 7.778H13.1554L12.5999 2.22244H11.4887ZM16.7665 2.22244H15.6554L16.7665 7.778H17.8776L16.7665 2.22244Z"/>
@@ -85,7 +88,7 @@ defined( 'ABSPATH' ) || exit;
 									<?php esc_html_e( 'Fonts', 'wc-category-showcase' ); ?>
 								</a>
 							</nav>
-							<!--start tab dropdown select-->
+							<!-- Start tab dropdown select -->
 							<div class="select-wrapper tw-hidden sm:tw-block tw-w-full" id="wcc_showcase-tab-select">
 								<div class="select tw-bg-input-grey-50 tw-border-divider-grey-100 tw-rounded-md">
 									<div class="select__trigger tw-bg-input-grey-50">
@@ -187,7 +190,7 @@ defined( 'ABSPATH' ) || exit;
 					<div class="bk-card__footer">
 						<input type="hidden" name="action" value="wcc_showcase_add_category_showcase"/>
 						<?php wp_nonce_field( 'wcc_showcase_add_category_showcase' ); ?>
-						<?php if ( ! isset( $_GET['edit'] ) ) { ?>
+						<?php if ( empty( $post_id ) ) { ?>
 						<button class="button button-primary bk-w-100"><?php esc_html_e( 'Publish', 'wc-category-showcase' ); ?></button>
 						<?php } else { ?>
 							<input type="hidden" name="post_id" value="<?php echo esc_attr( $post_id ); ?>">
@@ -196,7 +199,7 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 
-				<?php if ( isset( $_GET['edit'] ) ) { ?>
+				<?php if ( ! empty( $post_id ) ) { ?>
 					<div class="bk-card">
 						<div class="bk-card__header">
 							<h2 class="bk-card__title"><?php esc_html_e( 'Shortcode', 'wc-category-showcase' ); ?></h2>

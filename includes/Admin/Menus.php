@@ -86,6 +86,7 @@ class Menus {
 	 * @since 1.0.0
 	 */
 	public function showcase_list_render() {
+		wp_verify_nonce( '_nonce' );
 		$add              = isset( $_GET['add'] ) ? true : false;
 		$post_id          = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
 		$showcase_details = Helpers::get_showcase_settings( $post_id );
