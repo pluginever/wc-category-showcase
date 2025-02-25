@@ -10,6 +10,9 @@ tabTogglers.forEach(function (toggler) {
 			tabTogglers[i].classList.remove( "wcc_showcase-tabs-active", "wcc_showcase-tabs" );
 			if ("#" + tabContents.children[i].id === tabName) {
 				tabTogglers[i].classList.add( "wcc_showcase-tabs-active" );
+
+				// Update hidden input value.
+				document.getElementById("wcc_showcase_current_tab").value = tabName.replace("#", "");;
 				continue;
 			}
 			tabContents.children[i].classList.add("tw-hidden");

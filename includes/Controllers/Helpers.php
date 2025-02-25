@@ -217,6 +217,7 @@ class Helpers {
 		$settings = array(
 			// General tab settings data.
 			'post_title'                        => '',
+			'current_tab'                       => 'first',
 			'layout'                            => 'grid',
 			'slider'                            => array(
 				'column' => '3',
