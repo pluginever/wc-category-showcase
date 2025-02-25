@@ -1212,7 +1212,7 @@ defined( 'ABSPATH' ) || exit;
 		<div class="tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[340px]">
 				<select multiple="multiple" name="wcc_showcase_specific_category_select[]" id="wcc_showcase_specific_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 " data-placeholder="<?php esc_html_e( 'Select Categories...', 'wc-category-showcase' ); ?>">
 					<?php
-					$categories          = get_terms(
+					$categories = get_terms(
 						array(
 							'taxonomy'   => 'product_cat',
 							'hide_empty' => false,

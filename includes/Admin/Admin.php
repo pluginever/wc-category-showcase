@@ -170,6 +170,31 @@ class Admin {
 						continue;
 					}
 
+					// if it is not array the remove it from the list.
+					$meta_value = array_filter( $meta_value, 'is_array' );
+
+					uasort( $meta_value, array( Helpers::class, 'sort_categories_according_to_position' ) );
+					foreach ( $meta_value as $keys => $category_details ) {
+						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
+							$meta_value[ $keys ]['is_icon'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_custom_text', $category_details ) ) {
+							$meta_value[ $keys ]['is_custom_text'] = 'no';
+						}
+						if ( ! array_key_exists( 'is_label', $category_details ) ) {
+							$meta_value[ $keys ]['is_label'] = 'no';
+						}
+					}
+				}
+
+				if ( 'wcc_showcase_additional_category_list_item' === $post_key ) {
+					if ( empty( $meta_value ) ) {
+						continue;
+					}
+
+					// if it is not array the remove it from the list.
+					$meta_value = array_filter( $meta_value, 'is_array' );
+
 					uasort( $meta_value, array( Helpers::class, 'sort_categories_according_to_position' ) );
 					foreach ( $meta_value as $keys => $category_details ) {
 						if ( ! array_key_exists( 'is_icon', $category_details ) ) {
