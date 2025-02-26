@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) || exit;
 		</label>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row">
+<div class="wcc_showcase-settings-row <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Alignment', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
@@ -99,7 +99,7 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Customize the color or tint of the category showcase cards to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[348px] tw-h-[320px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
+		<div class="tw-w-[348px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
@@ -241,10 +241,10 @@ defined( 'ABSPATH' ) || exit;
 						</g>
 					</svg>
 				</div>
-				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_placement" value="<?php echo esc_attr( 'overlay' ); ?>" <?php echo 'overlay' === $showcase_details['content_placement'] ? 'checked' : ''; ?>>
+				<input class="wcc_showcase_content_placement_overlay !tw-hidden" type="radio" name="wcc_showcase_content_placement" value="<?php echo esc_attr( 'overlay' ); ?>" <?php echo 'overlay' === $showcase_details['content_placement'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Overlay', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-content-placement">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-content-placement <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 				<div class="<?php echo 'top' === $showcase_details['content_placement'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
 					<svg class="<?php echo 'top' === $showcase_details['content_placement'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3534)">
@@ -256,7 +256,7 @@ defined( 'ABSPATH' ) || exit;
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_placement" value="<?php echo esc_attr( 'top' ); ?>" <?php echo 'top' === $showcase_details['content_placement'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Top', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-content-placement">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-content-placement <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 				<div class="<?php echo 'bottom' === $showcase_details['content_placement'] ? 'wcc_showcase-layout-active-before-content-2' : ''; ?>">
 					<svg class="<?php echo 'bottom' === $showcase_details['content_placement'] ? 'wcc_showcase-layout-active' : 'wcc_showcase-layout-primary'; ?>" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3549)">
@@ -268,7 +268,7 @@ defined( 'ABSPATH' ) || exit;
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_placement" value="<?php echo esc_attr( 'bottom' ); ?>" <?php echo 'bottom' === $showcase_details['content_placement'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Bottom', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 				<div class="wcc_showcase-layout-pro-before-content-2">
 					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3552)">
@@ -280,7 +280,7 @@ defined( 'ABSPATH' ) || exit;
 				<input class="!tw-hidden" type="radio" name="wcc_showcase_content_placement" value="<?php echo esc_attr( 'right' ); ?>" <?php echo 'right' === $showcase_details['content_placement'] ? 'checked' : ''; ?>>
 				<span><?php esc_html_e( 'Right', 'wc-category-showcase' ); ?></span>
 			</div>
-			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro">
+			<div class="tw-flex tw-flex-col tw-items-center tw-relative wcc_showcase-number-of-column-pro wcc_showcase-pro <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 				<div class="wcc_showcase-layout-pro-before-content-2">
 					<svg class="wcc_showcase-layout-disable" xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="currentColor">
 						<g clip-path="url(#clip0_609_3555)">
@@ -293,7 +293,7 @@ defined( 'ABSPATH' ) || exit;
 				<span><?php esc_html_e( 'Left', 'wc-category-showcase' ); ?></span>
 			</div>
 		</div>
-		<div class="tw-max-w-[385px] ">
+		<div class="tw-max-w-[385px] <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 			<div class="tw-mt-3 tw-flex tw-flex-row tw-items-center tw-gap-1 tw-w-full">
 				<svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 					<path d="M15.1337 15.5891L17.3499 7.57164L13.7187 9.62914C13.6292 9.67993 13.5304 9.71235 13.4283 9.72449C13.3261 9.73663 13.2225 9.72825 13.1236 9.69984C13.0247 9.67144 12.9325 9.62357 12.8523 9.55906C12.7722 9.49454 12.7057 9.41468 12.6568 9.32414L9.9999 4.41602L7.34303 9.32352C7.29394 9.41387 7.22737 9.49355 7.14719 9.55792C7.067 9.62229 6.97481 9.67006 6.87598 9.69845C6.77715 9.72683 6.67366 9.73527 6.57154 9.72326C6.46942 9.71126 6.3707 9.67905 6.28115 9.62852L2.6499 7.57102L4.86615 15.5891H15.1337Z" fill="#FFD731"/>
@@ -484,7 +484,7 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Customize the color or tint of the category showcase cards inner content to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
-		<div class="tw-w-[348px] tw-h-[320px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
+		<div class="tw-w-[348px] tw-bg-input-grey-50 tw-rounded-md tw-p-2 wcc_showcase-category-list-item">
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
@@ -493,23 +493,9 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 			</div>
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
-				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Text Color', 'wc-category-showcase' ); ?></h4>
-				<div class="tw-relative tw-flex">
-					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" data-jscolor="{ value: '<?php echo esc_attr( $showcase_details['card_content']['text_color'] ); ?>', backgroundColor: '#333', shadowColor: '#FFFFFF84', width: 121, height: 121 }" name="wcc_showcase_card_content[text_color]" value="<?php echo esc_attr( $showcase_details['card_content']['text_color'] ); ?>">
-					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
-				</div>
-			</div>
-			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
 					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" data-jscolor="{ value: '<?php echo esc_attr( $showcase_details['card_content']['hover_color'] ); ?>', backgroundColor: '#333', shadowColor: '#FFFFFF83', width: 121, height: 121 }" name="wcc_showcase_card_content[hover_color]" value="<?php echo esc_attr( $showcase_details['card_content']['hover_color'] ); ?>">
-					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
-				</div>
-			</div>
-			<div class="tw-mt-3 ">
-				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'Hover Text Color', 'wc-category-showcase' ); ?></h4>
-				<div class="tw-relative tw-flex">
-					<input class="wcc_showcase-settings-field-border tw-text-sm tw-w-full !tw-pl-9 tw-h-[36px]" type="text" data-jscolor="{ value: '<?php echo esc_attr( $showcase_details['card_content']['hover_text_color'] ); ?>', backgroundColor: '#333', shadowColor: '#FFFFFF81', width: 121, height: 121 }" name="wcc_showcase_card_content[hover_text_color]" value="<?php echo esc_attr( $showcase_details['card_content']['hover_text_color'] ); ?>">
 					<span class="tw-absolute tw-bg-input-grey-50 tw-py-[8px] tw-px-5 tw-items-center tw-top-[1px] tw-right-[2px] tw-rounded-tr-md tw-rounded-br-md"><?php echo esc_attr( 'HEX' ); ?></span>
 				</div>
 			</div>

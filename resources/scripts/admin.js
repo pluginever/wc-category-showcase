@@ -17,6 +17,18 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 				$('#modelConfirm').toggleClass('tw-hidden');
 			});
 
+			// window onload #wcc_showcase_content_placement_overlay attr marked as checked.
+			// $(window).on('load', function() {
+			// 	$('.wcc_showcase_layout_select').find('input:radio').each(function() {
+			// 		if ( 'grid' === $(this).val() && $(this).is(':checked') ) {
+			// 			let overlay_selector = $('.wcc_showcase_content_placement_overlay');
+			// 			// Make it clicked by default.
+			// 			overlay_selector.attr('checked', true);
+			// 			console.log('checked');
+			// 		}
+			// 	});
+			// });
+
 			$('.wcc_showcase_layout_select').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
 				$('.wcc_showcase_layout_select').find('input:radio').each(function() {
@@ -45,6 +57,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 							$('.wcc_showcase-grid-selection').removeClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').addClass('tw-hidden');
 							$('.wcc_showcase-breakpoint').addClass('tw-hidden');
+							$('.wcc_showcase_content_placement_overlay').attr('checked', true);
 						}
 					} else {
 						$(this).attr( 'checked', false );

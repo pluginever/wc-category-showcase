@@ -263,7 +263,7 @@ class Helpers {
 				'left'   => '8',
 			),
 			'gap_between_cards'                 => '16',
-			'content_placement'                 => 'bottom',
+			'content_placement'                 => 'overlay',
 			'overlay_content_position'          => 'top_left',
 			'content_alignment'                 => 'center',
 			'content_padding'                   => 16,
@@ -276,9 +276,7 @@ class Helpers {
 			),
 			'card_content'                      => array(
 				'background_color' => '#96588A00',
-				'text_color'       => '#FFFFFFFF',
 				'hover_color'      => '#96588A00',
-				'hover_text_color' => '#FFFFFFFF',
 			),
 			'content_inner_padding_is_all'      => 'no',
 			'content_inner_padding'             => 16,

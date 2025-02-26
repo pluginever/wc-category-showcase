@@ -185,12 +185,12 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 			</div><!-- .column-1 -->
 
 			<div class="column-2">
-				<div class="bk-card">
+				<div class="bk-card" style="position: sticky; top: 32px;z-index: 9;">
 					<div class="bk-card__header">
 						<h2 class="bk-card__title"><?php esc_html_e( 'Actions', 'wc-category-showcase' ); ?></h2>
 					</div>
 					<div class="bk-card__footer">
-						<input type="hidden" id="wcc_showcase_current_tab" name="wcc_showcase_current_tab" value="first">
+						<input type="hidden" id="wcc_showcase_current_tab" name="wcc_showcase_current_tab" value="<?php echo esc_attr( get_post_meta( $post_id, 'wcc_showcase_current_tab', true ) ); ?>">
 						<input type="hidden" name="action" value="wcc_showcase_add_category_showcase"/>
 						<?php wp_nonce_field( 'wcc_showcase_add_category_showcase' ); ?>
 						<?php if ( empty( $post_id ) ) { ?>
