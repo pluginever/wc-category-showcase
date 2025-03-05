@@ -1219,7 +1219,7 @@ defined( 'ABSPATH' ) || exit;
 						)
 					);
 
-					$selected_categories = isset( $showcase_details['specific_category_select'] ) ? map_deep( $showcase_details['category_list_item'], 'absint' ) : array();
+					$selected_categories = isset( $showcase_details['specific_category_select'] ) ? map_deep( $showcase_details['specific_category_select'], 'absint' ) : array();
 					if ( ! empty( $categories ) ) :
 						?>
 						<?php foreach ( $categories as $category ) : ?>
@@ -1235,7 +1235,7 @@ defined( 'ABSPATH' ) || exit;
 			$count               = 0;
 			if ( ! empty( $selected_categories ) ) {
 				foreach ( $selected_categories as $category ) {
-					$category_details = Helpers::get_category_details( $category['cat_id'] );
+					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id );
 					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
 					++$count;
 				}
@@ -1288,7 +1288,7 @@ defined( 'ABSPATH' ) || exit;
 			$count               = 0;
 			if ( ! empty( $selected_categories ) ) {
 				foreach ( $selected_categories as $category ) {
-					$category_details = Helpers::get_category_details( $category['cat_id'] );
+					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id );
 					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
 					++$count;
 				}
