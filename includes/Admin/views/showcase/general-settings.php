@@ -1255,16 +1255,16 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input class="tw-sr-only tw-peer wcc_showcase_additional_category_select" type="checkbox" name="wcc_showcase_additional_category_select" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $showcase_details['additional_category_select'] ) { echo 'checked'; } ?>>
+			<input class="tw-sr-only tw-peer wcc_showcase_enable_additional_category" type="checkbox" name="wcc_showcase_enable_additional_category" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $showcase_details['enable_additional_category'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row wcc_showcase-additional-category-selection <?php echo 'yes' === $showcase_details['additional_category_select'] ? '' : 'tw-hidden'; ?>">
+<div class="wcc_showcase-settings-row wcc_showcase-additional-category-selection <?php echo 'yes' === $showcase_details['enable_additional_category'] ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full"></div>
 	<div class="tw-flex tw-flex-col tw-items-center tw-relative">
 		<div class="tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[340px]">
-			<select multiple="multiple" name="wcc_showcase_additional_category_list_item[]" id="wcc_showcase_additional_category_list_item" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 " data-placeholder="<?php esc_html_e( 'Add Additional Categories...', 'wc-category-showcase' ); ?>">
+			<select multiple="multiple" name="wcc_showcase_additional_category_select[]" id="wcc_showcase_additional_category_select" class="tw-min-w-[400px] tw-max-w-[400px] !tw-bg-input-grey-50 !tw-border-divider-grey-100 " data-placeholder="<?php esc_html_e( 'Add Additional Categories...', 'wc-category-showcase' ); ?>">
 				<?php
 				$categories          = get_terms(
 					array(
@@ -1272,7 +1272,7 @@ defined( 'ABSPATH' ) || exit;
 						'hide_empty' => false,
 					)
 				);
-				$selected_categories = isset( $showcase_details['additional_category_list_item'] ) ? map_deep( $showcase_details['additional_category_list_item'], 'absint' ) : array();
+				$selected_categories = isset( $showcase_details['additional_category_select'] ) ? map_deep( $showcase_details['additional_category_select'], 'absint' ) : array();
 				if ( ! empty( $categories ) ) :
 					?>
 					<?php foreach ( $categories as $category ) : ?>
@@ -1288,8 +1288,8 @@ defined( 'ABSPATH' ) || exit;
 			$count               = 0;
 			if ( ! empty( $selected_categories ) ) {
 				foreach ( $selected_categories as $category ) {
-					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id );
-					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id, true );
+					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-additional-category-details.php';
 					++$count;
 				}
 			}

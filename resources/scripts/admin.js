@@ -480,9 +480,8 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 				});
 			});
 
-			$(document).on('change', '.wcc_showcase_additional_category_select', function (e) {
-				console.log($('input[name="wcc_showcase_additional_category_select"]').is(':checked') );
-				if( $('input[name="wcc_showcase_additional_category_select"]').is(':checked') ) {
+			$(document).on('change', '.wcc_showcase_enable_additional_category', function (e) {
+				if( $('input[name="wcc_showcase_enable_additional_category"]').is(':checked') ) {
 					$('.wcc_showcase-additional-category-selection').removeClass('tw-hidden');
 				} else {
 					$('.wcc_showcase-additional-category-selection').addClass('tw-hidden');
@@ -491,11 +490,11 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 			// Search Add category to list end.
 
 			// Search Add Additional category to list start.
-			$('#wcc_showcase_additional_category_list_item').select2();
-			var valuesAdditional = $('#wcc_showcase_additional_category_list_item').val();
+			$('#wcc_showcase_additional_category_select').select2();
+			var valuesAdditional = $('#wcc_showcase_additional_category_select').val();
 			let selectedAdditionalValues = new Set();
 			valuesAdditional.forEach(value => selectedAdditionalValues.add(value));
-			$('#wcc_showcase_additional_category_list_item').on('change', function(e) {
+			$('#wcc_showcase_additional_category_select').on('change', function(e) {
 				let newAdditionalSelected = $(this).val().filter(value => !selectedAdditionalValues.has(value));
 				newAdditionalSelected.forEach(value => selectedAdditionalValues.add(value));
 				var current_position = $('.wcc_showcase_additional_category_list_item .wcc_showcase-additional-category-list-item').length;
@@ -570,6 +569,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 					$(this).find('*[id]').each(function() {
 						ids.push('#'+$(this).attr('id'));
 					});
+					console.log(ids);
 					PluginEverIconPicker({
 						'selector': ids[2],
 						'onClick': ids[4],

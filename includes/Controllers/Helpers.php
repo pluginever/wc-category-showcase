@@ -16,18 +16,25 @@ class Helpers {
 	 *
 	 * @param \WP_Term| int $category_id Category ID.
 	 * @param int           $post_id Post ID.
+	 * @param bool          $additional_category Additional category.
 	 *
 	 * @since 1.0.0
 	 * @return array
 	 */
-	public static function get_category_details( $category_id, $post_id = null ) {
+	public static function get_category_details( $category_id, $post_id = null, $additional_category = false ) {
 		$category                = get_term( $category_id );
 		$category_details        = array();
 		$category_custom_details = array();
 
 		// Get the custom category details.
-		if ( ! empty( $post_id ) ) {
+		if ( ! empty( $post_id ) && ! $additional_category ) {
 			$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_category_list_item', true );
+			$category_custom_details = $category_custom_details[ $category_id ] ?? array();
+		}
+
+		// Get the custom additional category details.
+		if ( ! empty( $post_id ) && $additional_category ) {
+			$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', true );
 			$category_custom_details = $category_custom_details[ $category_id ] ?? array();
 		}
 
@@ -234,7 +241,8 @@ class Helpers {
 			'category_filter'                   => 'all',
 			'specific_category_select'          => array(),
 			'category_list_item'                => array(),
-			'additional_category_select'        => 'no',
+			'enable_additional_category'        => 'no',
+			'additional_category_select'        => array(),
 			'additional_category_list_item'     => array(),
 			'category_sort_order'               => 'default',
 			'category_sort_order_by'            => 'asc',
