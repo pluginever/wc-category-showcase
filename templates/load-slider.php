@@ -101,9 +101,9 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 </div>
 
 <?php
-//if ( 'yes' === $showcase['show_additional_categories'] && array_key_exists( 'show_additional_categories', $showcase ) ) { // TODO: Enable this condition to show additional categories.
+if ( array_key_exists( 'enable_additional_category', $showcase ) && 'yes' === $showcase['enable_additional_category'] ) {
 	// Get the selected categories.
-	$categories = Helpers::get_selected_categories( $showcase, $wccs_id ); // TODO: Need to query additional categories.
+	$categories = Helpers::get_selected_categories( $showcase, $wccs_id );
 
 	$layout            = 'grid'; // Overwrite the layout for additional categories to grid.
 	$content_placement = $showcase['content_placement'] ? $showcase['content_placement'] : 'center';
@@ -125,4 +125,4 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 		}
 	}
 	echo '</div>';
-//} // TODO: enable it letter.
+}

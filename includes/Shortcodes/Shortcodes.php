@@ -62,7 +62,7 @@ class Shortcodes {
 					?>
 				</div>
 			<?php endif; ?>
-			<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?> <?php echo sanitize_html_class( $layout . '-has-additional-categories' ); ?>">
+			<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?> <?php echo array_key_exists( 'enable_additional_category', $showcase ) && 'yes' === $showcase['enable_additional_category'] ? sanitize_html_class( $layout . '-has-additional-categories' ) : ''; ?>">
 			<?php
 			if ( 'slider' === $layout ) {
 				$this->render_slider_content( $wccs_id, $showcase );
