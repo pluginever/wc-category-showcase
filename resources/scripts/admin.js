@@ -41,6 +41,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 							$('.wcc_showcase-grid-selection').addClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').addClass('tw-hidden');
 							$('.wcc_showcase-breakpoint').addClass('tw-hidden');
+							$('.slider-additional-category').addClass('tw-hidden');
 						}
 						if ( 'slider' === $(this).val() ){
 							$('.is-wcc-slider').removeClass('tw-hidden');
@@ -48,6 +49,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 							$('.wcc_showcase-grid-selection').addClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').removeClass('tw-hidden');
 							$('.wcc_showcase-breakpoint').removeClass('tw-hidden');
+							$('.slider-additional-category').removeClass('tw-hidden');
 						}else {
 							$('.is-wcc-slider').addClass('tw-hidden');
 						}
@@ -57,6 +59,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 							$('.wcc_showcase-grid-selection').removeClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').addClass('tw-hidden');
 							$('.wcc_showcase-breakpoint').addClass('tw-hidden');
+							$('.slider-additional-category').addClass('tw-hidden');
 							$('.wcc_showcase_content_placement_overlay').attr('checked', true);
 						}
 					} else {

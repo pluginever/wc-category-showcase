@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class="wcc_showcase-additional-category-list-item" data-id="<?php echo esc_attr( $category_details['cat_id'] ); ?>" data-title="<?php echo esc_attr( $category_details['name'] ); ?>">
+<div class="wcc_showcase-additional-category-list-item tw-mt-1" data-id="<?php echo esc_attr( $category_details['cat_id'] ); ?>" data-title="<?php echo esc_attr( $category_details['name'] ); ?>">
 	<div class="tw-flex tw-justify-between tw-p-2 tw-rounded tw-min-w-[385px] sm:tw-min-w-[340px] tw-border tw-border-solid tw-border-divider-grey-100 wcc_showcase-move">
 		<div class="tw-flex tw-gap-1">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

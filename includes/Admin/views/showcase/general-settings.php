@@ -1248,7 +1248,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 <!-- Additional Category start -->
-<div class="wcc_showcase-settings-row">
+<div class="wcc_showcase-settings-row slider-additional-category <?php echo 'grid' === $showcase_details['layout'] || 'block' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Enable Additional Categories', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable additional categories to expand your slider\'s customization options, allowing for greater flexibility and enhanced content organization.', 'wc-category-showcase' ); ?></p>
@@ -1260,7 +1260,7 @@ defined( 'ABSPATH' ) || exit;
 		</label>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row wcc_showcase-additional-category-selection <?php echo 'yes' === $showcase_details['enable_additional_category'] ? '' : 'tw-hidden'; ?>">
+<div class="wcc_showcase-settings-row slider-additional-category wcc_showcase-additional-category-selection <?php echo 'grid' === $showcase_details['layout'] || 'block' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?> <?php echo 'yes' === $showcase_details['enable_additional_category'] ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full"></div>
 	<div class="tw-flex tw-flex-col tw-items-center tw-relative">
 		<div class="tw-min-w-[400px] tw-max-w-[400px] sm:tw-min-w-[340px]">
