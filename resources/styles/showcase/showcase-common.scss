@@ -70,6 +70,26 @@
 			text-decoration: none;
 		}
 	}
+	&__btn{
+		border: 1px solid;
+		border-color: #130F31;
+		color: #020617;
+		text-decoration: none !important;
+		padding: 8px 20px;
+		display: inline-block;
+		&.only_text{
+			border: none;
+		}
+		&.sharp_corner{
+			border-radius: 0;
+		}
+		&.slightly_rounded{
+			border-radius: 5px;
+		}
+		&.rounded{
+			border-radius: 100px;
+		}
+	}
 }
 
 // Content position overly, card style.
@@ -126,14 +146,6 @@
 }
 
 // Showcase button global style.
-.wccs-showcase-btn{
-	border: 1px solid #130F31;
-	color: #020617;
-	text-decoration: none!important;
-	padding: 10px 20px;
-	display: inline-block;
-}
-
 .splide__slide__row {
 	height: auto !important;
 }
@@ -204,6 +216,7 @@
 }
 .is-shop-now-icon .wccs-showcase-btn::after{
 	content: "\2192";
+	margin-left: 5px;
 }
 a > i{
 	margin-top: 20px;

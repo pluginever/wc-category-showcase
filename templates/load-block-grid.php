@@ -43,23 +43,34 @@
 			<?php if ( 'yes' === $showcase['show_category_product_quantity'] ) { ?>
 				<p><a href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( $category['total_count'] . ' products' ); ?></a></p>
 			<?php } ?>
-			<?php if ( 'yes' === $showcase['includes_sub_categories'] && ! empty( $child_categories ) ) : ?>
+			<?php if ( 'yes' === get_showcase_data( $showcase, 'includes_sub_categories' ) && ! empty( $child_categories ) ) : ?>
 				<ul class="wccs-subcategory__items">
 					<?php
 					foreach ( $child_categories as $child_category ) :
-						printf( '<li class="wccs-subcategory__item"><a href="%1$s">%2$s <span>(%3$s)<span></a></li>', esc_url( $child_category['cat_link'] ), esc_html( $child_category['name'] ), esc_html( $child_category['total_product'] ) );
+						if ( is_array( $child_category ) && empty( $child_category['cat_link'] ) && empty( $child_category['name'] ) ) {
+							continue;
+						}
+
+						printf(
+							'<li class="wccs-subcategory__item"><a href="%1$s">%2$s%3$s</a></li>',
+							esc_url( $child_category['cat_link'] ),
+							esc_html( $child_category['name'] ),
+							'yes' === get_showcase_data( $showcase, 'show_subcategory_product_quantity' ) ? '<span> (' . esc_html( $child_category['total_product'] ) . ')<span>' : ''
+						);
 					endforeach;
 					?>
 				</ul>
 			<?php endif; ?>
 
-			<?php if ( 'yes' === $showcase['show_button'] ) { ?>
-				<div class="wccs-card-button <?php echo 'yes' === $showcase['show_button_icon'] ? 'is-shop-now-icon' : ''; ?>">
-					<a class="btn wccs-showcase-btn" href="<?php echo esc_url( $category['cat_link'] ); ?>">
-						<?php
-						echo esc_attr( $showcase['button_text'] );
-						?>
-					</a>
+			<?php if ( 'yes' === get_showcase_data( $showcase, 'show_custom_text' ) && isset( $category['custom_text'] ) ) { ?>
+				<div class="wcc-showcase-custom-text">
+					<p><?php echo esc_attr( $category['custom_text'] ); ?></p>
+				</div>
+			<?php } ?>
+
+			<?php if ( 'yes' === get_showcase_data( $showcase, 'show_button' ) ) { ?>
+				<div class="wccs-card-button <?php echo 'yes' === get_showcase_data( $showcase, 'show_button_icon' ) ? 'is-shop-now-icon' : ''; ?>">
+					<a class="btn wccs-category__btn wccs-showcase-btn <?php echo sanitize_html_class( get_showcase_data( $showcase, 'button_style' ) ); ?>" href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( get_showcase_data( $showcase, 'button_text' ) ); ?></a>
 				</div>
 			<?php } ?>
 		</div>

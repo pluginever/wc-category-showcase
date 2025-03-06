@@ -329,7 +329,7 @@ class Shortcodes {
 
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn{
 				background-color: {$shop_now_btn_bg};
-				border: 1px solid {$shop_now_btn_border_color};
+				border-color: {$shop_now_btn_border_color};
 				color: {$shop_now_btn_text_color};
 			}
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn:hover, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn:hover{
