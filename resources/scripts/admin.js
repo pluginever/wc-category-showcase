@@ -182,6 +182,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 			// Grid Layout Select
 			$('.wcc_showcase-number-of-grid-column').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
+				var count = 0;
 				$('.wcc_showcase-number-of-grid-column').find('input:radio').each(function() {
 					if ( current_val === $(this).val() ) {
 						$(this).attr('checked', true);
@@ -190,8 +191,22 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 						$('.wcc_showcase-choose-layout-option').each(function() {
 							if( $(this).hasClass( 'layout-'+current_val+'x' ) ){
 								$(this).removeClass('tw-hidden');
+								$(this).addClass('grid-active');
 							} else {
 								$(this).addClass('tw-hidden');
+								$(this).removeClass('grid-active');
+							}
+							if( 0 === count ){
+								var count_current = 0;
+								$('.wcc_showcase-choose-layout-option').find('input:radio').each(function () {
+									$(this).attr('checked', false);
+									$(this).siblings('div').children().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
+									$(this).siblings('div').removeClass('wcc_showcase-layout-active-before-content');
+								});
+								$('.layout-'+current_val+'x').first().children('div').addClass('wcc_showcase-layout-active-before-content');
+								$('.layout-'+current_val+'x').first().children('input:radio').attr('checked', true);
+								$('.layout-'+current_val+'x').first().children().children('svg').addClass('wcc_showcase-layout-active').removeClass('wcc_showcase-layout-primary');
+								count++;
 							}
 						});
 					} else {
@@ -569,7 +584,6 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 					$(this).find('*[id]').each(function() {
 						ids.push('#'+$(this).attr('id'));
 					});
-					console.log(ids);
 					PluginEverIconPicker({
 						'selector': ids[2],
 						'onClick': ids[4],
