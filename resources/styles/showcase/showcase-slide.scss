@@ -121,6 +121,13 @@
 			align-items: center;
 		}
 	}
+	.wccs-content__top,
+	.wccs-content__bottom,
+	.wccs-content__left,
+	.wccs-content__right{
+		background-repeat: no-repeat !important;
+		background-position: center center !important;
+	}
 
 	// Card details style.
 	.wccs-entry__content-inner{

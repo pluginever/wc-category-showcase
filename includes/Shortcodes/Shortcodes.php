@@ -269,6 +269,7 @@ class Shortcodes {
 				color: {$card_text_color};
 				border-radius: {$card_border_radius}px;
 				transition: 0.3s;
+				overflow: hidden;
 			}
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content {
 				border-radius: {$card_border_radius}px;
