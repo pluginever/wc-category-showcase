@@ -168,6 +168,30 @@ class Helpers {
 	}
 
 	/**
+	 * Get additional selected categories.
+	 *
+	 * @param array $showcase Showcase settings.
+	 * @param int   $wccs_id Showcase ID.
+	 *
+	 * @since 2.1.0
+	 * @return array
+	 */
+	public static function get_additional_categories( $showcase, $wccs_id = null ) {
+		$categories = isset( $showcase['additional_category_select'] ) ? $showcase['additional_category_select'] : array();
+
+		// Get all categories details.
+		$all_custom_categories = array();
+
+		foreach ( $categories as $category ) {
+			$all_custom_categories[] = self::get_category_details( $category, $wccs_id );
+		}
+
+		uasort( $all_custom_categories, array( self::class, 'sort_categories_according_to_position' ) );
+
+		return $all_custom_categories;
+	}
+
+	/**
 	 * Get all child categories.
 	 *
 	 * @param \WP_Term| int $parent_category_id Parent Category ID.

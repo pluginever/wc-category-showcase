@@ -24,6 +24,7 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 		<ul class="splide__list">
 			<?php
 			foreach ( $categories as $category_details ) :
+				$has_image        = 'yes' === $showcase['show_category_image'] && ! empty( $category_details['image_url'] ) ? 'has-image' : 'has-no-image';
 				$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 				?>
 				<li class="splide__slide wcc-showcase-slide-item text-<?php echo sanitize_html_class( $showcase['content_alignment'] ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>" data-splide-interval="<?php echo esc_attr( $showcase['slide_speed'] ); ?>">
@@ -33,7 +34,7 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 						</div>
 						<?php
 					}
-					if ( 'yes' === $showcase['show_category_image'] ) {
+					if ( 'has-image' === $has_image ) {
 						?>
 						<div class="wcc-showcase-slide-item__cat-thumbnails">
 							<div class="wcc-showcase-slide-item__cat-thumbnails__image">
@@ -43,7 +44,7 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 							</div>
 						</div>
 					<?php } ?>
-					<div class="wcc-showcase-slide-item__cat-details wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>">
+					<div class="wcc-showcase-slide-item__cat-details wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?> <?php echo sanitize_html_class( $has_image ); ?>">
 						<div class="wccs-entry__content-inner">
 							<?php if ( 'yes' === $showcase['show_category_icon'] && 'yes' === $category_details['is_icon'] ) { ?>
 								<div class="wcc-showcase-slide-item__cat-thumbnails__icon">
@@ -102,7 +103,7 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 <?php
 if ( array_key_exists( 'enable_additional_category', $showcase ) && 'yes' === $showcase['enable_additional_category'] ) {
 	// Get the selected categories.
-	$categories = Helpers::get_selected_categories( $showcase, $wccs_id );
+	$categories = Helpers::get_additional_categories( $showcase, $wccs_id );
 
 	$layout            = 'grid'; // Overwrite the layout for additional categories to grid.
 	$content_placement = $showcase['content_placement'] ? $showcase['content_placement'] : 'center';
