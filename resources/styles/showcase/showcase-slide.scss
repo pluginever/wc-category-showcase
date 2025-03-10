@@ -40,6 +40,12 @@
 	}
 	.wccs-content__overlay{
 		position: relative;
+		background-repeat: no-repeat!important;
+		background-position: center center!important;
+		.has-no-image,
+		.has-image{
+			height: 100%;
+		}
 		.wcc-showcase-slide-item__cat-thumbnails{
 			height: 100%;
 			.wcc-showcase-slide-item__cat-thumbnails__image,
@@ -58,6 +64,7 @@
 			//background-color: rgba(0, 0, 0, 0.5);
 			&.has-no-image{
 				position: inherit;
+				height: 100%;
 			}
 		}
 

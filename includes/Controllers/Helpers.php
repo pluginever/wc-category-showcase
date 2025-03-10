@@ -39,7 +39,7 @@ class Helpers {
 		}
 
 		if ( $category && ! is_wp_error( $category ) ) {
-			$category_image   = wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ? esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) : esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/frontend-placeholder.png' );
+			$category_image   = wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ? esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) : '';
 			$category_details = array(
 				'cat_id'           => esc_attr( $category->term_id ),
 				'name'             => esc_attr( $category->name ),

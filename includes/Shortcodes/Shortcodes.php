@@ -299,6 +299,15 @@ class Shortcodes {
 				background-color: {$card_bg_hover_color};
 				color: {$card_text_hover_color};
 			}
+			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
+				background-color: {$card_bg_hover_color};
+				color: {$card_text_hover_color};
+			}
+			.wccs-showcase-id__{$wccs_id}:hover .wccs-entry__content.has-image{
+				background-color: {$card_bg_hover_color};
+				color: {$card_text_hover_color};
+				transition: 0.3s;
+			}
 			.wcc-showcase-{$wccs_id} .splide__pagination__page{
 				background-color: {$counter_bg};
 				color: {$counter_text};
