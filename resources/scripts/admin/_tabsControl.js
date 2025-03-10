@@ -1,24 +1,29 @@
-let tabsContainer = document.querySelector("#tabs");
-let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
-tabTogglers.forEach(function (toggler) {
-	toggler.addEventListener("click", function (e) {
-		e.preventDefault();
-		let tabName = this.getAttribute("href");
-		let tabContents = document.querySelector("#tab-contents");
-		for (let i = 0; i < tabContents.children.length; i++) {
-			tabContents.children[i].classList.remove("tw-hidden");
-			tabTogglers[i].classList.remove( "wcc_showcase-tabs-active", "wcc_showcase-tabs" );
-			if ("#" + tabContents.children[i].id === tabName) {
-				tabTogglers[i].classList.add( "wcc_showcase-tabs-active" );
+document.addEventListener("DOMContentLoaded", function() {
+	let tabsContainer = document.querySelector("#tabs");
+	if (tabsContainer) {
+		let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
+		tabTogglers.forEach(function (toggler) {
+			toggler.addEventListener("click", function (e) {
+				e.preventDefault();
+				let tabName = this.getAttribute("href");
+				let tabContents = document.querySelector("#tab-contents");
+				for (let i = 0; i < tabContents.children.length; i++) {
+					tabContents.children[i].classList.remove("tw-hidden");
+					tabTogglers[i].classList.remove("wcc_showcase-tabs-active", "wcc_showcase-tabs");
+					if ("#" + tabContents.children[i].id === tabName) {
+						tabTogglers[i].classList.add("wcc_showcase-tabs-active");
 
-				// Update hidden input value.
-				document.getElementById("wcc_showcase_current_tab").value = tabName.replace("#", "");;
-				continue;
-			}
-			tabContents.children[i].classList.add("tw-hidden");
-			tabTogglers[i].classList.add( "wcc_showcase-tabs" );
-		}
-	});
+						// Update hidden input value.
+						document.getElementById("wcc_showcase_current_tab").value = tabName.replace("#", "");
+						;
+						continue;
+					}
+					tabContents.children[i].classList.add("tw-hidden");
+					tabTogglers[i].classList.add("wcc_showcase-tabs");
+				}
+			});
+		});
+	}
 });
 
 window.addEventListener("DOMContentLoaded", function() {

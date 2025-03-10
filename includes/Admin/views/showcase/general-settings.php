@@ -1220,6 +1220,7 @@ defined( 'ABSPATH' ) || exit;
 					);
 
 					$selected_categories = isset( $showcase_details['specific_category_select'] ) ? map_deep( $showcase_details['specific_category_select'], 'absint' ) : array();
+
 					if ( ! empty( $categories ) ) :
 						?>
 						<?php foreach ( $categories as $category ) : ?>

@@ -19,7 +19,6 @@
 use WooCommerceCategoryShowcase\Controllers\Helpers;
 
 ?>
-
 <div class="splide wcc-showcase-<?php echo esc_attr( $wccs_id ); ?> <?php echo esc_attr( $slider_class_list ); ?>" id="wcc-showcase-<?php echo esc_attr( $wccs_id ); ?>" data-splide='<?php echo esc_attr( $slider_config ); ?>' data-ticker='{"isTicker":<?php echo esc_attr( $is_ticker ); ?>, "tickerDirection":<?php echo esc_attr( $ticker_direction ); ?>, "tickerSpeed":<?php echo esc_attr( $ticker_mode ); ?>}' data-grid='{"rows": <?php echo esc_attr( $showcase['slider']['row'] ); ?>, "columns": <?php echo esc_attr( $showcase['slider']['column'] ); ?>, "laptop":<?php echo esc_attr( $showcase['column_breakpoint']['laptop'] ); ?>, "tablet":<?php echo esc_attr( $showcase['column_breakpoint']['tablet'] ); ?>, "mobile":<?php echo esc_attr( $showcase['column_breakpoint']['mobile'] ); ?>, "gap":<?php echo esc_attr( $showcase['gap_between_cards'] ); ?> }' aria-label="<?php echo esc_attr( get_the_title( $wccs_id ) ); ?>">
 	<div class="splide__track">
 		<ul class="splide__list">
