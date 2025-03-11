@@ -91,14 +91,10 @@
 		<div class="tw-mt-3">
 			<div class="tw-flex tw-justify-between tw-items-center">
 				<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'ADD LABEL', 'wc-category-showcase' ); ?></h4>
-				<label class="tw-inline-flex tw-cursor-pointer">
-					<input type="checkbox" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer wcc_showcase-label-show-hide" name="wcc_showcase_additional_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][is_label]" <?php echo 'yes' === $category_details['is_label'] ? 'checked' : ''; ?>>
-					<div class="wcc_showcase-toggle-small"></div>
-				</label>
 			</div>
-			<input type="text" class="wcc_showcase-label-selection tw-w-full tw-text-sm wcc_showcase-settings-field-border tw-mt-2 wcc_showcase-label-text <?php echo 'yes' === $category_details['is_label'] ? '' : 'tw-hidden'; ?>" name="wcc_showcase_additional_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][label_text]" value="<?php echo esc_attr( $category_details['label_text'] ); ?>" placeholder="<?php esc_html_e( '25% off Today', 'wc-category-showcase' ); ?>">
+			<input type="text" class="wcc_showcase-label-selection tw-w-full tw-text-sm wcc_showcase-settings-field-border tw-mt-2" name="wcc_showcase_additional_category_list_item[<?php echo esc_attr( $category_details['cat_id'] ); ?>][label_text]" value="<?php echo esc_attr( $category_details['label_text'] ); ?>" placeholder="<?php esc_html_e( '25% off Today', 'wc-category-showcase' ); ?>">
 		</div>
-		<div class="tw-mt-3 wcc_showcase-label-selection <?php echo 'yes' === $category_details['is_label'] ? '' : 'tw-hidden'; ?>">
+		<div class="tw-mt-3">
 			<h4 class="tw-text-xs tw-my-0 tw-pl-1"><?php esc_html_e( 'LABEL COLOR', 'wc-category-showcase' ); ?></h4>
 			<div class="select-wrapper wcc_showcase-select-category-list-update">
 				<div class="select tw-w-[98%] tw-bg-input-grey-50 tw-border-divider-grey-100 tw-rounded-md">
