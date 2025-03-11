@@ -16,7 +16,7 @@
 
 ?>
 <div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout && 'yes' === $showcase['show_category_image'] ) : ?> <?php printf( 'style="background-image: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
-	<?php if ( 'yes' === $category['is_label'] && ! empty( $category['label_text'] ) ) { ?>
+	<?php if ( ! empty( $category['label_text'] ) ) { ?>
 		<div class="wcc-showcase-ribbon wcc-showcase-ribbon-<?php echo esc_attr( $category['label_color'] ); ?> wcc-showcase-ribbon-<?php echo esc_attr( $ribbon_placement ); ?>">
 			<?php echo esc_attr( $category['label_text'] ); ?>
 		</div>

@@ -28,7 +28,7 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 				$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 				?>
 				<li class="splide__slide wcc-showcase-slide-item text-<?php echo sanitize_html_class( $showcase['content_alignment'] ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?>" data-splide-interval="<?php echo esc_attr( $showcase['slide_speed'] ); ?>">
-					<?php if ( 'yes' === $category_details['is_label'] && ! empty( $category_details['label_text'] ) ) { ?>
+					<?php if ( ! empty( $category_details['label_text'] ) ) { ?>
 						<div class="wcc-showcase-ribbon wcc-showcase-ribbon-<?php echo esc_attr( $category_details['label_color'] ); ?> wcc-showcase-ribbon-<?php echo esc_attr( $ribbon_placement ); ?>">
 							<?php echo esc_attr( $category_details['label_text'] ); ?>
 						</div>

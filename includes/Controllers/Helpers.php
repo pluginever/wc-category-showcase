@@ -183,7 +183,7 @@ class Helpers {
 		$all_custom_categories = array();
 
 		foreach ( $categories as $category ) {
-			$all_custom_categories[] = self::get_category_details( $category, $wccs_id );
+			$all_custom_categories[] = self::get_category_details( $category, $wccs_id, true );
 		}
 
 		uasort( $all_custom_categories, array( self::class, 'sort_categories_according_to_position' ) );
