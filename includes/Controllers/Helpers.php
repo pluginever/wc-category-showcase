@@ -369,12 +369,11 @@ class Helpers {
 				'border_hover_color' => '#FFFFFFFF',
 			),
 			'slide_touch_interaction'           => 'yes',
-			'slide_scroll_interaction'          => 'yes',
+			'slide_scroll_interaction'          => 'no',
 			'slide_draggable_slide'             => 'yes',
 			'slide_free_mode'                   => 'yes',
 			// Image tab settings data.
 			'image_layout'                      => 'rounded',
-			'image_lazy_load'                   => 'no',
 			'image_zoom_on_hover'               => 'no',
 			'interactive_hover_style'           => 'normal_gray',
 			// Fonts tab settings data.

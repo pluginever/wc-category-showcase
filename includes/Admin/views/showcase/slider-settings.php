@@ -705,7 +705,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_scroll_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_scroll_interaction'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_scroll_interaction" value="<?php echo esc_attr( 'no' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_scroll_interaction'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>

@@ -58,18 +58,6 @@ defined( 'ABSPATH' ) || exit;
 </div>
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">
-		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Lazy Load', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Delays the loading of non-essential resources, such as images or scripts, until they are required, improving webpage performance and speed.', 'wc-category-showcase' ); ?></p>
-	</div>
-	<div class="tw-flex tw-items-center">
-		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_image_lazy_load" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( array_key_exists( 'image_lazy_load', $showcase_details ) && 'yes' === $showcase_details['image_lazy_load'] ) { echo 'checked'; } ?>>
-			<div class="wcc_showcase-toggle"></div>
-		</label>
-	</div>
-</div>
-<div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Zoom on Hover', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable the zoom effect to occur when hovering over the images associated with each category.', 'wc-category-showcase' ); ?></p>
 	</div>
