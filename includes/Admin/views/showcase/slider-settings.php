@@ -232,6 +232,9 @@ defined( 'ABSPATH' ) || exit;
 					<span class="custom-option wccs-navigation-position-option <?php echo 'top-left' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-left' ); ?>">
 						<?php esc_html_e( 'Top Left', 'wc-category-showcase' ); ?>
 					</span>
+					<span class="custom-option wccs-navigation-position-option <?php echo 'top-center' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-center' ); ?>">
+						<?php esc_html_e( 'Top Center', 'wc-category-showcase' ); ?>
+					</span>
 					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-right' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-right' ); ?>">
 						<?php esc_html_e( 'Bottom Right', 'wc-category-showcase' ); ?>
 					</span>

@@ -177,7 +177,7 @@ class Shortcodes {
 
 		if ( 'yes' === $category_showcase['slide_navigation_arrow'] ) {
 			$slider_classes .= 'is--arrow';
-			$slider_classes .= 'arrow' !== $category_showcase['slide_arrow_style'] ? ' is--navigation-chevron' : '';
+			$slider_classes .= 'arrow' === $category_showcase['slide_arrow_style'] ? ' is--navigation-arrow' : '';
 			$slider_classes .= 'default' !== $category_showcase['slider_navigation_position'] ? ' is--navigation-' . $category_showcase['slider_navigation_position'] : '';
 			$slider_classes .= $category_showcase['slide_button_style'] ? ' is--' . $category_showcase['slide_button_style'] : '';
 		}
