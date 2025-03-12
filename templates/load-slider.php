@@ -83,13 +83,9 @@ use WooCommerceCategoryShowcase\Controllers\Helpers;
 									<p><?php echo esc_attr( $category_details['custom_text'] ); ?></p>
 								</div>
 							<?php } ?>
-							<?php if ( 'yes' === $showcase['show_button'] ) { ?>
-								<div class="wcc-showcase-slide-item__cat-button">
-									<a href="<?php echo esc_attr( $category_details['cat_link'] ); ?>" class="btn wccs-showcase-btn">
-										<?php
-										echo esc_attr( $showcase['button_text'] );
-										?>
-									</a>
+							<?php if ( 'yes' === get_showcase_data( $showcase, 'show_button' ) ) { ?>
+								<div class="wccs-card-button <?php echo 'yes' === get_showcase_data( $showcase, 'show_button_icon' ) ? 'is-shop-now-icon' : ''; ?>">
+									<a class="btn wccs-category__btn wccs-showcase-btn <?php echo sanitize_html_class( get_showcase_data( $showcase, 'button_style' ) ); ?>" href="<?php echo esc_url( $category['cat_link'] ); ?>"><?php echo esc_html( get_showcase_data( $showcase, 'button_text' ) ); ?></a>
 								</div>
 							<?php } ?>
 						</div>
