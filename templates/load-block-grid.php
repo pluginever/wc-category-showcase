@@ -21,7 +21,7 @@
 			<?php echo esc_attr( $category['label_text'] ); ?>
 		</div>
 	<?php } ?>
-	<?php if ( 'block' === $layout ) : ?>
+	<?php if ( 'block' === $layout && ! empty( $category['image_url'] ) ) : ?>
 		<div class="wccs-entry__head">
 			<a href="<?php echo esc_url( $category['cat_link'] ); ?>">
 				<img class="wccs-entry__image" src="<?php echo esc_url( $category['image_url'] ); ?>" alt="<?php echo esc_attr( $category['slug'] ); ?>">
