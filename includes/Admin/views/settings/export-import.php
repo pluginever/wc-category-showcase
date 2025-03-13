@@ -2,7 +2,7 @@
 /**
  * View: Showcase export / import.
  *
- * @since 1.0.0
+ * @since 2.2.0
  * @package WooCommerceCategoryShowcase/Admin/Views/Settings
  */
 
