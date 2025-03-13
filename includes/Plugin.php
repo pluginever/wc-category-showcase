@@ -75,6 +75,7 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 
 	/**
 	 * Run on before WooCommerce init.
+	 * Declare compatibility with WooCommerce features.
 	 *
 	 * @since 1.0.0
 	 * @return void
