@@ -2,7 +2,7 @@
 
 namespace WooCommerceCategoryShowcase;
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 /**
  * Class Plugin.
