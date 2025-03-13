@@ -1,9 +1,9 @@
 {
   "name": "pluginever/wc-category-showcase",
-  "description": "Product Category Showcase for WooCommerce.",
+  "description": "WooCommerce extension to showcase categories in various styles and layouts.",
   "homepage": "https://pluginever.com",
   "type": "wordpress-plugin",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-2.0-or-later",
   "prefer-stable": true,
   "minimum-stability": "dev",
   "keywords": ["wordpress", "plugin"],

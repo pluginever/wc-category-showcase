@@ -2,11 +2,11 @@
 /**
  * Plugin Name:          Product Category Showcase for WooCommerce
  * Plugin URI:           https://pluginever.com/plugins/woocommerce-category-showcase-pro/
- * Description:          WooCommerce extension to showcase categories in interactive slider blocks.
+ * Description:          WooCommerce extension to showcase categories in various styles and layouts.
  * Version:              2.1.0
  * Author:               PluginEver
  * Author URI:           https://pluginever.com
- * License:              GPLv2+
+ * License:              GPL v2 or later
  * License URI:          http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:          wc-category-showcase
  * Domain Path:          /languages
