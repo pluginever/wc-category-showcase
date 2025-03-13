@@ -47,6 +47,7 @@ class Admin {
 	 *
 	 * @param array $ids Screen ids.
 	 *
+	 * @since 1.0.0
 	 * @return array
 	 */
 	public function screen_ids( $ids ) {
