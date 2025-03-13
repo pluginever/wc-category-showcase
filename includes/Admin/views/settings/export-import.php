@@ -3,7 +3,7 @@
  * View: Showcase export / import.
  *
  * @since 1.0.0
- * @package WooCommerceCategoryShowcase
+ * @package WooCommerceCategoryShowcase/Admin/Views/Settings
  */
 
 defined( 'ABSPATH' ) || exit();

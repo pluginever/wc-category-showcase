@@ -2,7 +2,8 @@
 /**
  * Slider settings tab.
  *
- * @package WooCommerceCategoryShowcase
+ * @since 2.2.0
+ * @package WooCommerceCategoryShowcase/Admin/Views/Showcase
  */
 
 defined( 'ABSPATH' ) || exit;

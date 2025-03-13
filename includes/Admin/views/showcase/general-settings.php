@@ -2,7 +2,8 @@
 /**
  * General settings tab.
  *
- * @package WooCommerceCategoryShowcase
+ * @since 2.2.0
+ * @package WooCommerceCategoryShowcase/Admin/Views/Showcase
  */
 
 use WooCommerceCategoryShowcase\Controllers\Helpers;
