@@ -84,6 +84,7 @@ class Menus {
 	 * Output list table page.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
 	public function showcase_list_render() {
 		wp_verify_nonce( '_nonce' );
@@ -103,6 +104,7 @@ class Menus {
 	 * Output settings page.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
 	public function output_tab_settings_page() {
 		$page_hook = 'settings';
@@ -117,6 +119,7 @@ class Menus {
 	 * Output export/import tab page.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
 	public function export_import_tab_render() {
 		include __DIR__ . '/views/settings/export-import.php';
