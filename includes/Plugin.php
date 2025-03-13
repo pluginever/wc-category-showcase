@@ -63,17 +63,6 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	}
 
 	/**
-	 * Run on plugin activation.
-	 *
-	 * @since 2.1.0
-	 * @return void
-	 */
-	public function install() { // TODO: Remove it.
-		// Add option for installed time.
-		add_option( 'wccs_installed', wp_date( 'U' ) );
-	}
-
-	/**
 	 * Run on before WooCommerce init.
 	 * Declare compatibility with WooCommerce features.
 	 *
