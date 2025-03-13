@@ -2,7 +2,7 @@
 /**
  * Admin notice for review.
  *
- * @since 2.1.0
+ * @since 2.2.0
  * @return void
  *
  * @package WooCommerceCategoryShowcase

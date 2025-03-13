@@ -7,14 +7,14 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Notices class.
  *
- * @since 1.0.0
+ * @since 2.2.0
  */
 class Notices {
 
 	/**
 	 * Notices constructor.
 	 *
-	 * @since 1.0.0
+	 * @since 2.2.0
 	 */
 	public function __construct() {
 		add_action( 'admin_init', array( $this, 'admin_notices' ) );
@@ -23,13 +23,14 @@ class Notices {
 	/**
 	 * Admin notices.
 	 *
-	 * @since 1.0.0
+	 * @since 2.2.0
+	 * @return void
 	 */
 	public function admin_notices() {
 		$installed_time = get_option( 'wccs_installed' );
 		$current_time   = wp_date( 'U' );
 
-		if ( ! defined( 'WC_CATEGORY_SHOWCASE_PRO_VERSION' ) ) {
+		if ( ! defined( 'WCCS_PRO_VERSION' ) ) {
 			wc_category_showcase()->notices->add(
 				array(
 					'message'     => __DIR__ . '/views/notices/upgrade.php',

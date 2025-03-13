@@ -2,7 +2,7 @@
 /**
  * Admin notice for upgrade.
  *
- * @since 2.1.0
+ * @since 2.2.0
  * @return void
  *
  * @package WooCommerceCategoryShowcase
@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 		<span class="dashicons dashicons-cart"></span>
 		<?php esc_attr_e( 'Upgrade now', 'wc-category-showcase' ); ?>
 	</a>
-	<a href="#" data-snooze="<?php echo esc_attr( WEEK_IN_SECONDS ); ?>">
+	<a href="#" data-snooze="<?php echo esc_attr( MONTH_IN_SECONDS ); ?>">
 		<span class="dashicons dashicons-clock"></span>
 		<?php esc_attr_e( 'Maybe later', 'wc-category-showcase' ); ?>
 	</a>
