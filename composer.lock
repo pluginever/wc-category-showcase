@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "byteever/bytekit-plugin",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:byteever/bytekit-plugin.git",
-                "reference": "38f7aa0311e49a33d8f62e54b9fc118eb1ad32b5"
+                "reference": "794ec9834ecac6cead6b1064a605ff930864950b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byteever/bytekit-plugin/zipball/38f7aa0311e49a33d8f62e54b9fc118eb1ad32b5",
-                "reference": "38f7aa0311e49a33d8f62e54b9fc118eb1ad32b5",
+                "url": "https://api.github.com/repos/byteever/bytekit-plugin/zipball/794ec9834ecac6cead6b1064a605ff930864950b",
+                "reference": "794ec9834ecac6cead6b1064a605ff930864950b",
                 "shasum": ""
             },
             "require": {
@@ -87,10 +87,10 @@
             ],
             "description": "A set of related classes to kick start WordPress plugin development.",
             "support": {
-                "source": "https://github.com/byteever/bytekit-plugin/tree/v1.0.1",
+                "source": "https://github.com/byteever/bytekit-plugin/tree/v1.0.2",
                 "issues": "https://github.com/byteever/bytekit-plugin/issues"
             },
-            "time": "2024-11-26T04:25:16+00:00"
+            "time": "2025-02-27T09:59:41+00:00"
         }
     ],
     "packages-dev": [
@@ -100,18 +100,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/byteever/byteever-sniffs.git",
-                "reference": "7a62a7c8aa62fcc67a0d19ed0af2df05b103042d"
+                "reference": "154a342236584ef993cc381023cb8b58bafdf544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byteever/byteever-sniffs/zipball/7a62a7c8aa62fcc67a0d19ed0af2df05b103042d",
-                "reference": "7a62a7c8aa62fcc67a0d19ed0af2df05b103042d",
+                "url": "https://api.github.com/repos/byteever/byteever-sniffs/zipball/154a342236584ef993cc381023cb8b58bafdf544",
+                "reference": "154a342236584ef993cc381023cb8b58bafdf544",
                 "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
                 "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "wp-coding-standards/wpcs": "^3.1"
+                "wp-coding-standards/wpcs": "dev-develop"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
@@ -137,9 +137,9 @@
             ],
             "support": {
                 "issues": "https://github.com/byteever/byteever-sniffs/issues",
-                "source": "https://github.com/byteever/byteever-sniffs/tree/v1.0.2"
+                "source": "https://github.com/byteever/byteever-sniffs/tree/1.0.4"
             },
-            "time": "2024-06-28T06:59:58+00:00"
+            "time": "2025-03-03T15:39:36+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -352,16 +352,16 @@
         },
         {
             "name": "phpcompatibility/phpcompatibility-wp",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibilityWP.git",
-                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082"
+                "reference": "80ccb1a7640995edf1b87a4409fa584cd5869469"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
-                "reference": "01c1ff2704a58e46f0cb1ca9d06aee07b3589082",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/80ccb1a7640995edf1b87a4409fa584cd5869469",
+                "reference": "80ccb1a7640995edf1b87a4409fa584cd5869469",
                 "shasum": ""
             },
             "require": {
@@ -418,7 +418,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-04-24T21:37:59+00:00"
+            "time": "2025-01-16T22:34:19+00:00"
         },
         {
             "name": "phpcsstandards/phpcsextra",
@@ -588,16 +588,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.11.1",
+            "version": "3.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87"
+                "reference": "ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
-                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10",
+                "reference": "ba05f990e79cbe69b9f35c8c1ac8dca7eecc3a10",
                 "shasum": ""
             },
             "require": {
@@ -662,22 +662,26 @@
                 {
                     "url": "https://opencollective.com/php_codesniffer",
                     "type": "open_collective"
+                },
+                {
+                    "url": "https://thanks.dev/phpcsstandards",
+                    "type": "thanks_dev"
                 }
             ],
-            "time": "2024-11-16T12:02:36+00:00"
+            "time": "2025-01-23T17:04:15+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "3.1.0",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "9333efcbff231f10dfd9c56bb7b65818b4733ca7"
+                "reference": "38c00390317f4018c56e0892e5e7b414039f8426"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/9333efcbff231f10dfd9c56bb7b65818b4733ca7",
-                "reference": "9333efcbff231f10dfd9c56bb7b65818b4733ca7",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/38c00390317f4018c56e0892e5e7b414039f8426",
+                "reference": "38c00390317f4018c56e0892e5e7b414039f8426",
                 "shasum": ""
             },
             "require": {
@@ -701,6 +705,7 @@
                 "ext-iconv": "For improved results",
                 "ext-mbstring": "For improved results"
             },
+            "default-branch": true,
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -730,7 +735,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-03-25T16:39:00+00:00"
+            "time": "2025-02-25T19:39:55+00:00"
         }
     ],
     "aliases": [],
@@ -743,6 +748,6 @@
     "platform": {
         "php": ">=7.4"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
