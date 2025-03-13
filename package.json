@@ -2,12 +2,12 @@
   "name": "wc-category-showcase",
   "title": "WooCommerce Category Showcase",
   "description": "The best WordPress plugin ever made!",
-  "version": "2.1.0",
-  "homepage": "http://pluginever.com",
+  "version": "2.2.0",
+  "homepage": "https://pluginever.com",
   "author": {
     "name": "PluginEver",
     "email": "support@pluginever.com",
-    "url": "http://pluginever.com"
+    "url": "https://pluginever.com"
   },
   "scripts": {
     "build": "wp-scripts build --webpack-copy-php",
