@@ -4,7 +4,7 @@ namespace WooCommerceCategoryShowcase\Shortcodes;
 
 use WooCommerceCategoryShowcase\Controllers\Helpers;
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 /**
  * Shortcode class.
