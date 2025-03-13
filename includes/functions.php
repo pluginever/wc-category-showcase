@@ -23,7 +23,7 @@ function wc_category_showcase() {
  * @since 1.0.0
  * @return mixed|null
  */
-function get_showcase_data( $showcase, $meta_key ) {
+function wccs_get_showcase_data( $showcase, $meta_key ) {
 	if ( empty( $showcase ) || empty( $meta_key ) ) {
 		return null;
 	}

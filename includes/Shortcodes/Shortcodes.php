@@ -209,12 +209,21 @@ class Shortcodes {
 		$card_bg_hover_color   = $showcase['card']['hover_color'] ? $showcase['card']['hover_color'] : '';
 		$card_text_color       = $showcase['card']['text_color'] ? $showcase['card']['text_color'] : '';
 		$card_text_hover_color = $showcase['card']['hover_text_color'] ? $showcase['card']['hover_text_color'] : '';
-		$card_border_radius    = $showcase['border_radius'] ? $showcase['border_radius'] : '';
-		$card_gap              = $showcase['gap_between_cards'] ? $showcase['gap_between_cards'] : '';
-		$card_gap              = $card_gap / 16;
 
+		if ( 'yes' === wccs_get_showcase_data( $showcase, 'border_is_all' ) ) {
+			$borders_radius     = $showcase['border_radius_all'];
+			$card_border_radius = $borders_radius['top'] . 'px ' . $borders_radius['right'] . 'px ' . $borders_radius['bottom'] . 'px ' . $borders_radius['left'] . 'px';
+
+		} else {
+			$border_radius      = isset( $showcase['border_radius'] ) ? $showcase['border_radius'] : 0;
+			$card_border_radius = $border_radius . 'px';
+		}
+
+		$card_gap                    = $showcase['gap_between_cards'] ? $showcase['gap_between_cards'] : '';
+		$card_gap                    = $card_gap / 16;
 		$card_content_padding        = $showcase['content_padding'] ? $showcase['content_padding'] : '';
 		$card_content_padding_is_all = 'yes' === $showcase['content_padding_is_all'] ? $showcase['content_padding_is_all'] : 'no';
+
 		if ( 'yes' === $card_content_padding_is_all ) {
 			$content_padding_top    = $showcase['content_padding_all']['top'] ? $showcase['content_padding_all']['top'] : '0';
 			$content_padding_right  = $showcase['content_padding_all']['right'] ? $showcase['content_padding_all']['right'] : '0';
@@ -231,6 +240,7 @@ class Shortcodes {
 		$card_inner_bg_hover_color         = $showcase['card_content']['hover_color'] ? $showcase['card_content']['hover_color'] : '';
 		$card_content_inner_padding        = $showcase['content_inner_padding'] ? $showcase['content_inner_padding'] : '16';
 		$card_content_inner_padding_is_all = 'yes' === $showcase['content_inner_padding_is_all'] ? $showcase['content_inner_padding_is_all'] : 'no';
+
 		if ( 'yes' === $card_content_inner_padding_is_all ) {
 			$content_inner_padding_top    = $showcase['content_inner_padding_all']['top'] ? $showcase['content_inner_padding_all']['top'] : '16';
 			$content_inner_padding_right  = $showcase['content_inner_padding_all']['right'] ? $showcase['content_inner_padding_all']['right'] : '16';
@@ -267,12 +277,12 @@ class Shortcodes {
 			.wccs-showcase-id__{$wccs_id}, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item{
 				background-color: {$card_bg_color};
 				color: {$card_text_color};
-				border-radius: {$card_border_radius}px;
+				border-radius: {$card_border_radius};
 				transition: 0.3s;
 				overflow: hidden;
 			}
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content {
-				border-radius: {$card_border_radius}px;
+				border-radius: {$card_border_radius};
 			}
 
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner p, .wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
@@ -348,7 +358,8 @@ class Shortcodes {
 				color: {$shop_now_btn_hover_text_color} !important;
 			}
 
-			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details {
+			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details,
+			.wccs-categories__{$wccs_id} .wccs-entry__content {
 				padding: {$content_padding_top}px {$content_padding_right}px {$content_padding_bottom}px {$content_padding_left}px;
 			}
 
