@@ -104,9 +104,9 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	}
 
 	/**
-	 * register scripts.
+	 * Register scripts.
 	 *
-	 * @since 1.
+	 * @since 1.0.0
 	 * @retun void
 	 */
 	public function register_scripts() {
