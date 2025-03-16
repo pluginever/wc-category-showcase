@@ -203,7 +203,7 @@ class Shortcodes {
 	 *
 	 * @return string
 	 */
-	public static function get_showccase_styles( $showcase, $wccs_id ) {
+	public static function get_showcase_styles( $showcase, $wccs_id ) {
 		// Get the showcase individual style.
 		$card_bg_color         = $showcase['card']['background_color'] ? $showcase['card']['background_color'] : '';
 		$card_bg_hover_color   = $showcase['card']['hover_color'] ? $showcase['card']['hover_color'] : '';
