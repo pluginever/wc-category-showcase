@@ -362,12 +362,6 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-
-<?php
-
-error_log( print_r( $showcase_details['content_alignment'], true ) );
-?>
-
 <div class="wcc_showcase-settings-row wcc-showcase-content-position <?php echo 'overlay' === $showcase_details['content_placement'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Content Alignment', 'wc-category-showcase' ); ?></h3>
