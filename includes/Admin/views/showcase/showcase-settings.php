@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Section Heading', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the section heading for the category showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-flex tw-cursor-pointer tw-flex-col">
@@ -35,7 +35,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Section Description', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Customize the description or subtext for each section of your category showcase.', 'wc-category-showcase' ); ?></p>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the section description for the category showcase.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-flex tw-flex-col tw-cursor-pointer">
@@ -50,7 +50,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="wcc_showcase-settings-row <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Alignment', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the title or heading for the whole section of your showcase.', 'wc-category-showcase' ); ?></p>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'This setting allows you to customize the alignment of the section heading and description.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col tw-max-w-[385px] tw-rounded-md tw-justify-center">
 		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
@@ -362,6 +362,12 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
+
+<?php
+
+error_log( print_r( $showcase_details['content_alignment'], true ) );
+?>
+
 <div class="wcc_showcase-settings-row wcc-showcase-content-position <?php echo 'overlay' === $showcase_details['content_placement'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Content Alignment', 'wc-category-showcase' ); ?></h3>

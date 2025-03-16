@@ -206,10 +206,15 @@
 .wcc-showcase-ribbon-magento {
 	background-color: #950E40;
 }
-
-.is-image-zoom-on-hover .wcc-showcase-slide-item:hover img{
-	transform: scale(1.2);
-	transition: transform 0.3s ease-in-out;
+.is-image-zoom-on-hover .wcc-showcase-slide-item{
+	img{
+		transition: transform 0.3s ease-in-out;
+	}
+	&:hover{
+		img{
+			transform: scale(1.2);
+		}
+	}
 }
 .is-shop-now-icon .wccs-showcase-btn::after{
 	content: "\2192";

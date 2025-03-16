@@ -30,7 +30,7 @@ $has_image = 'yes' === $showcase['show_category_image'] && ! empty( $category['i
 		</div>
 	<?php endif; ?>
 
-	<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?> <?php echo 'yes' === $showcase['show_category_image'] && ! empty( $category['image_url'] ) ? 'has-image' : 'has-no-image'; ?>">
+	<div class="wccs-entry__content wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?> <?php echo 'yes' === $showcase['show_category_image'] && ! empty( $category['image_url'] ) ? 'has-image' : 'has-no-image'; ?> <?php echo isset( $showcase['content_alignment'] ) ? sanitize_html_class( 'text-' . $showcase['content_alignment'] ) : sanitize_html_class( 'text-center' ); ?>">
 		<div class="wccs-entry__content-inner">
 			<?php if ( 'yes' === $showcase['show_category_icon'] && 'yes' === $category['is_icon'] ) { ?>
 				<?php printf( '<i class="category-icon %s"></i>', esc_attr( $category['icon_name'] ) ); ?>
