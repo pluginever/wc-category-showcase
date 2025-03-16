@@ -149,7 +149,6 @@
 .splide__slide__row {
 	//height: auto !important; // TODO: Remove this line.
 }
-
 .wccs-category {
 	position: relative;
 }
@@ -166,7 +165,6 @@
 	background-color: #BD1550;
 	z-index: 2;
 }
-
 .wcc-showcase-ribbon-right{
 	right: 0;
 	clip-path: polygon(
@@ -174,7 +172,6 @@
 	transform: translate(calc((1 - cos(45deg)) * 100%), -100%) rotate(45deg);
 	transform-origin: 0% 100%;
 }
-
 .wcc-showcase-ribbon-left {
 	left: 0;
 	clip-path: polygon(
@@ -182,27 +179,21 @@
 	transform: translate(calc((cos(45deg) - 1) * 100%), -100%) rotate(-45deg);
 	transform-origin: 100% 100%;
 }
-
 .wcc-showcase-ribbon-green {
 	background-color: #0E9552;
 }
-
 .wcc-showcase-ribbon-yellow {
 	background-color: #A36200;
 }
-
 .wcc-showcase-ribbon-red {
 	background-color: #911212;
 }
-
 .wcc-showcase-ribbon-blue {
 	background-color: #0E5295;
 }
-
 .wcc-showcase-ribbon-purple {
 	background-color: #5B0E95;
 }
-
 .wcc-showcase-ribbon-magento {
 	background-color: #950E40;
 }
