@@ -157,16 +157,13 @@
 /* HTML: <div class="ribbon">Your text content</div> */
 .wcc-showcase-ribbon {
 	font-size: 12px;
-	font-weight: bold;
 	color: #fff;
 	--f: .5em;
 	position: absolute;
 	top: 0;
-	line-height: 1.8;
-	padding-inline: 1lh;
+	padding-inline: 1.05lh;
 	padding-bottom: var(--f);
 	background-color: #BD1550;
-	border-image: conic-gradient(#0008 0 0) 51%/var(--f);
 	z-index: 2;
 }
 

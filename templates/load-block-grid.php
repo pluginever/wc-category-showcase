@@ -14,6 +14,7 @@
  * @var string $wccs_id           Showcase ID.
  */
 
+$has_image = 'yes' === $showcase['show_category_image'] && ! empty( $category['image_url'] ) ? 'has-image' : 'has-no-image';
 ?>
 <div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout && 'yes' === $showcase['show_category_image'] ) : ?> <?php printf( 'style="background-image: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
 	<?php if ( ! empty( $category['label_text'] ) ) { ?>
@@ -21,7 +22,7 @@
 			<?php echo esc_attr( $category['label_text'] ); ?>
 		</div>
 	<?php } ?>
-	<?php if ( 'block' === $layout && ! empty( $category['image_url'] ) ) : ?>
+	<?php if ( 'block' === $layout && 'has-image' === $has_image ) : ?>
 		<div class="wccs-entry__head">
 			<a href="<?php echo esc_url( $category['cat_link'] ); ?>">
 				<img class="wccs-entry__image" src="<?php echo esc_url( $category['image_url'] ); ?>" alt="<?php echo esc_attr( $category['slug'] ); ?>">
@@ -29,7 +30,7 @@
 		</div>
 	<?php endif; ?>
 
-	<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?> <?php echo 'yes' === $showcase['show_category_image'] && ! empty( $category_details['image_url'] ) ? 'has-image' : 'has-no-image'; ?>">
+	<div class="wccs-entry__content text-center wccs-content-position__<?php echo sanitize_html_class( $content_position ); ?> <?php echo 'yes' === $showcase['show_category_image'] && ! empty( $category['image_url'] ) ? 'has-image' : 'has-no-image'; ?>">
 		<div class="wccs-entry__content-inner">
 			<?php if ( 'yes' === $showcase['show_category_icon'] && 'yes' === $category['is_icon'] ) { ?>
 				<?php printf( '<i class="category-icon %s"></i>', esc_attr( $category['icon_name'] ) ); ?>

@@ -115,6 +115,10 @@
 				h3{
 					color: #fff;
 				}
+				&.has-no-image{
+					position: inherit;
+					height: 100%;
+				}
 			}
 		}
 	}
