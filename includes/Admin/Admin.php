@@ -67,26 +67,35 @@ class Admin {
 			return;
 		}
 
-		// Register styles.
-		wc_category_showcase()->scripts->register_style( 'wcc_tailwind', '/styles/tailwind.css' );
+		// Verify nonce.
+		wp_verify_nonce( '_nonce' );
 
-		wp_enqueue_style( 'bytekit-components' );
-		wp_enqueue_style( 'bytekit-layout' );
-		// Early core enqueue.
-		wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/styles/admin.css', array( 'wcc_tailwind' ) );
-		wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/scripts/admin.js', array( 'wp-color-picker' ), true );
-		wp_enqueue_media();
-		wp_localize_script(
-			'wcc_showcase-admin',
-			'wcc_showcase_admin_js_vars',
-			array(
-				'ajax_url'     => admin_url( 'admin-ajax.php' ),
-				'search_nonce' => wp_create_nonce( 'wcc_showcase_search_category_action' ),
-				'i18n'         => array(
-					'search_category' => __( 'Search category...', 'wc-category-showcase' ),
-				),
-			)
-		);
+		// Check if we are on the edit screen.
+		$showcase_add = isset( $_GET['add'] ) ? true : false;
+		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
+
+		if ( $showcase_id || $showcase_add ) {
+			// Register styles.
+			wc_category_showcase()->scripts->register_style( 'wcc_tailwind', '/styles/tailwind.css' );
+
+			wp_enqueue_style( 'bytekit-components' );
+			wp_enqueue_style( 'bytekit-layout' );
+			// Early core enqueue.
+			wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/styles/admin.css', array( 'wcc_tailwind' ) );
+			wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/scripts/admin.js', array( 'wp-color-picker' ), true );
+			wp_enqueue_media();
+			wp_localize_script(
+				'wcc_showcase-admin',
+				'wcc_showcase_admin_js_vars',
+				array(
+					'ajax_url'     => admin_url( 'admin-ajax.php' ),
+					'search_nonce' => wp_create_nonce( 'wcc_showcase_search_category_action' ),
+					'i18n'         => array(
+						'search_category' => __( 'Search category...', 'wc-category-showcase' ),
+					),
+				)
+			);
+		}
 	}
 
 	/**
