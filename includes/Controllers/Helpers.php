@@ -78,7 +78,8 @@ class Helpers {
 			'number'     => null,
 			'hide_empty' => true,
 		);
-		$args     = wp_parse_args( $args, $defaults );
+
+		$args = wp_parse_args( $args, $defaults );
 
 		return get_terms( $args );
 	}
@@ -222,7 +223,7 @@ class Helpers {
 	}
 
 	/**
-	 * sorting categories array.
+	 * Sorting categories array.
 	 *
 	 * @param array $a Array values.
 	 * @param array $b Array values.
@@ -268,8 +269,8 @@ class Helpers {
 			'enable_additional_category'        => 'no',
 			'additional_category_select'        => array(),
 			'additional_category_list_item'     => array(),
-			'category_sort_order'               => 'default',
-			'category_sort_order_by'            => 'asc',
+			'category_sort_order'               => 'asc',
+			'category_sort_order_by'            => 'default',
 			'category_display_limit'            => '12',
 			'includes_sub_categories'           => 'yes',
 			'hide_empty_categories'             => 'yes',
