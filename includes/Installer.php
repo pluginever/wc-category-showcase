@@ -30,8 +30,7 @@ class Installer {
 	public function __construct() {
 		add_action( 'init', array( $this, 'check_update' ), 0 );
 
-		// Schedule the migration cron job (runs every 15 minutes).
-		// TODO: add_filter( 'cron_schedules', array( $this, 'add_cron_schedules' ) ); // Add custom interval is not worked here!
+		// Schedule the migration cron job (runs hourly).
 		add_action( 'wccs_migrate_data', array( $this, 'migrate_data' ) );
 	}
 
@@ -101,8 +100,11 @@ class Installer {
 			return;
 		}
 
-		// On install, Schedule the migration cron job (runs every 15 minutes).
-		if ( ! wp_next_scheduled( 'wccs_migrate_data' ) ) {
+		// Get the status of the migration.
+		$is_migrated = (int) get_option( 'wccs_data_migrated' );
+
+		// On install, Schedule the migration cron job (runs hourly).
+		if ( ! wp_next_scheduled( 'wccs_migrate_data' ) && empty( $is_migrated ) ) {
 			wp_schedule_event( time(), 'hourly', 'wccs_migrate_data' );
 		}
 
@@ -114,22 +116,6 @@ class Installer {
 	}
 
 	/**
-	 * Add custom interval to process migration (15 minutes).
-	 *
-	 * @param array $schedules The existing cron schedules.
-	 *
-	 * @since 2.2.0
-	 * @return array The modified cron schedules.
-	 */
-	public function add_cron_schedules( $schedules ) {
-		$schedules['every_five_minutes'] = array(
-			'interval' => 900, // Similar to 15 minutes.
-			'display'  => __( 'Every 5 Minutes' ),
-		);
-		return $schedules;
-	}
-
-	/**
 	 * Migration function.
 	 * Migrate data from old version to new version.
 	 *
@@ -137,7 +123,7 @@ class Installer {
 	 * @return void
 	 */
 	public function migrate_data() {
-		error_log( 'Migrating data...' );
+		wc_category_showcase()->log( 'Migrating Showcase data...' );
 		// Fields to update.
 		$fields = array(
 			'wccs_featured_categories'   => 'wcc_showcase_specific_category_select',
@@ -165,7 +151,7 @@ class Installer {
 		);
 
 		// Get current offset.
-		$paged = (int) get_option( 'wccs_migrated', 1 );
+		$paged = (int) get_option( 'wccs_data_migrated', 1 );
 
 		// Fetch one post at a time.
 		$query = new \WP_Query(
@@ -206,7 +192,7 @@ class Installer {
 					}
 
 					// Delete old meta keys if necessary.
-					// delete_post_meta( $post_id, $key );
+					delete_post_meta( $post_id, $key );
 				}
 
 				// Update additional customizer settings.
@@ -273,6 +259,10 @@ class Installer {
 					);
 				}
 
+				if ( ! empty( $additional_customizer ) ) {
+					update_post_meta( $post_id, 'wcc_showcase_enable_additional_category', 'yes' );
+				}
+
 				// Update the post meta.
 				update_post_meta( $post_id, 'wcc_showcase_category_list_item', $featured_customizer );
 				update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
@@ -289,23 +279,22 @@ class Installer {
 				);
 
 				update_post_meta( $post_id, 'wcc_showcase_card_content', $card_content );
+
+				wc_category_showcase()->log( 'Migrated post ID: ' . $post_id );
 			}
 
 			// Delete the old meta keys.
 			foreach ( $fields_to_delete as $field ) {
-				// delete_post_meta( $post_id, $field );
+				delete_post_meta( $post_id, $field );
 			}
 
 			// Increment the offset.
-			update_option( 'wccs_migrated', $paged + 1 );
-
-			error_log( 'Migrated post ID: ' . $post_id );
+			update_option( 'wccs_data_migrated', $paged + 1 );
 		} else {
 			// No more posts left to migrate, remove the cron job.
 			wp_clear_scheduled_hook( 'wccs_migrate_data' );
-			delete_option( 'wccs_migrated' );
-
-			error_log( 'Migration completed and Removing cron job.' );
+			// We won't run delete_option( 'wccs_data_migrated' ) to prevent rescheduling the cron job again and again.
+			wc_category_showcase()->log( 'Migration completed and Removing cron job.' );
 		}
 	}
 
