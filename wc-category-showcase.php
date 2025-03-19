@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:          Product Category Showcase for WooCommerce
+ * Plugin Name:          WC Category Showcase
  * Plugin URI:           https://pluginever.com/plugins/woocommerce-category-showcase-pro/
  * Description:          WooCommerce extension to showcase categories in various styles and layouts.
  * Version:              2.1.0
