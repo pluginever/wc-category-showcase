@@ -4,14 +4,14 @@
  *
  * @since 2.2.0
  * @package WooCommerceCategoryShowcase/Admin/Views/Showcase
+ * @var array $showcase_details Showcase details.
+ * @var int   $post_id Post ID.
  */
 
 use WooCommerceCategoryShowcase\Controllers\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 
-//var_dump( $showcase_details['enable_additional_category'] );
-//wp_die();
 ?>
 <div class="wcc_showcase-settings-row-title">
 	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

@@ -4,6 +4,8 @@
  *
  * @since 2.2.0
  * @package WooCommerceCategoryShowcase/Admin/Views/Showcase
+ * @var array $showcase_details Showcase details.
+ * @var int   $post_id Post ID.
  */
 
 defined( 'ABSPATH' ) || exit;
