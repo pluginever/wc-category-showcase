@@ -450,7 +450,13 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 			$('#wcc_showcase_specific_category_select').select2();
 			var values = $('#wcc_showcase_specific_category_select').val();
 			let selectedValues = new Set();
-			values.forEach(value => selectedValues.add(value));
+
+			// Check if values is an array and not empty
+			if ( Array.isArray(values) && values.length ) {
+				values.forEach(value => selectedValues.add(value));
+			}
+			// values.forEach(value => selectedValues.add(value));
+
 			$('#wcc_showcase_specific_category_select').on('change', function(e) {
 				let newSelected = $(this).val().filter(value => !selectedValues.has(value));
 				newSelected.forEach(value => selectedValues.add(value));
@@ -511,7 +517,13 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 			$('#wcc_showcase_additional_category_select').select2();
 			var valuesAdditional = $('#wcc_showcase_additional_category_select').val();
 			let selectedAdditionalValues = new Set();
-			valuesAdditional.forEach(value => selectedAdditionalValues.add(value));
+
+			// Check if valuesAdditional is an array and not empty.
+			if ( Array.isArray(valuesAdditional) && valuesAdditional.length ) {
+				valuesAdditional.forEach(value => selectedAdditionalValues.add(value));
+			}
+			// valuesAdditional.forEach(value => selectedAdditionalValues.add(value));
+
 			$('#wcc_showcase_additional_category_select').on('change', function(e) {
 				let newAdditionalSelected = $(this).val().filter(value => !selectedAdditionalValues.has(value));
 				newAdditionalSelected.forEach(value => selectedAdditionalValues.add(value));
