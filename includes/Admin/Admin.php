@@ -47,7 +47,6 @@ class Admin {
 	 *
 	 * @param array $ids Screen ids.
 	 *
-	 * @since 1.0.0
 	 * @return array
 	 */
 	public function screen_ids( $ids ) {
@@ -143,7 +142,7 @@ class Admin {
 	}
 
 	/**
-	 * Add category showcase.
+	 * Add/Edit category showcase.
 	 *
 	 * @since 1.0.0
 	 * @return void
