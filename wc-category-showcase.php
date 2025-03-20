@@ -18,10 +18,8 @@
  * Requires plugin:      woocommerce
  *
  * @package WooCommerceCategoryShowcase
- */
-
-/**
- * Copyright (c) 2024 PluginEver (email : support@pluginever.com)
+ *
+ * Copyright (c) 2025 PluginEver (email : support@pluginever.com)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2 or, at

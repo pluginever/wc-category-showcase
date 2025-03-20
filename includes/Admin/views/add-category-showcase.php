@@ -320,9 +320,7 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 			</div><!-- .column-2 -->
 		</div><!-- .bk-poststuff -->
 	</form>
-
 </div>
-
 
 <div id="modelConfirm" class="tw-fixed tw-hidden tw-mx-auto tw-z-50 tw-inset-0 tw-bg-gray-900 tw-bg-opacity-60 tw-overflow-y-auto tw-h-full tw-w-full tw-px-4 tw-rounded-md sm:tw-pl-0">
 	<div class="tw-relative tw-top-40 tw-mx-auto tw-shadow-xl tw-rounded-md tw-bg-white tw-h-[400px] tw-w-[500px] sm:tw-w-[90%] sm:tw-mx-auto sm:tw-h-[460px]">
