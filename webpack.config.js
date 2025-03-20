@@ -1,13 +1,7 @@
-/**
- * WordPress dependencies
- */
 const defaultConfig = require('@wordpress/scripts/config/webpack.config');
-/**
- * External dependencies
- */
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require("path");
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 module.exports = {
 	...defaultConfig,

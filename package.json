@@ -1,9 +1,9 @@
 {
   "name": "wc-category-showcase",
   "title": "WooCommerce Category Showcase",
-  "description": "The best WordPress plugin ever made!",
+  "description": "WooCommerce extension to showcase categories in various styles and layouts.",
   "version": "2.2.0",
-  "homepage": "https://pluginever.com",
+  "homepage": "https://pluginever.com/plugins/woocommerce-category-showcase-pro/",
   "author": {
     "name": "PluginEver",
     "email": "support@pluginever.com",
@@ -25,5 +25,10 @@
   },
   "dependencies": {
     "tailwindcss-inner-border": "^0.2.0"
-  }
+  },
+  "browserslist": [
+    "> 0.1%",
+    "ie 8",
+    "ie 9"
+  ]
 }
