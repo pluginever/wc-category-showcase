@@ -363,7 +363,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row ">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full tw-opacity-50">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Background Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the button background style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
@@ -737,5 +737,3 @@ defined( 'ABSPATH' ) || exit;
 		</label>
 	</div>
 </div>
-
-
