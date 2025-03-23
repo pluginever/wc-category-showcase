@@ -274,7 +274,6 @@ class Helpers {
 			'category_display_limit'            => '12',
 			'includes_sub_categories'           => 'yes',
 			'hide_empty_categories'             => 'yes',
-			'pre_loader'                        => 'yes',
 			// Showcase tab settings data.
 			'show_section_title'                => 'no',
 			'section_title'                     => '',

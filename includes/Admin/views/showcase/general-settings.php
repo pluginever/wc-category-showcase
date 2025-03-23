@@ -1460,15 +1460,3 @@ defined( 'ABSPATH' ) || exit;
 		</label>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row">
-	<div class="tw-w-1/3 sm:tw-w-full">
-		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Pre-loader', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Slider will be hidden until the page has fully loaded.', 'wc-category-showcase' ); ?></p>
-	</div>
-	<div class="tw-flex tw-items-center">
-		<label class="tw-inline-flex tw-cursor-pointer">
-			<input class="tw-sr-only tw-peer" type="checkbox" name="wcc_showcase_pre_loader" value="<?php echo esc_attr( 'yes' ); ?>" <?php if ( 'yes' === $showcase_details['pre_loader'] ) { echo 'checked'; } ?>>
-			<div class="wcc_showcase-toggle"></div>
-		</label>
-	</div>
-</div>
