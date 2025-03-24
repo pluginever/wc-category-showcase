@@ -100,7 +100,7 @@ class Shortcodes {
 				$child_categories = $category['child_categories'];
 				$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 
-				include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-block-grid.php';
+				include WCCS_TEMPLATES_URL . 'load-block-grid.php';
 			}
 		}
 	}
@@ -127,7 +127,7 @@ class Shortcodes {
 		$content_placement = $showcase['content_placement'] ? $showcase['content_placement'] : 'bottom';
 		$content_position  = $showcase['overlay_content_position'] ? $showcase['overlay_content_position'] : 'center_center';
 
-		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-slider.php';
+		include WCCS_TEMPLATES_URL . 'load-slider.php';
 	}
 
 	/**

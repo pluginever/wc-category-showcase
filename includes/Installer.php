@@ -109,10 +109,10 @@ class Installer {
 		}
 
 		wc_category_showcase()->update_db_version( wc_category_showcase()->get_version(), false );
-		add_option( 'wcc_showcase_install_date', current_time( 'mysql' ) );
-		set_transient( 'wcc_showcase_activated', true, 30 );
-		set_transient( 'wcc_showcase_activation_redirect', true, 30 );
-		add_option( 'wcc_showcase_installed', wp_date( 'U' ) );
+		add_option( 'wccs_install_date', current_time( 'mysql' ) );
+		set_transient( 'wccs_activated', true, 30 );
+		set_transient( 'wccs_activation_redirect', true, 30 );
+		add_option( 'wccs_installed', wp_date( 'U' ) );
 	}
 
 	/**

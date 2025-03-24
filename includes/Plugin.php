@@ -33,11 +33,11 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @return void
 	 */
 	public function define_constants() {
-		define( 'WC_CATEGORY_SHOWCASE_VERSION', $this->get_version() );
-		define( 'WC_CATEGORY_SHOWCASE_FILE', $this->get_file() );
-		define( 'WC_CATEGORY_SHOWCASE_PATH', $this->get_dir_path() . '/' );
-		define( 'WC_CATEGORY_SHOWCASE_ASSETS_URL', $this->get_assets_url() );
-		define( 'WC_CATEGORY_SHOWCASE_TEMPLATES_URL', $this->get_dir_path() . 'templates/' );
+		define( 'WCCS_VERSION', $this->get_version() );
+		define( 'WCCS_FILE', $this->get_file() );
+		define( 'WCCS_PATH', $this->get_dir_path() . '/' );
+		define( 'WCCS_ASSETS_URL', $this->get_assets_url() );
+		define( 'WCCS_TEMPLATES_URL', $this->get_dir_path() . 'templates/' );
 	}
 
 	/**
@@ -59,8 +59,25 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	public function init_hooks() {
 		register_activation_hook( $this->get_file(), array( Installer::class, 'install' ) );
 		add_action( 'plugins_loaded', array( $this, 'on_init' ), 0 );
+		add_filter( 'plugin_action_links_' . plugin_basename( $this->get_file() ), array( $this, 'plugin_action_links' ) );
 		add_action( 'before_woocommerce_init', array( $this, 'on_before_woocommerce_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
+	}
+
+	/**
+	 * Add plugin action links.
+	 * Add Go Pro link to plugin action links.
+	 *
+	 * @since 1.0.0
+	 * @param array $links The plugin action links.
+	 * @return array
+	 */
+	public function plugin_action_links( $links ) {
+		if ( ! defined( 'WCCS_PRO_VERSION' ) ) {
+			$links[] = '<a href="https://pluginever.com/plugins/woocommerce-category-showcase-pro/?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=go-pro" target="_blank" style="color: orangered;">' . esc_html__( 'Go Pro', 'wc-category-showcase' ) . '</a>';
+		}
+
+		return $links;
 	}
 
 	/**

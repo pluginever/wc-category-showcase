@@ -62,18 +62,13 @@ class Admin {
 	 * @return void
 	 */
 	public function enqueue_scripts( $hook ) {
-		if ( ! in_array( $hook, Utilities::get_screen_ids(), true ) ) {
-			return;
-		}
-
-		// Verify nonce.
 		wp_verify_nonce( '_nonce' );
 
 		// Check if we are on the edit screen.
 		$showcase_add = isset( $_GET['add'] ) ? true : false;
 		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
 
-		if ( $showcase_id || $showcase_add ) {
+		if ( in_array( $hook, Utilities::get_screen_ids(), true ) || $showcase_id || $showcase_add ) {
 			// Register styles.
 			wc_category_showcase()->scripts->register_style( 'wcc_tailwind', '/styles/tailwind.css' );
 
@@ -94,6 +89,20 @@ class Admin {
 					),
 				)
 			);
+		}
+
+		// Open documentation in new tab.
+		if ( is_admin() ) {
+			$script = "
+            document.addEventListener('DOMContentLoaded', function () {
+                let menuItem = document.querySelector(\"a[href='admin.php?page=wccs-documentation']\");
+                if (menuItem) {
+                    menuItem.setAttribute('target', '_blank');
+                    menuItem.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        ";
+			wp_add_inline_script( 'jquery', $script );
 		}
 	}
 
@@ -300,7 +309,7 @@ class Admin {
 		}
 		$category_details             = Helpers::get_category_details( $term_id );
 		$category_details['position'] = $current_position;
-		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+		include WCCS_TEMPLATES_URL . 'load-category-details.php';
 		wp_die();
 	}
 
@@ -321,7 +330,7 @@ class Admin {
 		}
 		$category_details             = Helpers::get_category_details( $term_id );
 		$category_details['position'] = $current_position;
-		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-additional-category-details.php';
+		include WCCS_TEMPLATES_URL . 'load-additional-category-details.php';
 		wp_die();
 	}
 }

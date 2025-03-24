@@ -309,6 +309,8 @@ class Helpers {
 			'card_content'                      => array(
 				'background_color' => '#96588A00',
 				'hover_color'      => '#96588A00',
+				'text_color'       => '#130F31FF',
+				'hover_text_color' => '#130F31FF',
 			),
 			'content_inner_padding_is_all'      => 'no',
 			'content_inner_padding'             => 16,

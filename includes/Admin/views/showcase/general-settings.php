@@ -1237,14 +1237,14 @@ defined( 'ABSPATH' ) || exit;
 			if ( ! empty( $selected_categories ) ) {
 				foreach ( $selected_categories as $category ) {
 					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id );
-					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-category-details.php';
+					include WCCS_TEMPLATES_URL . 'load-category-details.php';
 					++$count;
 				}
 			}
 			?>
 		</div>
 		<div class="tw-width-[56px] tw-h-[56px] wcc_showcase-loader tw-hidden tw-absolute tw-top-[8px] tw-right-[10px]">
-			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
+			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WCCS_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
 		</div>
 	</div>
 </div>
@@ -1289,14 +1289,14 @@ defined( 'ABSPATH' ) || exit;
 			if ( ! empty( $selected_categories ) ) {
 				foreach ( $selected_categories as $category ) {
 					$category_details = Helpers::get_category_details( $category['cat_id'], $post_id, true );
-					include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-additional-category-details.php';
+					include WCCS_TEMPLATES_URL . 'load-additional-category-details.php';
 					++$count;
 				}
 			}
 			?>
 		</div>
 		<div class="tw-width-[56px] tw-h-[56px] wcc_showcase-loader-additional tw-hidden tw-absolute tw-top-[8px] tw-right-[10px]">
-			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
+			<img class="tw-width-[24px] tw-h-[24px]" src="<?php echo esc_url( WCCS_ASSETS_URL . '/images/loading.gif' ); ?>" alt="">
 		</div>
 	</div>
 </div>

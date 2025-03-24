@@ -117,7 +117,7 @@ if ( array_key_exists( 'enable_additional_category', $showcase ) && 'yes' === $s
 			$child_categories = $category['child_categories'];
 			$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 
-			include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-block-grid.php';
+			include WCCS_TEMPLATES_URL . 'load-block-grid.php';
 		}
 	}
 	echo '</div>';
