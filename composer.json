@@ -1,24 +1,11 @@
 {
   "name": "pluginever/wc-category-showcase",
-  "description": "Product Category Showcase for WooCommerce.",
-  "homepage": "https://pluginever.com",
+  "description": "WooCommerce extension to showcase categories in various styles and layouts.",
+  "homepage": "https://pluginever.com/plugins/woocommerce-category-showcase-pro/",
   "type": "wordpress-plugin",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-2.0-or-later",
   "prefer-stable": true,
   "minimum-stability": "dev",
-  "keywords": ["wordpress", "plugin"],
-  "authors": [
-    {
-      "name": "pluginever",
-      "email": "support@pluginever.com"
-    }
-  ],
-  "repositories": [
-    {
-      "url": "git@github.com:byteever/bytekit-plugin.git",
-      "type": "github"
-    }
-  ],
   "require": {
     "php": ">=7.4",
     "byteever/bytekit-plugin": "^1.0"
@@ -26,6 +13,12 @@
   "require-dev": {
     "byteever/byteever-sniffs": "dev-master"
   },
+  "autoload" : {
+    "psr-4" : {
+      "WooCommerceCategoryShowcase\\": ["includes/"]
+    }
+  },
+  "autoload-dev": {},
   "config": {
     "optimize-autoloader": true,
     "sort-packages": true,
@@ -34,11 +27,12 @@
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
-  "autoload" : {
-    "psr-4" : {
-      "WooCommerceCategoryShowcase\\": ["includes/"]
+  "repositories": [
+    {
+      "url": "git@github.com:byteever/bytekit-plugin.git",
+      "type": "github"
     }
-  },
+  ],
   "scripts": {
     "post-install-cmd":"@strauss",
     "post-update-cmd": "@strauss",

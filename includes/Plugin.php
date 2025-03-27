@@ -2,7 +2,7 @@
 
 namespace WooCommerceCategoryShowcase;
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 /**
  * Class Plugin.
@@ -11,6 +11,7 @@ defined( 'ABSPATH' ) || exit;
  * @package WooCommerceCategoryShowcase
  */
 final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
+
 	/**
 	 * Plugin constructor.
 	 *
@@ -32,11 +33,11 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @return void
 	 */
 	public function define_constants() {
-		define( 'WC_CATEGORY_SHOWCASE_VERSION', $this->get_version() );
-		define( 'WC_CATEGORY_SHOWCASE_FILE', $this->get_file() );
-		define( 'WC_CATEGORY_SHOWCASE_PATH', $this->get_dir_path() . '/' );
-		define( 'WC_CATEGORY_SHOWCASE_ASSETS_URL', $this->get_assets_url() );
-		define( 'WC_CATEGORY_SHOWCASE_TEMPLATES_URL', $this->get_dir_path() . 'templates/' );
+		define( 'WCCS_VERSION', $this->get_version() );
+		define( 'WCCS_FILE', $this->get_file() );
+		define( 'WCCS_PATH', $this->get_dir_path() . '/' );
+		define( 'WCCS_ASSETS_URL', $this->get_assets_url() );
+		define( 'WCCS_TEMPLATES_URL', $this->get_dir_path() . 'templates/' );
 	}
 
 	/**
@@ -56,25 +57,32 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @return void
 	 */
 	public function init_hooks() {
-		register_activation_hook( $this->get_file(), array( $this, 'install' ) );
+		register_activation_hook( $this->get_file(), array( Installer::class, 'install' ) );
 		add_action( 'plugins_loaded', array( $this, 'on_init' ), 0 );
+		add_filter( 'plugin_action_links_' . plugin_basename( $this->get_file() ), array( $this, 'plugin_action_links' ) );
 		add_action( 'before_woocommerce_init', array( $this, 'on_before_woocommerce_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
 	}
 
 	/**
-	 * Run on plugin activation.
+	 * Add plugin action links.
+	 * Add Go Pro link to plugin action links.
 	 *
-	 * @since 2.1.0
-	 * @return void
+	 * @since 1.0.0
+	 * @param array $links The plugin action links.
+	 * @return array
 	 */
-	public function install() {
-		// Add option for installed time.
-		add_option( 'wccs_installed', wp_date( 'U' ) );
+	public function plugin_action_links( $links ) {
+		if ( ! defined( 'WCCS_PRO_VERSION' ) ) {
+			$links[] = '<a href="https://pluginever.com/plugins/woocommerce-category-showcase-pro/?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=go-pro" target="_blank" style="color: orangered;">' . esc_html__( 'Go Pro', 'wc-category-showcase' ) . '</a>';
+		}
+
+		return $links;
 	}
 
 	/**
 	 * Run on before WooCommerce init.
+	 * Declare compatibility with WooCommerce features.
 	 *
 	 * @since 1.0.0
 	 * @return void
@@ -93,8 +101,11 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @return void
 	 */
 	public function on_init() {
+		// Common classes.
+		$this->set( Installer::class );
 		$this->set( PostTypes::class );
 		$this->set( Shortcodes\Shortcodes::class );
+
 		// Admin classes.
 		if ( is_admin() ) {
 			$this->set( Admin\Admin::class );
@@ -111,16 +122,17 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	}
 
 	/**
-	 * register scripts.
+	 * Register scripts.
 	 *
-	 * @since 1.
+	 * @since 1.0.0
 	 * @retun void
 	 */
 	public function register_scripts() {
-		$this->scripts->register_style( 'wcc-showcase-showcase', 'css/showcase.css' );
-		$this->scripts->register_script( 'wcc-showcase-splide', '/js/splide.js' );
-		$this->scripts->register_script( 'wcc-showcase-splide-grid', '/js/splide-extension-grid.js' );
-		$this->scripts->register_script( 'wcc-showcase-splide-auto-scroll', '/js/splide-extension-auto-scroll.js' );
-		$this->scripts->register_script( 'wcc-showcase-showcase', '/js/showcase.js', array( 'jquery', 'wcc-showcase-splide', 'wcc-showcase-splide-grid', 'wcc-showcase-splide-auto-scroll' ), true );
+		$this->scripts->register_style( 'wcc-showcase-splide', '/styles/splide.min.css' );
+		$this->scripts->register_style( 'wcc-showcase-showcase', '/styles/frontend.css', array( 'wcc-showcase-splide' ) );
+		$this->scripts->register_script( 'wcc-showcase-splide', '/scripts/splide.js' );
+		$this->scripts->register_script( 'wcc-showcase-splide-grid', '/scripts/splide-extension-grid.js' );
+		$this->scripts->register_script( 'wcc-showcase-splide-auto-scroll', '/scripts/splide-extension-auto-scroll.js' );
+		$this->scripts->register_script( 'wcc-showcase-showcase', '/scripts/frontend.js', array( 'jquery', 'wcc-showcase-splide', 'wcc-showcase-splide-grid', 'wcc-showcase-splide-auto-scroll' ), true );
 	}
 }

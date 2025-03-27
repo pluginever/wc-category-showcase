@@ -4,7 +4,7 @@ namespace WooCommerceCategoryShowcase\Shortcodes;
 
 use WooCommerceCategoryShowcase\Controllers\Helpers;
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 /**
  * Shortcode class.
@@ -54,7 +54,7 @@ class Shortcodes {
 		ob_start();
 		?>
 		<section class="wccs-section is-layout__<?php echo sanitize_html_class( $layout ); ?>">
-			<?php if ( isset( $showcase['section_title'] ) || isset( $showcase['section_description'] ) ) : ?>
+			<?php if ( ! empty( $showcase['section_title'] ) || ! empty( $showcase['section_description'] ) ) : ?>
 				<div class="wccs-section__header wccs-categories-heading__<?php echo sanitize_html_class( $wccs_id ); ?> text-<?php echo isset( $showcase['heading_alignment'] ) ? sanitize_html_class( $showcase['heading_alignment'] ) : 'left'; ?>">
 					<?php
 					echo isset( $showcase['section_title'] ) && 'yes' === $showcase['show_section_title'] ? sprintf( '<%s class="section-title">%s</%s>', esc_attr( $showcase['font_main_title']['text_tag'] ), esc_attr( $showcase['section_title'] ), esc_attr( $showcase['font_main_title']['text_tag'] ) ) : '';
@@ -62,7 +62,7 @@ class Shortcodes {
 					?>
 				</div>
 			<?php endif; ?>
-			<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?>">
+			<div class="wccs-section__body wccs-categories wccs-categories__<?php echo sanitize_html_class( $wccs_id ); ?> <?php echo sanitize_html_class( $layout_option ); ?> <?php echo array_key_exists( 'enable_additional_category', $showcase ) && 'yes' === $showcase['enable_additional_category'] ? sanitize_html_class( $layout . '-has-additional-categories' ) : ''; ?>">
 			<?php
 			if ( 'slider' === $layout ) {
 				$this->render_slider_content( $wccs_id, $showcase );
@@ -78,7 +78,8 @@ class Shortcodes {
 	}
 
 	/**
-	 * Get Block/Grid content.
+	 * Render Block/Grid content.
+	 * This function will render the block/grid content.
 	 *
 	 * @param int    $wccs_id Showcase ID.
 	 * @param string $layout Current layout.
@@ -99,7 +100,7 @@ class Shortcodes {
 				$child_categories = $category['child_categories'];
 				$ribbon_placement = ( 'left' === $showcase['content_alignment'] && 'top' === $content_placement ) ? 'right' : 'left';
 
-				include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-block-grid.php';
+				include WCCS_TEMPLATES_URL . 'load-block-grid.php';
 			}
 		}
 	}
@@ -126,7 +127,7 @@ class Shortcodes {
 		$content_placement = $showcase['content_placement'] ? $showcase['content_placement'] : 'bottom';
 		$content_position  = $showcase['overlay_content_position'] ? $showcase['overlay_content_position'] : 'center_center';
 
-		include WC_CATEGORY_SHOWCASE_TEMPLATES_URL . 'load-slider.php';
+		include WCCS_TEMPLATES_URL . 'load-slider.php';
 	}
 
 	/**
@@ -176,7 +177,7 @@ class Shortcodes {
 
 		if ( 'yes' === $category_showcase['slide_navigation_arrow'] ) {
 			$slider_classes .= 'is--arrow';
-			$slider_classes .= 'arrow' !== $category_showcase['slide_arrow_style'] ? ' is--navigation-chevron' : '';
+			$slider_classes .= 'arrow' === $category_showcase['slide_arrow_style'] ? ' is--navigation-arrow' : '';
 			$slider_classes .= 'default' !== $category_showcase['slider_navigation_position'] ? ' is--navigation-' . $category_showcase['slider_navigation_position'] : '';
 			$slider_classes .= $category_showcase['slide_button_style'] ? ' is--' . $category_showcase['slide_button_style'] : '';
 		}
@@ -208,12 +209,21 @@ class Shortcodes {
 		$card_bg_hover_color   = $showcase['card']['hover_color'] ? $showcase['card']['hover_color'] : '';
 		$card_text_color       = $showcase['card']['text_color'] ? $showcase['card']['text_color'] : '';
 		$card_text_hover_color = $showcase['card']['hover_text_color'] ? $showcase['card']['hover_text_color'] : '';
-		$card_border_radius    = $showcase['border_radius'] ? $showcase['border_radius'] : '';
-		$card_gap              = $showcase['gap_between_cards'] ? $showcase['gap_between_cards'] : '';
-		$card_gap              = $card_gap / 16;
 
+		if ( 'yes' === wccs_get_showcase_data( $showcase, 'border_is_all' ) ) {
+			$borders_radius     = $showcase['border_radius_all'];
+			$card_border_radius = $borders_radius['top'] . 'px ' . $borders_radius['right'] . 'px ' . $borders_radius['bottom'] . 'px ' . $borders_radius['left'] . 'px';
+
+		} else {
+			$border_radius      = isset( $showcase['border_radius'] ) ? $showcase['border_radius'] : 0;
+			$card_border_radius = $border_radius . 'px';
+		}
+
+		$card_gap                    = $showcase['gap_between_cards'] ? $showcase['gap_between_cards'] : '';
+		$card_gap                    = $card_gap / 16;
 		$card_content_padding        = $showcase['content_padding'] ? $showcase['content_padding'] : '';
 		$card_content_padding_is_all = 'yes' === $showcase['content_padding_is_all'] ? $showcase['content_padding_is_all'] : 'no';
+
 		if ( 'yes' === $card_content_padding_is_all ) {
 			$content_padding_top    = $showcase['content_padding_all']['top'] ? $showcase['content_padding_all']['top'] : '0';
 			$content_padding_right  = $showcase['content_padding_all']['right'] ? $showcase['content_padding_all']['right'] : '0';
@@ -228,15 +238,14 @@ class Shortcodes {
 
 		$card_inner_bg_color               = $showcase['card_content']['background_color'] ? $showcase['card_content']['background_color'] : '';
 		$card_inner_bg_hover_color         = $showcase['card_content']['hover_color'] ? $showcase['card_content']['hover_color'] : '';
-		$card_inner_text_color             = $showcase['card_content']['text_color'] ? $showcase['card_content']['text_color'] : '';
-		$card_inner_text_hover_color       = $showcase['card_content']['hover_text_color'] ? $showcase['card_content']['hover_text_color'] : '';
-		$card_content_inner_padding        = $showcase['content_inner_padding'] ? $showcase['content_inner_padding'] : '';
+		$card_content_inner_padding        = $showcase['content_inner_padding'] ? $showcase['content_inner_padding'] : '16';
 		$card_content_inner_padding_is_all = 'yes' === $showcase['content_inner_padding_is_all'] ? $showcase['content_inner_padding_is_all'] : 'no';
+
 		if ( 'yes' === $card_content_inner_padding_is_all ) {
-			$content_inner_padding_top    = $showcase['content_inner_padding_all']['top'] ? $showcase['content_inner_padding_all']['top'] : '0';
-			$content_inner_padding_right  = $showcase['content_inner_padding_all']['right'] ? $showcase['content_inner_padding_all']['right'] : '0';
-			$content_inner_padding_bottom = $showcase['content_inner_padding_all']['bottom'] ? $showcase['content_inner_padding_all']['bottom'] : '0';
-			$content_inner_padding_left   = $showcase['content_inner_padding_all']['left'] ? $showcase['content_inner_padding_all']['left'] : '0';
+			$content_inner_padding_top    = $showcase['content_inner_padding_all']['top'] ? $showcase['content_inner_padding_all']['top'] : '16';
+			$content_inner_padding_right  = $showcase['content_inner_padding_all']['right'] ? $showcase['content_inner_padding_all']['right'] : '16';
+			$content_inner_padding_bottom = $showcase['content_inner_padding_all']['bottom'] ? $showcase['content_inner_padding_all']['bottom'] : '16';
+			$content_inner_padding_left   = $showcase['content_inner_padding_all']['left'] ? $showcase['content_inner_padding_all']['left'] : '16';
 		} else {
 			$content_inner_padding_top    = $card_content_inner_padding;
 			$content_inner_padding_right  = $card_content_inner_padding;
@@ -268,11 +277,12 @@ class Shortcodes {
 			.wccs-showcase-id__{$wccs_id}, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item{
 				background-color: {$card_bg_color};
 				color: {$card_text_color};
-				border-radius: {$card_border_radius}px;
+				border-radius: {$card_border_radius};
 				transition: 0.3s;
+				overflow: hidden;
 			}
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content {
-				border-radius: {$card_border_radius}px;
+				border-radius: {$card_border_radius};
 			}
 
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner p, .wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
@@ -299,6 +309,15 @@ class Shortcodes {
 			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
 				background-color: {$card_bg_hover_color};
 				color: {$card_text_hover_color};
+			}
+			.wccs-showcase-id__{$wccs_id}:hover, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover{
+				background-color: {$card_bg_hover_color};
+				color: {$card_text_hover_color};
+			}
+			.wccs-showcase-id__{$wccs_id}:hover .wccs-entry__content.has-image{
+				background-color: {$card_bg_hover_color};
+				color: {$card_text_hover_color};
+				transition: 0.3s;
 			}
 			.wcc-showcase-{$wccs_id} .splide__pagination__page{
 				background-color: {$counter_bg};
@@ -330,7 +349,7 @@ class Shortcodes {
 
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn{
 				background-color: {$shop_now_btn_bg};
-				border: 1px solid {$shop_now_btn_border_color};
+				border-color: {$shop_now_btn_border_color};
 				color: {$shop_now_btn_text_color};
 			}
 			.wcc-showcase-{$wccs_id} .wccs-showcase-btn:hover, .wccs-showcase-id__{$wccs_id} .wccs-showcase-btn:hover{
@@ -339,15 +358,16 @@ class Shortcodes {
 				color: {$shop_now_btn_hover_text_color} !important;
 			}
 
-			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details {
+			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details,
+			.wccs-categories__{$wccs_id} .wccs-entry__content {
 				padding: {$content_padding_top}px {$content_padding_right}px {$content_padding_bottom}px {$content_padding_left}px;
 			}
 
-			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details .wccs-entry__content-inner {
-				padding: {$content_inner_padding_top}px {$content_inner_padding_right}px {$content_inner_padding_bottom}px {$content_inner_padding_left}px;
+			.wccs-categories__{$wccs_id} .wccs-entry__content-inner {
+				padding: {$content_inner_padding_top}px {$content_inner_padding_right}px {$content_inner_padding_bottom}px {$content_inner_padding_left}px!important;
 				background-color: {$card_inner_bg_color};
 			}
-			.wccs-categories__{$wccs_id} .wcc-showcase-slide-item__cat-details:hover .wccs-entry__content-inner {
+			.wccs-categories__{$wccs_id} .wccs-entry__content-inner:hover {
 				background-color: {$card_inner_bg_hover_color};
 			}
 		";

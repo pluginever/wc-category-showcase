@@ -61,11 +61,40 @@ class Menus {
 
 		add_submenu_page(
 			self::PARENT_SLUG,
+			'Add New Showcase',
+			'Add New Showcase',
+			'manage_options',
+			'wccs_add_new_showcase',
+			function () {
+				wp_safe_redirect( 'admin.php?page=wc-category-showcase&add' );
+				exit;
+			}
+		);
+
+		// phpcs:disable
+		/*
+		add_submenu_page(
+			self::PARENT_SLUG,
 			esc_html__( 'Settings', 'wc-category-showcase' ),
 			esc_html__( 'Settings', 'wc-category-showcase' ),
 			'manage_options',
-			'wc-category-showcase-settings',
+			'wccs-settings',
 			array( $this, 'output_tab_settings_page' )
+		);
+		*/
+		// phpcs:enable
+
+		// Add a Documentation page.
+		add_submenu_page(
+			self::PARENT_SLUG,
+			esc_html__( 'Documentation', 'wc-category-showcase' ),
+			esc_html__( 'Documentation', 'wc-category-showcase' ),
+			'manage_options',
+			'wccs-documentation',
+			function () {
+				wp_redirect( 'https://pluginever.com/docs/wc-category-showcase/' ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
+				exit;
+			}
 		);
 	}
 
@@ -84,8 +113,10 @@ class Menus {
 	 * Output list table page.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
 	public function showcase_list_render() {
+		wp_verify_nonce( '_nonce' );
 		$add              = isset( $_GET['add'] ) ? true : false;
 		$post_id          = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
 		$showcase_details = Helpers::get_showcase_settings( $post_id );
@@ -102,11 +133,12 @@ class Menus {
 	 * Output settings page.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
 	public function output_tab_settings_page() {
 		$page_hook = 'settings';
 		$tabs      = array(
-			'export-import' => __( 'Export / Import', 'wc-category-showcase' ),
+			'general'       => __( 'General', 'wc-category-showcase' ),
 			'documentation' => __( 'Documentation', 'wc-category-showcase' ),
 		);
 		include __DIR__ . '/views/admin-page.php';
@@ -116,6 +148,7 @@ class Menus {
 	 * Output export/import tab page.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
 	public function export_import_tab_render() {
 		include __DIR__ . '/views/settings/export-import.php';

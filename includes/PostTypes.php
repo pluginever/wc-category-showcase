@@ -31,11 +31,11 @@ class PostTypes {
 	public static function register_post_type() {
 		$labels = array(
 			'name'               => _x( 'Category Showcase', 'post type general name', 'wc-category-showcase' ),
-			'singular_name'      => _x( 'WC Category Showcase', 'post type singular name', 'wc-category-showcase' ),
+			'singular_name'      => _x( 'Category Showcase', 'post type singular name', 'wc-category-showcase' ),
 			'menu_name'          => _x( 'Category Showcase', 'admin menu', 'wc-category-showcase' ),
-			'name_admin_bar'     => _x( 'WC Category Showcase', 'add new on admin bar', 'wc-category-showcase' ),
+			'name_admin_bar'     => _x( 'Category Showcase', 'add new on admin bar', 'wc-category-showcase' ),
 			'add_new'            => _x( 'Add New', 'book', 'wc-category-showcase' ),
-			'add_new_item'       => __( 'Add New Category Showcase', 'wc-category-showcase' ),
+			'add_new_item'       => __( 'Add New Showcase', 'wc-category-showcase' ),
 			'new_item'           => __( 'New Category Showcase', 'wc-category-showcase' ),
 			'edit_item'          => __( 'Edit Category Showcase', 'wc-category-showcase' ),
 			'view_item'          => __( 'View Category Showcase', 'wc-category-showcase' ),

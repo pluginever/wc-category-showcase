@@ -7,14 +7,14 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Utilities class.
  *
- * @since 1.0.0
+ * @since 2.2.0
  * @package WooCommerceCategoryShowcase\Admin
  */
 class Utilities {
 	/**
 	 * Get page ids.
 	 *
-	 * @since 1.0.0
+	 * @since 2.2.0
 	 * @return array
 	 */
 	public static function get_screen_ids() {

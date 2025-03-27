@@ -1,6 +1,4 @@
-@import "../common/tailwind.css";
-@import "common";
-@import "iconPicker";
+@forward "utils";
 @import "../fonts/all.css";
 
 .wp-heading-inline{
@@ -35,8 +33,7 @@
 	margin-left: 5px;
 }
 
-/// dropdown
-
+//  dropdown
 .select-wrapper {
 	position: relative;
 	user-select: none;
@@ -98,8 +95,7 @@
 	color: #2270B1;
 }
 
-///arrow dropdown
-
+// arrow dropdown
 .wcc_showcase-arrow {
 	position: relative;
 }
@@ -136,4 +132,3 @@
 		background: #41424536;
 	}
 }
-

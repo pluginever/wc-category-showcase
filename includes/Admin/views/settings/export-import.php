@@ -2,20 +2,20 @@
 /**
  * View: Showcase export / import.
  *
- * @since 1.0.0
- * @package WooCommerceCategoryShowcase
+ * @since 2.2.0
+ * @package WooCommerceCategoryShowcase/Admin/Views/Settings
  */
 
 defined( 'ABSPATH' ) || exit();
 
 ?>
 <div class="wcc-showcase-upcoming">
-	<div>
+	<div style="padding: 10px;">
 		<h1><?php esc_html_e( 'Export / Import', 'wc-category-showcase' ); ?></h1>
 		<p><?php esc_html_e( 'These export import tabs will help you to export and import showcase data.', 'wc-category-showcase' ); ?></p>
 	</div>
 
-	<form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+	<form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" style="padding: 10px;">
 		<div class="bk-card">
 			<div class="bk-card__header">
 				<h2 class="bk-card__title"><?php echo esc_html__( 'Export Showcases', 'wc-category-showcase' ); ?></h2>
@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || exit();
 		</div>
 	</form>
 
-	<form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+	<form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" style="padding: 10px;">
 		<div class="bk-card">
 			<div class="bk-card__header">
 				<h2 class="bk-card__title"><?php echo esc_html__( 'Import Showcases', 'wc-category-showcase' ); ?></h2>

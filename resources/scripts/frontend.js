@@ -2,15 +2,14 @@
  * WC Category Showcase
  * https://www.pluginever.com
  *
- * Copyright (c) 2018 pluginever
+ * Copyright (c) 2018-2025 PluginEver
  * Licensed under the GPLv2+ license.
  */
 
 jQuery(document).ready(function ($) {
 	$('.splide').each(function() {
-		var sliderId = $(this).attr('id');
-		var grid_value = $('#'+sliderId).data( 'grid' );
-		var grid_ticker = $('#'+sliderId).data( 'ticker' );
+		var grid_value = $(this).data( 'grid' );
+		var grid_ticker = $(this).data( 'ticker' );
 		var tickerSpeed;
 		var gap;
 		var autoScroll = false;
@@ -25,9 +24,12 @@ jQuery(document).ready(function ($) {
 			}
 		}
 		gap = grid_value.gap / 16;
-		var splide = new Splide( '#'+sliderId, {
+
+		// Create a new Splide instance for this current element.
+		new Splide( this, {
 			autoScroll: autoScroll,
 			gap: gap+'rem',
+			pagination: false,
 			grid: {
 				dimensions: [ [grid_value.rows, grid_value.columns] ],
 				gap : {
@@ -64,8 +66,6 @@ jQuery(document).ready(function ($) {
 					}
 				}
 			}
-		});
-
-		splide.mount( window.splide.Extensions );
+		}).mount( window.splide.Extensions );
 	});
 });

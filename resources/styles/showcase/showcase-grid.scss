@@ -282,7 +282,7 @@
 			.wccs-category:nth-child(3) {
 				grid-column: span 2;
 			}
-			.wccs-category:nth-child(4) {
+			.wccs-category:nth-child(6) {
 				grid-column: span 2;
 			}
 		}
@@ -291,13 +291,13 @@
 			.wccs-category:nth-child(1) {
 				grid-column: span 2;
 			}
-			.wccs-category:nth-child(6) {
+			.wccs-category:nth-child(4) {
 				grid-column: span 2;
 			}
 		}
 		&.matrix_1x6{
 			grid-template-columns: repeat(4, 1fr);
-			.wccs-category:nth-child(1) {
+			.wccs-category:nth-child(3) {
 				grid-column: span 2;
 			}
 			.wccs-category:nth-child(4) {
@@ -306,7 +306,7 @@
 		}
 		&.matrix_2x6{
 			grid-template-columns: repeat(4, 1fr);
-			.wccs-category:nth-child(3) {
+			.wccs-category:nth-child(1) {
 				grid-column: span 2;
 			}
 			.wccs-category:nth-child(6) {

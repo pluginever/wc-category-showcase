@@ -34,12 +34,6 @@ module.exports = {
 				'pro-toggle-bg': '#F0E9E2',
 				'pro-btn-bg':'#F57300',
 			},
-			content: {
-				'check-circle': 'url("/build/images/check-circle.svg")',
-				// 'check-circle': '',
-				// 'pro-badge':'',
-				'pro-badge':'url("/build/images/pro-badge.svg")',
-			},
 		},
 		screens: {
 			'2xl': {'max': '1920px'},

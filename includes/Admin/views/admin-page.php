@@ -23,7 +23,7 @@ $current_tab  = ! empty( $current_tab ) && array_key_exists( $current_tab, $tabs
 					if ( 'documentation' === $name ) {
 						printf(
 							'<a href="%s" class="nav-tab" target="_blank">%s</a>',
-							esc_url( 'https://pluginever.com/docs/wc-tabs-manager/' ),
+							esc_url( 'https://pluginever.com/docs/wc-category-showcase/' ),
 							esc_html( $label )
 						);
 					} else {

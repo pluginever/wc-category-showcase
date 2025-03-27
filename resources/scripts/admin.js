@@ -6,7 +6,7 @@
  * Licensed under the GPLv2+ license.
  */
 
-import PluginEverIconPicker from './_iconPicker.js';
+import PluginEverIconPicker from './admin/_iconPicker.js';
 
 (function ($, window, document, wp, undefined) {
 	window.wcc_showcase_admin = {
@@ -16,6 +16,18 @@ import PluginEverIconPicker from './_iconPicker.js';
 				e.preventDefault();
 				$('#modelConfirm').toggleClass('tw-hidden');
 			});
+
+			// window onload #wcc_showcase_content_placement_overlay attr marked as checked.
+			// $(window).on('load', function() {
+			// 	$('.wcc_showcase_layout_select').find('input:radio').each(function() {
+			// 		if ( 'grid' === $(this).val() && $(this).is(':checked') ) {
+			// 			let overlay_selector = $('.wcc_showcase_content_placement_overlay');
+			// 			// Make it clicked by default.
+			// 			overlay_selector.attr('checked', true);
+			// 			console.log('checked');
+			// 		}
+			// 	});
+			// });
 
 			$('.wcc_showcase_layout_select').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
@@ -29,6 +41,7 @@ import PluginEverIconPicker from './_iconPicker.js';
 							$('.wcc_showcase-grid-selection').addClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').addClass('tw-hidden');
 							$('.wcc_showcase-breakpoint').addClass('tw-hidden');
+							$('.slider-additional-category').addClass('tw-hidden');
 						}
 						if ( 'slider' === $(this).val() ){
 							$('.is-wcc-slider').removeClass('tw-hidden');
@@ -36,6 +49,7 @@ import PluginEverIconPicker from './_iconPicker.js';
 							$('.wcc_showcase-grid-selection').addClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').removeClass('tw-hidden');
 							$('.wcc_showcase-breakpoint').removeClass('tw-hidden');
+							$('.slider-additional-category').removeClass('tw-hidden');
 						}else {
 							$('.is-wcc-slider').addClass('tw-hidden');
 						}
@@ -45,6 +59,8 @@ import PluginEverIconPicker from './_iconPicker.js';
 							$('.wcc_showcase-grid-selection').removeClass('tw-hidden');
 							$('.wcc_showcase-slider-selection').addClass('tw-hidden');
 							$('.wcc_showcase-breakpoint').addClass('tw-hidden');
+							$('.slider-additional-category').addClass('tw-hidden');
+							$('.wcc_showcase_content_placement_overlay').attr('checked', true);
 						}
 					} else {
 						$(this).attr( 'checked', false );
@@ -169,6 +185,7 @@ import PluginEverIconPicker from './_iconPicker.js';
 			// Grid Layout Select
 			$('.wcc_showcase-number-of-grid-column').on('click', function (e) {
 				var current_val = $(this).find('input:radio').val();
+				var count = 0;
 				$('.wcc_showcase-number-of-grid-column').find('input:radio').each(function() {
 					if ( current_val === $(this).val() ) {
 						$(this).attr('checked', true);
@@ -177,8 +194,22 @@ import PluginEverIconPicker from './_iconPicker.js';
 						$('.wcc_showcase-choose-layout-option').each(function() {
 							if( $(this).hasClass( 'layout-'+current_val+'x' ) ){
 								$(this).removeClass('tw-hidden');
+								$(this).addClass('grid-active');
 							} else {
 								$(this).addClass('tw-hidden');
+								$(this).removeClass('grid-active');
+							}
+							if( 0 === count ){
+								var count_current = 0;
+								$('.wcc_showcase-choose-layout-option').find('input:radio').each(function () {
+									$(this).attr('checked', false);
+									$(this).siblings('div').children().addClass('wcc_showcase-layout-primary').removeClass('wcc_showcase-layout-active');
+									$(this).siblings('div').removeClass('wcc_showcase-layout-active-before-content');
+								});
+								$('.layout-'+current_val+'x').first().children('div').addClass('wcc_showcase-layout-active-before-content');
+								$('.layout-'+current_val+'x').first().children('input:radio').attr('checked', true);
+								$('.layout-'+current_val+'x').first().children().children('svg').addClass('wcc_showcase-layout-active').removeClass('wcc_showcase-layout-primary');
+								count++;
 							}
 						});
 					} else {
@@ -244,7 +275,7 @@ import PluginEverIconPicker from './_iconPicker.js';
 			});
 			// Slide up down end.
 
-			$('#wcc_showcase_specific_category_select, #wcc_showcase_block_slider_category').select2({
+			$('#wcc_showcase_specific_category_select, #wcc_showcase_block_slider_category,#wcc_showcase_additional_category_list_item').select2({
 				ajax: {
 					cache: true,
 					delay: 500,
@@ -419,7 +450,13 @@ import PluginEverIconPicker from './_iconPicker.js';
 			$('#wcc_showcase_specific_category_select').select2();
 			var values = $('#wcc_showcase_specific_category_select').val();
 			let selectedValues = new Set();
-			values.forEach(value => selectedValues.add(value));
+
+			// Check if values is an array and not empty
+			if ( Array.isArray(values) && values.length ) {
+				values.forEach(value => selectedValues.add(value));
+			}
+			// values.forEach(value => selectedValues.add(value));
+
 			$('#wcc_showcase_specific_category_select').on('change', function(e) {
 				let newSelected = $(this).val().filter(value => !selectedValues.has(value));
 				newSelected.forEach(value => selectedValues.add(value));
@@ -448,7 +485,6 @@ import PluginEverIconPicker from './_iconPicker.js';
 					});
 				}
 			});
-			// Search Add category to list end.
 
 			$(document).on('click', '.wcc-showcase-remove-category', function (e) {
 				e.preventDefault();
@@ -467,6 +503,74 @@ import PluginEverIconPicker from './_iconPicker.js';
 					}
 				});
 			});
+
+			$(document).on('change', '.wcc_showcase_enable_additional_category', function (e) {
+				if( $('input[name="wcc_showcase_enable_additional_category"]').is(':checked') ) {
+					$('.wcc_showcase-additional-category-selection').removeClass('tw-hidden');
+				} else {
+					$('.wcc_showcase-additional-category-selection').addClass('tw-hidden');
+				}
+			});
+			// Search Add category to list end.
+
+			// Search Add Additional category to list start.
+			$('#wcc_showcase_additional_category_select').select2();
+			var valuesAdditional = $('#wcc_showcase_additional_category_select').val();
+			let selectedAdditionalValues = new Set();
+
+			// Check if valuesAdditional is an array and not empty.
+			if ( Array.isArray(valuesAdditional) && valuesAdditional.length ) {
+				valuesAdditional.forEach(value => selectedAdditionalValues.add(value));
+			}
+			// valuesAdditional.forEach(value => selectedAdditionalValues.add(value));
+
+			$('#wcc_showcase_additional_category_select').on('change', function(e) {
+				let newAdditionalSelected = $(this).val().filter(value => !selectedAdditionalValues.has(value));
+				newAdditionalSelected.forEach(value => selectedAdditionalValues.add(value));
+				var current_position = $('.wcc_showcase_additional_category_list_item .wcc_showcase-additional-category-list-item').length;
+				if (newAdditionalSelected.length > 0) {
+					$.ajax({
+						type: 'post',
+						url: wcc_showcase_admin_js_vars.ajax_url,
+						data: {
+							action: 'wc_category_showcase_get_additional_category_details',
+							nonce: wcc_showcase_admin_js_vars.search_nonce,
+							term_id: newAdditionalSelected[0],
+							position: current_position,
+						},
+						beforeSend: function(){
+							$('.wcc_showcase-loader-additional').removeClass('tw-hidden');
+						},
+						success: function(result) {
+							$('.wcc_showcase-loader-additional').addClass('tw-hidden');
+							$('.wcc_showcase_additional_category_list_item').append(result);
+							load_icon_picker();
+						},
+						error: function(result) {
+							console.warn(result);
+						}
+					});
+				}
+			});
+
+			$(document).on('click', '.wcc-showcase-remove-additional-category', function (e) {
+				e.preventDefault();
+				$(this).parent().parent().parent().remove();
+				var post_id = $(this).parent().parent().parent().attr('data-id');
+				var post_title = $(this).parent().parent().parent().attr('data-title');
+				$("#wcc_showcase_additional_category_list_item option").each( function() {
+					if( post_id === $(this).val() ) {
+						$('.select2-selection__rendered .select2-selection__choice').each( function(){
+							if( post_title.trim() === $(this).attr('title').trim() ){
+								$(this).remove();
+								selectedValues.delete(post_id);
+							}
+						});
+						$(this).removeAttr("selected");
+					}
+				});
+			});
+			// Search Add Additional category to list end.
 
 			// Image upload start.
 			$(document).on('click', '.wcc_showcase-upload-image-button', function(e) {
@@ -515,6 +619,6 @@ import PluginEverIconPicker from './_iconPicker.js';
 	});
 
 })(jQuery, window, document, wp);
-import './_common';
-import './_tabsControl';
-import './_colorPicker';
+import './admin/_common';
+import './admin/_tabsControl';
+import './admin/_colorPicker';

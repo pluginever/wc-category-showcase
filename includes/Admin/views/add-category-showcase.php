@@ -2,10 +2,15 @@
 /**
  * General settings tab.
  *
- * @package WooCommerceCategoryShowcase
+ * @since 2.2.0
+ * @package WooCommerceCategoryShowcase\Admin\Views
+ * @var array $showcase_details Showcase details.
+ * @var int   $post_id        Post ID.
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['current_tab'] : 'first';
 
 ?>
 <div class="wrap bk-wrap">
@@ -33,11 +38,11 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 				<div class="tw-mx-auto tw-mt-4">
-					<!--Tabs list-->
+					<!-- Tabs list -->
 					<div class="tw-p-2 tw-bg-white tw-rounded-md">
 						<div class="tw-w-full tw-sm:block">
 							<nav id="tabs" class="tw-flex tw-space-x-4 sm:tw-hidden" aria-label="Tabs">
-								<a href="#first" class="wcc_showcase-tabs-active" aria-current="page">
+								<a href="#first" class="wcc_showcase-tabs <?php echo sanitize_html_class( 'first' === $current_tab ? 'wcc_showcase-tabs-active' : '' ); ?>">
 									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="currentColor">
 										<g clip-path="url(#clip0_156_445)">
 											<path d="M5.7002 17H2.2002C2.06759 17 1.94041 16.9473 1.84664 16.8536C1.75287 16.7598 1.7002 16.6326 1.7002 16.5V1.5C1.7002 1.36739 1.75287 1.24021 1.84664 1.14645C1.94041 1.05268 2.06759 1 2.2002 1H5.7002V17ZM9.4102 15.4685C9.0817 15.3312 8.80108 15.1 8.6036 14.8037C8.40611 14.5075 8.30056 14.1595 8.3002 13.8035V13.1965C8.30049 12.8405 8.40602 12.4925 8.60351 12.1962C8.80101 11.9 9.08166 11.6687 9.4102 11.5315C9.27187 11.2011 9.23486 10.8371 9.30385 10.4856C9.37285 10.1341 9.54474 9.81108 9.7977 9.5575L10.2567 9.098C10.4239 8.92988 10.6227 8.7966 10.8417 8.70588C11.0608 8.61516 11.2956 8.56881 11.5327 8.5695C11.5897 8.5695 11.6442 8.581 11.6997 8.586V1H7.7002V17H9.4732C9.35152 16.7648 9.28282 16.5058 9.27194 16.2412C9.26105 15.9767 9.30825 15.7129 9.4102 15.4685ZM13.8967 7.6H14.5037C14.8596 7.60042 15.2074 7.70594 15.5035 7.90333C15.7997 8.10072 16.0309 8.38117 16.1682 8.7095C16.4126 8.60602 16.6772 8.55876 16.9424 8.57122C17.2075 8.58369 17.4665 8.65555 17.7002 8.7815V1.5C17.7002 1.36739 17.6475 1.24021 17.5537 1.14645C17.46 1.05268 17.3328 1 17.2002 1H13.7002V7.63C13.7651 7.6162 13.8307 7.60618 13.8967 7.6Z"/>
@@ -46,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
 									</svg>
 									<?php esc_html_e( 'General', 'wc-category-showcase' ); ?>
 								</a>
-								<a href="#second" class="wcc_showcase-tabs">
+								<a href="#second" class="wcc_showcase-tabs <?php echo sanitize_html_class( 'second' === $current_tab ? 'wcc_showcase-tabs-active' : '' ); ?>">
 									<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 										<g clip-path="url(#clip0_379_1744)">
 											<path d="M19.511 8.88911H0.688743C0.619948 8.88909 0.552095 8.87311 0.490527 8.84241C0.428959 8.81172 0.375358 8.76715 0.333943 8.71222C0.292528 8.65729 0.264431 8.59349 0.251863 8.52585C0.239296 8.45821 0.242602 8.38858 0.261521 8.32244L2.20708 1.51411C2.24026 1.3981 2.3103 1.29605 2.40662 1.22338C2.50295 1.15072 2.62031 1.11138 2.74097 1.11133H17.4587C17.5794 1.11138 17.6968 1.15072 17.7931 1.22338C17.8894 1.29605 17.9595 1.3981 17.9926 1.51411L19.9387 8.32244C19.9577 8.38863 19.961 8.45831 19.9484 8.52599C19.9358 8.59367 19.9076 8.6575 19.8662 8.71244C19.8247 8.76738 19.771 8.81194 19.7094 8.8426C19.6477 8.87326 19.5798 8.88918 19.511 8.88911ZM16.7665 10.0002V13.3336H7.87763V10.0002H6.76652V17.778H3.43319V10.0002H2.32208V17.778C2.32208 18.0727 2.43914 18.3553 2.64751 18.5637C2.85589 18.772 3.1385 18.8891 3.43319 18.8891H16.7665C17.0612 18.8891 17.3438 18.772 17.5522 18.5637C17.7606 18.3553 17.8776 18.0727 17.8776 17.778V10.0002H16.7665ZM2.32208 7.778H3.43319L4.5443 2.22244H3.43319L2.32208 7.778ZM7.0443 7.778H8.15541L8.71097 2.22244H7.59985L7.0443 7.778ZM11.4887 2.22244L12.0443 7.778H13.1554L12.5999 2.22244H11.4887ZM16.7665 2.22244H15.6554L16.7665 7.778H17.8776L16.7665 2.22244Z"/>
@@ -54,7 +59,7 @@ defined( 'ABSPATH' ) || exit;
 									</svg>
 									<?php esc_html_e( 'Showcase', 'wc-category-showcase' ); ?>
 								</a>
-								<a href="#third" class="wcc_showcase-tabs <?php echo 'slider' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?> is-wcc-slider">
+								<a href="#third" class="wcc_showcase-tabs <?php echo sanitize_html_class( 'third' === $current_tab ? 'wcc_showcase-tabs-active' : '' ); ?> <?php echo 'slider' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?> is-wcc-slider">
 									<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 										<g clip-path="url(#clip0_379_1756)">
 											<path d="M16.4112 2H4.18894C3.88211 2 3.63338 2.24873 3.63338 2.55556V13.6667C3.63338 13.9735 3.88211 14.2222 4.18894 14.2222H16.4112C16.718 14.2222 16.9667 13.9735 16.9667 13.6667V2.55556C16.9667 2.24873 16.718 2 16.4112 2Z"/>
@@ -67,7 +72,7 @@ defined( 'ABSPATH' ) || exit;
 									</svg>
 									<?php esc_html_e( 'Slider', 'wc-category-showcase' ); ?>
 								</a>
-								<a href="#fourth" class="wcc_showcase-tabs">
+								<a href="#fourth" class="wcc_showcase-tabs <?php echo sanitize_html_class( 'fourth' === $current_tab ? 'wcc_showcase-tabs-active' : '' ); ?>">
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 										<path d="M12.0181 12.1785C12.8175 12.1785 13.4655 11.5408 13.4655 10.7541C13.4655 9.96737 12.8175 9.32962 12.0181 9.32962C11.2186 9.32962 10.5706 9.96737 10.5706 10.7541C10.5706 11.5408 11.2186 12.1785 12.0181 12.1785Z"/>
 										<path d="M12.0806 0L12.1385 1.61932C12.1469 1.846 12.2145 2.06673 12.3348 2.26024C12.4551 2.45375 12.6239 2.61351 12.8252 2.72413L14.2622 3.51613L12.6162 3.57311C12.386 3.58132 12.1619 3.64769 11.9654 3.76585C11.7688 3.884 11.6065 4.04996 11.4941 4.24773L10.6893 5.66193L10.6314 4.04204C10.6231 3.81545 10.5557 3.59478 10.4357 3.40127C10.3156 3.20777 10.1469 3.04795 9.94586 2.93723L8.50881 2.14523L10.1549 2.08825C10.3848 2.0798 10.6087 2.0133 10.805 1.89517C11.0013 1.77703 11.1634 1.61121 11.2758 1.41363L12.0806 0ZM17.1879 2.92412L17.2649 5.00896C17.2752 5.301 17.3618 5.5855 17.5163 5.83501C17.6709 6.08452 17.8882 6.29062 18.1472 6.43341L20 7.45333L17.8803 7.52911C17.5835 7.53913 17.2944 7.62431 17.0408 7.77642C16.7873 7.92853 16.5779 8.14243 16.4329 8.39746L15.3959 10.2208L15.3195 8.13479C15.309 7.84271 15.2223 7.55822 15.0676 7.30872C14.913 7.05923 14.6956 6.85314 14.4365 6.71033L12.5837 5.68985L14.7034 5.61464C15.0002 5.60429 15.2893 5.5189 15.5428 5.36672C15.7963 5.21453 16.0057 5.00066 16.1509 4.74572L17.1879 2.92412Z"/>
@@ -75,7 +80,7 @@ defined( 'ABSPATH' ) || exit;
 									</svg>
 									<?php esc_html_e( 'Images', 'wc-category-showcase' ); ?>
 								</a>
-								<a href="#fifth" class="wcc_showcase-tabs">
+								<a href="#fifth" class="wcc_showcase-tabs <?php echo sanitize_html_class( 'fifth' === $current_tab ? 'wcc_showcase-tabs-active' : '' ); ?>">
 									<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="currentColor">
 										<g clip-path="url(#clip0_379_1752)">
 											<path d="M13.3999 10.0004C13.3262 10.0004 13.2556 10.0297 13.2035 10.0818C13.1514 10.1339 13.1221 10.2045 13.1221 10.2782V11.9449C13.1221 12.0185 13.1514 12.0892 13.2035 12.1413C13.2556 12.1934 13.3262 12.2227 13.3999 12.2227H13.9555C14.0291 12.2227 14.0998 12.1934 14.1519 12.1413C14.204 12.0892 14.2332 12.0185 14.2332 11.9449V11.1115H16.4555V16.6671H15.6221C15.5485 16.6671 15.4778 16.6964 15.4257 16.7485C15.3736 16.8006 15.3443 16.8712 15.3443 16.9449V17.5004C15.3443 17.5741 15.3736 17.6448 15.4257 17.6969C15.4778 17.7489 15.5485 17.7782 15.6221 17.7782H18.3999C18.4736 17.7782 18.5442 17.7489 18.5963 17.6969C18.6484 17.6448 18.6777 17.5741 18.6777 17.5004V16.9449C18.6777 16.8712 18.6484 16.8006 18.5963 16.7485C18.5442 16.6964 18.4736 16.6671 18.3999 16.6671H17.5666V11.1115H19.7888V11.9449C19.7888 12.0185 19.8181 12.0892 19.8702 12.1413C19.9222 12.1934 19.9929 12.2227 20.0666 12.2227H20.6221C20.6958 12.2227 20.7665 12.1934 20.8185 12.1413C20.8706 12.0892 20.8999 12.0185 20.8999 11.9449V10.2782C20.8999 10.2045 20.8706 10.1339 20.8185 10.0818C20.7665 10.0297 20.6958 10.0004 20.6221 10.0004H13.3999Z"/>
@@ -85,7 +90,7 @@ defined( 'ABSPATH' ) || exit;
 									<?php esc_html_e( 'Fonts', 'wc-category-showcase' ); ?>
 								</a>
 							</nav>
-							<!--start tab dropdown select-->
+							<!-- Start tab dropdown select -->
 							<div class="select-wrapper tw-hidden sm:tw-block tw-w-full" id="wcc_showcase-tab-select">
 								<div class="select tw-bg-input-grey-50 tw-border-divider-grey-100 tw-rounded-md">
 									<div class="select__trigger tw-bg-input-grey-50">
@@ -160,19 +165,19 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 					<!-- Tab Contents -->
 					<div id="tab-contents">
-						<div id="first" class="tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5">
+						<div id="first" class="tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5 <?php echo sanitize_html_class( 'first' === $current_tab ? '' : 'tw-hidden' ); ?>">
 							<?php require __DIR__ . '/showcase/general-settings.php'; ?>
 						</div>
-						<div id="second" class="tw-hidden tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5">
+						<div id="second" class="tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5 <?php echo sanitize_html_class( 'second' === $current_tab ? '' : 'tw-hidden' ); ?>">
 							<?php require __DIR__ . '/showcase/showcase-settings.php'; ?>
 						</div>
-						<div id="third" class="tw-hidden tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5">
+						<div id="third" class="tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5 <?php echo sanitize_html_class( 'third' === $current_tab ? '' : 'tw-hidden' ); ?>">
 							<?php require __DIR__ . '/showcase/slider-settings.php'; ?>
 						</div>
-						<div id="fourth" class="tw-hidden tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5">
+						<div id="fourth" class="tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5 <?php echo sanitize_html_class( 'fourth' === $current_tab ? '' : 'tw-hidden' ); ?>">
 							<?php require __DIR__ . '/showcase/image-settings.php'; ?>
 						</div>
-						<div id="fifth" class="tw-hidden tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5">
+						<div id="fifth" class="tw-mt-4 tw-p-4 tw-bg-white tw-rounded-md tw-mb-5 <?php echo sanitize_html_class( 'fifth' === $current_tab ? '' : 'tw-hidden' ); ?>">
 							<?php require __DIR__ . '/showcase/fonts-settings.php'; ?>
 						</div>
 					</div>
@@ -180,14 +185,15 @@ defined( 'ABSPATH' ) || exit;
 			</div><!-- .column-1 -->
 
 			<div class="column-2">
-				<div class="bk-card">
+				<div class="bk-card" style="position: sticky; top: 32px;z-index: 9;">
 					<div class="bk-card__header">
 						<h2 class="bk-card__title"><?php esc_html_e( 'Actions', 'wc-category-showcase' ); ?></h2>
 					</div>
 					<div class="bk-card__footer">
+						<input type="hidden" id="wcc_showcase_current_tab" name="wcc_showcase_current_tab" value="<?php echo esc_attr( get_post_meta( $post_id, 'wcc_showcase_current_tab', true ) ); ?>">
 						<input type="hidden" name="action" value="wcc_showcase_add_category_showcase"/>
 						<?php wp_nonce_field( 'wcc_showcase_add_category_showcase' ); ?>
-						<?php if ( ! isset( $_GET['edit'] ) ) { ?>
+						<?php if ( empty( $post_id ) ) { ?>
 						<button class="button button-primary bk-w-100"><?php esc_html_e( 'Publish', 'wc-category-showcase' ); ?></button>
 						<?php } else { ?>
 							<input type="hidden" name="post_id" value="<?php echo esc_attr( $post_id ); ?>">
@@ -196,7 +202,7 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				</div>
 
-				<?php if ( isset( $_GET['edit'] ) ) { ?>
+				<?php if ( ! empty( $post_id ) ) { ?>
 					<div class="bk-card">
 						<div class="bk-card__header">
 							<h2 class="bk-card__title"><?php esc_html_e( 'Shortcode', 'wc-category-showcase' ); ?></h2>
@@ -314,14 +320,12 @@ defined( 'ABSPATH' ) || exit;
 			</div><!-- .column-2 -->
 		</div><!-- .bk-poststuff -->
 	</form>
-
 </div>
-
 
 <div id="modelConfirm" class="tw-fixed tw-hidden tw-mx-auto tw-z-50 tw-inset-0 tw-bg-gray-900 tw-bg-opacity-60 tw-overflow-y-auto tw-h-full tw-w-full tw-px-4 tw-rounded-md sm:tw-pl-0">
 	<div class="tw-relative tw-top-40 tw-mx-auto tw-shadow-xl tw-rounded-md tw-bg-white tw-h-[400px] tw-w-[500px] sm:tw-w-[90%] sm:tw-mx-auto sm:tw-h-[460px]">
 		<div class="">
-			<img class="tw-w-[500px] sm:tw-w-[100%] tw-rounded-md" src="<?php echo esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . '/images/upgrade-to-pro.png' ); ?>" alt="<?php echo esc_attr( 'upgrade-to-pro' ); ?>">
+			<img class="tw-w-[500px] sm:tw-w-[100%] tw-rounded-md" src="<?php echo esc_url( WCCS_ASSETS_URL . '/images/upgrade-to-pro.png' ); ?>" alt="<?php echo esc_attr( 'upgrade-to-pro' ); ?>">
 		</div>
 		<div class="tw-p-4">
 			<h3 class="tw-text-xl tw-font-normal tw-text-gray-500 tw-text-center tw-mt-0"><?php esc_html_e( 'Unlock exclusive features with our', 'wc-category-showcase' ); ?> <span class="tw-text-accent-orange-500"><?php esc_html_e( 'Pro version!', 'wc-category-showcase' ); ?></span></h3>

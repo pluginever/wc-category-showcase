@@ -70,6 +70,26 @@
 			text-decoration: none;
 		}
 	}
+	&__btn{
+		border: 1px solid;
+		border-color: #130F31;
+		color: #020617;
+		text-decoration: none !important;
+		padding: 8px 20px;
+		display: inline-block;
+		&.only_text{
+			border: none;
+		}
+		&.sharp_corner{
+			border-radius: 0;
+		}
+		&.slightly_rounded{
+			border-radius: 5px;
+		}
+		&.rounded{
+			border-radius: 100px;
+		}
+	}
 }
 
 // Content position overly, card style.
@@ -126,38 +146,20 @@
 }
 
 // Showcase button global style.
-.wccs-showcase-btn{
-	border: 1px solid #130F31;
-	color: #020617;
-	text-decoration: none!important;
-	padding: 10px 20px;
-	display: inline-block;
-}
-
-.splide__slide__row {
-	height: auto !important;
-}
-
 .wccs-category {
 	position: relative;
 }
-
-/* HTML: <div class="ribbon">Your text content</div> */
 .wcc-showcase-ribbon {
 	font-size: 12px;
-	font-weight: bold;
 	color: #fff;
 	--f: .5em;
 	position: absolute;
 	top: 0;
-	line-height: 1.8;
-	padding-inline: 1lh;
+	padding-inline: 1.05lh;
 	padding-bottom: var(--f);
 	background-color: #BD1550;
-	border-image: conic-gradient(#0008 0 0) 51%/var(--f);
 	z-index: 2;
 }
-
 .wcc-showcase-ribbon-right{
 	right: 0;
 	clip-path: polygon(
@@ -165,7 +167,6 @@
 	transform: translate(calc((1 - cos(45deg)) * 100%), -100%) rotate(45deg);
 	transform-origin: 0% 100%;
 }
-
 .wcc-showcase-ribbon-left {
 	left: 0;
 	clip-path: polygon(
@@ -173,37 +174,37 @@
 	transform: translate(calc((cos(45deg) - 1) * 100%), -100%) rotate(-45deg);
 	transform-origin: 100% 100%;
 }
-
 .wcc-showcase-ribbon-green {
 	background-color: #0E9552;
 }
-
 .wcc-showcase-ribbon-yellow {
 	background-color: #A36200;
 }
-
 .wcc-showcase-ribbon-red {
 	background-color: #911212;
 }
-
 .wcc-showcase-ribbon-blue {
 	background-color: #0E5295;
 }
-
 .wcc-showcase-ribbon-purple {
 	background-color: #5B0E95;
 }
-
 .wcc-showcase-ribbon-magento {
 	background-color: #950E40;
 }
-
-.is-image-zoom-on-hover .wcc-showcase-slide-item:hover img{
-	transform: scale(1.2);
-	transition: transform 0.3s ease-in-out;
+.is-image-zoom-on-hover .wcc-showcase-slide-item{
+	img{
+		transition: transform 0.3s ease-in-out;
+	}
+	&:hover{
+		img{
+			transform: scale(1.2);
+		}
+	}
 }
 .is-shop-now-icon .wccs-showcase-btn::after{
 	content: "\2192";
+	margin-left: 5px;
 }
 a > i{
 	margin-top: 20px;

@@ -40,10 +40,17 @@
 	}
 	.wccs-content__overlay{
 		position: relative;
+		background-repeat: no-repeat!important;
+		background-position: center center!important;
+		.has-no-image,
+		.has-image{
+			height: 100%;
+		}
 		.wcc-showcase-slide-item__cat-thumbnails{
 			height: 100%;
 			.wcc-showcase-slide-item__cat-thumbnails__image,
 			img{
+				width: 100%;
 				height: 100% !important;
 			}
 		}
@@ -56,6 +63,10 @@
 			bottom: 0;
 			right: 0;
 			//background-color: rgba(0, 0, 0, 0.5);
+			&.has-no-image{
+				position: inherit;
+				height: 100%;
+			}
 		}
 
 		// Content placement style.
@@ -111,6 +122,13 @@
 			align-items: center;
 		}
 	}
+	.wccs-content__top,
+	.wccs-content__bottom,
+	.wccs-content__left,
+	.wccs-content__right{
+		background-repeat: no-repeat !important;
+		background-position: center center !important;
+	}
 
 	// Card details style.
 	.wccs-entry__content-inner{
@@ -122,4 +140,39 @@
 		}
 	}
 
+}
+
+// If slider has additional categories.
+.slider-has-additional-categories {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	.splide {
+		width:100%;
+		max-width: calc(40% - 1rem);
+	}
+	.wccs-additional-categories{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		width: 100%;
+		max-width: calc(60% - 1rem);
+		.wccs-category{
+			width: calc(33.33% - 1rem);
+		}
+	}
+	.wccs-categories_1{
+		.wccs-category{
+			width: calc(100% - 1rem) !important;
+		}
+	}
+	.wccs-categories_2{
+		.wccs-category{
+			width: calc(50% - 1rem) !important;
+		}
+	}
+}
+
+.is-layout__slider .wccs-additional-categories .wccs-content__bottom {
+	justify-content: center;
 }

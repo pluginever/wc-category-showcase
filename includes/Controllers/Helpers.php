@@ -16,23 +16,30 @@ class Helpers {
 	 *
 	 * @param \WP_Term| int $category_id Category ID.
 	 * @param int           $post_id Post ID.
+	 * @param bool          $additional_category Additional category.
 	 *
 	 * @since 1.0.0
 	 * @return array
 	 */
-	public static function get_category_details( $category_id, $post_id = null ) {
+	public static function get_category_details( $category_id, $post_id = null, $additional_category = false ) {
 		$category                = get_term( $category_id );
 		$category_details        = array();
 		$category_custom_details = array();
 
 		// Get the custom category details.
-		if ( ! empty( $post_id ) ) {
+		if ( ! empty( $post_id ) && ! $additional_category ) {
 			$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_category_list_item', true );
 			$category_custom_details = $category_custom_details[ $category_id ] ?? array();
 		}
 
+		// Get the custom additional category details.
+		if ( ! empty( $post_id ) && $additional_category ) {
+			$category_custom_details = get_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', true );
+			$category_custom_details = $category_custom_details[ $category_id ] ?? array();
+		}
+
 		if ( $category && ! is_wp_error( $category ) ) {
-			$category_image   = wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ? esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) : esc_url( WC_CATEGORY_SHOWCASE_ASSETS_URL . 'images/frontend-placeholder.png' );
+			$category_image   = wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ? esc_url( wp_get_attachment_url( get_term_meta( $category->term_id, 'thumbnail_id', true ), 'full' ) ) : '';
 			$category_details = array(
 				'cat_id'           => esc_attr( $category->term_id ),
 				'name'             => esc_attr( $category->name ),
@@ -71,7 +78,8 @@ class Helpers {
 			'number'     => null,
 			'hide_empty' => true,
 		);
-		$args     = wp_parse_args( $args, $defaults );
+
+		$args = wp_parse_args( $args, $defaults );
 
 		return get_terms( $args );
 	}
@@ -98,7 +106,7 @@ class Helpers {
 		$args = array(
 			'post_type'      => 'product',
 			'posts_per_page' => -1,
-			'tax_query'      => array(
+			'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 				array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'term_id',
@@ -161,6 +169,30 @@ class Helpers {
 	}
 
 	/**
+	 * Get additional selected categories.
+	 *
+	 * @param array $showcase Showcase settings.
+	 * @param int   $wccs_id Showcase ID.
+	 *
+	 * @since 2.1.0
+	 * @return array
+	 */
+	public static function get_additional_categories( $showcase, $wccs_id = null ) {
+		$categories = isset( $showcase['additional_category_select'] ) ? $showcase['additional_category_select'] : array();
+
+		// Get all categories details.
+		$all_custom_categories = array();
+
+		foreach ( $categories as $category ) {
+			$all_custom_categories[] = self::get_category_details( $category, $wccs_id, true );
+		}
+
+		uasort( $all_custom_categories, array( self::class, 'sort_categories_according_to_position' ) );
+
+		return $all_custom_categories;
+	}
+
+	/**
 	 * Get all child categories.
 	 *
 	 * @param \WP_Term| int $parent_category_id Parent Category ID.
@@ -191,7 +223,7 @@ class Helpers {
 	}
 
 	/**
-	 * sorting categories array.
+	 * Sorting categories array.
 	 *
 	 * @param array $a Array values.
 	 * @param array $b Array values.
@@ -217,6 +249,7 @@ class Helpers {
 		$settings = array(
 			// General tab settings data.
 			'post_title'                        => '',
+			'current_tab'                       => 'first',
 			'layout'                            => 'grid',
 			'slider'                            => array(
 				'column' => '3',
@@ -233,12 +266,14 @@ class Helpers {
 			'category_filter'                   => 'all',
 			'specific_category_select'          => array(),
 			'category_list_item'                => array(),
-			'category_sort_order'               => 'default',
-			'category_sort_order_by'            => 'asc',
+			'enable_additional_category'        => 'no',
+			'additional_category_select'        => array(),
+			'additional_category_list_item'     => array(),
+			'category_sort_order'               => 'asc',
+			'category_sort_order_by'            => 'default',
 			'category_display_limit'            => '12',
 			'includes_sub_categories'           => 'yes',
 			'hide_empty_categories'             => 'yes',
-			'pre_loader'                        => 'yes',
 			// Showcase tab settings data.
 			'show_section_title'                => 'no',
 			'section_title'                     => '',
@@ -260,7 +295,7 @@ class Helpers {
 				'left'   => '8',
 			),
 			'gap_between_cards'                 => '16',
-			'content_placement'                 => 'bottom',
+			'content_placement'                 => 'overlay',
 			'overlay_content_position'          => 'top_left',
 			'content_alignment'                 => 'center',
 			'content_padding'                   => 16,
@@ -273,9 +308,9 @@ class Helpers {
 			),
 			'card_content'                      => array(
 				'background_color' => '#96588A00',
-				'text_color'       => '#FFFFFFFF',
 				'hover_color'      => '#96588A00',
-				'hover_text_color' => '#FFFFFFFF',
+				'text_color'       => '#130F31FF',
+				'hover_text_color' => '#130F31FF',
 			),
 			'content_inner_padding_is_all'      => 'no',
 			'content_inner_padding'             => 16,
@@ -336,12 +371,11 @@ class Helpers {
 				'border_hover_color' => '#FFFFFFFF',
 			),
 			'slide_touch_interaction'           => 'yes',
-			'slide_scroll_interaction'          => 'yes',
+			'slide_scroll_interaction'          => 'no',
 			'slide_draggable_slide'             => 'yes',
 			'slide_free_mode'                   => 'yes',
 			// Image tab settings data.
 			'image_layout'                      => 'rounded',
-			'image_lazy_load'                   => 'no',
 			'image_zoom_on_hover'               => 'no',
 			'interactive_hover_style'           => 'normal_gray',
 			// Fonts tab settings data.

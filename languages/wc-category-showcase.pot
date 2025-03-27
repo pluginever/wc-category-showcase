@@ -1,14 +1,14 @@
-# Copyright (C) 2024 PluginEver
+# Copyright (C) 2025 PluginEver
 # This file is distributed under the GPLv2+.
 msgid ""
 msgstr ""
 "Project-Id-Version: Product Category Showcase for WooCommerce 2.1.0\n"
 "Report-Msgid-Bugs-To: https://pluginever.com/support/\n"
-"POT-Creation-Date: 2024-12-02 03:51:04+00:00\n"
+"POT-Creation-Date: 2025-02-11 05:31:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
@@ -668,6 +668,10 @@ msgstr ""
 msgid ""
 "If selecting specific categories, use multi-select mode to easily pick the "
 "ones you want to showcase."
+msgstr ""
+
+#: includes/Admin/views/showcase/general-settings.php:1213
+msgid "Select Categories..."
 msgstr ""
 
 #: includes/Admin/views/showcase/general-settings.php:1252
@@ -1460,6 +1464,7 @@ msgid "No showcase found in trash."
 msgstr ""
 
 #: templates/load-category-details.php:25
+#: templates/load-category-details.php:80
 msgid "Remove"
 msgstr ""
 
@@ -1503,44 +1508,44 @@ msgstr ""
 msgid "CATEGORY ICON"
 msgstr ""
 
-#: templates/load-category-details.php:76
+#: templates/load-category-details.php:83
 msgid "Add Icon"
 msgstr ""
 
-#: templates/load-category-details.php:91
+#: templates/load-category-details.php:93
 msgid "ADD LABEL"
 msgstr ""
 
-#: templates/load-category-details.php:97
+#: templates/load-category-details.php:99
 msgid "25% off Today"
 msgstr ""
 
-#: templates/load-category-details.php:100
+#: templates/load-category-details.php:102
 msgid "LABEL COLOR"
 msgstr ""
 
-#: templates/load-category-details.php:112
-#: templates/load-category-details.php:130
+#: templates/load-category-details.php:114
+#: templates/load-category-details.php:132
 msgid "Yellow"
 msgstr ""
 
-#: templates/load-category-details.php:140
+#: templates/load-category-details.php:142
 msgid "Red"
 msgstr ""
 
-#: templates/load-category-details.php:150
+#: templates/load-category-details.php:152
 msgid "Blue"
 msgstr ""
 
-#: templates/load-category-details.php:160
+#: templates/load-category-details.php:162
 msgid "Purple"
 msgstr ""
 
-#: templates/load-category-details.php:170
+#: templates/load-category-details.php:172
 msgid "Green"
 msgstr ""
 
-#: templates/load-category-details.php:180
+#: templates/load-category-details.php:182
 msgid "Magento"
 msgstr ""
 

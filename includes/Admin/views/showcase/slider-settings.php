@@ -2,7 +2,10 @@
 /**
  * Slider settings tab.
  *
- * @package WooCommerceCategoryShowcase
+ * @since 2.2.0
+ * @package WooCommerceCategoryShowcase/Admin/Views/Showcase
+ * @var array $showcase_details Showcase details.
+ * @var int   $post_id Post ID.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -232,6 +235,9 @@ defined( 'ABSPATH' ) || exit;
 					<span class="custom-option wccs-navigation-position-option <?php echo 'top-left' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-left' ); ?>">
 						<?php esc_html_e( 'Top Left', 'wc-category-showcase' ); ?>
 					</span>
+					<span class="custom-option wccs-navigation-position-option <?php echo 'top-center' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'top-center' ); ?>">
+						<?php esc_html_e( 'Top Center', 'wc-category-showcase' ); ?>
+					</span>
 					<span class="custom-option wccs-navigation-position-option <?php echo 'bottom-right' === $showcase_details['slider_navigation_position'] ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( 'bottom-right' ); ?>">
 						<?php esc_html_e( 'Bottom Right', 'wc-category-showcase' ); ?>
 					</span>
@@ -357,7 +363,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
-<div class="wcc_showcase-settings-row ">
+<div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full tw-opacity-50">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Button Background Styles', 'wc-category-showcase' ); ?></h3>
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the button background style or design of any control buttons in the slider.', 'wc-category-showcase' ); ?></p>
@@ -702,7 +708,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
-			<input type="checkbox" name="wcc_showcase_slide_scroll_interaction" value="<?php echo esc_attr( 'yes' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_scroll_interaction'] ) { echo 'checked'; } ?>>
+			<input type="checkbox" name="wcc_showcase_slide_scroll_interaction" value="<?php echo esc_attr( 'no' ); ?>" class="tw-sr-only tw-peer" <?php if ( 'yes' === $showcase_details['slide_scroll_interaction'] ) { echo 'checked'; } ?>>
 			<div class="wcc_showcase-toggle"></div>
 		</label>
 	</div>
@@ -731,5 +737,3 @@ defined( 'ABSPATH' ) || exit;
 		</label>
 	</div>
 </div>
-
-

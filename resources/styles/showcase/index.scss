@@ -1,12 +1,11 @@
-@import "~@splidejs/splide/dist/css/splide.min.css";
+//@import "~@splidejs/splide/dist/css/splide.min.css";
 @import "showcase-common";
 @import "showcase-block";
 @import "showcase-grid";
 @import "showcase-slide";
-@import "../fonts/all.css";
 
 .wcc-showcase-slider{
-	margin-bottom: 1.5rem;
+	//margin-bottom: 1.5rem;
 	button:focus{
 		outline: none;
 	}
@@ -38,6 +37,7 @@
 			width: 100%;
 			height: auto;
 			.slider-cat-image{
+				width: 100%;
 				height: auto;
 				border-radius: 0;
 			}
@@ -207,7 +207,101 @@
 	}
 }
 
-//Navigation styles.
+// Navigation styles.
+.wccs-category{
+	&.is--navigation-top-left,
+	&.is--navigation-top-right,
+	&.is--navigation-top-center{
+		.splide__arrows{
+			position: relative;
+			display: flex;
+			gap: 10px;
+		}
+		.splide__arrow{
+			position: relative;
+			left: inherit;
+			right: inherit;
+		}
+	}
+	&.is--navigation-top-center{
+		.splide__arrows{
+			justify-content: center;
+		}
+	}
+	&.is--navigation-top-right{
+		.splide__arrows{
+			justify-content: flex-end;
+		}
+	}
+	&.is--navigation-bottom-left,
+	&.is--navigation-bottom-right,
+	&.is--navigation-bottom-center{
+		margin-bottom: 52px;
+		.splide__arrows{
+			position: absolute;
+			display: flex;
+			gap: 10px;
+			bottom: -60px;
+			width: 100%;
+		}
+		.splide__arrow{
+			position: relative;
+			left: inherit;
+			right: inherit;
+		}
+	}
+	&.is--navigation-bottom-center{
+		.splide__arrows{
+			justify-content: center;
+		}
+	}
+	&.is--navigation-bottom-right{
+		.splide__arrows{
+			justify-content: flex-end;
+		}
+	}
+	&.is--navigation-arrow{
+		.splide__arrow{
+			svg{
+				display: none;
+			}
+			&::before{
+				position: absolute;
+				content: "\2192";
+			}
+			&:focus{
+				outline: none;
+			}
+		}
+		.splide__arrow--prev::before {
+			transform: scaleX(-1);
+		}
+	}
+	&.is--sharp{
+		.splide__arrow{
+			border-radius: 0;
+		}
+	}
+	&.is--rounded{
+		.splide__arrow{
+			border-radius: 5px;
+		}
+	}
+	&.is--only_icons{
+		.splide__arrow{
+			background: transparent;
+			color: inherit;
+		}
+		.splide__arrow:hover{
+			background: transparent;
+		}
+	}
+	&.is-image-circle{
+		.wcc-showcase-slide-item{
+		}
+	}
+}
+
 .wcc-showcase__navigation {
 	display: flex;
 	gap: 16px;
@@ -330,7 +424,7 @@
 	min-height: 25px;
 	text-align: center;
 	.is-active{
-		background-color: grey;
+		background-color: grey!important;
 	}
 	.splide__pagination__page{
 		background-color: grey;
