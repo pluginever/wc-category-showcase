@@ -133,6 +133,9 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Created All WooCommerce category showcase
 
 == Changelog ==
+= 2.2.0 =
+* Update - Update plugin framework.
+
 = 2.0.5 =
 * Update plugin framework.
 
