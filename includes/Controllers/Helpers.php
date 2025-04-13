@@ -55,7 +55,7 @@ class Helpers {
 				'label_text'       => esc_attr( $category_custom_details['label_text'] ?? '' ),
 				'label_color'      => esc_attr( $category_custom_details['label_color'] ?? 'green' ),
 				'is_label'         => esc_attr( $category_custom_details['is_label'] ?? 'no' ),
-				'total_count'      => self::get_product_count_in_category( $category->term_id ),
+				'total_count'      => esc_attr( $category->count ),
 				'child_categories' => self::get_child_categories( $category->term_id ),
 				'position'         => esc_attr( $category_custom_details['position'] ?? '0' ),
 			);
@@ -119,6 +119,7 @@ class Helpers {
 
 		$query         = new \WP_Query( $args );
 		$product_count = $query->found_posts;
+
 		wp_reset_postdata();
 
 		return $product_count;
@@ -136,11 +137,12 @@ class Helpers {
 	public static function get_selected_categories( $showcase, $wccs_id = null ) {
 		$hide_empty = isset( $showcase['hide_empty_categories'] ) && 'yes' === $showcase['hide_empty_categories'] ? true : false;
 		if ( 'all' === $showcase['category_filter'] ) {
-			$args       = array(
+			$args = array(
 				'hide_empty' => $hide_empty,
 				'orderby'    => 'default' === $showcase['category_sort_order_by'] ? 'date' : $showcase['category_sort_order_by'],
 				'order'      => $showcase['category_sort_order'],
 			);
+
 			$categories = self::get_all_categories( $args );
 		} else {
 			$categories = isset( $showcase['specific_category_select'] ) ? $showcase['specific_category_select'] : array();
@@ -213,7 +215,7 @@ class Helpers {
 				return array(
 					'name'          => $child_category->name,
 					'cat_link'      => esc_url( get_category_link( $child_category->term_id ) ),
-					'total_product' => esc_attr( self::get_product_count_in_category( $child_category->term_id ) ),
+					'total_product' => esc_attr( $child_category->count ),
 				);
 			},
 			$all_child_categories
