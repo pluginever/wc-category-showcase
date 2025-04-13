@@ -1,7 +1,7 @@
 === Product Category Showcase for WooCommerce ===
 Contributors: pluginever
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
-Requires at least: 5.0.0
+Requires at least: 5.2
 Tested up to: 6.7
 Requires PHP: 7.4
 Stable tag: 2.2.0
