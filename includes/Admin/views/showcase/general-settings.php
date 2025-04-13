@@ -1425,12 +1425,12 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </div>
 
-<div class="wcc_showcase-settings-row">
+<div class="wcc_showcase-settings-row <?php echo 'grid' === $showcase_details['layout'] ? 'tw-hidden' : ''; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title">
 			<label for="wcc_showcase_category_display_limit"><?php esc_html_e( 'Categories Display Limit', 'wc-category-showcase' ); ?></label>
 		</h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Set the maximum number of categories to be displayed in your showcase.', 'wc-category-showcase' ); ?></p>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Set the maximum number of categories to be displayed in your showcase. This won\'t applicable for Grid layout.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center tw-bg-bg-grey-50 tw-w-[230px]">
 		<input type="number" name="wcc_showcase_category_display_limit" id="wcc_showcase_category_display_limit" min="1" step="any" class="wcc_showcase-settings-field tw-h-10" placeholder="<?php esc_html_e( 'Ex: 12', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $showcase_details['category_display_limit'] ); ?>">
