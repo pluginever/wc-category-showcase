@@ -18,9 +18,7 @@ class Installer {
 	 * @since 2.2.0
 	 * @var array
 	 */
-	protected $updates = array(
-		'2.2.0' => array( 'update_220' ),
-	);
+	protected $updates = array();
 
 	/**
 	 * Installer constructor.
@@ -283,12 +281,21 @@ class Installer {
 				// Update the additional options.
 				update_post_meta( $post_id, 'wcc_showcase_additional_title_color', get_post_meta( $post_id, 'wccs_additional_title_color', true ) );
 
+				// Few more optiones need to be enabled of disabled based on the new settings.
+				update_post_meta( $post_id, 'wcc_showcase_show_category_title', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_show_category_description', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_show_category_product_quantity', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_show_subcategory_product_quantity', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_show_subcategory_product_quantity', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_show_button', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_includes_sub_categories', 'no' );
+
 				wc_category_showcase()->log( 'Migrated post ID: ' . $post_id );
 			}
 
 			// Delete the old meta keys.
 			foreach ( $fields_to_delete as $field ) {
-				// delete_post_meta( $post_id, $field );
+				delete_post_meta( $post_id, $field );
 			}
 
 			// Increment the offset.
@@ -299,15 +306,5 @@ class Installer {
 			// We won't run delete_option( 'wccs_data_migrated' ) to prevent rescheduling the cron job again and again.
 			wc_category_showcase()->log( 'Migration completed and Removing cron job.' );
 		}
-	}
-
-	/**
-	 * Upgrade to 2.2.0.
-	 *
-	 * @since 2.2.0
-	 * @return void
-	 */
-	public static function update_220() {
-		// TODO: Add update logic here. Remove if not needed.
 	}
 }
