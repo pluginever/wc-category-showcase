@@ -280,12 +280,15 @@ class Installer {
 
 				update_post_meta( $post_id, 'wcc_showcase_card_content', $card_content );
 
+				// Update the additional options.
+				update_post_meta( $post_id, 'wcc_showcase_additional_title_color', get_post_meta( $post_id, 'wccs_additional_title_color', true ) );
+
 				wc_category_showcase()->log( 'Migrated post ID: ' . $post_id );
 			}
 
 			// Delete the old meta keys.
 			foreach ( $fields_to_delete as $field ) {
-				delete_post_meta( $post_id, $field );
+				// delete_post_meta( $post_id, $field );
 			}
 
 			// Increment the offset.
