@@ -281,7 +281,7 @@ class Installer {
 				// Update the additional options.
 				update_post_meta( $post_id, 'wcc_showcase_additional_title_color', get_post_meta( $post_id, 'wccs_additional_title_color', true ) );
 
-				// Few more optiones need to be enabled of disabled based on the new settings.
+				// Few more options need to be enabled of disabled based on the new settings.
 				update_post_meta( $post_id, 'wcc_showcase_show_category_title', 'no' );
 				update_post_meta( $post_id, 'wcc_showcase_show_category_description', 'no' );
 				update_post_meta( $post_id, 'wcc_showcase_show_category_product_quantity', 'no' );
