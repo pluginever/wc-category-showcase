@@ -21,10 +21,10 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 			echo wp_kses_post(
 				sprintf(
-				// translators: %1$s: WC Min Max Quantities Pro link, %2$s: Coupon code.
-					__( 'Enjoy a <strong>10%% discount</strong> on %1$s! Use coupon code %2$s at checkout to grab the deal. Don’t miss out — this offer won’t last forever!', 'wc-category-showcase' ),
+					// translators: %1$s: WC Category Showcase Pro link, %2$s: Coupon code.
+					__( 'Get access to %1$s with a <strong>20%% discount</strong> for the next <strong>72 hours</strong> only! Use coupon code %2$s at checkout. Hurry up, the offer ends soon.', 'wc-category-showcase' ),
 					'<a href="https://pluginever.com/plugins/woocommerce-category-showcase-pro/?utm_source=plugin&utm_medium=notice&utm_campaign=flash-sale" target="_blank"><strong>WC Category Showcase Pro</strong></a>',
-					'<strong>FLASH10</strong>'
+					'<strong>FLASH20</strong>'
 				)
 			);
 			?>
@@ -39,9 +39,5 @@ defined( 'ABSPATH' ) || exit;
 	<a href="#" data-snooze="<?php echo esc_attr( MONTH_IN_SECONDS ); ?>">
 		<span class="dashicons dashicons-clock"></span>
 		<?php esc_attr_e( 'Maybe later', 'wc-category-showcase' ); ?>
-	</a>
-	<a href="#" data-dismiss>
-		<span class="dashicons dashicons-no-alt"></span>
-		<?php esc_html_e( 'Close permanently', 'wc-category-showcase' ); ?>
 	</a>
 </div>
