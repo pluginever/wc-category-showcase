@@ -152,7 +152,7 @@ class Installer {
 		$paged = (int) get_option( 'wccs_data_migrated', 1 );
 
 		// Fetch one post at a time.
-		$query = new \WP_Query(
+		$showcase_ids = get_posts(
 			array(
 				'post_type'      => 'wccs_showcase',
 				'posts_per_page' => 10,
@@ -161,8 +161,8 @@ class Installer {
 			)
 		);
 
-		if ( $query->have_posts() ) {
-			foreach ( $query->posts as $post_id ) {
+		if ( $showcase_ids ) {
+			foreach ( $showcase_ids as $post_id ) {
 				// Update the uncommon meta keys.
 				update_post_meta( $post_id, 'wcc_showcase_layout', 'slider' );
 				update_post_meta(
@@ -199,62 +199,62 @@ class Installer {
 
 				// Update array keys from $featured_customizer, title should be "name" and image should be "image_url".
 				if ( is_array( $featured_customizer ) ) {
-					$featured_customizer = array_map(
-						function ( $item, $key ) {
-							// Update the keys.
-							$item['name']      = $item['title'];
-							$item['image_url'] = $item['image'];
+					$updated_featured_customizer = array();
 
-							// Add default values.
-							$item['description']    = '';
-							$item['custom_text']    = '';
-							$item['icon_name']      = '';
-							$item['label_text']     = '';
-							$item['label_color']    = 'green';
-							$item['position']       = '0';
-							$item['cat_id']         = (string) $key;
-							$item['is_icon']        = 'no';
-							$item['is_custom_text'] = 'no';
-							$item['is_label']       = 'no';
+					foreach ( $featured_customizer as $key => $item ) {
+						// Update the keys.
+						$item['name']      = $item['title'];
+						$item['image_url'] = $item['image'];
 
-							// Unset the old keys.
-							unset( $item['title'] );
-							unset( $item['image'] );
-							return $item;
-						},
-						$featured_customizer,
-						array_keys( $featured_customizer )
-					);
+						// Add default values.
+						$item['description']    = '';
+						$item['custom_text']    = '';
+						$item['icon_name']      = '';
+						$item['label_text']     = '';
+						$item['label_color']    = 'green';
+						$item['position']       = '0';
+						$item['cat_id']         = (string) $key;
+						$item['is_icon']        = 'no';
+						$item['is_custom_text'] = 'no';
+						$item['is_label']       = 'no';
+
+						// Unset the old keys.
+						unset( $item['title'], $item['image'] );
+
+						// Assign to new array using $key as index.
+						$updated_featured_customizer[ $key ] = $item;
+					}
+
+					$featured_customizer = $updated_featured_customizer;
 				}
 
 				// Update array keys from $additional_customizer, title should be "name" and image should be "image_url".
 				if ( is_array( $additional_customizer ) ) {
-					$additional_customizer = array_map(
-						function ( $item, $key ) {
-							// Update the keys.
-							$item['name']      = $item['title'];
-							$item['image_url'] = $item['image'];
+					$updated_additional_customizer = array();
 
-							// Add default values.
-							$item['description']    = '';
-							$item['custom_text']    = '';
-							$item['icon_name']      = '';
-							$item['label_text']     = '';
-							$item['label_color']    = 'green';
-							$item['position']       = '0';
-							$item['cat_id']         = (string) $key;
-							$item['is_icon']        = 'no';
-							$item['is_custom_text'] = 'no';
-							$item['is_label']       = 'no';
+					foreach ( $additional_customizer as $key => $item ) {
+						// Update the keys.
+						$item['name']      = $item['title'];
+						$item['image_url'] = $item['image'];
 
-							// Add default values.
-							unset( $item['title'] );
-							unset( $item['image'] );
-							return $item;
-						},
-						$additional_customizer,
-						array_keys( $additional_customizer )
-					);
+						// Add default values.
+						$item['description']    = '';
+						$item['custom_text']    = '';
+						$item['icon_name']      = '';
+						$item['label_text']     = '';
+						$item['label_color']    = 'green';
+						$item['position']       = '0';
+						$item['cat_id']         = (string) $key;
+						$item['is_icon']        = 'no';
+						$item['is_custom_text'] = 'no';
+						$item['is_label']       = 'no';
+
+						unset( $item['title'], $item['image'] );
+
+						$updated_additional_customizer[ $key ] = $item;
+					}
+
+					$additional_customizer = $updated_additional_customizer;
 				}
 
 				if ( ! empty( $additional_customizer ) ) {
@@ -262,7 +262,10 @@ class Installer {
 				}
 
 				// Update the post meta.
+				update_post_meta( $post_id, 'wcc_showcase_specific_category_select', array_keys( $featured_customizer ) );
 				update_post_meta( $post_id, 'wcc_showcase_category_list_item', $featured_customizer );
+
+				update_post_meta( $post_id, 'wcc_showcase_additional_category_select', array_keys( $additional_customizer ) );
 				update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
 
 				// Updating style settings.
