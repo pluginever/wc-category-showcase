@@ -121,7 +121,6 @@ class Installer {
 	 * @return void
 	 */
 	public function migrate_data() {
-		wc_category_showcase()->log( 'Migrating Showcase data...' );
 		// Fields to update.
 		$fields = array(
 			'wccs_featured_categories'   => 'wcc_showcase_specific_category_select',
@@ -194,8 +193,10 @@ class Installer {
 				}
 
 				// Update additional customizer settings.
-				$featured_customizer   = get_post_meta( $post_id, 'wccsp_featured_customizer', true );
-				$additional_customizer = get_post_meta( $post_id, 'wccsp_additional_customizer', true );
+				$featured_customizer          = get_post_meta( $post_id, 'wccsp_featured_customizer', true );
+				$additional_customizer        = get_post_meta( $post_id, 'wccsp_additional_customizer', true );
+				$featured_customizer_select   = array();
+				$additional_customizer_select = array();
 
 				// Update array keys from $featured_customizer, title should be "name" and image should be "image_url".
 				if ( is_array( $featured_customizer ) ) {
@@ -225,7 +226,8 @@ class Installer {
 						$updated_featured_customizer[ $key ] = $item;
 					}
 
-					$featured_customizer = $updated_featured_customizer;
+					$featured_customizer        = $updated_featured_customizer;
+					$featured_customizer_select = array_keys( $featured_customizer );
 				}
 
 				// Update array keys from $additional_customizer, title should be "name" and image should be "image_url".
@@ -254,7 +256,8 @@ class Installer {
 						$updated_additional_customizer[ $key ] = $item;
 					}
 
-					$additional_customizer = $updated_additional_customizer;
+					$additional_customizer        = $updated_additional_customizer;
+					$additional_customizer_select = array_keys( $additional_customizer );
 				}
 
 				if ( ! empty( $additional_customizer ) ) {
@@ -262,10 +265,10 @@ class Installer {
 				}
 
 				// Update the post meta.
-				update_post_meta( $post_id, 'wcc_showcase_specific_category_select', array_keys( $featured_customizer ) );
+				update_post_meta( $post_id, 'wcc_showcase_specific_category_select', $featured_customizer_select );
 				update_post_meta( $post_id, 'wcc_showcase_category_list_item', $featured_customizer );
 
-				update_post_meta( $post_id, 'wcc_showcase_additional_category_select', array_keys( $additional_customizer ) );
+				update_post_meta( $post_id, 'wcc_showcase_additional_category_select', $additional_customizer_select );
 				update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
 
 				// Updating style settings.
@@ -278,22 +281,42 @@ class Installer {
 					'hover_color'      => empty( $content_bg_color ) ? '#96588A00' : $content_bg_color,
 					'hover_text_color' => empty( $content_color ) ? '#FFFFFFFF' : $content_color,
 				);
-
 				update_post_meta( $post_id, 'wcc_showcase_card_content', $card_content );
+
+				$card = array(
+					'background_color' => '#FFFFFFFF',
+					'text_color'       => '#FFFFFFFF',
+					'hover_color'      => '#FFFFFF00',
+					'hover_text_color' => '#FFFFFFFF',
+				);
+				update_post_meta( $post_id, 'wcc_showcase_card', $card );
+
+				$font_category_title = array(
+					'text_tag'        => 'h2',
+					'font_family'     => 'Roboto',
+					'text_weight'     => '600',
+					'text_size'       => '24',
+					'line_height'     => '32',
+					'letter_spacing'  => '0',
+					'text_align'      => 'left',
+					'text_decoration' => 'bold',
+					'text_color'      => '#FFFFFFFF',
+				);
+				update_post_meta( $post_id, 'wcc_showcase_font_category_title', $font_category_title );
 
 				// Update the additional options.
 				update_post_meta( $post_id, 'wcc_showcase_additional_title_color', get_post_meta( $post_id, 'wccs_additional_title_color', true ) );
 
 				// Few more options need to be enabled of disabled based on the new settings.
-				update_post_meta( $post_id, 'wcc_showcase_show_category_title', 'no' );
-				update_post_meta( $post_id, 'wcc_showcase_show_category_description', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_show_category_title', 'yes' );
 				update_post_meta( $post_id, 'wcc_showcase_show_category_product_quantity', 'no' );
 				update_post_meta( $post_id, 'wcc_showcase_show_subcategory_product_quantity', 'no' );
-				update_post_meta( $post_id, 'wcc_showcase_show_subcategory_product_quantity', 'no' );
-				update_post_meta( $post_id, 'wcc_showcase_show_button', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_show_button', 'yes' );
+				update_post_meta( $post_id, 'wcc_showcase_show_button_icon', 'no' );
+				update_post_meta( $post_id, 'wcc_showcase_button_style', 'slightly_rounded' );
 				update_post_meta( $post_id, 'wcc_showcase_includes_sub_categories', 'no' );
-
-				wc_category_showcase()->log( 'Migrated post ID: ' . $post_id );
+				update_post_meta( $post_id, 'wcc_showcase_overlay_content_position', 'center_center' );
+				update_post_meta( $post_id, 'wcc_showcase_image_layout', 'rectangle' );
 			}
 
 			// Delete the old meta keys.
@@ -306,8 +329,6 @@ class Installer {
 		} else {
 			// No more posts left to migrate, remove the cron job.
 			wp_clear_scheduled_hook( 'wccs_migrate_data' );
-			// We won't run delete_option( 'wccs_data_migrated' ) to prevent rescheduling the cron job again and again.
-			wc_category_showcase()->log( 'Migration completed and Removing cron job.' );
 		}
 	}
 }

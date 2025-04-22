@@ -342,6 +342,7 @@ class Helpers {
 				'border_hover_color' => '#FFFFFFFF',
 			),
 			// Slide tab settings data.
+			'slider_height'                     => '300',
 			'slide_is_ticker'                   => 'no',
 			'slider_ticker_direction'           => 'left_to_right',
 			'ticket_mode'                       => 'medium',

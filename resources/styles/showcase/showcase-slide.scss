@@ -1,6 +1,8 @@
 // Slider style.
-
 .is-layout__slider{
+	.splide__track{
+		height: 300px;
+	}
 	.wccs-content__bottom{
 		display: flex;
 		flex-direction: column;
@@ -42,6 +44,7 @@
 		position: relative;
 		background-repeat: no-repeat!important;
 		background-position: center center!important;
+		background-size: cover;
 		.has-no-image,
 		.has-image{
 			height: 100%;
@@ -50,8 +53,9 @@
 			height: 100%;
 			.wcc-showcase-slide-item__cat-thumbnails__image,
 			img{
-				width: 100%;
-				height: 100% !important;
+				width: auto;
+				margin: 0 auto;
+				border-radius: 0;
 			}
 		}
 		.wcc-showcase-slide-item__cat-details{

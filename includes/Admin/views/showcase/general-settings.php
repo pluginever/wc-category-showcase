@@ -234,6 +234,19 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 </div>
+<div class="wcc_showcase-settings-row wcc_showcase-slider-selection <?php echo 'slider' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?>">
+	<div class="tw-w-1/3 sm:tw-w-full">
+		<label for="wcc_showcase_slider_height" class="wcc_showcase-settings-title"><?php esc_html_e( 'Slider Height', 'wc-category-showcase' ); ?></label>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Set the height of the slider in pixels. Default is 300px.', 'wc-category-showcase' ); ?></p>
+	</div>
+	<div class="tw-flex tw-rounded-md">
+		<div class="tw-max-w-[230px] tw-grid tw-grid-cols-3 tw-gap-x-4 tw-gap-y-4">
+			<div class="tw-flex tw-items-center tw-bg-bg-grey-50 tw-w-[230px]">
+				<input type="number" name="wcc_showcase_slider_height" id="wcc_showcase_slider_height" min="1" step="any" class="wcc_showcase-settings-field tw-h-10" placeholder="<?php esc_html_e( 'Ex: 300', 'wc-category-showcase' ); ?>" value="<?php echo esc_attr( $showcase_details['slider_height'] ); ?>">
+			</div>
+		</div>
+	</div>
+</div>
 <div class="wcc_showcase-settings-row wcc_showcase-block-selection <?php echo 'block' === $showcase_details['layout'] ? '' : 'tw-hidden'; ?>">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Block Column Count', 'wc-category-showcase' ); ?></h3>

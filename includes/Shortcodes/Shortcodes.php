@@ -20,7 +20,43 @@ class Shortcodes {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_shortcode( 'wccs_showcase', array( $this, 'render_shortcode' ) );
+	}
+
+	/**
+	 * Enqueue scripts and styles.
+	 *
+	 * @since 2.0.5
+	 * @return void
+	 */
+	public function enqueue_scripts() {
+		$shortcode_tag = 'wccs_showcase';
+		// check if the content contains the shortcode.
+		if ( ! get_post() || ! has_shortcode( get_post()->post_content, $shortcode_tag ) ) {
+			return;
+		}
+
+		// parse the shortcode.
+		$pattern = get_shortcode_regex( array( 'wccs_showcase' ) );
+		if ( preg_match_all( '/' . $pattern . '/s', get_post()->post_content, $matches ) && array_key_exists( 2, $matches ) ) {
+			foreach ( $matches[2] as $key => $shortcode ) {
+				if ( $shortcode === $shortcode_tag ) {
+					$attr_string = $matches[3][ $key ];
+					$attributes  = shortcode_parse_atts( $attr_string );
+					$id          = ! empty( $attributes['id'] ) ? $attributes['id'] : null;
+
+					// bail if no id is found.
+					if ( empty( $id ) || 'wccs-showcase' === get_post_type( $id ) ) {
+						return;
+					}
+					$showcase = Helpers::get_showcase_settings( $id );
+					$styles   = self::get_showcase_styles( $showcase, $id );
+					$styles   = apply_filters( 'wccs_showcase_styles', $styles, $showcase, $id );
+					wp_add_inline_style( 'wcc-showcase-showcase', $styles );
+				}
+			}
+		}
 	}
 
 	/**
@@ -45,11 +81,6 @@ class Shortcodes {
 		$showcase      = Helpers::get_showcase_settings( $wccs_id );
 		$layout        = $showcase['layout'] ?? 'slider';
 		$layout_option = ( 'block' === $layout ) ? 'column__x' . ( $showcase['block_column'] ?? '1' ) : ( ( 'grid' === $layout ) ? sanitize_key( $showcase['layout_option'] ?? '' ) : '' );
-
-		// Enqueue the showcase inline styles.
-		$styles = self::get_showcase_styles( $showcase, $wccs_id );
-		$styles = apply_filters( 'wccs_showcase_styles', $styles, $showcase, $wccs_id );
-		wp_add_inline_style( 'wcc-showcase-showcase', $styles );
 
 		ob_start();
 		?>
@@ -326,6 +357,10 @@ class Shortcodes {
 			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item .slider-cat-image{
 				border-top-left-radius: {$card_border_radius}px !important;
 				border-top-right-radius: {$card_border_radius}px !important;
+				height: {$showcase['slider_height']}px !important;
+			}
+			.is-layout__slider .wcc-showcase-{$wccs_id} .splide__track{
+				height: {$showcase['slider_height']}px !important;
 			}
 			.wcc-showcase-{$wccs_id} .splide__pagination__page:hover{
 				background-color: {$counter_hover_bg};
