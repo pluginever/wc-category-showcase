@@ -123,16 +123,14 @@ class Installer {
 	public function migrate_data() {
 		// Fields to update.
 		$fields = array(
-			'wccs_featured_categories'   => 'wcc_showcase_specific_category_select',
-			'wccs_show_block_title'      => 'wcc_showcase_show_section_title',
-			'wccs_autoplay_slider'       => 'wcc_showcase_slide_slideshow',
-			'wccs_infinite_scroll'       => 'wcc_showcase_slide_unlimited_loop',
-			'wccs_show_navigation'       => 'wcc_showcase_slide_navigation_arrow',
-			'wccs_featured_show_title'   => 'wcc_showcase_show_category_title',
-			'wccs_featured_show_desc'    => 'wcc_showcase_show_category_description',
-			'wccs_featured_show_button'  => 'wcc_showcase_show_button',
-			'wccs_featured_button_text'  => 'wcc_showcase_button_text',
-			'wccs_additional_categories' => 'wcc_showcase_additional_category_select',
+			'wccs_show_block_title'     => 'wcc_showcase_show_section_title',
+			'wccs_autoplay_slider'      => 'wcc_showcase_slide_slideshow',
+			'wccs_infinite_scroll'      => 'wcc_showcase_slide_unlimited_loop',
+			'wccs_show_navigation'      => 'wcc_showcase_slide_navigation_arrow',
+			'wccs_featured_show_title'  => 'wcc_showcase_show_category_title',
+			'wccs_featured_show_desc'   => 'wcc_showcase_show_category_description',
+			'wccs_featured_show_button' => 'wcc_showcase_show_button',
+			'wccs_featured_button_text' => 'wcc_showcase_button_text',
 		);
 
 		$fields_to_delete = array(
@@ -180,6 +178,7 @@ class Installer {
 
 					// Check if value and field are set. Then update the post meta using $field.
 					if ( ! empty( $value ) && isset( $field ) ) {
+						$value = '1' === $value ? 'yes' : $value;
 						update_post_meta( $post_id, $field, $value );
 					}
 
@@ -308,10 +307,8 @@ class Installer {
 				update_post_meta( $post_id, 'wcc_showcase_additional_title_color', get_post_meta( $post_id, 'wccs_additional_title_color', true ) );
 
 				// Few more options need to be enabled of disabled based on the new settings.
-				update_post_meta( $post_id, 'wcc_showcase_show_category_title', 'yes' );
 				update_post_meta( $post_id, 'wcc_showcase_show_category_product_quantity', 'no' );
 				update_post_meta( $post_id, 'wcc_showcase_show_subcategory_product_quantity', 'no' );
-				update_post_meta( $post_id, 'wcc_showcase_show_button', 'yes' );
 				update_post_meta( $post_id, 'wcc_showcase_show_button_icon', 'no' );
 				update_post_meta( $post_id, 'wcc_showcase_button_style', 'slightly_rounded' );
 				update_post_meta( $post_id, 'wcc_showcase_includes_sub_categories', 'no' );

@@ -380,7 +380,6 @@ class Helpers {
 			// Image tab settings data.
 			'image_layout'                      => 'rounded',
 			'image_zoom_on_hover'               => 'no',
-			'interactive_hover_style'           => 'normal_gray',
 			// Fonts tab settings data.
 			'font_google_support'               => 'no',
 			'font_main_title'                   => array(
