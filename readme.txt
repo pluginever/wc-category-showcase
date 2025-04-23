@@ -45,7 +45,7 @@ WooCommerce Category Showcase has two parts one is WooCommerce category slider a
 WooCommerce Category Showcase has built-in shortcode builder with a nice easy interface where you can add and remove your selected category from a drop-down menu.
 
 ###Shortocode
-`[wcc_showcase_showcase id="showcase id"]`
+`[wccs_showcase id="showcase id"]`
 
 ### Plugin Features
 * WooCommerce Category Slider
@@ -80,14 +80,14 @@ WooCommerce Category Showcase has built-in shortcode builder with a nice easy in
 This may have bugs and lack of many features. If you want to contribute on this project, you are more than welcome. For reporting any bugs or feature request open issue on [Github](https://github.com/pluginever/wc-category-showcase).
 
 == Installation ==
-###Automatic Install From WordPress Dashboard
+###Automatic Installation From WordPress Dashboard
 
-1. Login to your the admin panel
+1. Login to your admin panel
 2. Navigate to Plugins -> Add New
 3. Search **WooCommerce Category Showcase**
 4. Click install and activate respectively.
 
-###Manual Install From WordPress Dashboard
+###Manual Installation From WordPress Dashboard
 
 If your server is not connected to the Internet, then you can use this method-
 
@@ -124,7 +124,7 @@ You can add maximum 6 categories as additional categories.
 
 = How to use WooCommerce Category Showcase in the template file =
 Place the snippet where you want. Change the id with the appropriate one.
-`<?php echo do_shortcode('[wcc_showcase_showcase id="showcase id"]'); ?>`
+`<?php echo do_shortcode('[wccs_showcase id="showcase_id"]'); ?>`
 
 == Screenshots ==
 1. WooCommerce category showcase
@@ -138,11 +138,25 @@ Place the snippet where you want. Change the id with the appropriate one.
 * Enhanced - Improved the performance of the plugin.
 * Compatibility - Compatible with the latest version of WordPress and WooCommerce.
 
+= 2.0.7 =
+* Fix - Resolved known issues
+* Compatible – Compatibility with WP Latest version
+* Compatible – Compatibility with WC Latest version
+
+= 2.0.6 =
+* Fix - Resolved known issues
+* Compatible – Compatibility with WP Latest version
+* Compatible – Compatibility with WC Latest version
+
 = 2.0.5 =
-* Update plugin framework.
+* Fix - Resolved known issues
+* Compatible – Compatibility with WP Latest version
+* Compatible – Compatibility with WC Latest version
 
 = 2.0.4 =
 * Fix - Resolved known issues.
+* Fix – Compatibility with WP v6.6.1
+* Fix – Compatibility with WC v9.2.2
 
 = 2.0.3 =
 * Fix - Resolved metabox issues. 
@@ -175,6 +189,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 * Enhance - Add support WPML
 * Enhance - Add support optimote-wp
 * Fix - Translation not working
+
 
 = 1.1.3 =
 * Fix - conflict with nextgen gallery
