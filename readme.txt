@@ -128,12 +128,12 @@ Place the snippet where you want. Change the id with the appropriate one.
 
 == Screenshots ==
 1. WooCommerce category showcase
-2. WooCommerce category showcase at the admin end with complete setup
-3. WooCommerce category showcase at the admin end create new
-4. Created All WooCommerce category showcase
+2. Add new showcase
+3. Edit showcase
+4. Example showcase
 
 == Changelog ==
-= 2.2.0 =
+= 2.2.0 (23 April 2025) =
 * New - Rebuilt the plugin with new features and look.
 * Enhanced - Improved the performance of the plugin.
 * Compatibility - Compatible with the latest version of WordPress and WooCommerce.
