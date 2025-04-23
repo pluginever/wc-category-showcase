@@ -2,7 +2,7 @@
 Contributors: pluginever
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
 Requires at least: 5.2
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: 2.2.0
 License: GPLv2 or later
@@ -134,7 +134,9 @@ Place the snippet where you want. Change the id with the appropriate one.
 
 == Changelog ==
 = 2.2.0 =
-* Update - Update plugin framework.
+* New - Rebuilt the plugin with new features and look.
+* Enhanced - Improved the performance of the plugin.
+* Compatibility - Compatible with the latest version of WordPress and WooCommerce.
 
 = 2.0.5 =
 * Update plugin framework.
@@ -174,7 +176,6 @@ Place the snippet where you want. Change the id with the appropriate one.
 * Enhance - Add support optimote-wp
 * Fix - Translation not working
 
-
 = 1.1.3 =
 * Fix - conflict with nextgen gallery
 * Fix - upgrade to pro message with pro version
@@ -196,7 +197,6 @@ Place the snippet where you want. Change the id with the appropriate one.
 * WP compatibility with 5.2.3
 * Fix error when additional category empty 
 * Fix Warning when woocommerce not installed
-
 
 = 1.0.9 =
 * WC compatibility with 3.6.5
@@ -235,3 +235,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 
 = 1.0.0 =
 * First release
+
+== Upgrade Notice ==
+= 2.0.0 =
+Re-built the plugin with new features and look so that you can use it with the latest version of WordPress and WooCommerce. Please update to the latest version and enjoy the new features. This is a major update and we recommend you to backup your site before updating.
