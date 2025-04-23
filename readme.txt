@@ -1,12 +1,12 @@
 === Product Category Showcase for WooCommerce ===
 Contributors: pluginever
-Tags:              woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
+Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
 Requires at least: 5.2
-Tested up to:      6.7
-Requires PHP:      7.4
-Stable tag:        2.0.7
-License:           GPLv2 or later
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 2.2.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Enhance your WooCommerce store with Product Category Showcase! Engage visitors with a sleek slider, making category browsing effortless.
 
@@ -87,7 +87,7 @@ This may have bugs and lack of many features. If you want to contribute on this 
 3. Search **WooCommerce Category Showcase**
 4. Click install and activate respectively.
 
-###Manual Install From WordPress Dashboard
+###Manual Installation From WordPress Dashboard
 
 If your server is not connected to the Internet, then you can use this method-
 
@@ -124,26 +124,31 @@ You can add maximum 6 categories as additional categories.
 
 = How to use WooCommerce Category Showcase in the template file =
 Place the snippet where you want. Change the id with the appropriate one.
-`<?php echo do_shortcode('[wccs_showcase id="showcase id"]'); ?>`
+`<?php echo do_shortcode('[wccs_showcase id="showcase_id"]'); ?>`
 
 == Screenshots ==
 1. WooCommerce category showcase
-2. WooCommerce category showcase at the admin end with complete setup
-3. WooCommerce category showcase at the admin end create new
-4. Created All WooCommerce category showcase
+2. Add new showcase
+3. Edit showcase
+4. Example showcase
 
 == Changelog ==
-= 2.0.7 ( 28th November, 2024 ) =
+= 2.2.0 (23 April 2025) =
+* New - Rebuilt the plugin with new features and look.
+* Enhanced - Improved the performance of the plugin.
+* Compatibility - Compatible with the latest version of WordPress and WooCommerce.
+
+= 2.0.7 =
 * Fix - Resolved known issues
 * Compatible – Compatibility with WP Latest version
 * Compatible – Compatibility with WC Latest version
 
-= 2.0.6 ( 23th October, 2024 ) =
+= 2.0.6 =
 * Fix - Resolved known issues
 * Compatible – Compatibility with WP Latest version
 * Compatible – Compatibility with WC Latest version
 
-= 2.0.5 ( 1st October, 2024 ) =
+= 2.0.5 =
 * Fix - Resolved known issues
 * Compatible – Compatibility with WP Latest version
 * Compatible – Compatibility with WC Latest version
@@ -208,7 +213,6 @@ Place the snippet where you want. Change the id with the appropriate one.
 * Fix error when additional category empty 
 * Fix Warning when woocommerce not installed
 
-
 = 1.0.9 =
 * WC compatibility with 3.6.5
 * WP compatibility with 5.2.2
@@ -246,3 +250,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 
 = 1.0.0 =
 * First release
+
+== Upgrade Notice ==
+= 2.0.0 =
+Re-built the plugin with new features and look so that you can use it with the latest version of WordPress and WooCommerce. Please update to the latest version and enjoy the new features. This is a major update and we recommend you to backup your site before updating.

@@ -1,0 +1,59 @@
+{
+  "name": "pluginever/wc-category-showcase",
+  "description": "WooCommerce extension to showcase categories in various styles and layouts.",
+  "homepage": "https://pluginever.com/plugins/woocommerce-category-showcase-pro/",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.4",
+    "byteever/bytekit-plugin": "^1.0"
+  },
+  "require-dev": {
+    "byteever/byteever-sniffs": "dev-master"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "WooCommerceCategoryShowcase\\": ["includes/"]
+    }
+  },
+  "autoload-dev": {},
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/*": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "repositories": [
+    {
+      "url": "git@github.com:byteever/bytekit-plugin.git",
+      "type": "github"
+    }
+  ],
+  "scripts": {
+    "post-install-cmd":"@strauss",
+    "post-update-cmd": "@strauss",
+    "phpcs": "@php ./vendor/bin/phpcs --standard=phpcs.xml -s -v",
+    "phpcbf": "@php ./vendor/bin/phpcbf --standard=phpcs.xml -v",
+    "strauss": [
+      "test -d ./bin || mkdir bin",
+      "test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar",
+      "@php bin/strauss.phar"
+    ]
+  },
+  "extra": {
+    "strauss": {
+      "target_directory": "vendor-prefixed",
+      "classmap_prefix": "WooCommerceCategoryShowcase_",
+      "namespace_prefix": "WooCommerceCategoryShowcase",
+      "delete_vendor_packages": true,
+      "delete_vendor_files": true,
+      "packages": [
+        "byteever/bytekit-plugin"
+      ]
+    }
+  }
+}

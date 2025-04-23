@@ -1,120 +1,54 @@
-/* jshint node:true */
-module.exports = function (grunt) {
+module.exports = function( grunt ) {
 	'use strict';
-	// Load multiple grunt tasks using globbing patterns
-	require('load-grunt-tasks')(grunt);
 
-	var sass = require('sass');
+	// Load all grunt tasks matching the `grunt-*` pattern.
+	require( 'load-grunt-tasks' )( grunt );
 
-	grunt.initConfig({
+	// Show elapsed time.
+	require( '@lodder/time-grunt' )( grunt );
 
-		// Setting folder templates.
-		dirs: {
-			css: 'assets/css',
-			fonts: 'assets/fonts',
-			images: 'assets/images',
-			js: 'assets/js',
-		},
-
-		// Minify .js files.
-		uglify: {
-			options: {
-				ie8: true,
-				parse: {
-					strict: false
-				},
-				output: {
-					comments: /@license|@preserve|^!/
-				}
-			},
-			target: {
-				files: [{
-					expand: true,
-					cwd: '<%= dirs.js %>',
-					src: [
-						'*.js',
-						'!*.min.js'
-					],
-					dest: '<%= dirs.js %>',
-					ext: '.min.js'
-				}]
-			}
-		},
-
-		// Compile all .scss files.
-		sass: {
-			options: {
-				implementation: sass,
-				sourceMap: false,
-				outputStyle: 'compressed'
-			},
-			dist: {
-				files: [{
-					expand: true,
-					cwd: '<%= dirs.css %>/',
-					src: ['*.scss'],
-					dest: '<%= dirs.css %>/',
-					ext: '.css'
-				}]
-			}
-		},
-
-		// Autoprefixer.
-		postcss: {
-			options: {
-				processors: [
-					require('autoprefixer')()
-				]
-			},
-			dist: {
-				src: [
-					'<%= dirs.css %>/*.css'
-				]
-			}
-		},
-
-		// Minify all .css files.
-		cssmin: {
-			minify: {
-				expand: true,
-				cwd: '<%= dirs.css %>/',
-				src: ['*.css'],
-				dest: '<%= dirs.css %>/',
-				ext: '.css'
-			}
-		},
-
-		// Watch changes for assets.
-		watch: {
-			css: {
-				files: ['<%= dirs.css %>/*.scss'],
-				tasks: ['sass', 'postcss', 'cssmin']
-			},
-			js: {
-				files: ['<%= dirs.js %>/*.js'],
-				tasks: ['uglify']
-			}
-		},
-
-		// Generate POT files.
-		makepot: {
-			target: {
+	// Project configuration.
+	grunt.initConfig(
+		{
+			addtextdomain: {
 				options: {
-					mainFile: 'wc-category-showcase.php',
-					type: 'wp-plugin',
-					domainPath: 'i18n/languages',
-					potFilename: 'wc-category-showcase.pot',
-					exclude: [
-						'vendor/.*',
-						'tests/.*',
-						'tmp/.*'
-					]
-				}
+					expand: true,
+					text_domain: 'wc-category-showcase',
+					updateDomains: [ 'textdomain', 'bytekit-textdomain' ],
+				},
+				plugin: {
+					files: {
+						src: [
+							'*.php',
+							'**/*.php',
+							'!node_modules/**',
+							'!tests/**',
+							'!vendor/**',
+							'!src/**',
+						],
+					},
+				},
+			},
+			makepot: {
+				target: {
+					options: {
+						domainPath: 'languages',
+						exclude: [ 'packages/*', '.git/*', 'node_modules/*', 'tests/*' ],
+						mainFile: 'wc-category-showcase.php',
+						potFilename: 'wc-category-showcase.pot',
+						potHeaders: {
+							'report-msgid-bugs-to': 'https://pluginever.com/support/',
+							poedit: true,
+							'x-poedit-keywordslist': true,
+						},
+						type: 'wp-plugin',
+						updateTimestamp: false,
+					},
+				},
 			}
-		},
+		}
+	);
 
-	});
-
-	// Register tasks.
-	grunt.registerTask('build', ['uglify', 'sass', 'postcss', 'cssmin', 'makepot']);
+	grunt.registerTask( 'i18n', [ 'addtextdomain', 'makepot' ] );
+	grunt.registerTask( 'build', [ 'i18n' ] );
 };

@@ -1,0 +1,212 @@
+// Global section style.
+.wccs-section {
+	.text-left{
+		text-align: left;
+	}
+	.text-center{
+		text-align: center;
+	}
+	.text-right{
+		text-align: right;
+	}
+	.wccs-section__header{
+		padding: 1rem 0;
+	}
+
+	// Layout specific style.
+	&.is-layout__block {
+		// do something for block
+	}
+	&.is-layout__grid {
+		// do something for grid
+	}
+	&.is-layout__slide {
+		// do something for slide
+	}
+}
+
+// Category body class.
+.wccs-categories{
+	h1{
+		margin: 8px 0;
+	}
+	h2{
+		margin: 8px 0;
+	}
+	h3{
+		margin: 8px 0;
+	}
+	h4{
+		margin: 8px 0;
+	}
+	h5{
+		margin: 8px 0;
+	}
+	h6{
+		margin: 8px 0;
+	}
+	p{
+		margin-bottom: 8px;
+	}
+	.wccs-card-button{
+		margin-top:10px;
+	}
+}
+
+// Global category card style.
+.wccs-category{
+	.wccs-entry__head{
+
+	}
+	.wccs-entry__content{
+		padding: 0.625rem;
+	}
+	.wccs-subcategory__items{
+		margin: 0 0 1.41575rem;
+		.wccs-subcategory__item{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+	}
+	&__btn{
+		border: 1px solid;
+		border-color: #130F31;
+		color: #020617;
+		text-decoration: none !important;
+		padding: 8px 20px;
+		display: inline-block;
+		&.only_text{
+			border: none;
+		}
+		&.sharp_corner{
+			border-radius: 0;
+		}
+		&.slightly_rounded{
+			border-radius: 5px;
+		}
+		&.rounded{
+			border-radius: 100px;
+		}
+	}
+}
+
+// Content position overly, card style.
+.wccs-content__overlay{
+	.wccs-entry__content {
+		&.wccs-content-position__top_left{
+			text-align: left;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+		&.wccs-content-position__top_right{
+			text-align: right;
+			justify-content: flex-start;
+			align-items: flex-end;
+		}
+		&.wccs-content-position__top_center{
+			text-align: center;
+			justify-content: flex-start;
+			align-content: center;
+			align-items: center;
+		}
+		&.wccs-content-position__center_left{
+			text-align: left;
+			justify-content: center;
+			align-items: flex-start;
+		}
+		&.wccs-content-position__center_right{
+			text-align: right;
+			justify-content: center;
+			align-items: flex-end;
+		}
+		&.wccs-content-position__center_center{
+			text-align: center;
+			justify-content: center;
+			align-content: center;
+		}
+		&.wccs-content-position__bottom_left{
+			text-align: left;
+			justify-content: flex-end;
+			align-items: flex-start;
+		}
+		&.wccs-content-position__bottom_right{
+			text-align: right;
+			justify-content: flex-end;
+			align-items: flex-end;
+		}
+		&.wccs-content-position__bottom_center{
+			text-align: center;
+			justify-content: flex-end;
+			align-content: center;
+			align-items: center;
+		}
+	}
+}
+
+// Showcase button global style.
+.wccs-category {
+	position: relative;
+}
+.wcc-showcase-ribbon {
+	font-size: 12px;
+	color: #fff;
+	--f: .5em;
+	position: absolute;
+	top: 0;
+	padding-inline: 1.05lh;
+	padding-bottom: var(--f);
+	background-color: #BD1550;
+	z-index: 2;
+}
+.wcc-showcase-ribbon-right{
+	right: 0;
+	clip-path: polygon(
+			100% calc(100% - var(--f)), 100% 100%, calc(100% - var(--f)) calc(100% - var(--f)), var(--f) calc(100% - var(--f)), 0 100%, 0 calc(100% - var(--f)), 999px calc(100% - var(--f) - 999px), calc(100% - 999px) calc(100% - var(--f) - 999px));
+	transform: translate(calc((1 - cos(45deg)) * 100%), -100%) rotate(45deg);
+	transform-origin: 0% 100%;
+}
+.wcc-showcase-ribbon-left {
+	left: 0;
+	clip-path: polygon(
+			100% calc(100% - var(--f)), 100% 100%, calc(100% - var(--f)) calc(100% - var(--f)), var(--f) calc(100% - var(--f)), 0 100%, 0 calc(100% - var(--f)), 999px calc(100% - var(--f) - 999px), calc(100% - 999px) calc(100% - var(--f) - 999px));
+	transform: translate(calc((cos(45deg) - 1) * 100%), -100%) rotate(-45deg);
+	transform-origin: 100% 100%;
+}
+.wcc-showcase-ribbon-green {
+	background-color: #0E9552;
+}
+.wcc-showcase-ribbon-yellow {
+	background-color: #A36200;
+}
+.wcc-showcase-ribbon-red {
+	background-color: #911212;
+}
+.wcc-showcase-ribbon-blue {
+	background-color: #0E5295;
+}
+.wcc-showcase-ribbon-purple {
+	background-color: #5B0E95;
+}
+.wcc-showcase-ribbon-magento {
+	background-color: #950E40;
+}
+.is-image-zoom-on-hover .wcc-showcase-slide-item{
+	img{
+		transition: transform 0.3s ease-in-out;
+	}
+	&:hover{
+		img{
+			transform: scale(1.2);
+		}
+	}
+}
+.is-shop-now-icon .wccs-showcase-btn::after{
+	content: "\2192";
+	margin-left: 5px;
+}
+a > i{
+	margin-top: 20px;
+	font-size: 44px;
+}

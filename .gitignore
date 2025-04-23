@@ -1,56 +1,55 @@
-# Editors
-project.xml
-project.properties
-/nbproject/private/
-.buildpath
-.project
-.settings*
-.idea
-.vscode
-*.sublime-project
-*.sublime-workspace
-.sublimelinterrc
+# IDE related files
+/.settings
+/.project
+/.idea
+*.esproj
+*.tmproj
+*.tmproject
+tmtags
+.*.sw[a-z]
+*.un~
+Session.vim
+*.swp
 
-# Grunt
-/node_modules/
-package-lock.json
-none
-
-# Sass
-.sass-cache/
-
-# OS X metadata
+# Mac OSX specific files
 .DS_Store
+._*
+.Spotlight-V100
+.Trashes
 
-# Windows junk
+# Windows specific files
 Thumbs.db
+Desktop.ini
 
-# ApiGen
-/wc-apidocs/
+# NPM and Grunt.js related files
+node_modules
+bower_components
+.idea
+*.log
+npm-debug.log
 
-# Behat/CLI Tests
-tests/cli/installer
-tests/cli/composer.phar
-tests/cli/composer.lock
-tests/cli/composer.json
-tests/cli/vendor
+# Composer related files
+/vendor
+/vendor-prefixed
 
-# Unit tests
+# PHPUnit related files
 /tmp
-/tests/bin/tmp
-/tests/e2e-tests/config/local-*.json
-/tests/e2e-tests/config/local.json
 
-# Logs
-/logs
+# Miscellaneous files
+*.zip
+.cache
+.sass-cache*
+.husky
+*.lock
 
-# Composer
-/vendor/
-contributors.md
+# Tests related files
+codeception.yml
+.env
+/tests/_data/dump.sql
+.env.testing
 
-# Screenshots for e2e tests failures
-/screenshots/
+# Language files
+languages/*.
 
-#build
-build
-package-lock.json
+# Build related files
+/build
