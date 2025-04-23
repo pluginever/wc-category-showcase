@@ -143,6 +143,11 @@ class Installer {
 			'wccs_featured_custom_message',
 			'wccs_additional_button_hover_color',
 			'wccs_additional_button_hover_text_color',
+			'wccs_show_additional_categories',
+			'wccsp_featured_customizer',
+			'wccs_featured_categories',
+			'wccsp_additional_customizer',
+			'wccs_additional_categories',
 		);
 
 		// Get current offset.
@@ -171,7 +176,6 @@ class Installer {
 					)
 				);
 				update_post_meta( $post_id, 'wcc_showcase_category_filter', 'specific' );
-				update_post_meta( $post_id, 'wcc_showcase_specific_category_select', 'specific' );
 
 				foreach ( $fields as $key => $field ) {
 					$value = get_post_meta( $post_id, $key, true );
@@ -192,10 +196,24 @@ class Installer {
 				}
 
 				// Update additional customizer settings.
-				$featured_customizer          = get_post_meta( $post_id, 'wccsp_featured_customizer', true );
-				$additional_customizer        = get_post_meta( $post_id, 'wccsp_additional_customizer', true );
-				$featured_customizer_select   = array();
-				$additional_customizer_select = array();
+				$featured_customizer   = get_post_meta( $post_id, 'wccsp_featured_customizer', true );
+				$featured_cat_ids      = get_post_meta( $post_id, 'wccs_featured_categories', true );
+				$additional_customizer = get_post_meta( $post_id, 'wccsp_additional_customizer', true );
+				$additional_cat_ids    = get_post_meta( $post_id, 'wccs_additional_categories', true );
+
+				if ( empty( $featured_customizer ) && ! empty( $featured_cat_ids ) ) {
+					$featured_customizer = array();
+
+					foreach ( $featured_cat_ids as $cat_id ) {
+						$term                           = get_term( $cat_id );
+						$thumbnail_id                   = get_term_meta( $cat_id, 'thumbnail_id', true );
+						$image_url                      = $thumbnail_id ? wp_get_attachment_url( $thumbnail_id ) : '';
+						$featured_customizer[ $cat_id ] = array(
+							'title' => $term && ! is_wp_error( $term ) ? $term->name : '',
+							'image' => $image_url,
+						);
+					}
+				}
 
 				// Update array keys from $featured_customizer, title should be "name" and image should be "image_url".
 				if ( is_array( $featured_customizer ) ) {
@@ -225,8 +243,25 @@ class Installer {
 						$updated_featured_customizer[ $key ] = $item;
 					}
 
-					$featured_customizer        = $updated_featured_customizer;
-					$featured_customizer_select = array_keys( $featured_customizer );
+					$featured_customizer = $updated_featured_customizer;
+
+					// Update the post meta.
+					update_post_meta( $post_id, 'wcc_showcase_specific_category_select', array_keys( $featured_customizer ) );
+					update_post_meta( $post_id, 'wcc_showcase_category_list_item', $featured_customizer );
+				}
+
+				if ( empty( $additional_customizer ) && ! empty( $additional_cat_ids ) ) {
+					$additional_customizer = array();
+
+					foreach ( $additional_cat_ids as $cat_id ) {
+						$term                             = get_term( $cat_id );
+						$thumbnail_id                     = get_term_meta( $cat_id, 'thumbnail_id', true );
+						$image_url                        = $thumbnail_id ? wp_get_attachment_url( $thumbnail_id ) : '';
+						$additional_customizer[ $cat_id ] = array(
+							'title' => $term && ! is_wp_error( $term ) ? $term->name : '',
+							'image' => $image_url,
+						);
+					}
 				}
 
 				// Update array keys from $additional_customizer, title should be "name" and image should be "image_url".
@@ -255,20 +290,15 @@ class Installer {
 						$updated_additional_customizer[ $key ] = $item;
 					}
 
-					$additional_customizer        = $updated_additional_customizer;
-					$additional_customizer_select = array_keys( $additional_customizer );
+					$additional_customizer = $updated_additional_customizer;
+
+					if ( ! empty( $additional_customizer ) && '1' === get_post_meta( $post_id, 'wccs_show_additional_categories', true ) ) {
+						update_post_meta( $post_id, 'wcc_showcase_enable_additional_category', 'yes' );
+					}
+
+					update_post_meta( $post_id, 'wcc_showcase_additional_category_select', array_keys( $additional_customizer ) );
+					update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
 				}
-
-				if ( ! empty( $additional_customizer ) ) {
-					update_post_meta( $post_id, 'wcc_showcase_enable_additional_category', 'yes' );
-				}
-
-				// Update the post meta.
-				update_post_meta( $post_id, 'wcc_showcase_specific_category_select', $featured_customizer_select );
-				update_post_meta( $post_id, 'wcc_showcase_category_list_item', $featured_customizer );
-
-				update_post_meta( $post_id, 'wcc_showcase_additional_category_select', $additional_customizer_select );
-				update_post_meta( $post_id, 'wcc_showcase_additional_category_list_item', $additional_customizer );
 
 				// Updating style settings.
 				$content_color    = get_post_meta( $post_id, 'wccs_featured_content_color', true );
