@@ -62,6 +62,44 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 		add_filter( 'plugin_action_links_' . plugin_basename( $this->get_file() ), array( $this, 'plugin_action_links' ) );
 		add_action( 'before_woocommerce_init', array( $this, 'on_before_woocommerce_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
+
+		// Admin notice for WooCommerce Category Showcase Pro plugin dependency.
+		if ( $this->is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) ) {
+			add_action( 'admin_notices', array( $this, 'dependency_notice' ) );
+		}
+	}
+
+	/**
+	 * Dependency notice.
+	 * Show notice if WooCommerce Category Showcase Pro plugin is not active.
+	 *
+	 * @since 2.2.0
+	 * @return void
+	 */
+	public function dependency_notice() {
+
+		if ( ! defined( 'WCCSP_VERSION' ) ) {
+			return;
+		}
+
+		// Compare the versions. WCCSP_VERSION is lower than 2.0.0.
+		if ( version_compare( WCCSP_VERSION, '2.0.0', '<' ) ) {
+			?>
+			<div class="notice notice-error is-dismissible">
+				<p>
+					<?php
+					echo wp_kses_post(
+						sprintf(
+							/* translators: %s: plugin name */
+							__( 'You are currently using %s. Please update to version 2.0.0 or higher to use WooCommerce Category Showcase with WooCommerce Category Showcase Pro.', 'wc-category-showcase' ),
+							'<a href="https://pluginever.com/plugins/woocommerce-category-showcase-pro/?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=update-to-pro" target="_blank"><strong>' . esc_html__( 'WooCommerce Category Showcase Pro', 'wc-category-showcase' ) . '</strong></a>'
+						)
+					);
+					?>
+				</p>
+			</div>
+			<?php
+		}
 	}
 
 	/**
