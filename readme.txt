@@ -133,7 +133,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Example showcase
 
 == Changelog ==
-= 2.2.0 (23 April 2025) =
+= 2.2.0 (24 April 2025) =
 * New - Rebuilt the plugin with new features and look.
 * Enhanced - Improved the performance of the plugin.
 * Compatibility - Compatible with the latest version of WordPress and WooCommerce.
@@ -189,7 +189,6 @@ Place the snippet where you want. Change the id with the appropriate one.
 * Enhance - Add support WPML
 * Enhance - Add support optimote-wp
 * Fix - Translation not working
-
 
 = 1.1.3 =
 * Fix - conflict with nextgen gallery
