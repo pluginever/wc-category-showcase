@@ -26,10 +26,10 @@ $list_table->prepare_items();
 
 	<form id="wc-category-showcase-table" method="get">
 	</form>
-	<form id="wc-category-showcase-table" method="get">
+	<form id="wc-category-showcase-table" method="get" action="<?php echo esc_url( admin_url( 'admin.php' ) ); ?>">
 		<?php
 		$list_table->views();
-		$list_table->search_box( __( 'Search', 'wc-category-showcase' ), 'key' );
+		$list_table->search_box( __( 'Search', 'wc-category-showcase' ), 'search' );
 		$list_table->display();
 		?>
 		<input type="hidden" name="page" value="wc-category-showcase">
