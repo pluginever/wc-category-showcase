@@ -26,14 +26,12 @@ $list_table->prepare_items();
 
 	<form id="wc-category-showcase-table" method="get">
 	</form>
-	<form id="wc-category-showcase-table" method="get">
+	<form id="wc-category-showcase-table" method="get" action="<?php echo esc_url( admin_url( 'admin.php' ) ); ?>">
 		<?php
-		$status = isset( $_GET['status'] ) ? sanitize_text_field( wp_unslash( $_GET['status'] ) ) : '';
 		$list_table->views();
-		$list_table->search_box( __( 'Search', 'wc-category-showcase' ), 'key' );
+		$list_table->search_box( __( 'Search', 'wc-category-showcase' ), 'search' );
 		$list_table->display();
 		?>
-		<input type="hidden" name="status" value="<?php echo esc_attr( $status ); ?>">
 		<input type="hidden" name="page" value="wc-category-showcase">
 	</form>
 </div>

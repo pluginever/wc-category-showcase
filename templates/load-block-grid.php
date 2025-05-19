@@ -14,9 +14,10 @@
  * @var string $wccs_id           Showcase ID.
  */
 
-$has_image = 'yes' === $showcase['show_category_image'] && ! empty( $category['image_url'] ) ? 'has-image' : 'has-no-image';
+$has_image    = 'yes' === $showcase['show_category_image'] && ! empty( $category['image_url'] ) ? 'has-image' : 'has-no-image';
+$is_img_hover = 'yes' === $showcase['image_zoom_on_hover'] ? 'is-image-zoom-on-hover' : '';
 ?>
-<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?>" <?php if ( 'grid' === $layout && 'yes' === $showcase['show_category_image'] ) : ?> <?php printf( 'style="background-image: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
+<div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> <?php echo sanitize_html_class( $is_img_hover ); ?>" <?php if ( 'grid' === $layout && 'yes' === $showcase['show_category_image'] ) : ?> <?php printf( 'style="background-image: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
 	<?php if ( ! empty( $category['label_text'] ) ) { ?>
 		<div class="wcc-showcase-ribbon wcc-showcase-ribbon-<?php echo esc_attr( $category['label_color'] ); ?> wcc-showcase-ribbon-<?php echo esc_attr( $ribbon_placement ); ?>">
 			<?php echo esc_attr( $category['label_text'] ); ?>

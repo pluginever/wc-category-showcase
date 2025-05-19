@@ -192,7 +192,8 @@
 .wcc-showcase-ribbon-magento {
 	background-color: #950E40;
 }
-.is-image-zoom-on-hover .wcc-showcase-slide-item{
+.is-image-zoom-on-hover .wcc-showcase-slide-item,
+.is-layout__block .wccs-category.is-image-zoom-on-hover{
 	img{
 		transition: transform 0.3s ease-in-out;
 	}
