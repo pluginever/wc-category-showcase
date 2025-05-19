@@ -39,6 +39,7 @@ class ShowcaseListTable extends AbstractListTable {
 	 * @return void
 	 */
 	public function prepare_items() {
+		wp_verify_nonce( '_nonce' );
 		$columns               = $this->get_columns();
 		$sortable              = $this->get_sortable_columns();
 		$hidden                = $this->get_hidden_columns();
