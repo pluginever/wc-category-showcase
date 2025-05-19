@@ -46,6 +46,10 @@ abstract class AbstractListTable extends \WP_List_Table {
 	 * @since 1.0.0
 	 */
 	public function process_bulk_actions( $doaction ) {
+		wp_verify_nonce( '_nonce' );
+
+		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : admin_url( 'admin.php?page=wc-category-showcase' );
+
 		if ( ! empty( $_GET['_wp_http_referer'] ) || ! empty( $_GET['_wpnonce'] ) ) {
 			wp_safe_redirect(
 				remove_query_arg(
@@ -53,7 +57,7 @@ abstract class AbstractListTable extends \WP_List_Table {
 						'_wp_http_referer',
 						'_wpnonce',
 					),
-					wp_unslash( $_SERVER['REQUEST_URI'] )
+					$request_uri
 				)
 			);
 			exit;
