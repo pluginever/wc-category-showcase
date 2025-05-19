@@ -2,9 +2,9 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WC Category Showcase 2.2.0\n"
+"Project-Id-Version: WC Category Showcase 2.2.1\n"
 "Report-Msgid-Bugs-To: https://pluginever.com/support/\n"
-"POT-Creation-Date: 2025-04-24 09:24:18+00:00\n"
+"POT-Creation-Date: 2025-05-19 06:26:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -166,38 +166,38 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:93
+#: includes/Admin/listTables/ShowcaseListTable.php:94
 msgid "No items found."
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:105
+#: includes/Admin/listTables/ShowcaseListTable.php:106
 msgid "Title"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:106
+#: includes/Admin/listTables/ShowcaseListTable.php:107
 #: includes/Admin/views/add-category-showcase.php:208
 msgid "Shortcode"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:107
+#: includes/Admin/listTables/ShowcaseListTable.php:108
 msgid "Date created"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:143
-#: includes/Admin/listTables/ShowcaseListTable.php:223
+#: includes/Admin/listTables/ShowcaseListTable.php:144
+#: includes/Admin/listTables/ShowcaseListTable.php:224
 msgid "Delete"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:180
+#: includes/Admin/listTables/ShowcaseListTable.php:181
 #. translators: %d: number of things deleted.
 msgid "Showcases successfully deleted."
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:222
+#: includes/Admin/listTables/ShowcaseListTable.php:223
 msgid "Edit"
 msgstr ""
 
-#: includes/Admin/listTables/ShowcaseListTable.php:245
+#: includes/Admin/listTables/ShowcaseListTable.php:246
 #: includes/Admin/views/add-category-showcase.php:213
 msgid "Copy"
 msgstr ""
@@ -345,7 +345,7 @@ msgstr ""
 msgid "Bellow are the all category showcases."
 msgstr ""
 
-#: includes/Admin/views/list-category-showcase.php:33
+#: includes/Admin/views/list-category-showcase.php:32
 msgid "Search"
 msgstr ""
 
@@ -810,7 +810,7 @@ msgstr ""
 #: includes/Admin/views/showcase/image-settings.php:65
 msgid ""
 "Enable the zoom effect to occur when hovering over the images associated "
-"with each category."
+"with each category. This won't applicable for the Grid/Overly layout only."
 msgstr ""
 
 #: includes/Admin/views/showcase/showcase-settings.php:19
