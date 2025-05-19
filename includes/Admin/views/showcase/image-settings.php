@@ -62,7 +62,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="wcc_showcase-settings-row">
 	<div class="tw-w-1/3 sm:tw-w-full">
 		<h3 class="wcc_showcase-settings-title"><?php esc_html_e( 'Zoom on Hover', 'wc-category-showcase' ); ?></h3>
-		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable the zoom effect to occur when hovering over the images associated with each category.', 'wc-category-showcase' ); ?></p>
+		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Enable the zoom effect to occur when hovering over the images associated with each category. This won\'t applicable for the Grid/Overly layout only.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-items-center">
 		<label class="tw-inline-flex tw-cursor-pointer">
