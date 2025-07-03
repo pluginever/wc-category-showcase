@@ -415,6 +415,9 @@
 }
 
 //Pagination styles.
+
+
+
 .wcc-showcase__pagination {
 	display: flex;
 	align-items: center;
@@ -443,17 +446,4 @@
 			transform: none;
 		}
 	}
-	.is--pagination-only-dashes &{
-		.is-active{
-			border-radius: 10px;
-			width: 60px !important;
-			transform: none;
-		}
-		.splide__pagination__page{
-			border-radius: 10px;
-			width: 24px;
-		}
-	}
 }
-
-
