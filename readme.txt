@@ -4,7 +4,7 @@ Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerc
 Requires at least: 5.2
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,6 +133,10 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Example showcase
 
 == Changelog ==
+= 2.2.2 (3rd July 2025) =
+* Fix - Resolved few known issues.
+* Compatibility - Compatible with the latest version of WordPress and WooCommerce.
+
 = 2.2.1 (19th May 2025) =
 * Fix - Image not zooming on hover.
 * Security - Fixed security issues.
