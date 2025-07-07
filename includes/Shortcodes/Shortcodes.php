@@ -319,10 +319,10 @@ class Shortcodes {
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner p, .wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
 				color: {$card_text_hover_color};
 			}
-			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item p{
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item p{
 				color: {$card_text_color};
 			}
-			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover a, .wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover p{
+			.wcc-showcase-{$wccs_id} .wcc-showcase-slide-item:hover p{
 				color: {$card_text_hover_color};
 			}
 			.wccs-showcase-id__{$wccs_id} .wccs-entry__content-inner a {
@@ -362,6 +362,7 @@ class Shortcodes {
 			.is-layout__slider .wcc-showcase-{$wccs_id} .splide__track{
 				height: {$showcase['slider_height']}px !important;
 			}
+			.wcc-showcase-{$wccs_id} .splide__pagination__page.is-active,
 			.wcc-showcase-{$wccs_id} .splide__pagination__page:hover{
 				background-color: {$counter_hover_bg};
 				color: {$counter_hover_text};

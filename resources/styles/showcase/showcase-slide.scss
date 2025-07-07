@@ -144,6 +144,29 @@
 		}
 	}
 
+	// Pagination style.
+	.is--pagination-only-dashes{
+		.splide__pagination{
+			&__page{
+				width: 30px;
+				border-radius: 10px;
+				&.is-active{
+					margin: 0 8px;
+				}
+			}
+		}
+	}
+	.is--pagination-dash-with-dots{
+		.splide__pagination{
+			&__page{
+				&.is-active{
+					width: 30px;
+					border-radius: 10px;
+					margin: 0 8px;
+				}
+			}
+		}
+	}
 }
 
 // If slider has additional categories.
