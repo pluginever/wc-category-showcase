@@ -133,7 +133,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Example showcase
 
 == Changelog ==
-= 2.2.3 (4th July 2025) =
+= 2.2.3 (7th July 2025) =
 * Fix - Resolved slider pagination style issues.
 * Fix - Resolved slider button style issues.
 
