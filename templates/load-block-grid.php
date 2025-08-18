@@ -16,8 +16,19 @@
 
 $has_image    = 'yes' === $showcase['show_category_image'] && ! empty( $category['image_url'] ) ? 'has-image' : 'has-no-image';
 $is_img_hover = 'yes' === $showcase['image_zoom_on_hover'] ? 'is-image-zoom-on-hover' : '';
+
+$category_needs_anchor = true;
+if ( 'yes' === $showcase['show_category_title'] || 'yes' === $showcase['show_category_product_quantity'] || 'yes' === wccs_get_showcase_data( $showcase, 'includes_sub_categories' ) || 'yes' === wccs_get_showcase_data( $showcase, 'show_button' ) ) {
+	$category_needs_anchor = false;
+}
 ?>
+
+<?php if ( 'grid' === $layout && $category_needs_anchor ) : ?>
+<a class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> <?php echo sanitize_html_class( $is_img_hover ); ?>" href="<?php echo esc_url( $category['cat_link'] ); ?>" <?php if ( 'yes' === $showcase['show_category_image'] ) : ?> <?php printf( 'style="background-image: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
+<?php else : ?>
 <div class="wccs-category wccs-showcase-id__<?php echo sanitize_html_class( $wccs_id ); ?> wccs-content__<?php echo sanitize_html_class( $content_placement ); ?> <?php echo sanitize_html_class( $is_img_hover ); ?>" <?php if ( 'grid' === $layout && 'yes' === $showcase['show_category_image'] ) : ?> <?php printf( 'style="background-image: url(%s)"', esc_url( $category['image_url'] ) ); ?> <?php endif; ?>>
+<?php endif; ?>
+
 	<?php if ( ! empty( $category['label_text'] ) ) { ?>
 		<div class="wcc-showcase-ribbon wcc-showcase-ribbon-<?php echo esc_attr( $category['label_color'] ); ?> wcc-showcase-ribbon-<?php echo esc_attr( $ribbon_placement ); ?>">
 			<?php echo esc_attr( $category['label_text'] ); ?>
@@ -77,5 +88,9 @@ $is_img_hover = 'yes' === $showcase['image_zoom_on_hover'] ? 'is-image-zoom-on-h
 			<?php } ?>
 		</div>
 	</div>
-</div>
 
+<?php if ( 'grid' === $layout && $category_needs_anchor ) : ?>
+	</a>
+<?php else : ?>
+</div>
+<?php endif; ?>
