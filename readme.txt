@@ -1,23 +1,21 @@
 === Product Category Showcase for WooCommerce ===
 Contributors: pluginever
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
-Requires at least: 5.2
 Tested up to: 6.8
-Requires PHP: 7.4
-Stable tag: 2.2.4
+Stable tag: 2.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Showcase WooCommerce product categories in beautiful sliders, grids, or blocks. Highlight featured categories with full styling control, responsive layouts, and shortcode support.
+Showcase WooCommerce product categories in sliders, grids, or blocks with styling control, responsive layouts, and shortcode support
 
 == Description ==
 
-WooCommerce Category Showcase helps you transform boring category lists into engaging sliders, grids, and blocks that actually drive clicks.
+Product Category Showcase for WooCommerce is a powerful plugin that allows you to display your product categories in a beautiful and engaging way. Whether you run a fashion store, electronics shop, or any other type of online business, this plugin helps you highlight your categories to boost sales and improve user experience.
 
 ### Video Demo
 http://www.youtube.com/watch?v=TFjWdEETbAs
 
->[**Live Demo**](https://demo.pluginever.com/category-showcase/) |  [**Upgarde to PRO**](https://pluginever.com/plugins/woocommerce-category-showcase-pro/)  |  [**Support**](https://www.pluginever.com/support/)  |  [**Plugin Documentation**](https://www.pluginever.com/docs/woocommerce-category-showcase/)
+>[**Live Demo**](https://demo.pluginever.com/category-showcase/) |  [**Upgarde to PRO**](https://pluginever.com/plugins/woocommerce-category-showcase-pro/)  |  [**Support**](https://pluginever.com/support/)  |  [**Plugin Documentation**](https://pluginever.com/docs/woocommerce-category-showcase/)
 
 Instead of hiding product categories in a dropdown or sidebar, this plugin puts them front and center with a stylish display that’s easy to customize and fully responsive.
 
@@ -82,6 +80,12 @@ This may have bugs and a lack of many features. If you want to contribute to thi
 2. Navigate to Plugins → Add New.
 3. Search **WooCommerce Category Showcase**.
 4. Click install and activate, respectively.
+5. After activation, you will see a new menu item called **WC Showcases** in your admin panel.
+6. Click on **WC Showcases → Add New** to create a new showcase.
+7. Choose a layout (Slider, Block, or Grid).
+8. Select the categories you want to display.
+9. Customize the settings as per your requirements.
+10. Click Publish to save your showcase.
 
 ### Manual Installation From WordPress Dashboard
 
@@ -90,6 +94,8 @@ If your server is not connected to the Internet, then you can use this method:
 1. Download the plugin by clicking on the Download button above. A ZIP file will be downloaded.
 2. Login to your site's admin panel and navigate to Plugins → Add New → Upload Plugin.
 3. Click Choose File, select the plugin file, and click Install.
+4. After installation, click Activate Plugin.
+5. Cheers! You have successfully installed the plugin.
 
 ### Install Using FTP
 
@@ -105,15 +111,31 @@ If you are unable to use any of the methods due to internet connectivity and fil
 
 == Frequently Asked Questions ==
 = How do I display product categories in a slider? =
-Create a new showcase → choose Slider layout → select categories → publish. Then insert the shortcode [wccs_showcase id="123"] into any page.
+Create a new showcase, choose the desired layout (Slider, Block, or Grid), select the categories you want to display, and publish it. Then insert the generated shortcode [wccs_showcase id="123"] into any page or post where you want the showcase to appear.
+
 = My showcase isn’t showing categories. What should I check? =
-Make sure your categories have images, confirm showcase settings, clear cache, and verify shortcode placement.
+Ensure you have selected categories in the showcase settings. If you’re using the free version, make sure you have at least one category with products. Also, check that your theme supports WooCommerce and that the plugin is activated.
+
 = Can I customize the grid or block layouts? =
-Yes. Adjust column counts, toggle subcategories, hide empty categories, and change card styling.
+Yes, you can customize the grid and block layouts by adjusting the settings in the showcase editor. You can change colors, spacing, border radius, and toggle visibility for images, titles, descriptions, and product counts.
+
 = Does it work with Elementor and Gutenberg? =
-Absolutely. Use the shortcode block in Gutenberg or the shortcode/HTML widget in Elementor.
+Absolutely. Use the shortcode block in Gutenberg or the shortcode widget in Elementor to insert your category showcases anywhere on your site. The plugin is designed to be compatible with all major page builders.
+
 = What’s the difference between free and pro? =
 The free version includes basic layouts and styling. Pro adds advanced templates, ticker carousels, Google Fonts, button customization, and premium support.
+
+= How do I get support? =
+For support, please visit our [Support Forum](https://pluginever.com/support/) or [Contact Us](https://pluginever.com/contact/). We’re here to help with any issues you encounter.
+
+= Is there a live demo? =
+Yes, you can view a live demo of the plugin [here](https://demo.pluginever.com/category-showcase/). This will give you a good idea of how the showcases look and function.
+
+= Can I use this plugin with any WooCommerce theme? =
+Yes, the Product Category Showcase for WooCommerce is designed to be compatible with most WooCommerce themes. However, some themes may have specific styles that could affect the appearance of the showcases. We recommend testing it with your theme to ensure everything looks as expected.
+
+= How do I upgrade to the Pro version? =
+You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://pluginever.com/plugins/woocommerce-category-showcase-pro/) and purchasing a license. After purchase, you will receive a download link and license key. Install the Pro version by uploading it to your WordPress site, and then enter the license key in the plugin settings to unlock all premium features.
 
 == Screenshots ==
 1. WooCommerce category showcase
