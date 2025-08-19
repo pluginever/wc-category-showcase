@@ -6,123 +6,136 @@ Stable tag: 2.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Enhance your WooCommerce store with Product Category Showcase! Engage visitors with a sleek slider, making category browsing effortless.
+Showcase WooCommerce product categories in sliders, grids, or blocks with styling control, responsive layouts, and shortcode support
 
-== VIDEO DEMO ==
+== Description ==
+
+Product Category Showcase for WooCommerce is a powerful plugin that allows you to display your product categories in a beautiful and engaging way. Whether you run a fashion store, electronics shop, or any other type of online business, this plugin helps you highlight your categories to boost sales and improve user experience.
+
+### Video Demo
 http://www.youtube.com/watch?v=TFjWdEETbAs
 
->[DEMO](https://demo.pluginever.com/category-showcase/) |  [Get The PRO Version](https://pluginever.com/plugins/woocommerce-category-showcase-pro/)  |  [Support](https://www.pluginever.com/support/)  |  [Documentation ](https://www.pluginever.com/docs/woocommerce-category-showcase/)
+>[**Live Demo**](https://demo.pluginever.com/category-showcase/) |  [**Upgarde to PRO**](https://pluginever.com/plugins/woocommerce-category-showcase-pro/)  |  [**Support**](https://pluginever.com/support/)  |  [**Plugin Documentation**](https://pluginever.com/docs/woocommerce-category-showcase/)
 
-==WHY WOULD YOU NEED WOOCOMMERCE CATEGORY SHOWCASE ==
-When you can display your products and their categories in a proper way to your customers, it attracts them the most. This means you are effectively showing your product categories in a professional looking slider and blocks. Thus, your users loves how they look and also understands what you are offering at a glance. This makes your WooCommerce store popular and you can sell more quickly.
+Instead of hiding product categories in a dropdown or sidebar, this plugin puts them front and center with a stylish display that’s easy to customize and fully responsive.
 
-==HOW WOOCOMMERCE CATEGORY SHOWCASE HELPS==
-Using this awesome plugin, you can manage which WooCommerce product categories you want to show. It has the options to all product categories or any specifically selected ones.
+### Perfect for:
+* Clothing boutiques with seasonal collections.
+* Gourmet food stores with multiple departments.
+* Digital download shops with different file types.
 
-The plugin will show the selected categories exactly in the order that you have chosen for your WooCommerce Category Slider.
+With this plugin, you can create eye-catching category showcases without writing code. Simply choose a layout (Slider, Block, or Grid), pick your categories, and drop the generated shortcode anywhere on your site.
 
-The Woo Category Slider has a built-in and also very easy to use shortcode builder. There is no coding involved and you can add WooCommerce Category Slider with memorising anything at using, just using simple shortcodes.
+### Key benefits:
+* Encourage browsing with modern category displays.
+* Highlight featured or high-margin categories to increase sales.
+* Provide a seamless shopping experience across desktop and mobile.
+* Save time with a simple, shortcode-based setup.
 
-Showing WooCommerce product categories in a slider help your visitors to find the category they are looking for without struggling and looking all over the WooCommerce store.This effectively expands your sells.
+### 🎯 Free Features
+* **Multi-Layout Displays** – Choose Slider, Block, or Grid layouts for flexible presentation.
+* **Featured & Additional Categories** – Highlight main categories and add up to 6 supporting ones.
+* **Unlimited Slider Categories** – Add as many categories as you want to your carousel.
+* **Responsive & Mobile Friendly** – Works beautifully across all devices.
+* **Shortcode Support** – Insert showcases anywhere using [wccs_showcase id="123"].
+* **Category Filtering & Sorting** – Display all or selected categories, sort by name/date/ID.
+* **Customizable Card Styling** – Adjust colors, spacing, border radius, and content placement.
+* **Content Toggles** – Show or hide category images, titles, descriptions, and product counts.
+* **Image & Icon Settings** – Use rectangle, rounded, or circle images with hover effects.
+* **Theme Compatibility** – Works with most WooCommerce themes without extra setup.
 
-You can select either all WooCommerce categories or any custom selected categories to appear in the WooCommerce category slider.
-WooCommerce category slider supports the selection of any categories as well as subcategories and to order those in all possible ways.
+### 🚀 Pro Features
+* **Advanced Layout Templates** – More styling options for sliders, grids, and blocks.
+* **Ticker & Autoplay Options** – Create news-style scrolling carousels with speed controls.
+* **Google Fonts & Typography** – Full font customization for headings and category titles.
+* **Customizable Buttons & Hover Effects** – Add “Shop Now” buttons with custom styles.
+* **Unlimited Category Sliders** – Create multiple showcases across different pages.
+* **Priority Support & Updates** – Premium assistance and regular feature updates.
 
-Woo Category slider has a built-in very easy to use and user-friendly shortcode builder. So, You donâ€™t need to memorize anything.
+### 🛠️ How It Works
+* **Install & Activate** – Find “Product Category Showcase for WooCommerce” in your dashboard or upload manually.
+* **Create a Showcase** – Go to WC Showcases → Add New, choose a layout (Slider, Block, Grid).
+* **Select Categories** – Pick featured categories or let the plugin pull all automatically.
+* **Customize Styling** – Control colors, hover effects, product counts, fonts, and more.
+* **Insert Shortcode** – After hitting Publish, copy the generated shortcode and paste it into any page or post.
+* **Test & Iterate** – Adjust layouts and settings until your showcase looks perfect.
+* **No coding required** – everything is managed inside your WordPress dashboard.
 
-WooCommerce Category Showcase supports two types of category selections.
-
-* Featured Categories &
-* Additional Categories
-
-Featured categories will be shown inside a nice and fancy slider with category name & description where additional categories will be in a nice six blocks with
-categories names & description.
-
-WooCommerce Category Showcase has two parts one is WooCommerce category slider and another part is WooCommerce category blocks. WooCommerce category slider is used for showing featured categories on the left side of the showcase in a nice box. WooCommerce category blocks support additional categories, you can add maximum 6 blocks as additional categories. Where WooCommerce category slider part supports a unlimited number of categories.
-
-WooCommerce Category Showcase has built-in shortcode builder with a nice easy interface where you can add and remove your selected category from a drop-down menu.
-
-###Shortocode
-`[wccs_showcase id="showcase id"]`
-
-### Plugin Features
-* WooCommerce Category Slider
-* Product Subcategory Slider
-* Responsive Slider
-* Slider Autoplay
-* Interactive Hover Animation
-* Show Category Name
-* Show Category Description
-* Category Title
-* Block Title
-* Light Weight
-* Fast Loading
-* Responsive
-
-### PRO Features
-* Custom image column size
-* Custom image
-* Custom title
-* Custom title color
-* Custom content background color
-* Custom button text
-* Show/Hide button
-* Show/Hide description
-* Show/Hide category name
-* And Many More
+### 💡 Use Cases
+* **Fashion Boutique** – Showcase seasonal collections in an autoplay slider.
+* **Electronics Marketplace** – Organize dozens of departments with a clean grid layout.
+* **Lifestyle Blogger** – Add a block-style showcase for a small shop section.
+* **Wholesale Supplier** – Display product quantities and encourage quick ordering.
 
 ### You may also like our other plugins
->[Woo Category Slider By PluginEver](https://wordpress.org/plugins/woo-category-slider-by-pluginever/)  |
+>[Product Category Slider for WooCommerce](https://wordpress.org/plugins/woo-category-slider-by-pluginever/) | [Product Variation Swatches for WooCommerce](https://wordpress.org/plugins/wc-variation-swatches/) | [WC Min Max Quantities](https://wordpress.org/plugins/wc-min-max-quantities/) 
 
-= Contribute =
-This may have bugs and lack of many features. If you want to contribute on this project, you are more than welcome. For reporting any bugs or feature request open issue on [Github](https://github.com/pluginever/wc-category-showcase).
+### Contribute
+This may have bugs and a lack of many features. If you want to contribute to this project, you are more than welcome. For reporting any bugs or feature requests, open an issue on [Github](https://github.com/pluginever/wc-category-showcase).
 
 == Installation ==
-###Automatic Installation From WordPress Dashboard
+### Automatic Installation From WordPress Dashboard
 
-1. Login to your admin panel
-2. Navigate to Plugins -> Add New
-3. Search **WooCommerce Category Showcase**
-4. Click install and activate respectively.
+1. Login to your admin panel.
+2. Navigate to Plugins → Add New.
+3. Search **WooCommerce Category Showcase**.
+4. Click install and activate, respectively.
+5. After activation, you will see a new menu item called **WC Showcases** in your admin panel.
+6. Click on **WC Showcases → Add New** to create a new showcase.
+7. Choose a layout (Slider, Block, or Grid).
+8. Select the categories you want to display.
+9. Customize the settings as per your requirements.
+10. Click Publish to save your showcase.
 
-###Manual Installation From WordPress Dashboard
+### Manual Installation From WordPress Dashboard
 
-If your server is not connected to the Internet, then you can use this method-
+If your server is not connected to the Internet, then you can use this method:
 
-1. Download the plugin by clicking on the red button above. A ZIP file will be downloaded.
-2. Login to your siteâ€™s admin panel and navigate to Plugins -> Add New -> Upload.
-3. Click choose file, select the plugin file and click install
+1. Download the plugin by clicking on the Download button above. A ZIP file will be downloaded.
+2. Login to your site's admin panel and navigate to Plugins → Add New → Upload Plugin.
+3. Click Choose File, select the plugin file, and click Install.
+4. After installation, click Activate Plugin.
+5. Cheers! You have successfully installed the plugin.
 
-###Install Using FTP
+### Install Using FTP
 
-If you are unable to use any of the methods due to internet connectivity and file permission issues, then you can use this method-
+If you are unable to use any of the methods due to internet connectivity and file permission issues, then you can use this method:
 
-1. Download the plugin by clicking on the red button above.A ZIP file will be downloaded.
+1. Download the plugin by clicking on the Download button above. A ZIP file will be downloaded.
 2. Unzip the file.
-3. Launch your favorite FTP client. Such as FileZilla, FireFTP, CyberDuck etc. If you are a more advanced user, then you can use SSH too.
+3. Launch your favorite FTP client, such as FileZilla, FireFTP, CyberDuck, etc. If you are a more advanced user, then you can use SSH too.
 4. Upload the folder to wp-content/plugins/
 5. Log in to your WordPress dashboard.
-6. Navigate to Plugins -> Installed
-7. Activate the plugin
+6. Navigate to Plugins → Installed.
+7. Activate the plugin.
 
 == Frequently Asked Questions ==
+= How do I display product categories in a slider? =
+Create a new showcase, choose the desired layout (Slider, Block, or Grid), select the categories you want to display, and publish it. Then insert the generated shortcode [wccs_showcase id="123"] into any page or post where you want the showcase to appear.
 
-= How to create a WooCommerce category showcase =
-To create a WooCommerce category showcase from the admin panel, select 'WC Showcase' menu from left side click on new. Then put a title select featured categories and additional categories from the drop down. Save the post.
-There will be visible a shortcode on the right side. Copy that and place anywhere on the site you want.
+= My showcase isn’t showing categories. What should I check? =
+Ensure you have selected categories in the showcase settings. If you’re using the free version, make sure you have at least one category with products. Also, check that your theme supports WooCommerce and that the plugin is activated.
 
-= How to hide the WooCommerce category showcase title? =
-To disable showing title set to No from Show Title drop down from the showcase builder panel.
+= Can I customize the grid or block layouts? =
+Yes, you can customize the grid and block layouts by adjusting the settings in the showcase editor. You can change colors, spacing, border radius, and toggle visibility for images, titles, descriptions, and product counts.
 
-= How many featured category can be added =
-You can add an unlimited number of featured categories.
+= Does it work with Elementor and Gutenberg? =
+Absolutely. Use the shortcode block in Gutenberg or the shortcode widget in Elementor to insert your category showcases anywhere on your site. The plugin is designed to be compatible with all major page builders.
 
-= How many additional categories can be added =
-You can add maximum 6 categories as additional categories.
+= What’s the difference between free and pro? =
+The free version includes basic layouts and styling. Pro adds advanced templates, ticker carousels, Google Fonts, button customization, and premium support.
 
-= How to use WooCommerce Category Showcase in the template file =
-Place the snippet where you want. Change the id with the appropriate one.
-`<?php echo do_shortcode('[wccs_showcase id="showcase_id"]'); ?>`
+= How do I get support? =
+For support, please visit our [Support Forum](https://pluginever.com/support/) or [Contact Us](https://pluginever.com/contact/). We’re here to help with any issues you encounter.
+
+= Is there a live demo? =
+Yes, you can view a live demo of the plugin [here](https://demo.pluginever.com/category-showcase/). This will give you a good idea of how the showcases look and function.
+
+= Can I use this plugin with any WooCommerce theme? =
+Yes, the Product Category Showcase for WooCommerce is designed to be compatible with most WooCommerce themes. However, some themes may have specific styles that could affect the appearance of the showcases. We recommend testing it with your theme to ensure everything looks as expected.
+
+= How do I upgrade to the Pro version? =
+You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://pluginever.com/plugins/woocommerce-category-showcase-pro/) and purchasing a license. After purchase, you will receive a download link and license key. Install the Pro version by uploading it to your WordPress site, and then enter the license key in the plugin settings to unlock all premium features.
 
 == Screenshots ==
 1. WooCommerce category showcase
@@ -131,9 +144,6 @@ Place the snippet where you want. Change the id with the appropriate one.
 4. Example showcase
 
 == Changelog ==
-= 2.2.4 (31st July 2025) =
-* Compatibility - Compatible with the latest version of WordPress and WooCommerce.
-
 = 2.2.3 (7th July 2025) =
 * Fix - Resolved slider pagination style issues.
 * Fix - Resolved slider button style issues.
@@ -146,7 +156,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 * Fix - Image not zooming on hover.
 * Security - Fixed security issues.
 
-= 2.2.0 (24 April 2025) =
+= 2.2.0 (24th April 2025) =
 * New - Rebuilt the plugin with new features and look.
 * Enhanced - Improved the performance of the plugin.
 * Compatibility - Compatible with the latest version of WordPress and WooCommerce.
@@ -235,7 +245,7 @@ Place the snippet where you want. Change the id with the appropriate one.
 * WP compatibility with 5.1.1
 
 = 1.0.7 =
-* Remove Accidentally added debug code
+* Remove accidentally added debug code
 
 = 1.0.6 =
 * Image height fix
@@ -248,16 +258,16 @@ Place the snippet where you want. Change the id with the appropriate one.
 = 1.0.4 =
 * Bootstrap compatible
 * Category description height fix
-* Placeholder image add
+* Placeholder image added
 
 = 1.0.3 =
 * WooCommerce compatibility fix
 * Improved UI
-* Fix Loading issue
+* Fix the Loading issue
 * Fix height issue
 
 = 1.0.1 =
-* Fix dynamic image and description
+* Fix the dynamic image and description
 * Feature Default category image
 
 = 1.0.0 =
@@ -265,4 +275,4 @@ Place the snippet where you want. Change the id with the appropriate one.
 
 == Upgrade Notice ==
 = 2.0.0 =
-Re-built the plugin with new features and look so that you can use it with the latest version of WordPress and WooCommerce. Please update to the latest version and enjoy the new features. This is a major update and we recommend you to backup your site before updating.
+Re-built the plugin with new features and a new look so that you can use it with the latest version of WordPress and WooCommerce. Please update to the latest version and enjoy the new features. This is a major update and we recommend that you back up your site before updating.
