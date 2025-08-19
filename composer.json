@@ -3,7 +3,7 @@
   "description": "WooCommerce extension to showcase categories in various styles and layouts like sliders, blocks, and grids.",
   "homepage": "https://pluginever.com/plugins/woocommerce-category-showcase-pro/",
   "type": "wordpress-plugin",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL v2 or later",
   "prefer-stable": true,
   "minimum-stability": "dev",
   "require": {
@@ -13,9 +13,9 @@
   "require-dev": {
     "byteever/byteever-sniffs": "^1.1"
   },
-  "autoload" : {
-    "psr-4" : {
-      "WooCommerceCategoryShowcase\\": ["includes/"]
+  "autoload": {
+    "psr-4": {
+      "WooCommerceCategoryShowcase\\": "includes/"
     }
   },
   "autoload-dev": {},
@@ -23,14 +23,13 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "allow-plugins": {
-      "composer/*": true,
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "repositories": [
     {
-      "url": "git@github.com:byteever/bytekit-plugin.git",
-      "type": "github"
+      "type": "github",
+      "url": "git@github.com:byteever/bytekit-plugin.git"
     }
   ],
   "scripts": {
@@ -39,15 +38,15 @@
     "phpcs": "@php ./vendor/bin/phpcs --standard=phpcs.xml -s -v",
     "phpcbf": "@php ./vendor/bin/phpcbf --standard=phpcs.xml -v",
     "strauss": [
-      "test -d ./bin || mkdir bin",
-      "test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar",
-      "@php bin/strauss.phar"
+      "test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/download/0.21.1/strauss.phar",
+      "@php bin/strauss.phar",
+      "@composer dump-autoload"
     ]
   },
   "extra": {
     "strauss": {
       "target_directory": "vendor-prefixed",
-      "classmap_prefix": "WooCommerceCategoryShowcase_",
+      "classmap_prefix": "WooCommerceCategoryShowcase__",
       "namespace_prefix": "WooCommerceCategoryShowcase",
       "delete_vendor_packages": true,
       "delete_vendor_files": true,
