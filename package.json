@@ -4,11 +4,6 @@
   "description": "WooCommerce extension to showcase categories in various styles and layouts like sliders, blocks, and grids.",
   "version": "2.2.4",
   "homepage": "https://pluginever.com/plugins/woocommerce-category-showcase-pro/",
-  "author": {
-    "name": "PluginEver",
-    "email": "support@pluginever.com",
-    "url": "https://pluginever.com"
-  },
   "scripts": {
     "build": "wp-scripts build --webpack-src-dir=resources && grunt build",
     "check-engines": "wp-scripts check-engines",
