@@ -126,7 +126,7 @@ Absolutely. Use the shortcode block in Gutenberg or the shortcode widget in Elem
 The free version includes basic layouts and styling. Pro adds advanced templates, ticker carousels, Google Fonts, button customization, and premium support.
 
 = How do I get support? =
-For support, please visit our [Support Forum](https://pluginever.com/support/) or [Contact Us](https://pluginever.com/contact/). We’re here to help with any issues you encounter.
+For support, please visit our [Support Forum](https://pluginever.com/support/) or [Contact Us](https://pluginever.com/contact-us/). We’re here to help with any issues you encounter.
 
 = Is there a live demo? =
 Yes, you can view a live demo of the plugin [here](https://demo.pluginever.com/category-showcase/). This will give you a good idea of how the showcases look and function.
