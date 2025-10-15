@@ -2,7 +2,7 @@
   "name": "wc-category-showcase",
   "title": "WooCommerce Category Showcase",
   "description": "WooCommerce extension to showcase categories in various styles and layouts like sliders, blocks, and grids.",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "homepage": "https://pluginever.com/plugins/woocommerce-category-showcase-pro/",
   "scripts": {
     "build": "wp-scripts build --webpack-src-dir=resources && grunt build",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@lodder/time-grunt": "^4.0.0",
-    "@wordpress/scripts": "^30.21.0",
+    "@wordpress/scripts": "^30.25.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
     "grunt": "^1.6.1",
