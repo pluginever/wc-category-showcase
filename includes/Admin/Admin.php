@@ -69,16 +69,16 @@ class Admin {
 		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
 
 		// Halloween styles.
-		wc_category_showcase()->scripts->enqueue_style( 'wcc_halloween', '/styles/halloween.css' );
+		wc_category_showcase()->scripts->enqueue_style( 'wccs_halloween', '/styles/halloween.css' );
 
 		if ( in_array( $hook, Utilities::get_screen_ids(), true ) || $showcase_id || $showcase_add ) {
 			// Register styles.
-			wc_category_showcase()->scripts->register_style( 'wcc_tailwind', '/styles/tailwind.css' );
+			wc_category_showcase()->scripts->register_style( 'wccs_tailwind', '/styles/tailwind.css' );
 
 			wp_enqueue_style( 'bytekit-components' );
 			wp_enqueue_style( 'bytekit-layout' );
 			// Early core enqueue.
-			wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/styles/admin.css', array( 'wcc_tailwind' ) );
+			wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/styles/admin.css', array( 'wccs_tailwind' ) );
 			wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/scripts/admin.js', array( 'wp-color-picker' ), true );
 			wp_enqueue_media();
 			wp_localize_script(
