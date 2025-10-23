@@ -112,7 +112,7 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 */
 	public function plugin_action_links( $links ) {
 		if ( ! defined( 'WCCS_PRO_VERSION' ) ) {
-			$links[] = '<a href="https://pluginever.com/plugins/woocommerce-category-showcase-pro/?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=go-pro" target="_blank" style="color: orangered;">' . esc_html__( 'Go Pro', 'wc-category-showcase' ) . '</a>';
+			$links[] = '<a href="' . esc_url( trailingslashit( wc_category_showcase()->plugin_uri ) . '?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=go-pro' ) . '" target="_blank" style="color: orangered;">' . esc_html__( 'Go Pro', 'wc-category-showcase' ) . '</a>';
 		}
 
 		return $links;

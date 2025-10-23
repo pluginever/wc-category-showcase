@@ -10,6 +10,7 @@ module.exports = {
 		'styles/admin': './resources/styles/admin.scss',
 		'styles/tailwind': './resources/styles/tailwind.scss',
 		'styles/frontend': './resources/styles/frontend.scss',
+		'styles/halloween': './resources/styles/halloween.scss',
 		'scripts/admin': './resources/scripts/admin.js',
 		'scripts/frontend': './resources/scripts/frontend.js',
 	},
