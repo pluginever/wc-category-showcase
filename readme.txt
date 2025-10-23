@@ -144,7 +144,7 @@ You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://plu
 4. Example showcase
 
 == Changelog ==
-= 2.2.6 (22nd October 2025) =
+= 2.2.6 (23rd October 2025) =
 * Enhance: Update the plugin notices.
 * Compatibility - Compatible with the latest version of WordPress and WooCommerce.
 
