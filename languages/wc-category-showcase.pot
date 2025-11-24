@@ -337,8 +337,7 @@ msgstr ""
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: includes/Admin/views/list-category-showcase.php:19
-#: includes/Admin/views/showcase/showcase-settings.php:589
+#. Plugin Name of the plugin/theme
 msgid "Category Showcase"
 msgstr ""
 
@@ -1634,10 +1633,6 @@ msgstr ""
 
 #: vendor-prefixed/byteever/bytekit-plugin/src/Traits/HasPlugin.php:255
 msgid "Settings"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "WC Category Showcase"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

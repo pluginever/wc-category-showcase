@@ -1,5 +1,5 @@
 /**
- * WC Category Showcase
+ * Category Showcase
  * https://www.pluginever.com
  *
  * Copyright (c) 2018 pluginever
