@@ -1,6 +1,6 @@
 /**
- * WC Category Showcase
- * https://www.pluginever.com
+ * Category Showcase
+ * https://pluginever.com
  *
  * Copyright (c) 2018-2025 PluginEver
  * Licensed under the GPLv2+ license.
