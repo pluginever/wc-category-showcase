@@ -1,8 +1,8 @@
 /**
  * Category Showcase
- * https://www.pluginever.com
+ * https://pluginever.com
  *
- * Copyright (c) 2018 pluginever
+ * Copyright (c) 2025 pluginever
  * Licensed under the GPLv2+ license.
  */
 

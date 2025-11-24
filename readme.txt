@@ -147,6 +147,7 @@ You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://plu
 = 2.2.7 (24th November 2025) =
 * Enhance: Improved readme content clarity and removed promotional language per guidelines.
 * Enhance: Update the plugin notices.
+* Compatibility - Checked compatibility with the latest version of WordPress and WooCommerce (v10.3).
 
 = 2.2.6 (23rd October 2025) =
 * Enhance: Update the plugin notices.
