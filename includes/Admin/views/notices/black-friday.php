@@ -2,7 +2,7 @@
 /**
  * Admin notice for black friday promo.
  *
- * @since 2.1.3
+ * @since 2.2.7
  * @package WooCommerceCategoryShowcase\Admin\Views\Notices
  * @return void
  */
@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <div class="notice-body">
 	<div class="notice-icon">
-		<img src="<?php echo esc_attr( wc_category_showcase()->get_assets_url( 'images/black-friday-icon.png' ) ); ?>" alt="Category Showcase Black Friday Promo" />
+		<img src="<?php echo esc_attr( wc_category_showcase()->get_assets_url( 'images/black-friday-icon.png' ) ); ?>" alt="Product Category Showcase Black Friday Promo" />
 	</div>
 	<div class="notice-content">
 		<h3>

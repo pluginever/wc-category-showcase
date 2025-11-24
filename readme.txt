@@ -144,7 +144,7 @@ You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://plu
 4. Example showcase
 
 == Changelog ==
- 2.2.7 (24th November 2025) =
+= 2.2.7 (24th November 2025) =
 * Enhance: Improved readme content clarity and removed promotional language per guidelines.
 * Enhance: Update the plugin notices.
 

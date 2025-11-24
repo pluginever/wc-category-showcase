@@ -68,8 +68,8 @@ class Admin {
 		$showcase_add = isset( $_GET['add'] ) ? true : false;
 		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
 
-		// Black Friday styles.
-		wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-black-friday', '/styles/black-friday.css' );
+		// TODO: Remove this Black Friday style after the offer is over.
+		wc_category_showcase()->scripts->enqueue_style( 'wccs-black-friday', '/styles/black-friday.css' );
 
 		if ( in_array( $hook, Utilities::get_screen_ids(), true ) || $showcase_id || $showcase_add ) {
 			// Register styles.
