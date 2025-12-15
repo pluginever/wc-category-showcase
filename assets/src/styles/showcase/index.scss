@@ -1,11 +1,9 @@
-//@import "~@splidejs/splide/dist/css/splide.min.css";
-@import "showcase-common";
-@import "showcase-block";
-@import "showcase-grid";
-@import "showcase-slide";
+@forward "showcase-common";
+@forward "showcase-block";
+@forward "showcase-grid";
+@forward "showcase-slide";
 
 .wcc-showcase-slider{
-	//margin-bottom: 1.5rem;
 	button:focus{
 		outline: none;
 	}

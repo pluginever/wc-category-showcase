@@ -166,11 +166,13 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 	 * @retun void
 	 */
 	public function register_scripts() {
-		$this->scripts->register_style( 'wcc-showcase-splide', '/styles/splide.min.css' );
-		$this->scripts->register_style( 'wcc-showcase-showcase', '/styles/frontend.css', array( 'wcc-showcase-splide' ) );
-		$this->scripts->register_script( 'wcc-showcase-splide', '/scripts/splide.js' );
-		$this->scripts->register_script( 'wcc-showcase-splide-grid', '/scripts/splide-extension-grid.js' );
-		$this->scripts->register_script( 'wcc-showcase-splide-auto-scroll', '/scripts/splide-extension-auto-scroll.js' );
-		$this->scripts->register_script( 'wcc-showcase-showcase', '/scripts/frontend.js', array( 'jquery', 'wcc-showcase-splide', 'wcc-showcase-splide-grid', 'wcc-showcase-splide-auto-scroll' ), true );
+		$this->scripts->register_style( 'wcc-showcase-fontawesome-icons', '/fonts/fontawesome/fontawesome-icons.css' );
+		$this->scripts->register_style( 'wcc-showcase-happy-icons', '/fonts/happy-icons/happy-icons.css' );
+		$this->scripts->register_style( 'wcc-showcase-vendor', '/styles/vendor.css' );
+		$this->scripts->register_script( 'wcc-showcase-vendor', '/scripts/vendor.js', array( 'jquery' ), true );
+
+		// Common styles and scripts.
+		$this->scripts->register_style( 'wcc-showcase-showcase', '/styles/frontend.css', array( 'wcc-showcase-vendor', 'wcc-showcase-fontawesome-icons', 'wcc-showcase-happy-icons' ) );
+		$this->scripts->register_script( 'wcc-showcase-showcase', '/scripts/frontend.js', array( 'jquery', 'wcc-showcase-vendor' ), true );
 	}
 }
