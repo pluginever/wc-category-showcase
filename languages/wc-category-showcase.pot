@@ -1,0 +1,40 @@
+# Copyright (C) 2026 PluginEver
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Category Showcase 2.2.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-category-showcase\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T11:14:58+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: starter-plugin\n"
+
+#. Plugin Name of the plugin
+#: wc-category-showcase.php
+msgid "Category Showcase"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wc-category-showcase.php
+msgid "https://pluginever.com/plugins/woocommerce-category-showcase-pro/"
+msgstr ""
+
+#. Description of the plugin
+#: wc-category-showcase.php
+msgid "WooCommerce extension to showcase categories in various styles and layouts like sliders, blocks, and grids."
+msgstr ""
+
+#. Author of the plugin
+#: wc-category-showcase.php
+msgid "PluginEver"
+msgstr ""
+
+#. Author URI of the plugin
+#: wc-category-showcase.php
+msgid "https://pluginever.com"
+msgstr ""
