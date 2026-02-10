@@ -14,7 +14,7 @@
  * Domain Path:          /languages
  * Tested up to:         6.9
  * WC requires at least: 3.0.0
- * WC tested up to:      10.4
+ * WC tested up to:      10.5
  * Requires Plugins:     woocommerce
  *
  * @link https://pluginever.com/plugins/woocommerce-category-showcase-pro/
