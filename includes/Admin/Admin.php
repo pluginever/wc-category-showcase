@@ -62,25 +62,24 @@ class Admin {
 	 * @return void
 	 */
 	public function enqueue_scripts( $hook ) {
-		wp_verify_nonce( '_nonce' );
-
-		// Check if we are on the edit screen.
-		$showcase_add = isset( $_GET['add'] ) ? true : false;
-		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
-
-		// TODO: Remove this Black Friday style after the offer is over.
-		wc_category_showcase()->scripts->enqueue_style( 'wccs-black-friday', '/styles/black-friday.css' );
+		$showcase_add = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Readonly check for presence.
+		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Readonly check for presence.
 
 		if ( in_array( $hook, Utilities::get_screen_ids(), true ) || $showcase_id || $showcase_add ) {
-			// Register styles.
 			wc_category_showcase()->scripts->register_style( 'wccs_tailwind', '/styles/tailwind.css' );
+			wc_category_showcase()->scripts->register_style( 'wcc-showcase-fontawesome-icons', '/fonts/fontawesome/fontawesome-icons.css' );
+			wc_category_showcase()->scripts->register_style( 'wcc-showcase-happy-icons', '/fonts/happy-icons/happy-icons.css' );
+			wc_category_showcase()->scripts->register_style( 'wcc-showcase-vendor', '/styles/vendor.css' );
+			wc_category_showcase()->scripts->register_script( 'wcc-showcase-vendor', '/scripts/vendor.js', array( 'jquery' ), true );
 
 			wp_enqueue_style( 'bytekit-components' );
 			wp_enqueue_style( 'bytekit-layout' );
-			// Early core enqueue.
-			wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/styles/admin.css', array( 'wccs_tailwind' ) );
-			wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/scripts/admin.js', array( 'wp-color-picker' ), true );
+
+			wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/styles/admin.css', array( 'wccs_tailwind', 'wcc-showcase-vendor', 'wcc-showcase-fontawesome-icons', 'wcc-showcase-happy-icons' ) );
+			wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/scripts/admin.js', array( 'jquery', 'wp-color-picker', 'wcc-showcase-vendor' ), true );
+
 			wp_enqueue_media();
+
 			wp_localize_script(
 				'wcc_showcase-admin',
 				'wcc_showcase_admin_js_vars',

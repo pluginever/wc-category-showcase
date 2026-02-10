@@ -1,8 +1,5 @@
-# This file is for unifying the coding style for different editors and IDEs
-# editorconfig.org
-
 # WordPress Coding Standards
-# https://make.wordpress.org/core/handbook/coding-standards/
+# https://make.wordpress.org/core/handbook/best-practices/coding-standards/
 
 root = true
 
@@ -22,3 +19,6 @@ trim_trailing_whitespace = false
 trim_trailing_whitespace = false
 indent_style = space
 indent_size = 2
+
+[*.json]
+indent_style = tab
