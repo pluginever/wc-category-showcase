@@ -8,7 +8,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 	window.wcc_showcase_admin = {
 		bindEvents: function () {
 			// Modal Show Hide
-			$(document).on('click', '.wcc_showcase-pro, .wcc_showcase-pro-close', function (e) {
+			$(document).on('click', '.wcc_showcase_pro, .wcc_showcase-pro-close', function (e) {
 				e.preventDefault();
 				$('#modelConfirm').toggleClass('tw-hidden');
 			});
