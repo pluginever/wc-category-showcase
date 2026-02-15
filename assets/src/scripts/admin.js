@@ -1,9 +1,5 @@
 /**
- * Category Showcase
- * https://pluginever.com
- *
- * Copyright (c) 2025 pluginever
- * Licensed under the GPLv2+ license.
+ * Admin JS
  */
 
 import PluginEverIconPicker from './admin/_iconPicker.js';
@@ -12,7 +8,7 @@ import PluginEverIconPicker from './admin/_iconPicker.js';
 	window.wcc_showcase_admin = {
 		bindEvents: function () {
 			// Modal Show Hide
-			$(document).on('click', '.wcc_showcase-pro, .wcc_showcase-pro-close', function (e) {
+			$(document).on('click', '.wcc_showcase_pro, .wcc_showcase-pro-close', function (e) {
 				e.preventDefault();
 				$('#modelConfirm').toggleClass('tw-hidden');
 			});

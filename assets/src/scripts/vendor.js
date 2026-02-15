@@ -1,3 +1,12 @@
-import '@splidejs/splide/dist/js/splide.js';
-import '@splidejs/splide-extension-grid/dist/js/splide-extension-grid.js';
-import '@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.js';
+import Splide from '@splidejs/splide';
+import { Grid } from '@splidejs/splide-extension-grid';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
+// Expose Splide and its extensions to the window object for frontend.js to use
+window.Splide = Splide;
+window.splide = {
+	Extensions: {
+		Grid,
+		AutoScroll,
+	},
+};

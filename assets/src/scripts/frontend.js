@@ -2,7 +2,7 @@
  * Category Showcase
  * https://pluginever.com
  *
- * Copyright (c) 2018-2025 PluginEver
+ * Copyright (c) 2018-2026 PluginEver
  * Licensed under the GPLv2+ license.
  */
 
