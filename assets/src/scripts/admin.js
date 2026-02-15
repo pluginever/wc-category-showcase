@@ -1,9 +1,5 @@
 /**
- * Category Showcase
- * https://pluginever.com
- *
- * Copyright (c) 2025 pluginever
- * Licensed under the GPLv2+ license.
+ * Admin JS
  */
 
 import PluginEverIconPicker from './admin/_iconPicker.js';
