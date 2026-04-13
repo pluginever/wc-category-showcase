@@ -146,6 +146,7 @@ You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://plu
 == Changelog ==
 = 2.3.1 (13th April 2026) =
 * Fix - Resolved minor issues.
+* Enhance: Update the plugin notices.
 
 = 2.3.0 (11th March 2026) =
 * Fix - Resolved known issues.
