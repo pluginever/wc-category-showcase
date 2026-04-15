@@ -110,7 +110,7 @@ class Notices
                 if (!preg_match('/<[^>]+>/', $message)) {
                     $message = wpautop($message);
                 }
-                printf('<div class="notice bk-notice notice-%1$s %2$s" data-notice_id="%3$s" data-nonce="%4$s" data-action="%5$s" style="%6$s">%7$s%8$s</div>', esc_attr($notice['type']), esc_attr(implode(' ', $classes)), esc_attr($notice['notice_id']), esc_attr(wp_create_nonce($this->plugin->get_prefix() . '_dismiss_notice')), esc_attr($this->plugin->get_prefix() . '_dismiss_notice'), esc_attr($style), wp_kses_post(wptexturize($message)), $notice['dismissible'] ? '<button type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__('Dismiss this notice', 'starter-plugin') . '</span></button>' : '');
+                printf('<div class="notice bk-notice notice-%1$s %2$s" data-notice_id="%3$s" data-nonce="%4$s" data-action="%5$s" style="%6$s">%7$s%8$s</div>', esc_attr($notice['type']), esc_attr(implode(' ', $classes)), esc_attr($notice['notice_id']), esc_attr(wp_create_nonce($this->plugin->get_prefix() . '_dismiss_notice')), esc_attr($this->plugin->get_prefix() . '_dismiss_notice'), esc_attr($style), wp_kses_post(wptexturize($message)), $notice['dismissible'] ? '<button type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__('Dismiss this notice', 'wc-category-showcase') . '</span></button>' : '');
             }
         }
     }

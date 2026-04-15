@@ -208,13 +208,13 @@ trait HasPlugin
     {
         $links = array();
         if (!empty($this->get_docs_url())) {
-            $links['docs'] = array('label' => __('Documentation', 'starter-plugin'), 'url' => $this->get_docs_url());
+            $links['docs'] = array('label' => __('Documentation', 'wc-category-showcase'), 'url' => $this->get_docs_url());
         }
         if (!empty($this->get_support_url())) {
-            $links['support'] = array('label' => __('Support', 'starter-plugin'), 'url' => $this->get_support_url());
+            $links['support'] = array('label' => __('Support', 'wc-category-showcase'), 'url' => $this->get_support_url());
         }
         if (!empty($this->get_review_url())) {
-            $links['review'] = array('label' => __('Review', 'starter-plugin'), 'url' => $this->get_review_url());
+            $links['review'] = array('label' => __('Review', 'wc-category-showcase'), 'url' => $this->get_review_url());
         }
         /**
          * Filter the plugin meta links.
@@ -235,7 +235,7 @@ trait HasPlugin
     {
         $links = array();
         if (!empty($this->get_settings_url())) {
-            $links['settings'] = array('label' => __('Settings', 'starter-plugin'), 'url' => $this->get_settings_url());
+            $links['settings'] = array('label' => __('Settings', 'wc-category-showcase'), 'url' => $this->get_settings_url());
         }
         /**
          * Filter the plugin action links.
