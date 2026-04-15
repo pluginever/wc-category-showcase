@@ -146,7 +146,7 @@ You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://plu
 == Changelog ==
 = 2.3.1 (15th April 2026) =
 * Fix - Resolved minor issues.
-* Enhance: Update the plugin notices.
+* Enhance - Update the plugin notices.
 * Compatibility - Checked compatibility with the latest version of WooCommerce (v10.7).
 
 = 2.3.0 (11th March 2026) =
