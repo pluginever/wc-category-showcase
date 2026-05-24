@@ -3,7 +3,7 @@
  * Plugin Name:          Category Showcase
  * Plugin URI:           https://pluginever.com/plugins/woocommerce-category-showcase-pro/
  * Description:          WooCommerce extension to showcase categories in various styles and layouts like sliders, blocks, and grids.
- * Version:              2.3.1
+ * Version:              2.3.2
  * Requires at least:    5.2
  * Requires PHP:         7.4
  * Author:               PluginEver
@@ -12,7 +12,7 @@
  * License URI:          http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:          wc-category-showcase
  * Domain Path:          /languages
- * Tested up to:         6.9
+ * Tested up to:         7.0
  * WC requires at least: 3.0.0
  * WC tested up to:      10.7
  * Requires Plugins:     woocommerce

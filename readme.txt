@@ -1,8 +1,8 @@
 === Product Category Showcase for WooCommerce ===
 Contributors: pluginever
 Tags: woocommerce, woocommerce Category, woocommerce Category Slider, WooCommerce Category Showcase, Slider
-Tested up to: 6.9
-Stable tag: 2.3.1
+Tested up to: 7.0
+Stable tag: 2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,6 +144,10 @@ You can upgrade to the Pro version by visiting our [Pro Plugin Page](https://plu
 4. Example showcase
 
 == Changelog ==
+= 2.3.2 (24th May 2026) =
+* Fix - Minor maintenance and internal improvements.
+* Compatibility - Checked compatibility with the latest version of WordPress (v7.0).
+
 = 2.3.1 (15th April 2026) =
 * Fix - Resolved minor issues.
 * Enhance - Update the plugin notices.
