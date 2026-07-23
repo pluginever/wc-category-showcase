@@ -1,6 +1,6 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\Controllers;
+namespace PluginEver\CategoryShowcase\Controllers;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
  * Helpers class.
  *
  * @since 1.0.0
- * @package WooCommerceCategoryShowcase.
+ * @package PluginEver\CategoryShowcase
  */
 class Helpers {
 	/**

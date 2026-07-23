@@ -1,18 +1,27 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\Admin;
+namespace PluginEver\CategoryShowcase\Admin;
 
-use WooCommerceCategoryShowcase\Controllers\Helpers;
+use PluginEver\CategoryShowcase\B8\Component;
+use PluginEver\CategoryShowcase\Controllers\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Menus class.
+ * Handles the admin menu.
  *
- * @since 1.0.0
- * @package WooCommerceCategoryShowcase\Admin
+ * @since   1.0.0
+ * @package PluginEver\CategoryShowcase\Admin
  */
-class Menus {
+class Menu extends Component {
+
+	/**
+	 * Registered screen IDs.
+	 *
+	 * @since 1.0.0
+	 * @var array<int, string>
+	 */
+	protected array $screen_ids = array();
 
 	/**
 	 * Parent menu slug.
@@ -23,18 +32,19 @@ class Menus {
 	const PARENT_SLUG = 'wc-category-showcase';
 
 	/**
-	 * Constructor.
+	 * Register hooks.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
-	public function __construct() {
+	public function register(): void {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'wc_category_showcase_settings_export-import', array( $this, 'export_import_tab_render' ) );
 		add_action( 'wc_category_showcase_list-table', array( $this, 'showcase_list_render' ) );
 	}
 
 	/**
-	 * Add admin menu.
+	 * Register the admin menu.
 	 *
 	 * @since 1.0.0
 	 * @return void
@@ -71,20 +81,6 @@ class Menus {
 			}
 		);
 
-		// phpcs:disable
-		/*
-		add_submenu_page(
-			self::PARENT_SLUG,
-			esc_html__( 'Settings', 'wc-category-showcase' ),
-			esc_html__( 'Settings', 'wc-category-showcase' ),
-			'manage_options',
-			'wccs-settings',
-			array( $this, 'output_tab_settings_page' )
-		);
-		*/
-		// phpcs:enable
-
-		// Add a Documentation page.
 		add_submenu_page(
 			self::PARENT_SLUG,
 			esc_html__( 'Documentation', 'wc-category-showcase' ),
@@ -96,6 +92,8 @@ class Menus {
 				exit;
 			}
 		);
+
+		$this->screen_ids[] = 'toplevel_page_wc-category-showcase';
 	}
 
 	/**
@@ -106,7 +104,7 @@ class Menus {
 	 */
 	public function render_menu() {
 		$page_hook = 'list-table';
-		include __DIR__ . '/views/admin-page.php';
+		include WCCS_PATH . 'templates/admin/admin-page.php';
 	}
 
 	/**
@@ -121,27 +119,12 @@ class Menus {
 		$post_id          = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : '';
 		$showcase_details = Helpers::get_showcase_settings( $post_id );
 		if ( $add ) {
-			include __DIR__ . '/views/add-category-showcase.php';
+			include WCCS_PATH . 'templates/admin/add-category-showcase.php';
 		} elseif ( $post_id ) {
-			include __DIR__ . '/views/add-category-showcase.php';
+			include WCCS_PATH . 'templates/admin/add-category-showcase.php';
 		} else {
-			include __DIR__ . '/views/list-category-showcase.php';
+			include WCCS_PATH . 'templates/admin/list-category-showcase.php';
 		}
-	}
-
-	/**
-	 * Output settings page.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	public function output_tab_settings_page() {
-		$page_hook = 'settings';
-		$tabs      = array(
-			'general'       => __( 'General', 'wc-category-showcase' ),
-			'documentation' => __( 'Documentation', 'wc-category-showcase' ),
-		);
-		include __DIR__ . '/views/admin-page.php';
 	}
 
 	/**
@@ -151,6 +134,16 @@ class Menus {
 	 * @return void
 	 */
 	public function export_import_tab_render() {
-		include __DIR__ . '/views/settings/export-import.php';
+		include WCCS_PATH . 'templates/admin/settings/export-import.php';
+	}
+
+	/**
+	 * Get the screen ids.
+	 *
+	 * @since 1.0.0
+	 * @return array<int, string> Screen IDs.
+	 */
+	public function get_screen_ids(): array {
+		return $this->screen_ids;
 	}
 }

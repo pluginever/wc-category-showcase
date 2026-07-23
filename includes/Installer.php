@@ -1,99 +1,90 @@
 <?php
 
-namespace WooCommerceCategoryShowcase;
+namespace PluginEver\CategoryShowcase;
+
+use PluginEver\CategoryShowcase\B8\Component;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Installer.
+ * Handles plugin installation.
  *
- * @since 2.2.0
- * @package WooCommerceCategoryShowcase
+ * @since   1.0.0
+ * @package PluginEver\CategoryShowcase
  */
-class Installer {
+class Installer extends B8\Component {
 
 	/**
-	 * Update callbacks.
+	 * Update hook name.
 	 *
-	 * @since 2.2.0
-	 * @var array
+	 * @since 1.0.0
+	 * @var string
 	 */
-	protected $updates = array();
+	const UPDATE_HOOK = 'wc_category_showcase_run_update';
 
 	/**
-	 * Installer constructor.
+	 * Upgrade routines keyed by the target version.
 	 *
-	 * @since 2.2.0
+	 * @since 1.0.0
+	 * @var array<string, callable>
 	 */
-	public function __construct() {
-		add_action( 'init', array( $this, 'check_update' ), 0 );
+	protected array $updates = array();
 
-		// Schedule the migration cron job (runs hourly).
+	/**
+	 * Register hooks.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public function register(): void {
+		add_action( 'init', array( $this, 'maybe_update' ) );
+		add_action( self::UPDATE_HOOK, array( $this, 'run_update' ) );
 		add_action( 'wccs_migrate_data', array( $this, 'migrate_data' ) );
 	}
 
 	/**
-	 * Check the plugin version and run the updater if necessary.
+	 * Run a pending upgrade.
 	 *
-	 * This check is done on all requests and runs if the versions do not match.
-	 *
-	 * @since 2.2.0
+	 * @since 1.0.0
 	 * @return void
 	 */
-	public function check_update() {
-		$db_version      = wc_category_showcase()->get_db_version();
-		$current_version = wc_category_showcase()->get_version();
-		$requires_update = version_compare( $db_version, $current_version, '<' );
-		$can_install     = ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) && ! defined( 'IFRAME_REQUEST' );
-		if ( $can_install && $requires_update ) {
-			static::install();
-			$update_versions = array_keys( $this->updates );
-			usort( $update_versions, 'version_compare' );
-			if ( ! is_null( $db_version ) && version_compare( $db_version, end( $update_versions ), '<' ) ) {
-				$this->update();
-			} else {
-				wc_category_showcase()->update_db_version( $current_version );
+	public function maybe_update(): void {
+		if ( version_compare( $this->app->version, $this->app->options->get_db_version(), '>' ) ) {
+			$this->install();
+			if ( ! empty( $this->updates ) ) {
+				$this->app->queue->add( self::UPDATE_HOOK );
 			}
 		}
 	}
 
 	/**
-	 * Update the plugin.
+	 * Run the pending upgrades.
 	 *
-	 * @since 2.2.0
+	 * @since 1.0.0
 	 * @return void
 	 */
-	public function update() {
-		$db_version = wc_category_showcase()->get_db_version();
-		foreach ( $this->updates as $version => $callbacks ) {
-			$callbacks = (array) $callbacks;
-			if ( version_compare( $db_version, $version, '<' ) ) {
-				foreach ( $callbacks as $callback ) {
-					wc_category_showcase()->log( sprintf( 'Updating to %s from %s', $version, $db_version ) );
-					// if the callback return false then we need to update the db version.
-					$continue = call_user_func( array( $this, $callback ) );
-					if ( ! $continue ) {
-						wc_category_showcase()->update_db_version( $version );
-						$notice = sprintf(
-						/* translators: 1: plugin name 2: version number */
-							__( '%1$s updated to version %2$s successfully.', 'wc-category-showcase' ),
-							'<strong>' . wc_category_showcase()->get_name() . '</strong>',
-							'<strong>' . $version . '</strong>'
-						);
-						wc_category_showcase()->flash->success( $notice );
-					}
-				}
+	public function run_update(): void {
+		$installed = $this->app->options->get_db_version();
+
+		uksort( $this->updates, 'version_compare' );
+
+		foreach ( $this->updates as $version => $callback ) {
+			if ( version_compare( $installed, $version, '<' ) ) {
+				call_user_func( $callback );
+				$this->app->options->update_db_version( $version, true );
 			}
 		}
+
+		$this->app->options->update_db_version( $this->app->version, true );
 	}
 
 	/**
 	 * Install the plugin.
 	 *
-	 * @since 2.2.0
+	 * @since 1.0.0
 	 * @return void
 	 */
-	public static function install() {
+	public static function install(): void {
 		if ( ! is_blog_installed() ) {
 			return;
 		}
@@ -106,11 +97,24 @@ class Installer {
 			wp_schedule_event( time(), 'hourly', 'wccs_migrate_data' );
 		}
 
-		wc_category_showcase()->update_db_version( wc_category_showcase()->get_version(), false );
 		add_option( 'wccs_install_date', current_time( 'mysql' ) );
 		set_transient( 'wccs_activated', true, 30 );
 		set_transient( 'wccs_activation_redirect', true, 30 );
 		add_option( 'wccs_installed', wp_date( 'U' ) );
+	}
+
+	/**
+	 * Clean up the plugin's runtime state.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public function deactivate(): void {
+		$this->app->queue->clear();
+
+		wp_clear_scheduled_hook( 'wccs_migrate_data' );
+
+		flush_rewrite_rules();
 	}
 
 	/**

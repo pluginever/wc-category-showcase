@@ -1,53 +1,58 @@
 {
 	"name": "pluginever/wc-category-showcase",
+	"description": "WooCommerce extension to showcase categories in various styles and layouts like sliders, blocks, and grids.",
+	"homepage": "https://pluginever.com/plugins/woocommerce-category-showcase-pro/",
 	"type": "wordpress-plugin",
-	"license": "GPL-2.0-or-later",
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "git@github.com:byteever/bytekit-plugin.git"
-		}
-	],
+	"license": "GPL v2 or later",
+	"prefer-stable": true,
+	"minimum-stability": "dev",
 	"require": {
 		"php": ">=7.4",
-		"byteever/bytekit-plugin": "dev-trunk"
+		"byteever/plugin": "dev-trunk"
 	},
 	"require-dev": {
 		"byteever/byteever-sniffs": "^1.1.3"
 	},
 	"autoload": {
 		"psr-4": {
-			"WooCommerceCategoryShowcase\\": "includes/"
+			"PluginEver\\CategoryShowcase\\": "includes/"
 		}
 	},
+	"autoload-dev": {},
 	"config": {
+		"optimize-autoloader": true,
+		"sort-packages": true,
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "git@github.com:byteever/plugin.git"
+		}
+	],
 	"scripts": {
 		"post-install-cmd": "@strauss",
 		"post-update-cmd": "@strauss",
 		"post-autoload-dump": "test -f /tmp/strauss.phar && php /tmp/strauss.phar include-autoloader || true",
 		"makepot": "wp --allow-root i18n make-pot . --include=*.php,assets,includes,templates --domain=wc-category-showcase",
-		"phpcs": "php ./vendor/bin/phpcs --standard=phpcs.xml -s -v",
-		"phpcbf": "php ./vendor/bin/phpcbf --standard=phpcs.xml -v",
-		"test:setup": "bash ./bin/setup-tests.sh wordpress_test root root localhost trunk && phpunit",
+		"phpcs": "@php ./vendor/bin/phpcs --standard=phpcs.xml -s -v",
+		"phpcbf": "@php ./vendor/bin/phpcbf --standard=phpcs.xml -v",
 		"test": "phpunit",
 		"strauss": [
 			"test -f /tmp/strauss.phar || curl -o /tmp/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/download/0.24.1/strauss.phar",
 			"@php /tmp/strauss.phar",
-			"@composer dump-autoload --no-scripts",
-			"find ./vendor/byteever -type f -name '*.php' -exec perl -i -pe \"s/'bytekit-textdomain'/'wc-category-showcase'/g\" {} +"
+			"@composer dump-autoload --no-scripts"
 		]
 	},
 	"extra": {
 		"strauss": {
 			"target_directory": "vendor",
-			"namespace_prefix": "WooCommerceCategoryShowcase\\",
-			"classmap_prefix": "WooCommerceCategoryShowcase__",
+			"namespace_prefix": "PluginEver\\CategoryShowcase\\",
+			"classmap_prefix": "PluginEver_CategoryShowcase__",
 			"packages": [
-				"byteever/bytekit-plugin"
+				"byteever/plugin"
 			]
 		}
 	}

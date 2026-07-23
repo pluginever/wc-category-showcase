@@ -1,8 +1,9 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\Admin;
+namespace PluginEver\CategoryShowcase\Admin;
 
-use WooCommerceCategoryShowcase\Controllers\Helpers;
+use PluginEver\CategoryShowcase\B8\Component;
+use PluginEver\CategoryShowcase\Controllers\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -10,16 +11,39 @@ defined( 'ABSPATH' ) || exit;
  * Admin class.
  *
  * @since 1.0.0
- * @package WooCommerceCategoryShowcase
+ * @package PluginEver\CategoryShowcase\Admin
  */
-class Admin {
+class Admin extends Component {
 
 	/**
-	 * Admin constructor.
+	 * Child components.
 	 *
 	 * @since 1.0.0
+	 * @var array<int|string, class-string>
 	 */
-	public function __construct() {
+	public array $components = array(
+		Menu::class,
+		Notices::class,
+		Feedback::class,
+	);
+
+	/**
+	 * Whether to load.
+	 *
+	 * @since 1.0.0
+	 * @return bool
+	 */
+	public function autoload(): bool {
+		return is_admin();
+	}
+
+	/**
+	 * Register hooks.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public function register(): void {
 		add_action( 'admin_init', array( $this, 'buffer_start' ), 1 );
 		add_filter( 'woocommerce_screen_ids', array( $this, 'screen_ids' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -50,7 +74,7 @@ class Admin {
 	 * @return array
 	 */
 	public function screen_ids( $ids ) {
-		return array_merge( $ids, Utilities::get_screen_ids() );
+		return array_merge( $ids, $this->app->get( Menu::class )->get_screen_ids() );
 	}
 
 	/**
@@ -62,21 +86,26 @@ class Admin {
 	 * @return void
 	 */
 	public function enqueue_scripts( $hook ) {
-		$showcase_add = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Readonly check for presence.
-		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Readonly check for presence.
+		wp_enqueue_style( 'b8-components' );
+		wp_enqueue_style( 'b8-layout' );
 
-		if ( in_array( $hook, Utilities::get_screen_ids(), true ) || $showcase_id || $showcase_add ) {
-			wc_category_showcase()->scripts->register_style( 'wccs_tailwind', '/styles/tailwind.css' );
-			wc_category_showcase()->scripts->register_style( 'wcc-showcase-fontawesome-icons', '/fonts/fontawesome/fontawesome-icons.css' );
-			wc_category_showcase()->scripts->register_style( 'wcc-showcase-happy-icons', '/fonts/happy-icons/happy-icons.css' );
-			wc_category_showcase()->scripts->register_style( 'wcc-showcase-vendor', '/styles/vendor.css' );
-			wc_category_showcase()->scripts->register_script( 'wcc-showcase-vendor', '/scripts/vendor.js', array( 'jquery' ), true );
+		$showcase_add = isset( $_GET['add'] ) ? true : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$showcase_id  = isset( $_GET['edit'] ) ? absint( wp_unslash( $_GET['edit'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
-			wp_enqueue_style( 'bytekit-components' );
-			wp_enqueue_style( 'bytekit-layout' );
+		$screen_ids = $this->app->get( Menu::class )->get_screen_ids();
 
-			wc_category_showcase()->scripts->enqueue_style( 'wcc_showcase-admin', '/styles/admin.css', array( 'wccs_tailwind', 'wcc-showcase-vendor', 'wcc-showcase-fontawesome-icons', 'wcc-showcase-happy-icons' ) );
-			wc_category_showcase()->scripts->enqueue_script( 'wcc_showcase-admin', '/scripts/admin.js', array( 'jquery', 'wp-color-picker', 'wcc-showcase-vendor' ), true );
+		if ( in_array( $hook, $screen_ids, true ) || $showcase_id || $showcase_add ) {
+			$assets  = $this->app->assets_url() . '/build';
+			$version = $this->app->version;
+
+			wp_register_style( 'wccs_tailwind', $assets . '/styles/tailwind.css', array(), $version );
+			wp_register_style( 'wcc-showcase-fontawesome-icons', $assets . '/fonts/fontawesome/fontawesome-icons.css', array(), $version );
+			wp_register_style( 'wcc-showcase-happy-icons', $assets . '/fonts/happy-icons/happy-icons.css', array(), $version );
+			wp_register_style( 'wcc-showcase-vendor', $assets . '/styles/vendor.css', array(), $version );
+			wp_register_script( 'wcc-showcase-vendor', $assets . '/scripts/vendor.js', array( 'jquery' ), $version, true );
+
+			wp_enqueue_style( 'wcc_showcase-admin', $assets . '/styles/admin.css', array( 'wccs_tailwind', 'wcc-showcase-vendor', 'wcc-showcase-fontawesome-icons', 'wcc-showcase-happy-icons' ), $version );
+			wp_enqueue_script( 'wcc_showcase-admin', $assets . '/scripts/admin.js', array( 'jquery', 'wp-color-picker', 'wcc-showcase-vendor' ), $version, true );
 
 			wp_enqueue_media();
 
@@ -117,17 +146,19 @@ class Admin {
 	 * @return string
 	 */
 	public function admin_footer_text( $text ) {
-		if ( in_array( get_current_screen()->id, Utilities::get_screen_ids(), true ) ) {
+		$screen_ids = $this->app->get( Menu::class )->get_screen_ids();
+
+		if ( in_array( get_current_screen()->id, $screen_ids, true ) ) {
 			$text = sprintf(
 			/* translators: %s: Plugin name */
 				__( 'Thank you for using %s!', 'wc-category-showcase' ),
-				'<strong>' . esc_html( wc_category_showcase()->get_name() ) . '</strong>'
+				'<strong>' . esc_html( $this->app->get( 'name' ) ) . '</strong>'
 			);
-			if ( wc_category_showcase()->review_url ) {
+			if ( $this->app->get( 'review_url' ) ) {
 				$text .= sprintf(
 				/* translators: %s: Plugin name */
 					__( ' Share your appreciation with a five-star review %s.', 'wc-category-showcase' ),
-					'<a href="' . esc_url( wc_category_showcase()->review_url ) . '" target="_blank">here</a>'
+					'<a href="' . esc_url( $this->app->get( 'review_url' ) ) . '" target="_blank">here</a>'
 				);
 			}
 		}
@@ -144,9 +175,11 @@ class Admin {
 	 * @return string
 	 */
 	public function update_footer( $footer_text ) {
-		if ( in_array( get_current_screen()->id, Utilities::get_screen_ids(), true ) ) {
+		$screen_ids = $this->app->get( Menu::class )->get_screen_ids();
+
+		if ( in_array( get_current_screen()->id, $screen_ids, true ) ) {
 			/* translators: 1: Plugin version */
-			$footer_text = sprintf( esc_html__( 'Version %s', 'wc-category-showcase' ), wc_category_showcase()->get_version() );
+			$footer_text = sprintf( esc_html__( 'Version %s', 'wc-category-showcase' ), $this->app->version );
 		}
 
 		return $footer_text;
@@ -175,7 +208,7 @@ class Admin {
 		$settings = Helpers::get_showcase_settings();
 		$post_id  = wp_insert_post( $args );
 		if ( is_wp_error( $post_id ) ) {
-			wc_category_showcase()->flash->error( __( 'Failed to Add Category Showcase: Please Try Again!', 'wc-category-showcase' ) );
+			wc_category_showcase()->app->flash->error( __( 'Failed to Add Category Showcase: Please Try Again!', 'wc-category-showcase' ) );
 			wp_safe_redirect( $referer );
 			exit();
 		}
@@ -238,7 +271,7 @@ class Admin {
 				update_post_meta( $post_id, $post_key, $meta_value );
 			}
 		}
-		wc_category_showcase()->flash->success( __( 'The category showcase has been successfully updated!', 'wc-category-showcase' ) );
+		wc_category_showcase()->app->flash->success( __( 'The category showcase has been successfully updated!', 'wc-category-showcase' ) );
 		$redirect_to = admin_url( 'admin.php?page=wc-category-showcase&edit=' . $post_id );
 		wp_safe_redirect( $redirect_to );
 		exit;
@@ -311,7 +344,7 @@ class Admin {
 		}
 		$category_details             = Helpers::get_category_details( $term_id );
 		$category_details['position'] = $current_position;
-		include WCCS_TEMPLATES_URL . 'load-category-details.php';
+		include WCCS_PATH . 'templates/admin/load-category-details.php';
 		wp_die();
 	}
 
@@ -332,7 +365,7 @@ class Admin {
 		}
 		$category_details             = Helpers::get_category_details( $term_id );
 		$category_details['position'] = $current_position;
-		include WCCS_TEMPLATES_URL . 'load-additional-category-details.php';
+		include WCCS_PATH . 'templates/admin/load-additional-category-details.php';
 		wp_die();
 	}
 }

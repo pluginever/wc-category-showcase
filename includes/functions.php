@@ -1,17 +1,31 @@
 <?php
 
-use WooCommerceCategoryShowcase\Plugin;
+use PluginEver\CategoryShowcase\Plugin;
 
 defined( 'ABSPATH' ) || exit;
 
-/**
- * Get the plugin instance.
- *
- * @since 1.0.0
- * @return WooCommerceCategoryShowcase\Plugin
- */
-function wc_category_showcase() {
-	return Plugin::instance();
+if ( ! function_exists( 'wc_category_showcase' ) ) {
+	/**
+	 * Get the plugin instance.
+	 *
+	 * @since 1.0.0
+	 * @return \PluginEver\CategoryShowcase\Plugin Plugin instance.
+	 */
+	function wc_category_showcase() {
+		return Plugin::instance();
+	}
+}
+
+if ( ! function_exists( 'wc_category_showcase_is_pro_active' ) ) {
+	/**
+	 * Whether the Pro add-on is active.
+	 *
+	 * @since 1.0.0
+	 * @return bool True when the Pro add-on is active.
+	 */
+	function wc_category_showcase_is_pro_active(): bool {
+		return wc_category_showcase()->is_pro_active();
+	}
 }
 
 /**

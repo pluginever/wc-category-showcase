@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$list_table = new \WooCommerceCategoryShowcase\Admin\listTables\ShowcaseListTable();
+$list_table = new \PluginEver\CategoryShowcase\Admin\listTables\ShowcaseListTable();
 $action     = $list_table->current_action();
 $list_table->process_bulk_action( $action );
 $list_table->prepare_items();
