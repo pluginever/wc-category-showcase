@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['current_tab'] : 'first';
 
 ?>
-<div class="wrap bk-wrap">
+<div class="wrap b8-wrap">
 	<h1 class="wp-heading-inline text-center">
 		<?php esc_html_e( 'Add Category Showcase', 'wc-category-showcase' ); ?>
 		<a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-category-showcase' ) ); ?>" class="page-title-action"
@@ -28,7 +28,7 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 	</h1>
 	<form method="post" action="<?php echo esc_html( admin_url( 'admin-post.php' ) ); ?>">
 		<span data-wp-text="name"></span>
-		<div class="bk-poststuff">
+		<div class="b8-poststuff">
 			<div class="column-1">
 				<div class="tw-mx-auto">
 					<div class="w-full">
@@ -185,29 +185,29 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 			</div><!-- .column-1 -->
 
 			<div class="column-2">
-				<div class="bk-card" style="position: sticky; top: 32px;z-index: 9;">
-					<div class="bk-card__header">
-						<h2 class="bk-card__title"><?php esc_html_e( 'Actions', 'wc-category-showcase' ); ?></h2>
+				<div class="b8-card" style="position: sticky; top: 32px;z-index: 9;">
+					<div class="b8-card__header">
+						<h2 class="b8-card__title"><?php esc_html_e( 'Actions', 'wc-category-showcase' ); ?></h2>
 					</div>
-					<div class="bk-card__footer">
+					<div class="b8-card__footer">
 						<input type="hidden" id="wcc_showcase_current_tab" name="wcc_showcase_current_tab" value="<?php echo esc_attr( get_post_meta( $post_id, 'wcc_showcase_current_tab', true ) ); ?>">
 						<input type="hidden" name="action" value="wcc_showcase_add_category_showcase"/>
 						<?php wp_nonce_field( 'wcc_showcase_add_category_showcase' ); ?>
 						<?php if ( empty( $post_id ) ) { ?>
-						<button class="button button-primary bk-w-100"><?php esc_html_e( 'Publish', 'wc-category-showcase' ); ?></button>
+						<button class="button button-primary b8-w-100"><?php esc_html_e( 'Publish', 'wc-category-showcase' ); ?></button>
 						<?php } else { ?>
 							<input type="hidden" name="post_id" value="<?php echo esc_attr( $post_id ); ?>">
-							<button class="button button-primary bk-w-100"><?php esc_html_e( 'Update', 'wc-category-showcase' ); ?></button>
+							<button class="button button-primary b8-w-100"><?php esc_html_e( 'Update', 'wc-category-showcase' ); ?></button>
 						<?php } ?>
 					</div>
 				</div>
 
 				<?php if ( ! empty( $post_id ) ) { ?>
-					<div class="bk-card">
-						<div class="bk-card__header">
-							<h2 class="bk-card__title"><?php esc_html_e( 'Shortcode', 'wc-category-showcase' ); ?></h2>
+					<div class="b8-card">
+						<div class="b8-card__header">
+							<h2 class="b8-card__title"><?php esc_html_e( 'Shortcode', 'wc-category-showcase' ); ?></h2>
 						</div>
-						<div class="bk-card__body">
+						<div class="b8-card__body">
 							<span class="wccs_shortcode is--masked">
 								<span class="wccs_shortcode__code" title="<?php echo esc_attr( '[wccs_showcase id="' . $post_id . '"]' ); ?>"><?php echo esc_attr( '[wccs_showcase id="' . $post_id . '"]' ); ?></span>
 								<span class="wccs_shortcode__copy" data-key="<?php echo esc_attr( '[wccs_showcase id="' . $post_id . '"]' ); ?>"><?php esc_html_e( 'Copy', 'wc-category-showcase' ); ?></span>
@@ -217,14 +217,14 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 					</div>
 				<?php } ?>
 
-				<div class="bk-card">
-					<div class="bk-card__header">
-						<h2 class="bk-card__title"><?php esc_html_e( 'Need Any Help?', 'wc-category-showcase' ); ?></h2>
+				<div class="b8-card">
+					<div class="b8-card__header">
+						<h2 class="b8-card__title"><?php esc_html_e( 'Need Any Help?', 'wc-category-showcase' ); ?></h2>
 					</div>
-					<div class="bk-card__body">
+					<div class="b8-card__body">
 						<p><?php esc_html_e( 'Support team is here to assist you. Get help with any issues you might have.', 'wc-category-showcase' ); ?></p>
 					</div>
-					<div class="bk-card__footer">
+					<div class="b8-card__footer">
 						<a href="<?php echo esc_url( 'https://pluginever.com/docs/wc-category-showcase/' ); ?>" class="tw-flex tw-justify-center tw-text-accent-orange-500 tw-no-underline" target="_blank">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 								<path d="M12.4994 15.8333V12.9166C12.4994 12.8061 12.5432 12.7001 12.6214 12.622C12.6995 12.5439 12.8055 12.5 12.916 12.5H15.8327C15.8393 12.5633 15.8334 12.6274 15.8153 12.6884C15.7971 12.7495 15.7671 12.8064 15.7269 12.8558L12.8552 15.7275C12.8058 15.7677 12.7489 15.7977 12.6878 15.8159C12.6268 15.834 12.5627 15.84 12.4994 15.8333Z"/>
@@ -242,11 +242,11 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 					</div>
 				</div>
 
-				<div class="bk-card">
-					<div class="bk-card__header">
-						<h2 class="bk-card__title"><?php esc_html_e( 'Try Pro!', 'wc-category-showcase' ); ?></h2>
+				<div class="b8-card">
+					<div class="b8-card__header">
+						<h2 class="b8-card__title"><?php esc_html_e( 'Try Pro!', 'wc-category-showcase' ); ?></h2>
 					</div>
-					<div class="bk-card__body">
+					<div class="b8-card__body">
 						<ul>
 							<li class="tw-flex tw-justify-center tw-gap-2">
 								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -290,7 +290,7 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 							</li>
 						</ul>
 					</div>
-					<div class="bk-card__footer">
+					<div class="b8-card__footer">
 						<a href="<?php echo esc_url( 'https://demo.pluginever.com/category-showcase/' ); ?>" class="tw-flex tw-justify-center tw-text-accent-orange-500 tw-no-underline" target="_blank">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
 								<path d="M13.359 5.74267C12.3183 5.26865 11.1689 5.01451 10 5C5.59924 5 2 8.89866 2 10.1634C2 11.5195 5.78819 15 9.96749 15C14.1834 15 18 11.5167 18 10.1634C18 9.09664 15.8596 6.84514 13.359 5.74267ZM10 14.1705C9.07325 14.1705 8.16732 13.926 7.39676 13.4678C6.6262 13.0096 6.02562 12.3584 5.67096 11.5964C5.31631 10.8345 5.22352 9.99605 5.40432 9.18718C5.58512 8.3783 6.03139 7.6353 6.6867 7.05214C7.34201 6.46897 8.17692 6.07183 9.08586 5.91093C9.9948 5.75004 10.9369 5.83261 11.7931 6.14822C12.6493 6.46383 13.3812 6.99829 13.896 7.68402C14.4109 8.36976 14.6857 9.17596 14.6857 10.0007C14.6857 10.5483 14.5645 11.0905 14.329 11.5964C14.0936 12.1023 13.7484 12.562 13.3133 12.9492C12.8782 13.3364 12.3616 13.6436 11.7931 13.8531C11.2246 14.0627 10.6153 14.1705 10 14.1705Z"/>
@@ -318,7 +318,7 @@ $current_tab = isset( $showcase_details['current_tab'] ) ? $showcase_details['cu
 					</div>
 				</div>
 			</div><!-- .column-2 -->
-		</div><!-- .bk-poststuff -->
+		</div><!-- .b8-poststuff -->
 	</form>
 </div>
 
