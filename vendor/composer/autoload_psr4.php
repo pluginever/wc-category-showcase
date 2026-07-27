@@ -6,6 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WooCommerceCategoryShowcase\\ByteKit\\' => array($vendorDir . '/byteever/bytekit-plugin/src'),
-    'WooCommerceCategoryShowcase\\' => array($baseDir . '/includes'),
+    'PluginEver\\CategoryShowcase\\B8\\' => array($vendorDir . '/byteever/plugin/src'),
+    'PluginEver\\CategoryShowcase\\' => array($baseDir . '/includes'),
 );

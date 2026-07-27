@@ -4,22 +4,22 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf8c740e3595fadbbfec33d998d5db742
+class ComposerStaticInitb0b68d4bb3205700c5c33b34610f7937
 {
     public static $prefixLengthsPsr4 = array (
-        'W' =>
+        'P' =>
         array (
-            'WooCommerceCategoryShowcase\\ByteKit\\' => 36,
-            'WooCommerceCategoryShowcase\\' => 28,
+            'PluginEver\\CategoryShowcase\\B8\\' => 31,
+            'PluginEver\\CategoryShowcase\\' => 28,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WooCommerceCategoryShowcase\\ByteKit\\' =>
+        'PluginEver\\CategoryShowcase\\B8\\' =>
         array (
-            0 => __DIR__ . '/..' . '/byteever/bytekit-plugin/src',
+            0 => __DIR__ . '/..' . '/byteever/plugin/src',
         ),
-        'WooCommerceCategoryShowcase\\' =>
+        'PluginEver\\CategoryShowcase\\' =>
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),
@@ -27,14 +27,44 @@ class ComposerStaticInitf8c740e3595fadbbfec33d998d5db742
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'PluginEver\\CategoryShowcase\\Admin\\Admin' => __DIR__ . '/../..' . '/includes/Admin/Admin.php',
+        'PluginEver\\CategoryShowcase\\Admin\\Feedback' => __DIR__ . '/../..' . '/includes/Admin/Feedback.php',
+        'PluginEver\\CategoryShowcase\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/Admin/Menu.php',
+        'PluginEver\\CategoryShowcase\\Admin\\Notices' => __DIR__ . '/../..' . '/includes/Admin/Notices.php',
+        'PluginEver\\CategoryShowcase\\Admin\\listTables\\AbstractListTable' => __DIR__ . '/../..' . '/includes/Admin/listTables/AbstractListTable.php',
+        'PluginEver\\CategoryShowcase\\Admin\\listTables\\ShowcaseListTable' => __DIR__ . '/../..' . '/includes/Admin/listTables/ShowcaseListTable.php',
+        'PluginEver\\CategoryShowcase\\B8\\App' => __DIR__ . '/..' . '/byteever/plugin/src/App.php',
+        'PluginEver\\CategoryShowcase\\B8\\Component' => __DIR__ . '/..' . '/byteever/plugin/src/Component.php',
+        'PluginEver\\CategoryShowcase\\B8\\Container\\Container' => __DIR__ . '/..' . '/byteever/plugin/src/Container/Container.php',
+        'PluginEver\\CategoryShowcase\\B8\\Container\\ContainerException' => __DIR__ . '/..' . '/byteever/plugin/src/Container/ContainerException.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Cache' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Cache.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Filesystem' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Filesystem.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Flash' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Flash.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Logger' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Logger.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Notices' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Notices.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Options' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Options.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Queue' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Queue.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Request' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Request.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Router' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Router.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Scripts' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Scripts.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Settings' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Settings.php',
+        'PluginEver\\CategoryShowcase\\B8\\Services\\Template' => __DIR__ . '/..' . '/byteever/plugin/src/Services/Template.php',
+        'PluginEver\\CategoryShowcase\\B8\\SettingsUI' => __DIR__ . '/..' . '/byteever/plugin/src/SettingsUI.php',
+        'PluginEver\\CategoryShowcase\\B8\\Traits\\HookableTrait' => __DIR__ . '/..' . '/byteever/plugin/src/Traits/HookableTrait.php',
+        'PluginEver\\CategoryShowcase\\B8\\Traits\\PathableTrait' => __DIR__ . '/..' . '/byteever/plugin/src/Traits/PathableTrait.php',
+        'PluginEver\\CategoryShowcase\\Controllers\\Helpers' => __DIR__ . '/../..' . '/includes/Controllers/Helpers.php',
+        'PluginEver\\CategoryShowcase\\Installer' => __DIR__ . '/../..' . '/includes/Installer.php',
+        'PluginEver\\CategoryShowcase\\Plugin' => __DIR__ . '/../..' . '/includes/Plugin.php',
+        'PluginEver\\CategoryShowcase\\PostTypes' => __DIR__ . '/../..' . '/includes/PostTypes.php',
+        'PluginEver\\CategoryShowcase\\Shortcodes\\Shortcodes' => __DIR__ . '/../..' . '/includes/Shortcodes/Shortcodes.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf8c740e3595fadbbfec33d998d5db742::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf8c740e3595fadbbfec33d998d5db742::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf8c740e3595fadbbfec33d998d5db742::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb0b68d4bb3205700c5c33b34610f7937::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb0b68d4bb3205700c5c33b34610f7937::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb0b68d4bb3205700c5c33b34610f7937::$classMap;
 
         }, null, ClassLoader::class);
     }

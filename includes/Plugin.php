@@ -1,155 +1,58 @@
 <?php
 
-namespace WooCommerceCategoryShowcase;
+namespace PluginEver\CategoryShowcase;
 
-defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
+use PluginEver\CategoryShowcase\B8\Component;
+
+defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Plugin.
+ * Main plugin class.
  *
- * @since 1.2.1
- * @package WooCommerceCategoryShowcase
+ * @since   1.0.0
+ * @package PluginEver\CategoryShowcase
  */
-final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
+class Plugin extends B8\App {
 
 	/**
-	 * Plugin constructor.
-	 *
-	 * @param array $data The plugin data.
+	 * Components to register.
 	 *
 	 * @since 1.0.0
+	 * @var array<int|string, class-string>
 	 */
-	protected function __construct( $data ) {
-		parent::__construct( $data );
-		$this->define_constants();
-		$this->includes();
-		$this->init_hooks();
-	}
+	protected array $components = array(
+		Installer::class,
+		PostTypes::class,
+		Shortcodes\Shortcodes::class,
+		Admin\Admin::class,
+	);
 
 	/**
-	 * Define constants.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	public function define_constants() {
-		define( 'WCCS_VERSION', $this->get_version() );
-		define( 'WCCS_FILE', $this->get_file() );
-		define( 'WCCS_PATH', $this->get_dir_path() . '/' );
-		define( 'WCCS_ASSETS_URL', $this->get_assets_url() );
-		define( 'WCCS_TEMPLATES_URL', $this->get_dir_path() . 'templates/' );
-	}
-
-	/**
-	 * Include required files.
+	 * Register hooks.
 	 *
 	 * @since 1.0.0
 	 * @return void
 	 */
-	public function includes() {
-		require_once __DIR__ . '/functions.php';
-	}
-
-	/**
-	 * Hook into actions and filters.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	public function init_hooks() {
-		register_activation_hook( $this->get_file(), array( Installer::class, 'install' ) );
-		add_action( 'plugins_loaded', array( $this, 'on_init' ), 0 );
-		add_filter( 'plugin_action_links_' . plugin_basename( $this->get_file() ), array( $this, 'plugin_action_links' ) );
-		add_action( 'before_woocommerce_init', array( $this, 'on_before_woocommerce_init' ) );
+	public function bootstrap(): void {
+		define( 'WCCS_VERSION', $this->version );
+		define( 'WCCS_FILE', $this->file );
+		define( 'WCCS_PATH', $this->plugin_path() . '/' );
+		define( 'WCCS_ASSETS_URL', $this->assets_url() . '/build' );
+		define( 'WCCS_TEMPLATES_URL', $this->plugin_path() . '/templates/' );
+		add_action( 'woocommerce_loaded', array( $this, 'woocommerce_loaded' ), 0 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
-
-		// Admin notice for WooCommerce Category Showcase Pro plugin dependency.
-		if ( $this->is_plugin_active( 'woocommerce-category-showcase-pro/wc-category-showcase-pro.php' ) ) {
-			add_action( 'admin_notices', array( $this, 'dependency_notice' ) );
-		}
+		add_filter( 'plugin_action_links_' . $this->basename(), array( $this, 'plugin_action_links' ) );
+		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 	}
 
 	/**
-	 * Dependency notice.
-	 * Show notice if WooCommerce Category Showcase Pro plugin is not active.
-	 *
-	 * @since 2.2.0
-	 * @return void
-	 */
-	public function dependency_notice() {
-
-		if ( ! defined( 'WCCSP_VERSION' ) ) {
-			return;
-		}
-
-		// Compare the versions. WCCSP_VERSION is lower than 2.0.0.
-		if ( version_compare( WCCSP_VERSION, '2.0.0', '<' ) ) {
-			?>
-			<div class="notice notice-error is-dismissible">
-				<p>
-					<?php
-					echo wp_kses_post(
-						sprintf(
-							/* translators: %s: plugin name */
-							__( 'You are currently using %s. Please update to version 2.0.0 or higher to use WooCommerce Category Showcase with WooCommerce Category Showcase Pro.', 'wc-category-showcase' ),
-							'<a href="https://pluginever.com/plugins/woocommerce-category-showcase-pro/?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=update-to-pro" target="_blank"><strong>' . esc_html__( 'WooCommerce Category Showcase Pro', 'wc-category-showcase' ) . '</strong></a>'
-						)
-					);
-					?>
-				</p>
-			</div>
-			<?php
-		}
-	}
-
-	/**
-	 * Add plugin action links.
-	 * Add Go Pro link to plugin action links.
-	 *
-	 * @since 1.0.0
-	 * @param array $links The plugin action links.
-	 * @return array
-	 */
-	public function plugin_action_links( $links ) {
-		if ( ! defined( 'WCCS_PRO_VERSION' ) ) {
-			$links[] = '<a href="' . esc_url( trailingslashit( wc_category_showcase()->plugin_uri ) . '?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=go-pro' ) . '" target="_blank" style="color: orangered;">' . esc_html__( 'Go Pro', 'wc-category-showcase' ) . '</a>';
-		}
-
-		return $links;
-	}
-
-	/**
-	 * Run on before WooCommerce init.
-	 * Declare compatibility with WooCommerce features.
+	 * Initialize the plugin after WooCommerce loads.
 	 *
 	 * @since 1.0.0
 	 * @return void
 	 */
-	public function on_before_woocommerce_init() {
-		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $this->get_file(), true );
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'cart_checkout_blocks', $this->get_file(), true );
-		}
-	}
-
-	/**
-	 * Run on init.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	public function on_init() {
-		// Common classes.
-		$this->set( Installer::class );
-		$this->set( PostTypes::class );
-		$this->set( Shortcodes\Shortcodes::class );
-
-		// Admin classes.
-		if ( is_admin() ) {
-			$this->set( Admin\Admin::class );
-			$this->set( Admin\Menus::class );
-			$this->set( Admin\Notices::class );
-		}
+	public function woocommerce_loaded(): void {
+		$this->boot( $this->components );
 
 		/**
 		 * Fires when the plugin is initialized.
@@ -157,22 +60,86 @@ final class Plugin extends \WooCommerceCategoryShowcase\ByteKit\Plugin {
 		 * @since 1.0.0
 		 */
 		do_action( 'wc_category_showcase_init' );
+		$this->do_action( 'loaded' );
 	}
 
 	/**
-	 * Register scripts.
+	 * Add plugin action links.
 	 *
 	 * @since 1.0.0
-	 * @retun void
+	 * @param array<string, string> $links Plugin action links.
+	 * @return array<string, string>
+	 */
+	public function plugin_action_links( array $links ): array {
+		if ( ! $this->is_pro_active() ) {
+			$links['go_pro'] = '<a href="' . esc_url( (string) $this->get( 'upgrade_url' ) ) . '?utm_source=plugin&utm_medium=plugin-action-link&utm_campaign=go-pro" target="_blank" style="color: orangered;">' . esc_html__( 'Go Pro', 'wc-category-showcase' ) . '</a>';
+		}
+		$settings_url     = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( (string) $this->get( 'settings_url' ) ),
+			esc_html__( 'Settings', 'wc-category-showcase' )
+		);
+		$links['setting'] = $settings_url;
+
+		return $links;
+	}
+
+	/**
+	 * Add the plugin row meta links.
+	 *
+	 * @since 1.0.0
+	 * @param array<int, string> $links Plugin row meta links.
+	 * @param string             $file  Plugin file path relative to the plugins directory.
+	 * @return array<int, string>
+	 */
+	public function plugin_row_meta( array $links, string $file ): array {
+		if ( $file !== $this->basename() ) {
+			return $links;
+		}
+
+		$links[] = sprintf(
+			'<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+			esc_url( (string) $this->get( 'docs_url' ) ),
+			esc_html__( 'Docs', 'wc-category-showcase' )
+		);
+
+		$links[] = sprintf(
+			'<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+			esc_url( (string) $this->get( 'support_url' ) ),
+			esc_html__( 'Support', 'wc-category-showcase' )
+		);
+
+		return $links;
+	}
+
+	/**
+	 * Whether the Pro add-on is active.
+	 *
+	 * @since 1.0.0
+	 * @return bool True when the Pro add-on is active.
+	 */
+	public function is_pro_active(): bool {
+		return $this->has( 'pro_basename' ) && $this->plugin_active( $this->pro_basename );
+	}
+
+	/**
+	 * Enqueue front-end styles and scripts.
+	 *
+	 * @since 2.3.2
+	 * @return void
 	 */
 	public function register_scripts() {
-		$this->scripts->register_style( 'wcc-showcase-fontawesome-icons', '/fonts/fontawesome/fontawesome-icons.css' );
-		$this->scripts->register_style( 'wcc-showcase-happy-icons', '/fonts/happy-icons/happy-icons.css' );
-		$this->scripts->register_style( 'wcc-showcase-vendor', '/styles/vendor.css' );
-		$this->scripts->register_script( 'wcc-showcase-vendor', '/scripts/vendor.js', array( 'jquery' ), true );
+		$assets  = $this->assets_url() . '/build';
+		$version = $this->version;
 
-		// Common styles and scripts.
-		$this->scripts->register_style( 'wcc-showcase-showcase', '/styles/frontend.css', array( 'wcc-showcase-vendor', 'wcc-showcase-fontawesome-icons', 'wcc-showcase-happy-icons' ) );
-		$this->scripts->register_script( 'wcc-showcase-showcase', '/scripts/frontend.js', array( 'jquery', 'wcc-showcase-vendor' ), true );
+		// Styles.
+		wp_register_style( 'wcc-showcase-fontawesome-icons', $assets . '/fonts/fontawesome/fontawesome-icons.css', array(), $version );
+		wp_register_style( 'wcc-showcase-happy-icons', $assets . '/fonts/happy-icons/happy-icons.css', array(), $version );
+		wp_register_style( 'wcc-showcase-vendor', $assets . '/styles/vendor.css', array(), $version );
+		wp_register_style( 'wcc-showcase-showcase', $assets . '/styles/frontend.css', array( 'wcc-showcase-vendor', 'wcc-showcase-fontawesome-icons', 'wcc-showcase-happy-icons' ), $version );
+
+		// Scripts.
+		wp_register_script( 'wcc-showcase-vendor', $assets . '/scripts/vendor.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'wcc-showcase-showcase', $assets . '/scripts/frontend.js', array( 'jquery', 'wcc-showcase-vendor' ), $version, true );
 	}
 }

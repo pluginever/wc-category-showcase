@@ -1,25 +1,27 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\Shortcodes;
+namespace PluginEver\CategoryShowcase\Shortcodes;
 
-use WooCommerceCategoryShowcase\Controllers\Helpers;
+use PluginEver\CategoryShowcase\B8\Component;
+use PluginEver\CategoryShowcase\Controllers\Helpers;
 
-defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Shortcode class.
  *
  * @since 1.0.0
- * @package WooCommerceCategoryShowcase
+ * @package PluginEver\CategoryShowcase
  */
-class Shortcodes {
+class Shortcodes extends Component {
 
 	/**
-	 * Shortcode constructor.
+	 * Register hooks.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
-	public function __construct() {
+	public function register(): void {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_shortcode( 'wccs_showcase', array( $this, 'render_shortcode' ) );
 	}
@@ -98,7 +100,7 @@ class Shortcodes {
 			if ( 'slider' === $layout ) {
 				$this->render_slider_content( $wccs_id, $showcase );
 			} else {
-				$this->render_block_grid_content( $wccs_id, $layout, $showcase );
+				self::render_block_grid_content( $wccs_id, $layout, $showcase );
 			}
 			?>
 			</div>

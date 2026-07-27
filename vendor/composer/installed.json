@@ -1,40 +1,39 @@
 {
     "packages": [
         {
-            "name": "byteever/bytekit-plugin",
+            "name": "byteever/plugin",
             "version": "dev-trunk",
             "version_normalized": "dev-trunk",
             "source": {
                 "type": "git",
-                "url": "git@github.com:byteever/bytekit-plugin.git",
-                "reference": "43692c253b4d83879f5302dc6feff5eb2448428d"
+                "url": "git@github.com:byteever/plugin.git",
+                "reference": "10a12c5d685f04a28132defc863e7493e0085308"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byteever/bytekit-plugin/zipball/43692c253b4d83879f5302dc6feff5eb2448428d",
-                "reference": "43692c253b4d83879f5302dc6feff5eb2448428d",
+                "url": "https://api.github.com/repos/byteever/plugin/zipball/10a12c5d685f04a28132defc863e7493e0085308",
+                "reference": "10a12c5d685f04a28132defc863e7493e0085308",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4"
             },
-            "time": "2025-12-11T10:51:47+00:00",
+            "time": "2026-06-08T11:53:43+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "WooCommerceCategoryShowcase\\ByteKit\\": "src/"
+                    "PluginEver\\CategoryShowcase\\B8\\": "src/"
                 }
             },
             "license": [
-                "GPL-3.0-or-later"
+                "GPL-2.0-or-later"
             ],
             "support": {
-                "source": "https://github.com/byteever/bytekit-plugin/tree/trunk",
-                "issues": "https://github.com/byteever/bytekit-plugin/issues"
+                "source": "https://github.com/byteever/plugin/tree/1.0.0",
+                "issues": "https://github.com/byteever/plugin/issues"
             },
-            "abandoned": true,
-            "install-path": "../byteever/bytekit-plugin"
+            "install-path": "../byteever/plugin"
         }
     ],
     "dev": false,

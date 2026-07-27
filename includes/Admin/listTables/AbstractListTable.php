@@ -1,6 +1,6 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\Admin\listTables;
+namespace PluginEver\CategoryShowcase\Admin\listTables;
 
 defined( 'ABSPATH' ) || exit();
 

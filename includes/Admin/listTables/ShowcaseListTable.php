@@ -1,6 +1,6 @@
 <?php
 
-namespace WooCommerceCategoryShowcase\Admin\listTables;
+namespace PluginEver\CategoryShowcase\Admin\listTables;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
  * CategoryShowcase ListTable class.
  *
  * @since 1.0.0
- * @package WooCommerceCategoryShowcase
+ * @package PluginEver\CategoryShowcase
  */
 class ShowcaseListTable extends AbstractListTable {
 	/**
@@ -178,7 +178,7 @@ class ShowcaseListTable extends AbstractListTable {
 					break;
 			}
 			// translators: %d: number of things deleted.
-			wc_category_showcase()->flash->success( __( 'Showcases successfully deleted.', 'wc-category-showcase' ) );
+			wc_category_showcase()->app->flash->success( __( 'Showcases successfully deleted.', 'wc-category-showcase' ) );
 			wp_safe_redirect( admin_url( 'admin.php?page=wc-category-showcase' ) );
 			exit();
 		}
