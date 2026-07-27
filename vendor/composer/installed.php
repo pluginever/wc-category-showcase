@@ -3,7 +3,7 @@
         'name' => 'pluginever/wc-category-showcase',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'a3f7d0106846a28fb86c4bdbb53ad225a0a13cc7',
+        'reference' => '6ef51b5a69544008f7fa63630ed3897eb50b2059',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'pluginever/wc-category-showcase' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'a3f7d0106846a28fb86c4bdbb53ad225a0a13cc7',
+            'reference' => '6ef51b5a69544008f7fa63630ed3897eb50b2059',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
