@@ -1,6 +1,8 @@
 <?php
 
-namespace WooCommerceCategoryShowcase;
+namespace PluginEver\CategoryShowcase;
+
+use PluginEver\CategoryShowcase\B8\Component;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -10,16 +12,18 @@ defined( 'ABSPATH' ) || exit;
  * Handles the PostTypes.
  *
  * @since 1.0.0
- * @package WooCommerceCategoryShowcase
+ * @package PluginEver\CategoryShowcase
  */
-class PostTypes {
+class PostTypes extends Component {
+
 	/**
-	 * PostTypes constructor.
+	 * Register hooks.
 	 *
 	 * @since 1.0.0
+	 * @return void
 	 */
-	public function __construct() {
-		add_action( 'init', array( __CLASS__, 'register_post_type' ) );
+	public function register(): void {
+		add_action( 'init', array( $this, 'register_post_type' ) );
 	}
 
 	/**
@@ -28,7 +32,7 @@ class PostTypes {
 	 * @since 1.0.0
 	 * @return void
 	 */
-	public static function register_post_type() {
+	public function register_post_type() {
 		$labels = array(
 			'name'               => _x( 'Category Showcase', 'post type general name', 'wc-category-showcase' ),
 			'singular_name'      => _x( 'Category Showcase', 'post type singular name', 'wc-category-showcase' ),

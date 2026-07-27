@@ -8,7 +8,7 @@
  * @var int   $post_id Post ID.
  */
 
-use WooCommerceCategoryShowcase\Controllers\Helpers;
+use PluginEver\CategoryShowcase\Controllers\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 

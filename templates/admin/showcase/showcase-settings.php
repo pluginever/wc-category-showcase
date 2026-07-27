@@ -766,7 +766,7 @@ defined( 'ABSPATH' ) || exit;
 		<p class="wcc_showcase-settings-description"><?php esc_html_e( 'Select the color for the call-to-action button to match your store\'s branding or design scheme.', 'wc-category-showcase' ); ?></p>
 	</div>
 	<div class="tw-flex tw-flex-col tw-items-left wcc_showcase-pro">
-		<div class="tw-w-[348px] tw-h-[482px] tw-rounded-md tw-p-2 wcc_showcase-category-list-item tw-opacity-50">
+		<div class="tw-w-[348px] tw-h-[482px] tw-rounded-md tw-p-2 wcc_showcase-category-list-item tw-opacity-50 tw-h-auto">
 			<div class="tw-mt-3 wcc_showcase-custom-border tw-pb-4">
 				<h4 class="tw-my-0 !tw-text-text-grey-500"><?php esc_html_e( 'BG Color', 'wc-category-showcase' ); ?></h4>
 				<div class="tw-relative tw-flex">
